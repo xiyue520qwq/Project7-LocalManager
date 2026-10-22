@@ -105,7 +105,7 @@ public class TableBlockParser extends AbstractBlockParser {
                     sourceSpans = sourceSpans2;
                 } else {
                     sourceSpans = sourceSpans2;
-                    cell = SourceLine.m101of("", null);
+                    cell = SourceLine.m97of("", null);
                 }
                 row.appendChild(parseCell(cell, i2, inlineParser));
                 i2++;
@@ -136,7 +136,7 @@ public class TableBlockParser extends AbstractBlockParser {
         CharSequence content = cell.getContent();
         int start = Parsing.skipSpaceTab(content, 0, content.length());
         int end = Parsing.skipSpaceTabBackwards(content, content.length() - 1, start);
-        inlineParser.parse(SourceLines.m103of(cell.substring(start, end + 1)), tableCell);
+        inlineParser.parse(SourceLines.m99of(cell.substring(start, end + 1)), tableCell);
         return tableCell;
     }
 
@@ -168,7 +168,7 @@ public class TableBlockParser extends AbstractBlockParser {
                     }
                 case '|':
                     String content = sb.toString();
-                    cells.add(SourceLine.m101of(content, line.substring(cellStart, i).getSourceSpan()));
+                    cells.add(SourceLine.m97of(content, line.substring(cellStart, i).getSourceSpan()));
                     sb.setLength(0);
                     cellStart = i + 1;
                     break;
@@ -180,7 +180,7 @@ public class TableBlockParser extends AbstractBlockParser {
         }
         if (sb.length() > 0) {
             String content2 = sb.toString();
-            cells.add(SourceLine.m101of(content2, line.substring(cellStart, line.getContent().length()).getSourceSpan()));
+            cells.add(SourceLine.m97of(content2, line.substring(cellStart, line.getContent().length()).getSourceSpan()));
         }
         return cells;
     }
@@ -269,7 +269,7 @@ public class TableBlockParser extends AbstractBlockParser {
                     SourceLine paragraph = paragraphLines.get(0);
                     List<SourceLine> headerCells = TableBlockParser.split(paragraph);
                     if (columns.size() >= headerCells.size()) {
-                        return BlockStart.m104of(new TableBlockParser(columns, paragraph)).atIndex(state.getIndex()).replaceActiveBlockParser();
+                        return BlockStart.m100of(new TableBlockParser(columns, paragraph)).atIndex(state.getIndex()).replaceActiveBlockParser();
                     }
                 }
             }

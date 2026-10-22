@@ -35,7 +35,7 @@
 .method public final apply(Lcom/project7/localmanager/LocalResourceEngine$Result;Lcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lcom/project7/localmanager/LocalDalviraCityEngine;->refresh(Lcom/project7/localmanager/LocalResourceEngine$Result;Lcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
+    invoke-static {p1, p2, p3}, Lcom/project7/localmanager/LocalStoryClueEngine;->refresh(Lcom/project7/localmanager/LocalResourceEngine$Result;Lcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
     return-void
 .end method

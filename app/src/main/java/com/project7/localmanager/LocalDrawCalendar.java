@@ -20,7 +20,7 @@ final class LocalDrawCalendar {
         }
         byte[] state = LocalDrawEngine.state(bArr, 484);
         List<Integer> intArrayValues = BsonLite.intArrayValues(state, "ch");
-        if (intArrayValues.size() != 3 || intArrayValues.get(0).intValue() == pool.stamp || !pool.f11s.contains(intArrayValues.get(1)) || !pool.f9a.contains(intArrayValues.get(2))) {
+        if (intArrayValues.size() != 3 || intArrayValues.get(0).intValue() == pool.stamp || !pool.f18s.contains(intArrayValues.get(1)) || !pool.f16a.contains(intArrayValues.get(2))) {
             return bArr;
         }
         LocalResourceEngine.Result result = new LocalResourceEngine.Result(bArr);

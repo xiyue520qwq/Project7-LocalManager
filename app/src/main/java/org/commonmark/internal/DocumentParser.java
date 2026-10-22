@@ -427,9 +427,9 @@ public class DocumentParser implements ParserState {
         CharSequence lineContent = Parsing.prepareLine(ln);
         SourceSpan sourceSpan = null;
         if (this.includeSourceSpans != IncludeSourceSpans.NONE) {
-            sourceSpan = SourceSpan.m100of(this.lineIndex, 0, lineContent.length());
+            sourceSpan = SourceSpan.m96of(this.lineIndex, 0, lineContent.length());
         }
-        this.line = SourceLine.m101of(lineContent, sourceSpan);
+        this.line = SourceLine.m97of(lineContent, sourceSpan);
     }
 
     private void findNextNonSpace() {
@@ -533,9 +533,9 @@ public class DocumentParser implements ParserState {
         }
         SourceSpan sourceSpan = null;
         if (this.includeSourceSpans == IncludeSourceSpans.BLOCKS_AND_INLINES) {
-            sourceSpan = SourceSpan.m100of(this.lineIndex, this.index, content.length());
+            sourceSpan = SourceSpan.m96of(this.lineIndex, this.index, content.length());
         }
-        getActiveBlockParser().addLine(SourceLine.m101of(content, sourceSpan));
+        getActiveBlockParser().addLine(SourceLine.m97of(content, sourceSpan));
         addSourceSpans();
     }
 
@@ -546,7 +546,7 @@ public class DocumentParser implements ParserState {
                 int blockIndex = openBlockParser.sourceIndex;
                 int length = this.line.getContent().length() - blockIndex;
                 if (length != 0) {
-                    openBlockParser.blockParser.addSourceSpan(SourceSpan.m100of(this.lineIndex, blockIndex, length));
+                    openBlockParser.blockParser.addSourceSpan(SourceSpan.m96of(this.lineIndex, blockIndex, length));
                 }
             }
         }

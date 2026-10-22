@@ -21,12 +21,12 @@ final class LocalYisakeStoryEngine {
     }
 
     /* renamed from: d */
-    private static byte[] m94d(byte[] bArr, String str) {
+    private static byte[] m90d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    private static int m95v(byte[] bArr, String str) {
+    private static int m91v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
@@ -150,7 +150,7 @@ final class LocalYisakeStoryEngine {
         if (!stringValue.equals("9") && !stringValue.startsWith("9-")) {
             return "wrong-route";
         }
-        Integer intValue = BsonLite.intValue(m94d(result.profile, "weeknum"), "w");
+        Integer intValue = BsonLite.intValue(m90d(result.profile, "weeknum"), "w");
         if (progress == null || intValue == null || intValue.intValue() != progress.weekIndex) {
             return "wrong-cycle";
         }
@@ -168,9 +168,9 @@ final class LocalYisakeStoryEngine {
         if (BsonLite.keys(result.profile).contains(KEY)) {
             if (documentValue2 != null) {
                 str = "version";
-                if (m95v(documentValue2, "version") == 1) {
+                if (m91v(documentValue2, "version") == 1) {
                     if (BsonLite.intValue(documentValue2, "week") != null) {
-                        if (m95v(documentValue2, "week") >= 0) {
+                        if (m91v(documentValue2, "week") >= 0) {
                         }
                     }
                 }
@@ -216,13 +216,13 @@ final class LocalYisakeStoryEngine {
             } else {
                 byte[] documentValue3 = BsonLite.documentValue(documentValue2, "receipts");
                 Integer intValue3 = BsonLite.intValue(documentValue2, "initial");
-                if (intValue3 == null || intValue3.intValue() < 0 || intValue3.intValue() > MAXIMUM || documentValue3 == null || BsonLite.intValue(documentValue2, "generation") == null || BsonLite.documentValue(documentValue2, "baseline") == null || !intValue2.equals(BsonLite.intValue(documentValue2, "current")) || m95v(documentValue2, "generation") != BsonLite.keys(documentValue3).size()) {
+                if (intValue3 == null || intValue3.intValue() < 0 || intValue3.intValue() > MAXIMUM || documentValue3 == null || BsonLite.intValue(documentValue2, "generation") == null || BsonLite.documentValue(documentValue2, "baseline") == null || !intValue2.equals(BsonLite.intValue(documentValue2, "current")) || m91v(documentValue2, "generation") != BsonLite.keys(documentValue3).size()) {
                     return "invalid-ledger";
                 }
                 HashSet hashSet = new HashSet(BsonLite.intArrayValues(documentValue2, "baseline"));
                 hashSet.addAll(BsonLite.intArrayValues(result.profile, "q7WeekEventBaseline"));
-                byte[] documentValue4 = BsonLite.documentValue(m94d(result.profile, "q7StoryPending"), METHOD);
-                if (BsonLite.keys(m94d(result.profile, "q7StoryPending")).contains(METHOD) && payload(result.profile, documentValue4) == null) {
+                byte[] documentValue4 = BsonLite.documentValue(m90d(result.profile, "q7StoryPending"), METHOD);
+                if (BsonLite.keys(m90d(result.profile, "q7StoryPending")).contains(METHOD) && payload(result.profile, documentValue4) == null) {
                     return "invalid-outbox";
                 }
                 try {
@@ -246,7 +246,7 @@ final class LocalYisakeStoryEngine {
                         Integer num = localEventCatalog.yisakeEffects.get(Integer.valueOf(parseInt));
                         if (documentValue5 != null && num != null) {
                             byte[] bArr3 = documentValue3;
-                            if (!eligible(result.profile, localEventCatalog, progress, hashSet, parseInt) || m95v(documentValue5, "day") != completedDay || completedDay < i || m95v(documentValue5, "delta") != num.intValue() || !Integer.valueOf(intValue4).equals(BsonLite.intValue(documentValue5, "before")) || (intValue4 = Math.addExact(intValue4, num.intValue())) > MAXIMUM || !Integer.valueOf(intValue4).equals(BsonLite.intValue(documentValue5, "after"))) {
+                            if (!eligible(result.profile, localEventCatalog, progress, hashSet, parseInt) || m91v(documentValue5, "day") != completedDay || completedDay < i || m91v(documentValue5, "delta") != num.intValue() || !Integer.valueOf(intValue4).equals(BsonLite.intValue(documentValue5, "before")) || (intValue4 = Math.addExact(intValue4, num.intValue())) > MAXIMUM || !Integer.valueOf(intValue4).equals(BsonLite.intValue(documentValue5, "after"))) {
                                 break;
                             }
                             i = completedDay;
@@ -268,7 +268,7 @@ final class LocalYisakeStoryEngine {
             }
         }
         String str16 = str4;
-        if (BsonLite.keys(m94d(result.profile, "q7StoryPending")).contains(obj)) {
+        if (BsonLite.keys(m90d(result.profile, "q7StoryPending")).contains(obj)) {
             return "stale-cycle-outbox";
         }
         ArrayList arrayList = new ArrayList();
@@ -299,17 +299,17 @@ final class LocalYisakeStoryEngine {
         byte[] documentValue = BsonLite.documentValue(bArr, KEY);
         Integer intValue = BsonLite.intValue(bArr2, "iv");
         Integer intValue2 = BsonLite.intValue(bArr2, "av");
-        String stringValue = BsonLite.stringValue(m94d(bArr, "std"), "rt");
-        String stringValue2 = BsonLite.stringValue(m94d(bArr, "q7WeekTransition"), "id");
-        if (documentValue != null && m95v(documentValue, "version") == 1 && intValue != null && intValue2 != null && stringValue != null) {
-            if ((stringValue.equals("9") || stringValue.startsWith("9-")) && intValue.intValue() >= 0 && intValue.intValue() <= MAXIMUM && intValue2.intValue() > 0 && intValue2.intValue() <= intValue.intValue() && intValue.equals(BsonLite.intValue(m94d(bArr, "std"), "yiv")) && intValue.equals(BsonLite.intValue(documentValue, "current")) && BsonLite.stringValue(documentValue, "cycle") != null) {
-                if ((stringValue2 != null && !stringValue2.equals(BsonLite.stringValue(documentValue, "cycle"))) || !Objects.equals(BsonLite.intValue(documentValue, "week"), BsonLite.intValue(m94d(bArr, "weeknum"), "w"))) {
+        String stringValue = BsonLite.stringValue(m90d(bArr, "std"), "rt");
+        String stringValue2 = BsonLite.stringValue(m90d(bArr, "q7WeekTransition"), "id");
+        if (documentValue != null && m91v(documentValue, "version") == 1 && intValue != null && intValue2 != null && stringValue != null) {
+            if ((stringValue.equals("9") || stringValue.startsWith("9-")) && intValue.intValue() >= 0 && intValue.intValue() <= MAXIMUM && intValue2.intValue() > 0 && intValue2.intValue() <= intValue.intValue() && intValue.equals(BsonLite.intValue(m90d(bArr, "std"), "yiv")) && intValue.equals(BsonLite.intValue(documentValue, "current")) && BsonLite.stringValue(documentValue, "cycle") != null) {
+                if ((stringValue2 != null && !stringValue2.equals(BsonLite.stringValue(documentValue, "cycle"))) || !Objects.equals(BsonLite.intValue(documentValue, "week"), BsonLite.intValue(m90d(bArr, "weeknum"), "w"))) {
                     return null;
                 }
                 byte[] documentValue2 = BsonLite.documentValue(documentValue, "receipts");
                 Integer intValue3 = BsonLite.intValue(documentValue, "initial");
                 Integer intValue4 = BsonLite.intValue(documentValue, "generation");
-                Integer intValue5 = BsonLite.intValue(m94d(bArr, "weeknum"), "d");
+                Integer intValue5 = BsonLite.intValue(m90d(bArr, "weeknum"), "d");
                 if (intValue3 == null || intValue3.intValue() < 0 || intValue3.intValue() > intValue.intValue() || documentValue2 == null || intValue4 == null || intValue4.intValue() != BsonLite.keys(documentValue2).size() || intValue5 == null || intValue2.intValue() > intValue.intValue() - intValue3.intValue()) {
                     return null;
                 }
@@ -330,7 +330,7 @@ final class LocalYisakeStoryEngine {
                     if (intValue6 != intValue.intValue()) {
                         return null;
                     }
-                    return BsonLite.document("week", Integer.valueOf(m95v(documentValue, "week")), "cycle", BsonLite.stringValue(documentValue, "cycle"), "generation", Integer.valueOf(m95v(documentValue, "generation")), "iv", intValue, "av", intValue2);
+                    return BsonLite.document("week", Integer.valueOf(m91v(documentValue, "week")), "cycle", BsonLite.stringValue(documentValue, "cycle"), "generation", Integer.valueOf(m91v(documentValue, "generation")), "iv", intValue, "av", intValue2);
                 } catch (ArithmeticException | IllegalArgumentException e) {
                     return null;
                 }
@@ -343,7 +343,7 @@ final class LocalYisakeStoryEngine {
     static byte[] payload(byte[] bArr, byte[] bArr2) {
         byte[] document;
         byte[] envelope;
-        if (bArr2 == null || (envelope = envelope(bArr, (document = BsonLite.document("iv", Integer.valueOf(m95v(bArr2, "iv")), "av", Integer.valueOf(m95v(bArr2, "av")))))) == null || !Arrays.equals(envelope, bArr2)) {
+        if (bArr2 == null || (envelope = envelope(bArr, (document = BsonLite.document("iv", Integer.valueOf(m91v(bArr2, "iv")), "av", Integer.valueOf(m91v(bArr2, "av")))))) == null || !Arrays.equals(envelope, bArr2)) {
             return null;
         }
         return document;

@@ -73,7 +73,7 @@ public class FencedCodeBlockParser extends AbstractBlockParser {
             int nextNonSpace = state.getNextNonSpaceIndex();
             FencedCodeBlockParser blockParser = FencedCodeBlockParser.checkOpener(state.getLine().getContent(), nextNonSpace, indent);
             if (blockParser != null) {
-                return BlockStart.m104of(blockParser).atIndex(blockParser.block.getFenceLength() + nextNonSpace);
+                return BlockStart.m100of(blockParser).atIndex(blockParser.block.getFenceLength() + nextNonSpace);
             }
             return BlockStart.none();
         }

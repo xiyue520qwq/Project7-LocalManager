@@ -173,7 +173,7 @@ public final class MainActivity extends Activity {
                 MainActivity.this.details.setText(statusText);
             }
             MainActivity.this.refreshLogs();
-            MainActivity.this.handler.postDelayed(this, 750L);
+            MainActivity.this.handler.postDelayed(this, 2000L);
         }
     };
 
@@ -217,7 +217,7 @@ public final class MainActivity extends Activity {
         linearLayout.setBackgroundColor(LocalUiStyle.BACKGROUND);
         LinearLayout linearLayout2 = new LinearLayout(this);
         linearLayout2.setGravity(16);
-        linearLayout2.setPadding(m96dp(22), m96dp(14), m96dp(22), m96dp(12));
+        linearLayout2.setPadding(m92dp(22), m92dp(14), m92dp(22), m92dp(12));
         TextView bodyText = bodyText("Project7  /  本地管理");
         bodyText.setTextSize(16.0f);
         bodyText.setTypeface(null, ACCOUNTS);
@@ -225,7 +225,7 @@ public final class MainActivity extends Activity {
         linearLayout2.addView(bodyText, new LinearLayout.LayoutParams(HOME, -2, 1.0f));
         TextView bodyText2 = bodyText(this.appVersion);
         bodyText2.setTextSize(11.0f);
-        bodyText2.setPadding(m96dp(10), m96dp(5), m96dp(10), m96dp(5));
+        bodyText2.setPadding(m92dp(10), m92dp(5), m92dp(10), m92dp(5));
         bodyText2.setBackground(LocalUiStyle.surface(-1, HOME, LocalUiStyle.BORDER, 8, bodyText2));
         linearLayout2.addView(bodyText2, matchWrap());
         bodyText2.setLayoutParams(new LinearLayout.LayoutParams(-2, -2));
@@ -233,16 +233,16 @@ public final class MainActivity extends Activity {
         LinearLayout linearLayout3 = new LinearLayout(this);
         this.navigationBar = linearLayout3;
         linearLayout3.setOrientation(HOME);
-        this.navigationBar.setPadding(m96dp(8), m96dp(8), m96dp(8), m96dp(8));
+        this.navigationBar.setPadding(m92dp(8), m92dp(8), m92dp(8), m92dp(8));
         this.navigationBar.setBackgroundColor(-1);
-        this.navigationBar.setElevation(m96dp(6));
+        this.navigationBar.setElevation(m92dp(6));
         FrameLayout frameLayout = new FrameLayout(this);
         this.pageHost = frameLayout;
         linearLayout.addView(frameLayout, new LinearLayout.LayoutParams(-1, HOME, 1.0f));
         LinearLayout linearLayout4 = new LinearLayout(this);
         this.accountDock = linearLayout4;
         linearLayout4.setOrientation(ACCOUNTS);
-        this.accountDock.setPadding(m96dp(22), m96dp(8), m96dp(22), m96dp(ACTIVITIES));
+        this.accountDock.setPadding(m92dp(22), m92dp(8), m92dp(22), m92dp(ACTIVITIES));
         this.accountDock.setBackgroundColor(-1);
         TextView bodyText3 = bodyText("未选择账号");
         this.dockSelection = bodyText3;
@@ -263,7 +263,7 @@ public final class MainActivity extends Activity {
         LinearLayout createPage = createPage("工作台", "首页", ACCOUNTS);
         LinearLayout linearLayout5 = new LinearLayout(this);
         linearLayout5.setOrientation(ACCOUNTS);
-        linearLayout5.setPadding(m96dp(20), m96dp(20), m96dp(20), m96dp(14));
+        linearLayout5.setPadding(m92dp(20), m92dp(20), m92dp(20), m92dp(14));
         linearLayout5.setBackground(LocalUiStyle.surface(-1, HOME, LocalUiStyle.BORDER, 20, linearLayout5));
         LinearLayout linearLayout6 = new LinearLayout(this);
         linearLayout6.setGravity(16);
@@ -274,7 +274,7 @@ public final class MainActivity extends Activity {
         TextView bodyText5 = bodyText("待启动");
         this.gatewayBadge = bodyText5;
         bodyText5.setTextSize(12.0f);
-        this.gatewayBadge.setPadding(m96dp(10), m96dp(5), m96dp(10), m96dp(5));
+        this.gatewayBadge.setPadding(m92dp(10), m92dp(5), m92dp(10), m92dp(5));
         linearLayout6.addView(this.gatewayBadge, new LinearLayout.LayoutParams(-2, -2));
         linearLayout5.addView(linearLayout6, matchWrap());
         TextView textView = new TextView(this);
@@ -282,13 +282,13 @@ public final class MainActivity extends Activity {
         textView.setTextSize(23.0f);
         this.status.setTypeface(null, ACCOUNTS);
         this.status.setAccessibilityLiveRegion(ACCOUNTS);
-        this.status.setPadding(HOME, m96dp(16), HOME, m96dp(12));
+        this.status.setPadding(HOME, m92dp(16), HOME, m92dp(12));
         linearLayout5.addView(this.status, matchWrap());
         TextView textView2 = new TextView(this);
         this.details = textView2;
         textView2.setTextSize(13.0f);
         this.details.setTextColor(LocalUiStyle.MUTED);
-        this.details.setLineSpacing(m96dp(LOGS), 1.15f);
+        this.details.setLineSpacing(m92dp(LOGS), 1.15f);
         this.details.setTextIsSelectable(true);
         linearLayout5.addView(this.details, matchWrap());
         LinearLayout horizontalActions = horizontalActions();
@@ -312,8 +312,8 @@ public final class MainActivity extends Activity {
                 MainActivity.this.lambda$onCreate$2$MainActivity(view);
             }
         });
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(m96dp(52), m96dp(52));
-        layoutParams.setMarginStart(m96dp(8));
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(m92dp(52), m92dp(52));
+        layoutParams.setMarginStart(m92dp(8));
         horizontalActions.addView(button3, layoutParams);
         linearLayout5.addView(horizontalActions, matchWrap());
         createPage.addView(linearLayout5, matchWrap());
@@ -408,7 +408,7 @@ public final class MainActivity extends Activity {
         this.accountCount = bodyText6;
         bodyText6.setTextColor(LocalUiStyle.INK);
         this.accountCount.setTypeface(null, ACCOUNTS);
-        this.accountCount.setPadding(HOME, m96dp(18), HOME, m96dp(ACTIVITIES));
+        this.accountCount.setPadding(HOME, m92dp(18), HOME, m92dp(ACTIVITIES));
         createPage2.addView(this.accountCount, matchWrap());
         EditText editText3 = new EditText(this);
         this.accountSearch = editText3;
@@ -463,18 +463,18 @@ public final class MainActivity extends Activity {
                 MainActivity.this.lambda$onCreate$9$MainActivity(view);
             }
         });
-        LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(m96dp(52), m96dp(52));
-        layoutParams2.setMarginStart(m96dp(8));
+        LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(m92dp(52), m92dp(52));
+        layoutParams2.setMarginStart(m92dp(8));
         horizontalActions5.addView(button10, layoutParams2);
         createPage2.addView(horizontalActions5, matchWrap());
         TextView bodyText7 = bodyText("删除账号会同时清理该账号的角色快照和教程进度。hakopania 为完整测试模板，不可删除。");
-        bodyText7.setPadding(HOME, m96dp(8), HOME, HOME);
+        bodyText7.setPadding(HOME, m92dp(8), HOME, HOME);
         bodyText7.setTextSize(12.0f);
         createPage2.addView(bodyText7, matchWrap());
         LinearLayout linearLayout10 = new LinearLayout(this);
         this.levelPanel = linearLayout10;
         linearLayout10.setOrientation(ACCOUNTS);
-        this.levelPanel.setPadding(m96dp(20), m96dp(8), m96dp(20), m96dp(12));
+        this.levelPanel.setPadding(m92dp(20), m92dp(8), m92dp(20), m92dp(12));
         LinearLayout linearLayout11 = this.levelPanel;
         linearLayout11.addView(bodyText("操作前请退出游戏并停止网关。"), matchWrap());
         TextView bodyText8 = bodyText("");
@@ -676,7 +676,7 @@ public final class MainActivity extends Activity {
         bodyText12.setTextSize(12.0f);
         this.logText.setTypeface(Typeface.MONOSPACE);
         this.logText.setTextIsSelectable(true);
-        this.logText.setPadding(m96dp(8), m96dp(12), m96dp(8), m96dp(12));
+        this.logText.setPadding(m92dp(8), m92dp(12), m92dp(8), m92dp(12));
         this.logText.setBackgroundColor(Color.parseColor("#F4F6F8"));
         ScrollView scrollView = new ScrollView(this);
         this.logScroll = scrollView;
@@ -1197,7 +1197,7 @@ public final class MainActivity extends Activity {
     private void showSearchList(String str, String str2, final List<String> list, final List<String> list2, final IntConsumer intConsumer) {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(ACCOUNTS);
-        linearLayout.setPadding(m96dp(18), m96dp(8), m96dp(18), m96dp(8));
+        linearLayout.setPadding(m92dp(18), m92dp(8), m92dp(18), m92dp(8));
         final EditText editText = new EditText(this);
         editText.setSingleLine(true);
         editText.setHint(str2);
@@ -1206,9 +1206,9 @@ public final class MainActivity extends Activity {
         final TextView bodyText = bodyText("");
         linearLayout.addView(bodyText, matchWrap());
         FrameLayout frameLayout = new FrameLayout(this);
-        linearLayout.addView(frameLayout, new LinearLayout.LayoutParams(-1, m96dp(Math.min(320, Math.max(140, getResources().getConfiguration().screenHeightDp - 280)))));
+        linearLayout.addView(frameLayout, new LinearLayout.LayoutParams(-1, m92dp(Math.min(320, Math.max(140, getResources().getConfiguration().screenHeightDp - 280)))));
         ListView listView = new ListView(this);
-        listView.setDividerHeight(m96dp(ACCOUNTS));
+        listView.setDividerHeight(m92dp(ACCOUNTS));
         listView.setDivider(new ColorDrawable(LocalUiStyle.BORDER));
         frameLayout.addView(listView, new FrameLayout.LayoutParams(-1, -1));
         TextView bodyText2 = bodyText("没有匹配的结果");
@@ -1222,8 +1222,8 @@ public final class MainActivity extends Activity {
                 textView.setTextColor(LocalUiStyle.INK);
                 textView.setTextSize(14.0f);
                 textView.setSingleLine(false);
-                textView.setMinHeight(MainActivity.this.m96dp(56));
-                textView.setPadding(MainActivity.this.m96dp(8), MainActivity.this.m96dp(14), MainActivity.this.m96dp(8), MainActivity.this.m96dp(14));
+                textView.setMinHeight(MainActivity.this.m92dp(56));
+                textView.setPadding(MainActivity.this.m92dp(8), MainActivity.this.m92dp(14), MainActivity.this.m92dp(8), MainActivity.this.m92dp(14));
                 return textView;
             }
         };
@@ -1299,7 +1299,7 @@ public final class MainActivity extends Activity {
                 })).add("活动 " + jSONObject.getInt("id") + " · 模板 " + jSONObject.getInt("template") + "\n" + format + " · 玩法待接入");
             }
             TextView bodyText = bodyText(treeMap.size() + " 个原生类型 · " + jSONArray.length() + " 条配置");
-            bodyText.setPadding(HOME, m96dp(12), HOME, m96dp(12));
+            bodyText.setPadding(HOME, m92dp(12), HOME, m92dp(12));
             linearLayout.addView(bodyText, matchWrap());
             for (final Map.Entry entry : treeMap.entrySet()) {
                 final String str = "活动类型 " + entry.getKey();
@@ -1340,9 +1340,9 @@ public final class MainActivity extends Activity {
         FrameLayout frameLayout;
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(ACCOUNTS);
-        linearLayout.setPadding(m96dp(22), m96dp(14), m96dp(22), m96dp(28));
+        linearLayout.setPadding(m92dp(22), m92dp(14), m92dp(22), m92dp(28));
         TextView sectionTitle = sectionTitle(str);
-        sectionTitle.setPadding(HOME, HOME, HOME, m96dp(22));
+        sectionTitle.setPadding(HOME, HOME, HOME, m92dp(22));
         sectionTitle.setTextSize(26.0f);
         if (Build.VERSION.SDK_INT >= 28) {
             sectionTitle.setAccessibilityHeading(true);
@@ -1353,7 +1353,7 @@ public final class MainActivity extends Activity {
         scrollView.setVerticalScrollBarEnabled(false);
         scrollView.setSmoothScrollingEnabled(true);
         scrollView.setFillViewport(true);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(m96dp(Math.min(720, getResources().getConfiguration().screenWidthDp)), -2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(m92dp(Math.min(720, getResources().getConfiguration().screenWidthDp)), -2);
         layoutParams.gravity = 49;
         int size = this.pages.size();
         if (size == LOGS) {
@@ -1373,19 +1373,19 @@ public final class MainActivity extends Activity {
         textView.setGravity(17);
         textView.setLetterSpacing(0.0f);
         textView.setFocusable(true);
-        textView.setPadding(HOME, m96dp(7), HOME, m96dp(7));
+        textView.setPadding(HOME, m92dp(7), HOME, m92dp(7));
         textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, LocalIcons.drawable(this, i), (Drawable) null, (Drawable) null);
-        textView.setCompoundDrawablePadding(m96dp(ACTIVITIES));
+        textView.setCompoundDrawablePadding(m92dp(ACTIVITIES));
         Drawable drawable = textView.getCompoundDrawables()[ACCOUNTS];
         drawable.mutate();
-        drawable.setBounds(HOME, HOME, m96dp(21), m96dp(21));
+        drawable.setBounds(HOME, HOME, m92dp(21), m92dp(21));
         textView.setCompoundDrawables(null, drawable, null, null);
         textView.setContentDescription(str);
         textView.setTooltipText(str);
         textView.setOnClickListener(new MainActivity$$ExternalSyntheticLambda26(this, size));
-        LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(HOME, m96dp(Math.max(64, (int) ((getResources().getConfiguration().fontScale * 16.0f) + 48.0f))), 1.0f);
-        layoutParams2.setMarginStart(m96dp(MAIL));
-        layoutParams2.setMarginEnd(m96dp(MAIL));
+        LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(HOME, m92dp(Math.max(64, (int) ((getResources().getConfiguration().fontScale * 16.0f) + 48.0f))), 1.0f);
+        layoutParams2.setMarginStart(m92dp(MAIL));
+        layoutParams2.setMarginEnd(m92dp(MAIL));
         this.navigationBar.addView(textView, layoutParams2);
         this.navigation.add(textView);
         return linearLayout;
@@ -1432,7 +1432,7 @@ public final class MainActivity extends Activity {
     private TextView metric(LinearLayout linearLayout, String str, int i) {
         LinearLayout linearLayout2 = new LinearLayout(this);
         linearLayout2.setOrientation(ACCOUNTS);
-        linearLayout2.setPadding(m96dp(ACTIVITIES), m96dp(10), m96dp(ACTIVITIES), m96dp(6));
+        linearLayout2.setPadding(m92dp(ACTIVITIES), m92dp(10), m92dp(ACTIVITIES), m92dp(6));
         TextView bodyText = bodyText("0");
         bodyText.setTextSize(28.0f);
         bodyText.setTextColor(i);
@@ -1446,19 +1446,19 @@ public final class MainActivity extends Activity {
     private void shortcut(LinearLayout linearLayout, String str, String str2, int i, int i2, int i3) {
         LinearLayout linearLayout2 = new LinearLayout(this);
         linearLayout2.setGravity(16);
-        linearLayout2.setMinimumHeight(m96dp(80));
-        linearLayout2.setPadding(m96dp(16), m96dp(14), m96dp(16), m96dp(14));
+        linearLayout2.setMinimumHeight(m92dp(80));
+        linearLayout2.setPadding(m92dp(16), m92dp(14), m92dp(16), m92dp(14));
         linearLayout2.setBackground(LocalUiStyle.ripple(linearLayout2, -1, HOME, -1, 8));
         TextView textView = new TextView(this);
         textView.setGravity(17);
         Drawable drawable = LocalIcons.drawable(this, i);
         drawable.setTint(i3);
-        drawable.setBounds(HOME, HOME, m96dp(24), m96dp(24));
+        drawable.setBounds(HOME, HOME, m92dp(24), m92dp(24));
         textView.setCompoundDrawables(null, drawable, null, null);
-        linearLayout2.addView(textView, new LinearLayout.LayoutParams(m96dp(32), -2));
+        linearLayout2.addView(textView, new LinearLayout.LayoutParams(m92dp(32), -2));
         LinearLayout linearLayout3 = new LinearLayout(this);
         linearLayout3.setOrientation(ACCOUNTS);
-        linearLayout3.setPadding(m96dp(14), HOME, m96dp(8), HOME);
+        linearLayout3.setPadding(m92dp(14), HOME, m92dp(8), HOME);
         TextView bodyText = bodyText(str);
         bodyText.setTextColor(LocalUiStyle.INK);
         bodyText.setTextSize(15.0f);
@@ -1466,20 +1466,20 @@ public final class MainActivity extends Activity {
         linearLayout3.addView(bodyText, matchWrap());
         TextView bodyText2 = bodyText(str2);
         bodyText2.setTextSize(12.0f);
-        bodyText2.setPadding(HOME, m96dp(ACTIVITIES), HOME, HOME);
+        bodyText2.setPadding(HOME, m92dp(ACTIVITIES), HOME, HOME);
         linearLayout3.addView(bodyText2, matchWrap());
         linearLayout2.addView(linearLayout3, new LinearLayout.LayoutParams(HOME, -2, 1.0f));
         TextView bodyText3 = bodyText("");
         Drawable drawable2 = LocalIcons.drawable(this, 16);
         drawable2.setTint(LocalUiStyle.MUTED);
-        drawable2.setBounds(HOME, HOME, m96dp(16), m96dp(16));
+        drawable2.setBounds(HOME, HOME, m92dp(16), m92dp(16));
         bodyText3.setCompoundDrawables(drawable2, null, null, null);
-        linearLayout2.addView(bodyText3, new LinearLayout.LayoutParams(m96dp(14), -2));
+        linearLayout2.addView(bodyText3, new LinearLayout.LayoutParams(m92dp(14), -2));
         linearLayout2.setFocusable(true);
         linearLayout2.setContentDescription(str + "，" + str2);
         linearLayout2.setOnClickListener(new MainActivity$$ExternalSyntheticLambda26(this, i2));
         LinearLayout.LayoutParams matchWrap = matchWrap();
-        matchWrap.bottomMargin = m96dp(8);
+        matchWrap.bottomMargin = m92dp(8);
         linearLayout.addView(linearLayout2, matchWrap);
     }
 
@@ -1534,7 +1534,7 @@ public final class MainActivity extends Activity {
             str = "已添加 " + this.attachmentLabels.size() + " / 20\n" + TextUtils.join("\n", this.attachmentLabels);
         }
         textView.setText(str);
-        this.attachmentSummary.setPadding(m96dp(14), m96dp(12), m96dp(14), m96dp(12));
+        this.attachmentSummary.setPadding(m92dp(14), m92dp(12), m92dp(14), m92dp(12));
         this.attachmentSummary.setBackground(LocalUiStyle.surface(Color.rgb(238, 235, 246), HOME, Color.rgb(238, 235, 246), 8, this.attachmentSummary));
     }
 
@@ -1874,16 +1874,16 @@ public final class MainActivity extends Activity {
             if (str.toLowerCase(Locale.ROOT).contains(lowerCase)) {
                 final LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setGravity(16);
-                linearLayout.setMinimumHeight(m96dp(64));
+                linearLayout.setMinimumHeight(m92dp(64));
                 final CheckBox checkBox = new CheckBox(this);
                 checkBox.setText("hakopania".equalsIgnoreCase(str) ? str + "（完整模板）" : str);
                 checkBox.setTextSize(15.0f);
                 checkBox.setTextColor(LocalUiStyle.INK);
                 LocalUiStyle.tree(checkBox);
                 checkBox.setGravity(8388627);
-                checkBox.setMinHeight(m96dp(48));
+                checkBox.setMinHeight(m92dp(48));
                 checkBox.setBackground(LocalUiStyle.ripple(checkBox, HOME, HOME, HOME, 8));
-                checkBox.setPadding(m96dp(8), m96dp(8), m96dp(12), m96dp(8));
+                checkBox.setPadding(m92dp(8), m92dp(8), m92dp(12), m92dp(8));
                 checkBox.setEnabled(true);
                 checkBox.setChecked(this.selectedAccounts.contains(str));
                 styleAccount(checkBox, linearLayout);
@@ -1897,8 +1897,8 @@ public final class MainActivity extends Activity {
                 View view = new View(this);
                 view.setBackgroundColor(LocalUiStyle.BORDER);
                 view.setImportantForAccessibility(MAIL);
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(m96dp(ACCOUNTS), m96dp(24));
-                layoutParams.setMarginEnd(m96dp(8));
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(m92dp(ACCOUNTS), m92dp(24));
+                layoutParams.setMarginEnd(m92dp(8));
                 linearLayout.addView(view, layoutParams);
                 Button button = new Button(this);
                 LocalUiStyle.accountLevelButton(button, "调整 " + str + " 的经验与等级");
@@ -1908,16 +1908,16 @@ public final class MainActivity extends Activity {
                         MainActivity.this.lambda$renderAccounts$47$MainActivity(str, view2);
                     }
                 });
-                linearLayout.addView(button, new LinearLayout.LayoutParams(m96dp(48), m96dp(48)));
+                linearLayout.addView(button, new LinearLayout.LayoutParams(m92dp(48), m92dp(48)));
                 this.accountChecks.add(checkBox);
                 LinearLayout.LayoutParams matchWrap = matchWrap();
-                matchWrap.bottomMargin = m96dp(8);
+                matchWrap.bottomMargin = m92dp(8);
                 this.accountRows.addView(linearLayout, matchWrap);
             }
         }
         if (this.accountRows.getChildCount() == 0) {
             TextView bodyText = bodyText(lowerCase.isEmpty() ? "暂无本地账号" : "没有匹配的账号");
-            bodyText.setPadding(m96dp(12), m96dp(22), m96dp(12), m96dp(22));
+            bodyText.setPadding(m92dp(12), m92dp(22), m92dp(12), m92dp(22));
             this.accountRows.addView(bodyText, matchWrap());
         }
         updateRecipients();
@@ -1939,7 +1939,7 @@ public final class MainActivity extends Activity {
 
     private void styleAccount(CheckBox checkBox, LinearLayout linearLayout) {
         linearLayout.setBackground(LocalUiStyle.surface(checkBox.isChecked() ? LocalUiStyle.SOFT_ACCENT : -1, HOME, checkBox.isChecked() ? LocalUiStyle.ACCENT : LocalUiStyle.BORDER, 8, linearLayout));
-        linearLayout.setPadding(m96dp(8), m96dp(8), m96dp(8), m96dp(8));
+        linearLayout.setPadding(m92dp(8), m92dp(8), m92dp(8), m92dp(8));
     }
 
     private void selectAllAccounts() {
@@ -1979,12 +1979,12 @@ public final class MainActivity extends Activity {
             LocalResourceCatalog resources = this.profiles.resources();
             if ("hero".equals(str)) {
                 for (LocalResourceCatalog.Hero hero : resources.heroes.values()) {
-                    arrayList.add(hero.f7id + " : " + hero.name);
+                    arrayList.add(hero.f14id + " : " + hero.name);
                 }
             } else if ("skin".equals(str)) {
                 for (LocalResourceCatalog.Skin skin : resources.skins.values()) {
                     StringBuilder sb = new StringBuilder();
-                    sb.append(skin.f12id);
+                    sb.append(skin.f19id);
                     sb.append(" : ");
                     sb.append(skin.name);
                     sb.append(" / ");
@@ -1994,13 +1994,13 @@ public final class MainActivity extends Activity {
             } else {
                 for (LocalResourceCatalog.Item item : resources.items.values()) {
                     if ("treasure".equals(str)) {
-                        if (resources.treasures.containsKey(item.f8id + ":1")) {
-                            arrayList.add(item.f8id + " : " + item.name);
+                        if (resources.treasures.containsKey(item.f15id + ":1")) {
+                            arrayList.add(item.f15id + " : " + item.name);
                         }
                     } else {
                         if (item.type == 5) {
                         }
-                        arrayList.add(item.f8id + " : " + item.name);
+                        arrayList.add(item.f15id + " : " + item.name);
                     }
                 }
             }
@@ -2015,7 +2015,7 @@ public final class MainActivity extends Activity {
     private void showResourcePicker() {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(ACCOUNTS);
-        linearLayout.setPadding(m96dp(16), m96dp(8), m96dp(16), m96dp(8));
+        linearLayout.setPadding(m92dp(16), m92dp(8), m92dp(16), m92dp(8));
         EditText editText = new EditText(this);
         editText.setSingleLine(true);
         editText.setHint("搜索名称或 ID");
@@ -2023,7 +2023,7 @@ public final class MainActivity extends Activity {
         ListView listView = new ListView(this);
         final ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.simple_list_item_1, new ArrayList(this.resourceLabels));
         listView.setAdapter((ListAdapter) arrayAdapter);
-        linearLayout.addView(listView, new LinearLayout.LayoutParams(-1, m96dp(280)));
+        linearLayout.addView(listView, new LinearLayout.LayoutParams(-1, m92dp(280)));
         final AlertDialog create = new AlertDialog.Builder(this).setTitle(this.resourceType.getSelectedItem().toString()).setView(linearLayout).setNegativeButton("取消", (DialogInterface.OnClickListener) null).create();
         editText.addTextChangedListener(new TextWatcher() { // from class: com.project7.localmanager.MainActivity.7
             @Override // android.text.TextWatcher
@@ -2355,7 +2355,7 @@ public final class MainActivity extends Activity {
         textView.setTextSize(17.0f);
         textView.setTypeface(null, ACCOUNTS);
         textView.setTextColor(LocalUiStyle.INK);
-        textView.setPadding(HOME, m96dp(24), HOME, m96dp(12));
+        textView.setPadding(HOME, m92dp(24), HOME, m92dp(12));
         return textView;
     }
 
@@ -2373,7 +2373,7 @@ public final class MainActivity extends Activity {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(HOME);
         linearLayout.setGravity(16);
-        linearLayout.setPadding(HOME, m96dp(14), HOME, HOME);
+        linearLayout.setPadding(HOME, m92dp(14), HOME, HOME);
         return linearLayout;
     }
 
@@ -2393,7 +2393,7 @@ public final class MainActivity extends Activity {
 
     private LinearLayout.LayoutParams weightedButtonWithMargin() {
         LinearLayout.LayoutParams weightedButton = weightedButton();
-        weightedButton.setMarginStart(m96dp(8));
+        weightedButton.setMarginStart(m92dp(8));
         return weightedButton;
     }
 
@@ -2403,13 +2403,13 @@ public final class MainActivity extends Activity {
 
     private LinearLayout.LayoutParams weightedInputWithMargin() {
         LinearLayout.LayoutParams weightedInput = weightedInput();
-        weightedInput.setMarginStart(m96dp(8));
+        weightedInput.setMarginStart(m92dp(8));
         return weightedInput;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: dp */
-    public int m96dp(int i) {
+    public int m92dp(int i) {
         return Math.round(i * getResources().getDisplayMetrics().density);
     }
 }

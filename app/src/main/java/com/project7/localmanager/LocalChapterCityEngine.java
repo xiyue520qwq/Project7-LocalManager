@@ -25,7 +25,7 @@ final class LocalChapterCityEngine {
     }
 
     static boolean locked(byte[] bArr, int i) {
-        return LocalAlanCityEngine.locked(bArr, i) || LocalAnCityEngine.locked(bArr, i) || (active(bArr) && Boolean.TRUE.equals(BsonLite.boolValue(LocalResourceEngine.doc(bArr, "q7ChapterLocks"), Integer.toString(i))));
+        return LocalAnCityEngine.locked(bArr, i) || (active(bArr) && Boolean.TRUE.equals(BsonLite.boolValue(LocalResourceEngine.doc(bArr, "q7ChapterLocks"), Integer.toString(i))));
     }
 
     static Integer state(byte[] bArr, int i) {
@@ -159,7 +159,11 @@ final class LocalChapterCityEngine {
             result.profile = BsonLite.withProfileDocument(result.profile, str6, doc2);
             result.profile = BsonLite.withProfileDocument(result.profile, str7, doc3);
             if (!linkedHashMap.isEmpty()) {
-                result.profile = BsonLite.withProfileDocument(result.profile, "q7EconomyCommit", LocalStoryFriendshipEngine.commit(result.profile, progress, linkedHashMap));
+                byte[] bArr8 = BsonLite.EMPTY_DOCUMENT;
+                for (Map.Entry entry : linkedHashMap.entrySet()) {
+                    bArr8 = BsonLite.withProfileInt(bArr8, ((Integer) entry.getKey()).toString(), ((Integer) entry.getValue()).intValue());
+                }
+                result.profile = BsonLite.withProfileDocument(result.profile, "q7EconomyCommit", BsonLite.document("id", LocalResourceEngine.uuid(), "av", Integer.valueOf(LocalEconomyEngine.regularActions(result.profile, progress)), "sgw", Integer.valueOf(LocalEconomyEngine.sandglass(result.profile, progress)), "scene", 0, "cf", BsonLite.EMPTY_DOCUMENT, "ef", bArr8));
                 result.add("syncHeroMgrData", BsonLite.document("d", LocalResourceEngine.doc(result.profile, "heromgr")));
             }
             refreshTargets(result, localEventCatalog, progress, hashSet4);
@@ -177,7 +181,7 @@ final class LocalChapterCityEngine {
             if (iArr == null || iArr[2] != parseInt) {
                 if (LocalResourceEngine.ownsHero(result.profile, parseInt)) {
                     byte[] profileHeroDocument = BsonLite.profileHeroDocument(result.profile, parseInt);
-                    int intValue = map.getOrDefault(Integer.valueOf(parseInt), Integer.valueOf(LocalStoryFriendshipEngine.current(result.profile, progress, parseInt))).intValue();
+                    int intValue = map.getOrDefault(Integer.valueOf(parseInt), progress.patrolFriendly.getOrDefault(Integer.valueOf(parseInt), Integer.valueOf(LocalResourceEngine.value(profileHeroDocument, "ef")))).intValue();
                     if (intValue < 100) {
                         intValue = Math.min(100, Math.addExact(intValue, LocalResourceEngine.value(doc, str)));
                     }
@@ -189,7 +193,7 @@ final class LocalChapterCityEngine {
         }
     }
 
-    static void applyHeroes(LocalResourceEngine.Result result, byte[] bArr) {
+    private static void applyHeroes(LocalResourceEngine.Result result, byte[] bArr) {
         byte[] bArr2 = bArr;
         byte[] doc = LocalResourceEngine.doc(result.profile, "heromgr");
         LinkedHashSet linkedHashSet = new LinkedHashSet(BsonLite.intArrayValues(doc, "c"));

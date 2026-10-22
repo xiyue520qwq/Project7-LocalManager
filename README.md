@@ -3,6 +3,13 @@
 > 本仓库内容由 **APK 反编译** 得到，用于源码阅读、行为分析与自行研究，**不是**原始开发工程。
 > 变量名、注释、部分语法结构由反编译器推断，与原作者的源码存在差异。
 
+> [!WARNING]
+> **当前分支（`feat/v2.0.48-mod`）归档的是第三方重打包的 `2.0.48Mod`，不是官方构建。**
+> 包名被改为 `com.project7.localmanages`，清单中被注入 MT 管理器的文件提供者，
+> 四条剧情线（阿岚 / 达尔维拉 / 奥拉托 / 温兹）的引擎被整块删除，巡查数据减少约 93%，
+> 更新公告回滚到 v2.0.44。溯源分析与完整差异见 [`docs/MOD_NOTES.md`](docs/MOD_NOTES.md)。
+> `main` 分支保留官方 2.0.47Beta 的归档。
+
 游戏本地网关 / 本地管理器，为单机版《七都》提供离线账号、剧情与数值服务。
 纯 Android Framework 实现（无 AndroidX），启动后以 `GatewayService` 前台服务的形式在本机端口
 上模拟游戏服务端，游戏本体连上后即可离线游玩。
@@ -14,27 +21,27 @@
 | 项目 | 值 |
 | --- | --- |
 | 应用名 | Project7 本地管理 |
-| 包名 | `com.project7.localmanager` |
-| 版本 | 2.0.47Beta |
-| versionCode | 20047 |
+| 包名 | `com.project7.localmanages` |
+| 版本 | 2.0.48Mod |
+| versionCode | 20048 |
 | minSdkVersion | 26 (Android 8.0) |
 | targetSdkVersion | 32 (Android 12L) |
 | compileSdkVersion | 32 |
-| APK 大小 | 3,109,749 字节 |
-| APK SHA-256 | `16cefd524f56dbe058e15e86574cc05bd555db16d1bddf1c326a6f5d16e41f4c` |
-| 签名 | `CN=Android Debug`（debug 证书，SHA-1 `60:FD:AA:E4:35:02:9C:F2:31:7D:E9:F4:A0:57:A1:4F:0F:E6:C5:30`） |
-| 组件 | `MainActivity`（单 Activity，竖屏）、`GatewayService`（前台服务，`dataSync`） |
+| APK 大小 | 3,122,026 字节 |
+| APK SHA-256 | `3924e796a06783da2b8ae7a733e5a28cfd1aa8814c526738a263b89b5e37d208` |
+| 签名 | MT 管理器内置测试证书 `CN=Android, O=Android`（SHA-256 `a4:0d:a8:0a:…:5d:c0`），仅 v2/v3 签名，无 v1 |
+| 组件 | `MainActivity`、`GatewayService`、**MT 注入的** `MTDataFilesProvider` + `MTDataFilesWakeUpActivity`（各重复两次，分布在 classes2/classes3） |
+| dex | 3 个：`classes.dex` 907 KB + `classes2.dex` / `classes3.dex` 各 9.6 KB（后两者为 MT 注入组件） |
 | 权限 | `INTERNET`、`FOREGROUND_SERVICE`、`FOREGROUND_SERVICE_DATA_SYNC`、`POST_NOTIFICATIONS` |
 
 ## 二、代码规模
 
 | 内容 | 数量 |
 | --- | --- |
-| Java 源文件 | 269 个（其中本项目 `com.project7.localmanager` 134 个） |
-| Java 代码行数 | 约 7,100 行 |
-| smali 文件 | 507 个 |
+| Java 源文件 | 261 个（其中本项目 `com.project7.localmanages` 123 个） |
+| smali 文件 | 490 个（`smali/` 486 + `smali_classes2/` 2 + `smali_classes3/` 2） |
 | 资源文件 | drawable 图标 25 个 + `values` 样式 + 应用图标 |
-| assets 数据 | 34 个（`.tsv` 配置表、`.bson` 模板、`.py` 兼容脚本、公告） |
+| assets 数据 | 35 个（`.tsv` 配置表、`.bson` 模板、`.py` 兼容脚本、`.pyc`、公告） |
 
 ## 三、目录结构
 
@@ -49,10 +56,13 @@ Project7-LocalManager/
 │       │   └── org/commonmark/              # 内嵌第三方（CommonMark Java，被裁剪打包进 dex）
 │       ├── assets/                      # 运行时数据与 Python 兼容脚本
 │       └── res/                         # 解码后的资源（矢量图标 / 样式）
-├── smali/                               # apktool baksmali 结果，可用于字节级比对与回编
+├── smali/                               # apktool baksmali 结果（classes.dex），可用于字节级比对与回编
+├── smali_classes2/                      # classes2.dex —— 仅含 MT 注入组件
+├── smali_classes3/                      # classes3.dex —— 与 classes2 内容重复
 ├── docs/
 │   ├── apktool.yml                      # apktool 反编译元数据
-│   └── DECOMPILE.md                     # 反编译过程、工具版本与复现命令
+│   ├── DECOMPILE.md                     # 反编译过程、工具版本与复现命令
+│   └── MOD_NOTES.md                     # 本版 Mod 溯源分析与差异清单
 ├── build.gradle
 ├── settings.gradle
 ├── .gitignore

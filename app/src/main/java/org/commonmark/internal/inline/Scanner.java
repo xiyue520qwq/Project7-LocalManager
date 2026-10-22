@@ -12,7 +12,7 @@ public class Scanner {
     private int index;
     private int lineIndex;
     private final List<SourceLine> lines;
-    private SourceLine line = SourceLine.m101of("", null);
+    private SourceLine line = SourceLine.m97of("", null);
     private int lineLength = 0;
 
     Scanner(List<SourceLine> lines, int lineIndex, int index) {
@@ -26,7 +26,7 @@ public class Scanner {
     }
 
     /* renamed from: of */
-    public static Scanner m98of(SourceLines lines) {
+    public static Scanner m94of(SourceLines lines) {
         return new Scanner(lines.getLines(), 0, 0);
     }
 
@@ -89,7 +89,7 @@ public class Scanner {
             if (i2 < this.lines.size()) {
                 setLine(this.lines.get(this.lineIndex));
             } else {
-                setLine(SourceLine.m101of("", null));
+                setLine(SourceLine.m97of("", null));
             }
             this.index = 0;
         }
@@ -202,9 +202,9 @@ public class Scanner {
             SourceSpan newSourceSpan = null;
             SourceSpan sourceSpan = line.getSourceSpan();
             if (sourceSpan != null) {
-                newSourceSpan = SourceSpan.m100of(sourceSpan.getLineIndex(), sourceSpan.getColumnIndex() + begin.index, newContent.length());
+                newSourceSpan = SourceSpan.m96of(sourceSpan.getLineIndex(), sourceSpan.getColumnIndex() + begin.index, newContent.length());
             }
-            return SourceLines.m103of(SourceLine.m101of(newContent, newSourceSpan));
+            return SourceLines.m99of(SourceLine.m97of(newContent, newSourceSpan));
         }
         SourceLines sourceLines = SourceLines.empty();
         SourceLine firstLine = this.lines.get(begin.lineIndex);

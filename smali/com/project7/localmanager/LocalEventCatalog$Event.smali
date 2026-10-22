@@ -79,59 +79,59 @@
         }
     .end annotation
 
-    .line 525
+    .line 486
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 526
+    .line 487
     iput p1, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->id:I
 
-    .line 527
+    .line 488
     iput-boolean p2, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->emergency:Z
 
-    .line 528
+    .line 489
     iput-boolean p3, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->leaveEmergency:Z
 
-    .line 529
+    .line 490
     iput-boolean p4, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->completeEnterMainPanel:Z
 
-    .line 530
+    .line 491
     iput-boolean p5, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->autoTrigger:Z
 
-    .line 531
+    .line 492
     iput-boolean p6, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->autoStart:Z
 
-    .line 532
+    .line 493
     iput-boolean p7, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->release:Z
 
-    .line 533
+    .line 494
     iput-boolean p8, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbee:Z
 
-    .line 534
+    .line 495
     iput-boolean p9, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->repeatable:Z
 
-    .line 535
+    .line 496
     iput p10, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->dialog:I
 
-    .line 536
+    .line 497
     iput p11, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
 
-    .line 537
+    .line 498
     iput p12, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->priority:I
 
-    .line 538
+    .line 499
     invoke-static {p13}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->successors:Ljava/util/List;
 
-    .line 539
+    .line 500
     invoke-static {p14}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/project7/localmanager/LocalEventCatalog$Event;->completeConditions:Ljava/util/Map;
 
-    .line 540
+    .line 501
     return-void
 .end method

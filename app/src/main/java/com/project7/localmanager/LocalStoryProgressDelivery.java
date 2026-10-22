@@ -1,6 +1,5 @@
 package com.project7.localmanager;
 
-import com.project7.localmanager.BsonLite;
 import com.project7.localmanager.LocalResourceEngine;
 import com.project7.localmanager.LocalTutorialStore;
 import java.util.ArrayList;
@@ -8,7 +7,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 
 /* loaded from: classes.dex */
 final class LocalStoryProgressDelivery {
@@ -17,38 +15,29 @@ final class LocalStoryProgressDelivery {
 
     static String key(LocalResourceEngine.Reply reply) {
         String str;
-        if ("syncDaerweilaLineData".equals(reply.method) || "daerweilaDispatchClose".equals(reply.method)) {
-            return reply.method;
-        }
-        if (!"addCenterConfidence".equals(reply.method) && !"syncSailafeimuLineData".equals(reply.method) && !"syncBaiyuInfos".equals(reply.method) && !"syncYisakeVal".equals(reply.method) && !"syncStoryGeneralValue".equals(reply.method)) {
-            if ("syncFlashbackData".equals(reply.method) || "enterFlashback".equals(reply.method)) {
+        if (!"addCenterConfidence".equals(reply.method) && !"syncSailafeimuLineData".equals(reply.method) && !"syncBaiyuInfos".equals(reply.method) && !"syncYisakeVal".equals(reply.method) && !"openYumiYaocaoyuan".equals(reply.method) && !"get_all_area_info_reply".equals(reply.method) && !"syncRoute".equals(reply.method) && !"syncProgInfo".equals(reply.method)) {
+            if ("syncAllNote".equals(reply.method) || "syncHeroMgrData".equals(reply.method)) {
                 return reply.method;
             }
-            if (!"openYumiYaocaoyuan".equals(reply.method) && !"get_all_area_info_reply".equals(reply.method) && !"syncRoute".equals(reply.method) && !"syncProgInfo".equals(reply.method)) {
-                if ("syncAllNote".equals(reply.method) || "syncHeroMgrData".equals(reply.method)) {
-                    return reply.method;
-                }
-                if (!"updateItems".equals(reply.method) && !"deleteItems".equals(reply.method)) {
-                    if ("syncOneSocialMsg".equals(reply.method) || "syncOnePrivateMsg".equals(reply.method)) {
-                        return reply.method + ":" + LocalResourceEngine.value(reply.parameters, "id");
-                    }
-                    for (String[] strArr : LocalStoryClueEngine.FIELDS) {
-                        if ("g".equals(strArr[0])) {
-                            str = "syncClueInfo";
-                        } else if ("w".equals(strArr[0])) {
-                            str = "syncWuluLineData";
-                        } else {
-                            str = "j".equals(strArr[0]) ? "syncJiaohuiLineData" : "a".equals(strArr[0]) ? "syncAlanLineData" : "syncDaerweilaClueData";
-                        }
-                        if (str.equals(reply.method)) {
-                            return str;
-                        }
-                    }
-                    return null;
-                }
+            if ("updateItems".equals(reply.method)) {
                 return reply.method;
             }
-            return reply.method;
+            if ("syncOneSocialMsg".equals(reply.method) || "syncOnePrivateMsg".equals(reply.method)) {
+                return reply.method + ":" + LocalResourceEngine.value(reply.parameters, "id");
+            }
+            for (String[] strArr : LocalStoryClueEngine.FIELDS) {
+                if ("g".equals(strArr[0])) {
+                    str = "syncClueInfo";
+                } else if ("w".equals(strArr[0])) {
+                    str = "syncWuluLineData";
+                } else {
+                    str = "j".equals(strArr[0]) ? "syncJiaohuiLineData" : "a".equals(strArr[0]) ? "syncAlanLineData" : "syncDaerweilaClueData";
+                }
+                if (str.equals(reply.method)) {
+                    return str;
+                }
+            }
+            return null;
         }
         return reply.method;
     }
@@ -84,26 +73,6 @@ final class LocalStoryProgressDelivery {
                                 linkedHashMap.put(BsonLite.uuidValue(bArr3, "u"), bArr3);
                             }
                             bArr = BsonLite.document("i", new ArrayList(linkedHashMap.values()), "receipt", result.inventoryDeliveryId);
-                        }
-                        if ("deleteItems".equals(key)) {
-                            LinkedHashSet linkedHashSet = new LinkedHashSet();
-                            Iterator it = Arrays.asList(LocalResourceEngine.doc(doc, key), bArr).iterator();
-                            while (it.hasNext()) {
-                                byte[] doc2 = LocalResourceEngine.doc((byte[]) it.next(), "i");
-                                Iterator<String> it2 = BsonLite.keys(doc2).iterator();
-                                while (it2.hasNext()) {
-                                    String uuidValue = BsonLite.uuidValue(doc2, it2.next());
-                                    if (uuidValue != null) {
-                                        linkedHashSet.add(uuidValue);
-                                    }
-                                }
-                            }
-                            ArrayList arrayList = new ArrayList();
-                            Iterator it3 = linkedHashSet.iterator();
-                            while (it3.hasNext()) {
-                                arrayList.add(new BsonLite.UuidValue((String) it3.next()));
-                            }
-                            bArr = BsonLite.document("i", arrayList);
                         }
                         if ("addCenterConfidence".equals(key)) {
                             byte[] documentValue2 = BsonLite.documentValue(doc, key);
@@ -145,17 +114,6 @@ final class LocalStoryProgressDelivery {
                 doc = LocalYisakeStoryEngine.payload(result.profile, BsonLite.documentValue(doc2, str));
                 if (doc == null) {
                 }
-            } else if (str2.equals("syncStoryGeneralValue")) {
-                try {
-                    doc = BsonLite.document("v", Integer.valueOf(LocalStoryGeneralEngine.value(result.profile)));
-                } catch (IllegalArgumentException e) {
-                }
-            } else if (str2.equals("syncFlashbackData")) {
-                doc = BsonLite.document("d", LocalFlashbackEngine.snapshot(result.profile));
-            } else if (str2.equals("enterFlashback")) {
-                if (Boolean.TRUE.equals(BsonLite.boolValue(LocalResourceEngine.doc(result.profile, "std"), "ff"))) {
-                    doc = BsonLite.EMPTY_DOCUMENT;
-                }
             } else if (str2.equals("syncBaiyuInfos")) {
                 doc = LocalWingStoryEngine.payload(result.profile, BsonLite.documentValue(doc2, str));
                 if (doc == null) {
@@ -164,8 +122,6 @@ final class LocalStoryProgressDelivery {
                 doc = LocalWingGardenEngine.payload(result.profile, BsonLite.documentValue(doc2, str));
                 if (doc == null) {
                 }
-            } else if (str2.equals("deleteItems")) {
-                doc = LocalResourceEngine.doc(doc2, str);
             } else if (str2.equals("updateItems")) {
                 HashSet hashSet = new HashSet();
                 Iterator<byte[]> it = LocalResourceEngine.array(LocalResourceEngine.doc(LocalResourceEngine.doc(doc2, str), "i")).iterator();
@@ -203,22 +159,16 @@ final class LocalStoryProgressDelivery {
                     bArr2 = BsonLite.withPatrolProgress(bArr2, progress);
                 }
                 doc = BsonLite.document("d", LocalResourceEngine.doc(bArr2, "heromgr"));
-            } else if (str2.equals("syncDaerweilaLineData")) {
-                LocalResourceEngine.Result result3 = new LocalResourceEngine.Result(result.profile);
-                LocalDalviraStoryEngine.sync(result3);
-                doc = result3.replies.get(0).parameters;
-            } else if (str2.equals("daerweilaDispatchClose")) {
-                doc = LocalDalviraStoryEngine.close(result.profile);
             } else if (str2.equals("get_all_area_info_reply")) {
                 doc = BsonLite.allAreaInfoReplyDocument(true, progress, result.profile);
             } else {
-                LocalResourceEngine.Result result4 = new LocalResourceEngine.Result(result.profile);
-                LocalServiceEngine.syncRoute(result4);
+                LocalResourceEngine.Result result3 = new LocalResourceEngine.Result(result.profile);
+                LocalServiceEngine.syncRoute(result3);
                 for (String[] strArr : LocalStoryClueEngine.FIELDS) {
-                    LocalStoryClueEngine.sync(result4, strArr[0]);
+                    LocalStoryClueEngine.sync(result3, strArr[0]);
                 }
                 LocalResourceEngine.Reply reply2 = null;
-                for (LocalResourceEngine.Reply reply3 : result4.replies) {
+                for (LocalResourceEngine.Reply reply3 : result3.replies) {
                     if (reply3.method.equals(str2)) {
                         reply2 = reply3;
                     }

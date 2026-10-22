@@ -7,7 +7,7 @@ import java.util.Set;
 
 /* loaded from: classes.dex */
 final class LocalStoryEntryPolicy {
-    static final Set<Integer> SUPPORTED = Collections.unmodifiableSet(new LinkedHashSet(Arrays.asList(1, 2, 3, 5, 6, 9, 11, 13, 32)));
+    static final Set<Integer> SUPPORTED = Collections.unmodifiableSet(new LinkedHashSet(Arrays.asList(1, 2, 3, 5, 6, 11, 13)));
 
     LocalStoryEntryPolicy() {
     }

@@ -18,8 +18,6 @@ import java.util.TreeSet;
 
 /* loaded from: classes.dex */
 final class LocalCombatCatalog {
-    private static final String[] LEVEL_BASE = {"_base_max_hp", "_base_phy_att_str", "_base_mag_att_str", "_base_phy_def", "_base_mag_def"};
-    private static final String[] LEVEL_DELTA = {"_hp_delta", "_phy_str_delta", "_mag_str_delta", "_phy_def_delta", "_mag_def_delta"};
     private final Map<String, Map<String, Double>> attributes;
     private LocalFeatureCatalog growthRules;
     private LocalFeatureCatalog homeRules;
@@ -239,57 +237,13 @@ final class LocalCombatCatalog {
         return linkedHashMap;
     }
 
-    Map<String, Double> leveledAttributesFor(int i, int i2, int i3, byte[] bArr, int i4) {
-        LinkedHashMap linkedHashMap = new LinkedHashMap(attributesFor(i, i2, i3, bArr, i4));
-        LocalFeatureCatalog localFeatureCatalog = this.growthRules;
-        byte[] bArr2 = null;
-        byte[] bArr3 = localFeatureCatalog == null ? null : localFeatureCatalog.get("CSF", Integer.valueOf(i));
-        LocalFeatureCatalog localFeatureCatalog2 = this.growthRules;
-        if (localFeatureCatalog2 != null) {
-            bArr2 = localFeatureCatalog2.get("CSD", i2 + ":" + i3);
-        }
-        if (bArr3 == null || bArr2 == null) {
-            return linkedHashMap;
-        }
-        int i5 = 0;
-        while (true) {
-            String[] strArr = LEVEL_BASE;
-            if (i5 < strArr.length) {
-                Number numericValue = BsonLite.numericValue(bArr2, LEVEL_DELTA[i5]);
-                Number numericValue2 = BsonLite.numericValue(bArr3, strArr[i5]);
-                if (numericValue != null && numericValue2 != null) {
-                    double max = (Math.max(1, i4) - 1.0d) * numericValue.doubleValue() * numericValue2.doubleValue();
-                    if (Double.isFinite(max)) {
-                        linkedHashMap.put(strArr[i5], Double.valueOf(((Double) linkedHashMap.getOrDefault(strArr[i5], Double.valueOf(0.0d))).doubleValue() + max));
-                    }
-                }
-                i5++;
-            } else {
-                return linkedHashMap;
-            }
-        }
-    }
-
-    static Map<String, Double> roomInputFor(Map<String, Double> map, int i) {
-        LinkedHashMap linkedHashMap = new LinkedHashMap(map);
-        int i2 = 0;
-        while (true) {
-            String[] strArr = LEVEL_BASE;
-            if (i2 < strArr.length) {
-                linkedHashMap.put(strArr[i2], Double.valueOf(((Double) linkedHashMap.getOrDefault(strArr[i2], Double.valueOf(0.0d))).doubleValue() + ((Math.max(1, i) - 1.0d) * map.getOrDefault(LEVEL_DELTA[i2], Double.valueOf(0.0d)).doubleValue())));
-                i2++;
-            } else {
-                return linkedHashMap;
-            }
-        }
-    }
-
     Map<String, Double> attributesFor(int i, int i2, int i3, byte[] bArr, int i4, byte[] bArr2) {
-        Map<String, Double> leveledAttributesFor = leveledAttributesFor(i, i2, i3, bArr, i4);
-        for (Map.Entry<String, Double> entry : roomAttributesFor(i, bArr2, roomInputFor(leveledAttributesFor, i4)).entrySet()) {
-            leveledAttributesFor.put(entry.getKey(), Double.valueOf(leveledAttributesFor.getOrDefault(entry.getKey(), Double.valueOf(0.0d)).doubleValue() + entry.getValue().doubleValue()));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(attributesFor(i, i2, i3, bArr, i4));
+        LocalTreasureAttr.merge(linkedHashMap, bArr);
+        for (Map.Entry<String, Double> entry : roomAttributesFor(i, bArr2, linkedHashMap).entrySet()) {
+            linkedHashMap.put(entry.getKey(), Double.valueOf(linkedHashMap.getOrDefault(entry.getKey(), Double.valueOf(0.0d)).doubleValue() + entry.getValue().doubleValue()));
         }
-        return leveledAttributesFor;
+        return linkedHashMap;
     }
 
     int awakeStage(int i, byte[] bArr) {
@@ -447,61 +401,21 @@ final class LocalCombatCatalog {
         return linkedHashMap;
     }
 
-    Map<String, Double> attributesFor(int i, int i2, int i3, byte[] bArr, int i4) {
-        LinkedHashMap linkedHashMap = new LinkedHashMap(attributesFor(i, i2, i3));
-        for (Map.Entry<String, Double> entry : artifactAttributesFor(i, bArr).entrySet()) {
-            linkedHashMap.put(entry.getKey(), Double.valueOf(((Double) linkedHashMap.getOrDefault(entry.getKey(), Double.valueOf(0.0d))).doubleValue() + entry.getValue().doubleValue()));
-        }
-        LocalFeatureCatalog localFeatureCatalog = this.growthRules;
-        if (localFeatureCatalog != null) {
-            if (localFeatureCatalog.get("LB", i + ":1") != null) {
-                int value = LocalResourceEngine.value(bArr, "ls");
-                if (value >= 0) {
-                    if (value <= 4) {
-                        byte[] bArr2 = this.growthRules.get("LB", i + ":" + (value + 1));
-                        int value2 = bArr2 == null ? 100 : LocalResourceEngine.value(bArr2, "lv_max");
-                        if (i4 > 0) {
-                            int value3 = LocalResourceEngine.value(this.growthRules.get("LB", i + ":1"), "lv_max");
-                            int i5 = 1;
-                            for (int i6 = 4; i5 <= i6; i6 = 4) {
-                                byte[] bArr3 = this.growthRules.get("LB", i + ":" + i5);
-                                if (bArr3 != null && i4 >= LocalResourceEngine.value(bArr3, "lv_require")) {
-                                    value3 = Math.max(value3, LocalResourceEngine.value(this.growthRules.get("LB", i + ":" + (i5 + 1)), "lv_max"));
-                                }
-                                i5++;
-                            }
-                            value2 = Math.min(value2, value3);
-                        }
-                        LinkedHashMap linkedHashMap2 = new LinkedHashMap(linkedHashMap);
-                        String[] strArr = {"lh", "la", "ld"};
-                        boolean equals = Boolean.TRUE.equals(BsonLite.boolValue(this.growthRules.get("AH", Integer.valueOf(i)), "physical"));
-                        String[][] strArr2 = new String[3][];
-                        strArr2[0] = new String[]{"_base_max_hp"};
-                        String[] strArr3 = new String[1];
-                        strArr3[0] = equals ? "_base_phy_att_str" : "_base_mag_att_str";
-                        strArr2[1] = strArr3;
-                        strArr2[2] = new String[]{"_base_phy_def", "_base_mag_def"};
-                        int i7 = 0;
-                        for (int i8 = 3; i7 < i8; i8 = 3) {
-                            int value4 = LocalResourceEngine.value(bArr, strArr[i7]);
-                            if (value4 >= 0) {
-                                byte[] bArr4 = this.growthRules.get("LA", Integer.valueOf(Math.min(LocalHeroLiberateEngine.level(this.growthRules, value4), value2)));
-                                for (String str : strArr2[i7]) {
-                                    Number numericValue = BsonLite.numericValue(bArr4, str);
-                                    if (numericValue != null && numericValue.doubleValue() != 0.0d) {
-                                        linkedHashMap2.put(str, Double.valueOf(((Double) linkedHashMap2.getOrDefault(str, Double.valueOf(0.0d))).doubleValue() + numericValue.doubleValue()));
-                                    }
-                                }
-                            }
-                            i7++;
-                        }
-                        return linkedHashMap2;
-                    }
-                }
-                return linkedHashMap;
-            }
-        }
-        return linkedHashMap;
+    /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor
+        jadx.core.utils.exceptions.JadxRuntimeException: Found unreachable blocks
+        	at jadx.core.dex.visitors.blocks.DominatorTree.sortBlocks(DominatorTree.java:34)
+        	at jadx.core.dex.visitors.blocks.DominatorTree.compute(DominatorTree.java:24)
+        	at jadx.core.dex.visitors.blocks.BlockProcessor.computeDominators(BlockProcessor.java:252)
+        	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:55)
+        	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:49)
+        */
+    /* JADX WARN: Unreachable blocks removed: 1, instructions: 9 */
+    java.util.Map<java.lang.String, java.lang.Double> attributesFor(int r22, int r23, int r24, byte[] r25, int r26) {
+        /*
+            Method dump skipped, instructions count: 455
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.project7.localmanager.LocalCombatCatalog.attributesFor(int, int, int, byte[], int):java.util.Map");
     }
 
     int storyMonsterLevel(int i, int i2) {

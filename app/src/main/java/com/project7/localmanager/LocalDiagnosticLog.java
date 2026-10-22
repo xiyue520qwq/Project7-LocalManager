@@ -247,27 +247,27 @@ final class LocalDiagnosticLog {
     }
 
     /* renamed from: i */
-    static int m14i(String str, String str2) {
+    static int m16i(String str, String str2) {
         return log("I", str, str2, null);
     }
 
     /* renamed from: w */
-    static int m15w(String str, String str2) {
+    static int m17w(String str, String str2) {
         return log("W", str, str2, null);
     }
 
     /* renamed from: w */
-    static int m16w(String str, String str2, Throwable th) {
+    static int m18w(String str, String str2, Throwable th) {
         return log("W", str, str2, th);
     }
 
     /* renamed from: e */
-    static int m12e(String str, String str2) {
+    static int m14e(String str, String str2) {
         return log("E", str, str2, null);
     }
 
     /* renamed from: e */
-    static int m13e(String str, String str2, Throwable th) {
+    static int m15e(String str, String str2, Throwable th) {
         return log("E", str, str2, th);
     }
 }

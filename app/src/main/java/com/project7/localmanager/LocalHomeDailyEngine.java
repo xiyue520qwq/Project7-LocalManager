@@ -273,7 +273,7 @@ final class LocalHomeDailyEngine {
             if (z3) {
             }
         } catch (ArithmeticException | IllegalArgumentException e) {
-            LocalDiagnosticLog.m14i("Project7Gateway", "Home daily preserved reason=" + e.getMessage());
+            LocalDiagnosticLog.m16i("Project7Gateway", "Home daily preserved reason=" + e.getMessage());
             return bArr;
         }
     }

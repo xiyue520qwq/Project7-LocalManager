@@ -2433,6 +2433,8 @@
     .line 59
     :cond_1b
     :goto_d
+    const v3, 0x7fffffff
+
     if-lt v3, v7, :cond_1c
 
     const/4 v2, 0x1

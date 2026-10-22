@@ -17,7 +17,7 @@ final class LocalWingDrugEngine {
     }
 
     /* renamed from: d */
-    static byte[] m88d(byte[] bArr, String str) {
+    static byte[] m84d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
@@ -48,12 +48,12 @@ final class LocalWingDrugEngine {
                     return failure(bArr, str, intValue, 1);
                 }
                 byte[] policy = LocalWingOperationLedger.policy(localEventCatalog);
-                byte[] m88d = m88d(result.profile, "std");
+                byte[] m84d = m84d(result.profile, "std");
                 boolean equals = str.equals(METHODS[0]);
-                Integer intValue2 = BsonLite.intValue(m88d, equals ? "ycn" : intValue.intValue() == 1 ? "byn" : "hyn");
+                Integer intValue2 = BsonLite.intValue(m84d, equals ? "ycn" : intValue.intValue() == 1 ? "byn" : "hyn");
                 if (intValue2 != null) {
                     if (intValue2.intValue() >= (equals ? localEventCatalog.wingDrugs[0] : 1)) {
-                        int intValue3 = BsonLite.intValue(m88d, "byv").intValue();
+                        int intValue3 = BsonLite.intValue(m84d, "byv").intValue();
                         result.profile = LocalWingOperationLedger.migrate(result.profile, localEventCatalog);
                         byte[] bArr3 = result.profile;
                         String str2 = "make";
@@ -62,11 +62,11 @@ final class LocalWingDrugEngine {
                         if (!equals) {
                             str2 = "consume";
                         }
-                        result.profile = LocalWingOperationLedger.append(bArr3, str3, intValue4, LocalWingOperationLedger.drugDelta(policy, str2, intValue.intValue()), BsonLite.intValue(m88d(result.profile, "weeknum"), "d").intValue(), null);
+                        result.profile = LocalWingOperationLedger.append(bArr3, str3, intValue4, LocalWingOperationLedger.drugDelta(policy, str2, intValue.intValue()), BsonLite.intValue(m84d(result.profile, "weeknum"), "d").intValue(), null);
                         if (LocalWingOperationLedger.validate(result.profile) == null) {
                             return failure(bArr, str, intValue, 1);
                         }
-                        byte[] snapshot = LocalWingStoryEngine.snapshot(m88d(result.profile, "std"));
+                        byte[] snapshot = LocalWingStoryEngine.snapshot(m84d(result.profile, "std"));
                         result.replies.removeIf(new Predicate() { // from class: com.project7.localmanager.LocalWingDrugEngine$$ExternalSyntheticLambda0
                             @Override // java.util.function.Predicate
                             public final boolean test(Object obj) {

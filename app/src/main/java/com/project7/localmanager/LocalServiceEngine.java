@@ -797,7 +797,7 @@ final class LocalServiceEngine {
     }
 
     static boolean handles(String str) {
-        return "requestFlashbackIncDay".equals(str) || "dailyPureChooseHero".equals(str) || "requestRecoverJingshenli".equals(str) || "readPendingNote".equals(str) || LocalStoryClueEngine.handles(str) || "daerweilaFirstChooseAsazile".equals(str) || "readPlayerNote".equals(str) || "readPrivateMsg".equals(str) || "readSocialMsg".equals(str) || "replyPrivateMsg".equals(str) || "delDestroyBuilding".equals(str) || "triggerSocialMsgEvent".equals(str);
+        return "requestRecoverJingshenli".equals(str) || "readPendingNote".equals(str) || LocalStoryClueEngine.handles(str) || "readPlayerNote".equals(str) || "readPrivateMsg".equals(str) || "readSocialMsg".equals(str) || "replyPrivateMsg".equals(str) || "delDestroyBuilding".equals(str) || "triggerSocialMsgEvent".equals(str);
     }
 
     static LocalResourceEngine.Result apply(byte[] bArr, String str, byte[] bArr2) {

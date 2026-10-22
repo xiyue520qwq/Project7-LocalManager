@@ -14,12 +14,12 @@ final class LocalAchievementEngine {
     }
 
     /* renamed from: v */
-    static int m1v(byte[] bArr, String str) {
+    static int m5v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
     /* renamed from: d */
-    static byte[] m0d(byte[] bArr, String str) {
+    static byte[] m4d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
@@ -30,12 +30,12 @@ final class LocalAchievementEngine {
         int i;
         byte[] bArr3 = bArr;
         String str3 = "amd";
-        byte[] m0d = m0d(bArr3, "amd");
-        byte[] m0d2 = m0d(bArr3, "amd");
+        byte[] m4d = m4d(bArr3, "amd");
+        byte[] m4d2 = m4d(bArr3, "amd");
         String str4 = "is";
-        byte[] m0d3 = m0d(m0d2, "is");
+        byte[] m4d3 = m4d(m4d2, "is");
         String str5 = "he";
-        ArrayList arrayList = new ArrayList(BsonLite.intArrayValues(m0d2, "he"));
+        ArrayList arrayList = new ArrayList(BsonLite.intArrayValues(m4d2, "he"));
         Iterator<Map.Entry<String, byte[]>> it = localFeatureCatalog.entries.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<String, byte[]> next = it.next();
@@ -47,10 +47,10 @@ final class LocalAchievementEngine {
             }
             if (next.getKey().startsWith("A:")) {
                 byte[] value = next.getValue();
-                int m1v = m1v(value, "hero");
+                int m5v = m5v(value, "hero");
                 int parseInt2 = Integer.parseInt(next.getKey().substring(2));
-                if (LocalResourceEngine.ownsHero(bArr3, m1v)) {
-                    List<byte[]> array = LocalResourceEngine.array(m0d(m0d3, Integer.toString(m1v)));
+                if (LocalResourceEngine.ownsHero(bArr3, m5v)) {
+                    List<byte[]> array = LocalResourceEngine.array(m4d(m4d3, Integer.toString(m5v)));
                     int i2 = 0;
                     while (true) {
                         str = "id";
@@ -58,7 +58,7 @@ final class LocalAchievementEngine {
                             i2 = -1;
                             break;
                         }
-                        if (m1v(array.get(i2), "id") == parseInt2) {
+                        if (m5v(array.get(i2), "id") == parseInt2) {
                             break;
                         }
                         i2++;
@@ -67,45 +67,45 @@ final class LocalAchievementEngine {
                     String str6 = str3;
                     byte[] document = i2 < 0 ? BsonLite.document("id", Integer.valueOf(parseInt2), "fi", false, "r", false, "cl", Collections.emptyList()) : array.get(i2);
                     ArrayList arrayList2 = new ArrayList();
-                    byte[] bArr4 = m0d;
-                    Map<Integer, Integer> pairs = LocalAccountFeatures.pairs(m0d(document, "cl"));
+                    byte[] bArr4 = m4d;
+                    Map<Integer, Integer> pairs = LocalAccountFeatures.pairs(m4d(document, "cl"));
                     ArrayList arrayList3 = arrayList;
-                    Iterator<byte[]> it3 = LocalResourceEngine.array(m0d(value, "targets")).iterator();
+                    Iterator<byte[]> it3 = LocalResourceEngine.array(m4d(value, "targets")).iterator();
                     boolean z = true;
                     while (it3.hasNext()) {
                         Iterator<byte[]> it4 = it3;
                         byte[] next2 = it3.next();
-                        int m1v2 = m1v(next2, str);
+                        int m5v2 = m5v(next2, str);
                         String str7 = str5;
-                        int m1v3 = m1v(next2, "n");
-                        byte[] bArr5 = m0d2;
-                        int intValue = pairs.containsKey(Integer.valueOf(m1v2)) ? pairs.get(Integer.valueOf(m1v2)).intValue() : 0;
+                        int m5v3 = m5v(next2, "n");
+                        byte[] bArr5 = m4d2;
+                        int intValue = pairs.containsKey(Integer.valueOf(m5v2)) ? pairs.get(Integer.valueOf(m5v2)).intValue() : 0;
                         Map<Integer, Integer> map = pairs;
-                        byte[] m0d4 = m0d(next2, "rule");
-                        byte[] profileHeroDocument = BsonLite.profileHeroDocument(bArr3, m1v);
+                        byte[] m4d4 = m4d(next2, "rule");
+                        byte[] profileHeroDocument = BsonLite.profileHeroDocument(bArr3, m5v);
                         String str8 = str4;
-                        if (m1v(m0d4, "openArtifact") != 0) {
-                            bArr2 = m0d3;
+                        if (m5v(m4d4, "openArtifact") != 0) {
+                            bArr2 = m4d3;
                             if (Boolean.TRUE.equals(BsonLite.boolValue(profileHeroDocument, "oa"))) {
                                 intValue = Math.max(intValue, 1);
                             }
                         } else {
-                            bArr2 = m0d3;
+                            bArr2 = m4d3;
                         }
-                        if (m1v(m0d4, "hero_clear") != 0 && Boolean.TRUE.equals(BsonLite.boolValue(profileHeroDocument, "fd"))) {
+                        if (m5v(m4d4, "hero_clear") != 0 && Boolean.TRUE.equals(BsonLite.boolValue(profileHeroDocument, "fd"))) {
                             intValue = Math.max(intValue, 1);
                         }
-                        if (m1v(m0d4, "hero_test") != 0 && Boolean.TRUE.equals(BsonLite.boolValue(profileHeroDocument, "pt"))) {
+                        if (m5v(m4d4, "hero_test") != 0 && Boolean.TRUE.equals(BsonLite.boolValue(profileHeroDocument, "pt"))) {
                             intValue = Math.max(intValue, 1);
                         }
-                        if (m1v(m0d4, "finishWeekend") != 0) {
-                            intValue = Math.max(intValue, m1v(m0d(bArr3, "weeknum"), "w"));
+                        if (m5v(m4d4, "finishWeekend") != 0) {
+                            intValue = Math.max(intValue, m5v(m4d(bArr3, "weeknum"), "w"));
                         }
-                        if (m1v(m0d4, "money") != 0) {
-                            intValue = Math.max(intValue, m1v(bArr3, "money"));
+                        if (m5v(m4d4, "money") != 0) {
+                            intValue = Math.max(intValue, m5v(bArr3, "money"));
                         }
-                        if (m1v(m0d4, "getHeroes") != 0 || !BsonLite.intArrayValues(m0d4, "getHeroes").isEmpty()) {
-                            Iterator<Integer> it5 = BsonLite.intArrayValues(m0d4, "getHeroes").iterator();
+                        if (m5v(m4d4, "getHeroes") != 0 || !BsonLite.intArrayValues(m4d4, "getHeroes").isEmpty()) {
+                            Iterator<Integer> it5 = BsonLite.intArrayValues(m4d4, "getHeroes").iterator();
                             int i3 = 0;
                             while (it5.hasNext()) {
                                 Iterator<Integer> it6 = it5;
@@ -116,21 +116,21 @@ final class LocalAchievementEngine {
                             }
                             intValue = Math.max(intValue, i3);
                         }
-                        if (m1v(m0d4, "hasFashion") != 0) {
-                            intValue = Math.max(intValue, BsonLite.keys(m0d(profileHeroDocument, "sk")).size());
+                        if (m5v(m4d4, "hasFashion") != 0) {
+                            intValue = Math.max(intValue, BsonLite.keys(m4d(profileHeroDocument, "sk")).size());
                         }
-                        List<Integer> intArrayValues = BsonLite.intArrayValues(m0d4, "treasure");
+                        List<Integer> intArrayValues = BsonLite.intArrayValues(m4d4, "treasure");
                         if (!intArrayValues.isEmpty()) {
-                            Iterator<byte[]> it7 = LocalResourceEngine.array(m0d(m0d(profileHeroDocument, "ti"), "items")).iterator();
+                            Iterator<byte[]> it7 = LocalResourceEngine.array(m4d(m4d(profileHeroDocument, "ti"), "items")).iterator();
                             while (it7.hasNext()) {
                                 byte[] next3 = it7.next();
                                 Iterator<byte[]> it8 = it7;
-                                int i4 = m1v;
-                                if (m1v(next3, "i") == intArrayValues.get(0).intValue()) {
+                                int i4 = m5v;
+                                if (m5v(next3, "i") == intArrayValues.get(0).intValue()) {
                                     if (intArrayValues.size() >= 2) {
-                                        int m1v4 = m1v(m0d(next3, "tr"), "cl");
+                                        int m5v4 = m5v(m4d(next3, "tr"), "cl");
                                         i = 1;
-                                        if (m1v4 != intArrayValues.get(1).intValue()) {
+                                        if (m5v4 != intArrayValues.get(1).intValue()) {
                                         }
                                     } else {
                                         i = 1;
@@ -138,19 +138,19 @@ final class LocalAchievementEngine {
                                     intValue = Math.max(intValue, i);
                                 }
                                 it7 = it8;
-                                m1v = i4;
+                                m5v = i4;
                             }
                         }
-                        int i5 = m1v;
-                        if (m1v(m0d4, "cityBuilding") != 0) {
-                            Iterator<byte[]> it9 = BsonLite.documentEntries(m0d(m0d(bArr3, "city"), "areas")).values().iterator();
+                        int i5 = m5v;
+                        if (m5v(m4d4, "cityBuilding") != 0) {
+                            Iterator<byte[]> it9 = BsonLite.documentEntries(m4d(m4d(bArr3, "city"), "areas")).values().iterator();
                             int i6 = 0;
                             while (it9.hasNext()) {
                                 Iterator<byte[]> it10 = it9;
-                                Iterator<byte[]> it11 = BsonLite.documentEntries(m0d(it9.next(), "bd")).values().iterator();
+                                Iterator<byte[]> it11 = BsonLite.documentEntries(m4d(it9.next(), "bd")).values().iterator();
                                 while (it11.hasNext()) {
                                     Iterator<byte[]> it12 = it11;
-                                    if (m1v(it11.next(), str) == m1v(m0d4, "cityBuilding")) {
+                                    if (m5v(it11.next(), str) == m5v(m4d4, "cityBuilding")) {
                                         i6++;
                                     }
                                     it11 = it12;
@@ -159,7 +159,7 @@ final class LocalAchievementEngine {
                             }
                             intValue = Math.max(intValue, i6);
                         }
-                        List<Integer> intArrayValues2 = BsonLite.intArrayValues(m0d4, "finish_event");
+                        List<Integer> intArrayValues2 = BsonLite.intArrayValues(m4d4, "finish_event");
                         if (intArrayValues2.isEmpty()) {
                             str2 = str;
                         } else {
@@ -167,31 +167,31 @@ final class LocalAchievementEngine {
                             boolean z2 = true;
                             while (it13.hasNext()) {
                                 int intValue2 = it13.next().intValue();
-                                z2 &= Boolean.TRUE.equals(BsonLite.boolValue(m0d(bArr3, "q7effects"), "c" + intValue2));
+                                z2 &= Boolean.TRUE.equals(BsonLite.boolValue(m4d(bArr3, "q7effects"), "c" + intValue2));
                                 it13 = it13;
                                 str = str;
                             }
                             str2 = str;
                             if (z2) {
-                                intValue = Math.max(intValue, 1);
+                                Math.max(intValue, 1);
                             }
                         }
-                        z &= intValue >= m1v3;
-                        arrayList2.add(Arrays.asList(Integer.valueOf(m1v2), Integer.valueOf(intValue)));
+                        z &= Integer.MAX_VALUE >= m5v3;
+                        arrayList2.add(Arrays.asList(Integer.valueOf(m5v2), Integer.MAX_VALUE));
                         it3 = it4;
                         str5 = str7;
-                        m0d2 = bArr5;
+                        m4d2 = bArr5;
                         pairs = map;
                         str4 = str8;
-                        m0d3 = bArr2;
-                        m1v = i5;
+                        m4d3 = bArr2;
+                        m5v = i5;
                         str = str2;
                     }
-                    byte[] bArr6 = m0d2;
+                    byte[] bArr6 = m4d2;
                     String str9 = str4;
-                    byte[] bArr7 = m0d3;
+                    byte[] bArr7 = m4d3;
                     String str10 = str5;
-                    int i7 = m1v;
+                    int i7 = m5v;
                     byte[] withProfileArray = BsonLite.withProfileArray(document, "cl", arrayList2);
                     if (z) {
                         withProfileArray = BsonLite.withProfileBool(withProfileArray, "fi", true);
@@ -201,31 +201,31 @@ final class LocalAchievementEngine {
                     } else {
                         array.set(i2, withProfileArray);
                     }
-                    m0d3 = BsonLite.withProfileArray(bArr7, Integer.toString(i7), array);
+                    m4d3 = BsonLite.withProfileArray(bArr7, Integer.toString(i7), array);
                     it = it2;
                     str3 = str6;
                     arrayList = arrayList3;
-                    m0d = bArr4;
+                    m4d = bArr4;
                     str5 = str10;
-                    m0d2 = bArr6;
+                    m4d2 = bArr6;
                     str4 = str9;
                 }
             }
         }
         String str11 = str3;
-        byte[] bArr8 = m0d;
-        byte[] withProfileIntArray = BsonLite.withProfileIntArray(BsonLite.withProfileDocument(m0d2, str4, m0d3), str5, arrayList);
+        byte[] bArr8 = m4d;
+        byte[] withProfileIntArray = BsonLite.withProfileIntArray(BsonLite.withProfileDocument(m4d2, str4, m4d3), str5, arrayList);
         if (BsonLite.documentValue(withProfileIntArray, "er") == null) {
             withProfileIntArray = BsonLite.withProfileArray(withProfileIntArray, "er", Collections.emptyList());
         }
         if (!Arrays.equals(bArr8, withProfileIntArray)) {
             bArr3 = BsonLite.withProfileDocument(bArr3, str11, withProfileIntArray);
         }
-        byte[] m0d5 = m0d(bArr3, "cht");
-        if (BsonLite.documentValue(m0d5, "heu") == null) {
-            m0d5 = BsonLite.withProfileArray(m0d5, "heu", Collections.singletonList("default"));
+        byte[] m4d5 = m4d(bArr3, "cht");
+        if (BsonLite.documentValue(m4d5, "heu") == null) {
+            m4d5 = BsonLite.withProfileArray(m4d5, "heu", Collections.singletonList("default"));
         }
-        return Arrays.equals(m0d(bArr3, "cht"), m0d5) ? bArr3 : BsonLite.withProfileDocument(bArr3, "cht", m0d5);
+        return Arrays.equals(m4d(bArr3, "cht"), m4d5) ? bArr3 : BsonLite.withProfileDocument(bArr3, "cht", m4d5);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:48:0x0175  */
@@ -252,28 +252,28 @@ final class LocalAchievementEngine {
         int i3;
         int i4;
         String str5;
-        byte[] m0d;
+        byte[] m4d;
         ArrayList arrayList;
-        int m1v;
+        int m5v;
         String str6 = str;
         byte[] bArr7 = bArr2;
         String str7 = "amd";
         byte[] bArr8 = bArr;
-        byte[] m0d2 = m0d(bArr8, "amd");
+        byte[] m4d2 = m4d(bArr8, "amd");
         String str8 = "is";
-        byte[] m0d3 = m0d(m0d2, "is");
+        byte[] m4d3 = m4d(m4d2, "is");
         Iterator<Map.Entry<String, byte[]>> it2 = localFeatureCatalog.entries.entrySet().iterator();
         while (it2.hasNext()) {
             Map.Entry<String, byte[]> next = it2.next();
             if (next.getKey().startsWith("A:")) {
-                int m1v2 = m1v(next.getValue(), "hero");
+                int m5v2 = m5v(next.getValue(), "hero");
                 int parseInt = Integer.parseInt(next.getKey().substring(2));
-                if (LocalResourceEngine.ownsHero(bArr8, m1v2)) {
-                    List<byte[]> array = LocalResourceEngine.array(m0d(m0d3, Integer.toString(m1v2)));
+                if (LocalResourceEngine.ownsHero(bArr8, m5v2)) {
+                    List<byte[]> array = LocalResourceEngine.array(m4d(m4d3, Integer.toString(m5v2)));
                     Iterator<byte[]> it3 = array.iterator();
                     boolean z = false;
                     while (it3.hasNext()) {
-                        if (m1v(it3.next(), "id") == parseInt) {
+                        if (m5v(it3.next(), "id") == parseInt) {
                             z = true;
                         }
                     }
@@ -291,66 +291,66 @@ final class LocalAchievementEngine {
                             break;
                         }
                         byte[] bArr9 = array.get(i5);
-                        if (m1v(bArr9, "id") == parseInt) {
+                        if (m5v(bArr9, "id") == parseInt) {
                             str2 = str7;
                             if (Boolean.TRUE.equals(BsonLite.boolValue(bArr9, str9))) {
-                                bArr4 = m0d2;
+                                bArr4 = m4d2;
                                 str3 = str8;
-                                bArr5 = m0d3;
+                                bArr5 = m4d3;
                                 i = i5;
                                 entry = next;
                                 str4 = str9;
                             } else {
-                                Map<Integer, Integer> pairs = LocalAccountFeatures.pairs(m0d(bArr9, "cl"));
+                                Map<Integer, Integer> pairs = LocalAccountFeatures.pairs(m4d(bArr9, "cl"));
                                 entry = next;
-                                Iterator<byte[]> it4 = LocalResourceEngine.array(m0d(next.getValue(), "targets")).iterator();
+                                Iterator<byte[]> it4 = LocalResourceEngine.array(m4d(next.getValue(), "targets")).iterator();
                                 byte[] bArr10 = bArr3;
                                 while (it4.hasNext()) {
                                     Iterator<byte[]> it5 = it4;
                                     byte[] next2 = it4.next();
                                     String str10 = str9;
-                                    byte[] m0d4 = m0d(next2, "rule");
-                                    byte[] bArr11 = m0d2;
+                                    byte[] m4d4 = m4d(next2, "rule");
+                                    byte[] bArr11 = m4d2;
                                     List<Integer> intArrayValues = BsonLite.intArrayValues(bArr7, "heroes");
                                     String str11 = str8;
-                                    if ("battle".equals(str6) && intArrayValues.contains(Integer.valueOf(m1v2))) {
-                                        List<Integer> intArrayValues2 = BsonLite.intArrayValues(m0d4, "andHeroBattle");
+                                    if ("battle".equals(str6) && intArrayValues.contains(Integer.valueOf(m5v2))) {
+                                        List<Integer> intArrayValues2 = BsonLite.intArrayValues(m4d4, "andHeroBattle");
                                         if (!intArrayValues2.isEmpty() && intArrayValues.containsAll(intArrayValues2)) {
                                             i2 = 1;
                                             int i6 = i2;
                                             if ("build".equals(str6)) {
-                                                bArr6 = m0d3;
+                                                bArr6 = m4d3;
                                                 i3 = i5;
                                             } else {
-                                                bArr6 = m0d3;
+                                                bArr6 = m4d3;
                                                 i3 = i5;
-                                                if (m1v(m0d4, "cityBuilding") == m1v(bArr7, "bid") && m1v(m0d4, "cityBuilding") > 0) {
+                                                if (m5v(m4d4, "cityBuilding") == m5v(bArr7, "bid") && m5v(m4d4, "cityBuilding") > 0) {
                                                     i4 = 1;
-                                                    if ("develop".equals(str6) && intArrayValues.contains(Integer.valueOf(m1v2)) && m1v(m0d4, "developLevel") == m1v(bArr7, "dlevel") && m1v(m0d4, "developLevel") > 0) {
+                                                    if ("develop".equals(str6) && intArrayValues.contains(Integer.valueOf(m5v2)) && m5v(m4d4, "developLevel") == m5v(bArr7, "dlevel") && m5v(m4d4, "developLevel") > 0) {
                                                         i4 = 1;
                                                     }
-                                                    if ("gift".equals(str6) && m1v2 == m1v(bArr7, "hero_id") && m1v(m0d4, "heroGift") > 0 && m1v(bArr7, "fri") > 5) {
-                                                        str5 = parseInt + ":" + m1v(next2, "id");
-                                                        m0d = m0d(bArr10, "q7EmojiGiftEvidence");
-                                                        arrayList = new ArrayList(BsonLite.intArrayValues(m0d, str5));
-                                                        m1v = m1v(bArr7, "itemId");
-                                                        if (m1v > 0 && !arrayList.contains(Integer.valueOf(m1v))) {
-                                                            arrayList.add(Integer.valueOf(m1v));
-                                                            bArr10 = BsonLite.withProfileDocument(bArr10, "q7EmojiGiftEvidence", BsonLite.withProfileIntArray(m0d, str5, arrayList));
+                                                    if ("gift".equals(str6) && m5v2 == m5v(bArr7, "hero_id") && m5v(m4d4, "heroGift") > 0 && m5v(bArr7, "fri") > 5) {
+                                                        str5 = parseInt + ":" + m5v(next2, "id");
+                                                        m4d = m4d(bArr10, "q7EmojiGiftEvidence");
+                                                        arrayList = new ArrayList(BsonLite.intArrayValues(m4d, str5));
+                                                        m5v = m5v(bArr7, "itemId");
+                                                        if (m5v > 0 && !arrayList.contains(Integer.valueOf(m5v))) {
+                                                            arrayList.add(Integer.valueOf(m5v));
+                                                            bArr10 = BsonLite.withProfileDocument(bArr10, "q7EmojiGiftEvidence", BsonLite.withProfileIntArray(m4d, str5, arrayList));
                                                             i4 = 1;
                                                         }
                                                     }
                                                     if (i4 > 0) {
-                                                        int m1v3 = m1v(next2, "id");
-                                                        pairs.put(Integer.valueOf(m1v3), Integer.valueOf(Math.min(m1v(next2, "n"), pairs.getOrDefault(Integer.valueOf(m1v3), 0).intValue() + i4)));
+                                                        int m5v3 = m5v(next2, "id");
+                                                        pairs.put(Integer.valueOf(m5v3), Integer.valueOf(Math.min(m5v(next2, "n"), pairs.getOrDefault(Integer.valueOf(m5v3), 0).intValue() + i4)));
                                                     }
                                                     str6 = str;
                                                     bArr7 = bArr2;
                                                     str9 = str10;
                                                     it4 = it5;
-                                                    m0d2 = bArr11;
+                                                    m4d2 = bArr11;
                                                     str8 = str11;
-                                                    m0d3 = bArr6;
+                                                    m4d3 = bArr6;
                                                     i5 = i3;
                                                 }
                                             }
@@ -359,13 +359,13 @@ final class LocalAchievementEngine {
                                                 i4 = 1;
                                             }
                                             if ("gift".equals(str6)) {
-                                                str5 = parseInt + ":" + m1v(next2, "id");
-                                                m0d = m0d(bArr10, "q7EmojiGiftEvidence");
-                                                arrayList = new ArrayList(BsonLite.intArrayValues(m0d, str5));
-                                                m1v = m1v(bArr7, "itemId");
-                                                if (m1v > 0) {
-                                                    arrayList.add(Integer.valueOf(m1v));
-                                                    bArr10 = BsonLite.withProfileDocument(bArr10, "q7EmojiGiftEvidence", BsonLite.withProfileIntArray(m0d, str5, arrayList));
+                                                str5 = parseInt + ":" + m5v(next2, "id");
+                                                m4d = m4d(bArr10, "q7EmojiGiftEvidence");
+                                                arrayList = new ArrayList(BsonLite.intArrayValues(m4d, str5));
+                                                m5v = m5v(bArr7, "itemId");
+                                                if (m5v > 0) {
+                                                    arrayList.add(Integer.valueOf(m5v));
+                                                    bArr10 = BsonLite.withProfileDocument(bArr10, "q7EmojiGiftEvidence", BsonLite.withProfileIntArray(m4d, str5, arrayList));
                                                     i4 = 1;
                                                 }
                                             }
@@ -375,9 +375,9 @@ final class LocalAchievementEngine {
                                             bArr7 = bArr2;
                                             str9 = str10;
                                             it4 = it5;
-                                            m0d2 = bArr11;
+                                            m4d2 = bArr11;
                                             str8 = str11;
-                                            m0d3 = bArr6;
+                                            m4d3 = bArr6;
                                             i5 = i3;
                                         }
                                     }
@@ -396,14 +396,14 @@ final class LocalAchievementEngine {
                                     bArr7 = bArr2;
                                     str9 = str10;
                                     it4 = it5;
-                                    m0d2 = bArr11;
+                                    m4d2 = bArr11;
                                     str8 = str11;
-                                    m0d3 = bArr6;
+                                    m4d3 = bArr6;
                                     i5 = i3;
                                 }
-                                bArr4 = m0d2;
+                                bArr4 = m4d2;
                                 str3 = str8;
-                                bArr5 = m0d3;
+                                bArr5 = m4d3;
                                 str4 = str9;
                                 i = i5;
                                 array.set(i, BsonLite.withProfileArray(bArr9, "cl", LocalAccountFeatures.pairList(pairs)));
@@ -414,15 +414,15 @@ final class LocalAchievementEngine {
                                 str7 = str2;
                                 next = entry;
                                 str9 = str4;
-                                m0d2 = bArr4;
+                                m4d2 = bArr4;
                                 str8 = str3;
-                                m0d3 = bArr5;
+                                m4d3 = bArr5;
                             }
                         } else {
                             str2 = str7;
-                            bArr4 = m0d2;
+                            bArr4 = m4d2;
                             str3 = str8;
-                            bArr5 = m0d3;
+                            bArr5 = m4d3;
                             i = i5;
                             entry = next;
                             str4 = str9;
@@ -434,26 +434,26 @@ final class LocalAchievementEngine {
                         str7 = str2;
                         next = entry;
                         str9 = str4;
-                        m0d2 = bArr4;
+                        m4d2 = bArr4;
                         str8 = str3;
-                        m0d3 = bArr5;
+                        m4d3 = bArr5;
                     }
                     String str12 = str7;
-                    byte[] bArr12 = m0d2;
+                    byte[] bArr12 = m4d2;
                     String str13 = str8;
-                    byte[] bArr13 = m0d3;
-                    m0d3 = !array.isEmpty() ? BsonLite.withProfileArray(bArr13, Integer.toString(m1v2), array) : bArr13;
+                    byte[] bArr13 = m4d3;
+                    m4d3 = !array.isEmpty() ? BsonLite.withProfileArray(bArr13, Integer.toString(m5v2), array) : bArr13;
                     bArr8 = bArr3;
                     str6 = str;
                     bArr7 = bArr2;
                     it2 = it;
                     str7 = str12;
-                    m0d2 = bArr12;
+                    m4d2 = bArr12;
                     str8 = str13;
                 }
             }
         }
-        return refresh(BsonLite.withProfileDocument(bArr8, str7, BsonLite.withProfileDocument(m0d2, str8, m0d3)), localFeatureCatalog);
+        return refresh(BsonLite.withProfileDocument(bArr8, str7, BsonLite.withProfileDocument(m4d2, str8, m4d3)), localFeatureCatalog);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -466,19 +466,19 @@ final class LocalAchievementEngine {
         String str3 = bArr;
         String str4 = "achievementRewardReply";
         LocalResourceEngine.Result result = new LocalResourceEngine.Result(str3);
-        int m1v = m1v(bArr2, "h");
+        int m5v = m5v(bArr2, "h");
         String str5 = "a";
-        int m1v2 = m1v(bArr2, "a");
+        int m5v2 = m5v(bArr2, "a");
         try {
-            byte[] bArr3 = localFeatureCatalog.get("A", Integer.valueOf(m1v2));
+            byte[] bArr3 = localFeatureCatalog.get("A", Integer.valueOf(m5v2));
             try {
-                if (bArr3 == null || m1v(bArr3, "hero") != m1v || !LocalResourceEngine.ownsHero(str3, m1v)) {
+                if (bArr3 == null || m5v(bArr3, "hero") != m5v || !LocalResourceEngine.ownsHero(str3, m5v)) {
                     throw new IllegalArgumentException("Achievement unavailable");
                 }
                 result.profile = refresh(str3, localFeatureCatalog);
-                byte[] m0d = m0d(result.profile, "amd");
-                byte[] m0d2 = m0d(m0d, "is");
-                List<byte[]> array = LocalResourceEngine.array(m0d(m0d2, Integer.toString(m1v)));
+                byte[] m4d = m4d(result.profile, "amd");
+                byte[] m4d2 = m4d(m4d, "is");
+                List<byte[]> array = LocalResourceEngine.array(m4d(m4d2, Integer.toString(m5v)));
                 int i = 0;
                 while (true) {
                     str2 = str4;
@@ -490,7 +490,7 @@ final class LocalAchievementEngine {
                         }
                         str = str5;
                         try {
-                            if (m1v(array.get(i), "id") == m1v2) {
+                            if (m5v(array.get(i), "id") == m5v2) {
                                 break;
                             }
                             i++;
@@ -499,25 +499,25 @@ final class LocalAchievementEngine {
                         } catch (ArithmeticException e) {
                             str3 = str2;
                             LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(bArr);
-                            result2.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m1v), str, 179));
+                            result2.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m5v), str, 179));
                             return result2;
                         } catch (IllegalArgumentException e2) {
                             str3 = str2;
                             LocalResourceEngine.Result result22 = new LocalResourceEngine.Result(bArr);
-                            result22.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m1v), str, 179));
+                            result22.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m5v), str, 179));
                             return result22;
                         }
                     } catch (ArithmeticException e3) {
                         str = str5;
                         str3 = str2;
                         LocalResourceEngine.Result result222 = new LocalResourceEngine.Result(bArr);
-                        result222.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m1v), str, 179));
+                        result222.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m5v), str, 179));
                         return result222;
                     } catch (IllegalArgumentException e4) {
                         str = str5;
                         str3 = str2;
                         LocalResourceEngine.Result result2222 = new LocalResourceEngine.Result(bArr);
-                        result2222.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m1v), str, 179));
+                        result2222.add(str3, BsonLite.document("r", BsonLite.EMPTY_DOCUMENT, "h", Integer.valueOf(m5v), str, 179));
                         return result2222;
                     }
                 }
@@ -525,20 +525,20 @@ final class LocalAchievementEngine {
                     if (!Boolean.TRUE.equals(BsonLite.boolValue(array.get(i), "r"))) {
                         LocalGiftEngine.reward(result, localResourceCatalog, bArr3, 1);
                         array.set(i, BsonLite.withProfileBool(array.get(i), "r", true));
-                        byte[] withProfileArray = BsonLite.withProfileArray(m0d2, Integer.toString(m1v), array);
-                        ArrayList arrayList = new ArrayList(BsonLite.intArrayValues(m0d, "he"));
-                        int m1v3 = m1v(bArr3, "icon");
-                        if (m1v3 > 0 && !arrayList.contains(Integer.valueOf(m1v3))) {
-                            arrayList.add(Integer.valueOf(m1v3));
+                        byte[] withProfileArray = BsonLite.withProfileArray(m4d2, Integer.toString(m5v), array);
+                        ArrayList arrayList = new ArrayList(BsonLite.intArrayValues(m4d, "he"));
+                        int m5v3 = m5v(bArr3, "icon");
+                        if (m5v3 > 0 && !arrayList.contains(Integer.valueOf(m5v3))) {
+                            arrayList.add(Integer.valueOf(m5v3));
                         }
-                        byte[] withProfileIntArray = BsonLite.withProfileIntArray(BsonLite.withProfileDocument(m0d, "is", withProfileArray), "he", arrayList);
-                        Map<Integer, Integer> pairs = LocalAccountFeatures.pairs(m0d(withProfileIntArray, "er"));
-                        pairs.put(Integer.valueOf(m1v), 1);
+                        byte[] withProfileIntArray = BsonLite.withProfileIntArray(BsonLite.withProfileDocument(m4d, "is", withProfileArray), "he", arrayList);
+                        Map<Integer, Integer> pairs = LocalAccountFeatures.pairs(m4d(withProfileIntArray, "er"));
+                        pairs.put(Integer.valueOf(m5v), 1);
                         byte[] withProfileArray2 = BsonLite.withProfileArray(withProfileIntArray, "er", LocalAccountFeatures.pairList(pairs));
                         result.profile = BsonLite.withProfileDocument(result.profile, "amd", withProfileArray2);
                         LocalResourceEngine.syncCurrencies(result);
                         result.add("updateAllAchievement", BsonLite.document("info", withProfileArray2));
-                        result.add(str2, BsonLite.document("r", result.reward(), "h", Integer.valueOf(m1v), str, Integer.valueOf(m1v2)));
+                        result.add(str2, BsonLite.document("r", result.reward(), "h", Integer.valueOf(m5v), str, Integer.valueOf(m5v2)));
                         return result;
                     }
                 }

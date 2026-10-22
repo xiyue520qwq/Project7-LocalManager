@@ -421,6 +421,10 @@
 
     move-result-object v0
 
+    invoke-static {v0}, Lcom/project7/localmanager/LocalArtifactFix;->fix([B)[B
+
+    move-result-object v0
+
     goto :goto_9
 
     .line 42

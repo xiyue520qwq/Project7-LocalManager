@@ -29,12 +29,12 @@ final class LocalCommunityEngine {
     }
 
     /* renamed from: d */
-    private static byte[] m5d(byte[] bArr, String str) {
+    private static byte[] m9d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    private static int m6v(byte[] bArr, String str) {
+    private static int m10v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
@@ -194,11 +194,11 @@ final class LocalCommunityEngine {
             r14 = 2;
         }
         if ("requestMainlineHttpInfo".equals(str)) {
-            int m6v = m6v(bArr4, "cmd");
-            if (m6v < 1 || m6v > 4) {
+            int m10v = m10v(bArr4, "cmd");
+            if (m10v < 1 || m10v > 4) {
                 throw new IllegalArgumentException("未知剧情评论查询");
             }
-            Iterator<byte[]> it = LocalResourceEngine.array(m5d(bArr2, "mainline")).iterator();
+            Iterator<byte[]> it = LocalResourceEngine.array(m9d(bArr2, "mainline")).iterator();
             while (true) {
                 if (!it.hasNext()) {
                     LocalResourceEngine.Result result6 = result3.player;
@@ -292,18 +292,18 @@ final class LocalCommunityEngine {
                     }
                 }
                 byte[] next = it.next();
-                if (m6v(next, "cmd") == m6v) {
+                if (m10v(next, "cmd") == m10v) {
                     Iterator<byte[]> it2 = it;
-                    if (sameQuery(m5d(next, "request"), m5d(bArr4, "d"), true)) {
+                    if (sameQuery(m9d(next, "request"), m9d(bArr4, "d"), true)) {
                         Object[] objArr5 = new Object[8];
                         objArr5[0] = "cmd";
-                        objArr5[1] = Integer.valueOf(m6v);
+                        objArr5[1] = Integer.valueOf(m10v);
                         objArr5[2] = "d";
-                        objArr5[3] = m5d(next, "response");
+                        objArr5[3] = m9d(next, "response");
                         objArr5[4] = "ud";
-                        objArr5[5] = m5d(bArr4, "d");
+                        objArr5[5] = m9d(bArr4, "d");
                         objArr5[6] = "ed";
-                        objArr5[7] = m5d(bArr4, "ed");
+                        objArr5[7] = m9d(bArr4, "ed");
                         byte[] document = BsonLite.document(objArr5);
                         LocalResourceEngine.Result result8 = result3.player;
                         Object[] objArr6 = new Object[4];
@@ -370,20 +370,20 @@ final class LocalCommunityEngine {
             }
         }
         if ("queryEventOptAsk".equals(str)) {
-            int m6v2 = m6v(bArr4, "e");
-            List<byte[]> array = LocalResourceEngine.array(m5d(m5d(bArr2, "options"), Integer.toString(m6v2)));
+            int m10v2 = m10v(bArr4, "e");
+            List<byte[]> array = LocalResourceEngine.array(m9d(m9d(bArr2, "options"), Integer.toString(m10v2)));
             Iterator<byte[]> it3 = array.iterator();
             long j = 0;
             while (it3.hasNext()) {
-                if (m6v(it3.next(), "1") < 0) {
+                if (m10v(it3.next(), "1") < 0) {
                     throw new IllegalArgumentException("Invalid cached choice counts");
                 }
-                j += m6v(r6, "1");
+                j += m10v(r6, "1");
             }
             LocalResourceEngine.Result result9 = result3.player;
             Object[] objArr7 = new Object[4];
             objArr7[0] = "e";
-            objArr7[1] = Integer.valueOf(m6v2);
+            objArr7[1] = Integer.valueOf(m10v2);
             objArr7[2] = "d";
             if (j <= 0) {
                 array = Collections.emptyList();
@@ -396,12 +396,12 @@ final class LocalCommunityEngine {
             if (!handles(str)) {
                 throw new IllegalArgumentException("未知本地论坛请求");
             }
-            int m6v3 = m6v(bArr4, "id");
-            String num = Integer.toString(m6v3);
-            byte[] m5d = m5d(bArr, "sd");
-            byte[] m5d2 = m5d(m5d, "sm");
-            byte[] documentValue = BsonLite.documentValue(m5d2, num);
-            if (m6v3 <= 0 || documentValue == null) {
+            int m10v3 = m10v(bArr4, "id");
+            String num = Integer.toString(m10v3);
+            byte[] m9d = m9d(bArr, "sd");
+            byte[] m9d2 = m9d(m9d, "sm");
+            byte[] documentValue = BsonLite.documentValue(m9d2, num);
+            if (m10v3 <= 0 || documentValue == null) {
                 throw new IllegalArgumentException("论坛帖子尚未开放");
             }
             str2 = "showMessageStr";
@@ -413,8 +413,8 @@ final class LocalCommunityEngine {
                         if (stringValue != null && !stringValue.trim().isEmpty() && stringValue.codePointCount(0, stringValue.length()) <= 300) {
                             if (stringValue.indexOf(0) < 0) {
                                 try {
-                                    byte[] m5d3 = m5d(bArr3, "social");
-                                    List<byte[]> array2 = LocalResourceEngine.array(m5d(m5d3, num));
+                                    byte[] m9d3 = m9d(bArr3, "social");
+                                    List<byte[]> array2 = LocalResourceEngine.array(m9d(m9d3, num));
                                     if (array2.size() >= 1000) {
                                         throw new IllegalArgumentException("本地帖子留言已达保存上限");
                                     }
@@ -423,20 +423,20 @@ final class LocalCommunityEngine {
                                         throw new IllegalArgumentException("账号资料不完整");
                                     }
                                     String substring = UUID.nameUUIDFromBytes(stringValue2.getBytes(StandardCharsets.UTF_8)).toString().replace("-", "").substring(0, 24);
-                                    byte[] m5d4 = m5d(bArr3, "sends");
-                                    int max = Math.max(m6v(documentValue, "ct"), m6v(m5d4, substring + ":" + num));
+                                    byte[] m9d4 = m9d(bArr3, "sends");
+                                    int max = Math.max(m10v(documentValue, "ct"), m10v(m9d4, substring + ":" + num));
                                     try {
                                         if (max > 0) {
-                                            bArr7 = m5d4;
+                                            bArr7 = m9d4;
                                             result = result3;
                                             bArr9 = documentValue;
-                                            bArr8 = m5d2;
+                                            bArr8 = m9d2;
                                             if (i - max < 120) {
                                                 throw new IllegalArgumentException("请稍后再发送留言");
                                             }
                                         } else {
-                                            bArr7 = m5d4;
-                                            bArr8 = m5d2;
+                                            bArr7 = m9d4;
+                                            bArr8 = m9d2;
                                             result = result3;
                                             bArr9 = documentValue;
                                         }
@@ -513,17 +513,17 @@ final class LocalCommunityEngine {
                                                 objArr9[20] = "bk";
                                                 objArr9[21] = 0;
                                                 array2.add(BsonLite.document(objArr9));
-                                                result.local = BsonLite.withProfileDocument(bArr3, "social", BsonLite.withProfileArray(m5d3, num, array2));
+                                                result.local = BsonLite.withProfileDocument(bArr3, "social", BsonLite.withProfileArray(m9d3, num, array2));
                                                 result.local = BsonLite.withProfileDocument(result.local, "sends", BsonLite.withProfileInt(bArr7, substring + ":" + num, i));
                                                 if (result.local.length > 8388608) {
                                                     throw new IllegalArgumentException("本地论坛存档已达保存上限");
                                                 }
                                                 byte[] withProfileInt = BsonLite.withProfileInt(bArr9, "ct", i);
-                                                result.player.profile = BsonLite.withProfileDocument(bArr, "sd", BsonLite.withProfileDocument(m5d, "sm", BsonLite.withProfileDocument(bArr8, num, withProfileInt)));
+                                                result.player.profile = BsonLite.withProfileDocument(bArr, "sd", BsonLite.withProfileDocument(m9d, "sm", BsonLite.withProfileDocument(bArr8, num, withProfileInt)));
                                                 LocalResourceEngine.Result result10 = result.player;
                                                 Object[] objArr10 = new Object[4];
                                                 objArr10[0] = "id";
-                                                objArr10[1] = Integer.valueOf(m6v3);
+                                                objArr10[1] = Integer.valueOf(m10v3);
                                                 try {
                                                     objArr10[2] = "c";
                                                     objArr10[3] = withProfileInt;
@@ -532,7 +532,7 @@ final class LocalCommunityEngine {
                                                     Object[] objArr11 = new Object[4];
                                                     objArr11[0] = "id";
                                                     try {
-                                                        objArr11[1] = Integer.valueOf(m6v3);
+                                                        objArr11[1] = Integer.valueOf(m10v3);
                                                         try {
                                                             objArr11[2] = "cms";
                                                             objArr11[3] = page(result.local, bArr2, num, null, false, 0);
@@ -813,7 +813,7 @@ final class LocalCommunityEngine {
                             result2 = result3.player;
                             objArr = new Object[4];
                             objArr[0] = "id";
-                            objArr[1] = Integer.valueOf(m6v3);
+                            objArr[1] = Integer.valueOf(m10v3);
                         } catch (ArithmeticException e32) {
                             e = e32;
                             r8 = r8;
@@ -849,7 +849,7 @@ final class LocalCommunityEngine {
                         }
                         try {
                             objArr[2] = contains ? "hcms" : contains2 ? "rcms" : "cms";
-                            objArr[3] = page(bArr3, bArr2, num, (!contains3 || contains2) ? null : BsonLite.uuidValue(bArr4, "oid"), contains, (contains2 && contains3) ? m6v(bArr4, "c") : 0);
+                            objArr[3] = page(bArr3, bArr2, num, (!contains3 || contains2) ? null : BsonLite.uuidValue(bArr4, "oid"), contains, (contains2 && contains3) ? m10v(bArr4, "c") : 0);
                             result2.add(str3, BsonLite.document(objArr));
                             return result3;
                         } catch (ArithmeticException e34) {
@@ -896,21 +896,21 @@ final class LocalCommunityEngine {
                                 throw new IllegalArgumentException("留言不存在");
                             }
                             ArrayList arrayList = new ArrayList();
-                            byte[] m5d5 = m5d(documentValue, "l");
-                            Iterator<String> it5 = BsonLite.keys(m5d5).iterator();
+                            byte[] m9d5 = m9d(documentValue, "l");
+                            Iterator<String> it5 = BsonLite.keys(m9d5).iterator();
                             boolean z2 = false;
                             while (it5.hasNext()) {
                                 Iterator<String> it6 = it5;
-                                String uuidValue2 = BsonLite.uuidValue(m5d5, it5.next());
+                                String uuidValue2 = BsonLite.uuidValue(m9d5, it5.next());
                                 if (uuidValue2 != null) {
-                                    bArr12 = m5d5;
+                                    bArr12 = m9d5;
                                     arrayList.add(new BsonLite.UuidValue(uuidValue2));
                                     z2 |= uuidValue.equals(uuidValue2);
                                 } else {
-                                    bArr12 = m5d5;
+                                    bArr12 = m9d5;
                                 }
                                 it5 = it6;
-                                m5d5 = bArr12;
+                                m9d5 = bArr12;
                             }
                             if (!z2) {
                                 arrayList.add(new BsonLite.UuidValue(uuidValue));
@@ -919,25 +919,25 @@ final class LocalCommunityEngine {
                                     throw new IllegalArgumentException("账号资料不完整");
                                 }
                                 String replace = UUID.nameUUIDFromBytes(stringValue4.getBytes(StandardCharsets.UTF_8)).toString().replace("-", "");
-                                byte[] m5d6 = m5d(r15, "voters");
-                                byte[] m5d7 = m5d(m5d6, uuidValue);
+                                byte[] m9d6 = m9d(r15, "voters");
+                                byte[] m9d7 = m9d(m9d6, uuidValue);
                                 try {
-                                    if (Boolean.TRUE.equals(BsonLite.boolValue(m5d7, replace))) {
-                                        bArr11 = m5d;
+                                    if (Boolean.TRUE.equals(BsonLite.boolValue(m9d7, replace))) {
+                                        bArr11 = m9d;
                                         str4 = "sd";
                                     } else {
-                                        byte[] m5d8 = m5d(r15, "likes");
+                                        byte[] m9d8 = m9d(r15, "likes");
                                         str4 = "sd";
-                                        bArr11 = m5d;
-                                        result3.local = BsonLite.withProfileDocument(r15, "likes", BsonLite.withProfileInt(m5d8, uuidValue, Math.addExact(m6v(m5d8, uuidValue), 1)));
-                                        result3.local = BsonLite.withProfileDocument(result3.local, "voters", BsonLite.withProfileDocument(m5d6, uuidValue, BsonLite.withProfileBool(m5d7, replace, true)));
+                                        bArr11 = m9d;
+                                        result3.local = BsonLite.withProfileDocument(r15, "likes", BsonLite.withProfileInt(m9d8, uuidValue, Math.addExact(m10v(m9d8, uuidValue), 1)));
+                                        result3.local = BsonLite.withProfileDocument(result3.local, "voters", BsonLite.withProfileDocument(m9d6, uuidValue, BsonLite.withProfileBool(m9d7, replace, true)));
                                     }
                                     byte[] withProfileArray = BsonLite.withProfileArray(documentValue, "l", arrayList);
-                                    result3.player.profile = BsonLite.withProfileDocument(bArr, str4, BsonLite.withProfileDocument(bArr11, "sm", BsonLite.withProfileDocument(m5d2, num, withProfileArray)));
+                                    result3.player.profile = BsonLite.withProfileDocument(bArr, str4, BsonLite.withProfileDocument(bArr11, "sm", BsonLite.withProfileDocument(m9d2, num, withProfileArray)));
                                     LocalResourceEngine.Result result12 = result3.player;
                                     Object[] objArr12 = new Object[4];
                                     objArr12[0] = "id";
-                                    objArr12[1] = Integer.valueOf(m6v3);
+                                    objArr12[1] = Integer.valueOf(m10v3);
                                     objArr12[2] = "c";
                                     objArr12[3] = withProfileArray;
                                     result12.add("syncOneSocialMsg", BsonLite.document(objArr12));
@@ -974,10 +974,10 @@ final class LocalCommunityEngine {
                             return result3;
                         } catch (ArithmeticException e38) {
                             e = e38;
-                            bArr10 = m5d;
+                            bArr10 = m9d;
                         } catch (IllegalArgumentException e39) {
                             e = e39;
-                            bArr10 = m5d;
+                            bArr10 = m9d;
                         }
                     } catch (ArithmeticException | IllegalArgumentException e40) {
                         e = e40;
@@ -987,7 +987,7 @@ final class LocalCommunityEngine {
                     e = e41;
                     runtimeException = e;
                     i2 = equals;
-                    bArr6 = m5d;
+                    bArr6 = m9d;
                     bArr5 = r15;
                     Result result4222222222222222222222222222222 = new Result(bArr6, bArr5);
                     LocalResourceEngine.Result result5222222222222222222222222222222 = result4222222222222222222222222222222.player;
@@ -1000,7 +1000,7 @@ final class LocalCommunityEngine {
                     e = e42;
                     runtimeException = e;
                     i2 = equals;
-                    bArr6 = m5d;
+                    bArr6 = m9d;
                     bArr5 = r15;
                     Result result42222222222222222222222222222222 = new Result(bArr6, bArr5);
                     LocalResourceEngine.Result result52222222222222222222222222222222 = result42222222222222222222222222222222.player;
@@ -1055,7 +1055,7 @@ final class LocalCommunityEngine {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         Iterator it = Arrays.asList(bArr2, bArr).iterator();
         while (it.hasNext()) {
-            for (byte[] bArr3 : LocalResourceEngine.array(m5d(m5d((byte[]) it.next(), "social"), str))) {
+            for (byte[] bArr3 : LocalResourceEngine.array(m9d(m9d((byte[]) it.next(), "social"), str))) {
                 String uuidValue = BsonLite.uuidValue(bArr3, "_id");
                 if (uuidValue != null) {
                     linkedHashMap.put(uuidValue, bArr3);
@@ -1064,7 +1064,7 @@ final class LocalCommunityEngine {
         }
         ArrayList arrayList = new ArrayList();
         for (Map.Entry entry : linkedHashMap.entrySet()) {
-            arrayList.add(BsonLite.withProfileInt((byte[]) entry.getValue(), "like", Math.addExact(m6v((byte[]) entry.getValue(), "like"), m6v(m5d(bArr, "likes"), (String) entry.getKey()))));
+            arrayList.add(BsonLite.withProfileInt((byte[]) entry.getValue(), "like", Math.addExact(m10v((byte[]) entry.getValue(), "like"), m10v(m9d(bArr, "likes"), (String) entry.getKey()))));
         }
         return arrayList;
     }
@@ -1096,7 +1096,7 @@ final class LocalCommunityEngine {
     }
 
     static /* synthetic */ int lambda$page$0(boolean z, byte[] bArr, byte[] bArr2) {
-        int compare = z ? Integer.compare(m6v(bArr2, "like"), m6v(bArr, "like")) : 0;
+        int compare = z ? Integer.compare(m10v(bArr2, "like"), m10v(bArr, "like")) : 0;
         return compare != 0 ? compare : BsonLite.uuidValue(bArr2, "_id").compareTo(BsonLite.uuidValue(bArr, "_id"));
     }
 }

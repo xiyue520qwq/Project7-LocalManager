@@ -23,7 +23,7 @@ final class LocalConstructionEngine {
     }
 
     /* renamed from: v */
-    private static int m7v(byte[] bArr, String str) {
+    private static int m11v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
@@ -33,113 +33,73 @@ final class LocalConstructionEngine {
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(89:6|(1:8)(1:306)|9|(5:10|11|12|13|14)|(5:(3:20|21|(2:25|(88:27|28|29|30|31|(80:(2:290|291)|34|35|(1:37)(1:289)|38|(1:288)(1:42)|43|44|(1:287)(1:48)|49|(2:51|52)(1:286)|53|54|(1:56)(1:285)|57|(5:59|(1:279)(1:63)|64|(1:278)(1:68)|69)(3:280|(1:282)(1:284)|283)|(1:71)(1:274)|72|(1:74)(1:273)|75|(1:77)(1:271)|78|79|80|(1:82)(1:268)|83|(3:85|86|87)(1:267)|88|(3:89|90|(4:92|(7:95|(2:97|(3:99|(1:101)|102))(1:112)|103|(1:105)(1:111)|(2:107|108)(1:110)|109|93)|113|114)(1:115))|116|(1:264)(2:124|(2:126|(49:128|129|(44:133|134|135|(1:260)(1:141)|142|143|(1:259)(1:149)|150|(3:151|152|(5:154|(1:156)(1:164)|157|(2:159|160)(2:162|163)|161)(1:165))|166|(1:168)(1:258)|(1:170)(1:257)|171|172|(2:174|175)(5:252|253|254|255|256)|176|(6:179|180|181|182|183|177)|191|192|193|194|(2:197|195)|198|(1:202)|203|(5:206|(2:207|(1:209)(1:210))|211|212|204)|213|214|(2:216|217)|218|(3:221|222|219)|223|224|225|(1:227)(1:247)|228|(1:230)|(1:232)(2:245|246)|233|234|235|236|237|238)|261|134|135|(0)|260|142|143|(1:145)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(2:200|202)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238))(1:263))|262|129|(46:133|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238)|261|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238)|293|35|(0)(0)|38|(1:40)|288|43|44|(1:46)|287|49|(0)(0)|53|54|(0)(0)|57|(0)(0)|(0)(0)|72|(0)(0)|75|(0)(0)|78|79|80|(0)(0)|83|(0)(0)|88|(4:89|90|(0)(0)|114)|116|(1:118)|264|262|129|(0)|261|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238)))|235|236|237|238)|300|28|29|30|31|(0)|293|35|(0)(0)|38|(0)|288|43|44|(0)|287|49|(0)(0)|53|54|(0)(0)|57|(0)(0)|(0)(0)|72|(0)(0)|75|(0)(0)|78|79|80|(0)(0)|83|(0)(0)|88|(4:89|90|(0)(0)|114)|116|(0)|264|262|129|(0)|261|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234) */
-    /* JADX WARN: Can't wrap try/catch for region: R(93:6|(1:8)(1:306)|9|10|11|12|13|14|(5:(3:20|21|(2:25|(88:27|28|29|30|31|(80:(2:290|291)|34|35|(1:37)(1:289)|38|(1:288)(1:42)|43|44|(1:287)(1:48)|49|(2:51|52)(1:286)|53|54|(1:56)(1:285)|57|(5:59|(1:279)(1:63)|64|(1:278)(1:68)|69)(3:280|(1:282)(1:284)|283)|(1:71)(1:274)|72|(1:74)(1:273)|75|(1:77)(1:271)|78|79|80|(1:82)(1:268)|83|(3:85|86|87)(1:267)|88|(3:89|90|(4:92|(7:95|(2:97|(3:99|(1:101)|102))(1:112)|103|(1:105)(1:111)|(2:107|108)(1:110)|109|93)|113|114)(1:115))|116|(1:264)(2:124|(2:126|(49:128|129|(44:133|134|135|(1:260)(1:141)|142|143|(1:259)(1:149)|150|(3:151|152|(5:154|(1:156)(1:164)|157|(2:159|160)(2:162|163)|161)(1:165))|166|(1:168)(1:258)|(1:170)(1:257)|171|172|(2:174|175)(5:252|253|254|255|256)|176|(6:179|180|181|182|183|177)|191|192|193|194|(2:197|195)|198|(1:202)|203|(5:206|(2:207|(1:209)(1:210))|211|212|204)|213|214|(2:216|217)|218|(3:221|222|219)|223|224|225|(1:227)(1:247)|228|(1:230)|(1:232)(2:245|246)|233|234|235|236|237|238)|261|134|135|(0)|260|142|143|(1:145)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(2:200|202)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238))(1:263))|262|129|(46:133|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238)|261|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238)|293|35|(0)(0)|38|(1:40)|288|43|44|(1:46)|287|49|(0)(0)|53|54|(0)(0)|57|(0)(0)|(0)(0)|72|(0)(0)|75|(0)(0)|78|79|80|(0)(0)|83|(0)(0)|88|(4:89|90|(0)(0)|114)|116|(1:118)|264|262|129|(0)|261|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234|235|236|237|238)))|235|236|237|238)|300|28|29|30|31|(0)|293|35|(0)(0)|38|(0)|288|43|44|(0)|287|49|(0)(0)|53|54|(0)(0)|57|(0)(0)|(0)(0)|72|(0)(0)|75|(0)(0)|78|79|80|(0)(0)|83|(0)(0)|88|(4:89|90|(0)(0)|114)|116|(0)|264|262|129|(0)|261|134|135|(0)|260|142|143|(0)|259|150|(4:151|152|(0)(0)|161)|166|(0)(0)|(0)(0)|171|172|(0)(0)|176|(1:177)|191|192|193|194|(1:195)|198|(0)|203|(1:204)|213|214|(0)|218|(1:219)|223|224|225|(0)(0)|228|(0)|(0)(0)|233|234) */
-    /* JADX WARN: Code restructure failed: missing block: B:269:0x0726, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:270:0x0728, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:292:0x0097, code lost:
-    
-        if (r43.processingNewbees.contains(20) != false) goto L45;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:294:0x072a, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:295:0x072d, code lost:
-    
-        r29 = r4;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x02d4 A[EDGE_INSN: B:115:0x02d4->B:116:0x02d4 BREAK  A[LOOP:0: B:89:0x0232->B:114:0x02c6], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02e2 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x031c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0331 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x0351 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x037f A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x03ce A[EDGE_INSN: B:165:0x03ce->B:166:0x03ce BREAK  A[LOOP:2: B:151:0x0375->B:161:0x03b7], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x03d8  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x03dd  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x03f2 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TRY_LEAVE, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x04a2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x0518 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, LOOP:4: B:195:0x0515->B:197:0x0518, LOOP_END, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0533 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x055e A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x05f3  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x060e A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TRY_LEAVE, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x065b  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x06a7 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x06c8 A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_LEAVE, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x06cb  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x065e  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x0451  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x03e0  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x03da  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x021c  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x01f2  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x01c6 A[Catch: ArithmeticException | IllegalArgumentException -> 0x072a, IllegalArgumentException -> 0x072c, TRY_ENTER, TryCatch #13 {ArithmeticException | IllegalArgumentException -> 0x072a, blocks: (B:31:0x0081, B:35:0x00a4, B:38:0x00bb, B:43:0x00d7, B:49:0x013c, B:53:0x016e, B:57:0x017f, B:72:0x01de, B:75:0x01e9, B:280:0x01c6, B:283:0x01d2, B:286:0x0150), top: B:30:0x0081 }] */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x0150 A[Catch: ArithmeticException | IllegalArgumentException -> 0x072a, IllegalArgumentException -> 0x072c, TRY_ENTER, TryCatch #13 {ArithmeticException | IllegalArgumentException -> 0x072a, blocks: (B:31:0x0081, B:35:0x00a4, B:38:0x00bb, B:43:0x00d7, B:49:0x013c, B:53:0x016e, B:57:0x017f, B:72:0x01de, B:75:0x01e9, B:280:0x01c6, B:283:0x01d2, B:286:0x0150), top: B:30:0x0081 }] */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00c4 A[Catch: ArithmeticException -> 0x009a, ArithmeticException | IllegalArgumentException -> 0x009c, TRY_ENTER, TRY_LEAVE, TryCatch #14 {ArithmeticException | IllegalArgumentException -> 0x009c, blocks: (B:291:0x008d, B:40:0x00c4, B:46:0x0133, B:51:0x0143, B:59:0x0184, B:61:0x018c, B:64:0x0197, B:66:0x019f, B:69:0x01a8), top: B:290:0x008d }] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0133 A[Catch: ArithmeticException -> 0x009a, ArithmeticException | IllegalArgumentException -> 0x009c, TRY_ENTER, TRY_LEAVE, TryCatch #14 {ArithmeticException | IllegalArgumentException -> 0x009c, blocks: (B:291:0x008d, B:40:0x00c4, B:46:0x0133, B:51:0x0143, B:59:0x0184, B:61:0x018c, B:64:0x0197, B:66:0x019f, B:69:0x01a8), top: B:290:0x008d }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0143 A[Catch: ArithmeticException -> 0x009a, ArithmeticException | IllegalArgumentException -> 0x009c, TRY_ENTER, TRY_LEAVE, TryCatch #14 {ArithmeticException | IllegalArgumentException -> 0x009c, blocks: (B:291:0x008d, B:40:0x00c4, B:46:0x0133, B:51:0x0143, B:59:0x0184, B:61:0x018c, B:64:0x0197, B:66:0x019f, B:69:0x01a8), top: B:290:0x008d }] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x017a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0184 A[Catch: ArithmeticException -> 0x009a, ArithmeticException | IllegalArgumentException -> 0x009c, TRY_ENTER, TryCatch #14 {ArithmeticException | IllegalArgumentException -> 0x009c, blocks: (B:291:0x008d, B:40:0x00c4, B:46:0x0133, B:51:0x0143, B:59:0x0184, B:61:0x018c, B:64:0x0197, B:66:0x019f, B:69:0x01a8), top: B:290:0x008d }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01d9  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01e4  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01ef  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x01fe  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0213  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x023c A[Catch: ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, TRY_ENTER, TryCatch #18 {ArithmeticException -> 0x0201, IllegalArgumentException -> 0x0203, blocks: (B:87:0x0215, B:92:0x023c, B:93:0x0258, B:95:0x025e, B:97:0x026e, B:99:0x027a, B:101:0x0288, B:102:0x028f, B:103:0x02a9, B:107:0x02b6, B:118:0x02e2, B:124:0x02f0, B:126:0x02fc, B:139:0x0335, B:145:0x0351, B:147:0x0358, B:154:0x037f, B:157:0x03ab, B:161:0x03b7, B:174:0x03f2, B:182:0x04ce, B:197:0x0518, B:200:0x0533, B:202:0x053a, B:206:0x055e, B:209:0x059b, B:211:0x05bc, B:217:0x05f6, B:221:0x060e, B:230:0x06a7, B:232:0x06c8), top: B:86:0x0215 }] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x02d2 A[EDGE_INSN: B:114:0x02d2->B:115:0x02d2 BREAK  A[LOOP:0: B:88:0x0230->B:113:0x02c4], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x02e2  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0344 A[Catch: ArithmeticException -> 0x01fb, ArithmeticException | IllegalArgumentException -> 0x01fd, TRY_ENTER, TryCatch #11 {ArithmeticException | IllegalArgumentException -> 0x01fd, blocks: (B:86:0x0213, B:91:0x023c, B:92:0x0258, B:94:0x025e, B:96:0x0270, B:98:0x027a, B:100:0x0288, B:101:0x028f, B:102:0x02a7, B:106:0x02b4, B:124:0x02fc, B:129:0x0316, B:131:0x031d, B:138:0x0344, B:141:0x036e, B:145:0x037a, B:158:0x03b1), top: B:85:0x0213 }] */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x038f A[EDGE_INSN: B:149:0x038f->B:150:0x038f BREAK  A[LOOP:2: B:135:0x033a->B:145:0x037a], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0397  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x039c  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x03b1 A[Catch: ArithmeticException -> 0x01fb, ArithmeticException | IllegalArgumentException -> 0x01fd, TRY_ENTER, TRY_LEAVE, TryCatch #11 {ArithmeticException | IllegalArgumentException -> 0x01fd, blocks: (B:86:0x0213, B:91:0x023c, B:92:0x0258, B:94:0x025e, B:96:0x0270, B:98:0x027a, B:100:0x0288, B:101:0x028f, B:102:0x02a7, B:106:0x02b4, B:124:0x02fc, B:129:0x0316, B:131:0x031d, B:138:0x0344, B:141:0x036e, B:145:0x037a, B:158:0x03b1), top: B:85:0x0213 }] */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0467 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x04d6 A[Catch: ArithmeticException -> 0x04ba, ArithmeticException | IllegalArgumentException -> 0x04bc, LOOP:4: B:175:0x04d3->B:177:0x04d6, LOOP_END, TRY_ENTER, TryCatch #13 {ArithmeticException | IllegalArgumentException -> 0x04bc, blocks: (B:164:0x0467, B:177:0x04d6, B:180:0x04f1, B:182:0x04f8, B:186:0x051c, B:189:0x0559, B:191:0x057a, B:197:0x05c8, B:206:0x0661), top: B:163:0x0467 }] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x051c A[Catch: ArithmeticException -> 0x04ba, ArithmeticException | IllegalArgumentException -> 0x04bc, TRY_ENTER, TryCatch #13 {ArithmeticException | IllegalArgumentException -> 0x04bc, blocks: (B:164:0x0467, B:177:0x04d6, B:180:0x04f1, B:182:0x04f8, B:186:0x051c, B:189:0x0559, B:191:0x057a, B:197:0x05c8, B:206:0x0661), top: B:163:0x0467 }] */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x05c8 A[Catch: ArithmeticException -> 0x04ba, ArithmeticException | IllegalArgumentException -> 0x04bc, TRY_ENTER, TRY_LEAVE, TryCatch #13 {ArithmeticException | IllegalArgumentException -> 0x04bc, blocks: (B:164:0x0467, B:177:0x04d6, B:180:0x04f1, B:182:0x04f8, B:186:0x051c, B:189:0x0559, B:191:0x057a, B:197:0x05c8, B:206:0x0661), top: B:163:0x0467 }] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0615  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0661 A[Catch: ArithmeticException -> 0x04ba, ArithmeticException | IllegalArgumentException -> 0x04bc, TRY_ENTER, TRY_LEAVE, TryCatch #13 {ArithmeticException | IllegalArgumentException -> 0x04bc, blocks: (B:164:0x0467, B:177:0x04d6, B:180:0x04f1, B:182:0x04f8, B:186:0x051c, B:189:0x0559, B:191:0x057a, B:197:0x05c8, B:206:0x0661), top: B:163:0x0467 }] */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x0664  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0616  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x0415  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x039f  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x0399  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x02e4  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x021a  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x01e1  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x01d6  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x01c0 A[Catch: ArithmeticException | IllegalArgumentException -> 0x06c5, IllegalArgumentException -> 0x06c7, TRY_ENTER, TryCatch #15 {ArithmeticException | IllegalArgumentException -> 0x06c5, blocks: (B:14:0x004d, B:28:0x0077, B:34:0x009e, B:37:0x00b5, B:42:0x00d1, B:48:0x0136, B:52:0x0168, B:56:0x0179, B:71:0x01d8, B:74:0x01e3, B:250:0x01c0, B:253:0x01cc, B:256:0x014a), top: B:13:0x004d }] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x014a A[Catch: ArithmeticException | IllegalArgumentException -> 0x06c5, IllegalArgumentException -> 0x06c7, TRY_ENTER, TryCatch #15 {ArithmeticException | IllegalArgumentException -> 0x06c5, blocks: (B:14:0x004d, B:28:0x0077, B:34:0x009e, B:37:0x00b5, B:42:0x00d1, B:48:0x0136, B:52:0x0168, B:56:0x0179, B:71:0x01d8, B:74:0x01e3, B:250:0x01c0, B:253:0x01cc, B:256:0x014a), top: B:13:0x004d }] */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x013d A[Catch: ArithmeticException -> 0x006d, ArithmeticException | IllegalArgumentException -> 0x006f, TRY_ENTER, TRY_LEAVE, TryCatch #16 {ArithmeticException | IllegalArgumentException -> 0x006f, blocks: (B:21:0x005b, B:23:0x005f, B:25:0x0065, B:31:0x008e, B:39:0x00be, B:45:0x012d, B:50:0x013d, B:58:0x017e, B:60:0x0186, B:63:0x0191, B:65:0x0199, B:68:0x01a2), top: B:20:0x005b }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x017e A[Catch: ArithmeticException -> 0x006d, ArithmeticException | IllegalArgumentException -> 0x006f, TRY_ENTER, TryCatch #16 {ArithmeticException | IllegalArgumentException -> 0x006f, blocks: (B:21:0x005b, B:23:0x005f, B:25:0x0065, B:31:0x008e, B:39:0x00be, B:45:0x012d, B:50:0x013d, B:58:0x017e, B:60:0x0186, B:63:0x0191, B:65:0x0199, B:68:0x01a2), top: B:20:0x005b }] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0211  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x023c A[Catch: ArithmeticException -> 0x01fb, ArithmeticException | IllegalArgumentException -> 0x01fd, TRY_ENTER, TryCatch #11 {ArithmeticException | IllegalArgumentException -> 0x01fd, blocks: (B:86:0x0213, B:91:0x023c, B:92:0x0258, B:94:0x025e, B:96:0x0270, B:98:0x027a, B:100:0x0288, B:101:0x028f, B:102:0x02a7, B:106:0x02b4, B:124:0x02fc, B:129:0x0316, B:131:0x031d, B:138:0x0344, B:141:0x036e, B:145:0x037a, B:158:0x03b1), top: B:85:0x0213 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     static LocalEconomyEngine.Result apply(byte[] bArr, LocalConstructionCatalog localConstructionCatalog, LocalTutorialStore.Progress progress, String str, byte[] bArr2) {
         int i;
         Object obj;
-        Object obj2;
         String str2;
         RuntimeException runtimeException;
         boolean z;
-        boolean z2;
         byte[] doc;
-        byte[] doc2;
-        byte[] doc3;
-        int m7v;
+        int m11v;
+        int m11v2;
         LocalEconomyEngine.Result result;
         byte[] rule;
+        int m11v3;
+        int m11v4;
         int i2;
         int i3;
-        ArrayList arrayList;
         Iterator<String> it;
-        byte[] bArr3;
         int i4;
-        String str3;
-        LocalTutorialStore.Progress progress2;
-        LocalEconomyEngine.Result result2;
-        ArrayList arrayList2;
-        boolean z3;
-        boolean z4;
+        byte[] bArr3;
         List<Integer> intArrayValues;
         Iterator<Integer> it2;
         int i5;
-        List<Integer> list;
-        boolean z5;
-        int[] iArr;
-        String str4;
         int i6;
-        String str5;
+        int[] iArr;
         int i7;
+        String str3;
+        String str4;
         byte[] withProfileInt;
         byte[] bArr4;
         Iterator it3;
@@ -149,825 +109,439 @@ final class LocalConstructionEngine {
         Iterator<String> it4;
         Iterator<Integer> it5;
         byte[] bArr6;
-        int i9;
         byte[] bArr7;
-        String str6 = "bd";
+        String str5 = "bd";
         if ("playerDestroyBuilding".equals(str)) {
             return demolish(bArr, localConstructionCatalog, progress, bArr2);
         }
-        LocalEconomyEngine.Result result3 = new LocalEconomyEngine.Result(bArr);
+        LocalEconomyEngine.Result result2 = new LocalEconomyEngine.Result(bArr);
         boolean equals = "areaBuildRequest".equals(str);
-        int m7v2 = m7v(bArr2, "aid");
-        String str7 = equals ? "area_build_reply" : "area_level_up_reply";
+        int m11v5 = m11v(bArr2, "aid");
+        String str6 = equals ? "area_build_reply" : "area_level_up_reply";
         try {
-            obj2 = "aid";
+            obj = "rs";
             try {
                 require(handles(str), "未知城市操作");
-            } catch (ArithmeticException | IllegalArgumentException e) {
-                e = e;
-                i = m7v2;
-                obj = "rs";
-            }
-        } catch (ArithmeticException | IllegalArgumentException e2) {
-            e = e2;
-            i = m7v2;
-            obj = "rs";
-            obj2 = "aid";
-        }
-        try {
-            if (progress != null && m7v2 >= 1 && m7v2 <= 8) {
                 try {
-                    if (!progress.inEmergency && !LocalChapterCityEngine.locked(bArr, m7v2)) {
-                        if (LocalCityProgress.status(progress, m7v2, bArr) == 0) {
-                            z = true;
-                            require(z, "该地区尚未解放，无法建设或开发");
-                            obj = "rs";
-                            if (!progress.finishedNewbees.contains(20)) {
-                                if (equals) {
-                                    try {
-                                    } catch (ArithmeticException | IllegalArgumentException e3) {
-                                        runtimeException = e3;
-                                        i = m7v2;
-                                        str2 = str7;
-                                        LocalEconomyEngine.Result result4 = new LocalEconomyEngine.Result(bArr);
-                                        result4.reason = runtimeException.getMessage();
-                                        result4.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result4.reason)));
-                                        result4.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-                                        return result4;
-                                    }
-                                }
-                                z2 = false;
-                                require(z2, "请先完成建设指引");
-                                require(m7v(doc(bArr, "weeknum"), "d") < 7, "最后一天无法建设或开发");
-                                require(progress.patrolRewardPending && BsonLite.keys(doc(bArr, "q7Battle")).isEmpty(), "请先完成当前战斗或巡查");
-                                require(progress.processingEvents.stream().allMatch(LocalConstructionEngine$$ExternalSyntheticLambda0.INSTANCE), "请先完成当前剧情");
-                                result3.profile = BsonLite.withPatrolProgress(BsonLite.withLocalCityState(bArr, progress), progress);
-                                doc = doc(result3.profile, "city");
-                                doc2 = doc(doc, "areas");
-                                byte[] doc4 = doc(doc2, "area_" + m7v2);
-                                doc3 = doc(doc4, "bd");
-                                int m7v3 = m7v(doc4, "lv");
-                                m7v = m7v(bArr2, "fi");
-                                int m7v4 = m7v(bArr2, "bi");
-                                require(m7v3 < 1 && localConstructionCatalog.slots(m7v2, m7v3) > 0, "地区开发数据无效");
-                                if (equals) {
-                                    rule = localConstructionCatalog.rule("B", Integer.valueOf(m7v4));
-                                    result = result3;
-                                } else {
-                                    StringBuilder sb = new StringBuilder();
-                                    sb.append(m7v2);
-                                    result = result3;
-                                    sb.append(":");
-                                    sb.append(m7v3 + 1);
-                                    rule = localConstructionCatalog.rule("U", sb.toString());
-                                }
-                                require(!BsonLite.keys(rule).isEmpty(), equals ? "无效建筑" : "该地区已开发到最高等级");
-                                if (equals) {
-                                    require(m7v(rule, "ban") == 0 && m7v(rule, "clientBan") == 0, "此建筑不能手动建设");
-                                    require(m7v >= 1 && m7v <= localConstructionCatalog.slots(m7v2, m7v3), "该建筑空位尚未解锁");
-                                    require(BsonLite.keys(doc(doc3, Integer.toString(m7v))).isEmpty(), "该空位已有建筑");
-                                    validateBuilding(localConstructionCatalog, doc, doc4, m7v4, rule);
-                                } else {
-                                    require(m7v(bArr2, "luv") == 1, "每次只能开发一级");
-                                }
-                                int m7v5 = m7v(rule, equals ? "ac" : "action_consume");
-                                int m7v6 = m7v(rule, equals ? "mc" : "money_consume");
-                                i = m7v2;
-                                int m7v7 = m7v(rule, equals ? "fc" : "fatigue");
-                                int m7v8 = m7v(rule, equals ? "cr" : "lead_require");
-                                if (equals) {
-                                    i2 = m7v8;
-                                    try {
-                                        i3 = m7v(rule, "research_require");
-                                    } catch (ArithmeticException e4) {
-                                        e = e4;
-                                        runtimeException = e;
-                                        str2 = str7;
-                                        LocalEconomyEngine.Result result42 = new LocalEconomyEngine.Result(bArr);
-                                        result42.reason = runtimeException.getMessage();
-                                        result42.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result42.reason)));
-                                        result42.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-                                        return result42;
-                                    } catch (IllegalArgumentException e5) {
-                                        e = e5;
-                                        runtimeException = e;
-                                        str2 = str7;
-                                        LocalEconomyEngine.Result result422 = new LocalEconomyEngine.Result(bArr);
-                                        result422.reason = runtimeException.getMessage();
-                                        result422.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result422.reason)));
-                                        result422.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-                                        return result422;
-                                    }
-                                } else {
-                                    i2 = m7v8;
-                                    i3 = 0;
-                                }
-                                arrayList = new ArrayList();
-                                it = BsonLite.keys(doc2).iterator();
-                                int i10 = i2;
-                                while (true) {
-                                    bArr3 = doc3;
-                                    if (!it.hasNext()) {
-                                        break;
-                                    }
-                                    int i11 = m7v;
-                                    byte[] doc5 = doc(doc2, it.next());
-                                    byte[] bArr8 = doc2;
-                                    byte[] doc6 = doc(doc5, str6);
-                                    for (String str8 : BsonLite.keys(doc6)) {
-                                        String str9 = str6;
-                                        byte[] doc7 = doc(doc6, str8);
-                                        if (equals) {
-                                            bArr7 = doc6;
-                                            i9 = m7v7;
-                                            if (m7v(doc7, "id") == 20) {
-                                                if (!Boolean.TRUE.equals(BsonLite.boolValue(doc7, "u"))) {
-                                                    i3 = Math.max(0, i3 - 25);
-                                                }
-                                                arrayList.add(new int[]{m7v(doc5, "id"), Integer.parseInt(str8)});
-                                            }
-                                        } else {
-                                            i9 = m7v7;
-                                            bArr7 = doc6;
-                                        }
-                                        if (m7v(doc7, "id") == (equals ? 28 : 27)) {
-                                            i10 = Math.max(0, i10 - 3);
-                                        }
-                                        doc6 = bArr7;
-                                        str6 = str9;
-                                        m7v7 = i9;
-                                    }
-                                    doc2 = bArr8;
-                                    doc3 = bArr3;
-                                    m7v = i11;
-                                }
-                                i4 = m7v7;
-                                int i12 = m7v;
-                                byte[] bArr9 = doc2;
-                                String str10 = str6;
-                                str3 = "uda";
-                                if (equals || m7v(doc, "rv") >= i3 || m7v4 < 34 || m7v4 > 38) {
-                                    progress2 = progress;
-                                    result2 = result;
-                                    arrayList2 = arrayList;
-                                } else {
-                                    result2 = result;
-                                    progress2 = progress;
-                                    if (LocalDalviraStoryEngine.active(result2.profile, progress2)) {
-                                        arrayList2 = arrayList;
-                                        if (!Boolean.TRUE.equals(BsonLite.boolValue(doc, "uda"))) {
-                                            z3 = true;
-                                            if (m7v(doc, "rv") < i3 && !z3) {
-                                                z4 = false;
-                                                require(z4, "城市科技值不足");
-                                                require(m7v5 < 0 && LocalEconomyEngine.actions(result2.profile, progress2) >= m7v5 && m7v6 >= 0 && m7v(doc, "bf") >= m7v6, "行动力或建设资金不足");
-                                                intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
-                                                require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
-                                                it2 = intArrayValues.iterator();
-                                                i5 = 0;
-                                                while (true) {
-                                                    list = intArrayValues;
-                                                    if (it2.hasNext()) {
-                                                        break;
-                                                    }
-                                                    Iterator<Integer> it6 = it2;
-                                                    int intValue = it2.next().intValue();
-                                                    String str11 = str3;
-                                                    byte[] profileHeroDocument = BsonLite.profileHeroDocument(result2.profile, intValue);
-                                                    boolean z6 = z3;
-                                                    require(LocalResourceEngine.ownsHero(result2.profile, intValue), "未拥有选中的神器使");
-                                                    int i13 = i4;
-                                                    require(m7v(profileHeroDocument, "cf") >= i13, "神器使疲劳值不足");
-                                                    i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
-                                                    intArrayValues = list;
-                                                    i4 = i13;
-                                                    str3 = str11;
-                                                    it2 = it6;
-                                                    z3 = z6;
-                                                }
-                                                LocalConstructionCatalog localConstructionCatalog2 = localConstructionCatalog;
-                                                String str12 = str3;
-                                                z5 = z3;
-                                                int i14 = i4;
-                                                require(i5 < i10, !equals ? "神器使建设力不足" : "神器使开发力不足");
-                                                byte[] bArr10 = bArr9;
-                                                iArr = totals(localConstructionCatalog2, bArr10, result2.profile);
-                                                if (equals) {
-                                                    str4 = "cf";
-                                                    i6 = i14;
-                                                    str5 = str10;
-                                                    int i15 = m7v3 + 1;
-                                                    byte[] withProfileInt2 = BsonLite.withProfileInt(doc4, "lv", i15);
-                                                    i7 = i;
-                                                    try {
-                                                        byte[] withProfileInt3 = BsonLite.withProfileInt(withProfileInt2, "mbn", localConstructionCatalog2.slots(i7, i15));
-                                                        withProfileInt = BsonLite.withProfileInt(doc, "tvn", Math.addExact(m7v(doc, "tvn"), 1));
-                                                        bArr4 = withProfileInt3;
-                                                    } catch (ArithmeticException | IllegalArgumentException e6) {
-                                                        e = e6;
-                                                        i = i7;
-                                                        str2 = str7;
-                                                        runtimeException = e;
-                                                        LocalEconomyEngine.Result result4222 = new LocalEconomyEngine.Result(bArr);
-                                                        result4222.reason = runtimeException.getMessage();
-                                                        result4222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result4222.reason)));
-                                                        result4222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-                                                        return result4222;
-                                                    }
-                                                } else {
-                                                    str4 = "cf";
-                                                    i6 = i14;
-                                                    str5 = str10;
-                                                    byte[] withProfileDocument = BsonLite.withProfileDocument(doc4, str5, BsonLite.withProfileDocument(bArr3, Integer.toString(i12), BsonLite.document("id", Integer.valueOf(m7v4), "uuid", LocalResourceEngine.uuid())));
-                                                    bArr4 = BsonLite.withProfileDocument(withProfileDocument, "dbd", BsonLite.withoutProfileKey(doc(withProfileDocument, "dbd"), Integer.toString(i12)));
-                                                    withProfileInt = BsonLite.withProfileBool(BsonLite.withProfileInt(doc, "tbn", Math.addExact(m7v(doc, "tbn"), 1)), "nbb", false);
-                                                    i7 = i;
-                                                }
-                                                StringBuilder sb2 = new StringBuilder();
-                                                String str13 = "area_";
-                                                sb2.append(str13);
-                                                sb2.append(i7);
-                                                byte[] withProfileDocument2 = BsonLite.withProfileDocument(bArr10, sb2.toString(), bArr4);
-                                                it3 = arrayList2.iterator();
-                                                while (it3.hasNext()) {
-                                                    try {
-                                                        int[] iArr3 = (int[]) it3.next();
-                                                        byte[] bArr11 = withProfileInt;
-                                                        StringBuilder sb3 = new StringBuilder();
-                                                        sb3.append(str13);
-                                                        Iterator it7 = it3;
-                                                        sb3.append(iArr3[0]);
-                                                        String sb4 = sb3.toString();
-                                                        String num = Integer.toString(iArr3[1]);
-                                                        String str14 = str13;
-                                                        byte[] doc8 = doc(withProfileDocument2, sb4);
-                                                        int i16 = i7;
-                                                        byte[] withProfileDocument3 = BsonLite.withProfileDocument(doc8, str5, BsonLite.withoutProfileKey(doc(doc8, str5), num));
-                                                        String str15 = str5;
-                                                        withProfileDocument2 = BsonLite.withProfileDocument(withProfileDocument2, sb4, BsonLite.withProfileDocument(withProfileDocument3, "dbd", BsonLite.withProfileInt(doc(withProfileDocument3, "dbd"), num, 20)));
-                                                        str13 = str14;
-                                                        withProfileInt = bArr11;
-                                                        it3 = it7;
-                                                        i7 = i16;
-                                                        str5 = str15;
-                                                    } catch (ArithmeticException | IllegalArgumentException e7) {
-                                                        e = e7;
-                                                        i = i7;
-                                                        runtimeException = e;
-                                                        str2 = str7;
-                                                        LocalEconomyEngine.Result result42222 = new LocalEconomyEngine.Result(bArr);
-                                                        result42222.reason = runtimeException.getMessage();
-                                                        result42222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result42222.reason)));
-                                                        result42222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-                                                        return result42222;
-                                                    }
-                                                }
-                                                byte[] bArr12 = withProfileInt;
-                                                i = i7;
-                                                iArr2 = totals(localConstructionCatalog2, withProfileDocument2, result2.profile);
-                                                String[] strArr = {"fv", "rv", "dv"};
-                                                bArr5 = bArr12;
-                                                for (i8 = 0; i8 < 3; i8++) {
-                                                    bArr5 = BsonLite.withProfileInt(bArr5, strArr[i8], Math.addExact(m7v(bArr5, strArr[i8]), iArr2[i8] - iArr[i8]));
-                                                }
-                                                if (equals && iArr2[2] > iArr[2]) {
-                                                    bArr5 = BsonLite.withProfileInt(bArr5, "dvc", Math.addExact(m7v(bArr5, "dvc"), iArr2[2] - iArr[2]));
-                                                }
-                                                it4 = BsonLite.keys(withProfileDocument2).iterator();
-                                                while (it4.hasNext()) {
-                                                    String next = it4.next();
-                                                    byte[] doc9 = doc(withProfileDocument2, next);
-                                                    int[] iArr4 = totals(localConstructionCatalog2, BsonLite.document(next, doc(bArr10, next)), result2.profile);
-                                                    Iterator<String> it8 = it4;
-                                                    int[] iArr5 = totals(localConstructionCatalog2, BsonLite.document(next, doc9), result2.profile);
-                                                    int i17 = 0;
-                                                    while (true) {
-                                                        bArr6 = bArr10;
-                                                        if (i17 >= 3) {
-                                                            break;
-                                                        }
-                                                        doc9 = BsonLite.withProfileInt(doc9, strArr[i17], Math.addExact(m7v(doc9, strArr[i17]), iArr5[i17] - iArr4[i17]));
-                                                        i17++;
-                                                        bArr10 = bArr6;
-                                                        iArr5 = iArr5;
-                                                    }
-                                                    withProfileDocument2 = BsonLite.withProfileDocument(withProfileDocument2, next, doc9);
-                                                    localConstructionCatalog2 = localConstructionCatalog;
-                                                    it4 = it8;
-                                                    bArr10 = bArr6;
-                                                }
-                                                result2.profile = BsonLite.withProfileInt(result2.profile, "q7DailyBuildIncome", iArr2[3]);
-                                                byte[] withProfileDocument4 = BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m7v(bArr5, "bf") - m7v6), "av", LocalEconomyEngine.regularActions(result2.profile, progress)), "areas", withProfileDocument2);
-                                                if (z5) {
-                                                    withProfileDocument4 = BsonLite.withProfileBool(withProfileDocument4, str12, true);
-                                                }
-                                                result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileDocument4);
-                                                it5 = list.iterator();
-                                                while (it5.hasNext()) {
-                                                    int intValue2 = it5.next().intValue();
-                                                    byte[] profileHeroDocument2 = BsonLite.profileHeroDocument(result2.profile, intValue2);
-                                                    String str16 = str4;
-                                                    int m7v9 = m7v(profileHeroDocument2, str16) - i6;
-                                                    result2.fatigue.put(Integer.valueOf(intValue2), Integer.valueOf(m7v9));
-                                                    result2.profile = BsonLite.withHeroDocument(result2.profile, intValue2, BsonLite.withProfileInt(profileHeroDocument2, str16, m7v9));
-                                                    result2.replies.add(new LocalResourceEngine.Reply("updateCurFatigueValue", BsonLite.heroValueDocument(intValue2, m7v9)));
-                                                    str4 = str16;
-                                                }
-                                                LocalEconomyEngine.spendActions(result2, progress, m7v5);
-                                                result2.profile = LocalNewAchievementEngine.add(result2.profile, !equals ? 27 : 28, 1);
-                                                byte[] doc10 = doc(result2.profile, "city");
-                                                LocalEconomyEngine.commit(result2, 0);
-                                                result2.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result2.profile), "cd", doc10)));
-                                                result2.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc10)));
-                                                if (z5) {
-                                                    result2.replies.add(new LocalResourceEngine.Reply("syncDaerweilaAbility", BsonLite.document("u", true)));
-                                                }
-                                                str2 = str7;
-                                                result2.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, obj2, Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
-                                                result2.accepted = true;
-                                                return result2;
-                                            }
-                                            z4 = true;
-                                            require(z4, "城市科技值不足");
-                                            require(m7v5 < 0 && LocalEconomyEngine.actions(result2.profile, progress2) >= m7v5 && m7v6 >= 0 && m7v(doc, "bf") >= m7v6, "行动力或建设资金不足");
-                                            intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
-                                            require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
-                                            it2 = intArrayValues.iterator();
-                                            i5 = 0;
-                                            while (true) {
-                                                list = intArrayValues;
-                                                if (it2.hasNext()) {
-                                                }
-                                                i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
-                                                intArrayValues = list;
-                                                i4 = i13;
-                                                str3 = str11;
-                                                it2 = it6;
-                                                z3 = z6;
-                                            }
-                                            LocalConstructionCatalog localConstructionCatalog22 = localConstructionCatalog;
-                                            String str122 = str3;
-                                            z5 = z3;
-                                            int i142 = i4;
-                                            require(i5 < i10, !equals ? "神器使建设力不足" : "神器使开发力不足");
-                                            byte[] bArr102 = bArr9;
-                                            iArr = totals(localConstructionCatalog22, bArr102, result2.profile);
-                                            if (equals) {
-                                            }
-                                            StringBuilder sb22 = new StringBuilder();
-                                            String str132 = "area_";
-                                            sb22.append(str132);
-                                            sb22.append(i7);
-                                            byte[] withProfileDocument22 = BsonLite.withProfileDocument(bArr102, sb22.toString(), bArr4);
-                                            it3 = arrayList2.iterator();
-                                            while (it3.hasNext()) {
-                                            }
-                                            byte[] bArr122 = withProfileInt;
-                                            i = i7;
-                                            iArr2 = totals(localConstructionCatalog22, withProfileDocument22, result2.profile);
-                                            String[] strArr2 = {"fv", "rv", "dv"};
-                                            bArr5 = bArr122;
-                                            while (i8 < 3) {
-                                            }
-                                            if (equals) {
-                                                bArr5 = BsonLite.withProfileInt(bArr5, "dvc", Math.addExact(m7v(bArr5, "dvc"), iArr2[2] - iArr[2]));
-                                            }
-                                            it4 = BsonLite.keys(withProfileDocument22).iterator();
-                                            while (it4.hasNext()) {
-                                            }
-                                            result2.profile = BsonLite.withProfileInt(result2.profile, "q7DailyBuildIncome", iArr2[3]);
-                                            byte[] withProfileDocument42 = BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m7v(bArr5, "bf") - m7v6), "av", LocalEconomyEngine.regularActions(result2.profile, progress)), "areas", withProfileDocument22);
-                                            if (z5) {
-                                            }
-                                            result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileDocument42);
-                                            it5 = list.iterator();
-                                            while (it5.hasNext()) {
-                                            }
-                                            LocalEconomyEngine.spendActions(result2, progress, m7v5);
-                                            result2.profile = LocalNewAchievementEngine.add(result2.profile, !equals ? 27 : 28, 1);
-                                            byte[] doc102 = doc(result2.profile, "city");
-                                            LocalEconomyEngine.commit(result2, 0);
-                                            result2.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result2.profile), "cd", doc102)));
-                                            result2.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc102)));
-                                            if (z5) {
-                                            }
-                                            str2 = str7;
-                                            result2.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, obj2, Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
-                                            result2.accepted = true;
-                                            return result2;
-                                        }
+                    try {
+                        if (progress != null && m11v5 >= 1 && m11v5 <= 8) {
+                            try {
+                                if (!progress.inEmergency && !LocalChapterCityEngine.locked(bArr, m11v5) && LocalCityProgress.status(progress, m11v5, bArr) == 0) {
+                                    z = true;
+                                    require(z, "该地区尚未解放，无法建设或开发");
+                                    require(!progress.finishedNewbees.contains(20) || (equals && progress.processingNewbees.contains(20)), "请先完成建设指引");
+                                    require(m11v(doc(bArr, "weeknum"), "d") >= 7, "最后一天无法建设或开发");
+                                    require(progress.patrolRewardPending && BsonLite.keys(doc(bArr, "q7Battle")).isEmpty(), "请先完成当前战斗或巡查");
+                                    require(progress.processingEvents.stream().allMatch(LocalConstructionEngine$$ExternalSyntheticLambda0.INSTANCE), "请先完成当前剧情");
+                                    result2.profile = BsonLite.withPatrolProgress(BsonLite.withLocalCityState(bArr, progress), progress);
+                                    byte[] doc2 = doc(result2.profile, "city");
+                                    byte[] doc3 = doc(doc2, "areas");
+                                    byte[] doc4 = doc(doc3, "area_" + m11v5);
+                                    doc = doc(doc4, "bd");
+                                    int m11v6 = m11v(doc4, "lv");
+                                    m11v = m11v(bArr2, "fi");
+                                    m11v2 = m11v(bArr2, "bi");
+                                    require(m11v6 < 1 && localConstructionCatalog.slots(m11v5, m11v6) > 0, "地区开发数据无效");
+                                    if (equals) {
+                                        StringBuilder sb = new StringBuilder();
+                                        sb.append(m11v5);
+                                        result = result2;
+                                        sb.append(":");
+                                        sb.append(m11v6 + 1);
+                                        rule = localConstructionCatalog.rule("U", sb.toString());
                                     } else {
-                                        arrayList2 = arrayList;
+                                        rule = localConstructionCatalog.rule("B", Integer.valueOf(m11v2));
+                                        result = result2;
                                     }
-                                }
-                                z3 = false;
-                                if (m7v(doc, "rv") < i3) {
-                                    z4 = false;
-                                    require(z4, "城市科技值不足");
-                                    require(m7v5 < 0 && LocalEconomyEngine.actions(result2.profile, progress2) >= m7v5 && m7v6 >= 0 && m7v(doc, "bf") >= m7v6, "行动力或建设资金不足");
+                                    require(!BsonLite.keys(rule).isEmpty(), !equals ? "无效建筑" : "该地区已开发到最高等级");
+                                    if (equals) {
+                                        require(m11v(bArr2, "luv") == 1, "每次只能开发一级");
+                                    } else {
+                                        require(m11v(rule, "ban") == 0 && m11v(rule, "clientBan") == 0, "此建筑不能手动建设");
+                                        require(m11v >= 1 && m11v <= localConstructionCatalog.slots(m11v5, m11v6), "该建筑空位尚未解锁");
+                                        require(BsonLite.keys(doc(doc, Integer.toString(m11v))).isEmpty(), "该空位已有建筑");
+                                        validateBuilding(localConstructionCatalog, doc2, doc4, m11v2, rule);
+                                    }
+                                    m11v3 = m11v(rule, !equals ? "ac" : "action_consume");
+                                    m11v4 = m11v(rule, !equals ? "mc" : "money_consume");
+                                    int m11v7 = m11v(rule, !equals ? "fc" : "fatigue");
+                                    int m11v8 = m11v(rule, !equals ? "cr" : "lead_require");
+                                    if (equals) {
+                                        i2 = m11v8;
+                                        i3 = 0;
+                                    } else {
+                                        i2 = m11v8;
+                                        try {
+                                            i3 = m11v(rule, "research_require");
+                                        } catch (ArithmeticException | IllegalArgumentException e) {
+                                            runtimeException = e;
+                                            str2 = str6;
+                                            i = m11v5;
+                                            LocalEconomyEngine.Result result3 = new LocalEconomyEngine.Result(bArr);
+                                            result3.reason = runtimeException.getMessage();
+                                            result3.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result3.reason)));
+                                            result3.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                                            return result3;
+                                        }
+                                    }
+                                    ArrayList arrayList = new ArrayList();
+                                    it = BsonLite.keys(doc3).iterator();
+                                    int i9 = i2;
+                                    while (true) {
+                                        i4 = 27;
+                                        bArr3 = doc;
+                                        if (it.hasNext()) {
+                                            break;
+                                        }
+                                        int i10 = m11v2;
+                                        byte[] doc5 = doc(doc3, it.next());
+                                        int i11 = m11v;
+                                        byte[] doc6 = doc(doc5, str5);
+                                        for (String str7 : BsonLite.keys(doc6)) {
+                                            String str8 = str5;
+                                            byte[] bArr8 = doc3;
+                                            byte[] doc7 = doc(doc6, str7);
+                                            if (equals) {
+                                                bArr7 = doc6;
+                                                if (m11v(doc7, "id") == 20) {
+                                                    if (!Boolean.TRUE.equals(BsonLite.boolValue(doc7, "u"))) {
+                                                        i3 = Math.max(0, i3 - 25);
+                                                    }
+                                                    arrayList.add(new int[]{m11v(doc5, "id"), Integer.parseInt(str7)});
+                                                }
+                                            } else {
+                                                bArr7 = doc6;
+                                            }
+                                            if (m11v(doc7, "id") == (equals ? 28 : 27)) {
+                                                i9 = Math.max(0, i9 - 3);
+                                            }
+                                            doc3 = bArr8;
+                                            str5 = str8;
+                                            doc6 = bArr7;
+                                        }
+                                        m11v = i11;
+                                        doc = bArr3;
+                                        m11v2 = i10;
+                                    }
+                                    byte[] bArr9 = doc3;
+                                    int i12 = m11v;
+                                    int i13 = m11v2;
+                                    String str9 = str5;
+                                    require(m11v(doc2, "rv") < i3, "城市科技值不足");
+                                    LocalEconomyEngine.Result result4 = result;
+                                    require(m11v3 < 0 && LocalEconomyEngine.actions(result4.profile, progress) >= m11v3 && m11v4 >= 0 && m11v(doc2, "bf") >= m11v4, "行动力或建设资金不足");
                                     intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
                                     require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
                                     it2 = intArrayValues.iterator();
                                     i5 = 0;
                                     while (true) {
-                                        list = intArrayValues;
+                                        i6 = m11v3;
                                         if (it2.hasNext()) {
+                                            break;
                                         }
+                                        Iterator<Integer> it6 = it2;
+                                        int intValue = it2.next().intValue();
+                                        List<Integer> list = intArrayValues;
+                                        byte[] profileHeroDocument = BsonLite.profileHeroDocument(result4.profile, intValue);
+                                        int i14 = m11v4;
+                                        require(LocalResourceEngine.ownsHero(result4.profile, intValue), "未拥有选中的神器使");
+                                        require(m11v(profileHeroDocument, "cf") >= m11v7, "神器使疲劳值不足");
                                         i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
-                                        intArrayValues = list;
-                                        i4 = i13;
-                                        str3 = str11;
                                         it2 = it6;
-                                        z3 = z6;
+                                        intArrayValues = list;
+                                        m11v3 = i6;
+                                        m11v4 = i14;
                                     }
-                                    LocalConstructionCatalog localConstructionCatalog222 = localConstructionCatalog;
-                                    String str1222 = str3;
-                                    z5 = z3;
-                                    int i1422 = i4;
-                                    require(i5 < i10, !equals ? "神器使建设力不足" : "神器使开发力不足");
-                                    byte[] bArr1022 = bArr9;
-                                    iArr = totals(localConstructionCatalog222, bArr1022, result2.profile);
+                                    LocalConstructionCatalog localConstructionCatalog2 = localConstructionCatalog;
+                                    List<Integer> list2 = intArrayValues;
+                                    int i15 = m11v4;
+                                    require(i5 < i9, !equals ? "神器使建设力不足" : "神器使开发力不足");
+                                    byte[] bArr10 = bArr9;
+                                    iArr = totals(localConstructionCatalog2, bArr10, result4.profile);
                                     if (equals) {
+                                        i7 = m11v7;
+                                        str3 = str9;
+                                        int i16 = m11v6 + 1;
+                                        str4 = "cf";
+                                        i = m11v5;
+                                        try {
+                                            byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileInt(doc4, "lv", i16), "mbn", localConstructionCatalog2.slots(i, i16));
+                                            withProfileInt = BsonLite.withProfileInt(doc2, "tvn", Math.addExact(m11v(doc2, "tvn"), 1));
+                                            bArr4 = withProfileInt2;
+                                        } catch (ArithmeticException e2) {
+                                            e = e2;
+                                            str2 = str6;
+                                            runtimeException = e;
+                                            LocalEconomyEngine.Result result32 = new LocalEconomyEngine.Result(bArr);
+                                            result32.reason = runtimeException.getMessage();
+                                            result32.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result32.reason)));
+                                            result32.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                                            return result32;
+                                        } catch (IllegalArgumentException e3) {
+                                            e = e3;
+                                            str2 = str6;
+                                            runtimeException = e;
+                                            LocalEconomyEngine.Result result322 = new LocalEconomyEngine.Result(bArr);
+                                            result322.reason = runtimeException.getMessage();
+                                            result322.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result322.reason)));
+                                            result322.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                                            return result322;
+                                        }
+                                    } else {
+                                        i7 = m11v7;
+                                        str3 = str9;
+                                        byte[] withProfileDocument = BsonLite.withProfileDocument(doc4, str3, BsonLite.withProfileDocument(bArr3, Integer.toString(i12), BsonLite.document("id", Integer.valueOf(i13), "uuid", LocalResourceEngine.uuid())));
+                                        byte[] withProfileDocument2 = BsonLite.withProfileDocument(withProfileDocument, "dbd", BsonLite.withoutProfileKey(doc(withProfileDocument, "dbd"), Integer.toString(i12)));
+                                        withProfileInt = BsonLite.withProfileBool(BsonLite.withProfileInt(doc2, "tbn", Math.addExact(m11v(doc2, "tbn"), 1)), "nbb", false);
+                                        bArr4 = withProfileDocument2;
+                                        str4 = "cf";
+                                        i = m11v5;
                                     }
-                                    StringBuilder sb222 = new StringBuilder();
-                                    String str1322 = "area_";
-                                    sb222.append(str1322);
-                                    sb222.append(i7);
-                                    byte[] withProfileDocument222 = BsonLite.withProfileDocument(bArr1022, sb222.toString(), bArr4);
-                                    it3 = arrayList2.iterator();
+                                    StringBuilder sb2 = new StringBuilder();
+                                    String str10 = "area_";
+                                    sb2.append(str10);
+                                    sb2.append(i);
+                                    byte[] withProfileDocument3 = BsonLite.withProfileDocument(bArr10, sb2.toString(), bArr4);
+                                    it3 = arrayList.iterator();
                                     while (it3.hasNext()) {
+                                        try {
+                                            int[] iArr3 = (int[]) it3.next();
+                                            byte[] bArr11 = withProfileInt;
+                                            StringBuilder sb3 = new StringBuilder();
+                                            sb3.append(str10);
+                                            Iterator it7 = it3;
+                                            sb3.append(iArr3[0]);
+                                            String sb4 = sb3.toString();
+                                            String num = Integer.toString(iArr3[1]);
+                                            byte[] doc8 = doc(withProfileDocument3, sb4);
+                                            String str11 = str10;
+                                            byte[] withProfileDocument4 = BsonLite.withProfileDocument(doc8, str3, BsonLite.withoutProfileKey(doc(doc8, str3), num));
+                                            String str12 = str3;
+                                            withProfileDocument3 = BsonLite.withProfileDocument(withProfileDocument3, sb4, BsonLite.withProfileDocument(withProfileDocument4, "dbd", BsonLite.withProfileInt(doc(withProfileDocument4, "dbd"), num, 20)));
+                                            withProfileInt = bArr11;
+                                            it3 = it7;
+                                            str10 = str11;
+                                            str3 = str12;
+                                        } catch (ArithmeticException | IllegalArgumentException e4) {
+                                            runtimeException = e4;
+                                            str2 = str6;
+                                            LocalEconomyEngine.Result result3222 = new LocalEconomyEngine.Result(bArr);
+                                            result3222.reason = runtimeException.getMessage();
+                                            result3222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result3222.reason)));
+                                            result3222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                                            return result3222;
+                                        }
                                     }
-                                    byte[] bArr1222 = withProfileInt;
-                                    i = i7;
-                                    iArr2 = totals(localConstructionCatalog222, withProfileDocument222, result2.profile);
-                                    String[] strArr22 = {"fv", "rv", "dv"};
-                                    bArr5 = bArr1222;
-                                    while (i8 < 3) {
+                                    byte[] bArr12 = withProfileInt;
+                                    iArr2 = totals(localConstructionCatalog2, withProfileDocument3, result4.profile);
+                                    String[] strArr = {"fv", "rv", "dv"};
+                                    bArr5 = bArr12;
+                                    for (i8 = 0; i8 < 3; i8++) {
+                                        bArr5 = BsonLite.withProfileInt(bArr5, strArr[i8], Math.addExact(m11v(bArr5, strArr[i8]), iArr2[i8] - iArr[i8]));
                                     }
-                                    if (equals) {
+                                    if (equals && iArr2[2] > iArr[2]) {
+                                        bArr5 = BsonLite.withProfileInt(bArr5, "dvc", Math.addExact(m11v(bArr5, "dvc"), iArr2[2] - iArr[2]));
                                     }
-                                    it4 = BsonLite.keys(withProfileDocument222).iterator();
+                                    it4 = BsonLite.keys(withProfileDocument3).iterator();
                                     while (it4.hasNext()) {
+                                        String next = it4.next();
+                                        byte[] doc9 = doc(withProfileDocument3, next);
+                                        int[] iArr4 = totals(localConstructionCatalog2, BsonLite.document(next, doc(bArr10, next)), result4.profile);
+                                        Iterator<String> it8 = it4;
+                                        int[] iArr5 = totals(localConstructionCatalog2, BsonLite.document(next, doc9), result4.profile);
+                                        int i17 = 0;
+                                        while (true) {
+                                            bArr6 = bArr10;
+                                            if (i17 >= 3) {
+                                                break;
+                                            }
+                                            doc9 = BsonLite.withProfileInt(doc9, strArr[i17], Math.addExact(m11v(doc9, strArr[i17]), iArr5[i17] - iArr4[i17]));
+                                            i17++;
+                                            strArr = strArr;
+                                            bArr10 = bArr6;
+                                        }
+                                        String[] strArr2 = strArr;
+                                        withProfileDocument3 = BsonLite.withProfileDocument(withProfileDocument3, next, doc9);
+                                        localConstructionCatalog2 = localConstructionCatalog;
+                                        it4 = it8;
+                                        strArr = strArr2;
+                                        bArr10 = bArr6;
                                     }
-                                    result2.profile = BsonLite.withProfileInt(result2.profile, "q7DailyBuildIncome", iArr2[3]);
-                                    byte[] withProfileDocument422 = BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m7v(bArr5, "bf") - m7v6), "av", LocalEconomyEngine.regularActions(result2.profile, progress)), "areas", withProfileDocument222);
-                                    if (z5) {
-                                    }
-                                    result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileDocument422);
-                                    it5 = list.iterator();
+                                    result4.profile = BsonLite.withProfileInt(result4.profile, "q7DailyBuildIncome", iArr2[3]);
+                                    result4.profile = BsonLite.withProfileDocument(result4.profile, "city", BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m11v(bArr5, "bf") - i15), "av", LocalEconomyEngine.regularActions(result4.profile, progress)), "areas", withProfileDocument3));
+                                    it5 = list2.iterator();
                                     while (it5.hasNext()) {
+                                        int intValue2 = it5.next().intValue();
+                                        byte[] profileHeroDocument2 = BsonLite.profileHeroDocument(result4.profile, intValue2);
+                                        String str13 = str4;
+                                        int m11v9 = m11v(profileHeroDocument2, str13) - i7;
+                                        result4.fatigue.put(Integer.valueOf(intValue2), Integer.valueOf(m11v9));
+                                        result4.profile = BsonLite.withHeroDocument(result4.profile, intValue2, BsonLite.withProfileInt(profileHeroDocument2, str13, m11v9));
+                                        result4.replies.add(new LocalResourceEngine.Reply("updateCurFatigueValue", BsonLite.heroValueDocument(intValue2, m11v9)));
+                                        str4 = str13;
                                     }
-                                    LocalEconomyEngine.spendActions(result2, progress, m7v5);
-                                    result2.profile = LocalNewAchievementEngine.add(result2.profile, !equals ? 27 : 28, 1);
-                                    byte[] doc1022 = doc(result2.profile, "city");
-                                    LocalEconomyEngine.commit(result2, 0);
-                                    result2.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result2.profile), "cd", doc1022)));
-                                    result2.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc1022)));
-                                    if (z5) {
+                                    LocalEconomyEngine.spendActions(result4, progress, i6);
+                                    byte[] bArr13 = result4.profile;
+                                    if (equals) {
+                                        i4 = 28;
                                     }
-                                    str2 = str7;
-                                    result2.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, obj2, Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
-                                    result2.accepted = true;
-                                    return result2;
+                                    result4.profile = LocalNewAchievementEngine.add(bArr13, i4, 1);
+                                    byte[] doc10 = doc(result4.profile, "city");
+                                    LocalEconomyEngine.commit(result4, 0);
+                                    result4.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result4.profile), "cd", doc10)));
+                                    result4.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc10)));
+                                    str2 = str6;
+                                    result4.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, "aid", Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
+                                    result4.accepted = true;
+                                    return result4;
                                 }
-                                z4 = true;
-                                require(z4, "城市科技值不足");
-                                require(m7v5 < 0 && LocalEconomyEngine.actions(result2.profile, progress2) >= m7v5 && m7v6 >= 0 && m7v(doc, "bf") >= m7v6, "行动力或建设资金不足");
-                                intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
-                                require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
-                                it2 = intArrayValues.iterator();
-                                i5 = 0;
-                                while (true) {
-                                    list = intArrayValues;
-                                    if (it2.hasNext()) {
-                                    }
-                                    i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
-                                    intArrayValues = list;
-                                    i4 = i13;
-                                    str3 = str11;
-                                    it2 = it6;
-                                    z3 = z6;
-                                }
-                                LocalConstructionCatalog localConstructionCatalog2222 = localConstructionCatalog;
-                                String str12222 = str3;
-                                z5 = z3;
-                                int i14222 = i4;
-                                require(i5 < i10, !equals ? "神器使建设力不足" : "神器使开发力不足");
-                                byte[] bArr10222 = bArr9;
-                                iArr = totals(localConstructionCatalog2222, bArr10222, result2.profile);
-                                if (equals) {
-                                }
-                                StringBuilder sb2222 = new StringBuilder();
-                                String str13222 = "area_";
-                                sb2222.append(str13222);
-                                sb2222.append(i7);
-                                byte[] withProfileDocument2222 = BsonLite.withProfileDocument(bArr10222, sb2222.toString(), bArr4);
-                                it3 = arrayList2.iterator();
-                                while (it3.hasNext()) {
-                                }
-                                byte[] bArr12222 = withProfileInt;
-                                i = i7;
-                                iArr2 = totals(localConstructionCatalog2222, withProfileDocument2222, result2.profile);
-                                String[] strArr222 = {"fv", "rv", "dv"};
-                                bArr5 = bArr12222;
-                                while (i8 < 3) {
-                                }
-                                if (equals) {
-                                }
-                                it4 = BsonLite.keys(withProfileDocument2222).iterator();
-                                while (it4.hasNext()) {
-                                }
-                                result2.profile = BsonLite.withProfileInt(result2.profile, "q7DailyBuildIncome", iArr2[3]);
-                                byte[] withProfileDocument4222 = BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m7v(bArr5, "bf") - m7v6), "av", LocalEconomyEngine.regularActions(result2.profile, progress)), "areas", withProfileDocument2222);
-                                if (z5) {
-                                }
-                                result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileDocument4222);
-                                it5 = list.iterator();
-                                while (it5.hasNext()) {
-                                }
-                                LocalEconomyEngine.spendActions(result2, progress, m7v5);
-                                result2.profile = LocalNewAchievementEngine.add(result2.profile, !equals ? 27 : 28, 1);
-                                byte[] doc10222 = doc(result2.profile, "city");
-                                LocalEconomyEngine.commit(result2, 0);
-                                result2.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result2.profile), "cd", doc10222)));
-                                result2.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc10222)));
-                                if (z5) {
-                                }
-                                str2 = str7;
-                                result2.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, obj2, Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
-                                result2.accepted = true;
-                                return result2;
+                            } catch (ArithmeticException | IllegalArgumentException e5) {
+                                runtimeException = e5;
+                                i = m11v5;
+                                str2 = str6;
+                                LocalEconomyEngine.Result result32222 = new LocalEconomyEngine.Result(bArr);
+                                result32222.reason = runtimeException.getMessage();
+                                result32222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result32222.reason)));
+                                result32222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                                return result32222;
                             }
-                            z2 = true;
-                            require(z2, "请先完成建设指引");
-                            require(m7v(doc(bArr, "weeknum"), "d") < 7, "最后一天无法建设或开发");
-                            require(progress.patrolRewardPending && BsonLite.keys(doc(bArr, "q7Battle")).isEmpty(), "请先完成当前战斗或巡查");
-                            require(progress.processingEvents.stream().allMatch(LocalConstructionEngine$$ExternalSyntheticLambda0.INSTANCE), "请先完成当前剧情");
-                            result3.profile = BsonLite.withPatrolProgress(BsonLite.withLocalCityState(bArr, progress), progress);
-                            doc = doc(result3.profile, "city");
-                            doc2 = doc(doc, "areas");
-                            byte[] doc42 = doc(doc2, "area_" + m7v2);
-                            doc3 = doc(doc42, "bd");
-                            int m7v32 = m7v(doc42, "lv");
-                            m7v = m7v(bArr2, "fi");
-                            int m7v42 = m7v(bArr2, "bi");
-                            require(m7v32 < 1 && localConstructionCatalog.slots(m7v2, m7v32) > 0, "地区开发数据无效");
-                            if (equals) {
-                            }
-                            require(!BsonLite.keys(rule).isEmpty(), equals ? "无效建筑" : "该地区已开发到最高等级");
-                            if (equals) {
-                            }
-                            int m7v52 = m7v(rule, equals ? "ac" : "action_consume");
-                            int m7v62 = m7v(rule, equals ? "mc" : "money_consume");
-                            i = m7v2;
-                            int m7v72 = m7v(rule, equals ? "fc" : "fatigue");
-                            int m7v82 = m7v(rule, equals ? "cr" : "lead_require");
-                            if (equals) {
-                            }
-                            arrayList = new ArrayList();
-                            it = BsonLite.keys(doc2).iterator();
-                            int i102 = i2;
-                            while (true) {
-                                bArr3 = doc3;
-                                if (!it.hasNext()) {
-                                }
-                                doc2 = bArr8;
-                                doc3 = bArr3;
-                                m7v = i11;
-                            }
-                            i4 = m7v72;
-                            int i122 = m7v;
-                            byte[] bArr92 = doc2;
-                            String str102 = str6;
-                            str3 = "uda";
-                            if (equals) {
-                            }
-                            progress2 = progress;
-                            result2 = result;
-                            arrayList2 = arrayList;
-                            z3 = false;
-                            if (m7v(doc, "rv") < i3) {
-                            }
-                            z4 = true;
-                            require(z4, "城市科技值不足");
-                            require(m7v52 < 0 && LocalEconomyEngine.actions(result2.profile, progress2) >= m7v52 && m7v62 >= 0 && m7v(doc, "bf") >= m7v62, "行动力或建设资金不足");
-                            intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
-                            require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
-                            it2 = intArrayValues.iterator();
-                            i5 = 0;
-                            while (true) {
-                                list = intArrayValues;
-                                if (it2.hasNext()) {
-                                }
-                                i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
-                                intArrayValues = list;
-                                i4 = i13;
-                                str3 = str11;
-                                it2 = it6;
-                                z3 = z6;
-                            }
-                            LocalConstructionCatalog localConstructionCatalog22222 = localConstructionCatalog;
-                            String str122222 = str3;
-                            z5 = z3;
-                            int i142222 = i4;
-                            require(i5 < i102, !equals ? "神器使建设力不足" : "神器使开发力不足");
-                            byte[] bArr102222 = bArr92;
-                            iArr = totals(localConstructionCatalog22222, bArr102222, result2.profile);
-                            if (equals) {
-                            }
-                            StringBuilder sb22222 = new StringBuilder();
-                            String str132222 = "area_";
-                            sb22222.append(str132222);
-                            sb22222.append(i7);
-                            byte[] withProfileDocument22222 = BsonLite.withProfileDocument(bArr102222, sb22222.toString(), bArr4);
-                            it3 = arrayList2.iterator();
-                            while (it3.hasNext()) {
-                            }
-                            byte[] bArr122222 = withProfileInt;
-                            i = i7;
-                            iArr2 = totals(localConstructionCatalog22222, withProfileDocument22222, result2.profile);
-                            String[] strArr2222 = {"fv", "rv", "dv"};
-                            bArr5 = bArr122222;
-                            while (i8 < 3) {
-                            }
-                            if (equals) {
-                            }
-                            it4 = BsonLite.keys(withProfileDocument22222).iterator();
-                            while (it4.hasNext()) {
-                            }
-                            result2.profile = BsonLite.withProfileInt(result2.profile, "q7DailyBuildIncome", iArr2[3]);
-                            byte[] withProfileDocument42222 = BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m7v(bArr5, "bf") - m7v62), "av", LocalEconomyEngine.regularActions(result2.profile, progress)), "areas", withProfileDocument22222);
-                            if (z5) {
-                            }
-                            result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileDocument42222);
-                            it5 = list.iterator();
-                            while (it5.hasNext()) {
-                            }
-                            LocalEconomyEngine.spendActions(result2, progress, m7v52);
-                            result2.profile = LocalNewAchievementEngine.add(result2.profile, !equals ? 27 : 28, 1);
-                            byte[] doc102222 = doc(result2.profile, "city");
-                            LocalEconomyEngine.commit(result2, 0);
-                            result2.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result2.profile), "cd", doc102222)));
-                            result2.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc102222)));
-                            if (z5) {
-                            }
-                            str2 = str7;
-                            result2.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, obj2, Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
-                            result2.accepted = true;
-                            return result2;
                         }
+                        result4.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, "aid", Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
+                        result4.accepted = true;
+                        return result4;
+                    } catch (ArithmeticException e6) {
+                        e = e6;
+                        runtimeException = e;
+                        LocalEconomyEngine.Result result322222 = new LocalEconomyEngine.Result(bArr);
+                        result322222.reason = runtimeException.getMessage();
+                        result322222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result322222.reason)));
+                        result322222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                        return result322222;
+                    } catch (IllegalArgumentException e7) {
+                        e = e7;
+                        runtimeException = e;
+                        LocalEconomyEngine.Result result3222222 = new LocalEconomyEngine.Result(bArr);
+                        result3222222.reason = runtimeException.getMessage();
+                        result3222222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result3222222.reason)));
+                        result3222222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, "aid", Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
+                        return result3222222;
                     }
+                    int m11v72 = m11v(rule, !equals ? "fc" : "fatigue");
+                    int m11v82 = m11v(rule, !equals ? "cr" : "lead_require");
+                    if (equals) {
+                    }
+                    ArrayList arrayList2 = new ArrayList();
+                    it = BsonLite.keys(doc3).iterator();
+                    int i92 = i2;
+                    while (true) {
+                        i4 = 27;
+                        bArr3 = doc;
+                        if (it.hasNext()) {
+                        }
+                        m11v = i11;
+                        doc = bArr3;
+                        m11v2 = i10;
+                    }
+                    byte[] bArr92 = doc3;
+                    int i122 = m11v;
+                    int i132 = m11v2;
+                    String str92 = str5;
+                    require(m11v(doc2, "rv") < i3, "城市科技值不足");
+                    LocalEconomyEngine.Result result42 = result;
+                    require(m11v3 < 0 && LocalEconomyEngine.actions(result42.profile, progress) >= m11v3 && m11v4 >= 0 && m11v(doc2, "bf") >= m11v4, "行动力或建设资金不足");
+                    intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
+                    require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
+                    it2 = intArrayValues.iterator();
+                    i5 = 0;
+                    while (true) {
+                        i6 = m11v3;
+                        if (it2.hasNext()) {
+                        }
+                        i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
+                        it2 = it6;
+                        intArrayValues = list;
+                        m11v3 = i6;
+                        m11v4 = i14;
+                    }
+                    LocalConstructionCatalog localConstructionCatalog22 = localConstructionCatalog;
+                    List<Integer> list22 = intArrayValues;
+                    int i152 = m11v4;
+                    require(i5 < i92, !equals ? "神器使建设力不足" : "神器使开发力不足");
+                    byte[] bArr102 = bArr92;
+                    iArr = totals(localConstructionCatalog22, bArr102, result42.profile);
+                    if (equals) {
+                    }
+                    StringBuilder sb22 = new StringBuilder();
+                    String str102 = "area_";
+                    sb22.append(str102);
+                    sb22.append(i);
+                    byte[] withProfileDocument32 = BsonLite.withProfileDocument(bArr102, sb22.toString(), bArr4);
+                    it3 = arrayList2.iterator();
+                    while (it3.hasNext()) {
+                    }
+                    byte[] bArr122 = withProfileInt;
+                    iArr2 = totals(localConstructionCatalog22, withProfileDocument32, result42.profile);
+                    String[] strArr3 = {"fv", "rv", "dv"};
+                    bArr5 = bArr122;
+                    while (i8 < 3) {
+                    }
+                    if (equals) {
+                        bArr5 = BsonLite.withProfileInt(bArr5, "dvc", Math.addExact(m11v(bArr5, "dvc"), iArr2[2] - iArr[2]));
+                    }
+                    it4 = BsonLite.keys(withProfileDocument32).iterator();
+                    while (it4.hasNext()) {
+                    }
+                    result42.profile = BsonLite.withProfileInt(result42.profile, "q7DailyBuildIncome", iArr2[3]);
+                    result42.profile = BsonLite.withProfileDocument(result42.profile, "city", BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m11v(bArr5, "bf") - i152), "av", LocalEconomyEngine.regularActions(result42.profile, progress)), "areas", withProfileDocument32));
+                    it5 = list22.iterator();
+                    while (it5.hasNext()) {
+                    }
+                    LocalEconomyEngine.spendActions(result42, progress, i6);
+                    byte[] bArr132 = result42.profile;
+                    if (equals) {
+                    }
+                    result42.profile = LocalNewAchievementEngine.add(bArr132, i4, 1);
+                    byte[] doc102 = doc(result42.profile, "city");
+                    LocalEconomyEngine.commit(result42, 0);
+                    result42.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result42.profile), "cd", doc102)));
+                    result42.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc102)));
+                    str2 = str6;
                 } catch (ArithmeticException | IllegalArgumentException e8) {
-                    runtimeException = e8;
-                    i = m7v2;
-                    obj = "rs";
-                    str2 = str7;
-                    LocalEconomyEngine.Result result422222 = new LocalEconomyEngine.Result(bArr);
-                    result422222.reason = runtimeException.getMessage();
-                    result422222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result422222.reason)));
-                    result422222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-                    return result422222;
+                    e = e8;
+                    str2 = str6;
+                    i = m11v5;
                 }
+                z = false;
+                require(z, "该地区尚未解放，无法建设或开发");
+                require(!progress.finishedNewbees.contains(20) || (equals && progress.processingNewbees.contains(20)), "请先完成建设指引");
+                require(m11v(doc(bArr, "weeknum"), "d") >= 7, "最后一天无法建设或开发");
+                require(progress.patrolRewardPending && BsonLite.keys(doc(bArr, "q7Battle")).isEmpty(), "请先完成当前战斗或巡查");
+                require(progress.processingEvents.stream().allMatch(LocalConstructionEngine$$ExternalSyntheticLambda0.INSTANCE), "请先完成当前剧情");
+                result2.profile = BsonLite.withPatrolProgress(BsonLite.withLocalCityState(bArr, progress), progress);
+                byte[] doc22 = doc(result2.profile, "city");
+                byte[] doc32 = doc(doc22, "areas");
+                byte[] doc42 = doc(doc32, "area_" + m11v5);
+                doc = doc(doc42, "bd");
+                int m11v62 = m11v(doc42, "lv");
+                m11v = m11v(bArr2, "fi");
+                m11v2 = m11v(bArr2, "bi");
+                require(m11v62 < 1 && localConstructionCatalog.slots(m11v5, m11v62) > 0, "地区开发数据无效");
+                if (equals) {
+                }
+                require(!BsonLite.keys(rule).isEmpty(), !equals ? "无效建筑" : "该地区已开发到最高等级");
+                if (equals) {
+                }
+                m11v3 = m11v(rule, !equals ? "ac" : "action_consume");
+                m11v4 = m11v(rule, !equals ? "mc" : "money_consume");
+            } catch (ArithmeticException | IllegalArgumentException e9) {
+                e = e9;
+                i = m11v5;
             }
-            result2.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, true, obj2, Integer.valueOf(i), "ext", !equals ? BsonLite.EMPTY_DOCUMENT : BsonLite.document("reward", BsonLite.document("money", 0)))));
-            result2.accepted = true;
-            return result2;
-        } catch (ArithmeticException e9) {
-            e = e9;
-            runtimeException = e;
-            LocalEconomyEngine.Result result4222222 = new LocalEconomyEngine.Result(bArr);
-            result4222222.reason = runtimeException.getMessage();
-            result4222222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result4222222.reason)));
-            result4222222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-            return result4222222;
-        } catch (IllegalArgumentException e10) {
+        } catch (ArithmeticException | IllegalArgumentException e10) {
             e = e10;
-            runtimeException = e;
-            LocalEconomyEngine.Result result42222222 = new LocalEconomyEngine.Result(bArr);
-            result42222222.reason = runtimeException.getMessage();
-            result42222222.replies.add(new LocalResourceEngine.Reply("showMessageStr", BsonLite.document("m", result42222222.reason)));
-            result42222222.replies.add(new LocalResourceEngine.Reply(str2, BsonLite.document(obj, false, obj2, Integer.valueOf(i), "ext", BsonLite.EMPTY_DOCUMENT)));
-            return result42222222;
+            i = m11v5;
+            obj = "rs";
         }
-        z = false;
-        require(z, "该地区尚未解放，无法建设或开发");
-        obj = "rs";
-        if (!progress.finishedNewbees.contains(20)) {
-        }
-        z2 = true;
-        require(z2, "请先完成建设指引");
-        require(m7v(doc(bArr, "weeknum"), "d") < 7, "最后一天无法建设或开发");
-        require(progress.patrolRewardPending && BsonLite.keys(doc(bArr, "q7Battle")).isEmpty(), "请先完成当前战斗或巡查");
-        require(progress.processingEvents.stream().allMatch(LocalConstructionEngine$$ExternalSyntheticLambda0.INSTANCE), "请先完成当前剧情");
-        result3.profile = BsonLite.withPatrolProgress(BsonLite.withLocalCityState(bArr, progress), progress);
-        doc = doc(result3.profile, "city");
-        doc2 = doc(doc, "areas");
-        byte[] doc422 = doc(doc2, "area_" + m7v2);
-        doc3 = doc(doc422, "bd");
-        int m7v322 = m7v(doc422, "lv");
-        m7v = m7v(bArr2, "fi");
-        int m7v422 = m7v(bArr2, "bi");
-        require(m7v322 < 1 && localConstructionCatalog.slots(m7v2, m7v322) > 0, "地区开发数据无效");
-        if (equals) {
-        }
-        require(!BsonLite.keys(rule).isEmpty(), equals ? "无效建筑" : "该地区已开发到最高等级");
-        if (equals) {
-        }
-        int m7v522 = m7v(rule, equals ? "ac" : "action_consume");
-        int m7v622 = m7v(rule, equals ? "mc" : "money_consume");
-        i = m7v2;
-        int m7v722 = m7v(rule, equals ? "fc" : "fatigue");
-        int m7v822 = m7v(rule, equals ? "cr" : "lead_require");
-        if (equals) {
-        }
-        arrayList = new ArrayList();
-        it = BsonLite.keys(doc2).iterator();
-        int i1022 = i2;
-        while (true) {
-            bArr3 = doc3;
-            if (!it.hasNext()) {
-            }
-            doc2 = bArr8;
-            doc3 = bArr3;
-            m7v = i11;
-        }
-        i4 = m7v722;
-        int i1222 = m7v;
-        byte[] bArr922 = doc2;
-        String str1022 = str6;
-        str3 = "uda";
-        if (equals) {
-        }
-        progress2 = progress;
-        result2 = result;
-        arrayList2 = arrayList;
-        z3 = false;
-        if (m7v(doc, "rv") < i3) {
-        }
-        z4 = true;
-        require(z4, "城市科技值不足");
-        require(m7v522 < 0 && LocalEconomyEngine.actions(result2.profile, progress2) >= m7v522 && m7v622 >= 0 && m7v(doc, "bf") >= m7v622, "行动力或建设资金不足");
-        intArrayValues = BsonLite.intArrayValues(bArr2, "hs");
-        require(intArrayValues.isEmpty() && intArrayValues.size() <= 3 && new LinkedHashSet(intArrayValues).size() == intArrayValues.size(), "请选择一至三名不同的神器使");
-        it2 = intArrayValues.iterator();
-        i5 = 0;
-        while (true) {
-            list = intArrayValues;
-            if (it2.hasNext()) {
-            }
-            i5 = Math.addExact(i5, localConstructionCatalog.work(profileHeroDocument, intValue, equals ? "construct" : "leadership"));
-            intArrayValues = list;
-            i4 = i13;
-            str3 = str11;
-            it2 = it6;
-            z3 = z6;
-        }
-        LocalConstructionCatalog localConstructionCatalog222222 = localConstructionCatalog;
-        String str1222222 = str3;
-        z5 = z3;
-        int i1422222 = i4;
-        require(i5 < i1022, !equals ? "神器使建设力不足" : "神器使开发力不足");
-        byte[] bArr1022222 = bArr922;
-        iArr = totals(localConstructionCatalog222222, bArr1022222, result2.profile);
-        if (equals) {
-        }
-        StringBuilder sb222222 = new StringBuilder();
-        String str1322222 = "area_";
-        sb222222.append(str1322222);
-        sb222222.append(i7);
-        byte[] withProfileDocument222222 = BsonLite.withProfileDocument(bArr1022222, sb222222.toString(), bArr4);
-        it3 = arrayList2.iterator();
-        while (it3.hasNext()) {
-        }
-        byte[] bArr1222222 = withProfileInt;
-        i = i7;
-        iArr2 = totals(localConstructionCatalog222222, withProfileDocument222222, result2.profile);
-        String[] strArr22222 = {"fv", "rv", "dv"};
-        bArr5 = bArr1222222;
-        while (i8 < 3) {
-        }
-        if (equals) {
-        }
-        it4 = BsonLite.keys(withProfileDocument222222).iterator();
-        while (it4.hasNext()) {
-        }
-        result2.profile = BsonLite.withProfileInt(result2.profile, "q7DailyBuildIncome", iArr2[3]);
-        byte[] withProfileDocument422222 = BsonLite.withProfileDocument(BsonLite.withProfileInt(BsonLite.withProfileInt(bArr5, "bf", m7v(bArr5, "bf") - m7v622), "av", LocalEconomyEngine.regularActions(result2.profile, progress)), "areas", withProfileDocument222222);
-        if (z5) {
-        }
-        result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileDocument422222);
-        it5 = list.iterator();
-        while (it5.hasNext()) {
-        }
-        LocalEconomyEngine.spendActions(result2, progress, m7v522);
-        result2.profile = LocalNewAchievementEngine.add(result2.profile, !equals ? 27 : 28, 1);
-        byte[] doc1022222 = doc(result2.profile, "city");
-        LocalEconomyEngine.commit(result2, 0);
-        result2.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result2.profile), "cd", doc1022222)));
-        result2.replies.add(new LocalResourceEngine.Reply("get_city_data_reply", BsonLite.document("cd", doc1022222)));
-        if (z5) {
-        }
-        str2 = str7;
     }
 
     static /* synthetic */ boolean lambda$apply$0(Integer num) {
@@ -978,7 +552,7 @@ final class LocalConstructionEngine {
         Iterator<String> it = BsonLite.keys(bArr).iterator();
         int i2 = 0;
         while (it.hasNext()) {
-            if (m7v(doc(bArr, it.next()), "id") == i) {
+            if (m11v(doc(bArr, it.next()), "id") == i) {
                 i2++;
             }
         }
@@ -989,7 +563,7 @@ final class LocalConstructionEngine {
         byte[] repairDestroyedSlots = repairDestroyedSlots(bArr);
         byte[] doc = doc(repairDestroyedSlots, "city");
         boolean z = false;
-        boolean z2 = m7v(doc, "tbn") > 0 || (progress != null && (progress.finishedNewbees.contains(20) || progress.finishedNewbees.contains(27)));
+        boolean z2 = m11v(doc, "tbn") > 0 || (progress != null && (progress.finishedNewbees.contains(20) || progress.finishedNewbees.contains(27)));
         Boolean boolValue = BsonLite.boolValue(doc, "nbb");
         if (!z2 && !Boolean.FALSE.equals(boolValue)) {
             z = true;
@@ -998,19 +572,19 @@ final class LocalConstructionEngine {
     }
 
     static byte[] acknowledgeDestroyed(byte[] bArr, byte[] bArr2) {
-        int m7v = m7v(bArr2, "aid");
-        int m7v2 = m7v(bArr2, "fi");
-        int m7v3 = m7v(bArr2, "bi");
-        if (m7v < 1 || m7v > 8 || m7v2 < 1 || m7v3 < 1) {
+        int m11v = m11v(bArr2, "aid");
+        int m11v2 = m11v(bArr2, "fi");
+        int m11v3 = m11v(bArr2, "bi");
+        if (m11v < 1 || m11v > 8 || m11v2 < 1 || m11v3 < 1) {
             return bArr;
         }
         byte[] doc = doc(bArr, "city");
         byte[] doc2 = doc(doc, "areas");
-        String str = "area_" + m7v;
-        String num = Integer.toString(m7v2);
+        String str = "area_" + m11v;
+        String num = Integer.toString(m11v2);
         byte[] doc3 = doc(doc2, str);
         byte[] doc4 = doc(doc3, "dbd");
-        return m7v(doc4, num) != m7v3 ? bArr : BsonLite.withProfileDocument(bArr, "city", BsonLite.withProfileDocument(doc, "areas", BsonLite.withProfileDocument(doc2, str, BsonLite.withProfileDocument(doc3, "dbd", BsonLite.withoutProfileKey(doc4, num)))));
+        return m11v(doc4, num) != m11v3 ? bArr : BsonLite.withProfileDocument(bArr, "city", BsonLite.withProfileDocument(doc, "areas", BsonLite.withProfileDocument(doc2, str, BsonLite.withProfileDocument(doc3, "dbd", BsonLite.withoutProfileKey(doc4, num)))));
     }
 
     static byte[] repairDestroyedSlots(byte[] bArr) {
@@ -1026,7 +600,7 @@ final class LocalConstructionEngine {
             byte[] bArr3 = doc5;
             for (String str : BsonLite.keys(doc5)) {
                 Iterator<String> it2 = it;
-                if (m7v(doc(doc4, str), "id") > 0) {
+                if (m11v(doc(doc4, str), "id") > 0) {
                     bArr3 = BsonLite.withoutProfileKey(bArr3, str);
                 }
                 it = it2;
@@ -1046,7 +620,7 @@ final class LocalConstructionEngine {
     static byte[] repairIncome(byte[] bArr, LocalConstructionCatalog localConstructionCatalog, LocalTutorialStore.Progress progress) {
         byte[] doc = doc(bArr, "city");
         int i = totals(localConstructionCatalog, doc(doc(BsonLite.withLocalCityState(bArr, progress), "city"), "areas"), bArr)[3];
-        if (BsonLite.intValue(bArr, "q7DailyBuildIncome") == null && m7v(doc, "tbn") > 0 && m7v(doc, "dvc") == i && i > m7v(doc, "dv")) {
+        if (BsonLite.intValue(bArr, "q7DailyBuildIncome") == null && m11v(doc, "tbn") > 0 && m11v(doc, "dvc") == i && i > m11v(doc, "dv")) {
             bArr = BsonLite.withProfileDocument(bArr, "city", BsonLite.withProfileInt(doc, "dvc", 0));
         }
         return BsonLite.withProfileInt(bArr, "q7DailyBuildIncome", i);
@@ -1066,7 +640,7 @@ final class LocalConstructionEngine {
         byte[] doc4 = doc(doc3, "bd");
         int i = 1;
         while (true) {
-            if (i > localConstructionCatalog.slots(1, m7v(doc3, "lv"))) {
+            if (i > localConstructionCatalog.slots(1, m11v(doc3, "lv"))) {
                 i = 0;
                 break;
             }
@@ -1079,7 +653,7 @@ final class LocalConstructionEngine {
             return bArr;
         }
         byte[] rule = localConstructionCatalog.rule("B", 1);
-        require(m7v(rule, "clientBan") == 1 && m7v(rule, "can_remove") == 0 && m7v(rule, "ml") == 1, "原中央庭基地配置不完整");
+        require(m11v(rule, "clientBan") == 1 && m11v(rule, "can_remove") == 0 && m11v(rule, "ml") == 1, "原中央庭基地配置不完整");
         int[] iArr = totals(localConstructionCatalog, doc2, withLocalCityState);
         byte[] withProfileDocument = BsonLite.withProfileDocument(doc3, "bd", BsonLite.withProfileDocument(doc4, Integer.toString(i), BsonLite.document("id", 1, "uuid", LocalResourceEngine.uuid())));
         byte[] withProfileDocument2 = BsonLite.withProfileDocument(withProfileDocument, "dbd", BsonLite.withoutProfileKey(doc(withProfileDocument, "dbd"), Integer.toString(i)));
@@ -1088,15 +662,15 @@ final class LocalConstructionEngine {
         String[] strArr = {"fv", "rv", "dv"};
         for (int i2 = 0; i2 < 3; i2++) {
             int i3 = iArr2[i2] - iArr[i2];
-            doc = BsonLite.withProfileInt(doc, strArr[i2], Math.addExact(m7v(doc, strArr[i2]), i3));
-            withProfileDocument2 = BsonLite.withProfileInt(withProfileDocument2, strArr[i2], Math.addExact(m7v(withProfileDocument2, strArr[i2]), i3));
+            doc = BsonLite.withProfileInt(doc, strArr[i2], Math.addExact(m11v(doc, strArr[i2]), i3));
+            withProfileDocument2 = BsonLite.withProfileInt(withProfileDocument2, strArr[i2], Math.addExact(m11v(withProfileDocument2, strArr[i2]), i3));
         }
-        return BsonLite.withProfileBool(BsonLite.withProfileDocument(withLocalCityState, "city", BsonLite.withProfileDocument(BsonLite.withProfileInt(doc, "dvc", Math.addExact(m7v(doc, "dvc"), iArr2[2] - iArr[2])), "areas", BsonLite.withProfileDocument(withProfileDocument3, "area_1", withProfileDocument2))), "q7CentralBase", true);
+        return BsonLite.withProfileBool(BsonLite.withProfileDocument(withLocalCityState, "city", BsonLite.withProfileDocument(BsonLite.withProfileInt(doc, "dvc", Math.addExact(m11v(doc, "dvc"), iArr2[2] - iArr[2])), "areas", BsonLite.withProfileDocument(withProfileDocument3, "area_1", withProfileDocument2))), "q7CentralBase", true);
     }
 
     static byte[] destroyByIntelligence(byte[] bArr, LocalConstructionCatalog localConstructionCatalog, String str, String str2) {
-        int m7v = m7v(localConstructionCatalog.rule("B", Integer.valueOf(m7v(doc(doc(doc(doc(doc(bArr, "city"), "areas"), str), "bd"), str2), "id"))), "type");
-        require(m7v >= 1 && m7v <= 3, "情报损毁目标不是原普通建筑");
+        int m11v = m11v(localConstructionCatalog.rule("B", Integer.valueOf(m11v(doc(doc(doc(doc(doc(bArr, "city"), "areas"), str), "bd"), str2), "id"))), "type");
+        require(m11v >= 1 && m11v <= 3, "情报损毁目标不是原普通建筑");
         return removeBuilding(bArr, localConstructionCatalog, str, str2, true);
     }
 
@@ -1137,8 +711,8 @@ final class LocalConstructionEngine {
                     String str10 = str2;
                     if (uuidValue.equals(BsonLite.uuidValue(doc4, "uuid"))) {
                         require(str4 == null, "建筑标识重复，未执行拆除");
-                        i = m7v(doc(doc3, str6), "id");
-                        i2 = m7v(doc4, "id");
+                        i = m11v(doc(doc3, str6), "id");
+                        i2 = m11v(doc4, "id");
                         str4 = str6;
                         it = it2;
                         str2 = str10;
@@ -1155,10 +729,10 @@ final class LocalConstructionEngine {
             String str12 = str3;
             require(str4 != null, "建筑不存在或已移除");
             require(LocalCityProgress.status(progress, i, bArr) == 0, "该地区尚未解放，无法拆除建筑");
-            require(m7v(localConstructionCatalog.rule("B", Integer.valueOf(i2)), "can_remove") == 1, "该建筑不能拆除");
-            require(m7v(doc2, "rbn") >= 0 && m7v(doc2, "rbn") < 3, "本周目拆除次数已用尽");
+            require(m11v(localConstructionCatalog.rule("B", Integer.valueOf(i2)), "can_remove") == 1, "该建筑不能拆除");
+            require(m11v(doc2, "rbn") >= 0 && m11v(doc2, "rbn") < 3, "本周目拆除次数已用尽");
             result.profile = removeBuilding(withPatrolProgress, localConstructionCatalog, str4, str5, false);
-            byte[] withProfileInt = BsonLite.withProfileInt(doc(result.profile, str12), "rbn", m7v(doc2, "rbn") + 1);
+            byte[] withProfileInt = BsonLite.withProfileInt(doc(result.profile, str12), "rbn", m11v(doc2, "rbn") + 1);
             result.profile = BsonLite.withProfileDocument(result.profile, str12, withProfileInt);
             result.profile = BsonLite.withProfileDocument(result.profile, "q7BuildingRemovals", BsonLite.withProfileDocument(doc, uuidValue, BsonLite.document(str11, Integer.valueOf(i), "fi", Integer.valueOf(Integer.parseInt(str5)), "bi", Integer.valueOf(i2))));
             result.replies.add(new LocalResourceEngine.Reply("get_all_area_info_reply", BsonLite.withProfileDocument(BsonLite.allAreaInfoReplyDocument(true, progress, result.profile), "cd", withProfileInt)));
@@ -1181,11 +755,11 @@ final class LocalConstructionEngine {
         byte[] doc = doc(bArr, "city");
         byte[] doc2 = doc(doc, "areas");
         byte[] doc3 = doc(doc2, str);
-        int m7v = m7v(doc(doc(doc3, "bd"), str2), "id");
+        int m11v = m11v(doc(doc(doc3, "bd"), str2), "id");
         int[] iArr = totals(localConstructionCatalog2, doc2, bArr);
         byte[] withProfileDocument = BsonLite.withProfileDocument(doc3, "bd", BsonLite.withoutProfileKey(doc(doc3, "bd"), str2));
         if (z) {
-            withoutProfileKey = BsonLite.withProfileInt(doc(withProfileDocument, "dbd"), str2, m7v);
+            withoutProfileKey = BsonLite.withProfileInt(doc(withProfileDocument, "dbd"), str2, m11v);
         } else {
             withoutProfileKey = BsonLite.withoutProfileKey(doc(withProfileDocument, "dbd"), str2);
         }
@@ -1199,7 +773,7 @@ final class LocalConstructionEngine {
             if (i3 >= 3) {
                 break;
             }
-            doc = BsonLite.withProfileInt(doc, strArr[i3], Math.addExact(m7v(doc, strArr[i3]), iArr2[i3] - iArr[i3]));
+            doc = BsonLite.withProfileInt(doc, strArr[i3], Math.addExact(m11v(doc, strArr[i3]), iArr2[i3] - iArr[i3]));
             i3++;
         }
         for (String str3 : BsonLite.keys(withProfileDocument2)) {
@@ -1213,7 +787,7 @@ final class LocalConstructionEngine {
             objArr2[1] = doc4;
             int[] iArr4 = totals(localConstructionCatalog2, BsonLite.document(objArr2), bArr);
             while (i2 < i) {
-                doc4 = BsonLite.withProfileInt(doc4, strArr[i2], Math.addExact(m7v(doc4, strArr[i2]), iArr4[i2] - iArr3[i2]));
+                doc4 = BsonLite.withProfileInt(doc4, strArr[i2], Math.addExact(m11v(doc4, strArr[i2]), iArr4[i2] - iArr3[i2]));
                 i2++;
                 doc2 = doc2;
                 i = 3;
@@ -1239,16 +813,16 @@ final class LocalConstructionEngine {
     private static void validateBuilding(LocalConstructionCatalog localConstructionCatalog, byte[] bArr, byte[] bArr2, int i, byte[] bArr3) {
         int count = count(doc(bArr2, "bd"), i);
         int countCity = countCity(bArr, i);
-        Integer intValue = BsonLite.intValue(doc(bArr3, "al"), Integer.toString(m7v(bArr2, "id")));
+        Integer intValue = BsonLite.intValue(doc(bArr3, "al"), Integer.toString(m11v(bArr2, "id")));
         require(intValue == null || count < intValue.intValue(), "该地区的同类建筑已达上限");
-        require(m7v(bArr3, "ml") == 0 || countCity < m7v(bArr3, "ml"), "城市同类建筑已达上限");
+        require(m11v(bArr3, "ml") == 0 || countCity < m11v(bArr3, "ml"), "城市同类建筑已达上限");
         byte[] doc = doc(bArr3, "area_building_require");
         boolean isEmpty = BsonLite.keys(doc).isEmpty();
         for (String str : BsonLite.keys(doc)) {
-            isEmpty |= count(doc(bArr2, "bd"), Integer.parseInt(str)) >= m7v(doc, str);
+            isEmpty |= count(doc(bArr2, "bd"), Integer.parseInt(str)) >= m11v(doc, str);
         }
         require(isEmpty, "尚未满足地区前置建筑条件");
-        if (m7v(bArr3, "init") == 0) {
+        if (m11v(bArr3, "init") == 0) {
             List<Integer> intArrayValues = BsonLite.intArrayValues(bArr3, "pre");
             if (intArrayValues.isEmpty()) {
                 require(BsonLite.intArrayValues(bArr, "hb").contains(Integer.valueOf(i)), "此特殊建筑尚未解锁");
@@ -1276,21 +850,21 @@ final class LocalConstructionEngine {
         while (it2.hasNext()) {
             byte[] doc = doc(bArr, it2.next());
             byte[] doc2 = doc(doc, "bd");
-            if (m7v(doc(doc, "st"), "0") == 0) {
+            if (m11v(doc(doc, "st"), "0") == 0) {
                 int i4 = 3;
                 int[] iArr2 = new int[3];
                 int[] iArr3 = new int[3];
                 Iterator<String> it3 = BsonLite.keys(doc2).iterator();
                 while (it3.hasNext()) {
-                    int m7v = m7v(doc(doc2, it3.next()), "id");
-                    byte[] rule = localConstructionCatalog.rule("B", Integer.valueOf(m7v));
+                    int m11v = m11v(doc(doc2, it3.next()), "id");
+                    byte[] rule = localConstructionCatalog.rule("B", Integer.valueOf(m11v));
                     String[] strArr = {"force_val", "research_val", "dev_val"};
                     int i5 = 0;
                     while (i5 < i4) {
-                        int m7v2 = m7v(rule, strArr[i5]);
-                        iArr2[i5] = Math.addExact(iArr2[i5], m7v2);
-                        if (m7v2 <= 0) {
-                            if (m7v != (i5 == 0 ? 6 : i5 == 1 ? 11 : 16)) {
+                        int m11v2 = m11v(rule, strArr[i5]);
+                        iArr2[i5] = Math.addExact(iArr2[i5], m11v2);
+                        if (m11v2 <= 0) {
+                            if (m11v != (i5 == 0 ? 6 : i5 == 1 ? 11 : 16)) {
                                 i5++;
                                 i4 = 3;
                             }
@@ -1322,7 +896,7 @@ final class LocalConstructionEngine {
                     iArr[i6] = Math.addExact(iArr[i6], iArr2[i6]);
                     i6++;
                 }
-                iArr[3] = Math.addExact(iArr[3], m7v(localConstructionCatalog.rule("U", m7v(doc, "id") + ":" + m7v(doc, "lv")), "money_output"));
+                iArr[3] = Math.addExact(iArr[3], m11v(localConstructionCatalog.rule("U", m11v(doc, "id") + ":" + m11v(doc, "lv")), "money_output"));
             }
         }
         return iArr;

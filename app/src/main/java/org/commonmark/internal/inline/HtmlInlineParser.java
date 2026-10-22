@@ -16,11 +16,11 @@ public class HtmlInlineParser implements InlineContentParser {
         AsciiMatcher build = AsciiMatcher.builder().range('A', 'Z').range('a', 'z').build();
         asciiLetter = build;
         tagNameStart = build;
-        tagNameContinue = build.newBuilder().range('0', '9').m99c('-').build();
-        AsciiMatcher build2 = build.newBuilder().m99c('_').m99c(':').build();
+        tagNameContinue = build.newBuilder().range('0', '9').m95c('-').build();
+        AsciiMatcher build2 = build.newBuilder().m95c('_').m95c(':').build();
         attributeStart = build2;
-        attributeContinue = build2.newBuilder().range('0', '9').m99c('.').m99c('-').build();
-        attributeValueEnd = AsciiMatcher.builder().m99c(' ').m99c('\t').m99c('\n').m99c((char) 11).m99c('\f').m99c('\r').m99c('\"').m99c('\'').m99c('=').m99c('<').m99c('>').m99c('`').build();
+        attributeContinue = build2.newBuilder().range('0', '9').m95c('.').m95c('-').build();
+        attributeValueEnd = AsciiMatcher.builder().m95c(' ').m95c('\t').m95c('\n').m95c((char) 11).m95c('\f').m95c('\r').m95c('\"').m95c('\'').m95c('=').m95c('<').m95c('>').m95c('`').build();
     }
 
     @Override // org.commonmark.internal.inline.InlineContentParser
@@ -63,7 +63,7 @@ public class HtmlInlineParser implements InlineContentParser {
         String text = scanner.getSource(start, scanner.position()).getContent();
         HtmlInline node = new HtmlInline();
         node.setLiteral(text);
-        return ParsedInline.m97of(node, scanner.position());
+        return ParsedInline.m93of(node, scanner.position());
     }
 
     private static boolean tryOpenTag(Scanner scanner) {

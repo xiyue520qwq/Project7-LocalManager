@@ -13,14 +13,14 @@ public class SourceLines {
     }
 
     /* renamed from: of */
-    public static SourceLines m103of(SourceLine sourceLine) {
+    public static SourceLines m99of(SourceLine sourceLine) {
         SourceLines sourceLines = new SourceLines();
         sourceLines.addLine(sourceLine);
         return sourceLines;
     }
 
     /* renamed from: of */
-    public static SourceLines m102of(List<SourceLine> sourceLines) {
+    public static SourceLines m98of(List<SourceLine> sourceLines) {
         SourceLines result = new SourceLines();
         result.lines.addAll(sourceLines);
         return result;

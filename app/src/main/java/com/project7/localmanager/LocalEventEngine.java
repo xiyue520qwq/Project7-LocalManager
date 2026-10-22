@@ -2,7 +2,6 @@ package com.project7.localmanager;
 
 import com.project7.localmanager.LocalEventCatalog;
 import com.project7.localmanager.LocalNewbeeCatalog;
-import com.project7.localmanager.LocalPatrolEngine;
 import com.project7.localmanager.LocalPuzzleEngine;
 import com.project7.localmanager.LocalStoryConditions;
 import com.project7.localmanager.LocalTutorialStore;
@@ -110,9 +109,6 @@ final class LocalEventEngine {
     }
 
     boolean startEvent(int i) {
-        if (LocalDalviraStoryEngine.blocked(this.profile, this.progress, i)) {
-            return false;
-        }
         if (this.catalog.puzzleRooms.containsKey(Integer.valueOf(i)) && !LocalPuzzleEngine.canBegin(this.profile, this.catalog, this.progress, i)) {
             return false;
         }
@@ -149,7 +145,7 @@ final class LocalEventEngine {
     }
 
     boolean selectEventOption(int i, int i2) {
-        if (i == 8078 || !LocalStoryTreasureRewardEngine.canComplete(this.profile, this.catalog, i) || this.catalog.puzzleRooms.containsKey(Integer.valueOf(i)) || !this.progress.processingEvents.contains(Integer.valueOf(i)) || i2 == 0) {
+        if (this.catalog.puzzleRooms.containsKey(Integer.valueOf(i)) || !this.progress.processingEvents.contains(Integer.valueOf(i)) || i2 == 0) {
             return false;
         }
         Set<Integer> successors = this.catalog.successors(i);
@@ -293,18 +289,17 @@ final class LocalEventEngine {
         Set<Integer> orDefault = this.progress.eventConditions.getOrDefault("missionWon", Collections.emptySet());
         Set<Integer> orDefault2 = this.progress.eventConditions.getOrDefault("missionLost", Collections.emptySet());
         Set<Integer> orDefault3 = this.progress.eventConditions.getOrDefault("battle", Collections.emptySet());
-        Iterator<Integer> it = orDefault3.iterator();
-        while (it.hasNext()) {
-            int intValue = it.next().intValue();
-            if ((LocalChapterCityEngine.active(this.profile) && LocalCityProgress.chapterScene(intValue)) || LocalDalviraCityEngine.ownsOutcome(this.profile, this.progress, intValue) || (intValue == 320 && LocalAlanCityEngine.active(this.profile, this.progress))) {
-                LocalEventCatalog.Outcome outcome = this.catalog.cityOutcomes.get(Integer.valueOf(intValue));
+        if (LocalChapterCityEngine.active(this.profile)) {
+            Iterator<Integer> it = orDefault3.iterator();
+            while (it.hasNext()) {
+                LocalEventCatalog.Outcome outcome = this.catalog.cityOutcomes.get(Integer.valueOf(it.next().intValue()));
                 if (outcome != null) {
                     Iterator<Integer> it2 = outcome.success.iterator();
                     while (it2.hasNext()) {
-                        int intValue2 = it2.next().intValue();
-                        LocalEventCatalog.Event event = this.catalog.get(intValue2);
-                        if (event != null && event.release && !isMutex(intValue2) && !this.progress.completedEvents.contains(Integer.valueOf(intValue2)) && !this.progress.processingEvents.contains(Integer.valueOf(intValue2))) {
-                            this.progress.availableEvents.add(Integer.valueOf(intValue2));
+                        int intValue = it2.next().intValue();
+                        LocalEventCatalog.Event event = this.catalog.get(intValue);
+                        if (event != null && event.release && !isMutex(intValue) && !this.progress.completedEvents.contains(Integer.valueOf(intValue)) && !this.progress.processingEvents.contains(Integer.valueOf(intValue))) {
+                            this.progress.availableEvents.add(Integer.valueOf(intValue));
                         }
                     }
                 }
@@ -312,17 +307,17 @@ final class LocalEventEngine {
         }
         Iterator it3 = new ArrayList(this.progress.completedEvents).iterator();
         while (it3.hasNext()) {
-            int intValue3 = ((Integer) it3.next()).intValue();
-            LocalEventCatalog.Outcome outcome2 = this.catalog.outcomes.get(Integer.valueOf(intValue3));
+            int intValue2 = ((Integer) it3.next()).intValue();
+            LocalEventCatalog.Outcome outcome2 = this.catalog.outcomes.get(Integer.valueOf(intValue2));
             if (outcome2 != null) {
-                boolean z = orDefault.contains(Integer.valueOf(intValue3)) || (!orDefault2.contains(Integer.valueOf(intValue3)) && orDefault3.contains(Integer.valueOf(outcome2.scene)));
-                if (z || orDefault2.contains(Integer.valueOf(intValue3))) {
+                boolean z = orDefault.contains(Integer.valueOf(intValue2)) || (!orDefault2.contains(Integer.valueOf(intValue2)) && orDefault3.contains(Integer.valueOf(outcome2.scene)));
+                if (z || orDefault2.contains(Integer.valueOf(intValue2))) {
                     Iterator<Integer> it4 = (z ? outcome2.success : outcome2.failure).iterator();
                     while (it4.hasNext()) {
-                        int intValue4 = it4.next().intValue();
-                        LocalEventCatalog.Event event2 = this.catalog.get(intValue4);
-                        if (event2 != null && event2.release && !isMutex(intValue4) && !this.progress.completedEvents.contains(Integer.valueOf(intValue4)) && !this.progress.processingEvents.contains(Integer.valueOf(intValue4))) {
-                            this.progress.availableEvents.add(Integer.valueOf(intValue4));
+                        int intValue3 = it4.next().intValue();
+                        LocalEventCatalog.Event event2 = this.catalog.get(intValue3);
+                        if (event2 != null && event2.release && !isMutex(intValue3) && !this.progress.completedEvents.contains(Integer.valueOf(intValue3)) && !this.progress.processingEvents.contains(Integer.valueOf(intValue3))) {
+                            this.progress.availableEvents.add(Integer.valueOf(intValue3));
                         }
                     }
                 }
@@ -343,7 +338,7 @@ final class LocalEventEngine {
         while (it.hasNext()) {
             Integer num = (Integer) it.next();
             LocalEventCatalog.Event event = this.catalog.get(num.intValue());
-            if (event != null && conditionMatches(event, str, collection) && LocalStoryTreasureRewardEngine.canComplete(this.profile, this.catalog, num.intValue())) {
+            if (event != null && conditionMatches(event, str, collection)) {
                 complete(num.intValue(), true);
                 arrayList.add(num);
             }
@@ -412,12 +407,8 @@ final class LocalEventEngine {
     }
 
     private boolean privateReplySatisfied(final int i) {
-        int completedDay;
         Set<Integer> set = this.catalog.privateReplyMessages.get(Integer.valueOf(i));
         if (set == null) {
-            return true;
-        }
-        if (i == 4070 && LocalWenziCityEngine.valid(this.profile, this.progress) && this.catalog.successors(4090).equals(Collections.singleton(4070)) && this.progress.eventCompletions.getOrDefault(4090, 0).intValue() == 1 && !this.eventBaseline.contains(4090) && (completedDay = LocalStoryItemRewardEngine.completedDay(this.profile, this.progress, 4090)) >= 3 && completedDay <= 5) {
             return true;
         }
         byte[] doc = LocalResourceEngine.doc(LocalResourceEngine.doc(this.profile, "sd"), "pm");
@@ -602,13 +593,10 @@ final class LocalEventEngine {
         if (!event.completeConditions.containsKey(str)) {
             return false;
         }
-        if (event.f1id == 8078 && LocalDailyPureEngine.selected(this.profile, this.catalog) == null) {
+        if (this.catalog.puzzleRooms.containsKey(Integer.valueOf(event.f8id)) && LocalPuzzleEngine.exitOutcome(this.profile, this.catalog, this.progress, event.f8id) == null) {
             return false;
         }
-        if (this.catalog.puzzleRooms.containsKey(Integer.valueOf(event.f1id)) && LocalPuzzleEngine.exitOutcome(this.profile, this.catalog, this.progress, event.f1id) == null) {
-            return false;
-        }
-        int[] iArr = this.catalog.consumptions.get(Integer.valueOf(event.f1id));
+        int[] iArr = this.catalog.consumptions.get(Integer.valueOf(event.f8id));
         if (iArr != null && iArr[0] == 1 && LocalResourceEngine.value(this.profile, "money") < iArr[1]) {
             return false;
         }
@@ -706,7 +694,6 @@ final class LocalEventEngine {
 
     private void reevaluateLifecycle() {
         this.lifecycleScans++;
-        LocalDailyPureEngine.restore(this.profile, this.catalog, this.progress);
         repairFirstBattleEvents();
         Iterator it = new ArrayList(this.progress.availableEvents).iterator();
         while (it.hasNext()) {
@@ -727,9 +714,6 @@ final class LocalEventEngine {
         this.conditionPass = localStoryConditionPass2;
         try {
             for (LocalEventCatalog.Trigger trigger : this.catalog.triggers()) {
-                if (trigger.eventId == 7750 && !this.progress.completedEvents.contains(7750) && !this.progress.processingEvents.contains(7750) && !triggerMatches(trigger)) {
-                    this.progress.availableEvents.remove(7750);
-                }
                 if (trigger.eventId == 1005 && !this.progress.completedEvents.contains(1005) && !this.progress.processingEvents.contains(1005) && !this.progress.completedEvents.containsAll(trigger.preAll)) {
                     this.progress.availableEvents.remove(1005);
                 }
@@ -770,20 +754,12 @@ final class LocalEventEngine {
         return patrolEvents(i, this.progress.patrolHeroes);
     }
 
-    LocalPatrolEngine.Result flashbackPatrol(byte[] bArr, int i, List<Integer> list) {
-        return LocalFlashbackEngine.patrol(this.catalog, this.progress, this, bArr, i, list);
-    }
-
     List<Integer> patrolEvents(int i, Collection<Integer> collection) {
-        return patrolEvents(i, collection, null);
-    }
-
-    List<Integer> patrolEvents(int i, Collection<Integer> collection, LocalPatrolCatalog localPatrolCatalog) {
         ArrayList arrayList = new ArrayList();
         for (LocalEventCatalog.Trigger trigger : this.catalog.triggers()) {
             if (!trigger.patrolAreas.isEmpty() || trigger.clientOps.contains(2)) {
                 if (!this.progress.completedEvents.contains(Integer.valueOf(trigger.eventId)) || repeatablePatrol(trigger.eventId)) {
-                    if (!this.progress.processingEvents.contains(Integer.valueOf(trigger.eventId)) && Collections.disjoint(collection, this.catalog.patrolExcluded.getOrDefault(Integer.valueOf(trigger.eventId), Collections.emptySet())) && triggerBlocker(trigger, i, 2, collection, localPatrolCatalog) == null) {
+                    if (!this.progress.processingEvents.contains(Integer.valueOf(trigger.eventId)) && triggerBlocker(trigger, i, 2, collection) == null) {
                         arrayList.add(Integer.valueOf(trigger.eventId));
                     }
                 }
@@ -858,14 +834,7 @@ final class LocalEventEngine {
     }
 
     private String triggerBlocker(LocalEventCatalog.Trigger trigger, int i, int i2, Collection<Integer> collection) {
-        return triggerBlocker(trigger, i, i2, collection, null);
-    }
-
-    private String triggerBlocker(LocalEventCatalog.Trigger trigger, int i, int i2, Collection<Integer> collection, LocalPatrolCatalog localPatrolCatalog) {
-        if (LocalDalviraStoryEngine.blocked(this.profile, this.progress, trigger.eventId)) {
-            return "dalvira-dispatch-closed";
-        }
-        String dynamicTriggerBlocker = dynamicTriggerBlocker(trigger, i, i2, collection, localPatrolCatalog);
+        String dynamicTriggerBlocker = dynamicTriggerBlocker(trigger, i, i2, collection);
         if (dynamicTriggerBlocker != null) {
             return dynamicTriggerBlocker;
         }
@@ -903,18 +872,14 @@ final class LocalEventEngine {
         return "prerequisite/mutex/calendar/emergency";
     }
 
-    private String dynamicTriggerBlocker(LocalEventCatalog.Trigger trigger, int i, int i2, Collection<Integer> collection) {
-        return dynamicTriggerBlocker(trigger, i, i2, collection, null);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0099, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0099, code lost:
     
         return "patrol-heroes=" + r0.getValue();
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private String dynamicTriggerBlocker(LocalEventCatalog.Trigger trigger, int i, int i2, Collection<Integer> collection, LocalPatrolCatalog localPatrolCatalog) {
+    private String dynamicTriggerBlocker(LocalEventCatalog.Trigger trigger, int i, int i2, Collection<Integer> collection) {
         LocalStoryConditions.Evaluation evaluate;
         if (!trigger.areaClicks.isEmpty() && !trigger.areaClicks.contains(this.areaClick)) {
             return "area-focus=" + this.areaClick;
@@ -924,6 +889,7 @@ final class LocalEventEngine {
         }
         Iterator<Map.Entry<Integer, String>> it = trigger.predicates.entrySet().iterator();
         while (true) {
+            LocalStoryConditions.Context context = null;
             if (!it.hasNext()) {
                 return null;
             }
@@ -934,10 +900,17 @@ final class LocalEventEngine {
                 }
             } else {
                 LocalStoryConditionPass localStoryConditionPass = this.conditionPass;
-                if (localStoryConditionPass == null || i != 0) {
-                    evaluate = LocalStoryConditions.evaluate(next.getKey().intValue(), next.getValue(), this.profile, this.progress, i != 0 ? new LocalStoryConditions.Context(i, i2, collection, localPatrolCatalog) : null);
-                } else {
+                if (localStoryConditionPass != null && i == 0) {
                     evaluate = localStoryConditionPass.evaluate(next.getKey().intValue(), next.getValue());
+                } else {
+                    int intValue = next.getKey().intValue();
+                    String value = next.getValue();
+                    byte[] bArr = this.profile;
+                    LocalTutorialStore.Progress progress = this.progress;
+                    if (next.getKey().intValue() == 29 && i != 0) {
+                        context = new LocalStoryConditions.Context(i, i2);
+                    }
+                    evaluate = LocalStoryConditions.evaluate(intValue, value, bArr, progress, context);
                 }
                 if (!evaluate.satisfied) {
                     return evaluate.status + ":" + evaluate.reason;

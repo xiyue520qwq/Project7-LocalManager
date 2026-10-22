@@ -38,7 +38,7 @@ public class SourceSpans {
         SourceSpan a = this.sourceSpans.get(lastIndex);
         SourceSpan b = other.get(0);
         if (a.getLineIndex() == b.getLineIndex() && a.getColumnIndex() + a.getLength() == b.getColumnIndex()) {
-            this.sourceSpans.set(lastIndex, SourceSpan.m100of(a.getLineIndex(), a.getColumnIndex(), a.getLength() + b.getLength()));
+            this.sourceSpans.set(lastIndex, SourceSpan.m96of(a.getLineIndex(), a.getColumnIndex(), a.getLength() + b.getLength()));
             this.sourceSpans.addAll(other.subList(1, other.size()));
         } else {
             this.sourceSpans.addAll(other);

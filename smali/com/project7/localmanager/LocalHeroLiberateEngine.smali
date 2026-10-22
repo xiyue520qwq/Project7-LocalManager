@@ -138,7 +138,7 @@
 
     move-result v17
 
-    if-eqz v17, :cond_12
+    if-eqz v17, :cond_11
 
     .line 42
     invoke-static {v1, v0, v3}, Lcom/project7/localmanager/LocalSharedLiberateEngine;->normalize([BLcom/project7/localmanager/LocalFeatureCatalog;I)[B
@@ -191,9 +191,9 @@
     move-result-object v11
 
     .line 46
-    if-ltz v18, :cond_11
+    if-ltz v18, :cond_10
 
-    if-eqz v11, :cond_11
+    if-eqz v11, :cond_10
 
     const-string v14, "is_release"
 
@@ -208,7 +208,7 @@
 
     const/4 v7, 0x1
 
-    if-ne v14, v7, :cond_10
+    if-ne v14, v7, :cond_f
 
     .line 48
     :try_start_2
@@ -219,7 +219,7 @@
     move-result v7
 
     .line 49
-    if-lez v7, :cond_f
+    if-lez v7, :cond_e
 
     const-string v14, "level"
 
@@ -239,7 +239,7 @@
 
     move-result v8
 
-    if-lt v14, v8, :cond_e
+    nop
 
     .line 51
     const-string v8, "lh"
@@ -731,7 +731,6 @@
     goto :goto_b
 
     .line 49
-    :cond_e
     move-object/from16 v21, v2
 
     goto :goto_6
@@ -751,7 +750,7 @@
     goto :goto_b
 
     .line 49
-    :cond_f
+    :cond_e
     move-object/from16 v21, v2
 
     move-object/from16 v20, v8
@@ -783,12 +782,12 @@
     goto :goto_a
 
     .line 46
-    :cond_10
+    :cond_f
     move-object/from16 v21, v2
 
     goto :goto_8
 
-    :cond_11
+    :cond_10
     move-object/from16 v21, v2
 
     move-object/from16 v18, v7
@@ -830,7 +829,7 @@
     goto :goto_d
 
     .line 41
-    :cond_12
+    :cond_11
     move-object/from16 v21, v2
 
     move-object/from16 v18, v7

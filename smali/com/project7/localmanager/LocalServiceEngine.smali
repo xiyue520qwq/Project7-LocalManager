@@ -16,7 +16,7 @@
 .method static apply([BLjava/lang/String;[B)Lcom/project7/localmanager/LocalResourceEngine$Result;
     .locals 1
 
-    .line 374
+    .line 373
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Lcom/project7/localmanager/LocalServiceEngine;->apply([BLjava/lang/String;[BLcom/project7/localmanager/LocalFeatureCatalog;)Lcom/project7/localmanager/LocalResourceEngine$Result;
@@ -29,7 +29,7 @@
 .method static apply([BLjava/lang/String;[BLcom/project7/localmanager/LocalFeatureCatalog;)Lcom/project7/localmanager/LocalResourceEngine$Result;
     .locals 17
 
-    .line 378
+    .line 377
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -42,7 +42,7 @@
 
     invoke-direct {v4, v0}, Lcom/project7/localmanager/LocalResourceEngine$Result;-><init>([B)V
 
-    .line 379
+    .line 378
     const-string v5, "delDestroyBuilding"
 
     invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -51,7 +51,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 380
+    .line 379
     invoke-static {v0, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->acknowledgeDestroyed([B[B)[B
 
     move-result-object v0
@@ -60,7 +60,7 @@
 
     goto/16 :goto_12
 
-    .line 381
+    .line 380
     :cond_0
     const-string v5, "requestRecoverJingshenli"
 
@@ -76,7 +76,7 @@
 
     if-eqz v5, :cond_9
 
-    .line 382
+    .line 381
     invoke-static {}, Lcom/project7/localmanager/LocalStoryEnvironment;->now()J
 
     move-result-wide v1
@@ -87,7 +87,7 @@
 
     iput-object v0, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 383
+    .line 382
     iget-object v0, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     const-string v1, "city"
@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    .line 384
+    .line 383
     const-string v2, "cjsla"
 
     invoke-static {v0, v2}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -109,7 +109,7 @@
 
     move-result v13
 
-    .line 385
+    .line 384
     iget-object v14, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     const-string v15, "sma"
@@ -124,7 +124,7 @@
 
     move-result-object v14
 
-    .line 386
+    .line 385
     const-string v9, "n"
 
     invoke-static {v14, v9}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -137,7 +137,7 @@
 
     if-lt v9, v11, :cond_1
 
-    .line 387
+    .line 386
     invoke-static {v14, v6}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v6
@@ -167,7 +167,7 @@
     :cond_1
     const/4 v6, 0x0
 
-    .line 388
+    .line 387
     :goto_0
     if-nez v6, :cond_3
 
@@ -184,7 +184,7 @@
     :goto_1
     const/4 v9, 0x0
 
-    .line 389
+    .line 388
     :goto_2
     const-string v11, "yuanbao"
 
@@ -214,11 +214,11 @@
     :cond_5
     const/4 v10, 0x0
 
-    .line 390
+    .line 389
     :goto_3
     if-eqz v10, :cond_7
 
-    .line 391
+    .line 390
     move/from16 p0, v10
 
     add-int/lit8 v10, v13, 0x3c
@@ -227,27 +227,27 @@
 
     move-result-object v0
 
-    .line 392
+    .line 391
     if-eqz v6, :cond_6
 
-    .line 393
+    .line 392
     const/4 v6, 0x1
 
     invoke-static {v14, v12, v6}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v10
 
-    .line 394
+    .line 393
     iget-object v6, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     iget-object v14, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 395
+    .line 394
     invoke-static {v14, v15}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v14
 
-    .line 394
+    .line 393
     invoke-static {v14, v8, v10}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v8
@@ -258,7 +258,7 @@
 
     iput-object v6, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 396
+    .line 395
     const/4 v6, 0x2
 
     new-array v8, v6, [Ljava/lang/Object;
@@ -285,7 +285,7 @@
 
     goto :goto_4
 
-    .line 397
+    .line 396
     :cond_6
     add-int/lit8 v3, v3, 0x1
 
@@ -293,7 +293,7 @@
 
     move-result-object v0
 
-    .line 398
+    .line 397
     :goto_4
     iget-object v6, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
@@ -303,7 +303,7 @@
 
     iput-object v1, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 399
+    .line 398
     iget-object v1, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     iget-object v6, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
@@ -320,16 +320,16 @@
 
     iput-object v1, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 400
+    .line 399
     invoke-static {v4}, Lcom/project7/localmanager/LocalResourceEngine;->syncCurrencies(Lcom/project7/localmanager/LocalResourceEngine$Result;)V
 
     goto :goto_5
 
-    .line 390
+    .line 389
     :cond_7
     move/from16 p0, v10
 
-    .line 402
+    .line 401
     :goto_5
     const/4 v1, 0x6
 
@@ -357,7 +357,7 @@
 
     aput-object v5, v1, v6
 
-    .line 403
+    .line 402
     const-string v5, "jpvt"
 
     invoke-static {v0, v5}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -384,7 +384,7 @@
 
     aput-object v6, v1, v5
 
-    .line 402
+    .line 401
     invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v1
@@ -393,7 +393,7 @@
 
     invoke-virtual {v4, v5, v1}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    .line 404
+    .line 403
     new-array v1, v0, [Ljava/lang/Object;
 
     const-string v5, "rs"
@@ -430,7 +430,7 @@
 
     aput-object v2, v0, v8
 
-    .line 405
+    .line 404
     const v2, 0x18664
 
     if-le v13, v2, :cond_8
@@ -451,7 +451,7 @@
 
     aput-object v2, v0, v3
 
-    .line 404
+    .line 403
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v0
@@ -466,7 +466,7 @@
 
     invoke-virtual {v4, v1, v0}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    .line 406
+    .line 405
     goto/16 :goto_12
 
     :cond_9
@@ -488,7 +488,7 @@
 
     goto/16 :goto_10
 
-    .line 417
+    .line 416
     :cond_a
     const-string v5, "id"
 
@@ -496,7 +496,7 @@
 
     move-result-object v7
 
-    .line 418
+    .line 417
     const-string v8, "readPrivateMsg"
 
     invoke-virtual {v8, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -526,7 +526,7 @@
     :goto_7
     move-object v8, v10
 
-    .line 419
+    .line 418
     :goto_8
     const-string v11, "sd"
 
@@ -538,7 +538,7 @@
 
     move-result-object v12
 
-    .line 420
+    .line 419
     if-nez v7, :cond_d
 
     const/4 v13, 0x0
@@ -554,11 +554,11 @@
 
     move-result-object v13
 
-    .line 421
+    .line 420
     :goto_9
     if-eqz v13, :cond_16
 
-    .line 422
+    .line 421
     invoke-virtual {v9, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -569,14 +569,14 @@
 
     if-eqz v1, :cond_13
 
-    .line 423
+    .line 422
     const-string v1, "bid"
 
     invoke-static {v2, v1}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
 
     move-result v1
 
-    .line 424
+    .line 423
     if-nez v3, :cond_e
 
     const/4 v2, 0x0
@@ -590,7 +590,7 @@
 
     move-result-object v2
 
-    .line 425
+    .line 424
     :goto_a
     sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -618,7 +618,7 @@
 
     goto :goto_c
 
-    .line 429
+    .line 428
     :cond_f
     if-eqz v2, :cond_11
 
@@ -640,7 +640,7 @@
 
     goto :goto_b
 
-    .line 434
+    .line 433
     :cond_10
     invoke-static {v13, v15, v1}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
@@ -648,7 +648,7 @@
 
     goto :goto_d
 
-    .line 430
+    .line 429
     :cond_11
     :goto_b
     const/4 v0, 0x4
@@ -677,7 +677,7 @@
 
     invoke-virtual {v4, v14, v0}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    .line 431
+    .line 430
     new-array v0, v3, [Ljava/lang/Object;
 
     const-string v3, "m"
@@ -696,14 +696,14 @@
 
     invoke-virtual {v4, v1, v0}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    .line 432
+    .line 431
     return-object v4
 
-    .line 425
+    .line 424
     :cond_12
     const/4 v2, 0x1
 
-    .line 426
+    .line 425
     :goto_c
     const/4 v0, 0x4
 
@@ -729,14 +729,14 @@
 
     invoke-virtual {v4, v14, v0}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    .line 427
+    .line 426
     return-object v4
 
-    .line 422
+    .line 421
     :cond_13
     move-object/from16 v16, v6
 
-    .line 436
+    .line 435
     :goto_d
     invoke-virtual {v10, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -758,10 +758,10 @@
 
     move-result-object v2
 
-    .line 437
+    .line 436
     nop
 
-    .line 438
+    .line 437
     invoke-virtual {v7}, Ljava/lang/Integer;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -770,7 +770,7 @@
 
     move-result-object v1
 
-    .line 437
+    .line 436
     invoke-static {v11, v8, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v1
@@ -783,7 +783,7 @@
 
     iput-object v0, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 439
+    .line 438
     invoke-virtual {v10, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -824,7 +824,7 @@
 
     goto :goto_12
 
-    .line 440
+    .line 439
     :cond_16
     const/4 v3, 0x2
 
@@ -834,7 +834,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 441
+    .line 440
     new-array v0, v3, [Ljava/lang/Object;
 
     const-string v1, "m"
@@ -859,7 +859,7 @@
 
     goto :goto_12
 
-    .line 407
+    .line 406
     :cond_17
     :goto_10
     const-string v3, "np"
@@ -868,7 +868,7 @@
 
     move-result-object v6
 
-    .line 408
+    .line 407
     invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -885,7 +885,7 @@
 
     goto :goto_11
 
-    .line 410
+    .line 409
     :cond_18
     const-string v1, "h"
 
@@ -893,10 +893,10 @@
 
     move-result-object v1
 
-    .line 411
+    .line 410
     if-eqz v1, :cond_19
 
-    .line 412
+    .line 411
     invoke-static {v6, v7}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
@@ -909,7 +909,7 @@
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 411
+    .line 410
     invoke-static {v2, v1, v5}, Lcom/project7/localmanager/BsonLite;->withProfileIntArray([BLjava/lang/String;Ljava/lang/Iterable;)[B
 
     move-result-object v1
@@ -918,7 +918,7 @@
 
     move-result-object v6
 
-    .line 414
+    .line 413
     :cond_19
     :goto_11
     invoke-static {v0, v3, v6}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -927,7 +927,7 @@
 
     iput-object v0, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 415
+    .line 414
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -950,10 +950,10 @@
 
     invoke-virtual {v4, v1, v0}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    .line 416
+    .line 415
     nop
 
-    .line 444
+    .line 443
     :cond_1a
     :goto_12
     return-object v4
@@ -3618,22 +3618,6 @@
     .locals 1
 
     .line 365
-    const-string v0, "requestFlashbackIncDay"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "dailyPureChooseHero"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
     const-string v0, "requestRecoverJingshenli"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3658,15 +3642,6 @@
     if-nez v0, :cond_1
 
     .line 367
-    const-string v0, "daerweilaFirstChooseAsazile"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 368
     const-string v0, "readPlayerNote"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3683,7 +3658,7 @@
 
     if-nez v0, :cond_1
 
-    .line 369
+    .line 368
     const-string v0, "readSocialMsg"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3700,7 +3675,7 @@
 
     if-nez v0, :cond_1
 
-    .line 370
+    .line 369
     const-string v0, "delDestroyBuilding"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

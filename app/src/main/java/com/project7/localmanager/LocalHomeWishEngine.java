@@ -605,7 +605,7 @@ final class LocalHomeWishEngine {
                 while (result.replies.size() > size) {
                     result.replies.remove(result.replies.size() - 1);
                 }
-                LocalDiagnosticLog.m14i("Project7Gateway", "Home wish preserved slot=" + i + " reason=" + e.getMessage());
+                LocalDiagnosticLog.m16i("Project7Gateway", "Home wish preserved slot=" + i + " reason=" + e.getMessage());
             }
         }
     }
@@ -811,7 +811,7 @@ final class LocalHomeWishEngine {
                         bArr2 = BsonLite.withProfileString(bArr2, Integer.toString(i2), taskUuid);
                     }
                 } catch (IllegalArgumentException e) {
-                    LocalDiagnosticLog.m14i("Project7Gateway", "Home wish admission preserved slot=" + i2);
+                    LocalDiagnosticLog.m16i("Project7Gateway", "Home wish admission preserved slot=" + i2);
                 }
             }
             if (!BsonLite.keys(bArr2).isEmpty()) {
@@ -842,7 +842,7 @@ final class LocalHomeWishEngine {
                     while (result.replies.size() > i) {
                         result.replies.remove(result.replies.size() - 1);
                     }
-                    LocalDiagnosticLog.m14i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
+                    LocalDiagnosticLog.m16i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
                     result.profile = BsonLite.withoutProfileKey(result.profile, "q7HomeWishBattle");
                     refresh(result, localFeatureCatalog, true);
                 } catch (IllegalArgumentException e3) {
@@ -851,7 +851,7 @@ final class LocalHomeWishEngine {
                     result.profile = bArr3;
                     while (result.replies.size() > i) {
                     }
-                    LocalDiagnosticLog.m14i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
+                    LocalDiagnosticLog.m16i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
                     result.profile = BsonLite.withoutProfileKey(result.profile, "q7HomeWishBattle");
                     refresh(result, localFeatureCatalog, true);
                 }
@@ -873,7 +873,7 @@ final class LocalHomeWishEngine {
                         result.profile = bArr3;
                         while (result.replies.size() > i) {
                         }
-                        LocalDiagnosticLog.m14i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
+                        LocalDiagnosticLog.m16i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
                         result.profile = BsonLite.withoutProfileKey(result.profile, "q7HomeWishBattle");
                         refresh(result, localFeatureCatalog, true);
                     } catch (IllegalArgumentException e5) {
@@ -881,7 +881,7 @@ final class LocalHomeWishEngine {
                         result.profile = bArr3;
                         while (result.replies.size() > i) {
                         }
-                        LocalDiagnosticLog.m14i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
+                        LocalDiagnosticLog.m16i("Project7Gateway", "Home wish settlement preserved reason=" + e.getMessage());
                         result.profile = BsonLite.withoutProfileKey(result.profile, "q7HomeWishBattle");
                         refresh(result, localFeatureCatalog, true);
                     }
@@ -944,7 +944,7 @@ final class LocalHomeWishEngine {
                 }
             } else if ("processClientTask".equals(str)) {
                 if (m43v(bArr, "tfid") != 8) {
-                    LocalDiagnosticLog.m14i("Project7Gateway", "Home client task has no supported counter tfid=" + m43v(bArr, "tfid"));
+                    LocalDiagnosticLog.m16i("Project7Gateway", "Home client task has no supported counter tfid=" + m43v(bArr, "tfid"));
                 } else {
                     List<Integer> intArrayValues = BsonLite.intArrayValues(bArr, "pl");
                     require(intArrayValues.size() == 1 && LocalResourceEngine.ownsHero(result.profile, intArrayValues.get(0).intValue()) && LocalHomeEngine.pairs(home(result.profile), "hri").containsKey(intArrayValues.get(0)), "请在对应神器使房间交流");
@@ -1065,7 +1065,7 @@ final class LocalHomeWishEngine {
                     }
                 }
             } catch (IllegalArgumentException e) {
-                LocalDiagnosticLog.m14i("Project7Gateway", "Home wish entry preserved slot=" + i);
+                LocalDiagnosticLog.m16i("Project7Gateway", "Home wish entry preserved slot=" + i);
             }
         }
     }

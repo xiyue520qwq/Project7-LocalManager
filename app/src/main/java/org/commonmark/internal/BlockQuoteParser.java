@@ -57,7 +57,7 @@ public class BlockQuoteParser extends AbstractBlockParser {
                 if (Parsing.isSpaceOrTab(state.getLine().getContent(), nextNonSpace + 1)) {
                     newColumn++;
                 }
-                return BlockStart.m104of(new BlockQuoteParser()).atColumn(newColumn);
+                return BlockStart.m100of(new BlockQuoteParser()).atColumn(newColumn);
             }
             return BlockStart.none();
         }

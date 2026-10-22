@@ -53,18 +53,18 @@
         }
     .end annotation
 
-    .line 419
+    .line 380
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 420
+    .line 381
     iput p1, p0, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->scene:I
 
-    .line 421
+    .line 382
     iput-object p2, p0, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->success:Ljava/util/Set;
 
-    .line 422
+    .line 383
     iput-object p3, p0, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->failure:Ljava/util/Set;
 
-    .line 423
+    .line 384
     return-void
 .end method

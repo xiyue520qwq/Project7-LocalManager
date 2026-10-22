@@ -12,7 +12,7 @@ public abstract class ParsedInline {
     }
 
     /* renamed from: of */
-    public static ParsedInline m97of(Node node, Position position) {
+    public static ParsedInline m93of(Node node, Position position) {
         if (node == null) {
             throw new NullPointerException("node must not be null");
         }

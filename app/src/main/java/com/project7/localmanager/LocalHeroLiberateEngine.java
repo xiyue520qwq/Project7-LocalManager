@@ -55,6 +55,7 @@ final class LocalHeroLiberateEngine {
     /* JADX WARN: Type inference failed for: r1v0, types: [byte[]] */
     /* JADX WARN: Type inference failed for: r1v1 */
     /* JADX WARN: Type inference failed for: r1v4 */
+    /* JADX WARN: Unreachable blocks removed: 1, instructions: 2 */
     static LocalResourceEngine.Result apply(byte[] bArr, LocalFeatureCatalog localFeatureCatalog, LocalResourceCatalog localResourceCatalog, String str, byte[] bArr2) {
         Object obj;
         Object obj2;
@@ -96,111 +97,111 @@ final class LocalHeroLiberateEngine {
                         if (m29v(bArr3, "is_release") == 1) {
                             try {
                                 int m29v3 = m29v(bArr3, "lv_max");
-                                if (m29v3 > 0) {
-                                    obj3 = "s";
-                                    try {
-                                        if (m29v(str2, "level") >= m29v(bArr3, "lv_require")) {
-                                            obj = "h";
-                                            try {
-                                                String[] strArr = {"lh", "la", "ld"};
-                                                for (int i2 = 0; i2 < 3; i2++) {
-                                                    if (level(localFeatureCatalog, m29v(profileHeroDocument, strArr[i2])) < m29v3) {
-                                                        throw new IllegalArgumentException("请先将三项灵解训练提升至当前上限");
-                                                    }
-                                                }
-                                                List<Integer> intArrayValues = BsonLite.intArrayValues(bArr3, "itemids");
-                                                List<Integer> intArrayValues2 = BsonLite.intArrayValues(bArr3, "itemnums");
-                                                List<Integer> intArrayValues3 = BsonLite.intArrayValues(bArr3, "spe_item");
-                                                List<Integer> intArrayValues4 = BsonLite.intArrayValues(bArr3, "instead_item");
-                                                if (intArrayValues.size() != 3 || intArrayValues2.size() != intArrayValues.size() || intArrayValues3.size() != intArrayValues4.size()) {
-                                                    throw new IllegalArgumentException("缺少原版突破材料配置");
-                                                }
-                                                boolean equals = Boolean.TRUE.equals(BsonLite.boolValue(m28d(str2, "heromgr"), "wwfd"));
-                                                int i3 = 0;
-                                                int i4 = 0;
-                                                while (i3 < intArrayValues.size()) {
-                                                    int intValue = intArrayValues.get(i3).intValue();
-                                                    int intValue2 = intArrayValues2.get(i3).intValue();
-                                                    if (intValue <= 0 || intValue2 < 0) {
-                                                        throw new IllegalArgumentException("突破材料配置无效");
-                                                    }
-                                                    List<Integer> list2 = intArrayValues;
-                                                    int i5 = intValue2;
-                                                    List<Integer> list3 = intArrayValues2;
-                                                    int i6 = 0;
-                                                    while (i6 < intArrayValues3.size()) {
-                                                        if (intArrayValues4.get(i6).intValue() != intValue || intArrayValues3.get(i6).intValue() <= 0) {
-                                                            list = intArrayValues4;
-                                                        } else {
-                                                            list = intArrayValues4;
-                                                            int min = Math.min(i5, LocalHeroGrowthEngine.count(result.profile, intArrayValues3.get(i6).intValue()));
-                                                            LocalGiftEngine.consume(result, intArrayValues3.get(i6).intValue(), min);
-                                                            i5 -= min;
-                                                        }
-                                                        i6++;
-                                                        intArrayValues4 = list;
-                                                    }
-                                                    List<Integer> list4 = intArrayValues4;
-                                                    int min2 = Math.min(i5, LocalHeroGrowthEngine.count(result.profile, intValue));
-                                                    LocalGiftEngine.consume(result, intValue, min2);
-                                                    int i7 = i5 - min2;
-                                                    if (i7 > 0 && !equals) {
-                                                        throw new IllegalArgumentException("突破材料不足");
-                                                    }
-                                                    i4 = Math.addExact(i4, i7);
-                                                    i3++;
-                                                    intArrayValues2 = list3;
-                                                    intArrayValues = list2;
-                                                    intArrayValues4 = list4;
-                                                }
-                                                LocalGiftEngine.consume(result, 4640, i4);
-                                                LocalGiftEngine.spend(result, "crystal", m29v(bArr3, "jingchen"));
-                                                int m29v4 = m29v(bArr3, "cost");
-                                                if (m29v4 < 0) {
-                                                    throw new IllegalArgumentException("突破cost配置无效");
-                                                }
-                                                byte[] withProfileInt = BsonLite.withProfileInt(profileHeroDocument, "ls", i);
-                                                byte[] m28d = m28d(withProfileInt, "ti");
-                                                result.profile = BsonLite.withHeroDocument(result.profile, m29v, BsonLite.withProfileDocument(withProfileInt, "ti", BsonLite.withProfileInt(m28d, "mc", Math.addExact(m29v(m28d, "mc"), m29v4))));
-                                                LocalResourceEngine.syncCurrencies(result);
-                                                result.add("tupoLiberateStageReply", BsonLite.document(obj, Integer.valueOf(m29v), obj3, Integer.valueOf(i), obj2, Integer.valueOf(m29v4)));
-                                                LocalSharedLiberateEngine.reconcile(result, localFeatureCatalog, m29v, true);
-                                                return result;
-                                            } catch (ArithmeticException e) {
-                                                e = e;
-                                                str2 = "tupoLiberateStageReply";
-                                                LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(bArr);
-                                                result2.add("showMessageStr", BsonLite.document("m", e.getMessage()));
-                                                result2.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
-                                                return result2;
-                                            } catch (IllegalArgumentException e2) {
-                                                e = e2;
-                                                str2 = "tupoLiberateStageReply";
-                                                LocalResourceEngine.Result result22 = new LocalResourceEngine.Result(bArr);
-                                                result22.add("showMessageStr", BsonLite.document("m", e.getMessage()));
-                                                result22.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
-                                                return result22;
-                                            }
-                                        }
-                                    } catch (ArithmeticException e3) {
-                                        e = e3;
-                                        obj = "h";
-                                        str2 = "tupoLiberateStageReply";
-                                        LocalResourceEngine.Result result222 = new LocalResourceEngine.Result(bArr);
-                                        result222.add("showMessageStr", BsonLite.document("m", e.getMessage()));
-                                        result222.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
-                                        return result222;
-                                    } catch (IllegalArgumentException e4) {
-                                        e = e4;
-                                        obj = "h";
-                                        str2 = "tupoLiberateStageReply";
-                                        LocalResourceEngine.Result result2222 = new LocalResourceEngine.Result(bArr);
-                                        result2222.add("showMessageStr", BsonLite.document("m", e.getMessage()));
-                                        result2222.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
-                                        return result2222;
-                                    }
+                                if (m29v3 <= 0) {
+                                    throw new IllegalArgumentException("指挥使等级未达到突破要求");
                                 }
-                                throw new IllegalArgumentException("指挥使等级未达到突破要求");
+                                m29v(str2, "level");
+                                obj3 = "s";
+                                try {
+                                    m29v(bArr3, "lv_require");
+                                    obj = "h";
+                                } catch (ArithmeticException e) {
+                                    e = e;
+                                    obj = "h";
+                                    str2 = "tupoLiberateStageReply";
+                                    LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(bArr);
+                                    result2.add("showMessageStr", BsonLite.document("m", e.getMessage()));
+                                    result2.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
+                                    return result2;
+                                } catch (IllegalArgumentException e2) {
+                                    e = e2;
+                                    obj = "h";
+                                    str2 = "tupoLiberateStageReply";
+                                    LocalResourceEngine.Result result22 = new LocalResourceEngine.Result(bArr);
+                                    result22.add("showMessageStr", BsonLite.document("m", e.getMessage()));
+                                    result22.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
+                                    return result22;
+                                }
+                                try {
+                                    String[] strArr = {"lh", "la", "ld"};
+                                    for (int i2 = 0; i2 < 3; i2++) {
+                                        if (level(localFeatureCatalog, m29v(profileHeroDocument, strArr[i2])) < m29v3) {
+                                            throw new IllegalArgumentException("请先将三项灵解训练提升至当前上限");
+                                        }
+                                    }
+                                    List<Integer> intArrayValues = BsonLite.intArrayValues(bArr3, "itemids");
+                                    List<Integer> intArrayValues2 = BsonLite.intArrayValues(bArr3, "itemnums");
+                                    List<Integer> intArrayValues3 = BsonLite.intArrayValues(bArr3, "spe_item");
+                                    List<Integer> intArrayValues4 = BsonLite.intArrayValues(bArr3, "instead_item");
+                                    if (intArrayValues.size() != 3 || intArrayValues2.size() != intArrayValues.size() || intArrayValues3.size() != intArrayValues4.size()) {
+                                        throw new IllegalArgumentException("缺少原版突破材料配置");
+                                    }
+                                    boolean equals = Boolean.TRUE.equals(BsonLite.boolValue(m28d(str2, "heromgr"), "wwfd"));
+                                    int i3 = 0;
+                                    int i4 = 0;
+                                    while (i3 < intArrayValues.size()) {
+                                        int intValue = intArrayValues.get(i3).intValue();
+                                        int intValue2 = intArrayValues2.get(i3).intValue();
+                                        if (intValue <= 0 || intValue2 < 0) {
+                                            throw new IllegalArgumentException("突破材料配置无效");
+                                        }
+                                        List<Integer> list2 = intArrayValues;
+                                        int i5 = intValue2;
+                                        List<Integer> list3 = intArrayValues2;
+                                        int i6 = 0;
+                                        while (i6 < intArrayValues3.size()) {
+                                            if (intArrayValues4.get(i6).intValue() != intValue || intArrayValues3.get(i6).intValue() <= 0) {
+                                                list = intArrayValues4;
+                                            } else {
+                                                list = intArrayValues4;
+                                                int min = Math.min(i5, LocalHeroGrowthEngine.count(result.profile, intArrayValues3.get(i6).intValue()));
+                                                LocalGiftEngine.consume(result, intArrayValues3.get(i6).intValue(), min);
+                                                i5 -= min;
+                                            }
+                                            i6++;
+                                            intArrayValues4 = list;
+                                        }
+                                        List<Integer> list4 = intArrayValues4;
+                                        int min2 = Math.min(i5, LocalHeroGrowthEngine.count(result.profile, intValue));
+                                        LocalGiftEngine.consume(result, intValue, min2);
+                                        int i7 = i5 - min2;
+                                        if (i7 > 0 && !equals) {
+                                            throw new IllegalArgumentException("突破材料不足");
+                                        }
+                                        i4 = Math.addExact(i4, i7);
+                                        i3++;
+                                        intArrayValues2 = list3;
+                                        intArrayValues = list2;
+                                        intArrayValues4 = list4;
+                                    }
+                                    LocalGiftEngine.consume(result, 4640, i4);
+                                    LocalGiftEngine.spend(result, "crystal", m29v(bArr3, "jingchen"));
+                                    int m29v4 = m29v(bArr3, "cost");
+                                    if (m29v4 < 0) {
+                                        throw new IllegalArgumentException("突破cost配置无效");
+                                    }
+                                    byte[] withProfileInt = BsonLite.withProfileInt(profileHeroDocument, "ls", i);
+                                    byte[] m28d = m28d(withProfileInt, "ti");
+                                    result.profile = BsonLite.withHeroDocument(result.profile, m29v, BsonLite.withProfileDocument(withProfileInt, "ti", BsonLite.withProfileInt(m28d, "mc", Math.addExact(m29v(m28d, "mc"), m29v4))));
+                                    LocalResourceEngine.syncCurrencies(result);
+                                    result.add("tupoLiberateStageReply", BsonLite.document(obj, Integer.valueOf(m29v), obj3, Integer.valueOf(i), obj2, Integer.valueOf(m29v4)));
+                                    LocalSharedLiberateEngine.reconcile(result, localFeatureCatalog, m29v, true);
+                                    return result;
+                                } catch (ArithmeticException e3) {
+                                    e = e3;
+                                    str2 = "tupoLiberateStageReply";
+                                    LocalResourceEngine.Result result222 = new LocalResourceEngine.Result(bArr);
+                                    result222.add("showMessageStr", BsonLite.document("m", e.getMessage()));
+                                    result222.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
+                                    return result222;
+                                } catch (IllegalArgumentException e4) {
+                                    e = e4;
+                                    str2 = "tupoLiberateStageReply";
+                                    LocalResourceEngine.Result result2222 = new LocalResourceEngine.Result(bArr);
+                                    result2222.add("showMessageStr", BsonLite.document("m", e.getMessage()));
+                                    result2222.add(str2, BsonLite.document(obj, 0, obj3, 609, obj2, 0));
+                                    return result2222;
+                                }
                             } catch (ArithmeticException e5) {
                                 e = e5;
                                 obj = "h";

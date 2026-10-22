@@ -253,7 +253,7 @@
 .method private static advanceDay(Lcom/project7/localmanager/LocalEconomyEngine$Result;Lcom/project7/localmanager/LocalEconomyCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
     .locals 21
 
-    .line 378
+    .line 376
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -268,7 +268,7 @@
 
     move-result-object v3
 
-    .line 379
+    .line 377
     const-string v5, "d"
 
     invoke-static {v3, v5}, Lcom/project7/localmanager/LocalEconomyEngine;->v([BLjava/lang/String;)I
@@ -281,17 +281,17 @@
 
     move-result v7
 
-    .line 380
+    .line 378
     iget-object v8, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v8, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->nextDayBlocker([BLcom/project7/localmanager/LocalTutorialStore$Progress;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 381
+    .line 379
     if-nez v8, :cond_5
 
-    .line 382
+    .line 380
     iget-object v8, v1, Lcom/project7/localmanager/LocalEconomyCatalog;->dailyFatigue:Ljava/util/Map;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -318,10 +318,10 @@
 
     check-cast v1, [I
 
-    .line 383
+    .line 381
     if-eqz v1, :cond_4
 
-    .line 384
+    .line 382
     iget-object v7, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     const-string v8, "city"
@@ -330,12 +330,12 @@
 
     move-result-object v7
 
-    .line 385
+    .line 383
     invoke-static {v7}, Lcom/project7/localmanager/LocalEconomyEngine;->dailyValues([B)[B
 
     move-result-object v9
 
-    .line 386
+    .line 384
     iget-object v10, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     const-string v11, "q7DailyPrevious"
@@ -344,7 +344,7 @@
 
     move-result-object v10
 
-    .line 387
+    .line 385
     invoke-static {v10}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v12
@@ -357,7 +357,7 @@
 
     move-object v10, v9
 
-    .line 388
+    .line 386
     :cond_0
     const/4 v12, 0x1
 
@@ -367,7 +367,7 @@
 
     move-result-object v3
 
-    .line 389
+    .line 387
     const-string v13, "sgnt"
 
     const/4 v14, 0x0
@@ -376,17 +376,17 @@
 
     move-result-object v3
 
-    .line 390
+    .line 388
     const-string v13, "sgw"
 
     invoke-static {v3, v13, v14}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v3
 
-    .line 391
+    .line 389
     iput v14, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->remainingSandglass:I
 
-    .line 392
+    .line 390
     const-string v13, "c"
 
     invoke-static {v3, v13, v9}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -399,7 +399,7 @@
 
     move-result-object v3
 
-    .line 393
+    .line 391
     iget-object v12, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v12, v4, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -408,7 +408,7 @@
 
     iput-object v3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 394
+    .line 392
     iget-object v3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v3, v11, v9}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -417,7 +417,7 @@
 
     iput-object v3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 395
+    .line 393
     iget-object v3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     const-string v4, "q7DailyBuildIncome"
@@ -426,10 +426,10 @@
 
     move-result v3
 
-    .line 396
+    .line 394
     if-ltz v3, :cond_3
 
-    .line 397
+    .line 395
     const-string v4, "bf"
 
     invoke-static {v7, v4}, Lcom/project7/localmanager/LocalEconomyEngine;->v([BLjava/lang/String;)I
@@ -444,7 +444,7 @@
 
     move-result-object v3
 
-    .line 398
+    .line 396
     const-string v4, "dv"
 
     invoke-static {v3, v4}, Lcom/project7/localmanager/LocalEconomyEngine;->v([BLjava/lang/String;)I
@@ -457,7 +457,7 @@
 
     move-result-object v3
 
-    .line 399
+    .line 397
     iget-object v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     const-string v7, "intelligence"
@@ -466,7 +466,7 @@
 
     move-result-object v4
 
-    .line 400
+    .line 398
     iget-object v11, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     const-string v12, "rd"
@@ -481,17 +481,17 @@
 
     iput-object v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 402
+    .line 400
     const/16 v4, 0x18
 
     iput v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->remainingActions:I
 
-    .line 403
+    .line 401
     const/4 v11, 0x1
 
     iput-boolean v11, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->resetPatrolCount:Z
 
-    .line 404
+    .line 402
     const-string v12, "av"
 
     invoke-static {v3, v12, v4}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
@@ -504,14 +504,14 @@
 
     move-result-object v3
 
-    .line 406
+    .line 404
     const-string v4, "pn"
 
     invoke-static {v3, v4, v11}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v3
 
-    .line 407
+    .line 405
     iget-object v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v4, v8, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -520,14 +520,14 @@
 
     iput-object v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 408
+    .line 406
     iget-object v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v4, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->effective([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v2
 
-    .line 409
+    .line 407
     const-string v4, "heromgr"
 
     invoke-static {v2, v4}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
@@ -540,7 +540,7 @@
 
     move-result-object v2
 
-    .line 410
+    .line 408
     invoke-static {v2}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v8
@@ -562,26 +562,26 @@
 
     check-cast v11, Ljava/lang/String;
 
-    .line 411
+    .line 409
     invoke-static {v2, v11}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v11
 
-    .line 412
+    .line 410
     const-string v12, "0"
 
     invoke-static {v11, v12}, Lcom/project7/localmanager/LocalEconomyEngine;->v([BLjava/lang/String;)I
 
     move-result v12
 
-    .line 413
+    .line 411
     iget-object v14, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v14, v12}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
 
     move-result-object v14
 
-    .line 414
+    .line 412
     move-object/from16 p2, v2
 
     const-string v2, "1"
@@ -600,7 +600,7 @@
 
     move-result v8
 
-    .line 416
+    .line 414
     move-object/from16 v19, v15
 
     const/16 v15, 0x64
@@ -624,7 +624,7 @@
 
     move-result v8
 
-    .line 417
+    .line 415
     :goto_1
     invoke-static {v11, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
 
@@ -636,12 +636,12 @@
 
     move-result v2
 
-    .line 418
+    .line 416
     invoke-static {v14, v9, v2}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v9
 
-    .line 419
+    .line 417
     iget-object v11, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v9, v10, v8}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
@@ -654,7 +654,7 @@
 
     iput-object v9, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 420
+    .line 418
     iget-object v9, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->fatigue:Ljava/util/Map;
 
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -667,7 +667,7 @@
 
     invoke-interface {v9, v10, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 421
+    .line 419
     iget-object v9, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->friendly:Ljava/util/Map;
 
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -680,7 +680,7 @@
 
     invoke-interface {v9, v10, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 422
+    .line 420
     iget-object v2, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v9, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -695,7 +695,7 @@
 
     invoke-interface {v2, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 423
+    .line 421
     move-object/from16 v2, p2
 
     move-object/from16 v8, v17
@@ -710,7 +710,7 @@
 
     goto/16 :goto_0
 
-    .line 424
+    .line 422
     :cond_2
     move-object/from16 v20, v9
 
@@ -726,7 +726,7 @@
 
     iput-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 425
+    .line 423
     iget-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -759,7 +759,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 426
+    .line 424
     iget-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -784,7 +784,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 427
+    .line 425
     iget-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -815,7 +815,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 428
+    .line 426
     iget-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -830,7 +830,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 429
+    .line 427
     iget-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -863,13 +863,13 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 430
+    .line 428
     iput-boolean v4, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
 
-    .line 431
+    .line 429
     return-void
 
-    .line 396
+    .line 394
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -879,7 +879,7 @@
 
     throw v0
 
-    .line 383
+    .line 381
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -889,7 +889,7 @@
 
     throw v0
 
-    .line 381
+    .line 379
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2466,14 +2466,14 @@
 .method static clearEmptyDailySettlement([B)[B
     .locals 4
 
-    .line 363
+    .line 361
     const-string v0, "weeknum"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 364
+    .line 362
     const-string v2, "c"
 
     invoke-static {v1, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
@@ -2498,18 +2498,18 @@
 
     goto :goto_0
 
-    .line 365
+    .line 363
     :cond_0
     sget-object v3, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
-    .line 366
+    .line 364
     invoke-static {v1, v2, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v1
 
     sget-object v2, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
-    .line 365
+    .line 363
     const-string v3, "l"
 
     invoke-static {v1, v3, v2}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -2522,7 +2522,7 @@
 
     return-object p0
 
-    .line 364
+    .line 362
     :cond_1
     :goto_0
     return-object p0
@@ -3892,7 +3892,7 @@
 .method static hasDailySettlement([B)Z
     .locals 6
 
-    .line 347
+    .line 345
     const-string v0, "weeknum"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
@@ -3905,7 +3905,7 @@
 
     move-result-object v1
 
-    .line 348
+    .line 346
     invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v2
@@ -3920,7 +3920,7 @@
 
     return v3
 
-    .line 350
+    .line 348
     :cond_0
     invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
@@ -3945,12 +3945,12 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 351
+    .line 349
     invoke-static {v1, v4}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v4
 
-    .line 352
+    .line 350
     if-eqz v4, :cond_2
 
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
@@ -3961,16 +3961,16 @@
 
     goto :goto_1
 
-    .line 353
+    .line 351
     :cond_1
     goto :goto_0
 
-    .line 352
+    .line 350
     :cond_2
     :goto_1
     return v5
 
-    .line 354
+    .line 352
     :cond_3
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
 
@@ -3982,7 +3982,7 @@
 
     move-result-object p0
 
-    .line 355
+    .line 353
     invoke-static {p0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v0
@@ -4004,12 +4004,12 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 356
+    .line 354
     invoke-static {p0, v1}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 357
+    .line 355
     if-eqz v1, :cond_5
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -4020,16 +4020,16 @@
 
     goto :goto_3
 
-    .line 358
+    .line 356
     :cond_4
     goto :goto_2
 
-    .line 357
+    .line 355
     :cond_5
     :goto_3
     return v5
 
-    .line 359
+    .line 357
     :cond_6
     return v3
 .end method
@@ -4093,7 +4093,7 @@
 .end method
 
 .method static nextDayBlocker([BLcom/project7/localmanager/LocalTutorialStore$Progress;)Ljava/lang/String;
-    .locals 4
+    .locals 3
 
     .line 333
     const-string v0, "weeknum"
@@ -4110,42 +4110,15 @@
     move-result v0
 
     .line 335
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    const-string v2, "std"
-
-    invoke-static {p0, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v2
-
-    const-string v3, "ff"
-
-    invoke-static {v2, v3}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 336
-    const-string p0, "\u5f53\u524d\u5904\u4e8e\u56de\u6eaf\u4e2d\uff0c\u8bf7\u901a\u8fc7\u56de\u6eaf\u6309\u94ae\u8fdb\u5165\u4e0b\u4e00\u8f6e"
-
-    return-object p0
-
-    .line 337
-    :cond_0
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
     iget-boolean v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_5
 
     iget-boolean v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->initPrologue:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     iget-object v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
@@ -4159,16 +4132,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
-    :cond_1
+    :cond_0
     iget-boolean v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolRewardPending:Z
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_5
 
     iget-object v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 338
+    .line 336
     invoke-interface {v1}, Ljava/util/Set;->stream()Ljava/util/stream/Stream;
 
     move-result-object v1
@@ -4179,9 +4152,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_5
 
-    .line 339
+    .line 337
     const-string v1, "q7Battle"
 
     invoke-static {p0, v1}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
@@ -4196,47 +4169,47 @@
 
     move-result v1
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     goto :goto_1
 
-    .line 341
-    :cond_2
+    .line 339
+    :cond_1
     invoke-static {p0, p1}, Lcom/project7/localmanager/LocalEconomyEngine;->actions([BLcom/project7/localmanager/LocalTutorialStore$Progress;)I
 
     move-result p0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_2
 
     const-string p0, "\u884c\u52a8\u529b\u5c1a\u672a\u8017\u5c3d\uff0c\u4e0d\u80fd\u8fdb\u5165\u4e0b\u4e00\u5929"
 
     return-object p0
 
-    .line 342
-    :cond_3
-    if-ltz v0, :cond_5
+    .line 340
+    :cond_2
+    if-ltz v0, :cond_4
 
     const/4 p0, 0x7
 
-    if-lt v0, p0, :cond_4
+    if-lt v0, p0, :cond_3
 
     goto :goto_0
 
-    .line 343
-    :cond_4
+    .line 341
+    :cond_3
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 342
-    :cond_5
+    .line 340
+    :cond_4
     :goto_0
     const-string p0, "\u8bf7\u5148\u5b8c\u6210\u6700\u540e\u4e00\u5929\u7684\u7ed3\u5c40\u5267\u60c5\uff0c\u518d\u9009\u62e9\u4e0b\u4e00\u5468\u76ee"
 
     return-object p0
 
-    .line 340
-    :cond_6
+    .line 338
+    :cond_5
     :goto_1
     const-string p0, "\u8bf7\u5148\u5b8c\u6210\u5f53\u524d\u5f15\u5bfc\u3001\u5267\u60c5\u3001\u5de1\u67e5\u6216\u6218\u6597\uff0c\u518d\u8fdb\u5165\u4e0b\u4e00\u5929"
 
@@ -4281,7 +4254,7 @@
 .method static reconcile([BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEconomyEngine$Result;)V
     .locals 0
 
-    .line 434
+    .line 432
     if-eqz p1, :cond_1
 
     iget-boolean p2, p2, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
@@ -4290,14 +4263,14 @@
 
     goto :goto_0
 
-    .line 435
+    .line 433
     :cond_0
     invoke-static {p0, p1}, Lcom/project7/localmanager/LocalEconomyEngine;->recover([BLcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 436
+    .line 434
     return-void
 
-    .line 434
+    .line 432
     :cond_1
     :goto_0
     return-void
@@ -4306,12 +4279,12 @@
 .method static recover([BLcom/project7/localmanager/LocalTutorialStore$Progress;)V
     .locals 7
 
-    .line 439
+    .line 437
     if-nez p1, :cond_0
 
     return-void
 
-    .line 440
+    .line 438
     :cond_0
     const-string v0, "q7EconomyCommit"
 
@@ -4319,14 +4292,14 @@
 
     move-result-object v0
 
-    .line 441
+    .line 439
     const-string v1, "id"
 
     invoke-static {v0, v1}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 442
+    .line 440
     if-eqz v1, :cond_7
 
     iget-object v2, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->economyCommit:Ljava/lang/String;
@@ -4339,7 +4312,7 @@
 
     goto/16 :goto_2
 
-    .line 444
+    .line 442
     :cond_1
     const-string v2, "av"
 
@@ -4349,7 +4322,7 @@
 
     iput v2, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolActions:I
 
-    .line 445
+    .line 443
     const-string v2, "sgw"
 
     invoke-static {v0, v2}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
@@ -4364,7 +4337,7 @@
 
     iput v2, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->sandglassActions:I
 
-    .line 446
+    .line 444
     :cond_2
     const-string v2, "pn"
 
@@ -4372,24 +4345,24 @@
 
     move-result-object v2
 
-    .line 447
+    .line 445
     if-eqz v2, :cond_3
 
-    .line 448
+    .line 446
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     iput v2, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolCount:I
 
-    .line 449
+    .line 447
     invoke-static {p0}, Lcom/project7/localmanager/LocalPatrolEngine;->dayKey([B)Ljava/lang/String;
 
     move-result-object p0
 
     iput-object p0, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolDay:Ljava/lang/String;
 
-    .line 451
+    .line 449
     :cond_3
     const-string p0, "cf"
 
@@ -4444,7 +4417,7 @@
 
     goto :goto_0
 
-    .line 452
+    .line 450
     :cond_4
     const-string p0, "ef"
 
@@ -4499,7 +4472,7 @@
 
     goto :goto_1
 
-    .line 453
+    .line 451
     :cond_5
     const-string p0, "scene"
 
@@ -4507,7 +4480,7 @@
 
     move-result p0
 
-    .line 454
+    .line 452
     if-lez p0, :cond_6
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4522,14 +4495,14 @@
 
     invoke-virtual {p1, v0, p0}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 455
+    .line 453
     :cond_6
     iput-object v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->economyCommit:Ljava/lang/String;
 
-    .line 456
+    .line 454
     return-void
 
-    .line 442
+    .line 440
     :cond_7
     :goto_2
     return-void
@@ -4538,14 +4511,14 @@
 .method static refreshCanteen([B)[B
     .locals 5
 
-    .line 370
+    .line 368
     const-string v0, "weeknum"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v0
 
-    .line 371
+    .line 369
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4574,7 +4547,7 @@
 
     move-result-object v0
 
-    .line 372
+    .line 370
     const-string v1, "q7Canteen"
 
     invoke-static {p0, v1}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
@@ -4591,7 +4564,7 @@
 
     move-result v0
 
-    .line 373
+    .line 371
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
@@ -4616,7 +4589,7 @@
 
     return-object p0
 
-    .line 374
+    .line 372
     :cond_0
     invoke-static {p0, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->doc([BLjava/lang/String;)[B
 

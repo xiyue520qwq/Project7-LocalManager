@@ -24,15 +24,15 @@
 .method constructor <init>(I[B)V
     .locals 0
 
-    .line 2418
+    .line 2410
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2419
+    .line 2411
     iput p1, p0, Lcom/project7/localmanager/LocalGatewayServer$Frame;->method:I
 
-    .line 2420
+    .line 2412
     iput-object p2, p0, Lcom/project7/localmanager/LocalGatewayServer$Frame;->payload:[B
 
-    .line 2421
+    .line 2413
     return-void
 .end method

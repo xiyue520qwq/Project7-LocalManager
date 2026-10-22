@@ -88,7 +88,7 @@ final class LocalUpdateNoticeDialog extends Dialog {
     }
 
     /* renamed from: dp */
-    private int m81dp(int i) {
+    private int m79dp(int i) {
         return Math.round(i * this.host.getResources().getDisplayMetrics().density);
     }
 
@@ -99,19 +99,19 @@ final class LocalUpdateNoticeDialog extends Dialog {
         LinearLayout linearLayout = new LinearLayout(this.host);
         this.layout = linearLayout;
         linearLayout.setOrientation(1);
-        this.layout.setPadding(0, m81dp(8), 0, m81dp(8));
+        this.layout.setPadding(0, m79dp(8), 0, m79dp(8));
         TextView textView = new TextView(this.host);
         textView.setText("更新公告");
         textView.setTextSize(22.0f);
         textView.setTextColor(LocalUiStyle.INK);
         textView.setTypeface(null, 1);
-        textView.setPadding(m81dp(22), m81dp(12), m81dp(22), m81dp(4));
+        textView.setPadding(m79dp(22), m79dp(12), m79dp(22), m79dp(4));
         this.layout.addView(textView, new LinearLayout.LayoutParams(-1, -2));
         TextView textView2 = new TextView(this.host);
         textView2.setText("Project7 本地管理 · " + this.version);
         textView2.setTextColor(LocalUiStyle.MUTED);
         textView2.setTextSize(12.0f);
-        textView2.setPadding(m81dp(22), 0, m81dp(22), m81dp(12));
+        textView2.setPadding(m79dp(22), 0, m79dp(22), m79dp(12));
         this.layout.addView(textView2, new LinearLayout.LayoutParams(-1, -2));
         Button button = new Button(this.host);
         this.confirm = button;
@@ -125,7 +125,7 @@ final class LocalUpdateNoticeDialog extends Dialog {
             }
         });
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(m81dp(20), m81dp(10), m81dp(20), m81dp(8));
+        layoutParams.setMargins(m79dp(20), m79dp(10), m79dp(20), m79dp(8));
         this.layout.addView(this.confirm, layoutParams);
         setContentView(this.layout);
         updateButton();
@@ -189,7 +189,7 @@ final class LocalUpdateNoticeDialog extends Dialog {
     @Override // android.app.Dialog
     protected void onStart() {
         super.onStart();
-        getWindow().setLayout(Math.min(this.host.getResources().getDisplayMetrics().widthPixels - m81dp(24), m81dp(640)), Math.round(r0.heightPixels * 0.86f));
+        getWindow().setLayout(Math.min(this.host.getResources().getDisplayMetrics().widthPixels - m79dp(24), m79dp(640)), Math.round(r0.heightPixels * 0.86f));
     }
 
     private void showFallback() {
@@ -217,7 +217,7 @@ final class LocalUpdateNoticeDialog extends Dialog {
         textView.setTextColor(LocalUiStyle.INK);
         textView.setTextSize(15.0f);
         textView.setTextIsSelectable(true);
-        textView.setPadding(m81dp(22), m81dp(8), m81dp(22), m81dp(16));
+        textView.setPadding(m79dp(22), m79dp(8), m79dp(22), m79dp(16));
         this.fallback.addView(textView);
         this.layout.addView(this.fallback, 2, new LinearLayout.LayoutParams(-1, 0, 1.0f));
         this.fallback.post(new Runnable() { // from class: com.project7.localmanager.LocalUpdateNoticeDialog$$ExternalSyntheticLambda2

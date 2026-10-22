@@ -70,6 +70,8 @@
 
 .field private static final TUTORIAL_END:[B
 
+.field private static q7LastRefreshMs:J
+
 
 # instance fields
 .field private final accountStore:Lcom/project7/localmanager/LocalAccountStore;
@@ -422,7 +424,7 @@
         }
     .end annotation
 
-    .line 921
+    .line 915
     iget-object p3, p3, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -442,7 +444,7 @@
 
     check-cast v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 922
+    .line 916
     iget-object v1, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     const-string v2, "procRewardSettlementCommon"
@@ -455,7 +457,7 @@
 
     goto :goto_0
 
-    .line 923
+    .line 917
     :cond_0
     iget-object v0, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
 
@@ -471,7 +473,7 @@
 
     move-result-object v0
 
-    .line 924
+    .line 918
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
@@ -502,11 +504,11 @@
 
     invoke-interface {v1, p1, v2, v0, p2}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
-    .line 925
+    .line 919
     :cond_1
     goto :goto_0
 
-    .line 926
+    .line 920
     :cond_2
     return-void
 .end method
@@ -519,12 +521,12 @@
         }
     .end annotation
 
-    .line 2307
+    .line 2299
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->sessionLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 2308
+    .line 2300
     :try_start_0
     iget-boolean v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->closed:Z
 
@@ -536,11 +538,11 @@
 
     return v2
 
-    .line 2309
+    .line 2301
     :cond_0
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->activeSession:Lcom/project7/localmanager/LocalGatewayServer$ClientSession;
 
-    .line 2310
+    .line 2302
     if-eqz v1, :cond_2
 
     if-eq v1, p1, :cond_2
@@ -557,12 +559,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 2311
+    .line 2303
     invoke-virtual {v1}, Lcom/project7/localmanager/LocalGatewayServer$ClientSession;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2314
+    .line 2306
     :try_start_1
     iget-object v1, v1, Lcom/project7/localmanager/LocalGatewayServer$ClientSession;->done:Ljava/util/concurrent/CountDownLatch;
 
@@ -584,27 +586,27 @@
 
     return v2
 
-    .line 2318
+    .line 2310
     :cond_1
     goto :goto_0
 
-    .line 2315
+    .line 2307
     :catch_0
     move-exception p1
 
-    .line 2316
+    .line 2308
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
 
     invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
 
-    .line 2317
+    .line 2309
     monitor-exit v0
 
     return v2
 
-    .line 2320
+    .line 2312
     :cond_2
     :goto_0
     iget-boolean v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->closed:Z
@@ -621,25 +623,25 @@
 
     goto :goto_1
 
-    .line 2321
+    .line 2313
     :cond_3
     iput-object p1, p0, Lcom/project7/localmanager/LocalGatewayServer;->activeSession:Lcom/project7/localmanager/LocalGatewayServer$ClientSession;
 
-    .line 2322
+    .line 2314
     const/4 p1, 0x1
 
     monitor-exit v0
 
     return p1
 
-    .line 2320
+    .line 2312
     :cond_4
     :goto_1
     monitor-exit v0
 
     return v2
 
-    .line 2323
+    .line 2315
     :catchall_0
     move-exception p1
 
@@ -672,7 +674,7 @@
         }
     .end annotation
 
-    .line 851
+    .line 845
     const-string v0, "ui"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -699,7 +701,7 @@
 
     goto :goto_1
 
-    .line 852
+    .line 846
     :cond_0
     new-instance p2, Ljava/util/ArrayList;
 
@@ -728,7 +730,7 @@
 
     move-result v0
 
-    .line 853
+    .line 847
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->eventCatalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v1, v1, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
@@ -745,7 +747,7 @@
 
     goto :goto_0
 
-    .line 854
+    .line 848
     :cond_1
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -759,7 +761,7 @@
 
     aput-object v4, v2, v3
 
-    .line 855
+    .line 849
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -770,26 +772,26 @@
 
     move-result-object v0
 
-    .line 854
+    .line 848
     const-string v2, "q7PuzzleExit"
 
     invoke-interface {v1, p3, v2, v0, p4}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
     move-result-object v0
 
-    .line 856
+    .line 850
     iget-object v0, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     invoke-virtual {p5, v0}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 857
+    .line 851
     goto :goto_0
 
-    .line 858
+    .line 852
     :cond_2
     return-void
 
-    .line 851
+    .line 845
     :cond_3
     :goto_1
     return-void
@@ -798,7 +800,7 @@
 .method private static combatHash([B)[B
     .locals 1
 
-    .line 1699
+    .line 1691
     :try_start_0
     const-string v0, "SHA-256"
 
@@ -819,7 +821,7 @@
 
     return-object p0
 
-    .line 1700
+    .line 1692
     :catch_0
     move-exception p0
 
@@ -838,32 +840,32 @@
         }
     .end annotation
 
-    .line 2220
+    .line 2212
     nop
 
-    .line 2225
+    .line 2217
     const-string v0, "serverCallbackCarrier"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 2226
+    .line 2218
     invoke-static {p3}, Lcom/project7/localmanager/BsonLite;->callbackDocument(I)[B
 
     move-result-object v1
 
-    .line 2223
+    .line 2215
     invoke-static {p2, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
-    .line 2220
+    .line 2212
     const/4 v0, 0x5
 
     invoke-direct {p0, p1, v0, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2229
+    .line 2221
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -888,7 +890,7 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2230
+    .line 2222
     return-void
 .end method
 
@@ -900,19 +902,19 @@
         }
     .end annotation
 
-    .line 2251
+    .line 2243
     const-string v0, "_cbid_"
 
     invoke-static {p3, v0}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object p3
 
-    .line 2252
+    .line 2244
     const-string v0, "Project7Gateway"
 
     if-nez p3, :cond_0
 
-    .line 2253
+    .line 2245
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -929,21 +931,21 @@
 
     invoke-static {v0, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2254
+    .line 2246
     return-void
 
-    .line 2256
+    .line 2248
     :cond_0
     const/4 v1, 0x5
 
-    .line 2261
+    .line 2253
     const-string v2, "serverCallbackCarrier"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 2262
+    .line 2254
     invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -952,15 +954,15 @@
 
     move-result-object v3
 
-    .line 2259
+    .line 2251
     invoke-static {p2, v2, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
-    .line 2256
+    .line 2248
     invoke-direct {p0, p1, v1, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2265
+    .line 2257
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -979,7 +981,7 @@
 
     invoke-static {v0, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2266
+    .line 2258
     iget-object p1, p0, Lcom/project7/localmanager/LocalGatewayServer;->listener:Lcom/project7/localmanager/LocalGatewayServer$StatusListener;
 
     const/4 p2, 0x1
@@ -1000,21 +1002,21 @@
 
     invoke-interface {p1, p2, p3}, Lcom/project7/localmanager/LocalGatewayServer$StatusListener;->onStatus(ZLjava/lang/String;)V
 
-    .line 2267
+    .line 2259
     return-void
 .end method
 
 .method private currentCombatReply(Lcom/project7/localmanager/LocalGatewayServer$CombatReply;Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;I[BLcom/project7/localmanager/LocalEventEngine;)Z
     .locals 5
 
-    .line 1705
+    .line 1697
     const-string v0, "weeknum"
 
     invoke-static {p4, v0}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1706
+    .line 1698
     iget v1, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->week:I
 
     const-string v2, "w"
@@ -1029,7 +1031,7 @@
 
     iget v1, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->day:I
 
-    .line 1707
+    .line 1699
     const-string v2, "d"
 
     invoke-static {v0, v2}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -1040,7 +1042,7 @@
 
     goto/16 :goto_4
 
-    .line 1708
+    .line 1700
     :cond_0
     iget v0, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
@@ -1052,7 +1054,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1709
+    .line 1701
     iget-object p3, p2, Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;->values:Ljava/util/Map;
 
     iget-object v0, p2, Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;->latestAccepted:Ljava/lang/Integer;
@@ -1063,14 +1065,14 @@
 
     check-cast p3, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;
 
-    .line 1710
+    .line 1702
     invoke-static {p4}, Lcom/project7/localmanager/LocalDailyEngine;->active([B)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1711
+    .line 1703
     invoke-static {p4, v1}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object p4
@@ -1089,7 +1091,7 @@
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->acceptedAtPreparation:Ljava/lang/Integer;
 
-    .line 1712
+    .line 1704
     invoke-static {p2, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -1106,7 +1108,7 @@
 
     iget p1, p3, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->scene:I
 
-    .line 1713
+    .line 1705
     invoke-virtual {p5, p1}, Lcom/project7/localmanager/LocalEventEngine;->hasPendingStoryBattle(I)Z
 
     move-result p1
@@ -1121,11 +1123,11 @@
     :cond_2
     nop
 
-    .line 1710
+    .line 1702
     :goto_0
     return v3
 
-    .line 1715
+    .line 1707
     :cond_3
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1141,7 +1143,7 @@
 
     return v3
 
-    .line 1716
+    .line 1708
     :cond_4
     iget p2, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
@@ -1161,7 +1163,7 @@
 
     iget p1, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->scene:I
 
-    .line 1717
+    .line 1709
     invoke-virtual {p5, p1}, Lcom/project7/localmanager/LocalEventEngine;->pendingStoryBattleOwners(I)Ljava/util/Set;
 
     move-result-object p1
@@ -1179,11 +1181,11 @@
     :cond_5
     nop
 
-    .line 1716
+    .line 1708
     :goto_1
     return v3
 
-    .line 1718
+    .line 1710
     :cond_6
     iget p2, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
@@ -1199,7 +1201,7 @@
 
     move-result-object p2
 
-    .line 1719
+    .line 1711
     iget p3, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
     if-eq p3, v4, :cond_8
@@ -1217,7 +1219,7 @@
 
     iget p3, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
-    .line 1720
+    .line 1712
     const-string p4, "t"
 
     invoke-static {p2, p4}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -1229,7 +1231,7 @@
     :cond_9
     iget p3, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->scene:I
 
-    .line 1721
+    .line 1713
     const-string p4, "s"
 
     invoke-static {p2, p4}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -1238,7 +1240,7 @@
 
     if-ne p3, p4, :cond_a
 
-    .line 1722
+    .line 1714
     const-string p3, "h"
 
     invoke-static {p2, p3}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
@@ -1263,7 +1265,7 @@
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->fight:Ljava/lang/String;
 
-    .line 1723
+    .line 1715
     const-string p3, "f"
 
     invoke-static {p2, p3}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
@@ -1283,11 +1285,11 @@
     :cond_a
     nop
 
-    .line 1719
+    .line 1711
     :goto_3
     return v3
 
-    .line 1707
+    .line 1699
     :cond_b
     :goto_4
     return v3
@@ -1296,7 +1298,7 @@
 .method private static digest(Ljava/lang/String;)[B
     .locals 2
 
-    .line 2362
+    .line 2354
     :try_start_0
     const-string v0, "MD5"
 
@@ -1306,12 +1308,12 @@
 
     sget-object v1, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
-    .line 2363
+    .line 2355
     invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object p0
 
-    .line 2362
+    .line 2354
     invoke-virtual {v0, p0}, Ljava/security/MessageDigest;->digest([B)[B
 
     move-result-object p0
@@ -1320,11 +1322,11 @@
 
     return-object p0
 
-    .line 2365
+    .line 2357
     :catch_0
     move-exception p0
 
-    .line 2366
+    .line 2358
     new-instance v0, Ljava/lang/ExceptionInInitializerError;
 
     invoke-direct {v0, p0}, Ljava/lang/ExceptionInInitializerError;-><init>(Ljava/lang/Throwable;)V
@@ -1340,7 +1342,7 @@
         }
     .end annotation
 
-    .line 1728
+    .line 1720
     iget-object v0, p3, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->profileHash:[B
 
     invoke-static {p4}, Lcom/project7/localmanager/LocalGatewayServer;->combatHash([B)[B
@@ -1351,7 +1353,7 @@
 
     move-result v0
 
-    .line 1729
+    .line 1721
     iget-object p3, p3, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->controls:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1371,10 +1373,10 @@
 
     check-cast v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 1730
+    .line 1722
     iget-object v2, v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
 
-    .line 1731
+    .line 1723
     const/4 v3, 0x5
 
     const/4 v4, 0x2
@@ -1395,14 +1397,14 @@
 
     if-eqz v7, :cond_0
 
-    .line 1732
+    .line 1724
     const-string v2, "city"
 
     invoke-static {p4, v2}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1733
+    .line 1725
     const/4 v7, 0x6
 
     new-array v7, v7, [Ljava/lang/Object;
@@ -1429,7 +1431,7 @@
 
     const/4 v4, 0x3
 
-    .line 1734
+    .line 1726
     const-string v5, "jpvt"
 
     invoke-static {v2, v5}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -1458,12 +1460,12 @@
 
     aput-object v2, v7, v3
 
-    .line 1733
+    .line 1725
     invoke-static {v7}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v2
 
-    .line 1735
+    .line 1727
     goto :goto_1
 
     :cond_0
@@ -1479,7 +1481,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 1736
+    .line 1728
     new-array v2, v4, [Ljava/lang/Object;
 
     const-string v4, "d"
@@ -1500,7 +1502,7 @@
 
     goto :goto_1
 
-    .line 1737
+    .line 1729
     :cond_1
     if-eqz p5, :cond_2
 
@@ -1518,7 +1520,7 @@
 
     iget-object v4, v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1738
+    .line 1730
     const-string v5, "showMessageStr"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1527,10 +1529,10 @@
 
     if-nez v4, :cond_2
 
-    .line 1740
+    .line 1732
     goto/16 :goto_0
 
-    .line 1742
+    .line 1734
     :cond_2
     :goto_1
     iget-object v1, v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
@@ -1545,10 +1547,10 @@
 
     invoke-direct {p0, p1, v3, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1743
+    .line 1735
     goto/16 :goto_0
 
-    .line 1744
+    .line 1736
     :cond_3
     return-void
 .end method
@@ -1561,7 +1563,7 @@
         }
     .end annotation
 
-    .line 1747
+    .line 1739
     iget-object p3, p3, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->cores:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1585,7 +1587,7 @@
 
     iget-object v2, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1748
+    .line 1740
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
@@ -1596,12 +1598,12 @@
 
     move-result-object v0
 
-    .line 1747
+    .line 1739
     invoke-direct {p0, p1, v1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_0
 
-    .line 1749
+    .line 1741
     :cond_0
     return-void
 .end method
@@ -1614,7 +1616,7 @@
         }
     .end annotation
 
-    .line 900
+    .line 894
     iget-object p5, p6, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1638,7 +1640,7 @@
 
     iget-object v2, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 901
+    .line 895
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
@@ -1649,12 +1651,12 @@
 
     move-result-object v0
 
-    .line 900
+    .line 894
     invoke-direct {p0, p1, v1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_0
 
-    .line 902
+    .line 896
     :cond_0
     iget-object p5, p6, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
@@ -1685,7 +1687,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 903
+    .line 897
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1710,7 +1712,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
 
-    .line 904
+    .line 898
     const-string v3, "c"
 
     invoke-static {v0, v3}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -1723,22 +1725,22 @@
 
     move-result-object v0
 
-    .line 903
+    .line 897
     const-string v2, "Project7Gateway"
 
     invoke-static {v2, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 902
+    .line 896
     :cond_1
     goto :goto_1
 
-    .line 905
+    .line 899
     :cond_2
     invoke-static {p6}, Lcom/project7/localmanager/LocalStoryProgressDelivery;->sent(Lcom/project7/localmanager/LocalResourceEngine$Result;)[B
 
     move-result-object p5
 
-    .line 906
+    .line 900
     invoke-static {p5}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v0
@@ -1749,18 +1751,18 @@
 
     if-nez v0, :cond_3
 
-    .line 907
+    .line 901
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     const-string v2, "q7AckStoryProgress"
 
     invoke-interface {v0, p3, v2, p5, p4}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
-    .line 908
+    .line 902
     :cond_3
     invoke-direct {p0, p3, p4, p6}, Lcom/project7/localmanager/LocalGatewayServer;->acknowledgeCgNotices(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalResourceEngine$Result;)V
 
-    .line 909
+    .line 903
     iget-object p3, p6, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->stream()Ljava/util/stream/Stream;
@@ -1773,7 +1775,7 @@
 
     move-result p3
 
-    .line 910
+    .line 904
     iget-object p5, p6, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1805,14 +1807,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 911
+    .line 905
     const-string p3, "get_all_area_info_reply"
 
     invoke-static {p3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object p3
 
-    .line 912
+    .line 906
     invoke-static {p4}, Lcom/project7/localmanager/LocalGatewayServer;->isHighSchoolUnlocked(Lcom/project7/localmanager/LocalTutorialStore$Progress;)Z
 
     move-result p5
@@ -1823,14 +1825,14 @@
 
     move-result-object p4
 
-    .line 911
+    .line 905
     invoke-static {p2, p3, p4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
     invoke-direct {p0, p1, v1, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 917
+    .line 911
     :cond_5
     return-void
 .end method
@@ -1961,7 +1963,7 @@
         }
     .end annotation
 
-    .line 1891
+    .line 1883
     move-object v6, p0
 
     move-object v7, p1
@@ -1990,7 +1992,7 @@
 
     goto/16 :goto_1
 
-    .line 1892
+    .line 1884
     :cond_0
     const-string v0, "s"
 
@@ -2000,18 +2002,18 @@
 
     move-result v10
 
-    .line 1893
+    .line 1885
     if-gtz v10, :cond_1
 
     return-void
 
-    .line 1894
+    .line 1886
     :cond_1
     invoke-virtual {v9, v10}, Lcom/project7/localmanager/LocalEventEngine;->abandonStoryBattle(I)Ljava/util/List;
 
     move-result-object v11
 
-    .line 1895
+    .line 1887
     invoke-interface {v11}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -2020,13 +2022,13 @@
 
     return-void
 
-    .line 1896
+    .line 1888
     :cond_2
     iget-object v0, v6, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v3, v4}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1897
+    .line 1889
     invoke-interface {v11}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2050,7 +2052,7 @@
 
     move-result v1
 
-    .line 1898
+    .line 1890
     const-string v2, "completeEventReplyStart"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -2067,7 +2069,7 @@
 
     invoke-direct {p0, p1, v12, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1899
+    .line 1891
     const-string v2, "completeEventReplyEnd"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -2084,10 +2086,10 @@
 
     invoke-direct {p0, p1, v12, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1900
+    .line 1892
     goto :goto_0
 
-    .line 1901
+    .line 1893
     :cond_3
     move-object v0, p0
 
@@ -2103,14 +2105,14 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1902
+    .line 1894
     const-string v0, "pushEvents"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1903
+    .line 1895
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v1
@@ -2123,14 +2125,14 @@
 
     move-result-object v1
 
-    .line 1902
+    .line 1894
     invoke-static {p2, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
     invoke-direct {p0, p1, v12, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1904
+    .line 1896
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2155,10 +2157,10 @@
 
     invoke-static {v1, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1905
+    .line 1897
     return-void
 
-    .line 1891
+    .line 1883
     :cond_4
     :goto_1
     return-void
@@ -2191,7 +2193,7 @@
         }
     .end annotation
 
-    .line 2001
+    .line 1993
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -2229,7 +2231,7 @@
     :cond_0
     move v11, v9
 
-    .line 2003
+    .line 1995
     :goto_0
     if-eqz v5, :cond_9
 
@@ -2237,7 +2239,7 @@
 
     goto/16 :goto_4
 
-    .line 2006
+    .line 1998
     :cond_1
     if-eqz v11, :cond_2
 
@@ -2254,7 +2256,7 @@
     :cond_2
     move v8, v9
 
-    .line 2007
+    .line 1999
     :goto_1
     if-eqz v5, :cond_3
 
@@ -2266,13 +2268,13 @@
 
     invoke-virtual {v5, v11}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 2008
+    .line 2000
     :cond_3
     const/4 v11, 0x2
 
     if-ne v6, v11, :cond_5
 
-    .line 2009
+    .line 2001
     if-eqz p10, :cond_4
 
     move v9, v10
@@ -2284,7 +2286,7 @@
 
     goto :goto_2
 
-    .line 2010
+    .line 2002
     :cond_5
     invoke-static/range {p9 .. p9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2300,13 +2302,13 @@
 
     move-result-object v9
 
-    .line 2011
+    .line 2003
     :goto_2
     iget-object v11, v0, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v11, v3, v4}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 2012
+    .line 2004
     invoke-interface {v9}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
@@ -2328,17 +2330,17 @@
 
     check-cast v11, Ljava/lang/Integer;
 
-    .line 2013
+    .line 2005
     nop
 
-    .line 2018
+    .line 2010
     const-string v14, "completeEventReplyStart"
 
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v14
 
-    .line 2019
+    .line 2011
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
     move-result v15
@@ -2347,25 +2349,25 @@
 
     move-result-object v15
 
-    .line 2016
+    .line 2008
     invoke-static {v2, v14, v15}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v14
 
-    .line 2013
+    .line 2005
     invoke-direct {v0, v1, v13, v14}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2022
+    .line 2014
     nop
 
-    .line 2027
+    .line 2019
     const-string v14, "completeEventReplyEnd"
 
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v14
 
-    .line 2028
+    .line 2020
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
     move-result v15
@@ -2374,20 +2376,20 @@
 
     move-result-object v15
 
-    .line 2025
+    .line 2017
     invoke-static {v2, v14, v15}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v14
 
-    .line 2022
+    .line 2014
     invoke-direct {v0, v1, v13, v14}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2031
+    .line 2023
     move-object/from16 v14, p6
 
     invoke-interface {v14, v11}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 2032
+    .line 2024
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -2414,20 +2416,20 @@
 
     invoke-static {v12, v11}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2033
+    .line 2025
     goto :goto_3
 
-    .line 2035
+    .line 2027
     :cond_6
     invoke-direct/range {p0 .. p5}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 2036
+    .line 2028
     if-eqz v8, :cond_7
 
-    .line 2037
+    .line 2029
     nop
 
-    .line 2038
+    .line 2030
     const-string v8, "get_city_data_reply"
 
     invoke-static {v8}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -2444,14 +2446,14 @@
 
     move-result-object v9
 
-    .line 2037
+    .line 2029
     invoke-static {v2, v8, v9}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v8
 
     invoke-direct {v0, v1, v13, v8}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2039
+    .line 2031
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2476,7 +2478,7 @@
 
     invoke-static {v12, v8}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2041
+    .line 2033
     :cond_7
     if-ne v6, v10, :cond_8
 
@@ -2486,17 +2488,17 @@
 
     if-eqz v6, :cond_8
 
-    .line 2042
+    .line 2034
     nop
 
-    .line 2043
+    .line 2035
     const-string v6, "get_all_area_info_reply"
 
     invoke-static {v6}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v6
 
-    .line 2044
+    .line 2036
     invoke-static/range {p4 .. p4}, Lcom/project7/localmanager/LocalGatewayServer;->isHighSchoolUnlocked(Lcom/project7/localmanager/LocalTutorialStore$Progress;)Z
 
     move-result v8
@@ -2511,14 +2513,14 @@
 
     move-result-object v8
 
-    .line 2042
+    .line 2034
     invoke-static {v2, v6, v8}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v6
 
     invoke-direct {v0, v1, v13, v6}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2045
+    .line 2037
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -2535,31 +2537,31 @@
 
     invoke-static {v12, v6}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2047
+    .line 2039
     :cond_8
     move-object/from16 v6, p7
 
     invoke-direct {v0, v1, v2, v5, v6}, Lcom/project7/localmanager/LocalGatewayServer;->triggerPendingNewbees(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;)V
 
-    .line 2048
+    .line 2040
     iget-object v6, v0, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v6, v3, v4}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 2049
+    .line 2041
     invoke-direct/range {p0 .. p5}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 2050
+    .line 2042
     nop
 
-    .line 2051
+    .line 2043
     const-string v3, "pushEvents"
 
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v3
 
-    .line 2052
+    .line 2044
     invoke-virtual/range {p5 .. p5}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v4
@@ -2568,22 +2570,22 @@
 
     move-result-object v5
 
-    .line 2051
+    .line 2043
     invoke-static {v4, v5}, Lcom/project7/localmanager/BsonLite;->eventListsDocument(Ljava/lang/Iterable;Ljava/lang/Iterable;)[B
 
     move-result-object v4
 
-    .line 2050
+    .line 2042
     invoke-static {v2, v3, v4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v0, v1, v13, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2053
+    .line 2045
     return-void
 
-    .line 2004
+    .line 1996
     :cond_9
     :goto_4
     return-void
@@ -2597,7 +2599,7 @@
         }
     .end annotation
 
-    .line 930
+    .line 924
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -2624,10 +2626,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 932
+    .line 926
     return v7
 
-    .line 934
+    .line 928
     :cond_0
     const-string v6, "evalEcho"
 
@@ -2645,7 +2647,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 935
+    .line 929
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2666,10 +2668,10 @@
 
     invoke-static {v9, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 936
+    .line 930
     return v7
 
-    .line 938
+    .line 932
     :cond_1
     const-string v6, "checkGamePlaySwitchAsk"
 
@@ -2691,16 +2693,16 @@
 
     const/4 v14, 0x5
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_9
 
-    .line 939
+    .line 933
     const-string v3, "g"
 
     invoke-static {v4, v3}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 940
+    .line 934
     const-string v5, "friendsummon"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2709,22 +2711,22 @@
 
     const-string v15, "summon"
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     invoke-virtual {v15, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
-    .line 941
+    .line 935
     const-string v6, "itemStore"
 
     invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const-string v6, "huodongMain_2"
 
@@ -2732,7 +2734,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const-string v6, "huodongMain_42"
 
@@ -2740,16 +2742,16 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
-    .line 942
+    .line 936
     const-string v6, "huodongMain_215"
 
     invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const-string v6, "memoryPalace"
 
@@ -2757,16 +2759,16 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
-    .line 943
+    .line 937
     const-string v6, "exchange"
 
     invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const-string v6, "dancengxunluo"
 
@@ -2774,7 +2776,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const-string v6, "lunhuizhijing"
 
@@ -2782,16 +2784,16 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
-    .line 944
+    .line 938
     const-string v6, "furnitureSummon"
 
     invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const-string v6, "funitureSummonLianchou"
 
@@ -2799,10 +2801,10 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
-    .line 945
-    const-string v6, "heroliberate"
+    .line 939
+    const-string v6, "blackgate"
 
     invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2813,36 +2815,47 @@
     goto :goto_0
 
     :cond_2
+    const-string v6, "heroliberate"
+
+    invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    goto :goto_0
+
+    :cond_3
     move v6, v13
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     :goto_0
     move v6, v7
 
-    .line 946
+    .line 940
     :goto_1
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_4
+    if-nez v5, :cond_5
 
     invoke-virtual {v15, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
-    :cond_4
+    :cond_5
     invoke-direct/range {p0 .. p2}, Lcom/project7/localmanager/LocalGatewayServer;->syncDrawCalendar(Ljava/io/OutputStream;[B)V
 
-    .line 947
-    :cond_5
+    .line 941
+    :cond_6
     nop
 
-    .line 948
+    .line 942
     const-string v5, "checkGamePlaySwitchReply"
 
     invoke-static {v5}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -2857,13 +2870,13 @@
 
     const-string v3, ""
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_7
 
     move-object v13, v3
 
     goto :goto_2
 
-    :cond_6
+    :cond_7
     move-object v13, v4
 
     :goto_2
@@ -2873,7 +2886,7 @@
 
     aput-object v13, v15, v12
 
-    .line 949
+    .line 943
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
@@ -2882,29 +2895,29 @@
 
     aput-object v8, v15, v10
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
     goto :goto_3
 
-    :cond_7
+    :cond_8
     const-string v3, "\u6b64\u73a9\u6cd5\u5c1a\u672a\u63a5\u5165\u672c\u5730\u7f51\u5173"
 
     :goto_3
     aput-object v3, v15, v14
 
-    .line 948
+    .line 942
     invoke-static {v15}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v3
 
-    .line 947
+    .line 941
     invoke-static {v2, v5, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v0, v1, v14, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 950
+    .line 944
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2927,11 +2940,11 @@
 
     invoke-static {v9, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 951
+    .line 945
     return v7
 
-    .line 953
-    :cond_8
+    .line 947
+    :cond_9
     const/4 v6, 0x7
 
     const-string v15, "buyMoney"
@@ -2957,11 +2970,11 @@
     :goto_4
     const-string v11, " method="
 
-    if-ge v15, v6, :cond_b
+    if-ge v15, v6, :cond_c
 
     aget-object v6, v8, v15
 
-    .line 955
+    .line 949
     invoke-static {v6}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v12
@@ -2970,9 +2983,9 @@
 
     move-result v12
 
-    if-nez v12, :cond_9
+    if-nez v12, :cond_a
 
-    .line 953
+    .line 947
     add-int/lit8 v15, v15, 0x1
 
     const/4 v6, 0x7
@@ -2983,15 +2996,15 @@
 
     goto :goto_4
 
-    .line 956
-    :cond_9
+    .line 950
+    :cond_a
     iget-object v3, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v3, v5, v6, v4}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateCommerce(Ljava/lang/String;Ljava/lang/String;[B)Lcom/project7/localmanager/LocalCommerceEngine$Result;
 
     move-result-object v3
 
-    .line 957
+    .line 951
     iget-object v4, v3, Lcom/project7/localmanager/LocalCommerceEngine$Result;->replies:Ljava/util/Map;
 
     invoke-interface {v4}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -3007,7 +3020,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_a
+    if-eqz v8, :cond_b
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3015,10 +3028,10 @@
 
     check-cast v8, Ljava/util/Map$Entry;
 
-    .line 958
+    .line 952
     nop
 
-    .line 959
+    .line 953
     invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v10
@@ -3035,18 +3048,18 @@
 
     check-cast v8, [B
 
-    .line 958
+    .line 952
     invoke-static {v2, v10, v8}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v8
 
     invoke-direct {v0, v1, v14, v8}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 960
+    .line 954
     goto :goto_5
 
-    .line 961
-    :cond_a
+    .line 955
+    :cond_b
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3067,7 +3080,7 @@
 
     iget-object v2, v3, Lcom/project7/localmanager/LocalCommerceEngine$Result;->replies:Ljava/util/Map;
 
-    .line 962
+    .line 956
     const-string v3, "showMessageStr"
 
     invoke-interface {v2, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -3082,14 +3095,14 @@
 
     move-result-object v1
 
-    .line 961
+    .line 955
     invoke-static {v9, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 963
+    .line 957
     return v7
 
-    .line 965
-    :cond_b
+    .line 959
+    :cond_c
     const-string v6, "syncServerTime"
 
     invoke-static {v6}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
@@ -3100,19 +3113,19 @@
 
     move-result v6
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
-    .line 966
+    .line 960
     nop
 
-    .line 967
+    .line 961
     const-string v3, "onSyncServerTime"
 
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v3
 
-    .line 968
+    .line 962
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -3129,18 +3142,18 @@
 
     move-result-object v4
 
-    .line 966
+    .line 960
     invoke-static {v2, v3, v4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v0, v1, v14, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 969
+    .line 963
     return v7
 
-    .line 971
-    :cond_c
+    .line 965
+    :cond_d
     const/16 v6, 0x16
 
     const-string v19, "setRoleIdRequest"
@@ -3194,11 +3207,11 @@
     move v12, v13
 
     :goto_6
-    if-ge v12, v6, :cond_12
+    if-ge v12, v6, :cond_13
 
     aget-object v15, v8, v12
 
-    .line 976
+    .line 970
     invoke-static {v15}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v6
@@ -3207,47 +3220,47 @@
 
     move-result v6
 
-    if-nez v6, :cond_d
+    if-nez v6, :cond_e
 
-    .line 971
+    .line 965
     add-int/lit8 v12, v12, 0x1
 
     const/16 v6, 0x16
 
     goto :goto_6
 
-    .line 977
-    :cond_d
+    .line 971
+    :cond_e
     iget-object v3, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v3, v5, v15, v4}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateProfile(Ljava/lang/String;Ljava/lang/String;[B)Lcom/project7/localmanager/LocalProfileEngine$Result;
 
     move-result-object v3
 
-    .line 979
+    .line 973
     iget-object v6, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->callback:Ljava/lang/String;
 
-    if-eqz v6, :cond_e
+    if-eqz v6, :cond_f
 
-    .line 980
+    .line 974
     iget-object v6, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->callback:Ljava/lang/String;
 
-    .line 981
+    .line 975
     invoke-static {v6}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v6
 
     iget-object v8, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->reply:[B
 
-    .line 980
+    .line 974
     invoke-static {v2, v6, v8}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v6
 
     invoke-direct {v0, v1, v14, v6}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 983
-    :cond_e
+    .line 977
+    :cond_f
     iget-object v6, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->extras:Ljava/util/List;
 
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3259,7 +3272,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_f
+    if-eqz v8, :cond_10
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3269,7 +3282,7 @@
 
     iget-object v12, v8, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 984
+    .line 978
     invoke-static {v12}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v12
@@ -3280,29 +3293,29 @@
 
     move-result-object v8
 
-    .line 983
+    .line 977
     invoke-direct {v0, v1, v14, v8}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_7
 
-    .line 985
-    :cond_f
+    .line 979
+    :cond_10
     const-string v6, "changeName"
 
     invoke-virtual {v6, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_10
+    if-eqz v6, :cond_11
 
     iget-object v6, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->profile:[B
 
-    if-eqz v6, :cond_10
+    if-eqz v6, :cond_11
 
-    .line 986
+    .line 980
     nop
 
-    .line 987
+    .line 981
     const-string v6, "updateCrystal"
 
     invoke-static {v6}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -3337,7 +3350,7 @@
 
     iget-object v10, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->profile:[B
 
-    .line 988
+    .line 982
     const-string v12, "bind_crystal"
 
     invoke-static {v10, v12}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -3352,20 +3365,20 @@
 
     aput-object v10, v8, v12
 
-    .line 987
+    .line 981
     invoke-static {v8}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v8
 
-    .line 986
+    .line 980
     invoke-static {v2, v6, v8}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v0, v1, v14, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 990
-    :cond_10
+    .line 984
+    :cond_11
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3384,20 +3397,20 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 991
+    .line 985
     const-string v2, "setHeadImage"
 
     invoke-virtual {v2, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_12
 
     const-string v2, "<avatar metadata/image redacted>"
 
     goto :goto_8
 
-    :cond_11
+    :cond_12
     invoke-static/range {p4 .. p4}, Lcom/project7/localmanager/BsonLite;->debugDocument([B)Ljava/lang/String;
 
     move-result-object v2
@@ -3411,7 +3424,7 @@
 
     iget-object v2, v3, Lcom/project7/localmanager/LocalProfileEngine$Result;->profile:[B
 
-    .line 992
+    .line 986
     const-string v3, "role"
 
     invoke-static {v2, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
@@ -3424,14 +3437,14 @@
 
     move-result-object v1
 
-    .line 990
+    .line 984
     invoke-static {v9, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 993
+    .line 987
     return v7
 
-    .line 995
-    :cond_12
+    .line 989
+    :cond_13
     return v13
 .end method
 
@@ -3443,7 +3456,7 @@
         }
     .end annotation
 
-    .line 2131
+    .line 2123
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     sget-object v1, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
@@ -3452,7 +3465,7 @@
 
     move-result-object v0
 
-    .line 2132
+    .line 2124
     if-eqz p5, :cond_0
 
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
@@ -3463,13 +3476,13 @@
 
     invoke-virtual {p5, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 2133
+    .line 2125
     :cond_0
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, p3, p4}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 2134
+    .line 2126
     iget-object p3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3493,7 +3506,7 @@
 
     iget-object v2, p4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 2135
+    .line 2127
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
@@ -3504,12 +3517,12 @@
 
     move-result-object p4
 
-    .line 2134
+    .line 2126
     invoke-direct {p0, p1, v1, p4}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_0
 
-    .line 2136
+    .line 2128
     :cond_1
     iget-boolean p3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
 
@@ -3517,14 +3530,14 @@
 
     if-eqz p5, :cond_2
 
-    .line 2137
+    .line 2129
     const-string p3, "pullEventsReply"
 
     invoke-static {p3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object p3
 
-    .line 2138
+    .line 2130
     invoke-virtual {p5}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object p4
@@ -3537,15 +3550,15 @@
 
     move-result-object p4
 
-    .line 2137
+    .line 2129
     invoke-static {p2, p3, p4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
-    .line 2136
+    .line 2128
     invoke-direct {p0, p1, v1, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2139
+    .line 2131
     :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -3581,7 +3594,7 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2140
+    .line 2132
     return-void
 .end method
 
@@ -7296,7 +7309,7 @@
         }
     .end annotation
 
-    .line 1754
+    .line 1746
     move-object/from16 v7, p0
 
     move-object/from16 v8, p1
@@ -7325,7 +7338,7 @@
 
     invoke-virtual {v2, v0, v6, v9}, Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;->bind(Ljava/util/Set;Ljava/lang/String;[B)V
 
-    .line 1755
+    .line 1747
     iget-object v3, v2, Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;->values:Ljava/util/Map;
 
     invoke-static/range {p8 .. p8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -7340,7 +7353,7 @@
 
     check-cast v13, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;
 
-    .line 1756
+    .line 1748
     const-string v14, "combatOfflineReply"
 
     const-string v5, "Project7Gateway"
@@ -7351,14 +7364,14 @@
 
     if-eqz v13, :cond_5
 
-    .line 1759
+    .line 1751
     iget-boolean v0, v13, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->delivered:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1760
+    .line 1752
     :cond_0
     iget-object v0, v7, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -7366,7 +7379,7 @@
 
     move-result-object v16
 
-    .line 1761
+    .line 1753
     iget-object v0, v13, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->requestHash:[B
 
     invoke-static/range {p9 .. p9}, Lcom/project7/localmanager/LocalGatewayServer;->combatHash([B)[B
@@ -7379,7 +7392,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1762
+    .line 1754
     move-object/from16 v0, p0
 
     move-object v1, v13
@@ -7404,7 +7417,7 @@
 
     goto :goto_0
 
-    .line 1766
+    .line 1758
     :cond_1
     const/4 v5, 0x1
 
@@ -7420,7 +7433,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalGatewayServer;->emitCombatControls(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalGatewayServer$CombatReply;[BZ)V
 
-    .line 1767
+    .line 1759
     iget v0, v13, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
     if-eq v0, v15, :cond_2
@@ -7434,11 +7447,11 @@
     :cond_2
     invoke-direct/range {p0 .. p5}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1768
+    .line 1760
     :cond_3
     invoke-direct {v7, v8, v9, v13}, Lcom/project7/localmanager/LocalGatewayServer;->emitCombatCores(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalGatewayServer$CombatReply;)V
 
-    .line 1769
+    .line 1761
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
@@ -7453,10 +7466,10 @@
 
     invoke-direct {v7, v8, v1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1770
+    .line 1762
     iput-boolean v15, v13, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->delivered:Z
 
-    .line 1771
+    .line 1763
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7483,14 +7496,14 @@
 
     invoke-static {v13, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1772
+    .line 1764
     return-void
 
-    .line 1761
+    .line 1753
     :cond_4
     move-object v13, v5
 
-    .line 1763
+    .line 1755
     :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7508,10 +7521,10 @@
 
     invoke-static {v13, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1764
+    .line 1756
     return-void
 
-    .line 1774
+    .line 1766
     :cond_5
     move v15, v3
 
@@ -7529,7 +7542,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 1775
+    .line 1767
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7546,10 +7559,10 @@
 
     invoke-static {v13, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1776
+    .line 1768
     return-void
 
-    .line 1779
+    .line 1771
     :cond_6
     new-instance v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;
 
@@ -7563,7 +7576,7 @@
 
     iput-object v4, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->requestHash:[B
 
-    .line 1780
+    .line 1772
     const-string v4, "t"
 
     invoke-static {v1, v4}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -7576,17 +7589,17 @@
 
     move-result v3
 
-    .line 1781
+    .line 1773
     iput v3, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->scene:I
 
-    .line 1782
+    .line 1774
     const-string v15, "h"
 
     invoke-static {v1, v15}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v15
 
-    .line 1783
+    .line 1775
     move-object/from16 v25, v14
 
     const-string v14, "d"
@@ -7595,14 +7608,14 @@
 
     move-result-object v26
 
-    .line 1784
+    .line 1776
     iget-object v8, v7, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v8, v6, v10}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v8
 
-    .line 1785
+    .line 1777
     invoke-interface {v15}, Ljava/util/List;->isEmpty()Z
 
     move-result v17
@@ -7620,7 +7633,7 @@
     :cond_7
     move/from16 v17, v27
 
-    .line 1786
+    .line 1778
     :goto_1
     invoke-interface {v15}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -7671,11 +7684,11 @@
 
     goto :goto_2
 
-    .line 1787
+    .line 1779
     :cond_9
     nop
 
-    .line 1788
+    .line 1780
     const-string v0, "f"
 
     const-string v9, "q7Battle"
@@ -7690,23 +7703,30 @@
 
     const/4 v14, 0x1
 
-    if-eq v4, v14, :cond_e
+    if-eq v4, v14, :cond_f
 
     const/4 v14, 0x2
 
-    if-eq v4, v14, :cond_e
+    if-eq v4, v14, :cond_f
 
-    .line 1789
+    .line 1781
+    const/16 v14, 0xb
+
+    if-ne v4, v14, :cond_a
+
+    const/16 v17, 0x1
+
+    :cond_a
     invoke-static {v4}, Lcom/project7/localmanager/LocalDailyEngine;->battleType(I)Z
 
     move-result v14
 
     and-int v14, v17, v14
 
-    .line 1790
-    if-eqz v14, :cond_c
+    .line 1782
+    if-eqz v14, :cond_d
 
-    .line 1791
+    .line 1783
     iget-object v8, v7, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     move/from16 p6, v14
@@ -7717,7 +7737,7 @@
 
     move-result-object v1
 
-    .line 1792
+    .line 1784
     iget-object v8, v1, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     iget-object v14, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->controls:Ljava/util/List;
@@ -7728,7 +7748,7 @@
 
     invoke-interface {v14, v8}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1793
+    .line 1785
     iget-object v1, v1, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -7737,13 +7757,13 @@
 
     move/from16 v14, p6
 
-    :cond_a
+    :cond_b
     :goto_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_b
+    if-eqz v8, :cond_c
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7757,21 +7777,21 @@
 
     move-result v8
 
-    if-eqz v8, :cond_a
+    if-eqz v8, :cond_b
 
     move/from16 v14, v27
 
     goto :goto_4
 
-    .line 1794
-    :cond_b
+    .line 1786
+    :cond_c
     move-object/from16 v30, v13
 
     move-object/from16 v8, v17
 
     goto :goto_5
 
-    :cond_c
+    :cond_d
     move/from16 p6, v14
 
     iget-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->controls:Ljava/util/List;
@@ -7792,30 +7812,30 @@
 
     aput-object v17, v13, v18
 
-    .line 1795
+    .line 1787
     invoke-static {v13}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v13
 
     invoke-direct {v14, v2, v13}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    .line 1794
+    .line 1786
     invoke-interface {v1, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     move/from16 v14, p6
 
-    .line 1796
+    .line 1788
     :goto_5
-    if-eqz v14, :cond_d
+    if-eqz v14, :cond_e
 
-    .line 1797
+    .line 1789
     invoke-static/range {p2 .. p2}, Lcom/project7/localmanager/LocalGatewayServer;->hex([B)Ljava/lang/String;
 
     move-result-object v21
 
     iget-object v1, v7, Lcom/project7/localmanager/LocalGatewayServer;->combatCatalog:Lcom/project7/localmanager/LocalCombatCatalog;
 
-    .line 1796
+    .line 1788
     move/from16 v17, v4
 
     move/from16 v18, v3
@@ -7834,8 +7854,8 @@
 
     iput-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->parameters:[B
 
-    .line 1836
-    :cond_d
+    .line 1828
+    :cond_e
     move-object/from16 v32, v9
 
     move-object/from16 v31, v15
@@ -7846,21 +7866,21 @@
 
     goto/16 :goto_c
 
-    .line 1788
-    :cond_e
+    .line 1780
+    :cond_f
     move-object/from16 v30, v13
 
-    .line 1798
+    .line 1790
     invoke-static {v8}, Lcom/project7/localmanager/LocalDailyEngine;->active([B)Z
 
     move-result v13
 
-    if-eqz v13, :cond_f
+    if-eqz v13, :cond_10
 
-    .line 1799
+    .line 1791
     nop
 
-    .line 1800
+    .line 1792
     iget-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->controls:Ljava/util/List;
 
     new-instance v13, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -7879,14 +7899,14 @@
 
     aput-object v17, v14, v8
 
-    .line 1801
+    .line 1793
     invoke-static {v14}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v14
 
     invoke-direct {v13, v2, v14}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    .line 1800
+    .line 1792
     invoke-interface {v1, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v32, v9
@@ -7903,25 +7923,25 @@
 
     goto/16 :goto_c
 
-    .line 1803
-    :cond_f
+    .line 1795
+    :cond_10
     move-object/from16 v19, v8
 
     const/4 v8, 0x1
 
-    .line 1804
-    if-ne v4, v8, :cond_10
+    .line 1796
+    if-ne v4, v8, :cond_11
 
     invoke-static {v3}, Lcom/project7/localmanager/LocalCityProgress;->area(I)I
 
     move-result v13
 
-    if-nez v13, :cond_10
+    if-nez v13, :cond_11
 
-    .line 1805
+    .line 1797
     nop
 
-    .line 1806
+    .line 1798
     iget-object v13, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->controls:Ljava/util/List;
 
     new-instance v14, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -7940,68 +7960,68 @@
 
     aput-object v8, v15, v17
 
-    .line 1807
+    .line 1799
     invoke-static {v15}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v8
 
     invoke-direct {v14, v2, v8}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    .line 1806
+    .line 1798
     invoke-interface {v13, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     move/from16 v17, v27
 
     goto :goto_6
 
-    .line 1804
-    :cond_10
+    .line 1796
+    :cond_11
     move-object/from16 v31, v15
 
-    .line 1809
+    .line 1801
     :goto_6
     const/4 v2, 0x2
-
-    if-ne v4, v2, :cond_13
-
-    if-eqz v17, :cond_13
-
-    .line 1810
-    if-eqz v11, :cond_11
-
-    invoke-virtual {v11, v3}, Lcom/project7/localmanager/LocalEventEngine;->beginStoryBattle(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_11
-
-    const/4 v2, 0x1
-
-    goto :goto_7
-
-    :cond_11
-    move/from16 v2, v27
-
-    .line 1811
-    :goto_7
-    if-eqz v2, :cond_12
-
-    iget-object v8, v7, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
-
-    invoke-virtual {v8, v6, v10}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
-
-    .line 1813
-    :cond_12
-    move/from16 v17, v2
-
-    :cond_13
-    const/4 v2, 0x1
 
     if-ne v4, v2, :cond_14
 
     if-eqz v17, :cond_14
 
-    .line 1814
+    .line 1802
+    if-eqz v11, :cond_12
+
+    invoke-virtual {v11, v3}, Lcom/project7/localmanager/LocalEventEngine;->beginStoryBattle(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_12
+
+    const/4 v2, 0x1
+
+    goto :goto_7
+
+    :cond_12
+    move/from16 v2, v27
+
+    .line 1803
+    :goto_7
+    if-eqz v2, :cond_13
+
+    iget-object v8, v7, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
+
+    invoke-virtual {v8, v6, v10}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
+
+    .line 1805
+    :cond_13
+    move/from16 v17, v2
+
+    :cond_14
+    const/4 v2, 0x1
+
+    if-ne v4, v2, :cond_15
+
+    if-eqz v17, :cond_15
+
+    .line 1806
     iget-object v2, v7, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     const-string v8, "begin"
@@ -8010,7 +8030,7 @@
 
     move-result-object v1
 
-    .line 1815
+    .line 1807
     iget-object v8, v1, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     iget-object v2, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->controls:Ljava/util/List;
@@ -8019,15 +8039,15 @@
 
     invoke-interface {v2, v13}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1816
+    .line 1808
     iget-boolean v2, v1, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
 
     move v14, v2
 
     goto :goto_8
 
-    .line 1818
-    :cond_14
+    .line 1810
+    :cond_15
     move/from16 v14, v17
 
     move-object/from16 v8, v19
@@ -8035,14 +8055,14 @@
     const/4 v1, 0x0
 
     :goto_8
-    if-eqz v14, :cond_19
+    if-eqz v14, :cond_1a
 
-    .line 1819
+    .line 1811
     const/16 v2, 0x65
 
-    if-ne v3, v2, :cond_15
+    if-ne v3, v2, :cond_16
 
-    if-eqz v11, :cond_15
+    if-eqz v11, :cond_16
 
     invoke-virtual/range {p5 .. p5}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
@@ -8058,9 +8078,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_16
 
-    .line 1820
+    .line 1812
     invoke-virtual {v11, v8}, Lcom/project7/localmanager/LocalEventEngine;->startEvent(I)Z
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8075,19 +8095,19 @@
 
     invoke-virtual {v2, v6, v10}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1822
-    :cond_15
+    .line 1814
+    :cond_16
     invoke-direct {v7, v6, v10, v11}, Lcom/project7/localmanager/LocalGatewayServer;->prepareEventEffects(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
     move-result-object v2
 
     iget-object v8, v2, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 1823
+    .line 1815
     nop
 
-    .line 1824
-    if-nez v1, :cond_16
+    .line 1816
+    if-nez v1, :cond_17
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -8105,15 +8125,15 @@
 
     goto :goto_9
 
-    :cond_16
+    :cond_17
     iget-object v1, v1, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 1825
+    .line 1817
     invoke-static {v1, v9}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1824
+    .line 1816
     invoke-static {v1, v0}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -8121,14 +8141,14 @@
     :goto_9
     move-object/from16 v19, v1
 
-    .line 1826
+    .line 1818
     invoke-static/range {p2 .. p2}, Lcom/project7/localmanager/LocalGatewayServer;->hex([B)Ljava/lang/String;
 
     move-result-object v22
 
     iget-object v1, v7, Lcom/project7/localmanager/LocalGatewayServer;->combatCatalog:Lcom/project7/localmanager/LocalCombatCatalog;
 
-    .line 1823
+    .line 1815
     move/from16 v17, v4
 
     move/from16 v18, v3
@@ -8147,30 +8167,30 @@
 
     iput-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->parameters:[B
 
-    .line 1827
+    .line 1819
     const/4 v1, 0x2
 
-    if-ne v4, v1, :cond_18
+    if-ne v4, v1, :cond_19
 
-    .line 1828
+    .line 1820
     invoke-virtual {v11, v3}, Lcom/project7/localmanager/LocalEventEngine;->pendingStoryBattleOwners(I)Ljava/util/Set;
 
     move-result-object v1
 
     iput-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->owners:Ljava/util/Set;
 
-    .line 1829
+    .line 1821
     invoke-static {v8}, Lcom/project7/localmanager/LocalServiceEngine;->cores([B)Ljava/util/Map;
 
     move-result-object v1
 
-    .line 1830
+    .line 1822
     const/4 v13, 0x1
 
     :goto_a
     const/16 v15, 0x8
 
-    if-gt v13, v15, :cond_17
+    if-gt v13, v15, :cond_18
 
     iget-object v15, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->cores:Ljava/util/List;
 
@@ -8186,7 +8206,7 @@
 
     aput-object v16, v6, v27
 
-    .line 1831
+    .line 1823
     move-object/from16 v16, v8
 
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8229,7 +8249,7 @@
 
     invoke-direct {v2, v8, v6}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    .line 1830
+    .line 1822
     invoke-interface {v15, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v13, v13, 0x1
@@ -8244,8 +8264,8 @@
 
     goto :goto_a
 
-    .line 1832
-    :cond_17
+    .line 1824
+    :cond_18
     move-object/from16 p6, v2
 
     move-object/from16 v16, v8
@@ -8272,8 +8292,8 @@
 
     goto :goto_b
 
-    .line 1827
-    :cond_18
+    .line 1819
+    :cond_19
     move-object/from16 p6, v2
 
     move-object/from16 v16, v8
@@ -8282,7 +8302,7 @@
 
     move-object/from16 v9, v30
 
-    .line 1836
+    .line 1828
     :goto_b
     move-object/from16 v6, p6
 
@@ -8290,36 +8310,36 @@
 
     goto :goto_c
 
-    .line 1818
-    :cond_19
+    .line 1810
+    :cond_1a
     move-object/from16 v32, v9
 
     move-object/from16 v9, v30
 
     const/4 v6, 0x0
 
-    .line 1836
+    .line 1828
     :goto_c
-    if-eqz v14, :cond_1a
+    if-eqz v14, :cond_1b
 
     move v1, v4
 
     goto :goto_d
 
-    :cond_1a
+    :cond_1b
     move/from16 v1, v27
 
     :goto_d
     iput v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->type:I
 
-    .line 1837
+    .line 1829
     iget-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->parameters:[B
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1c
 
     const/16 v17, 0x0
 
-    .line 1838
+    .line 1830
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v20
@@ -8332,7 +8352,7 @@
 
     iget-object v1, v7, Lcom/project7/localmanager/LocalGatewayServer;->combatCatalog:Lcom/project7/localmanager/LocalCombatCatalog;
 
-    .line 1837
+    .line 1829
     const-string v19, ""
 
     move/from16 v18, v3
@@ -8347,15 +8367,15 @@
 
     iput-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->parameters:[B
 
-    .line 1839
-    :cond_1b
+    .line 1831
+    :cond_1c
     const-string v1, "weeknum"
 
     invoke-static {v8, v1}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1840
+    .line 1832
     const-string v2, "w"
 
     invoke-static {v1, v2}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -8372,36 +8392,36 @@
 
     iput v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->day:I
 
-    .line 1841
+    .line 1833
     invoke-static {v8}, Lcom/project7/localmanager/LocalGatewayServer;->combatHash([B)[B
 
     move-result-object v1
 
     iput-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->profileHash:[B
 
-    .line 1842
+    .line 1834
     move-object/from16 v2, v28
 
     iget-object v1, v2, Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;->latestAccepted:Ljava/lang/Integer;
 
     iput-object v1, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->acceptedAtPreparation:Ljava/lang/Integer;
 
-    .line 1843
+    .line 1835
     nop
 
-    .line 1844
+    .line 1836
     const/4 v1, 0x1
 
-    if-ne v4, v1, :cond_1c
+    if-ne v4, v1, :cond_1d
 
     move-object/from16 v1, v32
 
     goto :goto_e
 
-    :cond_1c
+    :cond_1d
     const-string v1, "q7DailyBattle"
 
-    .line 1843
+    .line 1835
     :goto_e
     invoke-static {v8, v1}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
@@ -8413,7 +8433,7 @@
 
     iput-object v0, v5, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->fight:Ljava/lang/String;
 
-    .line 1846
+    .line 1838
     invoke-virtual {v2, v12, v5}, Lcom/project7/localmanager/LocalGatewayServer$CombatReplies;->put(ILcom/project7/localmanager/LocalGatewayServer$CombatReply;)V
 
     invoke-static/range {p8 .. p8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8424,7 +8444,7 @@
 
     invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1847
+    .line 1839
     const/4 v12, 0x0
 
     move-object/from16 v0, p0
@@ -8447,8 +8467,8 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalGatewayServer;->emitCombatControls(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalGatewayServer$CombatReply;[BZ)V
 
-    .line 1848
-    if-eqz v6, :cond_1d
+    .line 1840
+    if-eqz v6, :cond_1e
 
     move-object/from16 v0, p0
 
@@ -8464,15 +8484,15 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->emitEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Lcom/project7/localmanager/LocalResourceEngine$Result;)V
 
-    .line 1849
-    :cond_1d
+    .line 1841
+    :cond_1e
     move-object/from16 v0, p1
 
     move-object/from16 v1, p2
 
     invoke-direct {v7, v0, v1, v8}, Lcom/project7/localmanager/LocalGatewayServer;->emitCombatCores(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalGatewayServer$CombatReply;)V
 
-    .line 1850
+    .line 1842
     invoke-static/range {v25 .. v25}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
@@ -8487,12 +8507,12 @@
 
     invoke-direct {v7, v0, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1851
+    .line 1843
     const/4 v0, 0x1
 
     iput-boolean v0, v8, Lcom/project7/localmanager/LocalGatewayServer$CombatReply;->delivered:Z
 
-    .line 1852
+    .line 1844
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8529,7 +8549,7 @@
 
     invoke-static {v9, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1854
+    .line 1846
     return-void
 .end method
 
@@ -8541,7 +8561,7 @@
         }
     .end annotation
 
-    .line 1858
+    .line 1850
     const-string v0, "battleStageGiveup"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
@@ -8552,7 +8572,7 @@
 
     move-result v1
 
-    .line 1859
+    .line 1851
     const/4 v2, 0x0
 
     if-nez v1, :cond_0
@@ -8567,7 +8587,7 @@
 
     return v2
 
-    .line 1860
+    .line 1852
     :cond_0
     const-string p3, "s"
 
@@ -8575,7 +8595,7 @@
 
     move-result-object p4
 
-    .line 1861
+    .line 1853
     if-nez p4, :cond_1
 
     move p4, v2
@@ -8587,7 +8607,7 @@
 
     move-result p4
 
-    .line 1862
+    .line 1854
     :goto_0
     iget-object v3, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -8595,21 +8615,21 @@
 
     move-result-object v3
 
-    .line 1863
+    .line 1855
     const-string v4, "q7DailyBattle"
 
     invoke-static {v3, v4}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v4
 
-    .line 1864
+    .line 1856
     const-string v5, "q7Battle"
 
     invoke-static {v3, v5}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v5
 
-    .line 1865
+    .line 1857
     if-eqz v1, :cond_2
 
     invoke-static {p3, p4}, Lcom/project7/localmanager/BsonLite;->intDocument(Ljava/lang/String;I)[B
@@ -8621,11 +8641,11 @@
     :cond_2
     sget-object v6, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
-    .line 1866
+    .line 1858
     :goto_1
     nop
 
-    .line 1867
+    .line 1859
     invoke-static {v3}, Lcom/project7/localmanager/LocalDailyEngine;->active([B)Z
 
     move-result v3
@@ -8636,7 +8656,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 1868
+    .line 1860
     if-eqz v1, :cond_3
 
     if-lez p4, :cond_8
@@ -8647,7 +8667,7 @@
 
     if-ne p4, v3, :cond_8
 
-    .line 1869
+    .line 1861
     :cond_3
     iget-object v2, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -8657,7 +8677,7 @@
 
     move-result-object p5
 
-    .line 1870
+    .line 1862
     iget-object p6, p5, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -8679,7 +8699,7 @@
 
     iget-object v3, v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1871
+    .line 1863
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v3
@@ -8690,12 +8710,12 @@
 
     move-result-object v2
 
-    .line 1870
+    .line 1862
     invoke-direct {p0, p1, v8, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_2
 
-    .line 1872
+    .line 1864
     :cond_4
     iget-object p5, p5, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
@@ -8703,12 +8723,12 @@
 
     move-result p5
 
-    .line 1873
+    .line 1865
     xor-int/lit8 v2, p5, 0x1
 
     goto :goto_4
 
-    .line 1874
+    .line 1866
     :cond_5
     if-eqz v1, :cond_6
 
@@ -8724,14 +8744,14 @@
 
     if-nez v3, :cond_8
 
-    .line 1875
+    .line 1867
     invoke-static {v5, p3}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
 
     move-result v3
 
     if-ne p4, v3, :cond_8
 
-    .line 1876
+    .line 1868
     :cond_6
     iget-object v2, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -8741,7 +8761,7 @@
 
     move-result-object p5
 
-    .line 1877
+    .line 1869
     iget-object p6, p5, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -8763,7 +8783,7 @@
 
     iget-object v3, v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1878
+    .line 1870
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v3
@@ -8774,21 +8794,21 @@
 
     move-result-object v2
 
-    .line 1877
+    .line 1869
     invoke-direct {p0, p1, v8, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_3
 
-    .line 1879
+    .line 1871
     :cond_7
     iget-boolean v2, p5, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
 
-    .line 1882
+    .line 1874
     :cond_8
     :goto_4
     if-eqz v1, :cond_9
 
-    .line 1883
+    .line 1875
     const-string p5, "battleStageGiveupReply"
 
     invoke-static {p5}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -8799,14 +8819,14 @@
 
     move-result-object p3
 
-    .line 1882
+    .line 1874
     invoke-static {p2, p5, p3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
     invoke-direct {p0, p1, v8, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1884
+    .line 1876
     :cond_9
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -8846,7 +8866,7 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1886
+    .line 1878
     return v7
 .end method
 
@@ -8875,7 +8895,7 @@
         }
     .end annotation
 
-    .line 1917
+    .line 1909
     move-object/from16 v12, p0
 
     move-object/from16 v1, p1
@@ -8896,14 +8916,14 @@
 
     move-result-object v6
 
-    .line 1918
+    .line 1910
     const-string v7, "s"
 
     invoke-static {v0, v7}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 1919
+    .line 1911
     if-nez v6, :cond_0
 
     const/4 v9, 0x0
@@ -8917,7 +8937,7 @@
 
     move v9, v6
 
-    .line 1920
+    .line 1912
     :goto_0
     if-nez v7, :cond_1
 
@@ -8932,27 +8952,27 @@
 
     move v10, v6
 
-    .line 1921
+    .line 1913
     :goto_1
     invoke-static/range {p3 .. p3}, Lcom/project7/localmanager/BsonLite;->combatWinValue([B)I
 
     move-result v6
 
-    .line 1922
+    .line 1914
     const-string v7, "h"
 
     invoke-static {v0, v7}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v7
 
-    .line 1923
+    .line 1915
     const-string v11, "x"
 
     invoke-static {v0, v11}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v11
 
-    .line 1924
+    .line 1916
     const-string v15, " scene="
 
     const/4 v14, 0x1
@@ -8971,14 +8991,14 @@
 
     if-eq v9, v14, :cond_4
 
-    .line 1925
+    .line 1917
     invoke-static {v9}, Lcom/project7/localmanager/LocalDailyEngine;->battleType(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 1926
+    .line 1918
     iget-object v5, v12, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     const-string v14, "q7DailyFinish"
@@ -8987,10 +9007,10 @@
 
     move-result-object v0
 
-    .line 1927
+    .line 1919
     nop
 
-    .line 1928
+    .line 1920
     iget-object v0, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -9012,7 +9032,7 @@
 
     check-cast v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 1929
+    .line 1921
     iget-object v5, v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     invoke-virtual {v13, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -9021,7 +9041,7 @@
 
     or-int/2addr v3, v5
 
-    .line 1930
+    .line 1922
     iget-object v5, v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     invoke-static {v5}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -9036,36 +9056,36 @@
 
     invoke-direct {v12, v1, v6, v4}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1931
+    .line 1923
     goto :goto_2
 
-    .line 1932
+    .line 1924
     :cond_2
     if-eqz v3, :cond_3
 
     return-void
 
-    .line 1934
+    .line 1926
     :cond_3
     invoke-static {v13}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1935
+    .line 1927
     const/4 v3, 0x0
 
     invoke-static {v9, v10, v7, v11, v3}, Lcom/project7/localmanager/BsonLite;->combatOfflineRewardDocument(IILjava/lang/Iterable;Ljava/lang/Iterable;I)[B
 
     move-result-object v3
 
-    .line 1934
+    .line 1926
     invoke-static {v2, v0, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
     invoke-direct {v12, v1, v6, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1936
+    .line 1928
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9086,10 +9106,10 @@
 
     invoke-static {v8, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1937
+    .line 1929
     return-void
 
-    .line 1939
+    .line 1931
     :cond_4
     const/4 v14, 0x1
 
@@ -9106,7 +9126,7 @@
     :cond_5
     const/4 v14, 0x0
 
-    .line 1940
+    .line 1932
     :goto_3
     const/4 v6, 0x2
 
@@ -9127,21 +9147,21 @@
 
     goto :goto_5
 
-    .line 1941
+    .line 1933
     :cond_7
     :goto_4
     invoke-static {v13}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1942
+    .line 1934
     const/4 v6, 0x0
 
     invoke-static {v9, v10, v7, v11, v6}, Lcom/project7/localmanager/BsonLite;->combatOfflineRewardDocument(IILjava/lang/Iterable;Ljava/lang/Iterable;I)[B
 
     move-result-object v3
 
-    .line 1941
+    .line 1933
     invoke-static {v2, v0, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
@@ -9150,7 +9170,7 @@
 
     invoke-direct {v12, v1, v2, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1943
+    .line 1935
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9167,24 +9187,24 @@
 
     invoke-static {v8, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1944
+    .line 1936
     return-void
 
-    .line 1940
+    .line 1932
     :cond_8
     const/4 v6, 0x0
 
-    .line 1946
+    .line 1938
     :goto_5
     const/16 v16, 0x0
 
-    .line 1947
+    .line 1939
     sget-object v17, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
-    .line 1948
+    .line 1940
     if-eqz v14, :cond_b
 
-    .line 1949
+    .line 1941
     iget-object v14, v12, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     const-string v6, "finish"
@@ -9193,7 +9213,7 @@
 
     move-result-object v0
 
-    .line 1950
+    .line 1942
     iget-object v6, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -9215,7 +9235,7 @@
 
     iget-object v3, v14, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1951
+    .line 1943
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v3
@@ -9226,7 +9246,7 @@
 
     move-result-object v3
 
-    .line 1950
+    .line 1942
     const/4 v14, 0x5
 
     invoke-direct {v12, v1, v14, v3}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
@@ -9235,7 +9255,7 @@
 
     goto :goto_6
 
-    .line 1952
+    .line 1944
     :cond_9
     iget-boolean v3, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
 
@@ -9248,11 +9268,11 @@
     :cond_a
     const/4 v3, 0x0
 
-    .line 1953
+    .line 1945
     :goto_7
     iget-object v6, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->reward:[B
 
-    .line 1954
+    .line 1946
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -9291,7 +9311,7 @@
 
     invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1955
+    .line 1947
     invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->debugDocument([B)Ljava/lang/String;
 
     move-result-object v3
@@ -9302,7 +9322,7 @@
 
     move-result-object v3
 
-    .line 1954
+    .line 1946
     invoke-static {v8, v3}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     move-object/from16 v20, v0
@@ -9313,7 +9333,7 @@
 
     goto :goto_8
 
-    .line 1948
+    .line 1940
     :cond_b
     move-object/from16 v20, v16
 
@@ -9321,16 +9341,16 @@
 
     move-object/from16 v18, v17
 
-    .line 1958
+    .line 1950
     :goto_8
     nop
 
-    .line 1963
+    .line 1955
     invoke-static {v13}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1964
+    .line 1956
     move v13, v9
 
     move v14, v10
@@ -9347,17 +9367,17 @@
 
     move-result-object v11
 
-    .line 1961
+    .line 1953
     invoke-static {v2, v0, v11}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
-    .line 1958
+    .line 1950
     const/4 v11, 0x5
 
     invoke-direct {v12, v1, v11, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1968
+    .line 1960
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9390,7 +9410,7 @@
 
     invoke-static {v8, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1974
+    .line 1966
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -9419,7 +9439,7 @@
 
     invoke-direct/range {v0 .. v11}, Lcom/project7/localmanager/LocalGatewayServer;->finishStoryCombat(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;Ljava/util/Set;IIILcom/project7/localmanager/LocalEconomyEngine$Result;)V
 
-    .line 1976
+    .line 1968
     return-void
 .end method
 
@@ -9431,7 +9451,7 @@
         }
     .end annotation
 
-    .line 2063
+    .line 2055
     const-string v0, "areaBuildRequest"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
@@ -9452,7 +9472,7 @@
 
     goto :goto_0
 
-    .line 2064
+    .line 2056
     :cond_0
     invoke-static {v4}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
@@ -9468,7 +9488,7 @@
 
     goto :goto_0
 
-    .line 2065
+    .line 2057
     :cond_1
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
@@ -9487,7 +9507,7 @@
     :cond_2
     move-object v0, v2
 
-    .line 2066
+    .line 2058
     :goto_0
     if-nez v0, :cond_3
 
@@ -9495,7 +9515,7 @@
 
     return p1
 
-    .line 2067
+    .line 2059
     :cond_3
     iget-object p3, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -9503,12 +9523,12 @@
 
     move-result-object p3
 
-    .line 2068
+    .line 2060
     iget-object p4, p0, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {p4, p5, p6}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 2069
+    .line 2061
     iget-object p4, p3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -9530,7 +9550,7 @@
 
     check-cast v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 2070
+    .line 2062
     iget-object v4, v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     const-string v5, "area_build_reply"
@@ -9554,17 +9574,17 @@
     :cond_4
     if-eqz p8, :cond_5
 
-    .line 2071
+    .line 2063
     invoke-virtual {p8}, Ljava/lang/Integer;->intValue()I
 
     move-result p8
 
     invoke-direct {p0, p1, p2, p8, v0}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 2072
+    .line 2064
     move-object p8, v2
 
-    .line 2074
+    .line 2066
     :cond_5
     iget-object v4, v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
@@ -9580,10 +9600,10 @@
 
     invoke-direct {p0, p1, v3, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2075
+    .line 2067
     goto :goto_1
 
-    .line 2076
+    .line 2068
     :cond_6
     if-eqz p8, :cond_7
 
@@ -9593,7 +9613,7 @@
 
     invoke-direct {p0, p1, p2, p4, v0}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 2077
+    .line 2069
     :cond_7
     if-eqz p7, :cond_8
 
@@ -9601,7 +9621,7 @@
 
     if-eqz p4, :cond_8
 
-    .line 2078
+    .line 2070
     iget-object p4, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {p4, p5, p6}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
@@ -9610,14 +9630,14 @@
 
     invoke-virtual {p7, p4}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 2079
+    .line 2071
     const-string p4, "pushEvents"
 
     invoke-static {p4}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object p4
 
-    .line 2080
+    .line 2072
     invoke-virtual {p7}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object p5
@@ -9630,14 +9650,14 @@
 
     move-result-object p5
 
-    .line 2079
+    .line 2071
     invoke-static {p2, p4, p5}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
     invoke-direct {p0, p1, v3, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2082
+    .line 2074
     :cond_8
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -9681,7 +9701,7 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2084
+    .line 2076
     const/4 p1, 0x1
 
     return p1
@@ -9845,7 +9865,7 @@
         }
     .end annotation
 
-    .line 2090
+    .line 2082
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -9882,21 +9902,21 @@
 
     if-eqz v8, :cond_6
 
-    .line 2091
+    .line 2083
     const-string v3, "s"
 
     invoke-static {v4, v3}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 2092
+    .line 2084
     iget-object v7, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v7, v5, v6}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v5
 
-    .line 2093
+    .line 2085
     const-string v7, "nextday"
 
     invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -9914,7 +9934,7 @@
     :cond_0
     const/4 v6, 0x0
 
-    .line 2094
+    .line 2086
     :goto_0
     const-string v8, "statusCheckReply"
 
@@ -9930,7 +9950,7 @@
 
     aput-object v15, v14, v11
 
-    .line 2095
+    .line 2087
     const-string v15, "ok"
 
     if-nez v6, :cond_1
@@ -9967,17 +9987,17 @@
 
     move-result-object v3
 
-    .line 2094
+    .line 2086
     invoke-static {v2, v8, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v3
 
     invoke-direct {v0, v1, v10, v3}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2096
+    .line 2088
     if-eqz v6, :cond_3
 
-    .line 2097
+    .line 2089
     const-string v3, "showMessageStr"
 
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -9996,14 +10016,14 @@
 
     move-result-object v8
 
-    .line 2096
+    .line 2088
     invoke-static {v2, v3, v8}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v3
 
     invoke-direct {v0, v1, v10, v3}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2098
+    .line 2090
     :cond_3
     invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -10017,17 +10037,17 @@
 
     if-eqz v3, :cond_4
 
-    .line 2099
+    .line 2091
     const-string v3, "weeknum"
 
     invoke-static {v5, v3}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v3
 
-    .line 2100
+    .line 2092
     nop
 
-    .line 2101
+    .line 2093
     const-string v5, "showDailySettlement"
 
     invoke-static {v5}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -10052,26 +10072,26 @@
 
     aput-object v8, v7, v13
 
-    .line 2102
+    .line 2094
     invoke-static {v3, v8}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v3
 
     aput-object v3, v7, v16
 
-    .line 2101
+    .line 2093
     invoke-static {v7}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v3
 
-    .line 2100
+    .line 2092
     invoke-static {v2, v5, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v0, v1, v10, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2104
+    .line 2096
     :cond_4
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -10100,10 +10120,10 @@
 
     invoke-static {v9, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2105
+    .line 2097
     return v12
 
-    .line 2107
+    .line 2099
     :cond_6
     const-string v8, "canteenRequest"
 
@@ -10119,7 +10139,7 @@
 
     return v11
 
-    .line 2108
+    .line 2100
     :cond_7
     iget-object v3, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -10127,12 +10147,12 @@
 
     move-result-object v3
 
-    .line 2109
+    .line 2101
     iget-object v4, v0, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v4, v5, v6}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 2110
+    .line 2102
     iget-object v4, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -10154,7 +10174,7 @@
 
     iget-object v11, v8, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 2111
+    .line 2103
     invoke-static {v11}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v11
@@ -10165,12 +10185,12 @@
 
     move-result-object v8
 
-    .line 2110
+    .line 2102
     invoke-direct {v0, v1, v10, v8}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_3
 
-    .line 2112
+    .line 2104
     :cond_8
     if-eqz v7, :cond_9
 
@@ -10182,7 +10202,7 @@
 
     invoke-virtual {v7, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 2113
+    .line 2105
     :cond_9
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -10218,7 +10238,7 @@
 
     invoke-static {v9, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2114
+    .line 2106
     return v12
 .end method
 
@@ -10332,7 +10352,7 @@
         }
     .end annotation
 
-    .line 1107
+    .line 1101
     move-object/from16 v11, p0
 
     move-object/from16 v12, p1
@@ -10359,27 +10379,27 @@
 
     move-result-wide v16
 
-    .line 1108
+    .line 1102
     const-string v1, "w"
 
     invoke-static {v0, v1}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1109
+    .line 1103
     const-string v5, "Project7Gateway"
 
     if-nez v1, :cond_0
 
-    .line 1110
+    .line 1104
     const-string v0, "reliableRpcCall missing wrapper"
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1111
+    .line 1105
     return-void
 
-    .line 1113
+    .line 1107
     :cond_0
     const-string v2, "r"
 
@@ -10387,21 +10407,21 @@
 
     move-result-object v4
 
-    .line 1114
+    .line 1108
     const-string v3, "m"
 
     invoke-static {v1, v3}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1115
+    .line 1109
     const-string v14, "p"
 
     invoke-static {v1, v14}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1116
+    .line 1110
     move-object/from16 v18, v3
 
     const-string v3, "_cbid_"
@@ -10410,29 +10430,29 @@
 
     move-result-object v3
 
-    .line 1117
+    .line 1111
     if-nez v4, :cond_1
 
-    .line 1118
+    .line 1112
     const-string v0, "reliableRpcCall missing sequence"
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1119
+    .line 1113
     return-void
 
-    .line 1122
+    .line 1116
     :cond_1
     nop
 
-    .line 1127
+    .line 1121
     const-string v0, "reliableRpcAck"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1128
+    .line 1122
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
@@ -10445,17 +10465,17 @@
 
     move-result-object v6
 
-    .line 1125
+    .line 1119
     invoke-static {v13, v0, v6}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
-    .line 1122
+    .line 1116
     const/4 v6, 0x5
 
     invoke-direct {v11, v12, v6, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1131
+    .line 1125
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10484,7 +10504,7 @@
 
     invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1135
+    .line 1129
     const-string v14, "setHeadImage"
 
     invoke-virtual {v14, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -10509,10 +10529,10 @@
 
     move-result-object v0
 
-    .line 1131
+    .line 1125
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1138
+    .line 1132
     const-string v0, "enterPatrolRequest"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -10529,7 +10549,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 1139
+    .line 1133
     :cond_3
     invoke-interface {v7, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -10537,7 +10557,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 1140
+    .line 1134
     if-eqz v3, :cond_4
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
@@ -10546,7 +10566,7 @@
 
     invoke-direct {v11, v12, v13, v0, v2}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1141
+    .line 1135
     :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -10568,10 +10588,10 @@
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1142
+    .line 1136
     return-void
 
-    .line 1145
+    .line 1139
     :cond_5
     const-string v0, "combatOfflineRequest"
 
@@ -10583,15 +10603,15 @@
 
     if-eqz v0, :cond_8
 
-    .line 1146
+    .line 1140
     nop
 
-    .line 1147
+    .line 1141
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 1146
+    .line 1140
     move-object v7, v1
 
     move-object/from16 v1, p0
@@ -10634,7 +10654,7 @@
 
     invoke-direct/range {v1 .. v10}, Lcom/project7/localmanager/LocalGatewayServer;->handleCombatAdmission(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;Ljava/util/Set;I[B)V
 
-    .line 1148
+    .line 1142
     if-eqz v15, :cond_6
 
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
@@ -10643,7 +10663,7 @@
 
     invoke-direct {v11, v12, v13, v0, v14}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1149
+    .line 1143
     :cond_6
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->listener:Lcom/project7/localmanager/LocalGatewayServer$StatusListener;
 
@@ -10673,7 +10693,7 @@
 
     invoke-interface {v0, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer$StatusListener;->onStatus(ZLjava/lang/String;)V
 
-    .line 1150
+    .line 1144
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
@@ -10684,7 +10704,7 @@
 
     div-long/2addr v0, v2
 
-    .line 1151
+    .line 1145
     const-wide/16 v2, 0xfa
 
     cmp-long v2, v0, v2
@@ -10721,11 +10741,11 @@
 
     invoke-static {v3, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1153
+    .line 1147
     :cond_7
     return-void
 
-    .line 1156
+    .line 1150
     :cond_8
     move-object/from16 v0, p10
 
@@ -10751,7 +10771,7 @@
 
     if-nez v1, :cond_b
 
-    .line 1157
+    .line 1151
     invoke-static {v14}, Lcom/project7/localmanager/LocalCommerceEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
@@ -10770,7 +10790,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1158
+    .line 1152
     invoke-static {v14}, Lcom/project7/localmanager/LocalTreasurePlanEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
@@ -10783,35 +10803,35 @@
 
     if-nez v1, :cond_9
 
-    .line 1159
+    .line 1153
     invoke-static {v14}, Lcom/project7/localmanager/LocalTreasureUpgradeEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_9
 
-    .line 1160
+    .line 1154
     invoke-static {v14}, Lcom/project7/localmanager/LocalTreasureOperationEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_9
 
-    .line 1161
+    .line 1155
     invoke-static {v14}, Lcom/project7/localmanager/LocalMemoryExchangeEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_9
 
-    .line 1162
+    .line 1156
     invoke-virtual {v10, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_9
 
-    .line 1163
+    .line 1157
     const-string v1, "setHeadImage"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -10828,7 +10848,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1164
+    .line 1158
     invoke-static {v14}, Lcom/project7/localmanager/LocalHeroGrowthEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
@@ -10841,7 +10861,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1165
+    .line 1159
     invoke-static {v14}, Lcom/project7/localmanager/LocalHeroAwakeEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
@@ -10856,7 +10876,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1166
+    .line 1160
     const-string v1, "getGiftCardReward"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -10873,7 +10893,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1167
+    .line 1161
     const-string v1, "requestGetCurMonHead"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -10890,7 +10910,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1168
+    .line 1162
     const-string v1, "requestNewAchievementReward"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -10907,7 +10927,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 1169
+    .line 1163
     :cond_9
     invoke-interface {v0, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -10915,7 +10935,7 @@
 
     if-nez v1, :cond_b
 
-    .line 1170
+    .line 1164
     if-eqz v15, :cond_a
 
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
@@ -10924,7 +10944,7 @@
 
     invoke-direct {v11, v12, v13, v0, v14}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1171
+    .line 1165
     :cond_a
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -10946,14 +10966,14 @@
 
     invoke-static {v3, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1172
+    .line 1166
     return-void
 
-    .line 1174
+    .line 1168
     :cond_b
     nop
 
-    .line 1175
+    .line 1169
     const/16 v22, 0x0
 
     const/4 v1, 0x0
@@ -10966,7 +10986,7 @@
 
     if-eqz v24, :cond_12
 
-    .line 1176
+    .line 1170
     iget-object v6, v11, Lcom/project7/localmanager/LocalGatewayServer;->homeCallbacks:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v6}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -10975,7 +10995,7 @@
 
     check-cast v6, Lcom/project7/localmanager/LocalGatewayServer$HomeCallbacks;
 
-    .line 1177
+    .line 1171
     iget-object v7, v6, Lcom/project7/localmanager/LocalGatewayServer$HomeCallbacks;->owner:Ljava/util/Set;
 
     if-ne v7, v0, :cond_c
@@ -10988,7 +11008,7 @@
 
     if-nez v7, :cond_d
 
-    .line 1178
+    .line 1172
     :cond_c
     iput-object v0, v6, Lcom/project7/localmanager/LocalGatewayServer$HomeCallbacks;->owner:Ljava/util/Set;
 
@@ -10998,7 +11018,7 @@
 
     invoke-interface {v7}, Ljava/util/Map;->clear()V
 
-    .line 1180
+    .line 1174
     :cond_d
     invoke-interface {v0, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -11006,24 +11026,24 @@
 
     if-eqz v0, :cond_f
 
-    .line 1181
+    .line 1175
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v0, v8, v14, v2, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
     move-result-object v0
 
-    .line 1182
+    .line 1176
     invoke-direct {v11, v12, v13, v0, v15}, Lcom/project7/localmanager/LocalGatewayServer;->emitHomeResult(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalResourceEngine$Result;Ljava/lang/Integer;)[B
 
     move-result-object v0
 
-    .line 1183
+    .line 1177
     iget-object v1, v6, Lcom/project7/localmanager/LocalGatewayServer$HomeCallbacks;->values:Ljava/util/Map;
 
     invoke-interface {v1, v5, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1184
+    .line 1178
     iget-object v0, v6, Lcom/project7/localmanager/LocalGatewayServer$HomeCallbacks;->values:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -11052,7 +11072,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1185
+    .line 1179
     :cond_e
     const/16 v21, 0x1
 
@@ -11061,7 +11081,7 @@
     :cond_f
     if-eqz v15, :cond_11
 
-    .line 1186
+    .line 1180
     iget-object v0, v6, Lcom/project7/localmanager/LocalGatewayServer$HomeCallbacks;->values:Ljava/util/Map;
 
     invoke-interface {v0, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -11070,7 +11090,7 @@
 
     check-cast v0, [B
 
-    .line 1187
+    .line 1181
     if-nez v0, :cond_10
 
     const/4 v0, 0x2
@@ -11093,7 +11113,7 @@
 
     move-result-object v0
 
-    .line 1188
+    .line 1182
     :cond_10
     const-string v2, "serverCallbackCarrier"
 
@@ -11123,12 +11143,12 @@
 
     aput-object v15, v6, v0
 
-    .line 1189
+    .line 1183
     invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v0
 
-    .line 1188
+    .line 1182
     invoke-static {v13, v2, v0}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
@@ -11139,15 +11159,15 @@
 
     goto :goto_1
 
-    .line 1185
+    .line 1179
     :cond_11
     const/16 v21, 0x1
 
-    .line 1191
+    .line 1185
     :goto_1
     nop
 
-    .line 1192
+    .line 1186
     move-object v8, v4
 
     move-object v10, v5
@@ -11162,7 +11182,7 @@
 
     goto/16 :goto_3a
 
-    .line 1175
+    .line 1169
     :cond_12
     const/16 v21, 0x1
 
@@ -11170,7 +11190,7 @@
 
     const/16 v24, 0x5
 
-    .line 1192
+    .line 1186
     if-eqz v14, :cond_14
 
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
@@ -11209,7 +11229,7 @@
 
     if-eqz v1, :cond_15
 
-    .line 1194
+    .line 1188
     const-string v0, "battleStageGiveup"
 
     invoke-virtual {v0, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -11249,7 +11269,7 @@
 
     goto/16 :goto_39
 
-    .line 1192
+    .line 1186
     :cond_14
     move-object/from16 p3, v2
 
@@ -11263,7 +11283,7 @@
 
     move-object/from16 v27, v18
 
-    .line 1195
+    .line 1189
     :cond_15
     const-string v1, "battleYazhiAsk"
 
@@ -11273,7 +11293,7 @@
 
     if-eqz v1, :cond_17
 
-    .line 1196
+    .line 1190
     invoke-interface {v0, v11}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     move-result v0
@@ -11319,7 +11339,7 @@
 
     goto/16 :goto_39
 
-    .line 1198
+    .line 1192
     :cond_17
     const-string v1, "battleRealFailWithEventMode"
 
@@ -11329,7 +11349,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 1199
+    .line 1193
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -11360,7 +11380,7 @@
 
     goto/16 :goto_39
 
-    .line 1200
+    .line 1194
     :cond_18
     if-eqz v14, :cond_1c
 
@@ -11372,7 +11392,7 @@
 
     if-eqz v1, :cond_1c
 
-    .line 1201
+    .line 1195
     if-eqz v15, :cond_19
 
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
@@ -11394,7 +11414,7 @@
 
     move-object/from16 v22, v15
 
-    .line 1202
+    .line 1196
     :goto_2
     invoke-static {v14}, Lcom/project7/localmanager/LocalDailyEngine;->repeatableReply(Ljava/lang/String;)Z
 
@@ -11408,7 +11428,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 1203
+    .line 1197
     :cond_1a
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
@@ -11428,7 +11448,7 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/project7/localmanager/LocalGatewayServer;->handleDailyRpc(Ljava/io/OutputStream;[B[B[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)Z
 
-    .line 1688
+    .line 1680
     :cond_1b
     move-object v15, v14
 
@@ -11442,13 +11462,13 @@
 
     goto/16 :goto_3a
 
-    .line 1200
+    .line 1194
     :cond_1c
     move-object v7, v11
 
     move-object/from16 v11, p0
 
-    .line 1204
+    .line 1198
     if-eqz v14, :cond_1d
 
     move-object/from16 v6, p3
@@ -11459,7 +11479,7 @@
 
     if-eqz v1, :cond_1e
 
-    .line 1205
+    .line 1199
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v4
@@ -11492,11 +11512,11 @@
 
     goto/16 :goto_39
 
-    .line 1204
+    .line 1198
     :cond_1d
     move-object/from16 v6, p3
 
-    .line 1206
+    .line 1200
     :cond_1e
     if-eqz v14, :cond_21
 
@@ -11514,7 +11534,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1207
+    .line 1201
     :cond_1f
     invoke-interface {v0, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -11522,7 +11542,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 1208
+    .line 1202
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v4
@@ -11555,7 +11575,7 @@
 
     goto/16 :goto_39
 
-    .line 1207
+    .line 1201
     :cond_20
     move-object v10, v7
 
@@ -11569,7 +11589,7 @@
 
     goto/16 :goto_39
 
-    .line 1209
+    .line 1203
     :cond_21
     invoke-static {v14}, Lcom/project7/localmanager/LocalConstructionEngine;->handles(Ljava/lang/String;)Z
 
@@ -11577,14 +11597,14 @@
 
     if-eqz v1, :cond_23
 
-    .line 1210
+    .line 1204
     invoke-interface {v0, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_22
 
-    .line 1211
+    .line 1205
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v4
@@ -11609,7 +11629,7 @@
 
     invoke-direct/range {v1 .. v9}, Lcom/project7/localmanager/LocalGatewayServer;->handleConstructionRpc(Ljava/io/OutputStream;[B[B[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Ljava/lang/Integer;)Z
 
-    .line 1213
+    .line 1207
     move-object v15, v14
 
     move/from16 v5, v21
@@ -11622,7 +11642,7 @@
 
     goto/16 :goto_3a
 
-    .line 1210
+    .line 1204
     :cond_22
     move-object v10, v7
 
@@ -11636,7 +11656,7 @@
 
     goto/16 :goto_39
 
-    .line 1215
+    .line 1209
     :cond_23
     if-eqz v14, :cond_28
 
@@ -11646,7 +11666,7 @@
 
     if-eqz v1, :cond_28
 
-    .line 1216
+    .line 1210
     const-string v1, "q7StoryList"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -11663,7 +11683,7 @@
 
     if-nez v1, :cond_25
 
-    .line 1217
+    .line 1211
     const-string v1, "requestStoryHttpInfo"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -11691,7 +11711,7 @@
     :goto_3
     move/from16 v2, v21
 
-    .line 1218
+    .line 1212
     :goto_4
     if-nez v2, :cond_27
 
@@ -11708,7 +11728,7 @@
 
     goto :goto_6
 
-    .line 1219
+    .line 1213
     :cond_27
     :goto_5
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
@@ -11733,7 +11753,7 @@
 
     invoke-direct/range {v1 .. v8}, Lcom/project7/localmanager/LocalGatewayServer;->handleServiceRpc(Ljava/io/OutputStream;[B[B[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)Z
 
-    .line 1220
+    .line 1214
     :goto_6
     move-object/from16 p3, v15
 
@@ -11760,7 +11780,7 @@
 
     if-nez v1, :cond_2a
 
-    .line 1221
+    .line 1215
     invoke-static {v14}, Lcom/project7/localmanager/LocalCommunityEngine;->handles(Ljava/lang/String;)Z
 
     move-result v1
@@ -11779,14 +11799,14 @@
 
     if-nez v1, :cond_2a
 
-    .line 1222
+    .line 1216
     invoke-virtual {v10, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_2a
 
-    .line 1223
+    .line 1217
     const-string v1, "actionRewardRequest"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -11810,7 +11830,7 @@
 
     goto :goto_9
 
-    .line 1224
+    .line 1218
     :cond_2a
     :goto_7
     invoke-virtual {v10, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -11840,7 +11860,7 @@
 
     goto/16 :goto_39
 
-    .line 1225
+    .line 1219
     :cond_2c
     :goto_8
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
@@ -11875,11 +11895,11 @@
 
     goto/16 :goto_39
 
-    .line 1220
+    .line 1214
     :cond_2d
     move-object v10, v7
 
-    .line 1226
+    .line 1220
     :goto_9
     if-eqz v14, :cond_32
 
@@ -11905,31 +11925,31 @@
 
     if-eqz v1, :cond_31
 
-    .line 1227
+    .line 1221
     move-object/from16 v6, p6
 
     if-eqz v6, :cond_30
 
-    .line 1228
+    .line 1222
     if-eqz v15, :cond_2e
 
-    .line 1229
+    .line 1223
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     invoke-direct {v11, v12, v13, v0, v14}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1230
+    .line 1224
     move-object/from16 v3, v22
 
     goto :goto_a
 
-    .line 1228
+    .line 1222
     :cond_2e
     move-object v3, v15
 
-    .line 1232
+    .line 1226
     :goto_a
     invoke-static {v14}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
@@ -11937,7 +11957,7 @@
 
     invoke-direct {v11, v0, v8, v9, v6}, Lcom/project7/localmanager/LocalGatewayServer;->refreshResourceProfile([BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1233
+    .line 1227
     const-string v0, "requestLuckyDrawFile"
 
     invoke-virtual {v0, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -11956,12 +11976,12 @@
 
     if-eqz v0, :cond_2f
 
-    .line 1234
+    .line 1228
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1235
+    .line 1229
     :cond_2f
     move-object/from16 v4, p8
 
@@ -11977,7 +11997,7 @@
 
     goto/16 :goto_3a
 
-    .line 1227
+    .line 1221
     :cond_30
     move/from16 v5, v21
 
@@ -11991,7 +12011,7 @@
 
     goto/16 :goto_39
 
-    .line 1226
+    .line 1220
     :cond_31
     move-object/from16 v6, p6
 
@@ -12010,7 +12030,7 @@
 
     move-object/from16 v6, p6
 
-    .line 1237
+    .line 1231
     :goto_b
     if-eqz v14, :cond_33
 
@@ -12063,7 +12083,7 @@
 
     move-object v10, v6
 
-    .line 1240
+    .line 1234
     :cond_34
     const-string v1, "incDayWhenNoActionVal"
 
@@ -12071,7 +12091,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_8a
+    if-nez v1, :cond_89
 
     const-string v1, "clearCurDailySettlement"
 
@@ -12095,7 +12115,7 @@
 
     goto/16 :goto_38
 
-    .line 1243
+    .line 1237
     :cond_35
     const-string v1, "canteenRequest"
 
@@ -12103,7 +12123,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_89
+    if-nez v1, :cond_88
 
     const-string v1, "statusCheck"
 
@@ -12131,7 +12151,7 @@
 
     goto/16 :goto_37
 
-    .line 1245
+    .line 1239
     :cond_36
     const-string v1, "zhaiRequest"
 
@@ -12141,7 +12161,7 @@
 
     if-eqz v1, :cond_37
 
-    .line 1246
+    .line 1240
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -12168,7 +12188,7 @@
 
     goto/16 :goto_39
 
-    .line 1247
+    .line 1241
     :cond_37
     const-string v1, "statusSwitch"
 
@@ -12178,17 +12198,17 @@
 
     if-eqz v1, :cond_3b
 
-    .line 1248
+    .line 1242
     move-object/from16 v6, v20
 
     invoke-static {v7, v6}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1249
+    .line 1243
     if-nez v0, :cond_38
 
-    .line 1250
+    .line 1244
     const-string v0, "statusSwitch missing requested status"
 
     move-object/from16 v5, v28
@@ -12197,7 +12217,7 @@
 
     goto :goto_c
 
-    .line 1252
+    .line 1246
     :cond_38
     move-object/from16 v5, v28
 
@@ -12211,45 +12231,45 @@
 
     invoke-direct/range {p0 .. p2}, Lcom/project7/localmanager/LocalGatewayServer;->syncDrawCalendar(Ljava/io/OutputStream;[B)V
 
-    .line 1253
+    .line 1247
     :cond_39
     if-eqz v10, :cond_3a
 
-    .line 1254
+    .line 1248
     invoke-virtual {v10, v0}, Lcom/project7/localmanager/LocalEventEngine;->updateStatus(Ljava/lang/String;)V
 
-    .line 1255
+    .line 1249
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1257
+    .line 1251
     :cond_3a
     nop
 
-    .line 1262
+    .line 1256
     const-string v1, "statusSwitchReply"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1263
+    .line 1257
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->statusSwitchReplyDocument(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1260
+    .line 1254
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
-    .line 1257
+    .line 1251
     const/4 v4, 0x5
 
     invoke-direct {v11, v12, v4, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1266
+    .line 1260
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -12266,7 +12286,7 @@
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1268
+    .line 1262
     :goto_c
     move-object/from16 p3, v15
 
@@ -12295,14 +12315,14 @@
 
     if-eqz v1, :cond_3e
 
-    .line 1269
+    .line 1263
     const-string v1, "t"
 
     invoke-static {v7, v1}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 1270
+    .line 1264
     if-nez v1, :cond_3c
 
     const/4 v1, 0x1
@@ -12314,33 +12334,33 @@
 
     move-result v1
 
-    .line 1271
+    .line 1265
     :goto_d
     nop
 
-    .line 1276
+    .line 1270
     const-string v2, "replyLuckyDrawFile"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1277
+    .line 1271
     const/4 v3, 0x1
 
     invoke-static {v3, v1}, Lcom/project7/localmanager/BsonLite;->luckyDrawFileReplyDocument(ZI)[B
 
     move-result-object v6
 
-    .line 1274
+    .line 1268
     invoke-static {v13, v2, v6}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
-    .line 1271
+    .line 1265
     invoke-direct {v11, v12, v4, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1280
+    .line 1274
     if-eqz v10, :cond_3d
 
     const/16 v2, 0x5d
@@ -12353,21 +12373,21 @@
 
     if-eqz v2, :cond_3d
 
-    .line 1281
+    .line 1275
     iget-object v2, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v2, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1282
+    .line 1276
     const-string v2, "card-box tutorial activated by lucky draw request event=93"
 
     invoke-static {v5, v2}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1284
+    .line 1278
     :cond_3d
     invoke-direct {v11, v12, v13, v10, v0}, Lcom/project7/localmanager/LocalGatewayServer;->triggerPendingNewbees(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;)V
 
-    .line 1286
+    .line 1280
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12384,7 +12404,7 @@
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1287
+    .line 1281
     move-object/from16 p3, v15
 
     move-object/from16 v10, v23
@@ -12408,22 +12428,18 @@
 
     if-eqz v1, :cond_42
 
-    .line 1288
+    .line 1282
     if-eqz v10, :cond_3f
 
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    invoke-interface {v1, v8, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
+    invoke-static {v10, v1, v8, v9}, Lcom/project7/localmanager/LocalGatewayServer;->q7ThrottledRefresh(Lcom/project7/localmanager/LocalEventEngine;Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    move-result-object v1
-
-    invoke-virtual {v10, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
-
-    .line 1289
+    .line 1283
     :cond_3f
     if-nez v10, :cond_40
 
-    .line 1290
+    .line 1284
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v1
@@ -12435,11 +12451,11 @@
 
     move-result-object v1
 
-    .line 1291
+    .line 1285
     :goto_e
     if-nez v10, :cond_41
 
-    .line 1292
+    .line 1286
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v3
@@ -12451,31 +12467,31 @@
 
     move-result-object v3
 
-    .line 1293
+    .line 1287
     :goto_f
     nop
 
-    .line 1298
+    .line 1292
     const-string v6, "pullEventsReply"
 
     invoke-static {v6}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v6
 
-    .line 1299
+    .line 1293
     invoke-static {v1, v3}, Lcom/project7/localmanager/BsonLite;->eventListsDocument(Ljava/lang/Iterable;Ljava/lang/Iterable;)[B
 
     move-result-object v7
 
-    .line 1296
+    .line 1290
     invoke-static {v13, v6, v7}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v6
 
-    .line 1293
+    .line 1287
     invoke-direct {v11, v12, v4, v6}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1302
+    .line 1296
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -12496,10 +12512,10 @@
 
     invoke-static {v5, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1307
+    .line 1301
     invoke-direct {v11, v12, v13, v10, v0}, Lcom/project7/localmanager/LocalGatewayServer;->triggerPendingNewbees(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;)V
 
-    .line 1309
+    .line 1303
     move-object/from16 p3, v15
 
     move-object/from16 v10, v23
@@ -12525,12 +12541,12 @@
 
     if-eqz v1, :cond_46
 
-    .line 1310
+    .line 1304
     invoke-static {v7, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1311
+    .line 1305
     if-eqz v10, :cond_43
 
     if-eqz v0, :cond_43
@@ -12552,7 +12568,7 @@
     :cond_43
     const/4 v1, 0x0
 
-    .line 1312
+    .line 1306
     :goto_10
     if-eqz v1, :cond_44
 
@@ -12560,11 +12576,11 @@
 
     invoke-virtual {v2, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1314
+    .line 1308
     :cond_44
     nop
 
-    .line 1315
+    .line 1309
     const-string v2, "triggerExternalEventReply"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -12573,22 +12589,22 @@
 
     sget-object v3, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
-    .line 1314
+    .line 1308
     invoke-static {v13, v2, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v11, v12, v4, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1316
+    .line 1310
     if-eqz v1, :cond_45
 
-    .line 1317
+    .line 1311
     invoke-static/range {v18 .. v18}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1318
+    .line 1312
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v3
@@ -12597,19 +12613,19 @@
 
     move-result-object v6
 
-    .line 1317
+    .line 1311
     invoke-static {v3, v6}, Lcom/project7/localmanager/BsonLite;->eventListsDocument(Ljava/lang/Iterable;Ljava/lang/Iterable;)[B
 
     move-result-object v3
 
-    .line 1316
+    .line 1310
     invoke-static {v13, v2, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v11, v12, v4, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1319
+    .line 1313
     :cond_45
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -12633,7 +12649,7 @@
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1320
+    .line 1314
     move-object/from16 p3, v15
 
     move-object/from16 v10, v23
@@ -12659,12 +12675,12 @@
 
     if-eqz v10, :cond_4c
 
-    .line 1321
+    .line 1315
     invoke-static {v7, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1322
+    .line 1316
     if-eqz v0, :cond_4a
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -12677,19 +12693,19 @@
 
     if-eqz v1, :cond_4a
 
-    .line 1323
+    .line 1317
     move-object/from16 v1, p7
 
     invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     move-result v18
 
-    .line 1324
+    .line 1318
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1325
+    .line 1319
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -12716,10 +12732,10 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/project7/localmanager/LocalGatewayServer;->syncPuzzleStart(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;I)V
 
-    .line 1326
+    .line 1320
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1327
+    .line 1321
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->eventCatalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -12730,7 +12746,7 @@
 
     move-result-object v1
 
-    .line 1328
+    .line 1322
     if-eqz v18, :cond_47
 
     if-eqz v1, :cond_47
@@ -12747,7 +12763,7 @@
 
     if-eqz v1, :cond_47
 
-    .line 1331
+    .line 1325
     const-string v1, "evalCode"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -12762,7 +12778,7 @@
 
     aput-object v15, v2, v5
 
-    .line 1332
+    .line 1326
     const-string v3, "if \'_q7_install_ui_event_bridge\' in globals():\n    _q7_install_ui_event_bridge(type(gg.avatar))\n"
 
     invoke-static {v3}, Lcom/project7/localmanager/LocalClientCompatibility;->encode(Ljava/lang/String;)Ljava/lang/String;
@@ -12777,7 +12793,7 @@
 
     move-result-object v2
 
-    .line 1331
+    .line 1325
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -12786,7 +12802,7 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1337
+    .line 1331
     :cond_47
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -12798,7 +12814,7 @@
 
     if-eqz v18, :cond_48
 
-    .line 1338
+    .line 1332
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
@@ -12815,16 +12831,16 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncTutorialCityState(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)V
 
-    .line 1339
+    .line 1333
     :cond_48
     nop
 
-    .line 1344
+    .line 1338
     invoke-static/range {v20 .. v20}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1345
+    .line 1339
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -12835,17 +12851,17 @@
 
     move-result-object v2
 
-    .line 1342
+    .line 1336
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
-    .line 1339
+    .line 1333
     const/4 v2, 0x5
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1348
+    .line 1342
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -12856,7 +12872,7 @@
 
     goto :goto_11
 
-    .line 1349
+    .line 1343
     :cond_49
     const-string v2, "tutorial event start replayed event="
 
@@ -12869,14 +12885,14 @@
 
     move-result-object v0
 
-    .line 1348
+    .line 1342
     move-object/from16 v4, v31
 
     invoke-static {v4, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_12
 
-    .line 1322
+    .line 1316
     :cond_4a
     move-object v4, v5
 
@@ -12884,13 +12900,13 @@
 
     const/4 v5, 0x0
 
-    .line 1350
+    .line 1344
     if-eqz v0, :cond_4b
 
-    .line 1351
+    .line 1345
     nop
 
-    .line 1352
+    .line 1346
     invoke-static/range {v20 .. v20}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
@@ -12903,7 +12919,7 @@
 
     move-result-object v2
 
-    .line 1351
+    .line 1345
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -12912,10 +12928,10 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1353
+    .line 1347
     nop
 
-    .line 1354
+    .line 1348
     invoke-static/range {v18 .. v18}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
@@ -12932,14 +12948,14 @@
 
     move-result-object v3
 
-    .line 1353
+    .line 1347
     invoke-static {v13, v1, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1355
+    .line 1349
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -12968,12 +12984,12 @@
 
     goto :goto_13
 
-    .line 1350
+    .line 1344
     :cond_4b
     :goto_12
     nop
 
-    .line 1357
+    .line 1351
     :goto_13
     move-object v15, v14
 
@@ -12985,7 +13001,7 @@
 
     goto/16 :goto_39
 
-    .line 1320
+    .line 1314
     :cond_4c
     move-object/from16 v1, p7
 
@@ -12999,7 +13015,7 @@
 
     move-object/from16 v6, v19
 
-    .line 1357
+    .line 1351
     const-string v5, "reliableEcho"
 
     invoke-virtual {v5, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -13008,7 +13024,7 @@
 
     if-eqz v5, :cond_4d
 
-    .line 1359
+    .line 1353
     const-string v0, "native reliable echo barrier"
 
     invoke-static {v4, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -13023,7 +13039,7 @@
 
     goto/16 :goto_39
 
-    .line 1360
+    .line 1354
     :cond_4d
     const-string v5, "q7CompleteUiEvent"
 
@@ -13039,12 +13055,12 @@
 
     if-eqz v10, :cond_4f
 
-    .line 1361
+    .line 1355
     invoke-static {v7, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1362
+    .line 1356
     if-eqz v0, :cond_4e
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -13057,15 +13073,15 @@
 
     if-eqz v3, :cond_4e
 
-    .line 1363
+    .line 1357
     iget-object v2, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v2, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1364
+    .line 1358
     nop
 
-    .line 1365
+    .line 1359
     invoke-static/range {v24 .. v24}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
@@ -13078,7 +13094,7 @@
 
     move-result-object v3
 
-    .line 1364
+    .line 1358
     invoke-static {v13, v2, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
@@ -13087,10 +13103,10 @@
 
     invoke-direct {v11, v12, v3, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1366
+    .line 1360
     nop
 
-    .line 1367
+    .line 1361
     invoke-static/range {v19 .. v19}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
@@ -13103,17 +13119,17 @@
 
     move-result-object v5
 
-    .line 1366
+    .line 1360
     invoke-static {v13, v2, v5}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
     invoke-direct {v11, v12, v3, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1368
+    .line 1362
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 1369
+    .line 1363
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -13130,12 +13146,12 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1370
+    .line 1364
     invoke-static/range {v18 .. v18}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1371
+    .line 1365
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v2
@@ -13148,7 +13164,7 @@
 
     move-result-object v2
 
-    .line 1370
+    .line 1364
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -13157,7 +13173,7 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1372
+    .line 1366
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -13176,11 +13192,11 @@
 
     goto :goto_14
 
-    .line 1362
+    .line 1356
     :cond_4e
     move-object v7, v4
 
-    .line 1374
+    .line 1368
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -13193,7 +13209,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1375
+    .line 1369
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->processingEvents()Ljava/util/Set;
 
     move-result-object v0
@@ -13204,10 +13220,10 @@
 
     move-result-object v0
 
-    .line 1374
+    .line 1368
     invoke-static {v7, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1377
+    .line 1371
     :goto_14
     move-object v15, v14
 
@@ -13219,11 +13235,11 @@
 
     goto/16 :goto_39
 
-    .line 1360
+    .line 1354
     :cond_4f
     move-object v5, v4
 
-    .line 1377
+    .line 1371
     const-string v4, "startEventOption"
 
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -13234,33 +13250,33 @@
 
     if-eqz v10, :cond_55
 
-    .line 1378
+    .line 1372
     invoke-static {v7, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1379
+    .line 1373
     const-string v3, "se"
 
     invoke-static {v7, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v15
 
-    .line 1380
+    .line 1374
     const-string v3, "op"
 
     invoke-static {v7, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 1381
+    .line 1375
     const-string v6, " selectedEvent="
 
     if-eqz v0, :cond_53
 
     if-eqz v15, :cond_53
 
-    .line 1382
+    .line 1376
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -13275,7 +13291,7 @@
 
     if-eqz v3, :cond_52
 
-    .line 1383
+    .line 1377
     move-object v4, v1
 
     move-object/from16 v1, p0
@@ -13300,23 +13316,23 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1384
+    .line 1378
     invoke-interface {v7, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 1385
+    .line 1379
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1386
+    .line 1380
     nop
 
-    .line 1391
+    .line 1385
     invoke-static/range {v24 .. v24}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1392
+    .line 1386
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -13325,25 +13341,25 @@
 
     move-result-object v2
 
-    .line 1389
+    .line 1383
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
-    .line 1386
+    .line 1380
     const/4 v2, 0x5
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1395
+    .line 1389
     nop
 
-    .line 1400
+    .line 1394
     invoke-static/range {v19 .. v19}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1401
+    .line 1395
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -13352,15 +13368,15 @@
 
     move-result-object v3
 
-    .line 1398
+    .line 1392
     invoke-static {v13, v1, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
-    .line 1395
+    .line 1389
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1405
+    .line 1399
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
@@ -13373,24 +13389,24 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncTutorialCityCompletion(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)V
 
-    .line 1406
+    .line 1400
     if-eqz p3, :cond_50
 
-    .line 1407
+    .line 1401
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     invoke-direct {v11, v12, v13, v1, v14}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1408
+    .line 1402
     goto :goto_15
 
-    .line 1406
+    .line 1400
     :cond_50
     move-object/from16 v22, p3
 
-    .line 1412
+    .line 1406
     :goto_15
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
@@ -13402,15 +13418,15 @@
 
     if-eqz v1, :cond_51
 
-    .line 1413
+    .line 1407
     invoke-interface {v7, v15}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1414
+    .line 1408
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v8, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1415
+    .line 1409
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -13431,18 +13447,18 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/project7/localmanager/LocalGatewayServer;->syncPuzzleStart(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;I)V
 
-    .line 1416
+    .line 1410
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1417
+    .line 1411
     nop
 
-    .line 1418
+    .line 1412
     invoke-static/range {v20 .. v20}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1419
+    .line 1413
     invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -13453,7 +13469,7 @@
 
     move-result-object v2
 
-    .line 1417
+    .line 1411
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -13464,11 +13480,11 @@
 
     goto :goto_16
 
-    .line 1412
+    .line 1406
     :cond_51
     move-object/from16 v8, p8
 
-    .line 1421
+    .line 1415
     :goto_16
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -13504,7 +13520,7 @@
 
     goto :goto_19
 
-    .line 1382
+    .line 1376
     :cond_52
     move-object v3, v6
 
@@ -13512,19 +13528,19 @@
 
     goto :goto_17
 
-    .line 1381
+    .line 1375
     :cond_53
     move-object v3, v6
 
     move-object v8, v7
 
-    .line 1427
+    .line 1421
     :goto_17
     if-eqz v0, :cond_54
 
     if-eqz v15, :cond_54
 
-    .line 1428
+    .line 1422
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->processingEvents()Ljava/util/Set;
 
     move-result-object v1
@@ -13535,7 +13551,7 @@
 
     if-eqz v1, :cond_54
 
-    .line 1429
+    .line 1423
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -13564,7 +13580,7 @@
 
     goto :goto_18
 
-    .line 1436
+    .line 1430
     :cond_54
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -13582,7 +13598,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1440
+    .line 1434
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->processingEvents()Ljava/util/Set;
 
     move-result-object v0
@@ -13593,10 +13609,10 @@
 
     move-result-object v0
 
-    .line 1436
+    .line 1430
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1443
+    .line 1437
     :goto_18
     move-object/from16 v3, p3
 
@@ -13613,13 +13629,13 @@
 
     goto/16 :goto_3a
 
-    .line 1377
+    .line 1371
     :cond_55
     move-object v8, v7
 
     move-object v7, v1
 
-    .line 1443
+    .line 1437
     const-string v1, "clientTraceProcessingEvent"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -13632,26 +13648,26 @@
 
     if-eqz v10, :cond_5d
 
-    .line 1444
+    .line 1438
     const-string v1, "k"
 
     invoke-static {v8, v1}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 1445
+    .line 1439
     const-string v1, "d"
 
     invoke-static {v8, v1}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1446
+    .line 1440
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1447
+    .line 1441
     if-nez v1, :cond_56
 
     move-object/from16 v3, v22
@@ -13663,27 +13679,27 @@
 
     move-result-object v3
 
-    .line 1448
+    .line 1442
     :goto_1a
     if-eqz v3, :cond_57
 
-    .line 1449
+    .line 1443
     invoke-interface {v8, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1b
 
-    .line 1450
+    .line 1444
     :cond_57
     if-eqz v1, :cond_58
 
-    .line 1451
+    .line 1445
     invoke-static {v1, v2}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v8, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1453
+    .line 1447
     :cond_58
     :goto_1b
     move-object/from16 v1, p0
@@ -13706,26 +13722,26 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->closePuzzleBeforeTrace(Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1454
+    .line 1448
     invoke-virtual {v10, v15, v8}, Lcom/project7/localmanager/LocalEventEngine;->trace(Ljava/lang/String;Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v18
 
-    .line 1456
+    .line 1450
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     move-object/from16 v6, p4
 
     invoke-virtual {v1, v6, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1457
+    .line 1451
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_5a
 
-    .line 1458
+    .line 1452
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v25
@@ -13743,22 +13759,22 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 1459
+    .line 1453
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     invoke-direct {v11, v12, v13, v6, v2}, Lcom/project7/localmanager/LocalGatewayServer;->sendTutorialHeroReward(Ljava/io/OutputStream;[BLjava/lang/String;I)V
 
-    .line 1460
+    .line 1454
     nop
 
-    .line 1465
+    .line 1459
     invoke-static/range {v24 .. v24}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1466
+    .line 1460
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -13767,25 +13783,25 @@
 
     move-result-object v3
 
-    .line 1463
+    .line 1457
     invoke-static {v13, v2, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
-    .line 1460
+    .line 1454
     const/4 v3, 0x5
 
     invoke-direct {v11, v12, v3, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1469
+    .line 1463
     nop
 
-    .line 1474
+    .line 1468
     invoke-static/range {v19 .. v19}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1475
+    .line 1469
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -13794,18 +13810,18 @@
 
     move-result-object v4
 
-    .line 1472
+    .line 1466
     invoke-static {v13, v2, v4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
-    .line 1469
+    .line 1463
     invoke-direct {v11, v12, v3, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1478
+    .line 1472
     invoke-interface {v7, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 1479
+    .line 1473
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -13830,7 +13846,7 @@
 
     invoke-static {v14, v2}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1480
+    .line 1474
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v26
@@ -13851,14 +13867,14 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncTutorialCityCompletion(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)V
 
-    .line 1481
+    .line 1475
     move-object v6, v7
 
     move-object/from16 v7, p7
 
     goto :goto_1c
 
-    .line 1482
+    .line 1476
     :cond_59
     move-object v7, v6
 
@@ -13868,11 +13884,11 @@
 
     goto :goto_1d
 
-    .line 1457
+    .line 1451
     :cond_5a
     move-object v7, v6
 
-    .line 1485
+    .line 1479
     :goto_1d
     move-object/from16 v1, p0
 
@@ -13888,10 +13904,10 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1488
+    .line 1482
     if-eqz p3, :cond_5b
 
-    .line 1489
+    .line 1483
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -13900,18 +13916,18 @@
 
     invoke-direct {v11, v12, v13, v1, v5}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1490
+    .line 1484
     move-object/from16 v3, v22
 
     goto :goto_1e
 
-    .line 1488
+    .line 1482
     :cond_5b
     move-object/from16 v5, v20
 
     move-object/from16 v3, p3
 
-    .line 1492
+    .line 1486
     :goto_1e
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->isEmpty()Z
 
@@ -13921,7 +13937,7 @@
 
     invoke-direct {v11, v12, v13, v10, v0}, Lcom/project7/localmanager/LocalGatewayServer;->triggerPendingNewbees(Ljava/io/OutputStream;[BLcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;)V
 
-    .line 1494
+    .line 1488
     :cond_5c
     move-object v15, v5
 
@@ -13933,7 +13949,7 @@
 
     goto/16 :goto_3a
 
-    .line 1443
+    .line 1437
     :cond_5d
     move-object/from16 v7, p4
 
@@ -13943,7 +13959,7 @@
 
     move-object/from16 v5, v34
 
-    .line 1494
+    .line 1488
     const-string v1, "clientAskTriggerNewbee"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -13954,12 +13970,12 @@
 
     if-eqz v9, :cond_61
 
-    .line 1495
+    .line 1489
     invoke-static {v8, v3}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 1496
+    .line 1490
     if-eqz v1, :cond_5e
 
     if-eqz v10, :cond_5e
@@ -13981,46 +13997,46 @@
     :cond_5e
     const/4 v15, 0x0
 
-    .line 1497
+    .line 1491
     :goto_1f
     if-eqz v15, :cond_60
 
-    .line 1498
+    .line 1492
     iget-object v2, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v2, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1499
+    .line 1493
     if-eqz p3, :cond_5f
 
-    .line 1500
+    .line 1494
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     invoke-direct {v11, v12, v13, v2, v5}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1501
+    .line 1495
     move-object/from16 v3, v22
 
     goto :goto_20
 
-    .line 1499
+    .line 1493
     :cond_5f
     move-object/from16 v3, p3
 
-    .line 1503
+    .line 1497
     :goto_20
     nop
 
-    .line 1508
+    .line 1502
     const-string v2, "triggerClientNewbee"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 1509
+    .line 1503
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -14029,20 +14045,20 @@
 
     move-result-object v4
 
-    .line 1506
+    .line 1500
     invoke-static {v13, v2, v4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
-    .line 1503
+    .line 1497
     const/4 v4, 0x5
 
     invoke-direct {v11, v12, v4, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1512
+    .line 1506
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1513
+    .line 1507
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -14061,11 +14077,11 @@
 
     goto :goto_21
 
-    .line 1497
+    .line 1491
     :cond_60
     move-object/from16 v3, p3
 
-    .line 1515
+    .line 1509
     :goto_21
     move-object v15, v5
 
@@ -14088,15 +14104,15 @@
 
     if-eqz v9, :cond_66
 
-    .line 1516
+    .line 1510
     invoke-static {v8, v3}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v8
 
-    .line 1517
+    .line 1511
     if-nez v10, :cond_62
 
-    .line 1518
+    .line 1512
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v1
@@ -14111,7 +14127,7 @@
     :goto_22
     move-object v15, v1
 
-    .line 1519
+    .line 1513
     const/16 v1, 0xbe
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -14124,7 +14140,7 @@
 
     if-eqz v1, :cond_63
 
-    .line 1520
+    .line 1514
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v1, v7, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
@@ -14133,16 +14149,16 @@
 
     invoke-static {v1, v9}, Lcom/project7/localmanager/LocalSouvenirEngine;->recoverShopUnlock([BLcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1522
+    .line 1516
     :cond_63
     invoke-interface {v0, v8}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 1523
+    .line 1517
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1524
+    .line 1518
     const/16 v0, 0x14
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -14174,7 +14190,7 @@
 
     goto :goto_24
 
-    .line 1525
+    .line 1519
     :cond_65
     :goto_23
     move-object/from16 v1, p0
@@ -14193,7 +14209,7 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1526
+    .line 1520
     :goto_24
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -14217,7 +14233,7 @@
 
     invoke-static {v14, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1528
+    .line 1522
     move-object v15, v7
 
     move-object/from16 v10, v23
@@ -14237,10 +14253,10 @@
 
     if-eqz v9, :cond_67
 
-    .line 1529
+    .line 1523
     nop
 
-    .line 1534
+    .line 1528
     const-string v0, "triggerProcessingEvent"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -14249,19 +14265,19 @@
 
     iget-object v1, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingNewbees:Ljava/util/Set;
 
-    .line 1535
+    .line 1529
     const-string v2, "pe"
 
     invoke-static {v2, v1}, Lcom/project7/localmanager/BsonLite;->intListDocument(Ljava/lang/String;Ljava/lang/Iterable;)[B
 
     move-result-object v1
 
-    .line 1532
+    .line 1526
     invoke-static {v13, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
-    .line 1529
+    .line 1523
     const/4 v1, 0x5
 
     invoke-direct {v11, v12, v1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
@@ -14274,7 +14290,7 @@
 
     goto/16 :goto_39
 
-    .line 1538
+    .line 1532
     :cond_67
     const-string v0, "passInitPrologue"
 
@@ -14286,12 +14302,12 @@
 
     if-eqz v9, :cond_68
 
-    .line 1539
+    .line 1533
     const/4 v1, 0x0
 
     iput-boolean v1, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->initPrologue:Z
 
-    .line 1540
+    .line 1534
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
@@ -14304,7 +14320,7 @@
 
     goto/16 :goto_39
 
-    .line 1541
+    .line 1535
     :cond_68
     const-string v0, "updateEventCondClient"
 
@@ -14318,12 +14334,12 @@
 
     if-eqz v9, :cond_71
 
-    .line 1542
+    .line 1536
     invoke-static {v8, v2}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1543
+    .line 1537
     if-eqz v0, :cond_6c
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -14336,15 +14352,15 @@
 
     if-eqz v10, :cond_6c
 
-    .line 1544
+    .line 1538
     invoke-static {v8, v4}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1545
+    .line 1539
     nop
 
-    .line 1547
+    .line 1541
     if-nez v0, :cond_69
 
     goto :goto_25
@@ -14363,24 +14379,24 @@
 
     move-object/from16 v22, v0
 
-    .line 1550
+    .line 1544
     :goto_25
     move-object/from16 v0, v22
 
     goto :goto_26
 
-    .line 1548
+    .line 1542
     :catch_0
     move-exception v0
 
-    .line 1549
+    .line 1543
     const-string v1, "invalid area entrance JSON"
 
     invoke-static {v14, v1, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-object/from16 v0, v22
 
-    .line 1551
+    .line 1545
     :goto_26
     instance-of v1, v0, Ljava/lang/String;
 
@@ -14390,7 +14406,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1552
+    .line 1546
     invoke-virtual {v10, v1}, Lcom/project7/localmanager/LocalEventEngine;->updateAreaClick(Ljava/lang/String;)Z
 
     move-result v1
@@ -14404,16 +14420,16 @@
     :cond_6a
     const/4 v15, 0x0
 
-    .line 1553
+    .line 1547
     :goto_27
     if-eqz v15, :cond_6b
 
-    .line 1554
+    .line 1548
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1556
+    .line 1550
     :cond_6b
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -14435,7 +14451,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1557
+    .line 1551
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v0
@@ -14446,7 +14462,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1558
+    .line 1552
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->blockedStoryEvents()Ljava/util/List;
 
     move-result-object v0
@@ -14457,10 +14473,10 @@
 
     move-result-object v0
 
-    .line 1556
+    .line 1550
     invoke-static {v14, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1559
+    .line 1553
     goto :goto_2b
 
     :cond_6c
@@ -14476,12 +14492,12 @@
 
     if-eqz v10, :cond_6f
 
-    .line 1560
+    .line 1554
     invoke-static {v8, v4}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1562
+    .line 1556
     if-nez v0, :cond_6d
 
     :goto_28
@@ -14501,13 +14517,13 @@
 
     goto :goto_28
 
-    .line 1563
+    .line 1557
     :goto_29
     instance-of v1, v0, Ljava/lang/Number;
 
     if-eqz v1, :cond_6e
 
-    .line 1564
+    .line 1558
     check-cast v0, Ljava/lang/Number;
 
     invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
@@ -14516,33 +14532,33 @@
 
     invoke-virtual {v10, v0}, Lcom/project7/localmanager/LocalEventEngine;->updateClientOperation(I)V
 
-    .line 1565
+    .line 1559
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1569
+    .line 1563
     :cond_6e
     goto :goto_2a
 
-    .line 1567
+    .line 1561
     :catch_1
     move-exception v0
 
-    .line 1568
+    .line 1562
     const-string v1, "invalid client operation JSON"
 
     invoke-static {v14, v1, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_2a
 
-    .line 1570
+    .line 1564
     :cond_6f
     if-eqz v0, :cond_70
 
-    .line 1571
+    .line 1565
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -14563,19 +14579,19 @@
 
     invoke-virtual {v9, v1, v0}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 1572
+    .line 1566
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
     goto :goto_2b
 
-    .line 1570
+    .line 1564
     :cond_70
     :goto_2a
     nop
 
-    .line 1574
+    .line 1568
     :goto_2b
     move-object v15, v5
 
@@ -14596,29 +14612,29 @@
 
     if-eqz v10, :cond_73
 
-    .line 1575
+    .line 1569
     invoke-static {v8, v6}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1576
+    .line 1570
     if-nez v0, :cond_72
 
-    .line 1577
+    .line 1571
     invoke-static {v8, v15}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1579
+    .line 1573
     :cond_72
     invoke-virtual {v10, v0}, Lcom/project7/localmanager/LocalEventEngine;->enterPlace(Ljava/lang/String;)V
 
-    .line 1580
+    .line 1574
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1581
+    .line 1575
     move-object v15, v5
 
     move-object/from16 v10, v23
@@ -14636,16 +14652,16 @@
 
     const-string v6, "aid"
 
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_80
 
-    if-eqz v10, :cond_81
+    if-eqz v10, :cond_80
 
-    .line 1582
+    .line 1576
     invoke-static {v8, v6}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1583
+    .line 1577
     if-nez v0, :cond_74
 
     const/4 v15, 0x0
@@ -14659,7 +14675,7 @@
 
     move v15, v1
 
-    .line 1584
+    .line 1578
     :goto_2c
     const-string v0, "hs"
 
@@ -14667,7 +14683,7 @@
 
     move-result-object v8
 
-    .line 1585
+    .line 1579
     move-object/from16 v3, p9
 
     move-object/from16 v2, v23
@@ -14678,33 +14694,29 @@
 
     check-cast v0, Lcom/project7/localmanager/LocalPatrolEngine$Result;
 
-    .line 1586
+    .line 1580
     if-nez v0, :cond_79
 
-    .line 1587
+    .line 1581
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v0, v7, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v0
 
-    .line 1588
+    .line 1582
     invoke-static {v9, v0, v15, v8}, Lcom/project7/localmanager/LocalPatrolEngine;->canResume(Lcom/project7/localmanager/LocalTutorialStore$Progress;[BILjava/util/List;)Z
 
     move-result v1
 
-    .line 1590
+    .line 1584
     move-object/from16 v23, v2
 
     iget v2, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolArea:I
 
     if-nez v2, :cond_75
 
-    iget-object v2, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolHeroes:Ljava/util/Set;
-
-    iget-object v3, v11, Lcom/project7/localmanager/LocalGatewayServer;->patrolCatalog:Lcom/project7/localmanager/LocalPatrolCatalog;
-
-    invoke-virtual {v10, v15, v2, v3}, Lcom/project7/localmanager/LocalEventEngine;->patrolEvents(ILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/util/List;
+    invoke-virtual {v10, v15}, Lcom/project7/localmanager/LocalEventEngine;->patrolEvents(I)Ljava/util/List;
 
     move-result-object v2
 
@@ -14715,7 +14727,7 @@
 
     move-result-object v2
 
-    .line 1591
+    .line 1585
     :goto_2d
     iget v3, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolArea:I
 
@@ -14731,7 +14743,7 @@
 
     if-eqz v3, :cond_76
 
-    .line 1592
+    .line 1586
     invoke-static {v0}, Lcom/project7/localmanager/LocalPatrolEngine;->dayKey([B)Ljava/lang/String;
 
     move-result-object v0
@@ -14746,14 +14758,14 @@
 
     iget-object v0, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolEvents:Ljava/util/Set;
 
-    .line 1593
+    .line 1587
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_76
 
-    .line 1594
+    .line 1588
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -14774,14 +14786,14 @@
 
     invoke-direct {v2, v8}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 1595
+    .line 1589
     invoke-interface {v0, v2}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_76
 
-    .line 1596
+    .line 1590
     invoke-interface {v8}, Ljava/util/List;->size()I
 
     move-result v0
@@ -14804,7 +14816,7 @@
     :goto_2e
     or-int/2addr v0, v1
 
-    .line 1597
+    .line 1591
     if-eqz v0, :cond_77
 
     new-instance v0, Lcom/project7/localmanager/LocalPatrolEngine$Result;
@@ -14837,7 +14849,7 @@
 
     goto :goto_2f
 
-    .line 1599
+    .line 1593
     :cond_77
     iget-boolean v0, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolRewardPending:Z
 
@@ -14845,7 +14857,7 @@
 
     new-instance v0, Lcom/project7/localmanager/LocalPatrolEngine$Result;
 
-    .line 1600
+    .line 1594
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v1
@@ -14879,12 +14891,12 @@
 
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    .line 1601
+    .line 1595
     invoke-interface {v1, v7, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v19
 
-    .line 1600
+    .line 1594
     move-object/from16 v1, p5
 
     move-object/from16 v10, v23
@@ -14913,18 +14925,18 @@
 
     move-result-object v0
 
-    .line 1602
+    .line 1596
     :goto_2f
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1603
+    .line 1597
     invoke-interface {v14, v10, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_30
 
-    .line 1586
+    .line 1580
     :cond_79
     move-object v10, v2
 
@@ -14938,33 +14950,33 @@
 
     move-object v15, v5
 
-    .line 1606
+    .line 1600
     :goto_30
     if-eqz p3, :cond_7a
 
-    .line 1607
+    .line 1601
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     invoke-direct {v11, v12, v13, v1, v15}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1608
+    .line 1602
     move-object/from16 v3, v22
 
     goto :goto_31
 
-    .line 1606
+    .line 1600
     :cond_7a
     move-object/from16 v3, p3
 
-    .line 1610
+    .line 1604
     :goto_31
     iget-boolean v1, v0, Lcom/project7/localmanager/LocalPatrolEngine$Result;->success:Z
 
-    if-eqz v1, :cond_7e
+    if-eqz v1, :cond_7d
 
-    .line 1611
+    .line 1605
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     const/4 v2, 0x2
@@ -14973,7 +14985,7 @@
 
     aput-object v6, v4, v20
 
-    .line 1612
+    .line 1606
     invoke-static/range {v23 .. v23}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -14986,78 +14998,55 @@
 
     move-result-object v2
 
-    .line 1611
+    .line 1605
     const-string v4, "q7RecordPatrolAchievement"
 
     invoke-interface {v1, v7, v4, v2, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
     move-result-object v1
 
-    .line 1613
-    iget-object v2, v1, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
+    .line 1607
+    iget-object v1, v1, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_32
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_7b
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
-
-    iget-object v5, v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
-
-    .line 1614
-    invoke-static {v5}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
-
-    move-result-object v5
-
-    iget-object v4, v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
-
-    invoke-static {v13, v5, v4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
-
-    move-result-object v4
-
-    .line 1613
-    const/4 v5, 0x5
-
-    invoke-direct {v11, v12, v5, v4}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
-
-    goto :goto_32
-
-    .line 1615
-    :cond_7b
-    invoke-static {v1}, Lcom/project7/localmanager/LocalStoryProgressDelivery;->sent(Lcom/project7/localmanager/LocalResourceEngine$Result;)[B
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 1616
-    invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    :goto_32
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-nez v2, :cond_7c
+    if-eqz v2, :cond_7b
 
-    iget-object v2, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string v4, "q7AckStoryProgress"
+    move-result-object v2
 
-    invoke-interface {v2, v7, v4, v1, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
+    check-cast v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 1617
-    :cond_7c
+    iget-object v4, v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
+
+    .line 1608
+    invoke-static {v4}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
+
+    move-result-object v4
+
+    iget-object v2, v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
+
+    invoke-static {v13, v4, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
+
+    move-result-object v2
+
+    .line 1607
+    const/4 v4, 0x5
+
+    invoke-direct {v11, v12, v4, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
+
+    goto :goto_32
+
+    .line 1609
+    :cond_7b
     const-string v1, "syncSandglass"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15072,7 +15061,7 @@
 
     iget-object v4, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    .line 1618
+    .line 1610
     invoke-interface {v4, v7, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v4
@@ -15093,7 +15082,7 @@
 
     move-result-object v2
 
-    .line 1617
+    .line 1609
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -15102,10 +15091,10 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1619
+    .line 1611
     nop
 
-    .line 1620
+    .line 1612
     const-string v1, "get_city_data_reply"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15122,14 +15111,14 @@
 
     move-result-object v4
 
-    .line 1619
+    .line 1611
     invoke-static {v13, v1, v4}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1621
+    .line 1613
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -15139,7 +15128,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_7d
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -15147,7 +15136,7 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 1622
+    .line 1614
     iget-object v4, v9, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolFatigue:Ljava/util/Map;
 
     invoke-interface {v4, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -15156,10 +15145,10 @@
 
     check-cast v4, Ljava/lang/Integer;
 
-    .line 1623
-    if-eqz v4, :cond_7d
+    .line 1615
+    if-eqz v4, :cond_7c
 
-    .line 1624
+    .line 1616
     const-string v5, "updateCurFatigueValue"
 
     invoke-static {v5}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15178,7 +15167,7 @@
 
     move-result-object v2
 
-    .line 1623
+    .line 1615
     invoke-static {v13, v5, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
@@ -15187,15 +15176,15 @@
 
     invoke-direct {v11, v12, v4, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1625
-    :cond_7d
+    .line 1617
+    :cond_7c
     goto :goto_33
 
-    .line 1627
-    :cond_7e
+    .line 1619
+    :cond_7d
     nop
 
-    .line 1628
+    .line 1620
     const-string v1, "enter_patrol_reply"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15210,7 +15199,7 @@
 
     move-result-object v2
 
-    .line 1627
+    .line 1619
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -15219,20 +15208,20 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1629
+    .line 1621
     iget-boolean v1, v0, Lcom/project7/localmanager/LocalPatrolEngine$Result;->success:Z
 
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_7e
 
-    .line 1632
+    .line 1624
     nop
 
-    .line 1633
+    .line 1625
     invoke-static/range {v18 .. v18}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 1634
+    .line 1626
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v2
@@ -15241,12 +15230,12 @@
 
     move-result-object v4
 
-    .line 1633
+    .line 1625
     invoke-static {v2, v4}, Lcom/project7/localmanager/BsonLite;->eventListsDocument(Ljava/lang/Iterable;Ljava/lang/Iterable;)[B
 
     move-result-object v2
 
-    .line 1632
+    .line 1624
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -15255,16 +15244,16 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1636
-    :cond_7f
+    .line 1628
+    :cond_7e
     iget-boolean v1, v0, Lcom/project7/localmanager/LocalPatrolEngine$Result;->success:Z
 
-    if-nez v1, :cond_80
+    if-nez v1, :cond_7f
 
-    .line 1637
+    .line 1629
     nop
 
-    .line 1638
+    .line 1630
     const-string v1, "showMessageStr"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15279,7 +15268,7 @@
 
     move-result-object v2
 
-    .line 1637
+    .line 1629
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -15288,8 +15277,8 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1641
-    :cond_80
+    .line 1633
+    :cond_7f
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -15348,7 +15337,7 @@
 
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1644
+    .line 1636
     move-object v14, v5
 
     move-object/from16 v8, v29
@@ -15357,8 +15346,8 @@
 
     goto/16 :goto_3a
 
-    .line 1581
-    :cond_81
+    .line 1575
+    :cond_80
     move-object v15, v5
 
     move-object v5, v14
@@ -15369,39 +15358,39 @@
 
     move-object/from16 v14, p9
 
-    .line 1644
+    .line 1636
     const-string v0, "patrolReward"
 
     invoke-virtual {v0, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_86
 
-    if-eqz v9, :cond_87
+    if-eqz v9, :cond_86
 
-    .line 1645
+    .line 1637
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    .line 1646
+    .line 1638
     invoke-interface {v0, v7, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v0
 
-    .line 1645
+    .line 1637
     invoke-static {v9, v0}, Lcom/project7/localmanager/LocalPatrolEngine;->claim(Lcom/project7/localmanager/LocalTutorialStore$Progress;[B)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 1647
+    .line 1639
     iget-object v1, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1648
+    .line 1640
     new-instance v1, Lcom/project7/localmanager/LocalPatrolEngine$Result;
 
-    .line 1649
+    .line 1641
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v2
@@ -15412,27 +15401,27 @@
 
     invoke-direct {v1, v4, v2, v3}, Lcom/project7/localmanager/LocalPatrolEngine$Result;-><init>(ZLjava/util/List;Ljava/lang/String;)V
 
-    .line 1648
+    .line 1640
     invoke-interface {v14, v10, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1650
-    if-eqz p3, :cond_82
+    .line 1642
+    if-eqz p3, :cond_81
 
-    .line 1651
+    .line 1643
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     invoke-direct {v11, v12, v13, v1, v15}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1652
+    .line 1644
     goto :goto_34
 
-    .line 1650
-    :cond_82
+    .line 1642
+    :cond_81
     move-object/from16 v22, p3
 
-    .line 1654
+    .line 1646
     :goto_34
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -15447,7 +15436,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_83
+    if-eqz v2, :cond_82
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -15455,17 +15444,17 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 1655
+    .line 1647
     nop
 
-    .line 1656
+    .line 1648
     const-string v3, "updateFriendlyValue"
 
     invoke-static {v3}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v3
 
-    .line 1657
+    .line 1649
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -15486,7 +15475,7 @@
 
     move-result-object v2
 
-    .line 1655
+    .line 1647
     invoke-static {v13, v3, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
@@ -15495,18 +15484,18 @@
 
     invoke-direct {v11, v12, v3, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1658
+    .line 1650
     goto :goto_35
 
-    .line 1659
-    :cond_83
+    .line 1651
+    :cond_82
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_84
+    if-nez v1, :cond_83
 
-    .line 1660
+    .line 1652
     const-string v1, "notify_add_friendly"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15517,7 +15506,7 @@
 
     move-result-object v2
 
-    .line 1659
+    .line 1651
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
@@ -15526,8 +15515,8 @@
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1661
-    :cond_84
+    .line 1653
+    :cond_83
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -15544,14 +15533,14 @@
 
     invoke-static {v5, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1662
+    .line 1654
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_85
+    if-nez v0, :cond_84
 
-    .line 1663
+    .line 1655
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -15568,20 +15557,20 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 1664
+    .line 1656
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v7, v9}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 1665
-    if-eqz p6, :cond_86
+    .line 1657
+    if-eqz p6, :cond_85
 
-    .line 1666
+    .line 1658
     invoke-static/range {v18 .. v18}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 1667
+    .line 1659
     invoke-virtual/range {p6 .. p6}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v1
@@ -15590,12 +15579,12 @@
 
     move-result-object v2
 
-    .line 1666
+    .line 1658
     invoke-static {v1, v2}, Lcom/project7/localmanager/BsonLite;->eventListsDocument(Ljava/lang/Iterable;Ljava/lang/Iterable;)[B
 
     move-result-object v1
 
-    .line 1665
+    .line 1657
     invoke-static {v13, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
@@ -15606,12 +15595,12 @@
 
     goto :goto_36
 
-    .line 1662
-    :cond_85
+    .line 1654
+    :cond_84
     move-object v14, v5
 
-    .line 1669
-    :cond_86
+    .line 1661
+    :cond_85
     :goto_36
     move-object/from16 v3, v22
 
@@ -15621,25 +15610,25 @@
 
     goto/16 :goto_3a
 
-    .line 1644
-    :cond_87
+    .line 1636
+    :cond_86
     move-object v14, v5
 
-    .line 1669
+    .line 1661
     const-string v0, "getAreaStagesRequest"
 
     invoke-virtual {v0, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_88
+    if-eqz v0, :cond_87
 
-    .line 1670
+    .line 1662
     invoke-static {v8, v6}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1671
+    .line 1663
     invoke-static/range {p5 .. p5}, Lcom/project7/localmanager/LocalGatewayServer;->isHighSchoolUnlocked(Lcom/project7/localmanager/LocalTutorialStore$Progress;)Z
 
     move-result v1
@@ -15648,10 +15637,10 @@
 
     move-result v0
 
-    .line 1672
+    .line 1664
     nop
 
-    .line 1677
+    .line 1669
     const-string v1, "get_area_stages_reply"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -15660,7 +15649,7 @@
 
     iget-object v2, v11, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    .line 1678
+    .line 1670
     invoke-interface {v2, v7, v9}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v2
@@ -15669,17 +15658,17 @@
 
     move-result-object v2
 
-    .line 1675
+    .line 1667
     invoke-static {v13, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
-    .line 1672
+    .line 1664
     const/4 v2, 0x5
 
     invoke-direct {v11, v12, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1681
+    .line 1673
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -15696,16 +15685,16 @@
 
     invoke-static {v14, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1682
+    .line 1674
     move-object/from16 v8, v29
 
     goto/16 :goto_39
 
-    .line 1683
-    :cond_88
+    .line 1675
+    :cond_87
     nop
 
-    .line 1684
+    .line 1676
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -15732,7 +15721,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1685
+    .line 1677
     invoke-static {v8}, Lcom/project7/localmanager/BsonLite;->debugDocument([B)Ljava/lang/String;
 
     move-result-object v1
@@ -15743,7 +15732,7 @@
 
     move-result-object v0
 
-    .line 1684
+    .line 1676
     invoke-static {v14, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     move-object/from16 v3, p3
@@ -15754,8 +15743,8 @@
 
     goto :goto_3a
 
-    .line 1243
-    :cond_89
+    .line 1237
+    :cond_88
     move-object/from16 p3, v15
 
     move-object/from16 v10, v23
@@ -15772,7 +15761,7 @@
 
     move-object/from16 v7, v34
 
-    .line 1244
+    .line 1238
     :goto_37
     invoke-static {v15}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
@@ -15802,8 +15791,8 @@
 
     goto :goto_39
 
-    .line 1240
-    :cond_8a
+    .line 1234
+    :cond_89
     move-object v7, v8
 
     move-object/from16 p3, v15
@@ -15816,7 +15805,7 @@
 
     move-object/from16 v14, v28
 
-    .line 1241
+    .line 1235
     :goto_38
     move-object/from16 v0, p10
 
@@ -15824,9 +15813,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8b
+    if-eqz v0, :cond_8a
 
-    .line 1242
+    .line 1236
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -15843,38 +15832,38 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/project7/localmanager/LocalGatewayServer;->handleCalendar(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Ljava/lang/String;)V
 
-    .line 1688
-    :cond_8b
+    .line 1680
+    :cond_8a
     :goto_39
     move-object/from16 v3, p3
 
     const/4 v5, 0x1
 
     :goto_3a
-    if-eqz v3, :cond_8c
+    if-eqz v3, :cond_8b
 
-    .line 1689
+    .line 1681
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     invoke-direct {v11, v12, v13, v0, v15}, Lcom/project7/localmanager/LocalGatewayServer;->completeCallback(Ljava/io/OutputStream;[BILjava/lang/String;)V
 
-    .line 1691
-    :cond_8c
+    .line 1683
+    :cond_8b
     iget-object v0, v11, Lcom/project7/localmanager/LocalGatewayServer;->listener:Lcom/project7/localmanager/LocalGatewayServer$StatusListener;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v5, :cond_8d
+    if-eqz v5, :cond_8c
 
     const-string v2, "\u5df2\u5904\u7406\u4e1a\u52a1 RPC\uff1a"
 
     goto :goto_3b
 
-    :cond_8d
+    :cond_8c
     const-string v2, "\u4e1a\u52a1 RPC \u5c1a\u672a\u5b9e\u73b0\uff1a"
 
     :goto_3b
@@ -15896,7 +15885,7 @@
 
     invoke-interface {v0, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer$StatusListener;->onStatus(ZLjava/lang/String;)V
 
-    .line 1693
+    .line 1685
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
@@ -15907,12 +15896,12 @@
 
     div-long/2addr v0, v2
 
-    .line 1694
+    .line 1686
     const-wide/16 v2, 0xfa
 
     cmp-long v2, v0, v2
 
-    if-ltz v2, :cond_8e
+    if-ltz v2, :cond_8d
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -15940,8 +15929,8 @@
 
     invoke-static {v14, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1696
-    :cond_8e
+    .line 1688
+    :cond_8d
     return-void
 .end method
 
@@ -15953,7 +15942,7 @@
         }
     .end annotation
 
-    .line 1000
+    .line 994
     move-object/from16 v0, p0
 
     move-object/from16 v1, p5
@@ -16105,7 +16094,7 @@
 
     aget-object v5, v2, v4
 
-    .line 1019
+    .line 1013
     invoke-static {v5}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v6
@@ -16118,18 +16107,18 @@
 
     if-nez v6, :cond_0
 
-    .line 1000
+    .line 994
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1020
+    .line 1014
     :cond_0
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v2
 
-    .line 1021
+    .line 1015
     iget-object v4, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     move-object/from16 v6, p4
@@ -16138,7 +16127,7 @@
 
     move-result-object v4
 
-    .line 1022
+    .line 1016
     iget-object v7, v4, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -16162,7 +16151,7 @@
 
     iget-object v10, v8, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1023
+    .line 1017
     invoke-static {v10}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v10
@@ -16175,14 +16164,14 @@
 
     move-result-object v8
 
-    .line 1022
+    .line 1016
     move-object/from16 v10, p1
 
     invoke-direct {v0, v10, v9, v8}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_1
 
-    .line 1024
+    .line 1018
     :cond_1
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -16204,7 +16193,7 @@
 
     invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1025
+    .line 1019
     invoke-static/range {p4 .. p4}, Lcom/project7/localmanager/BsonLite;->debugDocument([B)Ljava/lang/String;
 
     move-result-object v1
@@ -16227,7 +16216,7 @@
 
     invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1026
+    .line 1020
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v4
@@ -16244,17 +16233,17 @@
 
     move-result-object v1
 
-    .line 1024
+    .line 1018
     const-string v2, "Project7Gateway"
 
     invoke-static {v2, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1027
+    .line 1021
     const/4 v1, 0x1
 
     return v1
 
-    .line 1029
+    .line 1023
     :cond_2
     return v3
 .end method
@@ -16267,7 +16256,7 @@
         }
     .end annotation
 
-    .line 2119
+    .line 2111
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     sget-object v1, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
@@ -16278,19 +16267,19 @@
 
     move-result-object v0
 
-    .line 2120
+    .line 2112
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v1, p3, p4}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 2121
+    .line 2113
     iget v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->remainingActions:I
 
     const/4 v2, 0x5
 
     if-ltz v1, :cond_0
 
-    .line 2122
+    .line 2114
     const-string v1, "get_city_data_reply"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -16307,14 +16296,14 @@
 
     move-result-object v3
 
-    .line 2121
+    .line 2113
     invoke-static {p2, v1, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v1
 
     invoke-direct {p0, p1, v2, v1}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2123
+    .line 2115
     :cond_0
     iget-object v1, v0, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
@@ -16337,7 +16326,7 @@
 
     iget-object v4, v3, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 2124
+    .line 2116
     invoke-static {v4}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v4
@@ -16348,12 +16337,12 @@
 
     move-result-object v3
 
-    .line 2123
+    .line 2115
     invoke-direct {p0, p1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_0
 
-    .line 2125
+    .line 2117
     :cond_1
     if-eqz p5, :cond_2
 
@@ -16365,7 +16354,7 @@
 
     invoke-virtual {p5, p1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 2126
+    .line 2118
     :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -16403,12 +16392,12 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2127
+    .line 2119
     return-void
 .end method
 
 .method private handleServiceRpc(Ljava/io/OutputStream;[B[B[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)Z
-    .locals 34
+    .locals 31
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -16462,11 +16451,7 @@
 
     const-string v28, "puzzleRoomGetClue"
 
-    const-string v29, "dailyPureChooseHero"
-
-    const-string v30, "requestFlashbackIncDay"
-
-    filled-new-array/range {v13 .. v30}, [Ljava/lang/String;
+    filled-new-array/range {v13 .. v28}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -16504,11 +16489,6 @@
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 784
-    const-string v1, "daerweilaFirstChooseAsazile"
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 785
     sget-object v1, Lcom/project7/localmanager/LocalWingDrugEngine;->METHODS:[Ljava/lang/String;
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -16517,12 +16497,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 786
+    .line 785
     sget-object v1, Lcom/project7/localmanager/LocalStoryDiscussion;->METHODS:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 787
+    .line 786
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -16532,9 +16512,7 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_f
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -16544,14 +16522,14 @@
 
     check-cast v13, Ljava/lang/String;
 
-    .line 788
+    .line 787
     invoke-static {v13}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    move-object/from16 v3, p3
+    move-object/from16 v2, p3
 
-    invoke-static {v3, v1}, Ljava/util/Arrays;->equals([B[B)Z
+    invoke-static {v2, v1}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v1
 
@@ -16559,7 +16537,7 @@
 
     goto :goto_0
 
-    .line 789
+    .line 788
     :cond_0
     iget-object v0, v7, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -16569,81 +16547,48 @@
 
     move-result-object v14
 
-    .line 790
-    const-string v15, "requestFlashbackIncDay"
-
-    invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    if-eqz v12, :cond_1
-
-    .line 791
-    invoke-virtual {v12, v2}, Lcom/project7/localmanager/LocalEventEngine;->updateClientOperation(I)V
-
-    .line 792
-    iget-object v0, v14, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
-
-    invoke-virtual {v12, v0}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
-
-    .line 793
-    iget-object v0, v7, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
-
-    invoke-virtual {v0, v10, v11}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
-
-    .line 795
-    :cond_1
-    const-string v0, "dailyPureChooseHero"
-
-    invoke-virtual {v0, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const-string v6, "replyPrivateMsg"
-
-    if-nez v0, :cond_2
-
+    .line 789
     invoke-static {v13}, Lcom/project7/localmanager/LocalHeroGiftEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    const-string v15, "replyPrivateMsg"
+
+    if-nez v0, :cond_1
 
     invoke-static {v13}, Lcom/project7/localmanager/LocalWingDrugEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
-    invoke-virtual {v6, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    :cond_2
-    if-eqz v12, :cond_3
+    :cond_1
+    if-eqz v12, :cond_2
 
-    .line 796
+    .line 790
     iget-object v0, v14, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     invoke-virtual {v12, v0}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 797
-    :cond_3
+    .line 791
+    :cond_2
     const-string v0, "readPlayerNote"
 
     invoke-virtual {v0, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const-string v5, " method="
+    const-string v6, " method="
 
-    const-string v4, "Project7Gateway"
+    const-string v5, "Project7Gateway"
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     const-string v0, "readPendingNote"
 
@@ -16651,10 +16596,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
-    .line 798
-    :cond_4
+    .line 792
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16665,7 +16610,7 @@
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -16675,7 +16620,7 @@
 
     iget-object v1, v14, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 799
+    .line 793
     invoke-static {v1, v11}, Lcom/project7/localmanager/LocalDiaryEngine;->diagnostic([BLcom/project7/localmanager/LocalTutorialStore$Progress;)Ljava/lang/String;
 
     move-result-object v1
@@ -16686,46 +16631,46 @@
 
     move-result-object v0
 
-    .line 798
-    invoke-static {v4, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    .line 792
+    invoke-static {v5, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 800
-    :cond_5
+    .line 794
+    :cond_4
     invoke-static {v13}, Lcom/project7/localmanager/LocalIntelligenceEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
     invoke-static {v13}, Lcom/project7/localmanager/LocalHeroGiftEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
-    .line 801
+    .line 795
     const-string v0, "triggerSocialMsgEvent"
 
     invoke-virtual {v0, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
-    invoke-virtual {v6, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    .line 802
-    :cond_6
+    .line 796
+    :cond_5
     iget-object v0, v7, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v10, v11}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 803
-    :cond_7
+    .line 797
+    :cond_6
     iget-object v0, v14, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -16737,9 +16682,11 @@
 
     move-result v0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    if-eqz v0, :cond_c
+    const/4 v3, 0x5
+
+    if-eqz v0, :cond_b
 
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -16747,7 +16694,7 @@
 
     check-cast v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 804
+    .line 798
     iget-object v1, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     const-string v2, "q7StartSocialEvent"
@@ -16758,19 +16705,19 @@
 
     const-string v2, "e"
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_8
 
-    .line 805
+    .line 799
     iget-object v0, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
 
     invoke-static {v0, v2}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v17
 
-    .line 806
-    if-eqz v12, :cond_8
+    .line 800
+    if-eqz v12, :cond_7
 
-    if-eqz v17, :cond_8
+    if-eqz v17, :cond_7
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
@@ -16780,14 +16727,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
-    .line 807
+    .line 801
     iget-object v0, v7, Lcom/project7/localmanager/LocalGatewayServer;->tutorialStore:Lcom/project7/localmanager/LocalTutorialStore;
 
     invoke-virtual {v0, v10, v11}, Lcom/project7/localmanager/LocalTutorialStore;->save(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
 
-    .line 808
+    .line 802
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v18
@@ -16796,35 +16743,33 @@
 
     move-object/from16 v1, p1
 
-    const/4 v12, 0x5
-
     move-object/from16 v2, p2
 
     move v12, v3
 
     move-object/from16 v3, p5
 
-    move-object/from16 v31, v4
+    move v12, v4
 
     move-object/from16 v4, p6
 
-    move-object/from16 v32, v5
+    move-object/from16 v29, v5
 
     move-object/from16 v5, p7
 
-    move-object/from16 v33, v6
+    move-object/from16 v30, v6
 
     move/from16 v6, v18
 
     invoke-direct/range {v0 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->syncPuzzleStart(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;I)V
 
-    .line 809
+    .line 803
     invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 810
+    .line 804
     nop
 
-    .line 811
+    .line 805
     const-string v0, "startEventReply"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -16839,7 +16784,7 @@
 
     move-result-object v1
 
-    .line 810
+    .line 804
     invoke-static {v9, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
@@ -16850,33 +16795,27 @@
 
     move-object/from16 v12, p7
 
-    move-object/from16 v4, v31
+    move-object/from16 v5, v29
 
-    move-object/from16 v5, v32
-
-    move-object/from16 v6, v33
+    move-object/from16 v6, v30
 
     goto :goto_1
 
-    .line 806
-    :cond_8
-    move-object/from16 v31, v4
+    .line 800
+    :cond_7
+    move-object/from16 v29, v5
 
-    move-object/from16 v32, v5
-
-    move-object/from16 v33, v6
+    move-object/from16 v30, v6
 
     move-object/from16 v12, p7
 
     goto :goto_1
 
-    .line 815
-    :cond_9
-    move-object/from16 v31, v4
+    .line 809
+    :cond_8
+    move-object/from16 v29, v5
 
-    move-object/from16 v32, v5
-
-    move-object/from16 v33, v6
+    move-object/from16 v30, v6
 
     iget-object v1, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
@@ -16886,17 +16825,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_a
 
-    .line 816
+    .line 810
     iget-object v1, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->parameters:[B
 
     invoke-static {v1, v2}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 817
-    if-eqz v1, :cond_a
+    .line 811
+    if-eqz v1, :cond_9
 
     iget-object v2, v11, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
 
@@ -16904,7 +16843,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_a
 
     iget-object v2, v11, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
@@ -16912,24 +16851,22 @@
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_a
 
-    :cond_a
+    :cond_9
     move-object/from16 v12, p7
 
-    move-object/from16 v4, v31
+    move-object/from16 v5, v29
 
-    move-object/from16 v5, v32
-
-    move-object/from16 v6, v33
+    move-object/from16 v6, v30
 
     goto/16 :goto_1
 
-    .line 819
-    :cond_b
+    .line 813
+    :cond_a
     iget-object v1, v0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 820
+    .line 814
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
@@ -16940,53 +16877,42 @@
 
     move-result-object v0
 
-    .line 819
+    .line 813
     const/4 v1, 0x5
 
     invoke-direct {v7, v8, v1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 821
+    .line 815
     move-object/from16 v12, p7
 
-    move-object/from16 v4, v31
+    move-object/from16 v5, v29
 
-    move-object/from16 v5, v32
-
-    move-object/from16 v6, v33
+    move-object/from16 v6, v30
 
     goto/16 :goto_1
 
-    .line 822
-    :cond_c
-    move v12, v3
+    .line 816
+    :cond_b
+    move v1, v3
 
-    move-object/from16 v31, v4
+    move v12, v4
 
-    move-object/from16 v32, v5
+    move-object/from16 v29, v5
 
-    move-object/from16 v33, v6
-
-    const/4 v1, 0x5
+    move-object/from16 v30, v6
 
     invoke-static {v13}, Lcom/project7/localmanager/LocalWingDrugEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-eqz v0, :cond_c
 
-    invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    .line 823
-    :cond_d
+    .line 817
     invoke-static {v14}, Lcom/project7/localmanager/LocalStoryProgressDelivery;->sent(Lcom/project7/localmanager/LocalResourceEngine$Result;)[B
 
     move-result-object v0
 
-    .line 824
+    .line 818
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v2
@@ -16995,7 +16921,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_c
 
     iget-object v2, v7, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -17003,40 +16929,32 @@
 
     invoke-interface {v2, v10, v3, v0, v11}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
-    .line 826
-    :cond_e
+    .line 820
+    :cond_c
     invoke-virtual {v15, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
-
-    move-object/from16 v0, v33
-
-    invoke-virtual {v0, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_f
+    if-nez v0, :cond_d
 
     invoke-static {v13}, Lcom/project7/localmanager/LocalHeroGiftEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_d
 
     invoke-static {v13}, Lcom/project7/localmanager/LocalWingDrugEngine;->handles(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_e
 
-    :cond_f
+    :cond_d
     move v6, v1
 
-    if-eqz p7, :cond_10
+    if-eqz p7, :cond_e
 
-    .line 827
+    .line 821
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -17051,14 +16969,14 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalGatewayServer;->syncEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)V
 
-    .line 828
+    .line 822
     const-string v0, "pushEvents"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 829
+    .line 823
     invoke-virtual/range {p7 .. p7}, Lcom/project7/localmanager/LocalEventEngine;->availableEvents()Ljava/util/Set;
 
     move-result-object v1
@@ -17071,15 +16989,15 @@
 
     move-result-object v1
 
-    .line 828
+    .line 822
     invoke-static {v9, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
     invoke-direct {v7, v8, v6, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 831
-    :cond_10
+    .line 825
+    :cond_e
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -17090,7 +17008,7 @@
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, v32
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -17100,16 +17018,18 @@
 
     move-result-object v0
 
-    move-object/from16 v1, v31
+    move-object/from16 v1, v29
 
     invoke-static {v1, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 832
+    .line 826
     return v12
 
-    .line 834
-    :cond_11
-    return v2
+    .line 828
+    :cond_f
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method private handleSetPlayerName(Ljava/io/OutputStream;[B[BLjava/lang/String;)V
@@ -17446,7 +17366,7 @@
         }
     .end annotation
 
-    .line 1981
+    .line 1973
     move-object/from16 v12, p0
 
     move-object/from16 v1, p1
@@ -17473,7 +17393,7 @@
 
     return v5
 
-    .line 1982
+    .line 1974
     :cond_0
     iget-object v4, v12, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -17485,7 +17405,7 @@
 
     move-result-object v13
 
-    .line 1983
+    .line 1975
     iget-object v3, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -17509,7 +17429,7 @@
 
     iget-object v9, v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
-    .line 1984
+    .line 1976
     invoke-static {v9}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v9
@@ -17520,12 +17440,12 @@
 
     move-result-object v4
 
-    .line 1983
+    .line 1975
     invoke-direct {v12, v1, v8, v4}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
     goto :goto_0
 
-    .line 1985
+    .line 1977
     :cond_1
     const-string v3, "s"
 
@@ -17533,19 +17453,19 @@
 
     move-result v14
 
-    .line 1986
+    .line 1978
     iget-boolean v4, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
 
     const/4 v15, 0x1
 
     if-eqz v4, :cond_3
 
-    .line 1987
+    .line 1979
     iget-boolean v4, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replay:Z
 
     if-nez v4, :cond_2
 
-    .line 1988
+    .line 1980
     const-string v4, "battleYazhiReply"
 
     invoke-static {v4}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -17588,7 +17508,7 @@
 
     aput-object v5, v9, v3
 
-    .line 1989
+    .line 1981
     invoke-static {v0, v5}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v0
@@ -17607,19 +17527,19 @@
 
     aput-object v3, v9, v0
 
-    .line 1988
+    .line 1980
     invoke-static {v9}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v0
 
-    .line 1987
+    .line 1979
     invoke-static {v2, v4, v0}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v0
 
     invoke-direct {v12, v1, v8, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1990
+    .line 1982
     :cond_2
     const/4 v8, 0x1
 
@@ -17647,7 +17567,7 @@
 
     invoke-direct/range {v0 .. v11}, Lcom/project7/localmanager/LocalGatewayServer;->finishStoryCombat(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Ljava/util/Set;Ljava/util/Set;IIILcom/project7/localmanager/LocalEconomyEngine$Result;)V
 
-    .line 1992
+    .line 1984
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -17691,7 +17611,7 @@
 
     invoke-static {v1, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1994
+    .line 1986
     return v15
 .end method
 
@@ -18028,7 +17948,7 @@
 .method private static hex([B)Ljava/lang/String;
     .locals 7
 
-    .line 2407
+    .line 2399
     new-instance v0, Ljava/lang/StringBuilder;
 
     array-length v1, p0
@@ -18037,7 +17957,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 2408
+    .line 2400
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -18049,7 +17969,7 @@
 
     aget-byte v4, p0, v3
 
-    .line 2409
+    .line 2401
     sget-object v5, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/4 v6, 0x1
@@ -18072,12 +17992,12 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2408
+    .line 2400
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 2411
+    .line 2403
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -18089,7 +18009,7 @@
 .method private static isHighSchoolUnlocked(Lcom/project7/localmanager/LocalTutorialStore$Progress;)Z
     .locals 1
 
-    .line 2150
+    .line 2142
     if-eqz p0, :cond_0
 
     iget-object p0, p0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -18120,7 +18040,7 @@
 .method private static knownMethodName(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 2270
+    .line 2262
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -18240,54 +18160,54 @@
     :goto_1
     packed-switch p0, :pswitch_data_0
 
-    .line 2288
+    .line 2280
     const-string p0, "unknown"
 
     return-object p0
 
-    .line 2286
+    .line 2278
     :pswitch_0
     const-string p0, "uploadTouchHistory"
 
     return-object p0
 
-    .line 2284
+    .line 2276
     :pswitch_1
     const-string p0, "logCheckCheat"
 
     return-object p0
 
-    .line 2282
+    .line 2274
     :pswitch_2
     const-string p0, "exceptUpload"
 
     return-object p0
 
-    .line 2280
+    .line 2272
     :pswitch_3
     const-string p0, "tutorialBegin"
 
     return-object p0
 
-    .line 2278
+    .line 2270
     :pswitch_4
     const-string p0, "enterPlace"
 
     return-object p0
 
-    .line 2276
+    .line 2268
     :pswitch_5
     const-string p0, "requestTriggerDaXuanWo"
 
     return-object p0
 
-    .line 2274
+    .line 2266
     :pswitch_6
     const-string p0, "uploadDeviceInfo"
 
     return-object p0
 
-    .line 2272
+    .line 2264
     :pswitch_7
     const-string p0, "syncAllIntelligenceRequest"
 
@@ -18323,7 +18243,7 @@
 .method static synthetic lambda$emitEventEffects$5(Lcom/project7/localmanager/LocalResourceEngine$Reply;)Z
     .locals 1
 
-    .line 909
+    .line 903
     iget-object p0, p0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     const-string v0, "get_all_area_info_reply"
@@ -18383,7 +18303,7 @@
 .method static synthetic lambda$syncPuzzleStart$4(Lcom/project7/localmanager/LocalResourceEngine$Reply;)Z
     .locals 1
 
-    .line 842
+    .line 836
     iget-object p0, p0, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
     const-string v0, "syncPuzzleRoomClue"
@@ -18403,7 +18323,7 @@
         }
     .end annotation
 
-    .line 2354
+    .line 2346
     :try_start_0
     const-string v0, "MD5"
 
@@ -18425,11 +18345,11 @@
 
     return-object p0
 
-    .line 2355
+    .line 2347
     :catch_0
     move-exception p0
 
-    .line 2356
+    .line 2348
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "MD5 unavailable"
@@ -18442,17 +18362,17 @@
 .method private objectId()[B
     .locals 2
 
-    .line 2347
+    .line 2339
     const/16 v0, 0xc
 
     new-array v0, v0, [B
 
-    .line 2348
+    .line 2340
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v0}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 2349
+    .line 2341
     return-object v0
 .end method
 
@@ -18464,7 +18384,7 @@
         }
     .end annotation
 
-    .line 868
+    .line 862
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -18483,7 +18403,7 @@
 
     invoke-virtual {v3, v4}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 869
+    .line 863
     :cond_0
     if-nez v3, :cond_1
 
@@ -18498,7 +18418,7 @@
 
     move-result-object v4
 
-    .line 870
+    .line 864
     :goto_0
     iget-object v5, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -18510,12 +18430,12 @@
 
     move-result-object v5
 
-    .line 871
+    .line 865
     if-nez v3, :cond_2
 
     return-object v5
 
-    .line 872
+    .line 866
     :cond_2
     const/4 v8, 0x0
 
@@ -18524,17 +18444,17 @@
 
     if-ge v8, v9, :cond_9
 
-    .line 873
+    .line 867
     iget-object v9, v5, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     invoke-virtual {v3, v9}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 874
+    .line 868
     invoke-virtual/range {p3 .. p3}, Lcom/project7/localmanager/LocalEventEngine;->messagePublishers()Ljava/util/Set;
 
     move-result-object v9
 
-    .line 875
+    .line 869
     invoke-interface {v4, v9}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result v10
@@ -18543,11 +18463,11 @@
 
     return-object v5
 
-    .line 876
+    .line 870
     :cond_3
     invoke-interface {v4, v9}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 877
+    .line 871
     iget-object v9, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     sget-object v10, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
@@ -18556,7 +18476,7 @@
 
     move-result-object v9
 
-    .line 879
+    .line 873
     iget-object v10, v9, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -18576,15 +18496,15 @@
 
     check-cast v11, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 880
+    .line 874
     invoke-static {v11}, Lcom/project7/localmanager/LocalStoryProgressDelivery;->key(Lcom/project7/localmanager/LocalResourceEngine$Reply;)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 881
+    .line 875
     nop
 
-    .line 882
+    .line 876
     const/4 v14, 0x0
 
     :goto_3
@@ -18596,7 +18516,7 @@
 
     if-ge v14, v15, :cond_6
 
-    .line 883
+    .line 877
     iget-object v15, v5, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v15, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -18605,7 +18525,7 @@
 
     check-cast v15, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 884
+    .line 878
     if-eqz v12, :cond_4
 
     invoke-static {v15}, Lcom/project7/localmanager/LocalStoryProgressDelivery;->key(Lcom/project7/localmanager/LocalResourceEngine$Reply;)Ljava/lang/String;
@@ -18620,7 +18540,7 @@
 
     goto :goto_4
 
-    .line 885
+    .line 879
     :cond_4
     iget-object v6, v15, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
 
@@ -18642,13 +18562,13 @@
 
     if-eqz v6, :cond_5
 
-    .line 887
+    .line 881
     :goto_4
     move v13, v14
 
     goto :goto_5
 
-    .line 882
+    .line 876
     :cond_5
     add-int/lit8 v14, v14, 0x1
 
@@ -18657,7 +18577,7 @@
     :cond_6
     const/4 v13, -0x1
 
-    .line 887
+    .line 881
     :goto_5
     if-ltz v13, :cond_7
 
@@ -18667,34 +18587,34 @@
 
     goto :goto_6
 
-    .line 888
+    .line 882
     :cond_7
     iget-object v6, v5, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {v6, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 889
+    .line 883
     :goto_6
     goto :goto_2
 
-    .line 890
+    .line 884
     :cond_8
     iget-object v6, v9, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     iput-object v6, v5, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
-    .line 872
+    .line 866
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_1
 
-    .line 893
+    .line 887
     :cond_9
     iget-object v2, v5, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     invoke-virtual {v3, v2}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 894
+    .line 888
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -18713,8 +18633,43 @@
 
     invoke-static {v2, v1}, Lcom/project7/localmanager/LocalDiagnosticLog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 895
+    .line 889
     return-object v5
+.end method
+
+.method private static q7ThrottledRefresh(Lcom/project7/localmanager/LocalEventEngine;Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
+    .locals 6
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    sget-wide v2, Lcom/project7/localmanager/LocalGatewayServer;->q7LastRefreshMs:J
+
+    sub-long/2addr v0, v2
+
+    const-wide/32 v2, 0x1388
+
+    cmp-long v4, v0, v2
+
+    if-ltz v4, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/project7/localmanager/LocalGatewayServer;->q7LastRefreshMs:J
+
+    invoke-interface {p1, p2, p3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
+
+    move-result-object v5
+
+    invoke-virtual {p0, v5}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
+
+    return-void
 .end method
 
 .method private static readByte(Ljava/io/InputStream;)I
@@ -18725,18 +18680,18 @@
         }
     .end annotation
 
-    .line 2386
+    .line 2378
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
 
     move-result p0
 
-    .line 2387
+    .line 2379
     if-ltz p0, :cond_0
 
-    .line 2390
+    .line 2382
     return p0
 
-    .line 2388
+    .line 2380
     :cond_0
     new-instance p0, Ljava/io/EOFException;
 
@@ -18753,33 +18708,33 @@
         }
     .end annotation
 
-    .line 2394
+    .line 2386
     new-array v0, p1, [B
 
-    .line 2395
+    .line 2387
     const/4 v1, 0x0
 
-    .line 2396
+    .line 2388
     :goto_0
     if-ge v1, p1, :cond_1
 
-    .line 2397
+    .line 2389
     sub-int v2, p1, v1
 
     invoke-virtual {p0, v0, v1, v2}, Ljava/io/InputStream;->read([BII)I
 
     move-result v2
 
-    .line 2398
+    .line 2390
     if-ltz v2, :cond_0
 
-    .line 2401
+    .line 2393
     add-int/2addr v1, v2
 
-    .line 2402
+    .line 2394
     goto :goto_0
 
-    .line 2399
+    .line 2391
     :cond_0
     new-instance p0, Ljava/io/EOFException;
 
@@ -18787,7 +18742,7 @@
 
     throw p0
 
-    .line 2403
+    .line 2395
     :cond_1
     return-object v0
 .end method
@@ -18800,12 +18755,12 @@
         }
     .end annotation
 
-    .line 2327
+    .line 2319
     invoke-static {p1}, Lcom/project7/localmanager/LocalGatewayServer;->readLeInt(Ljava/io/InputStream;)I
 
     move-result v0
 
-    .line 2328
+    .line 2320
     const/4 v1, 0x2
 
     if-lt v0, v1, :cond_0
@@ -18814,24 +18769,24 @@
 
     if-gt v0, v2, :cond_0
 
-    .line 2331
+    .line 2323
     invoke-static {p1}, Lcom/project7/localmanager/LocalGatewayServer;->readByte(Ljava/io/InputStream;)I
 
     move-result v2
 
-    .line 2332
+    .line 2324
     invoke-static {p1}, Lcom/project7/localmanager/LocalGatewayServer;->readByte(Ljava/io/InputStream;)I
 
     move-result v3
 
-    .line 2333
+    .line 2325
     sub-int/2addr v0, v1
 
     invoke-static {p1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->readExactly(Ljava/io/InputStream;I)[B
 
     move-result-object p1
 
-    .line 2334
+    .line 2326
     new-instance v0, Lcom/project7/localmanager/LocalGatewayServer$Frame;
 
     shl-int/lit8 v1, v3, 0x8
@@ -18842,7 +18797,7 @@
 
     return-object v0
 
-    .line 2329
+    .line 2321
     :cond_0
     new-instance p1, Ljava/io/IOException;
 
@@ -18873,27 +18828,27 @@
         }
     .end annotation
 
-    .line 2371
+    .line 2363
     invoke-static {p0}, Lcom/project7/localmanager/LocalGatewayServer;->readByte(Ljava/io/InputStream;)I
 
     move-result v0
 
-    .line 2372
+    .line 2364
     invoke-static {p0}, Lcom/project7/localmanager/LocalGatewayServer;->readByte(Ljava/io/InputStream;)I
 
     move-result v1
 
-    .line 2373
+    .line 2365
     invoke-static {p0}, Lcom/project7/localmanager/LocalGatewayServer;->readByte(Ljava/io/InputStream;)I
 
     move-result v2
 
-    .line 2374
+    .line 2366
     invoke-static {p0}, Lcom/project7/localmanager/LocalGatewayServer;->readByte(Ljava/io/InputStream;)I
 
     move-result p0
 
-    .line 2375
+    .line 2367
     shl-int/lit8 v1, v1, 0x8
 
     or-int/2addr v0, v1
@@ -18917,7 +18872,7 @@
         }
     .end annotation
 
-    .line 1056
+    .line 1050
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -18944,7 +18899,7 @@
 
     goto/16 :goto_4
 
-    .line 1057
+    .line 1051
     :cond_0
     const-string v6, "incHeroStarOrder"
 
@@ -18985,7 +18940,7 @@
 
     aget-object v8, v5, v7
 
-    .line 1061
+    .line 1055
     invoke-static {v8}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v8
@@ -18996,7 +18951,7 @@
 
     if-eqz v8, :cond_1
 
-    .line 1062
+    .line 1056
     iget-object v1, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
@@ -19005,16 +18960,16 @@
 
     invoke-virtual {v4, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 1063
+    .line 1057
     return-void
 
-    .line 1057
+    .line 1051
     :cond_1
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 1066
+    .line 1060
     :cond_2
     const/4 v5, 0x7
 
@@ -19043,7 +18998,7 @@
 
     aget-object v10, v7, v9
 
-    .line 1068
+    .line 1062
     invoke-static {v10}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v10
@@ -19054,7 +19009,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 1071
+    .line 1065
     iget-object v1, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
@@ -19063,16 +19018,16 @@
 
     invoke-virtual {v4, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 1072
+    .line 1066
     return-void
 
-    .line 1066
+    .line 1060
     :cond_3
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_1
 
-    .line 1075
+    .line 1069
     :cond_4
     sget-object v5, Lcom/project7/localmanager/LocalTreasureOperationEngine;->METHODS:Ljava/util/List;
 
@@ -19093,7 +19048,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 1076
+    .line 1070
     invoke-static {v7}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v7
@@ -19104,7 +19059,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 1077
+    .line 1071
     iget-object v1, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
@@ -19113,14 +19068,14 @@
 
     invoke-virtual {v4, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 1078
+    .line 1072
     return-void
 
-    .line 1080
+    .line 1074
     :cond_5
     goto :goto_2
 
-    .line 1081
+    .line 1075
     :cond_6
     const-string v9, "equipTreasureBatch"
 
@@ -19155,7 +19110,7 @@
 
     aget-object v7, v5, v6
 
-    .line 1085
+    .line 1079
     invoke-static {v7}, Lcom/project7/localmanager/LocalGatewayServer;->digest(Ljava/lang/String;)[B
 
     move-result-object v7
@@ -19166,7 +19121,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 1087
+    .line 1081
     iget-object v1, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
@@ -19175,29 +19130,29 @@
 
     invoke-virtual {v4, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 1088
+    .line 1082
     return-void
 
-    .line 1081
+    .line 1075
     :cond_7
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
-    .line 1091
+    .line 1085
     :cond_8
     iget-object v1, v0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    invoke-interface {v1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
+    invoke-interface {v1, v2, v3}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->snapshot(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v1
 
     invoke-virtual {v4, v1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 1092
+    .line 1086
     return-void
 
-    .line 1056
+    .line 1050
     :cond_9
     :goto_4
     return-void
@@ -19206,10 +19161,10 @@
 .method private static resolveAreaId(Ljava/lang/Integer;Z)I
     .locals 2
 
-    .line 2143
+    .line 2135
     if-nez p1, :cond_1
 
-    .line 2144
+    .line 2136
     if-nez p0, :cond_0
 
     const/4 p0, 0x0
@@ -19224,7 +19179,7 @@
     :goto_0
     return p0
 
-    .line 2146
+    .line 2138
     :cond_1
     const/4 p1, 0x1
 
@@ -19264,32 +19219,32 @@
         }
     .end annotation
 
-    .line 2234
+    .line 2226
     nop
 
-    .line 2239
+    .line 2231
     const-string v0, "onLoginFail"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 2240
+    .line 2232
     invoke-static {p3}, Lcom/project7/localmanager/BsonLite;->loginFailureDocument(Ljava/lang/String;)[B
 
     move-result-object p3
 
-    .line 2237
+    .line 2229
     invoke-static {p2, v0, p3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
-    .line 2234
+    .line 2226
     const/4 p3, 0x5
 
     invoke-direct {p0, p1, p3, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2243
+    .line 2235
     return-void
 .end method
 
@@ -19301,15 +19256,15 @@
         }
     .end annotation
 
-    .line 2160
+    .line 2152
     const/16 v0, 0x3e9
 
     if-ne p4, v0, :cond_1
 
-    .line 2161
+    .line 2153
     const/16 v0, 0x18
 
-    .line 2165
+    .line 2157
     iget-object v1, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v1, p3, v0}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->ensureHero(Ljava/lang/String;I)Z
@@ -19318,34 +19273,34 @@
 
     if-nez p3, :cond_0
 
-    .line 2166
+    .line 2158
     return-void
 
-    .line 2168
+    .line 2160
     :cond_0
     const/4 p3, 0x5
 
-    .line 2173
+    .line 2165
     const-string v1, "addHero"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 2174
+    .line 2166
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->addHeroDocument(I)[B
 
     move-result-object v2
 
-    .line 2171
+    .line 2163
     invoke-static {p2, v1, v2}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
-    .line 2168
+    .line 2160
     invoke-direct {p0, p1, p3, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2177
+    .line 2169
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -19370,10 +19325,10 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2178
+    .line 2170
     return-void
 
-    .line 2163
+    .line 2155
     :cond_1
     return-void
 .end method
@@ -19381,7 +19336,7 @@
 .method private static starterEventForHero(I)I
     .locals 1
 
-    .line 2185
+    .line 2177
     const/16 v0, 0x8
 
     if-ne p0, v0, :cond_0
@@ -19409,7 +19364,7 @@
 .method private static starterHeroForUsername(Ljava/lang/String;)I
     .locals 0
 
-    .line 2181
+    .line 2173
     const/4 p0, 0x7
 
     return p0
@@ -19423,14 +19378,14 @@
         }
     .end annotation
 
-    .line 1033
+    .line 1027
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
     invoke-interface {v0}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->clientCompatibility()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1034
+    .line 1028
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
@@ -19439,7 +19394,7 @@
 
     const/4 v1, 0x5
 
-    .line 1036
+    .line 1030
     const-string v2, "evalCode"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -19468,14 +19423,14 @@
 
     move-result-object v0
 
-    .line 1034
+    .line 1028
     invoke-static {p2, v2, v0}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
     invoke-direct {p0, p1, v1, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1037
+    .line 1031
     :cond_0
     return-void
 .end method
@@ -19488,10 +19443,10 @@
         }
     .end annotation
 
-    .line 2056
+    .line 2048
     nop
 
-    .line 2057
+    .line 2049
     const-string v0, "evalCode"
 
     invoke-static {v0}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -19518,7 +19473,7 @@
 
     move-result-object v1
 
-    .line 2056
+    .line 2048
     invoke-static {p2, v0, v1}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
@@ -19527,7 +19482,7 @@
 
     invoke-direct {p0, p1, v0, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2058
+    .line 2050
     return-void
 .end method
 
@@ -19539,15 +19494,15 @@
         }
     .end annotation
 
-    .line 862
+    .line 856
     nop
 
-    .line 863
+    .line 857
     invoke-direct {p0, p3, p4, p5}, Lcom/project7/localmanager/LocalGatewayServer;->prepareEventEffects(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
     move-result-object v6
 
-    .line 862
+    .line 856
     move-object v0, p0
 
     move-object v1, p1
@@ -19562,7 +19517,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/project7/localmanager/LocalGatewayServer;->emitEventEffects(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;Lcom/project7/localmanager/LocalResourceEngine$Result;)V
 
-    .line 864
+    .line 858
     return-void
 .end method
 
@@ -19574,7 +19529,7 @@
         }
     .end annotation
 
-    .line 839
+    .line 833
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->eventCatalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     if-eqz v0, :cond_3
@@ -19593,7 +19548,7 @@
 
     goto :goto_1
 
-    .line 840
+    .line 834
     :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
@@ -19609,7 +19564,7 @@
 
     const/4 v2, 0x1
 
-    .line 841
+    .line 835
     invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -19620,14 +19575,14 @@
 
     move-result-object v1
 
-    .line 840
+    .line 834
     const-string v2, "q7PuzzleBegin"
 
     invoke-interface {v0, p3, v2, v1, p4}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->updateServices(Ljava/lang/String;Ljava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalResourceEngine$Result;
 
     move-result-object p3
 
-    .line 842
+    .line 836
     iget-object p4, p3, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p4}, Ljava/util/List;->stream()Ljava/util/stream/Stream;
@@ -19642,12 +19597,12 @@
 
     if-nez p4, :cond_2
 
-    .line 844
+    .line 838
     iget-object p4, p3, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     invoke-virtual {p5, p4}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 845
+    .line 839
     iget-object p3, p3, Lcom/project7/localmanager/LocalResourceEngine$Result;->replies:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -19667,7 +19622,7 @@
 
     check-cast p4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    .line 846
+    .line 840
     const/4 p5, 0x5
 
     iget-object p6, p4, Lcom/project7/localmanager/LocalResourceEngine$Reply;->method:Ljava/lang/String;
@@ -19686,11 +19641,11 @@
 
     goto :goto_0
 
-    .line 847
+    .line 841
     :cond_1
     return-void
 
-    .line 843
+    .line 837
     :cond_2
     new-instance p1, Ljava/io/IOException;
 
@@ -19712,7 +19667,7 @@
 
     throw p1
 
-    .line 839
+    .line 833
     :cond_3
     :goto_1
     return-void
@@ -19726,7 +19681,7 @@
         }
     .end annotation
 
-    .line 1050
+    .line 1044
     const/16 v0, 0x3ec
 
     if-eq p5, v0, :cond_0
@@ -19739,11 +19694,11 @@
 
     if-ne p5, v0, :cond_1
 
-    .line 1051
+    .line 1045
     :cond_0
     invoke-direct/range {p0 .. p5}, Lcom/project7/localmanager/LocalGatewayServer;->syncTutorialCityState(Ljava/io/OutputStream;[BLjava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)V
 
-    .line 1052
+    .line 1046
     :cond_1
     return-void
 .end method
@@ -19756,7 +19711,7 @@
         }
     .end annotation
 
-    .line 1041
+    .line 1035
     invoke-static {p4}, Lcom/project7/localmanager/LocalGatewayServer;->isHighSchoolUnlocked(Lcom/project7/localmanager/LocalTutorialStore$Progress;)Z
 
     move-result v0
@@ -19765,11 +19720,11 @@
 
     return-void
 
-    .line 1042
+    .line 1036
     :cond_0
     const/4 v0, 0x5
 
-    .line 1043
+    .line 1037
     const-string v1, "get_all_area_info_reply"
 
     invoke-static {v1}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
@@ -19780,24 +19735,24 @@
 
     iget-object v3, p0, Lcom/project7/localmanager/LocalGatewayServer;->profileProvider:Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;
 
-    .line 1044
+    .line 1038
     invoke-interface {v3, p3, p4}, Lcom/project7/localmanager/LocalGatewayServer$ProfileProvider;->load(Ljava/lang/String;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object p3
 
-    .line 1043
+    .line 1037
     invoke-static {v2, p4, p3}, Lcom/project7/localmanager/BsonLite;->allAreaInfoReplyDocument(ZLcom/project7/localmanager/LocalTutorialStore$Progress;[B)[B
 
     move-result-object p3
 
-    .line 1042
+    .line 1036
     invoke-static {p2, v1, p3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object p2
 
     invoke-direct {p0, p1, v0, p2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 1045
+    .line 1039
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -19816,7 +19771,7 @@
 
     invoke-static {p2, p1}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1046
+    .line 1040
     return-void
 .end method
 
@@ -19840,13 +19795,13 @@
         }
     .end annotation
 
-    .line 2194
+    .line 2186
     if-nez p3, :cond_0
 
-    .line 2195
+    .line 2187
     return-void
 
-    .line 2197
+    .line 2189
     :cond_0
     invoke-virtual {p3}, Lcom/project7/localmanager/LocalEventEngine;->processingNewbees()Ljava/util/Set;
 
@@ -19869,28 +19824,28 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 2198
+    .line 2190
     invoke-interface {p4, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 2199
+    .line 2191
     goto :goto_0
 
-    .line 2201
+    .line 2193
     :cond_1
     const/4 v1, 0x5
 
-    .line 2206
+    .line 2198
     const-string v2, "triggerClientNewbee"
 
     invoke-static {v2}, Lcom/project7/localmanager/LocalGatewayServer;->md5(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 2207
+    .line 2199
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -19899,15 +19854,15 @@
 
     move-result-object v3
 
-    .line 2204
+    .line 2196
     invoke-static {p2, v2, v3}, Lcom/project7/localmanager/ProtoLite;->entityMessage([B[B[B)[B
 
     move-result-object v2
 
-    .line 2201
+    .line 2193
     invoke-direct {p0, p1, v1, v2}, Lcom/project7/localmanager/LocalGatewayServer;->writeFrame(Ljava/io/OutputStream;I[B)V
 
-    .line 2210
+    .line 2202
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -19926,10 +19881,10 @@
 
     invoke-static {v1, v0}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2211
+    .line 2203
     goto :goto_0
 
-    .line 2212
+    .line 2204
     :cond_2
     return-void
 .end method
@@ -19942,33 +19897,33 @@
         }
     .end annotation
 
-    .line 2338
+    .line 2330
     array-length v0, p3
 
     add-int/lit8 v0, v0, 0x2
 
-    .line 2339
+    .line 2331
     invoke-static {p1, v0}, Lcom/project7/localmanager/LocalGatewayServer;->writeLeInt(Ljava/io/OutputStream;I)V
 
-    .line 2340
+    .line 2332
     and-int/lit16 v0, p2, 0xff
 
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write(I)V
 
-    .line 2341
+    .line 2333
     ushr-int/lit8 p2, p2, 0x8
 
     and-int/lit16 p2, p2, 0xff
 
     invoke-virtual {p1, p2}, Ljava/io/OutputStream;->write(I)V
 
-    .line 2342
+    .line 2334
     invoke-virtual {p1, p3}, Ljava/io/OutputStream;->write([B)V
 
-    .line 2343
+    .line 2335
     invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
 
-    .line 2344
+    .line 2336
     return-void
 .end method
 
@@ -19980,33 +19935,33 @@
         }
     .end annotation
 
-    .line 2379
+    .line 2371
     and-int/lit16 v0, p1, 0xff
 
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
 
-    .line 2380
+    .line 2372
     ushr-int/lit8 v0, p1, 0x8
 
     and-int/lit16 v0, v0, 0xff
 
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
 
-    .line 2381
+    .line 2373
     ushr-int/lit8 v0, p1, 0x10
 
     and-int/lit16 v0, v0, 0xff
 
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
 
-    .line 2382
+    .line 2374
     ushr-int/lit8 p1, p1, 0x18
 
     and-int/lit16 p1, p1, 0xff
 
     invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    .line 2383
+    .line 2375
     return-void
 .end method
 
@@ -20015,12 +19970,12 @@
 .method public close()V
     .locals 2
 
-    .line 2294
+    .line 2286
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->closed:Z
 
-    .line 2295
+    .line 2287
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->clients:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -20044,32 +19999,32 @@
 
     goto :goto_0
 
-    .line 2296
+    .line 2288
     :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->connections:Ljava/util/concurrent/ThreadPoolExecutor;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdownNow()Ljava/util/List;
 
-    .line 2297
+    .line 2289
     iget-object v0, p0, Lcom/project7/localmanager/LocalGatewayServer;->socket:Ljava/net/ServerSocket;
 
-    .line 2298
+    .line 2290
     if-eqz v0, :cond_1
 
-    .line 2300
+    .line 2292
     :try_start_0
     invoke-virtual {v0}, Ljava/net/ServerSocket;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2302
+    .line 2294
     goto :goto_1
 
-    .line 2301
+    .line 2293
     :catch_0
     move-exception v0
 
-    .line 2304
+    .line 2296
     :cond_1
     :goto_1
     return-void

@@ -29,7 +29,7 @@ final class LocalWeekSettlement {
         int i6;
         int i7;
         LinkedHashSet linkedHashSet3;
-        int m85v = m85v(m84d(result.profile, "weeknum"), "w");
+        int m83v = m83v(m82d(result.profile, "weeknum"), "w");
         LinkedHashSet linkedHashSet4 = new LinkedHashSet(progress.completedEvents);
         linkedHashSet4.removeAll(BsonLite.intArrayValues(result.profile, "q7WeekEventBaseline"));
         String str2 = "ccgs";
@@ -47,18 +47,18 @@ final class LocalWeekSettlement {
             linkedHashSet5.add(Integer.valueOf(i3));
         }
         linkedHashSet5.retainAll(localWeekCatalog.cgScores.keySet());
-        byte[] m84d = m84d(result.profile, "city");
-        byte[] m84d2 = m84d(m84d, "areas");
+        byte[] m82d = m82d(result.profile, "city");
+        byte[] m82d2 = m82d(m82d, "areas");
         LinkedHashSet linkedHashSet7 = new LinkedHashSet();
-        Iterator<byte[]> it2 = LocalResourceEngine.array(m84d(result.profile, "q7BattleReceipts")).iterator();
+        Iterator<byte[]> it2 = LocalResourceEngine.array(m82d(result.profile, "q7BattleReceipts")).iterator();
         while (it2.hasNext()) {
-            int m85v2 = m85v(it2.next(), "s");
-            if (localWeekCatalog.battleScores.containsKey(Integer.valueOf(m85v2))) {
-                linkedHashSet7.add(Integer.valueOf(m85v2));
+            int m83v2 = m83v(it2.next(), "s");
+            if (localWeekCatalog.battleScores.containsKey(Integer.valueOf(m83v2))) {
+                linkedHashSet7.add(Integer.valueOf(m83v2));
             }
         }
         String str3 = "ending";
-        byte[] document = BsonLite.document("ending", Integer.valueOf(i2), "week", Integer.valueOf(m85v), "cur_cgs", new ArrayList(linkedHashSet5));
+        byte[] document = BsonLite.document("ending", Integer.valueOf(i2), "week", Integer.valueOf(m83v), "cur_cgs", new ArrayList(linkedHashSet5));
         Iterator<Map.Entry<Integer, byte[]>> it3 = localWeekCatalog.scores.entrySet().iterator();
         byte[] bArr2 = document;
         int i8 = 0;
@@ -72,7 +72,7 @@ final class LocalWeekSettlement {
             Iterator<Map.Entry<Integer, byte[]>> it4 = it3;
             byte[] value = next.getValue();
             String str4 = str2;
-            List<byte[]> array = LocalResourceEngine.array(m84d(value, "conditions"));
+            List<byte[]> array = LocalResourceEngine.array(m82d(value, "conditions"));
             int size = array.size();
             if (intValue == 1) {
                 Iterator it5 = linkedHashSet5.iterator();
@@ -80,17 +80,17 @@ final class LocalWeekSettlement {
                 while (it5.hasNext()) {
                     i6 = Math.addExact(i6, localWeekCatalog.cgScores.getOrDefault(Integer.valueOf(((Integer) it5.next()).intValue()), 0).intValue());
                     it5 = it5;
-                    m85v = m85v;
+                    m83v = m83v;
                 }
-                i5 = m85v;
+                i5 = m83v;
                 i7 = linkedHashSet5.size();
                 size = i7;
                 linkedHashSet = linkedHashSet4;
                 linkedHashSet2 = linkedHashSet6;
             } else {
-                i5 = m85v;
+                i5 = m83v;
                 if (intValue == 3) {
-                    i7 = Math.max(0, m85v(m84d, "dv"));
+                    i7 = Math.max(0, m83v(m82d, "dv"));
                     linkedHashSet = linkedHashSet4;
                     linkedHashSet2 = linkedHashSet6;
                     size = 1500;
@@ -113,7 +113,7 @@ final class LocalWeekSettlement {
                     linkedHashSet = linkedHashSet4;
                     linkedHashSet2 = linkedHashSet6;
                 } else if (intValue == 19) {
-                    i7 = Math.max(0, m85v(m84d(result.profile, "weeknum"), "ust"));
+                    i7 = Math.max(0, m83v(m82d(result.profile, "weeknum"), "ust"));
                     i6 = Math.multiplyExact(i7, -100);
                     linkedHashSet = linkedHashSet4;
                     linkedHashSet2 = linkedHashSet6;
@@ -137,7 +137,7 @@ final class LocalWeekSettlement {
                             while (it9.hasNext()) {
                                 LinkedHashSet linkedHashSet9 = linkedHashSet4;
                                 Iterator<Integer> it10 = it9;
-                                List<Integer> intArrayValues3 = BsonLite.intArrayValues(m84d(m84d2, Integer.toString(it9.next().intValue())), "st");
+                                List<Integer> intArrayValues3 = BsonLite.intArrayValues(m82d(m82d2, Integer.toString(it9.next().intValue())), "st");
                                 z2 &= !intArrayValues3.isEmpty() && intArrayValues3.get(0).intValue() == 0;
                                 it9 = it10;
                                 linkedHashSet4 = linkedHashSet9;
@@ -147,7 +147,7 @@ final class LocalWeekSettlement {
                         }
                         if (z) {
                             i11++;
-                            i10 = Math.addExact(i10, m85v(next2, "score"));
+                            i10 = Math.addExact(i10, m83v(next2, "score"));
                         }
                         it7 = it8;
                         linkedHashSet6 = linkedHashSet8;
@@ -165,14 +165,14 @@ final class LocalWeekSettlement {
             str3 = str;
             it3 = it4;
             linkedHashSet6 = linkedHashSet2;
-            m85v = i5;
+            m83v = i5;
             linkedHashSet4 = linkedHashSet;
         }
-        int i12 = m85v;
+        int i12 = m83v;
         String str5 = str2;
         byte[] bArr3 = bArr2;
-        byte[] m84d3 = m84d(result.profile, "weeknum");
-        List<Integer> intArrayValues4 = BsonLite.intArrayValues(m84d3, "ccl");
+        byte[] m82d3 = m82d(result.profile, "weeknum");
+        List<Integer> intArrayValues4 = BsonLite.intArrayValues(m82d3, "ccl");
         if (intArrayValues4.size() != VERSION) {
             i4 = 0;
             intArrayValues4 = Arrays.asList(1, 1);
@@ -185,7 +185,7 @@ final class LocalWeekSettlement {
         byte[] withProfileArray = BsonLite.withProfileArray(bArr3, "add_score", Arrays.asList(Integer.valueOf(intValue2), intArrayValues4, 0));
         int max2 = Math.max(0, Math.addExact(i8, intValue2));
         byte[] withProfileInt = BsonLite.withProfileInt(withProfileArray, "total", max2);
-        result.profile = BsonLite.withProfileDocument(result.profile, "weeknum", best(history(m84d3, i12, withProfileInt), intArrayValues4, max2));
+        result.profile = BsonLite.withProfileDocument(result.profile, "weeknum", best(history(m82d3, i12, withProfileInt), intArrayValues4, max2));
         result.profile = BsonLite.withProfileIntArray(result.profile, str5, linkedHashSet5);
         byte[] bArr4 = null;
         Iterator<Map.Entry<Integer, byte[]>> it11 = localWeekCatalog.settlements.entrySet().iterator();
@@ -194,7 +194,7 @@ final class LocalWeekSettlement {
                 break;
             }
             Map.Entry<Integer, byte[]> next3 = it11.next();
-            if (max2 >= next3.getKey().intValue() && max2 <= m85v(next3.getValue(), "max")) {
+            if (max2 >= next3.getKey().intValue() && max2 <= m83v(next3.getValue(), "max")) {
                 bArr4 = next3.getValue();
                 break;
             }
@@ -204,28 +204,28 @@ final class LocalWeekSettlement {
         }
         LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(result.profile);
         LocalGiftEngine.reward(result2, localResourceCatalog, bArr4, 1);
-        int m85v3 = m85v(bArr4, "money");
-        if (m85v3 > 0) {
-            LocalResourceEngine.grant(result2, localResourceCatalog, "money", 0, m85v3, 1);
+        int m83v3 = m83v(bArr4, "money");
+        if (m83v3 > 0) {
+            LocalResourceEngine.grant(result2, localResourceCatalog, "money", 0, m83v3, 1);
         }
         if (max2 > 0) {
             LocalResourceEngine.grant(result2, localResourceCatalog, "souvenir", 0, max2, 1);
         }
         byte[] reward = result2.reward();
         ArrayList arrayList = new ArrayList();
-        Iterator<byte[]> it12 = LocalResourceEngine.array(m84d(reward, "item")).iterator();
+        Iterator<byte[]> it12 = LocalResourceEngine.array(m82d(reward, "item")).iterator();
         while (it12.hasNext()) {
             byte[] next4 = it12.next();
             Iterator<byte[]> it13 = it12;
-            if (m85v(next4, "0") != 102 && m85v(next4, "0") != 329) {
+            if (m83v(next4, "0") != 102 && m83v(next4, "0") != 329) {
                 arrayList.add(new BsonLite.ArrayValue(next4));
             }
             it12 = it13;
         }
-        byte[] withItemSummary = withItemSummary(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileArray(reward, "item", arrayList), "money", m85v3), "souvenir", max2));
+        byte[] withItemSummary = withItemSummary(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileArray(reward, "item", arrayList), "money", m83v3), "souvenir", max2));
         LocalEconomyEngine.Result result3 = new LocalEconomyEngine.Result(result2.profile);
         result3.reward = withItemSummary;
-        LocalEconomyEngine.addExperience(result3, localEconomyCatalog, m85v(bArr4, "exp"));
+        LocalEconomyEngine.addExperience(result3, localEconomyCatalog, m83v(bArr4, "exp"));
         result.profile = result3.profile;
         result.replies.addAll(result2.replies);
         result.replies.addAll(result3.replies);
@@ -236,42 +236,42 @@ final class LocalWeekSettlement {
     static void repairAwarded(LocalResourceEngine.Result result, LocalWeekCatalog localWeekCatalog, LocalResourceCatalog localResourceCatalog) {
         byte[] bArr;
         byte[] bArr2;
-        byte[] m84d = m84d(result.profile, "q7WeekResult");
-        if (m85v(m84d, "week") != m85v(m84d(result.profile, "weeknum"), "w")) {
+        byte[] m82d = m82d(result.profile, "q7WeekResult");
+        if (m83v(m82d, "week") != m83v(m82d(result.profile, "weeknum"), "w")) {
             return;
         }
-        byte[] m84d2 = m84d(m84d, "score");
-        byte[] m84d3 = m84d(m84d, "reward");
-        if (BsonLite.keys(m84d3).isEmpty()) {
+        byte[] m82d2 = m82d(m82d, "score");
+        byte[] m82d3 = m82d(m82d, "reward");
+        if (BsonLite.keys(m82d3).isEmpty()) {
             return;
         }
-        if (BsonLite.documentValue(m84d3, "its") != null) {
-            bArr = m84d;
-            bArr2 = m84d3;
+        if (BsonLite.documentValue(m82d3, "its") != null) {
+            bArr = m82d;
+            bArr2 = m82d3;
         } else {
-            byte[] withItemSummary = withItemSummary(m84d3);
-            byte[] withProfileDocument = BsonLite.withProfileDocument(m84d, "reward", withItemSummary);
+            byte[] withItemSummary = withItemSummary(m82d3);
+            byte[] withProfileDocument = BsonLite.withProfileDocument(m82d, "reward", withItemSummary);
             result.profile = BsonLite.withProfileDocument(result.profile, "q7WeekResult", withProfileDocument);
             bArr = withProfileDocument;
             bArr2 = withItemSummary;
         }
-        if (m85v(bArr, "version") != 1) {
+        if (m83v(bArr, "version") != 1) {
             return;
         }
-        Iterator<byte[]> it = LocalResourceEngine.array(m84d(m84d(result.profile, "weeknum"), "wasi")).iterator();
+        Iterator<byte[]> it = LocalResourceEngine.array(m82d(m82d(result.profile, "weeknum"), "wasi")).iterator();
         while (it.hasNext()) {
             byte[] next = it.next();
             Iterator<byte[]> it2 = it;
-            if (m85v(next, "0") == m85v(bArr, "week") && m85v(m84d(next, "1"), "total") != m85v(m84d2, "total")) {
+            if (m83v(next, "0") == m83v(bArr, "week") && m83v(m82d(next, "1"), "total") != m83v(m82d2, "total")) {
                 return;
             } else {
                 it = it2;
             }
         }
-        List<Integer> intArrayValues = BsonLite.intArrayValues(m84d2, "8");
-        List<Integer> intArrayValues2 = BsonLite.intArrayValues(m84d(m84d2, "add_score"), "1");
+        List<Integer> intArrayValues = BsonLite.intArrayValues(m82d2, "8");
+        List<Integer> intArrayValues2 = BsonLite.intArrayValues(m82d(m82d2, "add_score"), "1");
         if (intArrayValues.size() == 3 && intArrayValues2.size() == VERSION) {
-            byte[] withProfileIntArray = BsonLite.withProfileIntArray(m84d2, "8", Arrays.asList(Integer.valueOf(Math.multiplyExact(Math.max(0, intArrayValues.get(1).intValue()), HERO_ROUTE_SCORE)), intArrayValues.get(1), intArrayValues.get(VERSION)));
+            byte[] withProfileIntArray = BsonLite.withProfileIntArray(m82d2, "8", Arrays.asList(Integer.valueOf(Math.multiplyExact(Math.max(0, intArrayValues.get(1).intValue()), HERO_ROUTE_SCORE)), intArrayValues.get(1), intArrayValues.get(VERSION)));
             Iterator<Integer> it3 = localWeekCatalog.scores.keySet().iterator();
             int i = 0;
             while (it3.hasNext()) {
@@ -287,32 +287,32 @@ final class LocalWeekSettlement {
             Map<String, Integer> map = localWeekCatalog.bonuses;
             int intValue = (int) ((max * map.getOrDefault(intArrayValues2.get(0) + ":" + intArrayValues2.get(1), 0).intValue()) / 10000);
             int max2 = Math.max(0, Math.addExact(i, intValue));
-            int m85v = max2 - m85v(m84d(bArr3, "score"), "total");
-            if (m85v < 0) {
+            int m83v = max2 - m83v(m82d(bArr3, "score"), "total");
+            if (m83v < 0) {
                 return;
             }
             byte[] withProfileArray = BsonLite.withProfileArray(BsonLite.withProfileInt(withProfileIntArray, "total", max2), "add_score", Arrays.asList(Integer.valueOf(intValue), intArrayValues2, 0));
-            if (m85v > 0) {
-                LocalResourceEngine.grant(result, localResourceCatalog, "souvenir", 0, m85v, 1);
+            if (m83v > 0) {
+                LocalResourceEngine.grant(result, localResourceCatalog, "souvenir", 0, m83v, 1);
             }
             byte[] withProfileInt = BsonLite.withProfileInt(withItemSummary(bArr2), "souvenir", max2);
-            result.profile = BsonLite.withProfileDocument(result.profile, "weeknum", best(history(m84d(result.profile, "weeknum"), m85v(bArr3, "week"), withProfileArray), intArrayValues2, max2));
+            result.profile = BsonLite.withProfileDocument(result.profile, "weeknum", best(history(m82d(result.profile, "weeknum"), m83v(bArr3, "week"), withProfileArray), intArrayValues2, max2));
             result.profile = BsonLite.withProfileDocument(result.profile, "q7WeekResult", BsonLite.withProfileDocument(BsonLite.withProfileDocument(BsonLite.withProfileInt(bArr3, "version", VERSION), "score", withProfileArray), "reward", withProfileInt));
-            if (m85v > 0) {
+            if (m83v > 0) {
                 LocalResourceEngine.syncCurrencies(result);
             }
         }
     }
 
     static byte[] withItemSummary(byte[] bArr) {
-        return BsonLite.withProfileDocument(bArr, "its", BsonLite.document("item", new BsonLite.ArrayValue(m84d(bArr, "item")), "treasure", new BsonLite.ArrayValue(m84d(bArr, "treasure")), "hero", new BsonLite.ArrayValue(m84d(bArr, "hero"))));
+        return BsonLite.withProfileDocument(bArr, "its", BsonLite.document("item", new BsonLite.ArrayValue(m82d(bArr, "item")), "treasure", new BsonLite.ArrayValue(m82d(bArr, "treasure")), "hero", new BsonLite.ArrayValue(m82d(bArr, "hero"))));
     }
 
     private static byte[] best(byte[] bArr, List<Integer> list, int i) {
         ArrayList arrayList = new ArrayList();
-        for (byte[] bArr2 : LocalResourceEngine.array(m84d(bArr, "ls"))) {
+        for (byte[] bArr2 : LocalResourceEngine.array(m82d(bArr, "ls"))) {
             if (BsonLite.intArrayValues(bArr2, "0").equals(list)) {
-                i = Math.max(i, m85v(bArr2, "1"));
+                i = Math.max(i, m83v(bArr2, "1"));
             } else {
                 arrayList.add(new BsonLite.ArrayValue(bArr2));
             }
@@ -324,8 +324,8 @@ final class LocalWeekSettlement {
     /* JADX WARN: Multi-variable type inference failed */
     static byte[] history(byte[] bArr, int i, byte[] bArr2) {
         ArrayList arrayList = new ArrayList();
-        for (byte[] bArr3 : LocalResourceEngine.array(m84d(bArr, "wasi"))) {
-            if (m85v(bArr3, "0") != i) {
+        for (byte[] bArr3 : LocalResourceEngine.array(m82d(bArr, "wasi"))) {
+            if (m83v(bArr3, "0") != i) {
                 arrayList.add(new BsonLite.ArrayValue(bArr3));
             }
         }
@@ -334,12 +334,12 @@ final class LocalWeekSettlement {
     }
 
     /* renamed from: d */
-    private static byte[] m84d(byte[] bArr, String str) {
+    private static byte[] m82d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    private static int m85v(byte[] bArr, String str) {
+    private static int m83v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 }

@@ -140,7 +140,7 @@ public class InlineParserImpl implements InlineParser, InlineParserState {
     }
 
     void reset(SourceLines lines) {
-        this.scanner = Scanner.m98of(lines);
+        this.scanner = Scanner.m94of(lines);
         this.includeSourceSpans = !lines.getSourceSpans().isEmpty();
         this.trailingSpaces = 0;
         this.lastDelimiter = null;

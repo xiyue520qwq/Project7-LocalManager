@@ -12,122 +12,72 @@ import java.util.Set;
 
 /* loaded from: classes.dex */
 final class LocalStoryRuleRegistry {
-    static final List<Rule> RULES = Collections.unmodifiableList(Arrays.asList(new Rule("confidence", "getCenterConfidence", "current-week", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda2
+    static final List<Rule> RULES = Collections.unmodifiableList(Arrays.asList(new Rule("confidence", "getCenterConfidence", "current-week", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda1
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalAnTrustEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("an-city-locks", "areaLock", "routes4,4-1;events7044,7045,7048,7049", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda1
+    }), new Rule("an-city-locks", "areaLock", "routes4,4-1;events7044,7045,7048,7049", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda0
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalAnCityEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("oratio-city", "areaFight,areaFree", "route35;original1832/day0,2391/day1;current-cycle", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda10
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalOratioCityEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("wenzi-city", "areaFree", "route10;original1129/day0;current-cycle", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda19
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalWenziCityEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("alan-city", "areaSpecialStage,areaFight,areaFree", "original1140/day0;mission320;1132/1139;current-cycle", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda0
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalAlanCityEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("wenzi-building", "buildBuilding", "route10;original2067/day1;current-cycle", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda18
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalWenziBuildingEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("wenzi-hero", "cineLockHeroes", "route10;original2070/day1;current-cycle", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda20
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalWenziHeroEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("dalvira-hero", "cineLockHeroes", "route13;original4203/day3,6189/day5;current-cycle", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda6
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalDalviraHeroEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("dalvira-story", "daerweila_dispatch,special_agreement", "route13;earned4203;day3..5", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda7
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalDalviraStoryEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("dalvira-city", "areaFight,areaFree,mission.successEvent", "route13-3;7269/day6;missions359..363", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda5
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalDalviraCityEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("chapter-city", "areaFree,areaFight,areaLock,areaUnlock,cineLockHeroes,banHeroes,recoverBanHeroes", "12", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda4
+    }), new Rule("chapter-city", "areaFree,areaFight,areaLock,areaUnlock,cineLockHeroes,banHeroes,recoverBanHeroes", "12", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda3
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalChapterCityEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("shared-targets", "story_target.subTarget_count,completeRouteTarget", "known-native-targets;current-week;routes4,12,14-specialized", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda17
+    }), new Rule("shared-targets", "story_target.subTarget_count,completeRouteTarget", "known-native-targets;current-week;routes4,12,14-specialized", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda10
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalStoryTargetEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("deep-echo-meters", "gainRelyVal,gainSupportVal,completeRouteTarget", "route14-family;current-week", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda8
+    }), new Rule("deep-echo-meters", "gainRelyVal,gainSupportVal,completeRouteTarget", "route14-family;current-week", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda4
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalDeepEchoEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("wing-story", "gainBaiyuVal", "route7-family;committed-menu6-cycle;signed-event-only", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda22
+    }), new Rule("wing-story", "gainBaiyuVal", "route7-family;committed-menu6-cycle;signed-event-only", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda12
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalWingStoryEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("yisake-story", "gainYisakeVal", "route9-family;new-current-week-completions;published-only", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda23
+    }), new Rule("yisake-story", "gainYisakeVal", "route9-family;new-current-week-completions;published-only", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda13
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalYisakeStoryEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("clues", "procClue,procFailClue", "all", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda11
+    }), new Rule("clues", "procClue,procFailClue", "all", Phase.AFTER_ROUTE, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda5
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalStoryClueEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("ark-raids", "areaStrike,refreshMission,areaFree", "reviewed-six;route3-1;current-week", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda3
+    }), new Rule("ark-raids", "areaStrike,refreshMission,areaFree", "reviewed-six;route3-1;current-week", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda2
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalArkCityEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("wing-garden", "special_agreement", "original3147/agreement2;committed-menu6-cycle;completed-only", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda21
+    }), new Rule("wing-garden", "special_agreement", "original3147/agreement2;committed-menu6-cycle;completed-only", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda11
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalWingGardenEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("story-heroes", "rewards.hero", "reviewed6030;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda14
+    }), new Rule("story-heroes", "rewards.hero", "reviewed6030;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda7
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalStoryHeroRewardEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("story-items", "rewards.items", "reviewed1004724;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda15
+    }), new Rule("story-items", "rewards.items", "reviewed1004724;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda8
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalStoryItemRewardEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("story-general", "rewards.items13624", "route31-4;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda13
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalStoryGeneralEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("flashback", "special_agreement.enter_flashback", "route35;day6;seven-native-rounds", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda9
-        @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
-        public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
-            LocalFlashbackEngine.refresh(result, localEventCatalog, progress);
-        }
-    }), new Rule("friendship", "rewards.friends", "ordinary;chapter12-separate", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda12
+    }), new Rule("friendship", "rewards.friends", "ordinary;chapter12-separate", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda6
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalStoryFriendshipEngine.refresh(result, localEventCatalog, progress);
         }
-    }), new Rule("memory-pieces", "rewards.items.memoryFrag", "reviewed-nonrepeatable;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda16
+    }), new Rule("memory-pieces", "rewards.items.memoryFrag", "reviewed-nonrepeatable;current-week-completion", Phase.AFTER_CONTENT, new Handler() { // from class: com.project7.localmanager.LocalStoryRuleRegistry$$ExternalSyntheticLambda9
         @Override // com.project7.localmanager.LocalStoryRuleRegistry.Handler
         public final void apply(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
             LocalStoryMemoryEngine.refresh(result, localEventCatalog, progress);

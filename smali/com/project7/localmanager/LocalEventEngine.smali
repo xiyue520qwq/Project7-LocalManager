@@ -317,14 +317,14 @@
 .method private beginNewbee(ILjava/lang/String;)Z
     .locals 3
 
-    .line 461
+    .line 444
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->newbeeCatalog:Lcom/project7/localmanager/LocalNewbeeCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalNewbeeCatalog;->get(I)Lcom/project7/localmanager/LocalNewbeeCatalog$Step;
 
     move-result-object v0
 
-    .line 462
+    .line 445
     if-eqz v0, :cond_2
 
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -345,7 +345,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 463
+    .line 446
     :cond_0
     invoke-direct {p0, v0, p2}, Lcom/project7/localmanager/LocalEventEngine;->requirementsMatch(Lcom/project7/localmanager/LocalNewbeeCatalog$Step;Ljava/lang/String;)Z
 
@@ -355,7 +355,7 @@
 
     goto :goto_0
 
-    .line 466
+    .line 449
     :cond_1
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -371,7 +371,7 @@
 
     return p1
 
-    .line 464
+    .line 447
     :cond_2
     :goto_0
     const/4 p1, 0x0
@@ -382,7 +382,7 @@
 .method private complete(IZ)V
     .locals 8
 
-    .line 524
+    .line 506
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
@@ -397,7 +397,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 525
+    .line 507
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
@@ -413,7 +413,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 526
+    .line 508
     :goto_0
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
@@ -433,7 +433,7 @@
 
     return-void
 
-    .line 527
+    .line 509
     :cond_1
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -447,7 +447,7 @@
 
     move-result v1
 
-    .line 528
+    .line 510
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -458,7 +458,7 @@
 
     invoke-interface {v2, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 529
+    .line 511
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -469,7 +469,7 @@
 
     invoke-interface {v2, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 530
+    .line 512
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -486,7 +486,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 531
+    .line 513
     :cond_2
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -504,7 +504,7 @@
 
     move-result-object v5
 
-    .line 532
+    .line 514
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v6, v6, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -521,7 +521,7 @@
 
     move-result-object v6
 
-    .line 531
+    .line 513
     invoke-interface {v4, v5, v6}, Ljava/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -544,7 +544,7 @@
 
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 533
+    .line 515
     :cond_3
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -556,7 +556,7 @@
 
     invoke-interface {v2, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 534
+    .line 516
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventDays:Ljava/util/Map;
@@ -587,7 +587,7 @@
 
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 535
+    .line 517
     const/16 v2, 0x417
 
     if-ne p1, v2, :cond_4
@@ -598,11 +598,11 @@
 
     iput-boolean v3, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->initPrologue:Z
 
-    .line 536
+    .line 518
     :cond_4
     if-eqz p2, :cond_9
 
-    .line 537
+    .line 519
     if-nez v0, :cond_5
 
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
@@ -636,7 +636,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 538
+    .line 520
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -654,14 +654,14 @@
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 539
+    .line 521
     invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_8
 
-    .line 540
+    .line 522
     if-eqz v1, :cond_7
 
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -670,7 +670,7 @@
 
     invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 541
+    .line 523
     :cond_7
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -678,11 +678,11 @@
 
     invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 543
+    .line 525
     :cond_8
     goto :goto_2
 
-    .line 545
+    .line 527
     :cond_9
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
@@ -690,26 +690,26 @@
 
     move-result-object p1
 
-    .line 546
+    .line 528
     if-eqz p1, :cond_a
 
     iget p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
 
     if-eqz p2, :cond_a
 
-    .line 547
+    .line 529
     iget p1, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
 
     invoke-virtual {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->beginNewbee(I)Z
 
-    .line 549
+    .line 531
     :cond_a
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->restoreMissionOutcomes()V
 
-    .line 550
+    .line 532
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 551
+    .line 533
     return-void
 .end method
 
@@ -726,7 +726,7 @@
         }
     .end annotation
 
-    .line 507
+    .line 490
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->completeConditions:Ljava/util/Map;
 
     invoke-interface {p3, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -737,31 +737,11 @@
 
     if-nez p2, :cond_0
 
-    .line 508
+    .line 491
     return p3
 
-    .line 510
+    .line 493
     :cond_0
-    iget p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->id:I
-
-    const/16 v0, 0x1f8e
-
-    if-ne p2, v0, :cond_1
-
-    iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    invoke-static {p2, v0}, Lcom/project7/localmanager/LocalDailyPureEngine;->selected([BLcom/project7/localmanager/LocalEventCatalog;)[I
-
-    move-result-object p2
-
-    if-nez p2, :cond_1
-
-    return p3
-
-    .line 511
-    :cond_1
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object p2, p2, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
@@ -776,7 +756,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_1
 
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
@@ -786,17 +766,17 @@
 
     iget v2, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->id:I
 
-    .line 512
+    .line 494
     invoke-static {p2, v0, v1, v2}, Lcom/project7/localmanager/LocalPuzzleEngine;->exitOutcome([BLcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)Ljava/lang/Integer;
 
     move-result-object p2
 
-    if-nez p2, :cond_2
+    if-nez p2, :cond_1
 
     return p3
 
-    .line 513
-    :cond_2
+    .line 495
+    :cond_1
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object p2, p2, Lcom/project7/localmanager/LocalEventCatalog;->consumptions:Ljava/util/Map;
@@ -813,18 +793,18 @@
 
     check-cast p2, [I
 
-    .line 514
+    .line 496
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_2
 
     aget v1, p2, p3
 
-    if-ne v1, v0, :cond_3
+    if-ne v1, v0, :cond_2
 
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
-    .line 515
+    .line 497
     const-string v2, "money"
 
     invoke-static {v1, v2}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -833,12 +813,12 @@
 
     aget p2, p2, v0
 
-    if-ge v1, p2, :cond_3
+    if-ge v1, p2, :cond_2
 
     return p3
 
-    .line 516
-    :cond_3
+    .line 498
+    :cond_2
     iget-object p1, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->completeConditions:Ljava/util/Map;
 
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -854,7 +834,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_5
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -862,7 +842,7 @@
 
     check-cast p2, Ljava/util/Map$Entry;
 
-    .line 517
+    .line 499
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v1, v1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -877,8 +857,8 @@
 
     check-cast v1, Ljava/util/Set;
 
-    .line 518
-    if-eqz v1, :cond_5
+    .line 500
+    if-eqz v1, :cond_4
 
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -890,28 +870,28 @@
 
     move-result p2
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_3
 
     goto :goto_1
 
-    .line 519
-    :cond_4
+    .line 501
+    :cond_3
     goto :goto_0
 
-    .line 518
-    :cond_5
+    .line 500
+    :cond_4
     :goto_1
     return p3
 
-    .line 520
-    :cond_6
+    .line 502
+    :cond_5
     return v0
 .end method
 
 .method private consumeStoryScene(II)Z
     .locals 3
 
-    .line 209
+    .line 206
     invoke-direct {p0, p1, p2}, Lcom/project7/localmanager/LocalEventEngine;->pendingStoryScene(II)Z
 
     move-result v0
@@ -922,7 +902,7 @@
 
     return p1
 
-    .line 210
+    .line 207
     :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -948,19 +928,19 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 211
+    .line 208
     const/4 v1, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 212
+    .line 209
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-interface {v0, p2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 213
+    .line 210
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result p2
@@ -969,7 +949,7 @@
 
     return v1
 
-    .line 215
+    .line 212
     :cond_1
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -989,7 +969,7 @@
 
     invoke-interface {p2, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 216
+    .line 213
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p2, p2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -1008,7 +988,7 @@
 
     invoke-interface {p2, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 217
+    .line 214
     return v1
 .end method
 
@@ -1023,7 +1003,7 @@
         }
     .end annotation
 
-    .line 854
+    .line 807
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1041,7 +1021,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 855
+    .line 808
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1054,16 +1034,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 856
+    .line 809
     const/4 p1, 0x1
 
     return p1
 
-    .line 858
+    .line 811
     :cond_0
     goto :goto_0
 
-    .line 859
+    .line 812
     :cond_1
     const/4 p1, 0x0
 
@@ -1071,7 +1051,7 @@
 .end method
 
 .method private dynamicTriggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;)Ljava/lang/String;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1084,43 +1064,7 @@
         }
     .end annotation
 
-    .line 807
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move-object v4, p4
-
-    invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalEventEngine;->dynamicTriggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method private dynamicTriggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/lang/String;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/project7/localmanager/LocalEventCatalog$Trigger;",
-            "II",
-            "Ljava/util/Collection<",
-            "Ljava/lang/Integer;",
-            ">;",
-            "Lcom/project7/localmanager/LocalPatrolCatalog;",
-            ")",
-            "Ljava/lang/String;"
-        }
-    .end annotation
-
-    .line 812
+    .line 765
     iget-object v0, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->areaClicks:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
@@ -1139,7 +1083,7 @@
 
     if-nez v0, :cond_0
 
-    .line 813
+    .line 766
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1158,7 +1102,7 @@
 
     return-object p1
 
-    .line 814
+    .line 767
     :cond_0
     iget v0, p0, Lcom/project7/localmanager/LocalEventEngine;->date:I
 
@@ -1198,7 +1142,7 @@
 
     goto/16 :goto_2
 
-    .line 817
+    .line 770
     :cond_1
     iget-object p1, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->predicates:Ljava/util/Map;
 
@@ -1226,7 +1170,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 818
+    .line 771
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -1241,7 +1185,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 819
+    .line 772
     const/4 v1, 0x2
 
     if-ne p3, v1, :cond_3
@@ -1262,7 +1206,7 @@
 
     if-nez v1, :cond_2
 
-    .line 820
+    .line 773
     :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1286,7 +1230,7 @@
 
     return-object p1
 
-    .line 823
+    .line 776
     :cond_4
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->conditionPass:Lcom/project7/localmanager/LocalStoryConditionPass;
 
@@ -1294,7 +1238,7 @@
 
     if-nez p2, :cond_5
 
-    .line 824
+    .line 777
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1317,7 +1261,7 @@
 
     goto :goto_1
 
-    .line 825
+    .line 778
     :cond_5
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1331,28 +1275,42 @@
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+
+    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
+
+    .line 779
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
+    move-result v0
 
-    .line 826
+    const/16 v6, 0x1d
+
+    if-ne v0, v6, :cond_6
+
     if-eqz p2, :cond_6
 
     new-instance v1, Lcom/project7/localmanager/LocalStoryConditions$Context;
 
-    invoke-direct {v1, p2, p3, p4, p5}, Lcom/project7/localmanager/LocalStoryConditions$Context;-><init>(IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)V
+    invoke-direct {v1, p2, p3}, Lcom/project7/localmanager/LocalStoryConditions$Context;-><init>(II)V
 
-    .line 824
+    .line 777
     :cond_6
-    invoke-static {v2, v0, v3, v4, v1}, Lcom/project7/localmanager/LocalStoryConditions;->evaluate(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalStoryConditions$Context;)Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
+    invoke-static {v2, v3, v4, v5, v1}, Lcom/project7/localmanager/LocalStoryConditions;->evaluate(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalStoryConditions$Context;)Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
 
     move-result-object v0
 
-    .line 827
+    .line 780
     :goto_1
     iget-boolean v1, v0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;->satisfied:Z
 
@@ -1380,15 +1338,15 @@
 
     return-object p1
 
-    .line 828
+    .line 781
     :cond_7
     goto/16 :goto_0
 
-    .line 829
+    .line 782
     :cond_8
     return-object v1
 
-    .line 816
+    .line 769
     :cond_9
     :goto_2
     const-string p1, "calendar"
@@ -1399,26 +1357,26 @@
 .method private isMutex(I)Z
     .locals 7
 
-    .line 722
+    .line 686
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalEventCatalog;->mutex(I)Ljava/util/Set;
 
     move-result-object v0
 
-    .line 723
+    .line 687
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v1, p1}, Lcom/project7/localmanager/LocalEventCatalog;->trigger(I)Lcom/project7/localmanager/LocalEventCatalog$Trigger;
 
     move-result-object v1
 
-    .line 724
+    .line 688
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
-    .line 725
+    .line 689
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
@@ -1429,15 +1387,15 @@
 
     move-result-object p1
 
-    .line 726
+    .line 690
     if-eqz p1, :cond_3
 
-    .line 727
+    .line 691
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 730
+    .line 694
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1459,14 +1417,14 @@
 
     move-result v4
 
-    .line 731
+    .line 695
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v5, v4}, Lcom/project7/localmanager/LocalEventCatalog;->get(I)Lcom/project7/localmanager/LocalEventCatalog$Event;
 
     move-result-object v5
 
-    .line 732
+    .line 696
     iget v6, p1, Lcom/project7/localmanager/LocalPuzzleEngine$Room;->incomplete:I
 
     if-eq v4, v6, :cond_0
@@ -1479,7 +1437,7 @@
 
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
-    .line 733
+    .line 697
     invoke-virtual {v5, v4}, Lcom/project7/localmanager/LocalEventCatalog;->successors(I)Ljava/util/Set;
 
     move-result-object v5
@@ -1503,15 +1461,15 @@
 
     invoke-interface {v3, v4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 734
+    .line 698
     :cond_1
     goto :goto_0
 
-    .line 730
+    .line 694
     :cond_2
     move-object v2, v3
 
-    .line 736
+    .line 700
     :cond_3
     invoke-static {v2, v0}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
@@ -1523,7 +1481,7 @@
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 737
+    .line 701
     invoke-static {p1, v0}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p1
@@ -1534,7 +1492,7 @@
 
     iget-object p1, v1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->mutex:Ljava/util/Set;
 
-    .line 738
+    .line 702
     invoke-static {v2, p1}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p1
@@ -1547,7 +1505,7 @@
 
     iget-object v0, v1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->mutex:Ljava/util/Set;
 
-    .line 739
+    .line 703
     invoke-static {p1, v0}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p1
@@ -1565,7 +1523,7 @@
     :goto_1
     const/4 p1, 0x1
 
-    .line 736
+    .line 700
     :goto_2
     return p1
 .end method
@@ -1573,7 +1531,7 @@
 .method static synthetic lambda$privateReplySatisfied$0(ILjava/lang/Integer;)Z
     .locals 0
 
-    .line 387
+    .line 370
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -1594,7 +1552,7 @@
 .method private pendingStoryScene(II)Z
     .locals 5
 
-    .line 200
+    .line 197
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -1625,7 +1583,7 @@
 
     return v1
 
-    .line 201
+    .line 198
     :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
@@ -1645,7 +1603,7 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 202
+    .line 199
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -1658,7 +1616,7 @@
 
     return v1
 
-    .line 203
+    .line 200
     :cond_1
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -1684,7 +1642,7 @@
 
     check-cast p1, Ljava/util/Set;
 
-    .line 205
+    .line 202
     const/4 v2, 0x1
 
     if-nez p1, :cond_2
@@ -1716,7 +1674,7 @@
 .method private privateMessageReady(I)Z
     .locals 7
 
-    .line 393
+    .line 376
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->privateMessageEvents:Ljava/util/Map;
@@ -1731,14 +1689,14 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 394
+    .line 377
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
     return v1
 
-    .line 395
+    .line 378
     :cond_0
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->checkingMessages:Ljava/util/Set;
 
@@ -1756,7 +1714,7 @@
 
     return v3
 
-    .line 397
+    .line 380
     :cond_1
     :try_start_0
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -1780,7 +1738,7 @@
 
     move-result v2
 
-    .line 398
+    .line 381
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->eventBaseline:Ljava/util/Set;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1795,7 +1753,7 @@
 
     goto :goto_0
 
-    .line 399
+    .line 382
     :cond_2
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -1813,7 +1771,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 408
+    .line 391
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->checkingMessages:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1822,10 +1780,10 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 399
+    .line 382
     return v1
 
-    .line 400
+    .line 383
     :cond_3
     :try_start_1
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
@@ -1834,14 +1792,14 @@
 
     move-result-object v4
 
-    .line 401
+    .line 384
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v5, v2}, Lcom/project7/localmanager/LocalEventCatalog;->trigger(I)Lcom/project7/localmanager/LocalEventCatalog$Trigger;
 
     move-result-object v5
 
-    .line 402
+    .line 385
     if-eqz v4, :cond_5
 
     iget-boolean v6, v4, Lcom/project7/localmanager/LocalEventCatalog$Event;->autoStart:Z
@@ -1864,7 +1822,7 @@
 
     iget-object v4, v4, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 403
+    .line 386
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -1877,7 +1835,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 404
+    .line 387
     invoke-direct {p0, v5}, Lcom/project7/localmanager/LocalEventEngine;->triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Z
 
     move-result v2
@@ -1889,7 +1847,7 @@
     :cond_4
     nop
 
-    .line 408
+    .line 391
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->checkingMessages:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1898,18 +1856,18 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 404
+    .line 387
     return v1
 
-    .line 405
+    .line 388
     :cond_5
     goto :goto_0
 
-    .line 406
+    .line 389
     :cond_6
     nop
 
-    .line 408
+    .line 391
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->checkingMessages:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1918,10 +1876,10 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 406
+    .line 389
     return v3
 
-    .line 408
+    .line 391
     :catchall_0
     move-exception v0
 
@@ -1933,14 +1891,14 @@
 
     invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 409
+    .line 392
     throw v0
 .end method
 
 .method private privateReplyBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Ljava/lang/String;
     .locals 3
 
-    .line 413
+    .line 396
     iget-object v0, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAll:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -1970,7 +1928,7 @@
 
     if-nez v2, :cond_0
 
-    .line 414
+    .line 397
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1987,7 +1945,7 @@
 
     return-object p1
 
-    .line 415
+    .line 398
     :cond_1
     iget-object v0, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAny:Ljava/util/Set;
 
@@ -2021,7 +1979,7 @@
 
     iget-object v0, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAny:Ljava/util/Set;
 
-    .line 416
+    .line 399
     invoke-interface {v0}, Ljava/util/Set;->stream()Ljava/util/stream/Stream;
 
     move-result-object v0
@@ -2036,7 +1994,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 417
+    .line 400
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2055,7 +2013,7 @@
 
     return-object p1
 
-    .line 418
+    .line 401
     :cond_2
     const/4 p1, 0x0
 
@@ -2063,9 +2021,9 @@
 .end method
 
 .method private privateReplySatisfied(I)Z
-    .locals 9
+    .locals 8
 
-    .line 365
+    .line 358
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->privateReplyMessages:Ljava/util/Map;
@@ -2080,68 +2038,42 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 366
+    .line 359
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
     return v1
 
-    .line 370
+    .line 360
     :cond_0
-    const/4 v2, 0x0
+    iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
-    const/16 v3, 0xfe6
+    const-string v3, "sd"
 
-    if-ne p1, v3, :cond_1
+    invoke-static {v2, v3}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
-    iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+    move-result-object v2
 
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
+    const-string v3, "pm"
 
-    invoke-static {v4, v5}, Lcom/project7/localmanager/LocalWenziCityEngine;->valid([BLcom/project7/localmanager/LocalTutorialStore$Progress;)Z
+    invoke-static {v2, v3}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
-    move-result v4
+    move-result-object v2
 
-    if-eqz v4, :cond_1
+    .line 361
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
+    move-result-object v0
 
-    .line 371
-    const/16 v5, 0xffa
-
-    invoke-virtual {v4, v5}, Lcom/project7/localmanager/LocalEventCatalog;->successors(I)Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v4, v3}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_4
 
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventCompletions:Ljava/util/Map;
-
-    .line 372
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-interface {v3, v4, v6}, Ljava/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2151,187 +2083,116 @@
 
     move-result v3
 
-    if-ne v3, v1, :cond_1
-
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->eventBaseline:Ljava/util/Set;
-
-    .line 373
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    .line 374
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    invoke-static {v3, v4, v5}, Lcom/project7/localmanager/LocalStoryItemRewardEngine;->completedDay([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)I
-
-    move-result v3
-
-    .line 375
-    const/4 v4, 0x3
-
-    if-lt v3, v4, :cond_1
-
-    const/4 v4, 0x5
-
-    if-gt v3, v4, :cond_1
-
-    return v1
-
-    .line 377
-    :cond_1
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    const-string v4, "sd"
-
-    invoke-static {v3, v4}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v3
-
-    const-string v4, "pm"
-
-    invoke-static {v3, v4}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v3
-
-    .line 378
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    .line 362
+    invoke-direct {p0, v3}, Lcom/project7/localmanager/LocalEventEngine;->privateMessageReady(I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Integer;
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    .line 379
-    invoke-direct {p0, v4}, Lcom/project7/localmanager/LocalEventEngine;->privateMessageReady(I)Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
+    if-nez v4, :cond_1
 
     goto :goto_0
 
-    .line 380
-    :cond_2
-    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v5
-
-    .line 381
-    iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v6, v6, Lcom/project7/localmanager/LocalEventCatalog;->privateReplies:Ljava/util/Map;
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 363
+    :cond_1
+    invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-interface {v6, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2, v4}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v4
 
-    check-cast v4, Ljava/util/Map;
+    .line 364
+    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
-    .line 382
-    const-string v6, "rp"
+    iget-object v5, v5, Lcom/project7/localmanager/LocalEventCatalog;->privateReplies:Ljava/util/Map;
 
-    invoke-static {v5, v6}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v3
 
-    .line 383
-    if-eqz v7, :cond_3
+    invoke-interface {v5, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map;
+
+    .line 365
+    const-string v5, "rp"
+
+    invoke-static {v4, v5}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    .line 366
+    if-eqz v6, :cond_2
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
-
-    invoke-interface {v4, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
     move-result-object v7
 
-    invoke-virtual {v8, v7}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v3, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v7
+    move-result-object v6
 
-    if-eqz v7, :cond_3
+    invoke-virtual {v7, v6}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
 
     return v1
 
-    .line 386
-    :cond_3
-    sget-object v7, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    .line 369
+    :cond_2
+    sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-static {v5, v6}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-virtual {v7, v5}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    .line 387
-    invoke-interface {v4}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-static {v4, v5}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v4
 
-    invoke-interface {v4}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
-
-    move-result-object v4
-
-    new-instance v5, Lcom/project7/localmanager/LocalEventEngine$$ExternalSyntheticLambda0;
-
-    invoke-direct {v5, p1}, Lcom/project7/localmanager/LocalEventEngine$$ExternalSyntheticLambda0;-><init>(I)V
-
-    invoke-interface {v4, v5}, Ljava/util/stream/Stream;->allMatch(Ljava/util/function/Predicate;)Z
+    invoke-virtual {v6, v4}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
+
+    .line 370
+    invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
+
+    move-result-object v3
+
+    new-instance v4, Lcom/project7/localmanager/LocalEventEngine$$ExternalSyntheticLambda0;
+
+    invoke-direct {v4, p1}, Lcom/project7/localmanager/LocalEventEngine$$ExternalSyntheticLambda0;-><init>(I)V
+
+    invoke-interface {v3, v4}, Ljava/util/stream/Stream;->allMatch(Ljava/util/function/Predicate;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
 
     return v1
 
-    .line 388
-    :cond_4
+    .line 371
+    :cond_3
     goto :goto_0
 
-    .line 389
-    :cond_5
-    return v2
+    .line 372
+    :cond_4
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
 .method private reevaluateLifecycle()V
     .locals 8
 
-    .line 604
+    .line 586
     iget-wide v0, p0, Lcom/project7/localmanager/LocalEventEngine;->lifecycleScans:J
 
     const-wide/16 v2, 0x1
@@ -2340,19 +2201,10 @@
 
     iput-wide v0, p0, Lcom/project7/localmanager/LocalEventEngine;->lifecycleScans:J
 
-    .line 605
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    invoke-static {v0, v1, v2}, Lcom/project7/localmanager/LocalDailyPureEngine;->restore([BLcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)V
-
-    .line 606
+    .line 587
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->repairFirstBattleEvents()V
 
-    .line 607
+    .line 588
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -2378,7 +2230,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 608
+    .line 589
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -2410,7 +2262,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 609
+    .line 590
     :cond_1
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2418,11 +2270,11 @@
 
     invoke-interface {v2, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 610
+    .line 591
     :cond_2
     goto :goto_0
 
-    .line 611
+    .line 592
     :cond_3
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2442,7 +2294,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 612
+    .line 593
     invoke-direct {p0, v0}, Lcom/project7/localmanager/LocalEventEngine;->containsEmergency(Ljava/util/Collection;)Z
 
     move-result v0
@@ -2460,16 +2312,16 @@
     :goto_1
     move v0, v1
 
-    .line 613
+    .line 594
     :goto_2
     if-eqz v0, :cond_6
 
-    .line 614
+    .line 595
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iput-boolean v1, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
 
-    .line 615
+    .line 596
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     const-string v1, "emergency"
@@ -2478,7 +2330,7 @@
 
     goto :goto_3
 
-    .line 616
+    .line 597
     :cond_6
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2486,24 +2338,24 @@
 
     if-eqz v0, :cond_7
 
-    .line 617
+    .line 598
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iput-boolean v2, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
 
-    .line 618
+    .line 599
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     const-string v1, "city"
 
     iput-object v1, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->status:Ljava/lang/String;
 
-    .line 620
+    .line 601
     :cond_7
     :goto_3
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->conditionPass:Lcom/project7/localmanager/LocalStoryConditionPass;
 
-    .line 621
+    .line 602
     new-instance v1, Lcom/project7/localmanager/LocalStoryConditionPass;
 
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
@@ -2514,10 +2366,10 @@
 
     invoke-direct {v1, v3, v4, v5}, Lcom/project7/localmanager/LocalStoryConditionPass;-><init>([BLcom/project7/localmanager/LocalTutorialStore$Progress;Z)V
 
-    .line 622
+    .line 603
     iput-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->conditionPass:Lcom/project7/localmanager/LocalStoryConditionPass;
 
-    .line 624
+    .line 605
     :try_start_0
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
@@ -2534,7 +2386,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_d
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2542,10 +2394,10 @@
 
     check-cast v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;
 
-    .line 628
+    .line 610
     iget v5, v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    const/16 v6, 0x1e46
+    const/16 v6, 0x3ed
 
     if-ne v5, v6, :cond_8
 
@@ -2553,7 +2405,7 @@
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
-    .line 629
+    .line 611
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -2568,7 +2420,7 @@
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 630
+    .line 612
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -2578,62 +2430,6 @@
     move-result v5
 
     if-nez v5, :cond_8
-
-    .line 631
-    invoke-direct {p0, v4}, Lcom/project7/localmanager/LocalEventEngine;->triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_8
-
-    .line 632
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    .line 638
-    :cond_8
-    iget v5, v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
-
-    const/16 v6, 0x3ed
-
-    if-ne v5, v6, :cond_9
-
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
-
-    .line 639
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-interface {v5, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_9
-
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
-
-    .line 640
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-interface {v5, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_9
 
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2641,14 +2437,14 @@
 
     iget-object v7, v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAll:Ljava/util/Set;
 
-    .line 641
+    .line 613
     invoke-interface {v5, v7}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result v5
 
-    if-nez v5, :cond_9
+    if-nez v5, :cond_8
 
-    .line 642
+    .line 614
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -2659,8 +2455,8 @@
 
     invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 644
-    :cond_9
+    .line 616
+    :cond_8
     iget v5, p0, Lcom/project7/localmanager/LocalEventEngine;->clientOperation:I
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -2671,7 +2467,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_9
 
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2679,7 +2475,7 @@
 
     iget v6, v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    .line 645
+    .line 617
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2688,9 +2484,9 @@
 
     move-result v5
 
-    if-nez v5, :cond_a
+    if-nez v5, :cond_9
 
-    .line 646
+    .line 618
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -2703,13 +2499,13 @@
 
     invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 648
-    :cond_a
+    .line 620
+    :cond_9
     invoke-direct {p0, v4}, Lcom/project7/localmanager/LocalEventEngine;->privateReplyBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Ljava/lang/String;
 
     move-result-object v5
 
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_a
 
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2723,8 +2519,8 @@
 
     invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 649
-    :cond_b
+    .line 621
+    :cond_a
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalEventCatalog;->effects:Ljava/util/Map;
@@ -2741,7 +2537,7 @@
 
     check-cast v5, Lcom/project7/localmanager/LocalEventCatalog$Effect;
 
-    .line 650
+    .line 622
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget v7, v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
@@ -2750,8 +2546,8 @@
 
     move-result-object v6
 
-    .line 651
-    if-eqz v5, :cond_c
+    .line 623
+    if-eqz v5, :cond_b
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalEventCatalog$Effect;->privateMessages:Ljava/util/Set;
 
@@ -2759,34 +2555,34 @@
 
     move-result v5
 
-    if-nez v5, :cond_c
+    if-nez v5, :cond_b
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_b
 
     iget-boolean v5, v6, Lcom/project7/localmanager/LocalEventCatalog$Event;->autoStart:Z
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_b
 
     iget v5, v6, Lcom/project7/localmanager/LocalEventCatalog$Event;->dialog:I
 
-    if-nez v5, :cond_c
+    if-nez v5, :cond_b
 
     iget-object v5, v6, Lcom/project7/localmanager/LocalEventCatalog$Event;->completeConditions:Ljava/util/Map;
 
-    .line 652
+    .line 624
     invoke-interface {v5}, Ljava/util/Map;->isEmpty()Z
 
     move-result v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_b
 
     invoke-direct {p0, v4}, Lcom/project7/localmanager/LocalEventEngine;->triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Z
 
     move-result v5
 
-    if-nez v5, :cond_c
+    if-nez v5, :cond_b
 
-    .line 653
+    .line 625
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -2799,8 +2595,8 @@
 
     invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 654
-    :cond_c
+    .line 626
+    :cond_b
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -2815,7 +2611,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_d
+    if-nez v5, :cond_c
 
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -2823,7 +2619,7 @@
 
     iget v6, v4, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    .line 655
+    .line 627
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2832,16 +2628,16 @@
 
     move-result v5
 
-    if-nez v5, :cond_d
+    if-nez v5, :cond_c
 
-    .line 656
+    .line 628
     invoke-direct {p0, v4}, Lcom/project7/localmanager/LocalEventEngine;->triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_c
 
-    .line 657
+    .line 629
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -2856,15 +2652,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 659
-    :cond_d
+    .line 631
+    :cond_c
     goto/16 :goto_4
 
-    .line 661
-    :cond_e
+    .line 633
+    :cond_d
     iput-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->conditionPass:Lcom/project7/localmanager/LocalStoryConditionPass;
 
-    .line 662
+    .line 634
     iget v0, v1, Lcom/project7/localmanager/LocalStoryConditionPass;->requests:I
 
     iput v0, p0, Lcom/project7/localmanager/LocalEventEngine;->lastConditionRequests:I
@@ -2873,19 +2669,19 @@
 
     iput v0, p0, Lcom/project7/localmanager/LocalEventEngine;->lastConditionEvaluations:I
 
-    .line 663
+    .line 635
     nop
 
-    .line 664
+    .line 636
     return-void
 
-    .line 661
+    .line 633
     :catchall_0
     move-exception v2
 
     iput-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->conditionPass:Lcom/project7/localmanager/LocalStoryConditionPass;
 
-    .line 662
+    .line 634
     iget v0, v1, Lcom/project7/localmanager/LocalStoryConditionPass;->requests:I
 
     iput v0, p0, Lcom/project7/localmanager/LocalEventEngine;->lastConditionRequests:I
@@ -2894,14 +2690,14 @@
 
     iput v0, p0, Lcom/project7/localmanager/LocalEventEngine;->lastConditionEvaluations:I
 
-    .line 663
+    .line 635
     throw v2
 .end method
 
 .method private repairConflictingFinale()V
     .locals 6
 
-    .line 745
+    .line 709
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -2939,7 +2735,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 746
+    .line 710
     const/16 v1, 0x1f7d
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2970,7 +2766,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
-    .line 747
+    .line 711
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -2984,7 +2780,7 @@
     :cond_1
     return-void
 
-    .line 748
+    .line 712
     :cond_2
     const/4 v0, 0x3
 
@@ -2999,7 +2795,7 @@
 
     aget v3, v1, v2
 
-    .line 749
+    .line 713
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v4, v4, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -3010,7 +2806,7 @@
 
     invoke-interface {v4, v5}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 750
+    .line 714
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v4, v4, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -3021,7 +2817,7 @@
 
     invoke-interface {v4, v5}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 751
+    .line 715
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v4, v4, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -3034,7 +2830,7 @@
 
     check-cast v4, Ljava/util/Set;
 
-    .line 752
+    .line 716
     if-eqz v4, :cond_3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3043,13 +2839,13 @@
 
     invoke-interface {v4, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 748
+    .line 712
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 754
+    .line 718
     :cond_4
     return-void
 
@@ -3066,7 +2862,7 @@
 .method private repairFirstBattleEvents()V
     .locals 3
 
-    .line 833
+    .line 786
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->weekIndex:I
@@ -3075,7 +2871,7 @@
 
     return-void
 
-    .line 834
+    .line 787
     :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -3093,10 +2889,10 @@
 
     if-nez v0, :cond_1
 
-    .line 835
+    .line 788
     return-void
 
-    .line 837
+    .line 790
     :cond_1
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -3120,7 +2916,7 @@
 
     const/16 v1, 0x40f
 
-    .line 838
+    .line 791
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -3137,7 +2933,7 @@
 
     const/16 v1, 0x410
 
-    .line 839
+    .line 792
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -3159,13 +2955,13 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 840
+    .line 793
     :goto_1
     const/16 v1, 0x413
 
     if-nez v0, :cond_5
 
-    .line 841
+    .line 794
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -3182,7 +2978,7 @@
 
     if-nez v0, :cond_4
 
-    .line 842
+    .line 795
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -3195,7 +2991,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 844
+    .line 797
     :cond_4
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -3207,10 +3003,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 845
+    .line 798
     return-void
 
-    .line 847
+    .line 800
     :cond_5
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -3230,7 +3026,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 848
+    .line 801
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -3241,7 +3037,7 @@
 
     if-nez v0, :cond_6
 
-    .line 849
+    .line 802
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -3252,7 +3048,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 851
+    .line 804
     :cond_6
     return-void
 .end method
@@ -3260,14 +3056,14 @@
 .method private repeatablePatrol(I)Z
     .locals 1
 
-    .line 709
+    .line 673
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalEventCatalog;->get(I)Lcom/project7/localmanager/LocalEventCatalog$Event;
 
     move-result-object p1
 
-    .line 710
+    .line 674
     if-eqz p1, :cond_0
 
     iget-boolean p1, p1, Lcom/project7/localmanager/LocalEventCatalog$Event;->repeatable:Z
@@ -3288,7 +3084,7 @@
 .method private requirementsMatch(Lcom/project7/localmanager/LocalNewbeeCatalog$Step;Ljava/lang/String;)Z
     .locals 4
 
-    .line 566
+    .line 548
     iget-object v0, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->uiPanel:Ljava/lang/String;
 
     const-string v1, "card_"
@@ -3309,10 +3105,10 @@
 
     if-nez p2, :cond_0
 
-    .line 567
+    .line 549
     return v1
 
-    .line 569
+    .line 551
     :cond_0
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -3326,10 +3122,10 @@
 
     if-nez p2, :cond_1
 
-    .line 570
+    .line 552
     return v1
 
-    .line 572
+    .line 554
     :cond_1
     iget-object p2, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->requireEventOr:Ljava/util/Set;
 
@@ -3345,17 +3141,17 @@
 
     iget-object v0, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->requireEventOr:Ljava/util/Set;
 
-    .line 573
+    .line 555
     invoke-static {p2, v0}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
-    .line 574
+    .line 556
     return v1
 
-    .line 576
+    .line 558
     :cond_2
     iget-object p2, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->requireNotEventAnd:Ljava/util/Set;
 
@@ -3376,7 +3172,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 577
+    .line 559
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -3391,21 +3187,21 @@
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 578
+    .line 560
     invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 579
+    .line 561
     return v1
 
-    .line 581
+    .line 563
     :cond_3
     goto :goto_0
 
-    .line 582
+    .line 564
     :cond_4
     iget-object p2, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->requireNotEventOr:Ljava/util/Set;
 
@@ -3417,10 +3213,10 @@
 
     if-nez p2, :cond_7
 
-    .line 583
+    .line 565
     nop
 
-    .line 584
+    .line 566
     iget-object p2, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->requireNotEventOr:Ljava/util/Set;
 
     invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -3440,7 +3236,7 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 585
+    .line 567
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -3451,30 +3247,30 @@
 
     if-nez v2, :cond_5
 
-    .line 586
+    .line 568
     nop
 
-    .line 587
+    .line 569
     move p2, v0
 
     goto :goto_2
 
-    .line 589
+    .line 571
     :cond_5
     goto :goto_1
 
-    .line 584
+    .line 566
     :cond_6
     move p2, v1
 
-    .line 590
+    .line 572
     :goto_2
     if-nez p2, :cond_7
 
-    .line 591
+    .line 573
     return v1
 
-    .line 594
+    .line 576
     :cond_7
     iget-object p1, p1, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->requireNewbees:Ljava/util/Set;
 
@@ -3495,7 +3291,7 @@
 
     check-cast p2, Ljava/lang/Integer;
 
-    .line 595
+    .line 577
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->finishedNewbees:Ljava/util/Set;
@@ -3510,21 +3306,21 @@
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingNewbees:Ljava/util/Set;
 
-    .line 596
+    .line 578
     invoke-interface {v2, p2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p2
 
     if-nez p2, :cond_8
 
-    .line 597
+    .line 579
     return v1
 
-    .line 599
+    .line 581
     :cond_8
     goto :goto_3
 
-    .line 600
+    .line 582
     :cond_9
     return v0
 .end method
@@ -3532,7 +3328,7 @@
 .method private restoreBattleConditions()V
     .locals 5
 
-    .line 668
+    .line 640
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -3554,7 +3350,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 669
+    .line 641
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -3565,7 +3361,7 @@
 
     move-result-object v1
 
-    .line 670
+    .line 642
     const-string v2, "battle"
 
     if-nez v1, :cond_0
@@ -3583,7 +3379,7 @@
 
     check-cast v3, Ljava/util/Set;
 
-    .line 671
+    .line 643
     :goto_1
     if-eqz v1, :cond_1
 
@@ -3599,23 +3395,23 @@
 
     if-eqz v3, :cond_1
 
-    .line 672
+    .line 644
     invoke-interface {v3}, Ljava/util/Set;->size()I
 
     move-result v1
 
     if-ne v1, v4, :cond_1
 
-    .line 673
+    .line 645
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     invoke-virtual {v1, v2, v3}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 675
+    .line 647
     :cond_1
     goto :goto_0
 
-    .line 676
+    .line 648
     :cond_2
     return-void
 .end method
@@ -3623,7 +3419,7 @@
 .method private restoreExternalGuideEvents()V
     .locals 4
 
-    .line 494
+    .line 477
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->finishedNewbees:Ljava/util/Set;
@@ -3650,7 +3446,7 @@
 
     move-result v1
 
-    .line 495
+    .line 478
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->newbeeCatalog:Lcom/project7/localmanager/LocalNewbeeCatalog;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalNewbeeCatalog;->externalGuideEvents:Ljava/util/Map;
@@ -3665,14 +3461,14 @@
 
     check-cast v2, Ljava/util/Set;
 
-    .line 496
+    .line 479
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->newbeeCatalog:Lcom/project7/localmanager/LocalNewbeeCatalog;
 
     invoke-virtual {v3, v1}, Lcom/project7/localmanager/LocalNewbeeCatalog;->get(I)Lcom/project7/localmanager/LocalNewbeeCatalog$Step;
 
     move-result-object v1
 
-    .line 497
+    .line 480
     if-eqz v2, :cond_0
 
     if-eqz v1, :cond_0
@@ -3687,7 +3483,7 @@
 
     goto :goto_0
 
-    .line 498
+    .line 481
     :cond_1
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -3714,11 +3510,11 @@
 
     goto :goto_1
 
-    .line 499
+    .line 482
     :cond_2
     goto :goto_0
 
-    .line 500
+    .line 483
     :cond_3
     return-void
 .end method
@@ -3726,7 +3522,7 @@
 .method private restoreMissionOutcomes()V
     .locals 8
 
-    .line 257
+    .line 254
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -3743,7 +3539,7 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 258
+    .line 255
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v1, v1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -3760,7 +3556,7 @@
 
     check-cast v1, Ljava/util/Set;
 
-    .line 259
+    .line 256
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -3777,18 +3573,25 @@
 
     check-cast v2, Ljava/util/Set;
 
-    .line 260
+    .line 257
+    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+
+    invoke-static {v3}, Lcom/project7/localmanager/LocalChapterCityEngine;->active([B)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :cond_0
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_3
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3800,52 +3603,7 @@
 
     move-result v4
 
-    .line 261
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    invoke-static {v5}, Lcom/project7/localmanager/LocalChapterCityEngine;->active([B)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    invoke-static {v4}, Lcom/project7/localmanager/LocalCityProgress;->chapterScene(I)Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
-
-    :cond_1
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    .line 262
-    invoke-static {v5, v6, v4}, Lcom/project7/localmanager/LocalDalviraCityEngine;->ownsOutcome([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
-
-    const/16 v5, 0x140
-
-    if-ne v4, v5, :cond_0
-
-    iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    .line 263
-    invoke-static {v5, v6}, Lcom/project7/localmanager/LocalAlanCityEngine;->active([BLcom/project7/localmanager/LocalTutorialStore$Progress;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
-
-    goto :goto_0
-
-    .line 264
-    :cond_2
+    .line 258
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalEventCatalog;->cityOutcomes:Ljava/util/Map;
@@ -3860,13 +3618,13 @@
 
     check-cast v4, Lcom/project7/localmanager/LocalEventCatalog$Outcome;
 
-    .line 265
-    if-nez v4, :cond_3
+    .line 259
+    if-nez v4, :cond_0
 
     goto :goto_0
 
-    .line 266
-    :cond_3
+    .line 260
+    :cond_0
     iget-object v4, v4, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->success:Ljava/util/Set;
 
     invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -3878,7 +3636,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_2
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3890,31 +3648,31 @@
 
     move-result v5
 
-    .line 267
+    .line 261
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v6, v5}, Lcom/project7/localmanager/LocalEventCatalog;->get(I)Lcom/project7/localmanager/LocalEventCatalog$Event;
 
     move-result-object v6
 
-    .line 268
-    if-eqz v6, :cond_4
+    .line 262
+    if-eqz v6, :cond_1
 
     iget-boolean v6, v6, Lcom/project7/localmanager/LocalEventCatalog$Event;->release:Z
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_1
 
     invoke-direct {p0, v5}, Lcom/project7/localmanager/LocalEventEngine;->isMutex(I)Z
 
     move-result v6
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_1
 
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v6, v6, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
-    .line 269
+    .line 263
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -3923,7 +3681,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_1
 
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -3937,9 +3695,9 @@
 
     move-result v6
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_1
 
-    .line 270
+    .line 264
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v6, v6, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -3950,16 +3708,16 @@
 
     invoke-interface {v6, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 271
-    :cond_4
+    .line 265
+    :cond_1
     goto :goto_1
 
-    .line 272
-    :cond_5
-    goto/16 :goto_0
+    .line 266
+    :cond_2
+    goto :goto_0
 
-    .line 273
-    :cond_6
+    .line 267
+    :cond_3
     new-instance v3, Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -3977,7 +3735,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_b
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3989,7 +3747,7 @@
 
     move-result v4
 
-    .line 274
+    .line 268
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalEventCatalog;->outcomes:Ljava/util/Map;
@@ -4004,13 +3762,13 @@
 
     check-cast v5, Lcom/project7/localmanager/LocalEventCatalog$Outcome;
 
-    .line 275
-    if-nez v5, :cond_7
+    .line 269
+    if-nez v5, :cond_4
 
     goto :goto_2
 
-    .line 277
-    :cond_7
+    .line 271
+    :cond_4
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -4019,7 +3777,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_9
+    if-nez v6, :cond_6
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4029,7 +3787,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_8
+    if-nez v6, :cond_5
 
     iget v6, v5, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->scene:I
 
@@ -4041,22 +3799,22 @@
 
     move-result v6
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_5
 
     goto :goto_3
 
-    :cond_8
+    :cond_5
     const/4 v6, 0x0
 
     goto :goto_4
 
-    :cond_9
+    :cond_6
     :goto_3
     const/4 v6, 0x1
 
-    .line 278
+    .line 272
     :goto_4
-    if-nez v6, :cond_a
+    if-nez v6, :cond_7
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4066,19 +3824,19 @@
 
     move-result v4
 
-    if-nez v4, :cond_a
+    if-nez v4, :cond_7
 
     goto :goto_2
 
-    .line 279
-    :cond_a
-    if-eqz v6, :cond_b
+    .line 273
+    :cond_7
+    if-eqz v6, :cond_8
 
     iget-object v4, v5, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->success:Ljava/util/Set;
 
     goto :goto_5
 
-    :cond_b
+    :cond_8
     iget-object v4, v5, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->failure:Ljava/util/Set;
 
     :goto_5
@@ -4091,7 +3849,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_a
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4103,31 +3861,31 @@
 
     move-result v5
 
-    .line 280
+    .line 274
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v6, v5}, Lcom/project7/localmanager/LocalEventCatalog;->get(I)Lcom/project7/localmanager/LocalEventCatalog$Event;
 
     move-result-object v6
 
-    .line 281
-    if-eqz v6, :cond_c
+    .line 275
+    if-eqz v6, :cond_9
 
     iget-boolean v6, v6, Lcom/project7/localmanager/LocalEventCatalog$Event;->release:Z
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_9
 
     invoke-direct {p0, v5}, Lcom/project7/localmanager/LocalEventEngine;->isMutex(I)Z
 
     move-result v6
 
-    if-nez v6, :cond_c
+    if-nez v6, :cond_9
 
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v6, v6, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
-    .line 282
+    .line 276
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -4136,7 +3894,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_c
+    if-nez v6, :cond_9
 
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -4150,9 +3908,9 @@
 
     move-result v6
 
-    if-nez v6, :cond_c
+    if-nez v6, :cond_9
 
-    .line 283
+    .line 277
     iget-object v6, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v6, v6, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -4163,23 +3921,23 @@
 
     invoke-interface {v6, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 284
-    :cond_c
+    .line 278
+    :cond_9
     goto :goto_6
 
-    .line 285
-    :cond_d
+    .line 279
+    :cond_a
     goto/16 :goto_2
 
-    .line 286
-    :cond_e
+    .line 280
+    :cond_b
     return-void
 .end method
 
 .method private restorePendingNewbees()V
     .locals 4
 
-    .line 554
+    .line 536
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -4202,7 +3960,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 555
+    .line 537
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -4213,7 +3971,7 @@
 
     move-result-object v1
 
-    .line 556
+    .line 538
     if-eqz v1, :cond_0
 
     iget v2, v1, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
@@ -4226,7 +3984,7 @@
 
     iget v3, v1, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
 
-    .line 557
+    .line 539
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -4243,7 +4001,7 @@
 
     iget v3, v1, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
 
-    .line 558
+    .line 540
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -4254,19 +4012,19 @@
 
     if-eqz v2, :cond_1
 
-    .line 559
+    .line 541
     goto :goto_0
 
-    .line 561
+    .line 543
     :cond_1
     iget v1, v1, Lcom/project7/localmanager/LocalEventCatalog$Event;->newbeeEvent:I
 
     invoke-virtual {p0, v1}, Lcom/project7/localmanager/LocalEventEngine;->beginNewbee(I)Z
 
-    .line 562
+    .line 544
     goto :goto_0
 
-    .line 563
+    .line 545
     :cond_2
     return-void
 .end method
@@ -4274,7 +4032,7 @@
 .method private restorePrivateReplies()V
     .locals 5
 
-    .line 349
+    .line 342
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
     const-string v1, "sd"
@@ -4289,7 +4047,7 @@
 
     move-result-object v0
 
-    .line 350
+    .line 343
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v1, v1, Lcom/project7/localmanager/LocalEventCatalog;->privateReplies:Ljava/util/Map;
@@ -4316,7 +4074,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 351
+    .line 344
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -4335,7 +4093,7 @@
 
     goto :goto_0
 
-    .line 352
+    .line 345
     :cond_1
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -4357,7 +4115,7 @@
 
     move-result-object v3
 
-    .line 353
+    .line 346
     if-nez v3, :cond_2
 
     const/4 v2, 0x0
@@ -4377,7 +4135,7 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 354
+    .line 347
     :goto_1
     if-eqz v2, :cond_0
 
@@ -4401,7 +4159,7 @@
 
     if-nez v3, :cond_0
 
-    .line 355
+    .line 348
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -4414,7 +4172,7 @@
 
     goto :goto_0
 
-    .line 356
+    .line 349
     :cond_3
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
@@ -4426,7 +4184,7 @@
 
     move-result-object v3
 
-    .line 357
+    .line 350
     if-eqz v3, :cond_0
 
     iget-boolean v4, v3, Lcom/project7/localmanager/LocalEventCatalog$Event;->release:Z
@@ -4435,7 +4193,7 @@
 
     goto :goto_0
 
-    .line 359
+    .line 352
     :cond_4
     iget v4, v3, Lcom/project7/localmanager/LocalEventCatalog$Event;->dialog:I
 
@@ -4459,7 +4217,7 @@
 
     goto :goto_2
 
-    .line 360
+    .line 353
     :cond_5
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -4467,11 +4225,11 @@
 
     invoke-interface {v3, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 361
+    .line 354
     :goto_2
     goto/16 :goto_0
 
-    .line 362
+    .line 355
     :cond_6
     return-void
 .end method
@@ -4479,7 +4237,7 @@
 .method private triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;II)Ljava/lang/String;
     .locals 1
 
-    .line 757
+    .line 721
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -4492,7 +4250,7 @@
 .end method
 
 .method private triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;)Ljava/lang/String;
-    .locals 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -4505,127 +4263,73 @@
         }
     .end annotation
 
-    .line 762
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move-object v4, p4
-
-    invoke-direct/range {v0 .. v5}, Lcom/project7/localmanager/LocalEventEngine;->triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method private triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/lang/String;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/project7/localmanager/LocalEventCatalog$Trigger;",
-            "II",
-            "Ljava/util/Collection<",
-            "Ljava/lang/Integer;",
-            ">;",
-            "Lcom/project7/localmanager/LocalPatrolCatalog;",
-            ")",
-            "Ljava/lang/String;"
-        }
-    .end annotation
-
-    .line 767
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    iget v2, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
-
-    invoke-static {v0, v1, v2}, Lcom/project7/localmanager/LocalDalviraStoryEngine;->blocked([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string p1, "dalvira-dispatch-closed"
-
-    return-object p1
-
-    .line 768
-    :cond_0
-    invoke-direct/range {p0 .. p5}, Lcom/project7/localmanager/LocalEventEngine;->dynamicTriggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/lang/String;
+    .line 726
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/project7/localmanager/LocalEventEngine;->dynamicTriggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 769
-    if-eqz p4, :cond_1
+    .line 727
+    if-eqz p4, :cond_0
 
     return-object p4
 
-    .line 770
-    :cond_1
+    .line 728
+    :cond_0
     invoke-direct {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->privateReplyBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 771
-    if-eqz p4, :cond_2
+    .line 729
+    if-eqz p4, :cond_1
 
     return-object p4
 
-    .line 772
-    :cond_2
+    .line 730
+    :cond_1
     iget-object p4, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->patrolAreas:Ljava/util/Set;
 
     invoke-interface {p4}, Ljava/util/Set;->isEmpty()Z
 
     move-result p4
 
-    if-nez p4, :cond_3
+    if-nez p4, :cond_2
 
     iget-object p4, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->patrolAreas:Ljava/util/Set;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p5
+    move-result-object v0
 
-    invoke-interface {p4, p5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p4
 
-    if-eqz p4, :cond_4
+    if-eqz p4, :cond_3
 
-    :cond_3
+    :cond_2
     iget-object p4, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->clientOps:Ljava/util/Set;
 
-    .line 773
+    .line 731
     invoke-interface {p4}, Ljava/util/Set;->isEmpty()Z
 
     move-result p4
 
-    if-nez p4, :cond_5
+    if-nez p4, :cond_4
 
     iget-object p4, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->clientOps:Ljava/util/Set;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p5
+    move-result-object v0
 
-    invoke-interface {p4, p5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p4
 
-    if-nez p4, :cond_5
+    if-nez p4, :cond_4
 
-    .line 774
-    :cond_4
+    .line 732
+    :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4648,8 +4352,8 @@
 
     return-object p1
 
-    .line 776
-    :cond_5
+    .line 734
+    :cond_4
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
@@ -4658,16 +4362,16 @@
 
     move-result-object p2
 
-    .line 777
-    if-eqz p2, :cond_c
+    .line 735
+    if-eqz p2, :cond_b
 
     iget-boolean p3, p2, Lcom/project7/localmanager/LocalEventCatalog$Event;->release:Z
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_b
 
     iget-boolean p2, p2, Lcom/project7/localmanager/LocalEventCatalog$Event;->autoTrigger:Z
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_b
 
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -4675,21 +4379,21 @@
 
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAll:Ljava/util/Set;
 
-    .line 778
+    .line 736
     invoke-interface {p2, p3}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_b
 
     iget-object p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAny:Ljava/util/Set;
 
-    .line 779
+    .line 737
     invoke-interface {p2}, Ljava/util/Set;->isEmpty()Z
 
     move-result p2
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_5
 
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -4697,26 +4401,26 @@
 
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAny:Ljava/util/Set;
 
-    .line 780
+    .line 738
     invoke-static {p2, p3}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p2
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_b
 
-    :cond_6
+    :cond_5
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p2, p2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->mutex:Ljava/util/Set;
 
-    .line 781
+    .line 739
     invoke-static {p2, p3}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_b
 
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -4724,29 +4428,29 @@
 
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->mutex:Ljava/util/Set;
 
-    .line 782
+    .line 740
     invoke-static {p2, p3}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_b
 
     iget p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    .line 783
+    .line 741
     invoke-direct {p0, p2}, Lcom/project7/localmanager/LocalEventEngine;->isMutex(I)Z
 
     move-result p2
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_b
 
     iget-object p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->emergency:Ljava/lang/Integer;
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_6
 
     iget-object p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->emergency:Ljava/lang/Integer;
 
-    .line 785
+    .line 743
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
@@ -4755,12 +4459,12 @@
 
     iget-boolean p3, p3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
 
-    if-eq p2, p3, :cond_7
+    if-eq p2, p3, :cond_6
 
     goto/16 :goto_1
 
-    .line 788
-    :cond_7
+    .line 746
+    :cond_6
     iget-object p2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p2, p2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
@@ -4773,28 +4477,28 @@
 
     check-cast p2, Ljava/util/Set;
 
-    .line 789
+    .line 747
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->battles:Ljava/util/Set;
 
     invoke-interface {p3}, Ljava/util/Set;->isEmpty()Z
 
     move-result p3
 
-    if-nez p3, :cond_9
+    if-nez p3, :cond_8
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_7
 
     iget-object p3, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->battles:Ljava/util/Set;
 
-    .line 790
+    .line 748
     invoke-interface {p2, p3}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result p2
 
-    if-nez p2, :cond_9
+    if-nez p2, :cond_8
 
-    .line 791
-    :cond_8
+    .line 749
+    :cond_7
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4813,20 +4517,20 @@
 
     return-object p1
 
-    .line 793
-    :cond_9
+    .line 751
+    :cond_8
     iget-object p2, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->areas:Ljava/util/Map;
 
     invoke-interface {p2}, Ljava/util/Map;->isEmpty()Z
 
     move-result p2
 
-    if-nez p2, :cond_b
+    if-nez p2, :cond_a
 
-    .line 794
+    .line 752
     const/4 p2, 0x0
 
-    .line 795
+    .line 753
     iget-object p1, p1, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->areas:Ljava/util/Map;
 
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -4842,7 +4546,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_9
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4850,14 +4554,14 @@
 
     check-cast p3, Ljava/util/Map$Entry;
 
-    .line 796
+    .line 754
     invoke-interface {p3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p4
 
     check-cast p4, Ljava/util/Set;
 
-    iget-object p5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     invoke-interface {p3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -4869,9 +4573,9 @@
 
     move-result p3
 
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
-    invoke-static {p5, p3, v0}, Lcom/project7/localmanager/LocalCityProgress;->status(Lcom/project7/localmanager/LocalTutorialStore$Progress;I[B)I
+    invoke-static {v0, p3, v1}, Lcom/project7/localmanager/LocalCityProgress;->status(Lcom/project7/localmanager/LocalTutorialStore$Progress;I[B)I
 
     move-result p3
 
@@ -4885,26 +4589,26 @@
 
     or-int/2addr p2, p3
 
-    .line 797
+    .line 755
     goto :goto_0
 
-    .line 798
-    :cond_a
-    if-nez p2, :cond_b
+    .line 756
+    :cond_9
+    if-nez p2, :cond_a
 
-    .line 799
+    .line 757
     const-string p1, "area-state"
 
     return-object p1
 
-    .line 802
-    :cond_b
+    .line 760
+    :cond_a
     const/4 p1, 0x0
 
     return-object p1
 
-    .line 786
-    :cond_c
+    .line 744
+    :cond_b
     :goto_1
     const-string p1, "prerequisite/mutex/calendar/emergency"
 
@@ -4914,7 +4618,7 @@
 .method private triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Z
     .locals 2
 
-    .line 714
+    .line 678
     iget v0, p0, Lcom/project7/localmanager/LocalEventEngine;->clientOperation:I
 
     const/4 v1, 0x0
@@ -4929,7 +4633,7 @@
 .method private triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;II)Z
     .locals 0
 
-    .line 718
+    .line 682
     invoke-direct {p0, p1, p2, p3}, Lcom/project7/localmanager/LocalEventEngine;->triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;II)Ljava/lang/String;
 
     move-result-object p1
@@ -4960,12 +4664,12 @@
         }
     .end annotation
 
-    .line 221
+    .line 218
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 222
+    .line 219
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -4996,7 +4700,7 @@
 
     move-result v2
 
-    .line 223
+    .line 220
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalEventCatalog;->outcomes:Ljava/util/Map;
@@ -5011,7 +4715,7 @@
 
     check-cast v3, Lcom/project7/localmanager/LocalEventCatalog$Outcome;
 
-    .line 224
+    .line 221
     if-eqz v3, :cond_0
 
     iget v4, v3, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->scene:I
@@ -5028,7 +4732,7 @@
 
     goto :goto_0
 
-    .line 225
+    .line 222
     :cond_1
     invoke-direct {p0, v2, p1}, Lcom/project7/localmanager/LocalEventEngine;->consumeStoryScene(II)Z
 
@@ -5038,7 +4742,7 @@
 
     goto :goto_0
 
-    .line 226
+    .line 223
     :cond_2
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -5054,26 +4758,26 @@
 
     invoke-virtual {v3, v5, v4}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 227
+    .line 224
     const/4 v3, 0x0
 
     invoke-direct {p0, v2, v3}, Lcom/project7/localmanager/LocalEventEngine;->complete(IZ)V
 
-    .line 228
+    .line 225
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 229
+    .line 226
     goto :goto_0
 
-    .line 230
+    .line 227
     :cond_3
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->restoreMissionOutcomes()V
 
-    .line 231
+    .line 228
     return-object v0
 .end method
 
@@ -5103,7 +4807,7 @@
 .method beginNewbee(I)Z
     .locals 1
 
-    .line 444
+    .line 427
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/project7/localmanager/LocalEventEngine;->beginNewbee(ILjava/lang/String;)Z
@@ -5116,7 +4820,7 @@
 .method beginNewbeeForPanel(ILjava/lang/String;)Z
     .locals 0
 
-    .line 448
+    .line 431
     invoke-direct {p0, p1, p2}, Lcom/project7/localmanager/LocalEventEngine;->beginNewbee(ILjava/lang/String;)Z
 
     move-result p1
@@ -5127,10 +4831,10 @@
 .method beginStoryBattle(I)Z
     .locals 6
 
-    .line 176
+    .line 173
     nop
 
-    .line 177
+    .line 174
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -5159,7 +4863,7 @@
 
     move-result v2
 
-    .line 178
+    .line 175
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalEventCatalog;->battles:Ljava/util/Map;
@@ -5174,7 +4878,7 @@
 
     check-cast v3, Ljava/util/Set;
 
-    .line 179
+    .line 176
     if-eqz v3, :cond_0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5189,11 +4893,11 @@
 
     goto :goto_0
 
-    .line 180
+    .line 177
     :cond_1
     const/4 v1, 0x1
 
-    .line 181
+    .line 178
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5208,7 +4912,7 @@
 
     invoke-virtual {v3, v5, v4}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 182
+    .line 179
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -5235,10 +4939,10 @@
 
     invoke-virtual {v3, v2, v4}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 183
+    .line 180
     goto :goto_0
 
-    .line 184
+    .line 181
     :cond_2
     return v1
 .end method
@@ -5254,12 +4958,12 @@
         }
     .end annotation
 
-    .line 422
+    .line 405
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 423
+    .line 406
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v1}, Lcom/project7/localmanager/LocalEventCatalog;->triggers()Ljava/lang/Iterable;
@@ -5284,7 +4988,7 @@
 
     check-cast v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;
 
-    .line 424
+    .line 407
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -5307,7 +5011,7 @@
 
     iget v4, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    .line 425
+    .line 408
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -5318,7 +5022,7 @@
 
     if-nez v3, :cond_0
 
-    .line 426
+    .line 409
     invoke-direct {p0, v2}, Lcom/project7/localmanager/LocalEventEngine;->triggerMatches(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Z
 
     move-result v3
@@ -5335,7 +5039,7 @@
 
     goto :goto_0
 
-    .line 427
+    .line 410
     :cond_1
     iget-object v3, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->battles:Ljava/util/Set;
 
@@ -5353,7 +5057,7 @@
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventConditions:Ljava/util/Map;
 
-    .line 428
+    .line 411
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v6
@@ -5375,7 +5079,7 @@
     :cond_2
     iget-object v3, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->preAll:Ljava/util/Set;
 
-    .line 429
+    .line 412
     invoke-interface {v3}, Ljava/util/Set;->isEmpty()Z
 
     move-result v3
@@ -5402,7 +5106,7 @@
     :cond_4
     move v3, v4
 
-    .line 430
+    .line 413
     :goto_1
     if-eqz v3, :cond_5
 
@@ -5414,7 +5118,7 @@
 
     if-ge v3, v5, :cond_5
 
-    .line 431
+    .line 414
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5441,11 +5145,11 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 433
+    .line 416
     :cond_5
     goto/16 :goto_0
 
-    .line 434
+    .line 417
     :cond_6
     return-object v0
 .end method
@@ -5453,14 +5157,14 @@
 .method completeImmediateEvent(I)Z
     .locals 3
 
-    .line 131
+    .line 130
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalEventCatalog;->get(I)Lcom/project7/localmanager/LocalEventCatalog$Event;
 
     move-result-object v0
 
-    .line 132
+    .line 131
     if-eqz v0, :cond_1
 
     iget v1, v0, Lcom/project7/localmanager/LocalEventCatalog$Event;->dialog:I
@@ -5479,7 +5183,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->battles:Ljava/util/Map;
 
-    .line 133
+    .line 132
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -5504,7 +5208,7 @@
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 134
+    .line 133
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -5517,16 +5221,16 @@
 
     goto :goto_0
 
-    .line 137
+    .line 136
     :cond_0
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Lcom/project7/localmanager/LocalEventEngine;->complete(IZ)V
 
-    .line 138
+    .line 137
     return v0
 
-    .line 135
+    .line 134
     :cond_1
     :goto_0
     const/4 p1, 0x0
@@ -5537,7 +5241,7 @@
 .method enterPlace(Ljava/lang/String;)V
     .locals 1
 
-    .line 438
+    .line 421
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
@@ -5546,12 +5250,12 @@
 
     if-nez v0, :cond_0
 
-    .line 439
+    .line 422
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iput-object p1, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->scene:Ljava/lang/String;
 
-    .line 441
+    .line 424
     :cond_0
     return-void
 .end method
@@ -5570,18 +5274,18 @@
         }
     .end annotation
 
-    .line 470
+    .line 453
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    .line 471
+    .line 454
     if-nez p1, :cond_0
 
-    .line 472
+    .line 455
     return-object v0
 
-    .line 474
+    .line 457
     :cond_0
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -5601,7 +5305,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 475
+    .line 458
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -5610,10 +5314,10 @@
 
     if-nez v2, :cond_2
 
-    .line 476
+    .line 459
     goto :goto_0
 
-    .line 478
+    .line 461
     :cond_2
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -5621,14 +5325,14 @@
 
     invoke-interface {v2, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 479
+    .line 462
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v2, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->finishedNewbees:Ljava/util/Set;
 
     invoke-interface {v2, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 480
+    .line 463
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->newbeeCatalog:Lcom/project7/localmanager/LocalNewbeeCatalog;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -5656,7 +5360,7 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 481
+    .line 464
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -5671,7 +5375,7 @@
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 482
+    .line 465
     invoke-interface {v3, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
@@ -5682,32 +5386,32 @@
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
 
-    .line 483
+    .line 466
     invoke-interface {v3, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 484
+    .line 467
     invoke-virtual {v0, v2}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
-    .line 486
+    .line 469
     :cond_3
     goto :goto_1
 
-    .line 487
+    .line 470
     :cond_4
     goto :goto_0
 
-    .line 488
+    .line 471
     :cond_5
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->restoreExternalGuideEvents()V
 
-    .line 489
+    .line 472
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 490
+    .line 473
     return-object v0
 .end method
 
@@ -5722,15 +5426,15 @@
         }
     .end annotation
 
-    .line 235
+    .line 232
     nop
 
-    .line 236
+    .line 233
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 237
+    .line 234
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -5765,7 +5469,7 @@
 
     move-result v4
 
-    .line 238
+    .line 235
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v5, v5, Lcom/project7/localmanager/LocalEventCatalog;->battles:Ljava/util/Map;
@@ -5780,7 +5484,7 @@
 
     check-cast v5, Ljava/util/Set;
 
-    .line 239
+    .line 236
     if-eqz v5, :cond_0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5795,7 +5499,7 @@
 
     goto :goto_0
 
-    .line 240
+    .line 237
     :cond_1
     invoke-direct {p0, v4, p1}, Lcom/project7/localmanager/LocalEventEngine;->consumeStoryScene(II)Z
 
@@ -5805,7 +5509,7 @@
 
     goto :goto_0
 
-    .line 241
+    .line 238
     :cond_2
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
@@ -5821,14 +5525,14 @@
 
     check-cast v3, Lcom/project7/localmanager/LocalEventCatalog$Outcome;
 
-    .line 242
+    .line 239
     if-eqz v3, :cond_4
 
     iget v5, v3, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->scene:I
 
     if-ne v5, p1, :cond_4
 
-    .line 243
+    .line 240
     iget-object v5, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     if-eqz p2, :cond_3
@@ -5851,7 +5555,7 @@
 
     invoke-virtual {v5, v6, v7}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 244
+    .line 241
     if-nez p2, :cond_4
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalEventCatalog$Outcome;->failure:Ljava/util/Set;
@@ -5862,24 +5566,24 @@
 
     if-nez v3, :cond_4
 
-    .line 245
+    .line 242
     invoke-direct {p0, v4, v2}, Lcom/project7/localmanager/LocalEventEngine;->complete(IZ)V
 
-    .line 246
+    .line 243
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 249
+    .line 246
     :cond_4
     const/4 v3, 0x1
 
-    .line 250
+    .line 247
     goto :goto_0
 
-    .line 251
+    .line 248
     :cond_5
     if-eqz v3, :cond_6
 
@@ -5901,50 +5605,18 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 252
+    .line 249
     :cond_6
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->restoreMissionOutcomes()V
 
-    .line 253
+    .line 250
     return-object v0
-.end method
-
-.method flashbackPatrol([BILjava/util/List;)Lcom/project7/localmanager/LocalPatrolEngine$Result;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([BI",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;)",
-            "Lcom/project7/localmanager/LocalPatrolEngine$Result;"
-        }
-    .end annotation
-
-    .line 682
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move v4, p2
-
-    move-object v5, p3
-
-    invoke-static/range {v0 .. v5}, Lcom/project7/localmanager/LocalFlashbackEngine;->patrol(Lcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalEventEngine;[BILjava/util/List;)Lcom/project7/localmanager/LocalPatrolEngine$Result;
-
-    move-result-object p1
-
-    return-object p1
 .end method
 
 .method hasPendingStoryBattle(I)Z
     .locals 0
 
-    .line 188
+    .line 185
     invoke-virtual {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->pendingStoryBattleOwners(I)Ljava/util/Set;
 
     move-result-object p1
@@ -5961,7 +5633,7 @@
 .method public synthetic lambda$privateReplyBlocker$1$LocalEventEngine(Ljava/lang/Integer;)Z
     .locals 1
 
-    .line 416
+    .line 399
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
@@ -6139,7 +5811,7 @@
         }
     .end annotation
 
-    .line 679
+    .line 651
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolHeroes:Ljava/util/Set;
@@ -6152,7 +5824,7 @@
 .end method
 
 .method patrolEvents(ILjava/util/Collection;)Ljava/util/List;
-    .locals 1
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -6165,38 +5837,12 @@
         }
     .end annotation
 
-    .line 686
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, p2, v0}, Lcom/project7/localmanager/LocalEventEngine;->patrolEvents(ILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/util/List;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method patrolEvents(ILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/util/List;
-    .locals 9
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/util/Collection<",
-            "Ljava/lang/Integer;",
-            ">;",
-            "Lcom/project7/localmanager/LocalPatrolCatalog;",
-            ")",
-            "Ljava/util/List<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-
-    .line 690
+    .line 655
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 691
+    .line 656
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v1}, Lcom/project7/localmanager/LocalEventCatalog;->triggers()Ljava/lang/Iterable;
@@ -6220,24 +5866,24 @@
 
     check-cast v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;
 
-    .line 692
+    .line 657
     iget-object v3, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->patrolAreas:Ljava/util/Set;
 
     invoke-interface {v3}, Ljava/util/Set;->isEmpty()Z
 
     move-result v3
 
+    const/4 v4, 0x2
+
     if-eqz v3, :cond_0
 
     iget-object v3, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->clientOps:Ljava/util/Set;
 
-    const/4 v4, 0x2
-
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-interface {v3, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v3, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -6248,14 +5894,14 @@
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
-    iget v4, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
+    iget v5, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    .line 693
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 658
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-interface {v3, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v3, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -6274,66 +5920,27 @@
 
     iget-object v3, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    iget v4, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
+    iget v5, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
-    .line 694
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_2
-
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v3, v3, Lcom/project7/localmanager/LocalEventCatalog;->patrolExcluded:Ljava/util/Map;
-
-    iget v4, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
-
-    .line 695
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+    .line 659
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
-    invoke-interface {v3, v4, v5}, Ljava/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Collection;
-
-    invoke-static {p2, v3}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
+    invoke-interface {v3, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-nez v3, :cond_2
 
-    const/4 v6, 0x2
-
-    .line 696
-    move-object v3, p0
-
-    move-object v4, v2
-
-    move v5, p1
-
-    move-object v7, p2
-
-    move-object v8, p3
-
-    invoke-direct/range {v3 .. v8}, Lcom/project7/localmanager/LocalEventEngine;->triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;Lcom/project7/localmanager/LocalPatrolCatalog;)Ljava/lang/String;
+    .line 660
+    invoke-direct {p0, v2, p1, v4, p2}, Lcom/project7/localmanager/LocalEventEngine;->triggerBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;IILjava/util/Collection;)Ljava/lang/String;
 
     move-result-object v3
 
     if-nez v3, :cond_2
 
-    .line 697
+    .line 661
     iget v2, v2, Lcom/project7/localmanager/LocalEventCatalog$Trigger;->eventId:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6342,11 +5949,11 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 699
+    .line 663
     :cond_2
     goto :goto_0
 
-    .line 700
+    .line 664
     :cond_3
     return-object v0
 .end method
@@ -6362,12 +5969,12 @@
         }
     .end annotation
 
-    .line 192
+    .line 189
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    .line 193
+    .line 190
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v1, v1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -6393,7 +6000,7 @@
 
     move-result v2
 
-    .line 194
+    .line 191
     invoke-direct {p0, v2, p1}, Lcom/project7/localmanager/LocalEventEngine;->pendingStoryScene(II)Z
 
     move-result v3
@@ -6406,11 +6013,11 @@
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 195
+    .line 192
     :cond_0
     goto :goto_0
 
-    .line 196
+    .line 193
     :cond_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
@@ -6476,7 +6083,7 @@
         }
     .end annotation
 
-    .line 704
+    .line 668
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolReplays:Ljava/util/Set;
@@ -6487,7 +6094,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 705
+    .line 669
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -6528,7 +6135,7 @@
 
     goto :goto_0
 
-    .line 706
+    .line 670
     :cond_1
     return-void
 .end method
@@ -6536,10 +6143,10 @@
 .method refreshProfile([B)V
     .locals 2
 
-    .line 338
+    .line 331
     iput-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
-    .line 339
+    .line 332
     new-instance v0, Ljava/util/HashSet;
 
     const-string v1, "q7WeekEventBaseline"
@@ -6552,14 +6159,14 @@
 
     iput-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->eventBaseline:Ljava/util/Set;
 
-    .line 340
+    .line 333
     const-string v0, "weeknum"
 
     invoke-static {p1, v0}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object p1
 
-    .line 341
+    .line 334
     const-string v0, "w"
 
     invoke-static {p1, v0}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
@@ -6572,7 +6179,7 @@
 
     move-result-object p1
 
-    .line 342
+    .line 335
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
@@ -6589,7 +6196,7 @@
     :goto_0
     iput v0, p0, Lcom/project7/localmanager/LocalEventEngine;->week:I
 
-    .line 343
+    .line 336
     if-nez p1, :cond_1
 
     goto :goto_1
@@ -6602,27 +6209,27 @@
     :goto_1
     iput v1, p0, Lcom/project7/localmanager/LocalEventEngine;->date:I
 
-    .line 344
+    .line 337
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->restorePrivateReplies()V
 
-    .line 345
+    .line 338
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 346
+    .line 339
     return-void
 .end method
 
 .method requestNewbee(I)Z
     .locals 3
 
-    .line 452
+    .line 435
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->newbeeCatalog:Lcom/project7/localmanager/LocalNewbeeCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalNewbeeCatalog;->get(I)Lcom/project7/localmanager/LocalNewbeeCatalog$Step;
 
     move-result-object v0
 
-    .line 453
+    .line 436
     if-eqz v0, :cond_3
 
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -6645,7 +6252,7 @@
 
     goto :goto_1
 
-    .line 455
+    .line 438
     :cond_0
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -6665,7 +6272,7 @@
 
     return p1
 
-    .line 457
+    .line 440
     :cond_1
     iget-object v1, v0, Lcom/project7/localmanager/LocalNewbeeCatalog$Step;->uiPanel:Ljava/lang/String;
 
@@ -6691,7 +6298,7 @@
 
     return p1
 
-    .line 454
+    .line 437
     :cond_3
     :goto_1
     const/4 p1, 0x0
@@ -6702,192 +6309,170 @@
 .method resetWeekContext([B)V
     .locals 1
 
-    .line 332
+    .line 325
     const-string v0, "0:0"
 
     iput-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->areaClick:Ljava/lang/String;
 
-    .line 333
+    .line 326
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/project7/localmanager/LocalEventEngine;->clientOperation:I
 
-    .line 334
+    .line 327
     invoke-virtual {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->refreshProfile([B)V
 
-    .line 335
+    .line 328
     return-void
 .end method
 
 .method selectEventOption(II)Z
     .locals 5
 
+    .line 141
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
+
+    iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    return v1
+
     .line 142
-    const/4 v0, 0x0
-
-    const/16 v1, 0x1f8e
-
-    if-ne p1, v1, :cond_0
-
-    return v0
-
-    .line 143
     :cond_0
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
-    iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    invoke-static {v1, v2, p1}, Lcom/project7/localmanager/LocalStoryTreasureRewardEngine;->canComplete([BLcom/project7/localmanager/LocalEventCatalog;I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    return v0
-
-    .line 144
-    :cond_1
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v1, v1, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
+    iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_7
 
-    return v0
-
-    .line 145
-    :cond_2
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
-
-    iget-object v1, v1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_9
-
-    if-nez p2, :cond_3
+    if-nez p2, :cond_1
 
     goto :goto_0
 
-    .line 148
-    :cond_3
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
+    .line 145
+    :cond_1
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
-    invoke-virtual {v1, p1}, Lcom/project7/localmanager/LocalEventCatalog;->successors(I)Ljava/util/Set;
+    invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalEventCatalog;->successors(I)Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 149
-    invoke-interface {v1}, Ljava/util/Set;->isEmpty()Z
+    .line 146
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_2
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_4
+    if-nez v0, :cond_2
+
+    .line 147
+    return v1
+
+    .line 149
+    :cond_2
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
+
+    iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->consumptions:Ljava/util/Map;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [I
 
     .line 150
-    return v0
-
-    .line 152
-    :cond_4
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v1, v1, Lcom/project7/localmanager/LocalEventCatalog;->consumptions:Ljava/util/Map;
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [I
-
-    .line 153
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_5
+    if-eqz v0, :cond_3
 
-    aget v3, v1, v0
+    aget v3, v0, v1
 
-    if-ne v3, v2, :cond_5
+    if-ne v3, v2, :cond_3
 
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
-    .line 154
+    .line 151
     const-string v4, "money"
 
     invoke-static {v3, v4}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
 
     move-result v3
 
-    aget v1, v1, v2
+    aget v0, v0, v2
 
-    if-ge v3, v1, :cond_5
+    if-ge v3, v0, :cond_3
 
-    return v0
+    return v1
 
-    .line 155
-    :cond_5
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
+    .line 152
+    :cond_3
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
-    iget-object v1, v1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolReplays:Ljava/util/Set;
+    iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolReplays:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-interface {v1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    .line 156
-    invoke-direct {p0, p1, v0}, Lcom/project7/localmanager/LocalEventEngine;->complete(IZ)V
+    .line 153
+    invoke-direct {p0, p1, v1}, Lcom/project7/localmanager/LocalEventEngine;->complete(IZ)V
 
-    .line 157
+    .line 154
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->completedEvents:Ljava/util/Set;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {p1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p1, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_4
 
-    if-eqz v1, :cond_8
+    if-eqz v0, :cond_6
 
-    .line 158
-    :cond_6
-    if-eqz v1, :cond_7
+    .line 155
+    :cond_4
+    if-eqz v0, :cond_5
 
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -6899,8 +6484,8 @@
 
     invoke-interface {p1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 159
-    :cond_7
+    .line 156
+    :cond_5
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -6911,28 +6496,32 @@
 
     invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 161
-    :cond_8
+    .line 158
+    :cond_6
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 162
+    .line 159
     return v2
 
-    .line 146
-    :cond_9
+    .line 143
+    :cond_7
     :goto_0
-    return v0
+    return v1
 .end method
 
 .method startEvent(I)Z
     .locals 5
 
     .line 104
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
+    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
-    iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
+    iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
 
-    invoke-static {v0, v1, p1}, Lcom/project7/localmanager/LocalDalviraStoryEngine;->blocked([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)Z
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -6940,41 +6529,23 @@
 
     if-eqz v0, :cond_0
 
-    return v1
-
-    .line 105
-    :cond_0
-    iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->puzzleRooms:Ljava/util/Map;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
-    .line 106
+    .line 105
     invoke-static {v0, v2, v3, p1}, Lcom/project7/localmanager/LocalPuzzleEngine;->canBegin([BLcom/project7/localmanager/LocalEventCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     return v1
 
-    .line 107
-    :cond_1
+    .line 106
+    :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -6989,41 +6560,41 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    .line 108
+    .line 107
     return v2
 
-    .line 110
-    :cond_2
+    .line 109
+    :cond_1
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 111
+    .line 110
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalEventCatalog;->trigger(I)Lcom/project7/localmanager/LocalEventCatalog$Trigger;
 
     move-result-object v0
 
-    .line 112
+    .line 111
     invoke-direct {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->privateReplySatisfied(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_7
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-direct {p0, v0}, Lcom/project7/localmanager/LocalEventEngine;->privateReplyBlocker(Lcom/project7/localmanager/LocalEventCatalog$Trigger;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     goto :goto_1
 
-    .line 113
-    :cond_3
+    .line 112
+    :cond_2
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalEventCatalog;->consumptions:Ljava/util/Map;
@@ -7038,16 +6609,16 @@
 
     check-cast v0, [I
 
-    .line 114
-    if-eqz v0, :cond_4
+    .line 113
+    if-eqz v0, :cond_3
 
     aget v3, v0, v1
 
-    if-ne v3, v2, :cond_4
+    if-ne v3, v2, :cond_3
 
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
 
-    .line 115
+    .line 114
     const-string v4, "money"
 
     invoke-static {v3, v4}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -7056,12 +6627,12 @@
 
     aget v0, v0, v2
 
-    if-ge v3, v0, :cond_4
+    if-ge v3, v0, :cond_3
 
     return v1
 
-    .line 116
-    :cond_4
+    .line 115
+    :cond_3
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -7074,18 +6645,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     invoke-direct {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->isMutex(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     goto :goto_0
 
-    .line 119
-    :cond_5
+    .line 118
+    :cond_4
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
@@ -7096,7 +6667,7 @@
 
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 120
+    .line 119
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object v0, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolEvents:Ljava/util/Set;
@@ -7109,9 +6680,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
-    .line 121
+    .line 120
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->availableEvents:Ljava/util/Set;
@@ -7122,43 +6693,43 @@
 
     invoke-interface {p1, v0}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 122
+    .line 121
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iget-object p1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolEvents:Ljava/util/Set;
 
     invoke-interface {p1}, Ljava/util/Set;->clear()V
 
-    .line 123
+    .line 122
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iput-boolean v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolRewardPending:Z
 
-    .line 124
+    .line 123
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iput v1, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolArea:I
 
-    .line 126
-    :cond_6
+    .line 125
+    :cond_5
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 127
+    .line 126
     return v2
 
-    .line 117
-    :cond_7
+    .line 116
+    :cond_6
     :goto_0
     return v1
 
-    .line 112
-    :cond_8
+    .line 111
+    :cond_7
     :goto_1
     return v1
 .end method
 
 .method trace(Ljava/lang/String;Ljava/util/Collection;)Ljava/util/List;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -7172,7 +6743,7 @@
         }
     .end annotation
 
-    .line 289
+    .line 283
     if-eqz p1, :cond_4
 
     if-eqz p2, :cond_4
@@ -7185,13 +6756,13 @@
 
     goto :goto_1
 
-    .line 292
+    .line 286
     :cond_0
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     invoke-virtual {v0, p1, p2}, Lcom/project7/localmanager/LocalTutorialStore$Progress;->recordCondition(Ljava/lang/String;Ljava/util/Collection;)V
 
-    .line 293
+    .line 287
     const-string v0, "battle"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -7202,13 +6773,13 @@
 
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->restoreMissionOutcomes()V
 
-    .line 294
+    .line 288
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 295
+    .line 289
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
@@ -7234,7 +6805,7 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 296
+    .line 290
     iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
@@ -7245,7 +6816,7 @@
 
     move-result-object v3
 
-    .line 297
+    .line 291
     if-eqz v3, :cond_2
 
     invoke-direct {p0, v3, p1, p2}, Lcom/project7/localmanager/LocalEventEngine;->conditionMatches(Lcom/project7/localmanager/LocalEventCatalog$Event;Ljava/lang/String;Ljava/util/Collection;)Z
@@ -7254,22 +6825,7 @@
 
     if-eqz v3, :cond_2
 
-    iget-object v3, p0, Lcom/project7/localmanager/LocalEventEngine;->profile:[B
-
-    iget-object v4, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
-
-    .line 298
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v5
-
-    invoke-static {v3, v4, v5}, Lcom/project7/localmanager/LocalStoryTreasureRewardEngine;->canComplete([BLcom/project7/localmanager/LocalEventCatalog;I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 299
+    .line 292
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -7278,21 +6834,21 @@
 
     invoke-direct {p0, v3, v4}, Lcom/project7/localmanager/LocalEventEngine;->complete(IZ)V
 
-    .line 300
+    .line 293
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 302
+    .line 295
     :cond_2
     goto :goto_0
 
-    .line 303
+    .line 296
     :cond_3
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 304
+    .line 297
     return-object v0
 
-    .line 290
+    .line 284
     :cond_4
     :goto_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -7305,14 +6861,14 @@
 .method triggerExternalEvent(I)Z
     .locals 4
 
-    .line 166
+    .line 163
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->catalog:Lcom/project7/localmanager/LocalEventCatalog;
 
     invoke-virtual {v0, p1}, Lcom/project7/localmanager/LocalEventCatalog;->get(I)Lcom/project7/localmanager/LocalEventCatalog$Event;
 
     move-result-object v0
 
-    .line 167
+    .line 164
     if-eqz v0, :cond_4
 
     iget-boolean v1, v0, Lcom/project7/localmanager/LocalEventCatalog$Event;->release:Z
@@ -7333,7 +6889,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 168
+    .line 165
     invoke-direct {p0, p1}, Lcom/project7/localmanager/LocalEventEngine;->isMutex(I)Z
 
     move-result v1
@@ -7342,7 +6898,7 @@
 
     goto :goto_2
 
-    .line 169
+    .line 166
     :cond_0
     iget-object v1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -7376,7 +6932,7 @@
 
     goto :goto_1
 
-    .line 170
+    .line 167
     :cond_1
     iget v1, v0, Lcom/project7/localmanager/LocalEventCatalog$Event;->dialog:I
 
@@ -7394,7 +6950,7 @@
 
     goto :goto_0
 
-    .line 171
+    .line 168
     :cond_2
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
@@ -7406,16 +6962,16 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 172
+    .line 169
     :goto_0
     return v2
 
-    .line 169
+    .line 166
     :cond_3
     :goto_1
     return v2
 
-    .line 168
+    .line 165
     :cond_4
     :goto_2
     const/4 p1, 0x0
@@ -7426,7 +6982,7 @@
 .method updateAreaClick(Ljava/lang/String;)Z
     .locals 1
 
-    .line 317
+    .line 310
     if-eqz p1, :cond_1
 
     const-string v0, "[0-9]+:[0-9]+"
@@ -7439,19 +6995,19 @@
 
     goto :goto_0
 
-    .line 321
+    .line 314
     :cond_0
     iput-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->areaClick:Ljava/lang/String;
 
-    .line 322
+    .line 315
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 323
+    .line 316
     const/4 p1, 0x1
 
     return p1
 
-    .line 318
+    .line 311
     :cond_1
     :goto_0
     const/4 p1, 0x0
@@ -7462,20 +7018,20 @@
 .method updateClientOperation(I)V
     .locals 0
 
-    .line 327
+    .line 320
     iput p1, p0, Lcom/project7/localmanager/LocalEventEngine;->clientOperation:I
 
-    .line 328
+    .line 321
     invoke-direct {p0}, Lcom/project7/localmanager/LocalEventEngine;->reevaluateLifecycle()V
 
-    .line 329
+    .line 322
     return-void
 .end method
 
 .method updateStatus(Ljava/lang/String;)V
     .locals 1
 
-    .line 308
+    .line 301
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
@@ -7484,12 +7040,12 @@
 
     if-nez v0, :cond_0
 
-    .line 309
+    .line 302
     iget-object v0, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     iput-object p1, v0, Lcom/project7/localmanager/LocalTutorialStore$Progress;->status:Ljava/lang/String;
 
-    .line 310
+    .line 303
     const-string v0, "emergency"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -7498,14 +7054,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 311
+    .line 304
     iget-object p1, p0, Lcom/project7/localmanager/LocalEventEngine;->progress:Lcom/project7/localmanager/LocalTutorialStore$Progress;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
 
-    .line 314
+    .line 307
     :cond_0
     return-void
 .end method

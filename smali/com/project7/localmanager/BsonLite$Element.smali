@@ -24,15 +24,15 @@
 .method constructor <init>(I[B)V
     .locals 0
 
-    .line 1556
+    .line 1552
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1557
+    .line 1553
     iput p1, p0, Lcom/project7/localmanager/BsonLite$Element;->type:I
 
-    .line 1558
+    .line 1554
     iput-object p2, p0, Lcom/project7/localmanager/BsonLite$Element;->value:[B
 
-    .line 1559
+    .line 1555
     return-void
 .end method

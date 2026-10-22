@@ -1912,12 +1912,12 @@
 
     move-result v7
 
-    const/16 v8, 0x270f
+    const/16 v8, 0x2d
 
     if-ne v7, v8, :cond_1
 
     .line 55
-    const/16 v7, 0x19
+    const/16 v7, 0x2d
 
     invoke-static {v5, v6, v7}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 

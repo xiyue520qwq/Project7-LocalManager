@@ -55,6 +55,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
     private static final int SERVICE_CONNECT_SERVER = 0;
     private static final int SERVICE_ENTITY_MESSAGE = 1;
     private static final String TAG = "Project7Gateway";
+    private static long q7LastRefreshMs;
     private final LocalAccountStore accountStore;
     private volatile ClientSession activeSession;
     private volatile boolean closed;
@@ -108,6 +109,14 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
 
     interface StatusListener {
         void onStatus(boolean z, String str);
+    }
+
+    private static void q7ThrottledRefresh(LocalEventEngine localEventEngine, ProfileProvider profileProvider, String str, LocalTutorialStore.Progress progress) {
+        if (System.currentTimeMillis() - q7LastRefreshMs >= 5000) {
+            return;
+        }
+        q7LastRefreshMs = System.currentTimeMillis();
+        localEventEngine.refreshProfile(profileProvider.snapshot(str, progress));
     }
 
     interface ProfileProvider {
@@ -317,7 +326,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                             }
                         } catch (IOException e2) {
                             if (!this.closed) {
-                                LocalDiagnosticLog.m13e(TAG, "client connection failed", e2);
+                                LocalDiagnosticLog.m15e(TAG, "client connection failed", e2);
                                 this.listener.onStatus(true, "网关连接错误：" + e2.getMessage());
                             }
                         }
@@ -341,7 +350,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 }
             } catch (IOException e3) {
                 if (!this.closed) {
-                    LocalDiagnosticLog.m13e(TAG, "gateway listener failed", e3);
+                    LocalDiagnosticLog.m15e(TAG, "gateway listener failed", e3);
                     this.listener.onStatus(false, "无法监听 127.0.0.1:" + this.port + "：" + e3.getMessage());
                 }
                 Iterator<ClientSession> it2 = this.clients.iterator();
@@ -394,7 +403,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             }
         } catch (IOException | RuntimeException e) {
             if (!this.closed && !clientSession.cancelled) {
-                LocalDiagnosticLog.m15w(TAG, "connection ended: " + e.getClass().getSimpleName());
+                LocalDiagnosticLog.m17w(TAG, "connection ended: " + e.getClass().getSimpleName());
             }
         }
     }
@@ -448,7 +457,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         HashSet hashSet4 = new HashSet();
         HashSet hashSet5 = new HashSet();
         String str14 = TAG;
-        LocalDiagnosticLog.m14i(TAG, "client connected; awaiting local authentication");
+        LocalDiagnosticLog.m16i(TAG, "client connected; awaiting local authentication");
         String str15 = "";
         String str16 = "";
         byte[] bArr8 = null;
@@ -480,12 +489,12 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                         String str19 = str15;
                         bufferedInputStream = bufferedInputStream2;
                         byte[] bArr9 = bArr8;
-                        if (Arrays.equals(parseEntityMessage.f13id, objectId) && (Arrays.equals(parseEntityMessage.methodMd5, LOGIN) || Arrays.equals(parseEntityMessage.methodMd5, LOGIN_WITH_URS))) {
+                        if (Arrays.equals(parseEntityMessage.f20id, objectId) && (Arrays.equals(parseEntityMessage.methodMd5, LOGIN) || Arrays.equals(parseEntityMessage.methodMd5, LOGIN_WITH_URS))) {
                             try {
                                 LocalAccountStore.Result authenticate = this.accountStore.authenticate(BsonLite.stringValue(parseEntityMessage.parameters, "name"), BsonLite.stringValue(parseEntityMessage.parameters, "psw"));
                                 if (!authenticate.accepted) {
                                     sendLoginFailure(bufferedOutputStream, objectId, "账号或密码错误");
-                                    LocalDiagnosticLog.m15w(str14, "local login rejected account=" + authenticate.username);
+                                    LocalDiagnosticLog.m17w(str14, "local login rejected account=" + authenticate.username);
                                     return;
                                 }
                                 if (!claimSession(clientSession2)) {
@@ -512,7 +521,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(objectId2, md5("become_player"), BsonLite.EMPTY_DOCUMENT));
                                 syncClientCompatibility(bufferedOutputStream, objectId2);
                                 writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(objectId2, md5("syncAllNote"), BsonLite.document("nd", LocalResourceEngine.doc(load, "np"))));
-                                LocalDiagnosticLog.m14i(str14, "diary login account=" + str18 + " " + LocalDiaryEngine.diagnostic(load, progress7));
+                                LocalDiagnosticLog.m16i(str14, "diary login account=" + str18 + " " + LocalDiaryEngine.diagnostic(load, progress7));
                                 for (LocalResourceEngine.Reply reply : LocalImageAvatar.cache(load)) {
                                     writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(objectId2, md5(reply.method), reply.parameters));
                                 }
@@ -541,19 +550,19 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 bArr2 = objectId;
                             } catch (IOException e) {
                                 sendLoginFailure(bufferedOutputStream, objectId, e.getMessage());
-                                LocalDiagnosticLog.m16w(str14, "local login rejected", e);
+                                LocalDiagnosticLog.m18w(str14, "local login rejected", e);
                                 return;
                             }
                         } else {
                             byte[] bArr10 = objectId;
-                            if (!Arrays.equals(parseEntityMessage.f13id, objectId2)) {
+                            if (!Arrays.equals(parseEntityMessage.f20id, objectId2)) {
                                 bArr4 = bArr9;
                                 i = SERVICE_CONNECT_SERVER;
                                 progress2 = progress7;
                                 z = true;
                             } else if (Arrays.equals(parseEntityMessage.methodMd5, HEARTBEAT_SERVER)) {
                                 writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(objectId2, md5("on_heartbeat"), BsonLite.EMPTY_DOCUMENT));
-                                LocalDiagnosticLog.m14i(str14, "heartbeat acknowledged");
+                                LocalDiagnosticLog.m16i(str14, "heartbeat acknowledged");
                                 if (str18 == null) {
                                     str6 = str17;
                                     hashSet = hashSet5;
@@ -618,7 +627,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 progress2 = progress7;
                                 z = true;
                             }
-                            if (!Arrays.equals(parseEntityMessage.f13id, objectId2)) {
+                            if (!Arrays.equals(parseEntityMessage.f20id, objectId2)) {
                                 str6 = str17;
                                 str7 = str14;
                                 hashSet = hashSet5;
@@ -663,7 +672,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 bArr8 = bArr6;
                             }
                             byte[] bArr13 = bArr5;
-                            if (Arrays.equals(parseEntityMessage.f13id, bArr13)) {
+                            if (Arrays.equals(parseEntityMessage.f20id, bArr13)) {
                                 i2 = i;
                                 str11 = "id";
                                 str10 = "p";
@@ -689,33 +698,33 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 str11 = "id";
                                 bArr3 = bArr13;
                             }
-                            if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleDailyRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3)) {
+                            if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleDailyRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3)) {
                                 str12 = str8;
                                 progress6 = progress3;
                                 localEventEngine6 = localEventEngine3;
                                 str3 = str9;
                                 str2 = str7;
-                            } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleSpecialItemRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3, localEventEngine3)) {
+                            } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleSpecialItemRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3, localEventEngine3)) {
                                 completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "specialItemRpc");
                                 str12 = str8;
                                 progress6 = progress3;
                                 localEventEngine6 = localEventEngine3;
                                 str3 = str9;
                                 str2 = str7;
-                            } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleWeekRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3, localEventEngine3)) {
+                            } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleWeekRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3, localEventEngine3)) {
                                 completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "weekLifecycleRpc");
                                 str12 = str8;
                                 progress6 = progress3;
                                 localEventEngine6 = localEventEngine3;
                                 str3 = str9;
                                 str2 = str7;
-                            } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleHomeRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3)) {
+                            } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleHomeRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3)) {
                                 str12 = str8;
                                 progress6 = progress3;
                                 localEventEngine6 = localEventEngine3;
                                 str3 = str9;
                                 str2 = str7;
-                            } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleServiceRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3, localEventEngine3)) {
+                            } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleServiceRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str8, progress3, localEventEngine3)) {
                                 completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "cityServiceRpc");
                                 str12 = str8;
                                 progress6 = progress3;
@@ -723,7 +732,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 str3 = str9;
                                 str2 = str7;
                             } else {
-                                if (!Arrays.equals(parseEntityMessage.f13id, bArr3)) {
+                                if (!Arrays.equals(parseEntityMessage.f20id, bArr3)) {
                                     str12 = str8;
                                     progress4 = progress3;
                                     localEventEngine4 = localEventEngine3;
@@ -742,14 +751,14 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                     progress4 = progress3;
                                     localEventEngine4 = localEventEngine3;
                                 }
-                                if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleBasicRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str12)) {
+                                if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleBasicRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str12)) {
                                     completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "basicProfileRpc");
                                     localEventEngine6 = localEventEngine4;
                                     progress6 = progress4;
                                     str3 = str9;
                                     str2 = str7;
                                 } else {
-                                    if (!Arrays.equals(parseEntityMessage.f13id, bArr3)) {
+                                    if (!Arrays.equals(parseEntityMessage.f20id, bArr3)) {
                                         localEventEngine5 = localEventEngine4;
                                         progress5 = progress4;
                                     } else {
@@ -763,13 +772,13 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                             str2 = str7;
                                         }
                                     }
-                                    if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleDayRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str12, progress5, localEventEngine5)) {
+                                    if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleDayRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str12, progress5, localEventEngine5)) {
                                         completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "dayRpc");
                                         str3 = str9;
                                         progress6 = progress5;
                                         localEventEngine6 = localEventEngine5;
                                         str2 = str7;
-                                    } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && (Arrays.equals(parseEntityMessage.methodMd5, digest("incDayWhenNoActionVal")) || Arrays.equals(parseEntityMessage.methodMd5, digest("clearCurDailySettlement")))) {
+                                    } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && (Arrays.equals(parseEntityMessage.methodMd5, digest("incDayWhenNoActionVal")) || Arrays.equals(parseEntityMessage.methodMd5, digest("clearCurDailySettlement")))) {
                                         String str24 = Arrays.equals(parseEntityMessage.methodMd5, digest("incDayWhenNoActionVal")) ? "incDayWhenNoActionVal" : "clearCurDailySettlement";
                                         handleCalendar(bufferedOutputStream, bArr3, str12, progress5, localEventEngine5, str24);
                                         completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, str24);
@@ -777,27 +786,27 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                         progress6 = progress5;
                                         localEventEngine6 = localEventEngine5;
                                         str2 = str7;
-                                    } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, digest("zhaiRequest"))) {
+                                    } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, digest("zhaiRequest"))) {
                                         handleRest(bufferedOutputStream, bArr3, str12, progress5, localEventEngine5);
                                         completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "zhaiRequest");
                                         str3 = str9;
                                         progress6 = progress5;
                                         localEventEngine6 = localEventEngine5;
                                         str2 = str7;
-                                    } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_TRIGGER_DA_XUAN_WO)) {
+                                    } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_TRIGGER_DA_XUAN_WO)) {
                                         completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "requestTriggerDaXuanWo");
                                         str3 = str9;
                                         progress6 = progress5;
                                         localEventEngine6 = localEventEngine5;
                                         str2 = str7;
-                                    } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, SET_PLAYER_NAME)) {
+                                    } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, SET_PLAYER_NAME)) {
                                         handleSetPlayerName(bufferedOutputStream, bArr3, parseEntityMessage.parameters, str12);
                                         str3 = str9;
                                         progress6 = progress5;
                                         localEventEngine6 = localEventEngine5;
                                         str2 = str7;
                                     } else {
-                                        if (!Arrays.equals(parseEntityMessage.f13id, bArr3)) {
+                                        if (!Arrays.equals(parseEntityMessage.f20id, bArr3)) {
                                             str13 = str7;
                                         } else if (!Arrays.equals(parseEntityMessage.methodMd5, CHECK_GAMEPLAY_SWITCH)) {
                                             str13 = str7;
@@ -805,45 +814,45 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                             String stringValue = BsonLite.stringValue(parseEntityMessage.parameters, "g");
                                             writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr3, md5("checkGamePlaySwitchReply"), BsonLite.gamePlaySwitchReplyDocument(stringValue, SERVICE_ENTITY_MESSAGE, str9)));
                                             String str25 = str7;
-                                            LocalDiagnosticLog.m14i(str25, "checkGamePlaySwitch allowed gamePlay=" + stringValue);
+                                            LocalDiagnosticLog.m16i(str25, "checkGamePlaySwitch allowed gamePlay=" + stringValue);
                                             str3 = str9;
                                             progress6 = progress5;
                                             localEventEngine6 = localEventEngine5;
                                             str2 = str25;
                                         }
-                                        if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_LUCKY_DRAW_CARD)) {
+                                        if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_LUCKY_DRAW_CARD)) {
                                             Integer intValue = BsonLite.intValue(parseEntityMessage.parameters, "idx");
                                             Integer intValue2 = BsonLite.intValue(parseEntityMessage.parameters, "t");
                                             int intValue3 = intValue == null ? i2 : intValue.intValue();
                                             int intValue4 = intValue2 == null ? SERVICE_ENTITY_MESSAGE : intValue2.intValue();
                                             writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr3, md5("replyLuckyDrawCard"), BsonLite.luckyDrawCardReplyDocument(true, intValue3, intValue4)));
                                             completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "requestLuckyDrawCard");
-                                            LocalDiagnosticLog.m14i(str13, "lucky draw card completed index=" + intValue3 + " type=" + intValue4);
+                                            LocalDiagnosticLog.m16i(str13, "lucky draw card completed index=" + intValue3 + " type=" + intValue4);
                                             str3 = str9;
                                             progress6 = progress5;
                                             localEventEngine6 = localEventEngine5;
                                             str2 = str13;
-                                        } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_FILE)) {
+                                        } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_FILE)) {
                                             Integer intValue5 = BsonLite.intValue(parseEntityMessage.parameters, "t");
                                             int intValue6 = intValue5 == null ? SERVICE_ENTITY_MESSAGE : intValue5.intValue();
                                             writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr3, md5("replyFile"), BsonLite.luckyDrawFileContentsReplyDocument(true, intValue6)));
-                                            LocalDiagnosticLog.m14i(str13, "lucky draw file contents completed type=" + intValue6);
+                                            LocalDiagnosticLog.m16i(str13, "lucky draw file contents completed type=" + intValue6);
                                             str3 = str9;
                                             progress6 = progress5;
                                             localEventEngine6 = localEventEngine5;
                                             str2 = str13;
-                                        } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_QUIT_FILE)) {
+                                        } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, REQUEST_QUIT_FILE)) {
                                             Integer intValue7 = BsonLite.intValue(parseEntityMessage.parameters, "t");
                                             int intValue8 = intValue7 == null ? SERVICE_ENTITY_MESSAGE : intValue7.intValue();
                                             writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr3, md5("replyQuitFile"), BsonLite.luckyDrawQuitReplyDocument(true, intValue8)));
                                             completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "requestQuitFile");
-                                            LocalDiagnosticLog.m14i(str13, "lucky draw file closed type=" + intValue8);
+                                            LocalDiagnosticLog.m16i(str13, "lucky draw file closed type=" + intValue8);
                                             str3 = str9;
                                             progress6 = progress5;
                                             localEventEngine6 = localEventEngine5;
                                             str2 = str13;
                                         } else {
-                                            if (!Arrays.equals(parseEntityMessage.f13id, bArr3)) {
+                                            if (!Arrays.equals(parseEntityMessage.f20id, bArr3)) {
                                                 progress6 = progress5;
                                             } else if (!Arrays.equals(parseEntityMessage.methodMd5, GET_ALL_AREA_INFO_REQUEST)) {
                                                 progress6 = progress5;
@@ -852,23 +861,23 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                 progress6 = progress5;
                                                 writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr3, md5("get_all_area_info_reply"), BsonLite.allAreaInfoReplyDocument(isHighSchoolUnlocked, progress6, this.profileProvider.load(str12, progress6))));
                                                 completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "getAllAreaInfoRequest");
-                                                LocalDiagnosticLog.m14i(str13, "all area info completed highSchool=" + isHighSchoolUnlocked);
+                                                LocalDiagnosticLog.m16i(str13, "all area info completed highSchool=" + isHighSchoolUnlocked);
                                                 str3 = str9;
                                                 localEventEngine6 = localEventEngine5;
                                                 str2 = str13;
                                             }
-                                            if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, GET_AREA_INFO_REQUEST)) {
+                                            if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, GET_AREA_INFO_REQUEST)) {
                                                 Integer intValue9 = BsonLite.intValue(parseEntityMessage.parameters, str11);
                                                 boolean isHighSchoolUnlocked2 = isHighSchoolUnlocked(progress6);
                                                 int resolveAreaId = resolveAreaId(intValue9, isHighSchoolUnlocked2);
                                                 writeFrame(bufferedOutputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr3, md5("get_area_info_reply"), BsonLite.areaInfoReplyDocument(resolveAreaId, isHighSchoolUnlocked2, progress6, this.profileProvider.load(str12, progress6))));
                                                 completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "getAreaInfoRequest");
-                                                LocalDiagnosticLog.m14i(str13, "area info completed area=" + resolveAreaId);
+                                                LocalDiagnosticLog.m16i(str13, "area info completed area=" + resolveAreaId);
                                                 str3 = str9;
                                                 localEventEngine6 = localEventEngine5;
                                                 str2 = str13;
                                             } else {
-                                                if (!Arrays.equals(parseEntityMessage.f13id, bArr3)) {
+                                                if (!Arrays.equals(parseEntityMessage.f20id, bArr3)) {
                                                     str3 = str9;
                                                     str2 = str13;
                                                 } else if (!Arrays.equals(parseEntityMessage.methodMd5, COMBAT_OFFLINE_FINISH)) {
@@ -880,18 +889,18 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     handleCombatOfflineFinish(bufferedOutputStream, bArr3, parseEntityMessage.parameters, str12, progress6, localEventEngine5, hashSet2, hashSet3);
                                                     localEventEngine6 = localEventEngine5;
                                                 }
-                                                if (Arrays.equals(parseEntityMessage.f13id, bArr3) && handleCombatCancelRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str12, progress6)) {
+                                                if (Arrays.equals(parseEntityMessage.f20id, bArr3) && handleCombatCancelRpc(bufferedOutputStream, bArr3, parseEntityMessage.methodMd5, parseEntityMessage.parameters, str12, progress6)) {
                                                     if (Arrays.equals(parseEntityMessage.methodMd5, digest("battleStageGiveup"))) {
                                                         finishAbandonedStory(bufferedOutputStream, bArr3, parseEntityMessage.parameters, str12, progress6, localEventEngine5);
                                                     }
                                                     completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "combatCancelRpc");
                                                     localEventEngine6 = localEventEngine5;
-                                                } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, digest("battleRealFailWithEventMode"))) {
+                                                } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, digest("battleRealFailWithEventMode"))) {
                                                     finishAbandonedStory(bufferedOutputStream, bArr3, parseEntityMessage.parameters, str12, progress6, localEventEngine5);
                                                     completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "combatCancelRpc");
                                                     localEventEngine6 = localEventEngine5;
                                                 } else {
-                                                    if (!Arrays.equals(parseEntityMessage.f13id, bArr3)) {
+                                                    if (!Arrays.equals(parseEntityMessage.f20id, bArr3)) {
                                                         localEventEngine6 = localEventEngine5;
                                                     } else if (!Arrays.equals(parseEntityMessage.methodMd5, ENTER_PLACE)) {
                                                         localEventEngine6 = localEventEngine5;
@@ -907,21 +916,21 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                             localEventEngine6.enterPlace(stringValue2);
                                                             this.tutorialStore.save(str12, progress6);
                                                         }
-                                                        LocalDiagnosticLog.m14i(str2, "enterPlace completed scene=" + stringValue2);
+                                                        LocalDiagnosticLog.m16i(str2, "enterPlace completed scene=" + stringValue2);
                                                     }
-                                                    if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, TUTORIAL_BEGIN)) {
+                                                    if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, TUTORIAL_BEGIN)) {
                                                         StringBuilder sb2 = new StringBuilder();
                                                         sb2.append("tutorialBegin accepted pending=");
                                                         sb2.append(localEventEngine6 == null ? Collections.emptySet() : localEventEngine6.processingNewbees());
-                                                        LocalDiagnosticLog.m14i(str2, sb2.toString());
-                                                    } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, TUTORIAL_END)) {
-                                                        LocalDiagnosticLog.m14i(str2, "tutorialEnd accepted parameters=" + BsonLite.debugDocument(parseEntityMessage.parameters));
-                                                    } else if (Arrays.equals(parseEntityMessage.f13id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, digest("exceptUpload"))) {
+                                                        LocalDiagnosticLog.m16i(str2, sb2.toString());
+                                                    } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, TUTORIAL_END)) {
+                                                        LocalDiagnosticLog.m16i(str2, "tutorialEnd accepted parameters=" + BsonLite.debugDocument(parseEntityMessage.parameters));
+                                                    } else if (Arrays.equals(parseEntityMessage.f20id, bArr3) && Arrays.equals(parseEntityMessage.methodMd5, digest("exceptUpload"))) {
                                                         handleClientException(parseEntityMessage.parameters);
                                                         completeEmptyCallback(bufferedOutputStream, bArr3, parseEntityMessage.parameters, "exceptUpload");
                                                     } else {
                                                         String hex = hex(parseEntityMessage.methodMd5);
-                                                        LocalDiagnosticLog.m14i(str2, "unhandled RPC " + knownMethodName(hex) + " md5=" + hex + " parameters=" + BsonLite.debugDocument(parseEntityMessage.parameters));
+                                                        LocalDiagnosticLog.m16i(str2, "unhandled RPC " + knownMethodName(hex) + " md5=" + hex + " parameters=" + BsonLite.debugDocument(parseEntityMessage.parameters));
                                                         StatusListener statusListener2 = this.listener;
                                                         StringBuilder sb3 = new StringBuilder();
                                                         sb3.append("收到未实现的业务 RPC：");
@@ -960,7 +969,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                         clientSession2 = clientSession;
                     } catch (IOException e2) {
                         String str27 = str14;
-                        LocalDiagnosticLog.m16w(str27, "ignoring malformed entity RPC", e2);
+                        LocalDiagnosticLog.m18w(str27, "ignoring malformed entity RPC", e2);
                         this.listener.onStatus(true, "忽略无法解析的业务 RPC，连接保持中");
                         localEventEngine7 = localEventEngine8;
                         str18 = str18;
@@ -987,7 +996,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                     str3 = str15;
                     bArr3 = objectId2;
                     str4 = str18;
-                    LocalDiagnosticLog.m14i(str2, "unhandled service method " + readFrame.method);
+                    LocalDiagnosticLog.m16i(str2, "unhandled service method " + readFrame.method);
                 }
                 localEventEngine7 = localEventEngine;
                 str18 = str4;
@@ -1028,7 +1037,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 for (LocalResourceEngine.Reply reply : this.profileProvider.updateServices(str, str2, bArr3, progress).replies) {
                     writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(reply.method), reply.parameters));
                 }
-                LocalDiagnosticLog.m14i(TAG, "daily feature=" + str2 + " account=" + str + " params=" + BsonLite.debugDocument(bArr3));
+                LocalDiagnosticLog.m16i(TAG, "daily feature=" + str2 + " account=" + str + " params=" + BsonLite.debugDocument(bArr3));
                 return true;
             }
         }
@@ -1082,7 +1091,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         for (LocalResourceEngine.Reply reply : updateServices.replies) {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(reply.method), reply.parameters));
         }
-        LocalDiagnosticLog.m14i(TAG, "special item account=" + str + " method=" + str2 + " params=" + BsonLite.debugDocument(bArr3));
+        LocalDiagnosticLog.m16i(TAG, "special item account=" + str + " method=" + str2 + " params=" + BsonLite.debugDocument(bArr3));
         return true;
     }
 
@@ -1096,7 +1105,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             byte[] withLocalCityState = BsonLite.withLocalCityState(BsonLite.withTutorialProgress(load, progress), progress);
             if (LocalWeekEngine.awaitingEntrance(withLocalCityState, progress)) {
                 writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("evalCode"), BsonLite.document("s", "exec('gg.event_trigger_cache = None\\ngg.avatar_status = None')")));
-                LocalDiagnosticLog.m14i(TAG, "week entrance transient cache reset account=" + str);
+                LocalDiagnosticLog.m16i(TAG, "week entrance transient cache reset account=" + str);
             }
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("updateClientAvatarReply"), BsonLite.document("s", new BsonLite.BinaryValue(LocalAvatarPayload.encode(withLocalCityState)))));
             if (localEventEngine != null) {
@@ -1118,7 +1127,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 for (LocalResourceEngine.Reply reply : updateServices.replies) {
                     writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(reply.method), reply.parameters));
                 }
-                LocalDiagnosticLog.m14i(TAG, "week lifecycle account=" + str + " method=" + str2 + " week=" + LocalResourceEngine.value(LocalResourceEngine.doc(updateServices.profile, "weeknum"), "w"));
+                LocalDiagnosticLog.m16i(TAG, "week lifecycle account=" + str + " method=" + str2 + " week=" + LocalResourceEngine.value(LocalResourceEngine.doc(updateServices.profile, "weeknum"), "w"));
                 return true;
             }
         }
@@ -1133,7 +1142,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             this.profileProvider.savePlayerName(str, stringValue);
         }
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("setPlayerNameReply"), BsonLite.playerNameReplyDocument(z, Boolean.TRUE.equals(boolValue))));
-        LocalDiagnosticLog.m14i(TAG, "setPlayerName completed account=" + str + " playerName=" + stringValue + " accepted=" + z + " isNewName=" + boolValue);
+        LocalDiagnosticLog.m16i(TAG, "setPlayerName completed account=" + str + " playerName=" + stringValue + " accepted=" + z + " isNewName=" + boolValue);
     }
 
     private void handleClientException(byte[] bArr) {
@@ -1143,7 +1152,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             byte[] documentValue2 = BsonLite.documentValue(documentValue, it.next());
             String stringValue = BsonLite.stringValue(documentValue2, "1");
             if (stringValue != null && !stringValue.trim().isEmpty()) {
-                LocalDiagnosticLog.m12e(TAG, "client exception report id=" + BsonLite.stringValue(documentValue2, "0") + "\n" + stringValue);
+                LocalDiagnosticLog.m14e(TAG, "client exception report id=" + BsonLite.stringValue(documentValue2, "0") + "\n" + stringValue);
                 if (!stringValue.contains("BaseException: delay_exception_gc")) {
                     String[] split = stringValue.trim().split("\r?\n");
                     this.listener.onStatus(true, "客户端异常报告：" + split[split.length - SERVICE_ENTITY_MESSAGE]);
@@ -1155,30 +1164,23 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
     private boolean handleServiceRpc(OutputStream outputStream, byte[] bArr, byte[] bArr2, byte[] bArr3, String str, LocalTutorialStore.Progress progress, LocalEventEngine localEventEngine) throws IOException {
         Integer intValue;
         LocalEventEngine localEventEngine2 = localEventEngine;
-        ArrayList<String> arrayList = new ArrayList(Arrays.asList("requestRecoverJingshenli", "readPendingNote", "readPlayerNote", "readPrivateMsg", "readSocialMsg", "replyPrivateMsg", "triggerSocialMsgEvent", "syncAllIntelligenceRequest", "readTodayIntelligence", "openIntelligenceRequest", "handleIntelligenceRequest", "delDestroyBuilding", "actionRewardRequest", "updateSouvenirLevel", "tryGiftToHero", "puzzleRoomGetClue", "dailyPureChooseHero", "requestFlashbackIncDay"));
+        ArrayList<String> arrayList = new ArrayList(Arrays.asList("requestRecoverJingshenli", "readPendingNote", "readPlayerNote", "readPrivateMsg", "readSocialMsg", "replyPrivateMsg", "triggerSocialMsgEvent", "syncAllIntelligenceRequest", "readTodayIntelligence", "openIntelligenceRequest", "handleIntelligenceRequest", "delDestroyBuilding", "actionRewardRequest", "updateSouvenirLevel", "tryGiftToHero", "puzzleRoomGetClue"));
         arrayList.addAll(Arrays.asList(LocalCommunityEngine.METHODS));
         arrayList.addAll(Arrays.asList(LocalStoryEngine.METHODS));
         arrayList.addAll(Arrays.asList(LocalStoryClueEngine.METHODS));
-        arrayList.add("daerweilaFirstChooseAsazile");
         arrayList.addAll(Arrays.asList(LocalWingDrugEngine.METHODS));
         arrayList.addAll(LocalStoryDiscussion.METHODS);
         for (String str2 : arrayList) {
             if (Arrays.equals(bArr2, digest(str2))) {
                 LocalResourceEngine.Result updateServices = this.profileProvider.updateServices(str, str2, bArr3, progress);
-                if ("requestFlashbackIncDay".equals(str2) && localEventEngine2 != null) {
-                    localEventEngine2.updateClientOperation(SERVICE_CONNECT_SERVER);
-                    localEventEngine2.refreshProfile(updateServices.profile);
-                    this.tutorialStore.save(str, progress);
-                }
-                String str3 = "replyPrivateMsg";
-                if (("dailyPureChooseHero".equals(str2) || LocalHeroGiftEngine.handles(str2) || LocalWingDrugEngine.handles(str2) || "replyPrivateMsg".equals(str2)) && localEventEngine2 != null) {
+                if ((LocalHeroGiftEngine.handles(str2) || LocalWingDrugEngine.handles(str2) || "replyPrivateMsg".equals(str2)) && localEventEngine2 != null) {
                     localEventEngine2.refreshProfile(updateServices.profile);
                 }
                 boolean equals = "readPlayerNote".equals(str2);
-                String str4 = " method=";
-                String str5 = TAG;
+                String str3 = " method=";
+                String str4 = TAG;
                 if (equals || "readPendingNote".equals(str2)) {
-                    LocalDiagnosticLog.m14i(TAG, "diary read account=" + str + " method=" + str2 + " " + LocalDiaryEngine.diagnostic(updateServices.profile, progress));
+                    LocalDiagnosticLog.m16i(TAG, "diary read account=" + str + " method=" + str2 + " " + LocalDiaryEngine.diagnostic(updateServices.profile, progress));
                 }
                 if (LocalIntelligenceEngine.handles(str2) || LocalHeroGiftEngine.handles(str2) || "triggerSocialMsgEvent".equals(str2) || "replyPrivateMsg".equals(str2)) {
                     this.tutorialStore.save(str, progress);
@@ -1194,42 +1196,37 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                             syncEventEffects(outputStream, bArr, str, progress, localEventEngine);
                             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("startEventReply"), BsonLite.eventReplyDocument(intValue2.intValue(), SERVICE_ENTITY_MESSAGE)));
                             localEventEngine2 = localEventEngine;
-                            str5 = str5;
                             str4 = str4;
                             str3 = str3;
                         }
                     } else {
-                        String str6 = str5;
-                        String str7 = str4;
-                        String str8 = str3;
+                        String str5 = str4;
+                        String str6 = str3;
                         if (!"triggerIntelligenceEvents".equals(reply.method) || ((intValue = BsonLite.intValue(reply.parameters, "e")) != null && (progress.availableEvents.contains(intValue) || progress.processingEvents.contains(intValue)))) {
                             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(reply.method), reply.parameters));
                             localEventEngine2 = localEventEngine;
-                            str5 = str6;
-                            str4 = str7;
-                            str3 = str8;
+                            str4 = str5;
+                            str3 = str6;
                         } else {
                             localEventEngine2 = localEventEngine;
-                            str5 = str6;
-                            str4 = str7;
-                            str3 = str8;
+                            str4 = str5;
+                            str3 = str6;
                         }
                     }
                 }
-                String str9 = str5;
-                String str10 = str4;
-                String str11 = str3;
-                if (LocalWingDrugEngine.handles(str2) || "requestFlashbackIncDay".equals(str2)) {
+                String str7 = str4;
+                String str8 = str3;
+                if (LocalWingDrugEngine.handles(str2)) {
                     byte[] sent = LocalStoryProgressDelivery.sent(updateServices);
                     if (!BsonLite.keys(sent).isEmpty()) {
                         this.profileProvider.updateServices(str, "q7AckStoryProgress", sent, progress);
                     }
                 }
-                if (("requestFlashbackIncDay".equals(str2) || str11.equals(str2) || LocalHeroGiftEngine.handles(str2) || LocalWingDrugEngine.handles(str2)) && localEventEngine != null) {
+                if (("replyPrivateMsg".equals(str2) || LocalHeroGiftEngine.handles(str2) || LocalWingDrugEngine.handles(str2)) && localEventEngine != null) {
                     syncEventEffects(outputStream, bArr, str, progress, localEventEngine);
                     writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pushEvents"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
                 }
-                LocalDiagnosticLog.m14i(str9, "city service account=" + str + str10 + str2);
+                LocalDiagnosticLog.m16i(str7, "city service account=" + str + str8 + str2);
                 return true;
             }
         }
@@ -1312,7 +1309,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             updateServices.profile = updateServices2.profile;
         }
         localEventEngine.refreshProfile(updateServices.profile);
-        LocalDiagnosticLog.m15w(TAG, "story message closure budget exhausted; no player event forced account=" + str);
+        LocalDiagnosticLog.m17w(TAG, "story message closure budget exhausted; no player event forced account=" + str);
         return updateServices;
     }
 
@@ -1322,7 +1319,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         }
         for (LocalResourceEngine.Reply reply2 : result.replies) {
             if ("addCenterConfidence".equals(reply2.method)) {
-                LocalDiagnosticLog.m14i(TAG, "story confidence delivered delta=" + LocalResourceEngine.value(reply2.parameters, "v") + " total=" + LocalResourceEngine.value(reply2.parameters, "c"));
+                LocalDiagnosticLog.m16i(TAG, "story confidence delivered delta=" + LocalResourceEngine.value(reply2.parameters, "v") + " total=" + LocalResourceEngine.value(reply2.parameters, "c"));
             }
         }
         byte[] sent = LocalStoryProgressDelivery.sent(result);
@@ -1360,18 +1357,18 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r6v33 */
     /* JADX WARN: Type inference failed for: r6v34, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r6v58 */
+    /* JADX WARN: Type inference failed for: r6v60 */
     private boolean handleBasicRpc(OutputStream outputStream, byte[] bArr, byte[] bArr2, byte[] bArr3, String str) throws IOException {
         if (Arrays.equals(bArr2, digest("remove_chat_channel_listener"))) {
             return true;
         }
         if (Arrays.equals(bArr2, digest("evalEcho"))) {
-            LocalDiagnosticLog.m14i(TAG, "client data sync: " + BsonLite.stringValue(bArr3, "m"));
+            LocalDiagnosticLog.m16i(TAG, "client data sync: " + BsonLite.stringValue(bArr3, "m"));
             return true;
         }
         if (Arrays.equals(bArr2, digest("checkGamePlaySwitchAsk"))) {
             String stringValue = BsonLite.stringValue(bArr3, "g");
-            ?? r6 = ("friendsummon".equals(stringValue) || "summon".equals(stringValue) || "itemStore".equals(stringValue) || "huodongMain_2".equals(stringValue) || "huodongMain_42".equals(stringValue) || "huodongMain_215".equals(stringValue) || "memoryPalace".equals(stringValue) || "exchange".equals(stringValue) || "dancengxunluo".equals(stringValue) || "lunhuizhijing".equals(stringValue) || "furnitureSummon".equals(stringValue) || "funitureSummonLianchou".equals(stringValue) || "heroliberate".equals(stringValue)) ? SERVICE_ENTITY_MESSAGE : SERVICE_CONNECT_SERVER;
+            ?? r6 = ("friendsummon".equals(stringValue) || "summon".equals(stringValue) || "itemStore".equals(stringValue) || "huodongMain_2".equals(stringValue) || "huodongMain_42".equals(stringValue) || "huodongMain_215".equals(stringValue) || "memoryPalace".equals(stringValue) || "exchange".equals(stringValue) || "dancengxunluo".equals(stringValue) || "lunhuizhijing".equals(stringValue) || "furnitureSummon".equals(stringValue) || "funitureSummonLianchou".equals(stringValue) || "blackgate".equals(stringValue) || "heroliberate".equals(stringValue)) ? SERVICE_ENTITY_MESSAGE : SERVICE_CONNECT_SERVER;
             if ("friendsummon".equals(stringValue) || "summon".equals(stringValue)) {
                 syncDrawCalendar(outputStream, bArr);
             }
@@ -1384,7 +1381,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             objArr[4] = "m";
             objArr[CLIENT_ENTITY_MESSAGE] = r6 == 0 ? "此玩法尚未接入本地网关" : "";
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5, BsonLite.document(objArr)));
-            LocalDiagnosticLog.m14i(TAG, "gameplay switch=" + stringValue + " enabled=" + ((boolean) r6));
+            LocalDiagnosticLog.m16i(TAG, "gameplay switch=" + stringValue + " enabled=" + ((boolean) r6));
             return true;
         }
         String[] strArr = {"buyMoney", "buyCardMallItem", "setSkinRequest", "queryItemDetail", "yuanbaoExchangeCrystal", "crystalExchangeSkinCoin", "buySkinRequest"};
@@ -1398,7 +1395,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 for (Map.Entry<String, byte[]> entry : updateCommerce.replies.entrySet()) {
                     writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(entry.getKey()), entry.getValue()));
                 }
-                LocalDiagnosticLog.m14i(TAG, "commerce RPC completed account=" + str + " method=" + str2 + " success=" + (updateCommerce.replies.containsKey("showMessageStr") ^ SERVICE_ENTITY_MESSAGE));
+                LocalDiagnosticLog.m16i(TAG, "commerce RPC completed account=" + str + " method=" + str2 + " success=" + (updateCommerce.replies.containsKey("showMessageStr") ^ SERVICE_ENTITY_MESSAGE));
                 return true;
             }
         }
@@ -1432,7 +1429,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 sb.append("setHeadImage".equals(str3) ? "<avatar metadata/image redacted>" : BsonLite.debugDocument(bArr3));
                 sb.append(" role=");
                 sb.append(BsonLite.intValue(updateProfile.profile, "role"));
-                LocalDiagnosticLog.m14i(TAG, sb.toString());
+                LocalDiagnosticLog.m16i(TAG, sb.toString());
                 return true;
             }
         }
@@ -1449,7 +1446,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 for (LocalResourceEngine.Reply reply : updateResources.replies) {
                     writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(reply.method), reply.parameters));
                 }
-                LocalDiagnosticLog.m14i(TAG, "resource RPC account=" + str + " method=" + str2 + " parameters=" + BsonLite.debugDocument(bArr3) + " replies=" + updateResources.replies.size() + " elapsedMs=" + ((System.nanoTime() - nanoTime) / 1000000));
+                LocalDiagnosticLog.m16i(TAG, "resource RPC account=" + str + " method=" + str2 + " parameters=" + BsonLite.debugDocument(bArr3) + " replies=" + updateResources.replies.size() + " elapsedMs=" + ((System.nanoTime() - nanoTime) / 1000000));
                 return true;
             }
         }
@@ -1466,7 +1463,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
     private void syncTutorialCityState(OutputStream outputStream, byte[] bArr, String str, LocalTutorialStore.Progress progress, int i) throws IOException {
         if (isHighSchoolUnlocked(progress)) {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("get_all_area_info_reply"), BsonLite.allAreaInfoReplyDocument(true, progress, this.profileProvider.load(str, progress))));
-            LocalDiagnosticLog.m14i(TAG, "city battle state refreshed after event=" + i);
+            LocalDiagnosticLog.m16i(TAG, "city battle state refreshed after event=" + i);
         }
     }
 
@@ -1508,7 +1505,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 return;
             }
         }
-        localEventEngine.refreshProfile(this.profileProvider.load(str, progress));
+        localEventEngine.refreshProfile(this.profileProvider.snapshot(str, progress));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1555,7 +1552,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         long nanoTime = System.nanoTime();
         byte[] documentValue = BsonLite.documentValue(bArr2, "w");
         if (documentValue == null) {
-            LocalDiagnosticLog.m15w(TAG, "reliableRpcCall missing wrapper");
+            LocalDiagnosticLog.m17w(TAG, "reliableRpcCall missing wrapper");
             return;
         }
         Integer intValue = BsonLite.intValue(documentValue, "r");
@@ -1563,7 +1560,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         byte[] documentValue2 = BsonLite.documentValue(documentValue, "p");
         Integer intValue2 = BsonLite.intValue(bArr2, "_cbid_");
         if (intValue == null) {
-            LocalDiagnosticLog.m15w(TAG, "reliableRpcCall missing sequence");
+            LocalDiagnosticLog.m17w(TAG, "reliableRpcCall missing sequence");
             return;
         }
         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("reliableRpcAck"), BsonLite.intDocument("s", intValue.intValue())));
@@ -1576,12 +1573,12 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         sb.append(intValue2);
         sb.append(" parameters=");
         sb.append("setHeadImage".equals(stringValue) ? "<avatar metadata/image redacted>" : BsonLite.debugDocument(documentValue2));
-        LocalDiagnosticLog.m14i(TAG, sb.toString());
+        LocalDiagnosticLog.m16i(TAG, sb.toString());
         if (("enterPatrolRequest".equals(stringValue) || "patrolReward".equals(stringValue)) && map.containsKey(intValue)) {
             if (intValue2 != null) {
                 localGatewayServer.completeCallback(outputStream, bArr, intValue2.intValue(), stringValue);
             }
-            LocalDiagnosticLog.m14i(TAG, "duplicate patrol RPC ignored seq=" + intValue + " method=" + stringValue);
+            LocalDiagnosticLog.m16i(TAG, "duplicate patrol RPC ignored seq=" + intValue + " method=" + stringValue);
             return;
         }
         if ("combatOfflineRequest".equals(stringValue)) {
@@ -1592,7 +1589,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             localGatewayServer.listener.onStatus(true, "已处理业务 RPC：" + stringValue + "\n序号：" + intValue);
             long nanoTime2 = (System.nanoTime() - nanoTime) / 1000000;
             if (nanoTime2 >= 250) {
-                LocalDiagnosticLog.m15w(TAG, "slow reliable RPC method=" + stringValue + " seq=" + intValue + " elapsedMs=" + nanoTime2);
+                LocalDiagnosticLog.m17w(TAG, "slow reliable RPC method=" + stringValue + " seq=" + intValue + " elapsedMs=" + nanoTime2);
                 return;
             }
             return;
@@ -1601,7 +1598,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             if (intValue2 != null) {
                 localGatewayServer.completeCallback(outputStream, bArr, intValue2.intValue(), stringValue);
             }
-            LocalDiagnosticLog.m14i(TAG, "duplicate commerce RPC ignored seq=" + intValue + " method=" + stringValue);
+            LocalDiagnosticLog.m16i(TAG, "duplicate commerce RPC ignored seq=" + intValue + " method=" + stringValue);
             return;
         }
         Integer num8 = null;
@@ -1851,7 +1848,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                             String stringValue2 = BsonLite.stringValue(bArr5, "s");
                             if (stringValue2 == null) {
                                 str16 = str2;
-                                LocalDiagnosticLog.m15w(str16, "statusSwitch missing requested status");
+                                LocalDiagnosticLog.m17w(str16, "statusSwitch missing requested status");
                             } else {
                                 str16 = str2;
                                 if ("summon".equals(stringValue2)) {
@@ -1862,7 +1859,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                     localGatewayServer.tutorialStore.save(str, progress);
                                 }
                                 localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("statusSwitchReply"), BsonLite.statusSwitchReplyDocument(stringValue2)));
-                                LocalDiagnosticLog.m14i(str16, "statusSwitch completed status=" + stringValue2);
+                                LocalDiagnosticLog.m16i(str16, "statusSwitch completed status=" + stringValue2);
                             }
                             num4 = intValue2;
                             num2 = num3;
@@ -1877,10 +1874,10 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("replyLuckyDrawFile"), BsonLite.luckyDrawFileReplyDocument(true, intValue4)));
                                 if (localEventEngine3 != null && localEventEngine3.beginNewbeeForPanel(93, "card_box")) {
                                     localGatewayServer.tutorialStore.save(str, progress);
-                                    LocalDiagnosticLog.m14i(str17, "card-box tutorial activated by lucky draw request event=93");
+                                    LocalDiagnosticLog.m16i(str17, "card-box tutorial activated by lucky draw request event=93");
                                 }
                                 localGatewayServer.triggerPendingNewbees(outputStream, bArr, localEventEngine3, set5);
-                                LocalDiagnosticLog.m14i(str17, "lucky draw file opened type=" + intValue4);
+                                LocalDiagnosticLog.m16i(str17, "lucky draw file opened type=" + intValue4);
                                 num4 = intValue2;
                                 num2 = num3;
                                 str6 = str3;
@@ -1888,12 +1885,12 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 str8 = str17;
                             } else if ("pullEvents".equals(stringValue)) {
                                 if (localEventEngine3 != null) {
-                                    localEventEngine3.refreshProfile(localGatewayServer.profileProvider.snapshot(str, progress));
+                                    q7ThrottledRefresh(localEventEngine3, localGatewayServer.profileProvider, str, progress);
                                 }
                                 Set<Integer> emptySet = localEventEngine3 == null ? Collections.emptySet() : localEventEngine.availableEvents();
                                 Set<Integer> emptySet2 = localEventEngine3 == null ? Collections.emptySet() : localEventEngine.processingEvents();
                                 localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pullEventsReply"), BsonLite.eventListsDocument(emptySet, emptySet2)));
-                                LocalDiagnosticLog.m14i(str17, "pullEvents completed available=" + emptySet + " processing=" + emptySet2);
+                                LocalDiagnosticLog.m16i(str17, "pullEvents completed available=" + emptySet + " processing=" + emptySet2);
                                 localGatewayServer.triggerPendingNewbees(outputStream, bArr, localEventEngine3, set5);
                                 num4 = intValue2;
                                 num2 = num3;
@@ -1910,7 +1907,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                 if (z3) {
                                     localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pushEvents"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
                                 }
-                                LocalDiagnosticLog.m14i(str17, "external UI event=" + intValue5 + " accepted=" + z3);
+                                LocalDiagnosticLog.m16i(str17, "external UI event=" + intValue5 + " accepted=" + z3);
                                 num4 = intValue2;
                                 num2 = num3;
                                 str6 = str3;
@@ -1924,7 +1921,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                     if (intValue6 != null) {
                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("startEventReply"), BsonLite.eventReplyDocument(intValue6.intValue(), SERVICE_CONNECT_SERVER)));
                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pushEvents"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
-                                        LocalDiagnosticLog.m14i(str15, "story event rejected event=" + intValue6 + " blockers=" + localEventEngine.blockedStoryEvents());
+                                        LocalDiagnosticLog.m16i(str15, "story event rejected event=" + intValue6 + " blockers=" + localEventEngine.blockedStoryEvents());
                                     }
                                 } else {
                                     boolean add = set.add(intValue6);
@@ -1944,7 +1941,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                     sb2.append(add ? "tutorial event started event=" : "tutorial event start replayed event=");
                                     sb2.append(intValue6);
                                     str15 = str17;
-                                    LocalDiagnosticLog.m14i(str15, sb2.toString());
+                                    LocalDiagnosticLog.m16i(str15, sb2.toString());
                                 }
                                 str7 = stringValue;
                                 num2 = num3;
@@ -1953,7 +1950,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                             } else {
                                 num4 = intValue2;
                                 if ("reliableEcho".equals(stringValue)) {
-                                    LocalDiagnosticLog.m14i(str17, "native reliable echo barrier");
+                                    LocalDiagnosticLog.m16i(str17, "native reliable echo barrier");
                                     str7 = stringValue;
                                     num2 = num3;
                                     str6 = str3;
@@ -1984,7 +1981,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("completeEventReplyStart"), BsonLite.eventRewardDocument(num12.intValue())));
                                                     localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("completeEventReplyEnd"), BsonLite.eventDocument(num12.intValue())));
                                                     set6.remove(num12);
-                                                    LocalDiagnosticLog.m14i(str8, "event completed event=" + num12 + " condition=" + stringValue3 + arrayList);
+                                                    LocalDiagnosticLog.m16i(str8, "event completed event=" + num12 + " condition=" + stringValue3 + arrayList);
                                                     syncTutorialCityCompletion(outputStream, bArr, str, progress, num12.intValue());
                                                     str19 = str19;
                                                     set6 = set;
@@ -2021,7 +2018,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     }
                                                     localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("triggerClientNewbee"), BsonLite.eventDocument(intValue8.intValue())));
                                                     set5.add(intValue8);
-                                                    LocalDiagnosticLog.m14i(str8, "tutorial guidance requested/replayed event=" + intValue8);
+                                                    LocalDiagnosticLog.m16i(str8, "tutorial guidance requested/replayed event=" + intValue8);
                                                 } else {
                                                     num5 = num4;
                                                 }
@@ -2043,7 +2040,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                 } else {
                                                     str11 = stringValue;
                                                 }
-                                                LocalDiagnosticLog.m14i(str8, "tutorial guidance completed events=" + intArrayValues + " released=" + emptySet3);
+                                                LocalDiagnosticLog.m16i(str8, "tutorial guidance completed events=" + intArrayValues + " released=" + emptySet3);
                                                 str7 = str11;
                                                 num2 = num3;
                                                 str6 = str3;
@@ -2066,7 +2063,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                         try {
                                                             nextValue = new JSONTokener(stringValue4).nextValue();
                                                         } catch (JSONException e) {
-                                                            LocalDiagnosticLog.m16w(str8, "invalid area entrance JSON", e);
+                                                            LocalDiagnosticLog.m18w(str8, "invalid area entrance JSON", e);
                                                             obj2 = null;
                                                         }
                                                     }
@@ -2075,14 +2072,14 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     if (z4) {
                                                         localGatewayServer.tutorialStore.save(str, progress);
                                                     }
-                                                    LocalDiagnosticLog.m14i(str8, "area entrance condition=" + obj2 + " accepted=" + z4 + " available=" + localEventEngine.availableEvents() + " blockers=" + localEventEngine.blockedStoryEvents());
+                                                    LocalDiagnosticLog.m16i(str8, "area entrance condition=" + obj2 + " accepted=" + z4 + " available=" + localEventEngine.availableEvents() + " blockers=" + localEventEngine.blockedStoryEvents());
                                                 } else if (intValue9 != null && intValue9.intValue() == 102 && localEventEngine3 != null) {
                                                     String stringValue5 = BsonLite.stringValue(bArr8, "v");
                                                     if (stringValue5 != null) {
                                                         try {
                                                             nextValue2 = new JSONTokener(stringValue5).nextValue();
                                                         } catch (JSONException e2) {
-                                                            LocalDiagnosticLog.m16w(str8, "invalid client operation JSON", e2);
+                                                            LocalDiagnosticLog.m18w(str8, "invalid client operation JSON", e2);
                                                         }
                                                     }
                                                     Object obj3 = nextValue2;
@@ -2115,7 +2112,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     if ("getAreaStagesRequest".equals(str7)) {
                                                         int resolveAreaId = resolveAreaId(BsonLite.intValue(bArr8, "aid"), isHighSchoolUnlocked(progress));
                                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("get_area_stages_reply"), BsonLite.areaStagesReplyDocument(resolveAreaId, progress, localGatewayServer.profileProvider.snapshot(str, progress))));
-                                                        LocalDiagnosticLog.m14i(str8, "area stages completed area=" + resolveAreaId);
+                                                        LocalDiagnosticLog.m16i(str8, "area stages completed area=" + resolveAreaId);
                                                         str6 = str3;
                                                     } else {
                                                         StringBuilder sb3 = new StringBuilder();
@@ -2128,7 +2125,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                         sb3.append(num2);
                                                         sb3.append(" parameters=");
                                                         sb3.append(BsonLite.debugDocument(bArr8));
-                                                        LocalDiagnosticLog.m15w(str8, sb3.toString());
+                                                        LocalDiagnosticLog.m17w(str8, sb3.toString());
                                                         num5 = num4;
                                                         str6 = str20;
                                                         z = SERVICE_CONNECT_SERVER;
@@ -2148,7 +2145,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     if (!claim.isEmpty()) {
                                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("notify_add_friendly"), BsonLite.friendlyRewardDocument(claim)));
                                                     }
-                                                    LocalDiagnosticLog.m14i(str8, "patrol friendship claimed gains=" + claim);
+                                                    LocalDiagnosticLog.m16i(str8, "patrol friendship claimed gains=" + claim);
                                                     if (claim.isEmpty()) {
                                                         str8 = str8;
                                                     } else {
@@ -2172,7 +2169,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                 if (result == null) {
                                                     byte[] snapshot = localGatewayServer.profileProvider.snapshot(str, progress);
                                                     boolean canResume = LocalPatrolEngine.canResume(progress, snapshot, intValue11, intArrayValues2);
-                                                    List<Integer> patrolEvents = progress.patrolArea == 0 ? localEventEngine3.patrolEvents(intValue11, progress.patrolHeroes, localGatewayServer.patrolCatalog) : Collections.emptyList();
+                                                    List<Integer> patrolEvents = progress.patrolArea == 0 ? localEventEngine3.patrolEvents(intValue11) : Collections.emptyList();
                                                     if ((progress.patrolArea == 0 && map.isEmpty() && progress.patrolRewardPending && LocalPatrolEngine.dayKey(snapshot).equals(progress.patrolDay) && !progress.patrolEvents.isEmpty() && !patrolEvents.isEmpty() && progress.patrolEvents.containsAll(patrolEvents) && progress.patrolHeroes.equals(new HashSet(intArrayValues2)) && intArrayValues2.size() == progress.patrolHeroes.size()) | canResume) {
                                                         result = new LocalPatrolEngine.Result(true, new ArrayList(progress.patrolEvents), "resume paid patrol");
                                                         obj = "v";
@@ -2225,13 +2222,8 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     Object[] objArr2 = new Object[CLIENT_CONNECT_REPLY];
                                                     objArr2[c] = "aid";
                                                     objArr2[SERVICE_ENTITY_MESSAGE] = Integer.valueOf(i);
-                                                    LocalResourceEngine.Result updateServices = profileProvider.updateServices(str, "q7RecordPatrolAchievement", BsonLite.document(objArr2), progress);
-                                                    for (LocalResourceEngine.Reply reply : updateServices.replies) {
+                                                    for (LocalResourceEngine.Reply reply : profileProvider.updateServices(str, "q7RecordPatrolAchievement", BsonLite.document(objArr2), progress).replies) {
                                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5(reply.method), reply.parameters));
-                                                    }
-                                                    byte[] sent = LocalStoryProgressDelivery.sent(updateServices);
-                                                    if (!BsonLite.keys(sent).isEmpty()) {
-                                                        localGatewayServer.profileProvider.updateServices(str, "q7AckStoryProgress", sent, progress);
                                                     }
                                                     byte[] md5 = md5("syncSandglass");
                                                     Object[] objArr3 = new Object[CLIENT_CONNECT_REPLY];
@@ -2254,7 +2246,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                     localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("showMessageStr"), BsonLite.stringDocument(str5, "巡查条件不满足，请检查地区状态、行动力和所选角色。")));
                                                 }
                                                 String str21 = str10;
-                                                LocalDiagnosticLog.m14i(str21, "patrol completed area=" + i + " heroes=" + intArrayValues2 + " success=" + result.success + " reason=" + result.reason + " events=" + result.events + " actions=" + progress.patrolActions);
+                                                LocalDiagnosticLog.m16i(str21, "patrol completed area=" + i + " heroes=" + intArrayValues2 + " success=" + result.success + " reason=" + result.reason + " events=" + result.events + " actions=" + progress.patrolActions);
                                                 str8 = str21;
                                                 str6 = str3;
                                                 z = true;
@@ -2293,7 +2285,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                                 localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("startEventReply"), BsonLite.eventReplyDocument(intValue13.intValue(), SERVICE_ENTITY_MESSAGE)));
                                             }
                                             str18 = str18;
-                                            LocalDiagnosticLog.m14i(str18, "tutorial event option selected event=" + intValue12 + " selectedEvent=" + intValue13 + " option=" + num7);
+                                            LocalDiagnosticLog.m16i(str18, "tutorial event option selected event=" + intValue12 + " selectedEvent=" + intValue13 + " option=" + num7);
                                             num5 = num10;
                                             str7 = stringValue;
                                             num2 = num3;
@@ -2302,9 +2294,9 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                             z = true;
                                         }
                                         if (intValue12 == null || intValue13 == null || !localEventEngine.processingEvents().contains(intValue13)) {
-                                            LocalDiagnosticLog.m15w(str18, "tutorial event option rejected event=" + intValue12 + str13 + intValue13 + " processing=" + localEventEngine.processingEvents());
+                                            LocalDiagnosticLog.m17w(str18, "tutorial event option rejected event=" + intValue12 + str13 + intValue13 + " processing=" + localEventEngine.processingEvents());
                                         } else {
-                                            LocalDiagnosticLog.m14i(str18, "duplicate tutorial event option ignored event=" + intValue12 + str13 + intValue13 + " option=" + num6);
+                                            LocalDiagnosticLog.m16i(str18, "duplicate tutorial event option ignored event=" + intValue12 + str13 + intValue13 + " option=" + num6);
                                         }
                                         num5 = num4;
                                         str7 = stringValue;
@@ -2317,7 +2309,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                     Integer intValue15 = BsonLite.intValue(bArr5, "e");
                                     if (intValue15 == null || !localEventEngine3.completeImmediateEvent(intValue15.intValue())) {
                                         str14 = str17;
-                                        LocalDiagnosticLog.m14i(str14, "UI-only event acknowledgement ignored event=" + intValue15 + " processing=" + localEventEngine.processingEvents());
+                                        LocalDiagnosticLog.m16i(str14, "UI-only event acknowledgement ignored event=" + intValue15 + " processing=" + localEventEngine.processingEvents());
                                     } else {
                                         localGatewayServer.tutorialStore.save(str, progress);
                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("completeEventReplyStart"), BsonLite.eventRewardDocument(intValue15.intValue())));
@@ -2326,7 +2318,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                                         str14 = str17;
                                         syncEventEffects(outputStream, bArr, str, progress, localEventEngine);
                                         localGatewayServer.writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pushEvents"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
-                                        LocalDiagnosticLog.m14i(str14, "UI-only event completed after native UI event=" + intValue15);
+                                        LocalDiagnosticLog.m16i(str14, "UI-only event completed after native UI event=" + intValue15);
                                     }
                                     str7 = stringValue;
                                     num2 = num3;
@@ -2376,7 +2368,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         statusListener.onStatus(true, sb4.toString());
         long nanoTime3 = (System.nanoTime() - nanoTime) / 1000000;
         if (nanoTime3 >= 250) {
-            LocalDiagnosticLog.m15w(str8, "slow reliable RPC method=" + str7 + str6 + num2 + " elapsedMs=" + nanoTime3);
+            LocalDiagnosticLog.m17w(str8, "slow reliable RPC method=" + str7 + str6 + num2 + " elapsedMs=" + nanoTime3);
         }
     }
 
@@ -2470,16 +2462,16 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                     emitCombatCores(outputStream, bArr, combatReply);
                     writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("combatOfflineReply"), combatReply.parameters));
                     combatReply.delivered = true;
-                    LocalDiagnosticLog.m14i(TAG, "combat admission reply restored seq=" + i + " type=" + combatReply.type);
+                    LocalDiagnosticLog.m16i(TAG, "combat admission reply restored seq=" + i + " type=" + combatReply.type);
                     return;
                 }
                 str5 = TAG;
             }
-            LocalDiagnosticLog.m15w(str5, "stale/mismatched combat admission retry ignored seq=" + i);
+            LocalDiagnosticLog.m17w(str5, "stale/mismatched combat admission retry ignored seq=" + i);
             return;
         }
         if (set2.contains(Integer.valueOf(i))) {
-            LocalDiagnosticLog.m15w(TAG, "combat admission retry has no retained reply seq=" + i);
+            LocalDiagnosticLog.m17w(TAG, "combat admission retry has no retained reply seq=" + i);
             return;
         }
         CombatReply combatReply2 = new CombatReply();
@@ -2498,6 +2490,9 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         }
         String str6 = "q7Battle";
         if (value != SERVICE_ENTITY_MESSAGE && value != CLIENT_CONNECT_REPLY) {
+            if (value == 11) {
+                z2 = true;
+            }
             boolean battleType = z2 & LocalDailyEngine.battleType(value);
             if (battleType) {
                 LocalResourceEngine.Result updateServices = this.profileProvider.updateServices(str, "q7DailyBegin", bArr2, progress);
@@ -2596,7 +2591,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                     bArr3 = bArr5;
                     str2 = str6;
                     str3 = TAG;
-                    LocalDiagnosticLog.m14i(str3, "story combat black cores=" + cores);
+                    LocalDiagnosticLog.m16i(str3, "story combat black cores=" + cores);
                 }
                 result2 = result3;
                 snapshot2 = bArr3;
@@ -2621,7 +2616,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         emitCombatCores(outputStream, bArr, combatReply2);
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("combatOfflineReply"), combatReply2.parameters));
         combatReply2.delivered = true;
-        LocalDiagnosticLog.m14i(str3, "offline combat admission type=" + value + " scene=" + value2 + " heroes=" + list + " accepted=" + z);
+        LocalDiagnosticLog.m16i(str3, "offline combat admission type=" + value + " scene=" + value2 + " heroes=" + list + " accepted=" + z);
     }
 
     private boolean handleCombatCancelRpc(OutputStream outputStream, byte[] bArr, byte[] bArr2, byte[] bArr3, String str, LocalTutorialStore.Progress progress) throws IOException {
@@ -2661,7 +2656,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         sb.append(intValue2);
         sb.append(" receiptCleared=");
         sb.append(z);
-        LocalDiagnosticLog.m14i(TAG, sb.toString());
+        LocalDiagnosticLog.m16i(TAG, sb.toString());
         return true;
     }
 
@@ -2683,7 +2678,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         }
         syncEventEffects(outputStream, bArr, str, progress, localEventEngine);
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pushEvents"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
-        LocalDiagnosticLog.m14i(TAG, "confirmed story abandonment scene=" + value + " events=" + abandonStoryBattle);
+        LocalDiagnosticLog.m16i(TAG, "confirmed story abandonment scene=" + value + " events=" + abandonStoryBattle);
     }
 
     private void handleCombatOfflineFinish(OutputStream outputStream, byte[] bArr, byte[] bArr2, String str, LocalTutorialStore.Progress progress, LocalEventEngine localEventEngine, Set<Integer> set, Set<Integer> set2) throws IOException {
@@ -2709,13 +2704,13 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 }
             }
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("combatOfflineReward"), BsonLite.combatOfflineRewardDocument(intValue3, intValue4, intArrayValues, intArrayValues2, SERVICE_CONNECT_SERVER)));
-            LocalDiagnosticLog.m15w(TAG, "non-story settlement rejected type=" + intValue3 + " scene=" + intValue4);
+            LocalDiagnosticLog.m17w(TAG, "non-story settlement rejected type=" + intValue3 + " scene=" + intValue4);
             return;
         }
         boolean z2 = intValue3 == SERVICE_ENTITY_MESSAGE && LocalCityProgress.area(intValue4) != 0;
         if (intValue3 == CLIENT_CONNECT_REPLY && (localEventEngine == null || !localEventEngine.hasPendingStoryBattle(intValue4))) {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("combatOfflineReward"), BsonLite.combatOfflineRewardDocument(intValue3, intValue4, intArrayValues, intArrayValues2, SERVICE_CONNECT_SERVER)));
-            LocalDiagnosticLog.m15w(TAG, "story settlement rejected without matching admission scene=" + intValue4);
+            LocalDiagnosticLog.m17w(TAG, "story settlement rejected without matching admission scene=" + intValue4);
             return;
         }
         byte[] bArr4 = BsonLite.EMPTY_DOCUMENT;
@@ -2730,13 +2725,13 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             }
             int i2 = updateEconomy.accepted ? updateEconomy.win : SERVICE_CONNECT_SERVER;
             byte[] bArr5 = updateEconomy.reward;
-            LocalDiagnosticLog.m14i(TAG, "battle settlement accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " scene=" + intValue4 + " reason=" + updateEconomy.reason + " reward=" + BsonLite.debugDocument(bArr5));
+            LocalDiagnosticLog.m16i(TAG, "battle settlement accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " scene=" + intValue4 + " reason=" + updateEconomy.reason + " reward=" + BsonLite.debugDocument(bArr5));
             result = updateEconomy;
             bArr3 = bArr5;
             i = i2;
         }
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("combatOfflineReward"), BsonLite.combatOfflineRewardDocument(intValue3, intValue4, intArrayValues, intArrayValues2, i, bArr3)));
-        LocalDiagnosticLog.m14i(TAG, "offline combat finished type=" + intValue3 + " scene=" + intValue4 + " win=" + i + " heroes=" + intArrayValues);
+        LocalDiagnosticLog.m16i(TAG, "offline combat finished type=" + intValue3 + " scene=" + intValue4 + " win=" + i + " heroes=" + intArrayValues);
         finishStoryCombat(outputStream, bArr, str, progress, localEventEngine, set, set2, intValue3, intValue4, i, result);
     }
 
@@ -2755,7 +2750,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             }
             finishStoryCombat(outputStream, bArr, str, progress, localEventEngine, set, set2, SERVICE_ENTITY_MESSAGE, value, SERVICE_ENTITY_MESSAGE, updateEconomy);
         }
-        LocalDiagnosticLog.m14i(TAG, "suppression scene=" + value + " accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " reason=" + updateEconomy.reason);
+        LocalDiagnosticLog.m16i(TAG, "suppression scene=" + value + " accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " reason=" + updateEconomy.reason);
         return true;
     }
 
@@ -2779,16 +2774,16 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("completeEventReplyStart"), BsonLite.eventRewardDocument(num.intValue())));
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("completeEventReplyEnd"), BsonLite.eventDocument(num.intValue())));
             set.remove(num);
-            LocalDiagnosticLog.m14i(TAG, "event completed event=" + num + " condition=battle[" + i2 + "]");
+            LocalDiagnosticLog.m16i(TAG, "event completed event=" + num + " condition=battle[" + i2 + "]");
         }
         syncEventEffects(outputStream, bArr, str, progress, localEventEngine);
         if (z2) {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("get_city_data_reply"), BsonLite.cityDataReplyDocument(progress, this.profileProvider.snapshot(str, progress))));
-            LocalDiagnosticLog.m14i(TAG, "combat action consumed scene=" + i2 + " remaining=" + progress.patrolActions);
+            LocalDiagnosticLog.m16i(TAG, "combat action consumed scene=" + i2 + " remaining=" + progress.patrolActions);
         }
         if (i == SERVICE_ENTITY_MESSAGE && LocalCityProgress.area(i2) != 0) {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("get_all_area_info_reply"), BsonLite.allAreaInfoReplyDocument(isHighSchoolUnlocked(progress), progress, this.profileProvider.snapshot(str, progress))));
-            LocalDiagnosticLog.m14i(TAG, "post-battle city state refreshed scene=" + i2);
+            LocalDiagnosticLog.m16i(TAG, "post-battle city state refreshed scene=" + i2);
         }
         triggerPendingNewbees(outputStream, bArr, localEventEngine, set2);
         this.tutorialStore.save(str, progress);
@@ -2828,7 +2823,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             localEventEngine.refreshProfile(this.profileProvider.snapshot(str, progress));
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pushEvents"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
         }
-        LocalDiagnosticLog.m14i(TAG, "city operation=" + str2 + " accepted=" + updateEconomy.accepted + " reason=" + updateEconomy.reason + " actions=" + updateEconomy.remainingActions);
+        LocalDiagnosticLog.m16i(TAG, "city operation=" + str2 + " accepted=" + updateEconomy.accepted + " reason=" + updateEconomy.reason + " actions=" + updateEconomy.remainingActions);
         return true;
     }
 
@@ -2859,7 +2854,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
                 nextDayBlocker = "ok";
             }
             sb.append(nextDayBlocker);
-            LocalDiagnosticLog.m14i(TAG, sb.toString());
+            LocalDiagnosticLog.m16i(TAG, sb.toString());
             return true;
         }
         if (!Arrays.equals(bArr2, digest("canteenRequest"))) {
@@ -2873,7 +2868,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         if (localEventEngine != null) {
             localEventEngine.refreshProfile(this.profileProvider.load(str, progress));
         }
-        LocalDiagnosticLog.m14i(TAG, "canteen accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " reason=" + updateEconomy.reason);
+        LocalDiagnosticLog.m16i(TAG, "canteen accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " reason=" + updateEconomy.reason);
         return true;
     }
 
@@ -2889,7 +2884,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         if (localEventEngine != null) {
             localEventEngine.refreshProfile(this.profileProvider.load(str, progress));
         }
-        LocalDiagnosticLog.m14i(TAG, "rest accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " reason=" + updateEconomy.reason);
+        LocalDiagnosticLog.m16i(TAG, "rest accepted=" + updateEconomy.accepted + " replay=" + updateEconomy.replay + " reason=" + updateEconomy.reason);
     }
 
     private void handleCalendar(OutputStream outputStream, byte[] bArr, String str, LocalTutorialStore.Progress progress, LocalEventEngine localEventEngine, String str2) throws IOException {
@@ -2904,7 +2899,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         if (updateEconomy.accepted && localEventEngine != null) {
             writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("pullEventsReply"), BsonLite.eventListsDocument(localEventEngine.availableEvents(), localEventEngine.processingEvents())));
         }
-        LocalDiagnosticLog.m14i(TAG, "calendar method=" + str2 + " accepted=" + updateEconomy.accepted + " reason=" + updateEconomy.reason);
+        LocalDiagnosticLog.m16i(TAG, "calendar method=" + str2 + " accepted=" + updateEconomy.accepted + " reason=" + updateEconomy.reason);
     }
 
     private static int resolveAreaId(Integer num, boolean z) {
@@ -2920,7 +2915,7 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
             return;
         }
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("addHero"), BsonLite.addHeroDocument(24)));
-        LocalDiagnosticLog.m14i(TAG, "tutorial hero granted event=" + i + " hero=24");
+        LocalDiagnosticLog.m16i(TAG, "tutorial hero granted event=" + i + " hero=24");
     }
 
     private static int starterHeroForUsername(String str) {
@@ -2941,14 +2936,14 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
         for (Integer num : localEventEngine.processingNewbees()) {
             if (set.add(num)) {
                 writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("triggerClientNewbee"), BsonLite.eventDocument(num.intValue())));
-                LocalDiagnosticLog.m14i(TAG, "pending tutorial guidance pushed event=" + num);
+                LocalDiagnosticLog.m16i(TAG, "pending tutorial guidance pushed event=" + num);
             }
         }
     }
 
     private void completeCallback(OutputStream outputStream, byte[] bArr, int i, String str) throws IOException {
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("serverCallbackCarrier"), BsonLite.callbackDocument(i)));
-        LocalDiagnosticLog.m14i(TAG, "reliable RPC callback completed id=" + i + " method=" + str);
+        LocalDiagnosticLog.m16i(TAG, "reliable RPC callback completed id=" + i + " method=" + str);
     }
 
     private void sendLoginFailure(OutputStream outputStream, byte[] bArr, String str) throws IOException {
@@ -2958,11 +2953,11 @@ final class LocalGatewayServer implements Runnable, AutoCloseable {
     private void completeEmptyCallback(OutputStream outputStream, byte[] bArr, byte[] bArr2, String str) throws IOException {
         Integer intValue = BsonLite.intValue(bArr2, "_cbid_");
         if (intValue == null) {
-            LocalDiagnosticLog.m14i(TAG, str + " completed without callback id");
+            LocalDiagnosticLog.m16i(TAG, str + " completed without callback id");
             return;
         }
         writeFrame(outputStream, CLIENT_ENTITY_MESSAGE, ProtoLite.entityMessage(bArr, md5("serverCallbackCarrier"), BsonLite.callbackDocument(intValue.intValue())));
-        LocalDiagnosticLog.m14i(TAG, str + " callback completed id=" + intValue);
+        LocalDiagnosticLog.m16i(TAG, str + " callback completed id=" + intValue);
         this.listener.onStatus(true, "已完成启动回调：" + str);
     }
 

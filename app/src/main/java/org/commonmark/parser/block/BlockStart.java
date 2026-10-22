@@ -18,7 +18,7 @@ public abstract class BlockStart {
     }
 
     /* renamed from: of */
-    public static BlockStart m104of(BlockParser... blockParsers) {
+    public static BlockStart m100of(BlockParser... blockParsers) {
         return new BlockStartImpl(blockParsers);
     }
 }

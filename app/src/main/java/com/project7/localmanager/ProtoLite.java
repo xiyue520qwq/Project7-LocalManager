@@ -10,7 +10,7 @@ final class ProtoLite {
     static final class EntityMessage {
 
         /* renamed from: id */
-        byte[] f13id = new byte[0];
+        byte[] f20id = new byte[0];
         byte[] methodMd5 = new byte[0];
         byte[] parameters = new byte[0];
 
@@ -53,7 +53,7 @@ final class ProtoLite {
             } else {
                 byte[] readBytes = cursor.readBytes();
                 if (i == 2) {
-                    entityMessage.f13id = readBytes;
+                    entityMessage.f20id = readBytes;
                 } else if (i == 3) {
                     entityMessage.methodMd5 = parseMd5(readBytes);
                 } else if (i == 4) {

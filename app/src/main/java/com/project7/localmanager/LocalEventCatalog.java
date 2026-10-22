@@ -37,14 +37,9 @@ final class LocalEventCatalog {
     final Map<Integer, String> clueRoutes;
     final Map<Integer, Integer> confidenceEffects;
     final Map<Integer, int[]> consumptions;
-    final Map<Integer, int[]> dailyPure;
     final Map<Integer, Effect> effects;
     private final Map<Integer, Event> events;
     final Set<Integer> externalEvents;
-    int flashbackEntry;
-    int flashbackLimit;
-    final Map<Integer, int[]> flashbackRounds;
-    final Map<Integer, Integer> generalRewards;
     final Map<Integer, Set<Integer>> heroClears;
     final Map<Integer, int[]> heroRewards;
     final Map<Integer, LocalStoryItemRewardEngine.Reward> itemRewards;
@@ -53,7 +48,6 @@ final class LocalEventCatalog {
     private final Map<Integer, Set<Integer>> mutexEvents;
     final Map<Integer, int[]> notes;
     final Map<Integer, Outcome> outcomes;
-    final Map<Integer, Set<Integer>> patrolExcluded;
     final Set<Integer> permanentSocialMessages;
     final Map<Integer, Set<Integer>> privateMessageEvents;
     final Map<Integer, Map<Integer, Integer>> privateReplies;
@@ -67,8 +61,6 @@ final class LocalEventCatalog {
     final Map<Integer, Set<Integer>> socialConflicts;
     final Map<Integer, Set<Integer>> socialEvents;
     final Map<Integer, Set<Integer>> socialMutex;
-    final Map<Integer, Set<Integer>> storyTreasureExclusions;
-    final Map<Integer, int[]> storyTreasures;
     final Map<String, Integer> targetCounts;
     final Map<Integer, Map<String, Integer>> targetEffects;
     private final Map<Integer, Trigger> triggers;
@@ -85,12 +77,10 @@ final class LocalEventCatalog {
         this.serverEdges = new LinkedHashMap();
         this.triggers = new LinkedHashMap();
         this.mutexEvents = new LinkedHashMap();
-        this.patrolExcluded = new LinkedHashMap();
         this.effects = new LinkedHashMap();
         this.notes = new LinkedHashMap();
         this.clearNotes = new LinkedHashMap();
         this.heroClears = new LinkedHashMap();
-        this.dailyPure = new LinkedHashMap();
         this.privateReplies = new LinkedHashMap();
         this.privateReplyMessages = new LinkedHashMap();
         this.privateMessageEvents = new LinkedHashMap();
@@ -102,8 +92,6 @@ final class LocalEventCatalog {
         this.sailafeimuEffects = new LinkedHashMap();
         this.baiyuEffects = new LinkedHashMap();
         this.yisakeEffects = new LinkedHashMap();
-        this.generalRewards = new LinkedHashMap();
-        this.flashbackRounds = new LinkedHashMap();
         this.wingGardens = new LinkedHashMap();
         this.cityEffects = new LinkedHashMap();
         this.cityOutcomes = new LinkedHashMap();
@@ -125,8 +113,6 @@ final class LocalEventCatalog {
         this.memoryRewards = new LinkedHashMap();
         this.heroRewards = new LinkedHashMap();
         this.itemRewards = new LinkedHashMap();
-        this.storyTreasures = new LinkedHashMap();
-        this.storyTreasureExclusions = new LinkedHashMap();
         this.puzzleRooms = new LinkedHashMap();
         this.puzzleClues = new LinkedHashMap();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
@@ -195,10 +181,6 @@ final class LocalEventCatalog {
         }
         String[] split = str.split("\t", -1);
         int i = 0;
-        if ("@dailyPure".equals(split[0]) && split.length == 5) {
-            this.dailyPure.put(Integer.valueOf(Integer.parseInt(split[1])), new int[]{Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4])});
-            return;
-        }
         if ("@wingDrugs".equals(split[0]) && split.length == 6) {
             if (this.wingDrugs == null) {
                 this.wingDrugs = new int[5];
@@ -257,7 +239,7 @@ final class LocalEventCatalog {
         }
         if ("@puzzleClue".equals(split[0]) && split.length == 4) {
             LocalPuzzleEngine.Clue clue = new LocalPuzzleEngine.Clue(split);
-            this.puzzleClues.put(Integer.valueOf(clue.f4id), clue);
+            this.puzzleClues.put(Integer.valueOf(clue.f11id), clue);
             return;
         }
         if ("@memoryReward".equals(split[0]) && split.length == 3) {
@@ -280,36 +262,10 @@ final class LocalEventCatalog {
             }
             return;
         }
-        if ("@generalReward".equals(split[0]) && split.length == 3) {
+        if ("@yisake".equals(split[0]) && split.length == 3) {
             int parseInt9 = Integer.parseInt(split[1]);
             int parseInt10 = Integer.parseInt(split[2]);
-            if (parseInt9 <= 0 || parseInt10 <= 0 || this.generalRewards.put(Integer.valueOf(parseInt9), Integer.valueOf(parseInt10)) != null) {
-                throw new IllegalArgumentException("invalid general currency reward");
-            }
-            return;
-        }
-        if ("@flashback".equals(split[0]) && split.length == 3) {
-            this.flashbackEntry = Integer.parseInt(split[1]);
-            int parseInt11 = Integer.parseInt(split[2]);
-            this.flashbackLimit = parseInt11;
-            if (this.flashbackEntry <= 0 || parseInt11 != 3) {
-                throw new IllegalArgumentException("invalid flashback entry");
-            }
-            return;
-        }
-        if ("@flashbackRound".equals(split[0]) && split.length == 4) {
-            int parseInt12 = Integer.parseInt(split[1]);
-            int parseInt13 = Integer.parseInt(split[2]);
-            int parseInt14 = Integer.parseInt(split[3]);
-            if (parseInt12 < 1 || parseInt12 > 7 || parseInt13 <= 0 || parseInt14 <= 0 || this.flashbackRounds.put(Integer.valueOf(parseInt12), new int[]{parseInt13, parseInt14}) != null) {
-                throw new IllegalArgumentException("invalid flashback round");
-            }
-            return;
-        }
-        if ("@yisake".equals(split[0]) && split.length == 3) {
-            int parseInt15 = Integer.parseInt(split[1]);
-            int parseInt16 = Integer.parseInt(split[2]);
-            if (parseInt15 <= 0 || parseInt16 <= 0 || parseInt16 > 100 || this.yisakeEffects.put(Integer.valueOf(parseInt15), Integer.valueOf(parseInt16)) != null) {
+            if (parseInt9 <= 0 || parseInt10 <= 0 || parseInt10 > 100 || this.yisakeEffects.put(Integer.valueOf(parseInt9), Integer.valueOf(parseInt10)) != null) {
                 throw new IllegalArgumentException("invalid original Yisake effect");
             }
             return;
@@ -332,14 +288,14 @@ final class LocalEventCatalog {
             return;
         }
         if ("@cityOutcome".equals(split[0]) && split.length == 4) {
-            int parseInt17 = Integer.parseInt(split[1]);
-            this.cityOutcomes.put(Integer.valueOf(parseInt17), new Outcome(parseInt17, parseIntSet(split[2]), parseIntSet(split[3])));
+            int parseInt11 = Integer.parseInt(split[1]);
+            this.cityOutcomes.put(Integer.valueOf(parseInt11), new Outcome(parseInt11, parseIntSet(split[2]), parseIntSet(split[3])));
             return;
         }
         if ("@clue".equals(split[0]) && split.length == 4) {
-            int parseInt18 = Integer.parseInt(split[1]);
-            this.clueFamilies.put(Integer.valueOf(parseInt18), split[2]);
-            this.clueRoutes.put(Integer.valueOf(parseInt18), split[3]);
+            int parseInt12 = Integer.parseInt(split[1]);
+            this.clueFamilies.put(Integer.valueOf(parseInt12), split[2]);
+            this.clueRoutes.put(Integer.valueOf(parseInt12), split[3]);
             return;
         }
         if ("@clueEffect".equals(split[0]) && split.length == 4) {
@@ -359,16 +315,16 @@ final class LocalEventCatalog {
             return;
         }
         if ("@social".equals(split[0]) && split.length >= 4) {
-            int parseInt19 = Integer.parseInt(split[1]);
-            this.socialEvents.put(Integer.valueOf(parseInt19), parseIntSet(split[2]));
+            int parseInt13 = Integer.parseInt(split[1]);
+            this.socialEvents.put(Integer.valueOf(parseInt13), parseIntSet(split[2]));
             if ("1".equals(split[3])) {
-                this.autoSocialMessages.add(Integer.valueOf(parseInt19));
+                this.autoSocialMessages.add(Integer.valueOf(parseInt13));
             }
             if (split.length >= 5) {
-                this.socialActions.put(Integer.valueOf(parseInt19), Integer.valueOf(Integer.parseInt(split[4])));
+                this.socialActions.put(Integer.valueOf(parseInt13), Integer.valueOf(Integer.parseInt(split[4])));
             }
             if (split.length >= 6) {
-                this.socialMutex.put(Integer.valueOf(parseInt19), parseIntSet(split[5]));
+                this.socialMutex.put(Integer.valueOf(parseInt13), parseIntSet(split[5]));
                 return;
             }
             return;
@@ -437,34 +393,25 @@ final class LocalEventCatalog {
             this.mutexEvents.put(Integer.valueOf(parseInt(split[1], 0)), parseIntSet(split[2]));
             return;
         }
-        if ("@patrolExcluded".equals(split[0]) && split.length == 3) {
-            this.patrolExcluded.put(Integer.valueOf(parseInt(split[1], 0)), parseIntSet(split[2]));
-            return;
-        }
-        if ("@storyTreasure".equals(split[0]) && split.length == 7) {
-            this.storyTreasures.put(Integer.valueOf(Integer.parseInt(split[1])), new int[]{Integer.parseInt(split[2]), Integer.parseInt(split[3]), Integer.parseInt(split[4]), Integer.parseInt(split[5])});
-            this.storyTreasureExclusions.put(Integer.valueOf(Integer.parseInt(split[1])), parseIntSet(split[6]));
-            return;
-        }
         if ("@trigger".equals(split[0])) {
             if (split.length == 10 || split.length == 12 || split.length == 13 || split.length == 14) {
-                int parseInt20 = parseInt(split[1], 0);
-                this.triggers.put(Integer.valueOf(parseInt20), new Trigger(parseInt20, split));
+                int parseInt14 = parseInt(split[1], 0);
+                this.triggers.put(Integer.valueOf(parseInt14), new Trigger(parseInt14, split));
                 return;
             }
             return;
         }
         if ("@edge".equals(split[0])) {
             if (split.length >= 3) {
-                int parseInt21 = parseInt(split[1], 0);
-                int parseInt22 = parseInt(split[2], 0);
-                if (parseInt21 != 0 && parseInt22 != 0) {
-                    this.serverEdges.computeIfAbsent(Integer.valueOf(parseInt21), new Function() { // from class: com.project7.localmanager.LocalEventCatalog$$ExternalSyntheticLambda0
+                int parseInt15 = parseInt(split[1], 0);
+                int parseInt16 = parseInt(split[2], 0);
+                if (parseInt15 != 0 && parseInt16 != 0) {
+                    this.serverEdges.computeIfAbsent(Integer.valueOf(parseInt15), new Function() { // from class: com.project7.localmanager.LocalEventCatalog$$ExternalSyntheticLambda0
                         @Override // java.util.function.Function
                         public final Object apply(Object obj) {
                             return LocalEventCatalog.lambda$parseLine$0((Integer) obj);
                         }
-                    }).add(Integer.valueOf(parseInt22));
+                    }).add(Integer.valueOf(parseInt16));
                     return;
                 }
                 return;
@@ -472,9 +419,9 @@ final class LocalEventCatalog {
             return;
         }
         if (split.length >= 7) {
-            int parseInt23 = parseInt(split[0], 0);
-            int parseInt24 = parseInt(split[1], 0);
-            if (parseInt23 == 0) {
+            int parseInt17 = parseInt(split[0], 0);
+            int parseInt18 = parseInt(split[1], 0);
+            if (parseInt17 == 0) {
                 return;
             }
             LinkedHashMap linkedHashMap2 = new LinkedHashMap();
@@ -484,7 +431,7 @@ final class LocalEventCatalog {
                     linkedHashMap2.put(str3.substring(0, indexOf), parseIntSet(str3.substring(indexOf + 1)));
                 }
             }
-            this.events.put(Integer.valueOf(parseInt23), new Event(parseInt23, (parseInt24 & 1) != 0, (parseInt24 & 2) != 0, (parseInt24 & 4) != 0, (parseInt24 & 8) != 0, (parseInt24 & 16) != 0, (parseInt24 & 32) != 0, (parseInt24 & 64) != 0, (parseInt24 & 128) != 0, parseInt(split[2], 0), parseInt(split[3], 0), parseInt(split[4], 10), parseIntList(split[5]), linkedHashMap2));
+            this.events.put(Integer.valueOf(parseInt17), new Event(parseInt17, (parseInt18 & 1) != 0, (parseInt18 & 2) != 0, (parseInt18 & 4) != 0, (parseInt18 & 8) != 0, (parseInt18 & 16) != 0, (parseInt18 & 32) != 0, (parseInt18 & 64) != 0, (parseInt18 & 128) != 0, parseInt(split[2], 0), parseInt(split[3], 0), parseInt(split[4], 10), parseIntList(split[5]), linkedHashMap2));
         }
     }
 
@@ -621,7 +568,7 @@ final class LocalEventCatalog {
         final boolean emergency;
 
         /* renamed from: id */
-        final int f1id;
+        final int f8id;
         final boolean leaveEmergency;
         final boolean newbee;
         final int newbeeEvent;
@@ -631,7 +578,7 @@ final class LocalEventCatalog {
         final List<Integer> successors;
 
         Event(int i, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7, boolean z8, int i2, int i3, int i4, List<Integer> list, Map<String, Set<Integer>> map) {
-            this.f1id = i;
+            this.f8id = i;
             this.emergency = z;
             this.leaveEmergency = z2;
             this.completeEnterMainPanel = z3;

@@ -1490,6 +1490,8 @@
 
     move-result-object v15
 
+    sget-object v15, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
     aput-object v15, v5, v14
 
     const/4 v15, 0x2

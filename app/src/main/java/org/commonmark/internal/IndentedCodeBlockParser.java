@@ -58,7 +58,7 @@ public class IndentedCodeBlockParser extends AbstractBlockParser {
     public static class Factory extends AbstractBlockParserFactory {
         @Override // org.commonmark.parser.block.BlockParserFactory
         public BlockStart tryStart(ParserState state, MatchedBlockParser matchedBlockParser) {
-            return (state.getIndent() < Parsing.CODE_BLOCK_INDENT || state.isBlank() || (state.getActiveBlockParser().getBlock() instanceof Paragraph)) ? BlockStart.none() : BlockStart.m104of(new IndentedCodeBlockParser()).atColumn(state.getColumn() + Parsing.CODE_BLOCK_INDENT);
+            return (state.getIndent() < Parsing.CODE_BLOCK_INDENT || state.isBlank() || (state.getActiveBlockParser().getBlock() instanceof Paragraph)) ? BlockStart.none() : BlockStart.m100of(new IndentedCodeBlockParser()).atColumn(state.getColumn() + Parsing.CODE_BLOCK_INDENT);
         }
     }
 }

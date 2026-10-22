@@ -168,7 +168,11 @@ final class LocalEquipmentEngine {
                     HashSet hashSet4 = hashSet2;
                     List<byte[]> list2 = equipped2;
                     byte[] bArr9 = profileHeroDocument;
-                    if (i > LocalResourceEngine.value(LocalResourceEngine.doc(bArr9, "ti"), "mc")) {
+                    int value5 = LocalResourceEngine.value(LocalResourceEngine.doc(bArr9, "ti"), "mc");
+                    if (value5 <= 0) {
+                        value5 = 45;
+                    }
+                    if (i > value5) {
                         throw new IllegalArgumentException("装备所需 cost 超过神器使上限");
                     }
                     if (str10 == null || str10.isEmpty()) {

@@ -26,16 +26,16 @@
 .method constructor <init>(ZLjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 34
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 28
     iput-boolean p1, p0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;->satisfied:Z
 
     iput-object p2, p0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;->status:Ljava/lang/String;
 
     iput-object p3, p0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;->reason:Ljava/lang/String;
 
-    .line 36
+    .line 29
     return-void
 .end method

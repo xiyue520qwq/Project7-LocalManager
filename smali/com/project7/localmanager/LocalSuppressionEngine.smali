@@ -384,19 +384,10 @@
     move-result-object v1
 
     .line 62
-    if-eqz v1, :cond_7
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-lt v1, v0, :cond_7
-
     const/4 v0, 0x1
 
     goto :goto_5
 
-    :cond_7
     const/4 v0, 0x0
 
     :goto_5
@@ -515,7 +506,7 @@
 
     const-string v11, "yazhi"
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
     .line 67
     :try_start_2
@@ -553,7 +544,7 @@
     return-object v0
 
     .line 70
-    :cond_8
+    :cond_7
     move/from16 v1, v16
 
     invoke-static {v8, v1, v12}, Lcom/project7/localmanager/LocalCityProgress;->stages(Lcom/project7/localmanager/LocalTutorialStore$Progress;I[B)[B
@@ -566,13 +557,13 @@
 
     move-result v1
 
-    if-ne v1, v14, :cond_9
+    if-ne v1, v14, :cond_8
 
     const/4 v1, 0x1
 
     goto :goto_6
 
-    :cond_9
+    :cond_8
     const/4 v1, 0x0
 
     :goto_6

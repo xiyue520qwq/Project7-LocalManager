@@ -292,29 +292,29 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
     private static class AltTextVisitor extends AbstractVisitor {
 
         /* renamed from: sb */
-        private final StringBuilder f16sb;
+        private final StringBuilder f23sb;
 
         private AltTextVisitor() {
-            this.f16sb = new StringBuilder();
+            this.f23sb = new StringBuilder();
         }
 
         String getAltText() {
-            return this.f16sb.toString();
+            return this.f23sb.toString();
         }
 
         @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
         public void visit(Text text) {
-            this.f16sb.append(text.getLiteral());
+            this.f23sb.append(text.getLiteral());
         }
 
         @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
         public void visit(SoftLineBreak softLineBreak) {
-            this.f16sb.append('\n');
+            this.f23sb.append('\n');
         }
 
         @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
         public void visit(HardLineBreak hardLineBreak) {
-            this.f16sb.append('\n');
+            this.f23sb.append('\n');
         }
     }
 }

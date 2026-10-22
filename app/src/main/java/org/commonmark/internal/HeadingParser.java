@@ -52,13 +52,13 @@ public class HeadingParser extends AbstractBlockParser {
             SourceLine line = state.getLine();
             int nextNonSpace = state.getNextNonSpaceIndex();
             if (line.getContent().charAt(nextNonSpace) == '#' && (atxHeading = HeadingParser.getAtxHeading(line.substring(nextNonSpace, line.getContent().length()))) != null) {
-                return BlockStart.m104of(atxHeading).atIndex(line.getContent().length());
+                return BlockStart.m100of(atxHeading).atIndex(line.getContent().length());
             }
             int setextHeadingLevel = HeadingParser.getSetextHeadingLevel(line.getContent(), nextNonSpace);
             if (setextHeadingLevel > 0) {
                 SourceLines paragraph = matchedBlockParser.getParagraphLines();
                 if (!paragraph.isEmpty()) {
-                    return BlockStart.m104of(new HeadingParser(setextHeadingLevel, paragraph)).atIndex(line.getContent().length()).replaceActiveBlockParser();
+                    return BlockStart.m100of(new HeadingParser(setextHeadingLevel, paragraph)).atIndex(line.getContent().length()).replaceActiveBlockParser();
                 }
             }
             return BlockStart.none();
@@ -67,7 +67,7 @@ public class HeadingParser extends AbstractBlockParser {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static HeadingParser getAtxHeading(SourceLine line) {
-        Scanner scanner = Scanner.m98of(SourceLines.m103of(line));
+        Scanner scanner = Scanner.m94of(SourceLines.m99of(line));
         int level = scanner.matchMultiple('#');
         if (level == 0 || level > 6) {
             return null;

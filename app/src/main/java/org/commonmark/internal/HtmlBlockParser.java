@@ -70,7 +70,7 @@ public class HtmlBlockParser extends AbstractBlockParser {
                         Pattern closer = HtmlBlockParser.BLOCK_PATTERNS[blockType][1];
                         boolean matches = opener.matcher(line.subSequence(nextNonSpace, line.length())).find();
                         if (matches) {
-                            return BlockStart.m104of(new HtmlBlockParser(closer)).atIndex(state.getIndex());
+                            return BlockStart.m100of(new HtmlBlockParser(closer)).atIndex(state.getIndex());
                         }
                     }
                 }

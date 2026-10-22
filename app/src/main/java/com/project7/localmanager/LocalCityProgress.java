@@ -20,16 +20,9 @@ final class LocalCityProgress {
     }
 
     static int area(int i) {
-        if (i == 320) {
-            return 6;
-        }
-        int area = LocalDalviraCityEngine.area(i);
+        int area = LocalArkCityEngine.area(i);
         if (area != 0) {
             return area;
-        }
-        int area2 = LocalArkCityEngine.area(i);
-        if (area2 != 0) {
-            return area2;
         }
         if (i == 101) {
             return 1;
@@ -50,31 +43,15 @@ final class LocalCityProgress {
     }
 
     static int status(LocalTutorialStore.Progress progress, int i, byte[] bArr) {
-        Integer state = LocalAlanCityEngine.state(bArr, progress, i);
-        if (state != null) {
+        Integer state = LocalArkCityEngine.state(bArr, i);
+        if (progress != null && state != null) {
             return state.intValue();
-        }
-        Integer state2 = LocalDalviraCityEngine.state(bArr, progress, i);
-        if (state2 != null) {
-            return state2.intValue();
-        }
-        Integer state3 = LocalArkCityEngine.state(bArr, i);
-        if (progress != null && state3 != null) {
-            return state3.intValue();
-        }
-        Integer state4 = LocalOratioCityEngine.state(bArr, progress, i);
-        if (state4 != null) {
-            return state4.intValue();
-        }
-        Integer state5 = LocalWenziCityEngine.state(bArr, progress, i);
-        if (state5 != null) {
-            return state5.intValue();
         }
         if (progress != null && LocalChapterCityEngine.active(bArr)) {
             return chapterStatus(progress, i, bArr);
         }
         boolean equals = "6".equals(BsonLite.stringValue(LocalResourceEngine.doc(bArr, "std"), "rt"));
-        return status(progress, i, equals ? FREE_REQUIRE : REQUIRE, equals, bArr);
+        return status(progress, i, equals ? FREE_REQUIRE : REQUIRE, equals);
     }
 
     static boolean chapterScene(int i) {
@@ -113,7 +90,7 @@ final class LocalCityProgress {
             return 0;
         }
         if (i <= 2) {
-            return status(progress, i, REQUIRE, false, bArr);
+            return status(progress, i, REQUIRE, false);
         }
         int[] chapterStages = chapterStages(progress, i);
         if (hasBattle(progress, chapterStages[chapterStages.length - 1])) {
@@ -127,7 +104,7 @@ final class LocalCityProgress {
         return 1;
     }
 
-    private static int status(LocalTutorialStore.Progress progress, int i, int[][] iArr, boolean z, byte[] bArr) {
+    private static int status(LocalTutorialStore.Progress progress, int i, int[][] iArr, boolean z) {
         if (progress == null || i < 1 || i > 8) {
             return 2;
         }
@@ -146,13 +123,13 @@ final class LocalCityProgress {
         if (!z) {
             if (i == 3 || i == 4) {
                 int i2 = i != 3 ? 3 : 4;
-                if (!started(progress, i) && started(progress, i2) && status(progress, i2, bArr) != 0) {
+                if (!started(progress, i) && started(progress, i2) && !hasBattle(progress, ((i2 - 1) * 1000) + 106)) {
                     return 2;
                 }
             }
         }
         for (int i3 : iArr[i]) {
-            if (status(progress, i3, bArr) != 0) {
+            if (status(progress, i3, iArr, z) != 0) {
                 return 2;
             }
         }
@@ -191,17 +168,6 @@ final class LocalCityProgress {
         }
         if (status(progress, i, bArr) != 1) {
             return BsonLite.EMPTY_DOCUMENT;
-        }
-        if (i == 6 && LocalAlanCityEngine.active(bArr, progress)) {
-            return BsonLite.document("cs", 320, "sl", Collections.singletonList(Collections.singletonList(320)));
-        }
-        byte[] devilStages = LocalDalviraCityEngine.devilStages(bArr, progress, i);
-        if (devilStages != null) {
-            return devilStages;
-        }
-        int scene2 = LocalDalviraCityEngine.scene(bArr == null ? BsonLite.EMPTY_DOCUMENT : bArr, progress, i);
-        if (scene2 != 0) {
-            return BsonLite.document("cs", Integer.valueOf(scene2), "sl", Collections.singletonList(Collections.singletonList(Integer.valueOf(scene2))));
         }
         if (LocalChapterCityEngine.active(bArr) && i >= 3) {
             ArrayList arrayList = new ArrayList();

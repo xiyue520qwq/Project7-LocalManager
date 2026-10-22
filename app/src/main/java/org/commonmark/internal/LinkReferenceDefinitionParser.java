@@ -38,9 +38,9 @@ public class LinkReferenceDefinitionParser {
         if (this.state == State.PARAGRAPH) {
             return;
         }
-        Scanner scanner = Scanner.m98of(SourceLines.m103of(line));
+        Scanner scanner = Scanner.m94of(SourceLines.m99of(line));
         while (scanner.hasNext()) {
-            switch (C00191.f15x496a1d35[this.state.ordinal()]) {
+            switch (C00191.f22x496a1d35[this.state.ordinal()]) {
                 case 1:
                     success = startDefinition(scanner);
                     break;
@@ -70,29 +70,29 @@ public class LinkReferenceDefinitionParser {
     static /* synthetic */ class C00191 {
 
         /* renamed from: $SwitchMap$org$commonmark$internal$LinkReferenceDefinitionParser$State */
-        static final /* synthetic */ int[] f15x496a1d35;
+        static final /* synthetic */ int[] f22x496a1d35;
 
         static {
             int[] iArr = new int[State.values().length];
-            f15x496a1d35 = iArr;
+            f22x496a1d35 = iArr;
             try {
                 iArr[State.START_DEFINITION.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15x496a1d35[State.LABEL.ordinal()] = 2;
+                f22x496a1d35[State.LABEL.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15x496a1d35[State.DESTINATION.ordinal()] = 3;
+                f22x496a1d35[State.DESTINATION.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15x496a1d35[State.START_TITLE.ordinal()] = 4;
+                f22x496a1d35[State.START_TITLE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15x496a1d35[State.TITLE.ordinal()] = 5;
+                f22x496a1d35[State.TITLE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -103,7 +103,7 @@ public class LinkReferenceDefinitionParser {
     }
 
     SourceLines getParagraphLines() {
-        return SourceLines.m102of(this.paragraphLines);
+        return SourceLines.m98of(this.paragraphLines);
     }
 
     List<SourceSpan> getParagraphSourceSpans() {

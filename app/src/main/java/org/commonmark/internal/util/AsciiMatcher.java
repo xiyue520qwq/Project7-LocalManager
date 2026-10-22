@@ -31,7 +31,7 @@ public class AsciiMatcher implements CharMatcher {
         }
 
         /* renamed from: c */
-        public Builder m99c(char c) {
+        public Builder m95c(char c) {
             if (c > 127) {
                 throw new IllegalArgumentException("Can only match ASCII characters");
             }
@@ -41,7 +41,7 @@ public class AsciiMatcher implements CharMatcher {
 
         public Builder range(char from, char toInclusive) {
             for (char c = from; c <= toInclusive; c = (char) (c + 1)) {
-                m99c(c);
+                m95c(c);
             }
             return this;
         }

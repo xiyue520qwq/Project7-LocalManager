@@ -386,7 +386,9 @@ final class LocalMemoryPalaceEngine {
         save(result, bArr2);
         result.profile = LocalServiceEngine.recover(result.profile, j);
         charge(result, -m57v(localFeatureCatalog.get("P", 5), "consume"));
-        result.profile = BsonLite.withProfileDocument(result.profile, "q7DailyBattle", BsonLite.document("active", true, "t", 5, "s", Integer.valueOf(m57v), "h", intArrayValues, "a", Integer.valueOf(m57v2), "wishCost", Integer.valueOf(m57v(localFeatureCatalog.get("P", 5), "consume")), "wishFailCost", Integer.valueOf(m57v(localFeatureCatalog.get("P", 5), "fail_consume")), "assist", Boolean.valueOf(buffEnabled), "stacks", Integer.valueOf(i), "lv", Integer.valueOf(Math.max(1, m57v(result.profile, "level"))), "ml", Integer.valueOf(m57v(bArr3, "monster_level")), "f", LocalResourceEngine.uuid()));
+        byte[] bArr4 = result.profile;
+        Boolean.valueOf(true);
+        result.profile = BsonLite.withProfileDocument(bArr4, "q7DailyBattle", BsonLite.document("active", Boolean.FALSE, "t", 5, "s", Integer.valueOf(m57v), "h", intArrayValues, "a", Integer.valueOf(m57v2), "wishCost", Integer.valueOf(m57v(localFeatureCatalog.get("P", 5), "consume")), "wishFailCost", Integer.valueOf(m57v(localFeatureCatalog.get("P", 5), "fail_consume")), "assist", Boolean.valueOf(buffEnabled), "stacks", Integer.valueOf(i), "lv", Integer.valueOf(Math.max(1, m57v(result.profile, "level"))), "ml", Integer.valueOf(m57v(bArr3, "monster_level")), "f", LocalResourceEngine.uuid()));
     }
 
     private static void charge(LocalResourceEngine.Result result, int i) {

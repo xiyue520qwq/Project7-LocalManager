@@ -9,7 +9,7 @@ public class SourceSpan {
     private final int lineIndex;
 
     /* renamed from: of */
-    public static SourceSpan m100of(int lineIndex, int columnIndex, int length) {
+    public static SourceSpan m96of(int lineIndex, int columnIndex, int length) {
         return new SourceSpan(lineIndex, columnIndex, length);
     }
 

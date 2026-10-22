@@ -17,7 +17,7 @@ final class LocalHeroGrowthEngine {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x01a4  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x01a8  */
     /* JADX WARN: Type inference failed for: r2v0, types: [byte[]] */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v4 */
@@ -110,7 +110,7 @@ final class LocalHeroGrowthEngine {
                                     consumeTreasure(result, localFeatureCatalog, bArr5, str2);
                                     byte[] profileHeroDocument2 = BsonLite.profileHeroDocument(result.profile, value);
                                     if (z) {
-                                        withProfileInt = BsonLite.withProfileBool(profileHeroDocument2, "oa", true);
+                                        withProfileInt = LocalArtifactFix.fix(BsonLite.withProfileBool(profileHeroDocument2, "oa", true));
                                     } else {
                                         if (value3 == 4) {
                                             value2++;

@@ -22,7 +22,7 @@
 .method constructor <init>([B)V
     .locals 0
 
-    .line 778
+    .line 774
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/project7/localmanager/BsonLite$BinaryValue;->bytes:[B

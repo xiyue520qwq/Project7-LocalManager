@@ -2321,39 +2321,48 @@
 .method static battleType(I)Z
     .locals 1
 
-    .line 37
-    const/4 v0, 0x3
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x4
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x5
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x7
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0xa
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x10
+    const/16 v0, 0xb
 
     if-ne p0, v0, :cond_0
 
+    const/4 p0, 0x1
+
+    return p0
+
+    .line 37
+    :cond_0
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x4
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x5
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x7
+
+    if-eq p0, v0, :cond_2
+
+    const/16 v0, 0xa
+
+    if-eq p0, v0, :cond_2
+
+    const/16 v0, 0x10
+
+    if-ne p0, v0, :cond_1
+
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 p0, 0x0
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     :goto_0
     const/4 p0, 0x1
 
@@ -2364,7 +2373,108 @@
 .method private static begin(Lcom/project7/localmanager/LocalResourceEngine$Result;Lcom/project7/localmanager/LocalFeatureCatalog;[B[BJ)V
     .locals 26
 
+    move-object/from16 v0, p0
+
+    move-object/from16 v2, p2
+
+    const-string v3, "t"
+
+    invoke-static {v2, v3}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
+
+    move-result v4
+
+    const/16 v5, 0xb
+
+    if-ne v4, v5, :cond_0
+
+    const-string v3, "s"
+
+    invoke-static {v2, v3}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
+
+    move-result v5
+
+    const-string v3, "h"
+
+    invoke-static {v2, v3}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
+
+    move-result-object v6
+
+    const/16 v8, 0x8
+
+    new-array v7, v8, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    const-string v10, "t"
+
+    aput-object v10, v7, v9
+
+    const/4 v9, 0x1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v7, v9
+
+    const/4 v9, 0x2
+
+    const-string v10, "s"
+
+    aput-object v10, v7, v9
+
+    const/4 v9, 0x3
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v7, v9
+
+    const/4 v9, 0x4
+
+    const-string v10, "h"
+
+    aput-object v10, v7, v9
+
+    const/4 v9, 0x5
+
+    aput-object v6, v7, v9
+
+    const/4 v9, 0x6
+
+    const-string v10, "b"
+
+    aput-object v10, v7, v9
+
+    const/4 v9, 0x7
+
+    const/4 v10, 0x0
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v7, v9
+
+    invoke-static {v7}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+
+    move-result-object v7
+
+    iget-object v8, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
+
+    const-string v9, "q7DailyBattle"
+
+    invoke-static {v8, v9, v7}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v8
+
+    iput-object v8, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
+
+    return-void
+
     .line 251
+    :cond_0
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -2397,6 +2507,36 @@
 
     move-result v8
 
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "q7bgBegin t="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, " s="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, " b="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    const-string v10, "Project7Gateway"
+
+    invoke-static {v10, v9}, Lcom/project7/localmanager/LocalDiagnosticLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     .line 252
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -2428,7 +2568,7 @@
     move-result-object v2
 
     .line 254
-    if-eqz v9, :cond_1a
+    if-eqz v9, :cond_1b
 
     const-string v12, "scene"
 
@@ -2436,7 +2576,7 @@
 
     move-result v12
 
-    if-ne v12, v7, :cond_1a
+    if-ne v12, v7, :cond_1b
 
     sget-object v12, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -2451,14 +2591,14 @@
 
     move-result v12
 
-    if-nez v12, :cond_1a
+    if-nez v12, :cond_1b
 
     .line 257
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
     move-result v12
 
-    if-nez v12, :cond_19
+    if-nez v12, :cond_1a
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -2466,17 +2606,17 @@
 
     const/4 v14, 0x4
 
-    if-ne v5, v14, :cond_0
+    if-ne v5, v14, :cond_1
 
     const/4 v15, 0x3
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 v15, 0x1
 
     :goto_0
-    if-gt v12, v15, :cond_19
+    if-gt v12, v15, :cond_1a
 
     new-instance v12, Ljava/util/HashSet;
 
@@ -2491,7 +2631,7 @@
 
     move-result v15
 
-    if-ne v12, v15, :cond_19
+    if-ne v12, v15, :cond_1a
 
     .line 260
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2503,7 +2643,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_2
+    if-eqz v15, :cond_3
 
     invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2521,14 +2661,14 @@
 
     move-result v14
 
-    if-eqz v14, :cond_1
+    if-eqz v14, :cond_2
 
     const/4 v14, 0x4
 
     goto :goto_1
 
     .line 261
-    :cond_1
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8bf7\u4f7f\u7528\u5df2\u62e5\u6709\u7684\u795e\u5668\u4f7f\u51fa\u6218"
@@ -2538,7 +2678,7 @@
     throw v0
 
     .line 262
-    :cond_2
+    :cond_3
     iget-object v12, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     const-string v14, "q7DailyBattle"
@@ -2554,20 +2694,20 @@
 
     move-result v15
 
-    if-eqz v15, :cond_4
+    if-eqz v15, :cond_5
 
     .line 264
     invoke-static {v12, v4}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
 
     move-result v0
 
-    if-ne v0, v5, :cond_3
+    if-ne v0, v5, :cond_4
 
     invoke-static {v12, v6}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
 
     move-result v0
 
-    if-ne v0, v7, :cond_3
+    if-ne v0, v7, :cond_4
 
     invoke-static {v12, v11}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
@@ -2577,12 +2717,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     return-void
 
     .line 265
-    :cond_3
+    :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8bf7\u5148\u7ed3\u675f\u5f53\u524d\u65e5\u5e38\u6218\u6597"
@@ -2592,7 +2732,7 @@
     throw v0
 
     .line 267
-    :cond_4
+    :cond_5
     iget-object v12, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     const-string v15, "q7Battle"
@@ -2609,7 +2749,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_18
+    if-eqz v12, :cond_19
 
     sget-object v12, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -2632,7 +2772,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_18
+    if-nez v12, :cond_19
 
     .line 270
     const/4 v12, 0x0
@@ -2672,7 +2812,7 @@
 
     const/4 v4, 0x3
 
-    if-ne v5, v4, :cond_6
+    if-ne v5, v4, :cond_7
 
     .line 272
     invoke-static {v3, v9}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
@@ -2681,13 +2821,13 @@
 
     const/4 v9, 0x2
 
-    if-ne v4, v9, :cond_5
+    if-ne v4, v9, :cond_6
 
     invoke-static {v3, v14}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
 
     move-result v4
 
-    if-ne v4, v13, :cond_5
+    if-ne v4, v13, :cond_6
 
     const-string v4, "srw"
 
@@ -2699,7 +2839,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_5
+    if-nez v4, :cond_6
 
     move-object/from16 v21, v2
 
@@ -2710,7 +2850,7 @@
     goto/16 :goto_5
 
     .line 273
-    :cond_5
+    :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u5f53\u524d\u6280\u5de7\u6d4b\u8bd5\u4e0d\u6ee1\u8db3\u8fdb\u5165\u6761\u4ef6"
@@ -2720,17 +2860,17 @@
     throw v0
 
     .line 274
-    :cond_6
+    :cond_7
     const/4 v4, 0x4
 
-    if-ne v5, v4, :cond_8
+    if-ne v5, v4, :cond_9
 
     .line 275
     invoke-static {v3, v9}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
 
     move-result v9
 
-    if-ne v9, v4, :cond_7
+    if-ne v9, v4, :cond_8
 
     const-string v4, "cib"
 
@@ -2738,7 +2878,7 @@
 
     move-result v4
 
-    if-ne v8, v4, :cond_7
+    if-ne v8, v4, :cond_8
 
     invoke-static {v3, v14}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
 
@@ -2752,7 +2892,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_8
 
     .line 276
     invoke-static {v3, v8}, Lcom/project7/localmanager/LocalDailyEngine;->integrationInfo([BI)[B
@@ -2767,7 +2907,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_7
+    if-nez v4, :cond_8
 
     move-object/from16 v21, v2
 
@@ -2778,7 +2918,7 @@
     goto/16 :goto_5
 
     .line 277
-    :cond_7
+    :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8bf7\u6309\u987a\u5e8f\u6311\u6218\u7efc\u5408\u6d4b\u8bd5\uff0c\u5e76\u643a\u5e26\u62a5\u540d\u7684\u795e\u5668\u4f7f"
@@ -2788,10 +2928,10 @@
     throw v0
 
     .line 278
-    :cond_8
+    :cond_9
     const/16 v4, 0xa
 
-    if-ne v5, v4, :cond_17
+    if-ne v5, v4, :cond_18
 
     .line 279
     iget-object v4, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
@@ -2815,7 +2955,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_17
 
     .line 282
     nop
@@ -2850,7 +2990,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_c
+    if-eqz v22, :cond_d
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2884,7 +3024,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_a
 
     move-object/from16 v3, p3
 
@@ -2897,7 +3037,7 @@
     goto :goto_2
 
     .line 286
-    :cond_9
+    :cond_a
     invoke-static {v2, v7}, Lcom/project7/localmanager/LocalDailyEngine;->d([BLjava/lang/String;)[B
 
     move-result-object v2
@@ -2915,7 +3055,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2936,7 +3076,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     const-string v2, "0"
 
@@ -2952,13 +3092,13 @@
 
     move-result v9
 
-    :cond_a
+    :cond_b
     move-object/from16 v2, v25
 
     goto :goto_3
 
     .line 288
-    :cond_b
+    :cond_c
     move-object/from16 v3, p3
 
     move/from16 v5, v22
@@ -2970,12 +3110,12 @@
     goto :goto_2
 
     .line 289
-    :cond_c
+    :cond_d
     move/from16 v22, v5
 
     move-object/from16 v24, v11
 
-    if-gt v8, v9, :cond_15
+    if-gt v8, v9, :cond_16
 
     .line 290
     invoke-static {v4, v7}, Lcom/project7/localmanager/LocalDailyEngine;->d([BLjava/lang/String;)[B
@@ -2987,7 +3127,7 @@
     move-result v2
 
     .line 291
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_e
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3002,7 +3142,7 @@
     goto :goto_4
 
     .line 292
-    :cond_d
+    :cond_e
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3036,7 +3176,7 @@
     move-result-object v2
 
     :goto_4
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
     .line 294
     iget-object v2, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
@@ -3080,7 +3220,7 @@
 
     move-result v9
 
-    if-lt v9, v4, :cond_13
+    if-lt v9, v4, :cond_14
 
     .line 298
     invoke-static {v2, v5}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
@@ -3238,7 +3378,7 @@
     .line 306
     move/from16 v11, v22
 
-    if-ne v11, v10, :cond_e
+    if-ne v11, v10, :cond_f
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3254,7 +3394,7 @@
 
     goto :goto_6
 
-    :cond_e
+    :cond_f
     move v10, v9
 
     :goto_6
@@ -3275,7 +3415,7 @@
     .line 307
     const/16 v10, 0xa
 
-    if-ne v11, v10, :cond_f
+    if-ne v11, v10, :cond_10
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3293,7 +3433,7 @@
 
     goto :goto_7
 
-    :cond_f
+    :cond_10
     move v1, v9
 
     :goto_7
@@ -3313,7 +3453,7 @@
 
     const/16 v5, 0xa
 
-    if-ne v11, v5, :cond_10
+    if-ne v11, v5, :cond_11
 
     iget-object v5, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
@@ -3330,13 +3470,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_11
 
     const/4 v12, 0x1
 
     goto :goto_8
 
-    :cond_10
+    :cond_11
     move v12, v9
 
     :goto_8
@@ -3357,13 +3497,13 @@
     .line 309
     const/4 v5, 0x4
 
-    if-ne v11, v5, :cond_11
+    if-ne v11, v5, :cond_12
 
     const/16 v5, 0x1e
 
     goto :goto_9
 
-    :cond_11
+    :cond_12
     iget-object v5, v0, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B
 
     invoke-static {v5, v15}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
@@ -3416,7 +3556,7 @@
     .line 310
     const/4 v5, 0x4
 
-    if-ne v11, v5, :cond_12
+    if-ne v11, v5, :cond_13
 
     invoke-static {v3, v8}, Lcom/project7/localmanager/LocalDailyEngine;->integrationInfo([BI)[B
 
@@ -3424,7 +3564,7 @@
 
     goto :goto_a
 
-    :cond_12
+    :cond_13
     sget-object v3, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
     :goto_a
@@ -3461,7 +3601,7 @@
     return-void
 
     .line 297
-    :cond_13
+    :cond_14
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u7cbe\u795e\u529b\u4e0d\u8db3"
@@ -3471,7 +3611,7 @@
     throw v0
 
     .line 293
-    :cond_14
+    :cond_15
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u7f3a\u5c11\u539f\u7248\u5956\u52b1\u5b9a\u4e49\uff0c\u672a\u5f00\u59cb\u6218\u6597"
@@ -3481,7 +3621,7 @@
     throw v0
 
     .line 289
-    :cond_15
+    :cond_16
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8bf7\u5148\u5b8c\u6210\u4e0a\u4e00\u5173\u5b9e\u6218\u6f14\u7ec3"
@@ -3491,7 +3631,7 @@
     throw v0
 
     .line 281
-    :cond_16
+    :cond_17
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8be5\u795e\u5668\u4f7f\u5c1a\u672a\u901a\u8fc7\u8d44\u8d28\u8003\u8bd5"
@@ -3501,7 +3641,7 @@
     throw v0
 
     .line 303
-    :cond_17
+    :cond_18
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u4e0d\u652f\u6301\u7684\u65e5\u5e38\u6218\u6597\u7c7b\u578b"
@@ -3511,7 +3651,7 @@
     throw v0
 
     .line 269
-    :cond_18
+    :cond_19
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8bf7\u5148\u7ed3\u675f\u5f53\u524d\u4e3b\u7ebf\u6218\u6597"
@@ -3521,7 +3661,7 @@
     throw v0
 
     .line 259
-    :cond_19
+    :cond_1a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u8be5\u5173\u5361\u51fa\u6218\u961f\u4f0d\u4eba\u6570\u65e0\u6548\u6216\u5b58\u5728\u91cd\u590d\u89d2\u8272"
@@ -3531,7 +3671,7 @@
     throw v0
 
     .line 256
-    :cond_1a
+    :cond_1b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "\u6b64\u5173\u5361\u5c1a\u672a\u63a5\u5165\u79bb\u7ebf\u6218\u6597\uff0c\u672a\u6263\u9664\u8d44\u6e90"
@@ -4346,13 +4486,13 @@
 
     move-result v2
 
-    if-ne v2, v9, :cond_1b
+    if-ne v2, v2, :cond_1b
 
     invoke-static {v8, v3}, Lcom/project7/localmanager/LocalDailyEngine;->v([BLjava/lang/String;)I
 
     move-result v2
 
-    if-ne v2, v10, :cond_1b
+    if-ne v2, v2, :cond_1b
 
     invoke-static {v8, v4}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
@@ -4362,7 +4502,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-ne v2, v2, :cond_1b
 
     .line 364
     iget-object v2, v6, Lcom/project7/localmanager/LocalResourceEngine$Result;->profile:[B

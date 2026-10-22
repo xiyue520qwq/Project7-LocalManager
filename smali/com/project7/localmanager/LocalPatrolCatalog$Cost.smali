@@ -30,17 +30,17 @@
 .method constructor <init>([Ljava/lang/String;)V
     .locals 3
 
-    .line 62
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 41
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/project7/localmanager/LocalPatrolCatalog$Cost;->insight:[I
 
-    .line 63
+    .line 43
     const/4 v0, 0x2
 
     aget-object v0, p1, v0
@@ -51,7 +51,7 @@
 
     iput v0, p0, Lcom/project7/localmanager/LocalPatrolCatalog$Cost;->actions:I
 
-    .line 64
+    .line 44
     const/4 v0, 0x3
 
     aget-object v0, p1, v0
@@ -62,7 +62,7 @@
 
     iput v0, p0, Lcom/project7/localmanager/LocalPatrolCatalog$Cost;->fatigue:I
 
-    .line 65
+    .line 45
     const/4 v0, 0x4
 
     aget-object v0, p1, v0
@@ -73,7 +73,7 @@
 
     iput v0, p0, Lcom/project7/localmanager/LocalPatrolCatalog$Cost;->favor:I
 
-    .line 66
+    .line 46
     const/4 v0, 0x5
 
     aget-object v0, p1, v0
@@ -84,7 +84,7 @@
 
     iput v0, p0, Lcom/project7/localmanager/LocalPatrolCatalog$Cost;->fallback:I
 
-    .line 67
+    .line 47
     const/4 v0, 0x0
 
     :goto_0
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 68
+    .line 48
     :cond_0
     return-void
 .end method
@@ -118,7 +118,7 @@
 .method requiredInsight(I)I
     .locals 3
 
-    .line 70
+    .line 50
     const/4 v0, 0x1
 
     if-lt p1, v0, :cond_0

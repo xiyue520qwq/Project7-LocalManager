@@ -23,11 +23,11 @@ public class BackticksInlineParser implements InlineContentParser {
                     content = content.substring(1, content.length() - 1);
                 }
                 node.setLiteral(content);
-                return ParsedInline.m97of(node, scanner.position());
+                return ParsedInline.m93of(node, scanner.position());
             }
         }
         SourceLines source = scanner.getSource(start, afterOpening);
         Text text = new Text(source.getContent());
-        return ParsedInline.m97of(text, afterOpening);
+        return ParsedInline.m93of(text, afterOpening);
     }
 }

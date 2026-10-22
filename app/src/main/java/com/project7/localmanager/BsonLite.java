@@ -190,30 +190,26 @@ final class BsonLite {
             bArr = EMPTY_DOCUMENT;
         }
         writeDocumentElement(byteArrayOutputStream, "d", bArr);
-        if (i == 1 || i == 2) {
-            Integer intValue = intValue(bArr2, "level");
-            i3 = intValue == null ? 1 : Math.max(1, intValue.intValue());
-        }
         byte[] combatDataDocument = combatDataDocument(iterable, str2, bArr2, localCombatCatalog, i3);
         if (i == 1 || i == 2) {
-            Integer intValue2 = intValue(documentValue(bArr2, "weeknum"), "wl");
-            Integer intValue3 = intValue(bArr2, "level");
-            Integer intValue4 = intValue(documentValue(bArr2, "weeknum"), "w");
+            Integer intValue = intValue(documentValue(bArr2, "weeknum"), "wl");
+            Integer intValue2 = intValue(bArr2, "level");
+            Integer intValue3 = intValue(documentValue(bArr2, "weeknum"), "w");
             if (i == 2 && localCombatCatalog != null) {
-                max = localCombatCatalog.storyMonsterLevel(i2, intValue4 == null ? 0 : intValue4.intValue());
+                max = localCombatCatalog.storyMonsterLevel(i2, intValue3 == null ? 0 : intValue3.intValue());
             } else {
-                max = intValue2 == null ? 1 : Math.max(1, intValue2.intValue());
+                max = intValue == null ? 1 : Math.max(1, intValue.intValue());
             }
-            combatDataDocument = withProfileInt(withProfileInt(combatDataDocument, "monster_lv", max), "hero_lv", intValue3 != null ? Math.max(1, intValue3.intValue()) : 1);
+            combatDataDocument = withProfileInt(withProfileInt(combatDataDocument, "monster_lv", max), "hero_lv", intValue2 != null ? Math.max(1, intValue2.intValue()) : 1);
             if (i == 2 && localCombatCatalog != null) {
                 byte[] wingEnhancement = localCombatCatalog.wingEnhancement(i2, bArr2);
                 Number numericValue = numericValue(wingEnhancement, "battle_enhance");
-                Integer intValue5 = intValue(wingEnhancement, "reduce_fatigue");
+                Integer intValue4 = intValue(wingEnhancement, "reduce_fatigue");
                 if (numericValue != null) {
                     combatDataDocument = withProfileDouble(combatDataDocument, "battle_enhance", numericValue.doubleValue());
                 }
-                if (intValue5 != null) {
-                    combatDataDocument = withProfileInt(combatDataDocument, "reduce_fatigue", intValue5.intValue());
+                if (intValue4 != null) {
+                    combatDataDocument = withProfileInt(combatDataDocument, "reduce_fatigue", intValue4.intValue());
                 }
             }
         }
@@ -244,7 +240,7 @@ final class BsonLite {
         ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
         writeDocumentElement(byteArrayOutputStream2, "heroes", finishDocument(byteArrayOutputStream));
         writeArrayElement(byteArrayOutputStream2, "skins", documentValue(document("skins", arrayList), "skins"));
-        writeIntElement(byteArrayOutputStream2, "hero_lv", Math.max(1, i));
+        writeIntElement(byteArrayOutputStream2, "hero_lv", 1);
         writeIntElement(byteArrayOutputStream2, "monster_lv", 1);
         double monsterRate = LocalIntelligenceEffects.monsterRate(bArr);
         if (monsterRate > 0.0d) {
@@ -1115,6 +1111,11 @@ final class BsonLite {
                 break;
             }
             byte[] documentValue6 = documentValue(documentValue5, "1");
+            byte[] fix = LocalArtifactFix.fix(documentValue6);
+            if (fix != documentValue6) {
+                documentValue6 = fix;
+                bArr = withHeroDocument(bArr, intValue(documentValue5, "0").intValue(), documentValue6);
+            }
             byte[] documentValue7 = documentValue(documentValue6, "clm");
             if (documentValue7 != null) {
                 ArrayList arrayList = new ArrayList();
@@ -1200,7 +1201,7 @@ final class BsonLite {
         writeEmptyArrayElement(byteArrayOutputStream, "sl");
         ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
         writeEmptyArrayElement(byteArrayOutputStream2, "items");
-        writeIntElement(byteArrayOutputStream2, "mc", 25);
+        writeIntElement(byteArrayOutputStream2, "mc", 45);
         String format = String.format(Locale.ROOT, "%08x%016x", Integer.valueOf(i), Integer.valueOf(i));
         ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream();
         writeIntElement(byteArrayOutputStream3, "i", i);

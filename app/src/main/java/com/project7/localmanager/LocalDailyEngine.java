@@ -43,27 +43,27 @@ final class LocalDailyEngine {
     }
 
     static boolean battleType(int i) {
-        return i == 3 || i == 4 || i == 5 || i == 7 || i == 10 || i == 16;
+        return i == 11 || i == 3 || i == 4 || i == 5 || i == 7 || i == 10 || i == 16;
     }
 
     /* renamed from: v */
-    static int m9v(byte[] bArr, String str) {
+    static int m13v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
     /* renamed from: d */
-    static byte[] m8d(byte[] bArr, String str) {
+    static byte[] m12d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     static boolean active(byte[] bArr) {
-        return Boolean.TRUE.equals(BsonLite.boolValue(m8d(bArr, "q7DailyBattle"), "active"));
+        return Boolean.TRUE.equals(BsonLite.boolValue(m12d(bArr, "q7DailyBattle"), "active"));
     }
 
     static boolean expired(byte[] bArr, long j) {
-        int m9v = m9v(bArr, "st");
-        int m9v2 = m9v(bArr, "ts");
-        return m9v >= 2 && m9v <= 4 && m9v2 > 0 && j >= (((long) m9v2) + 86400) * 1000;
+        int m13v = m13v(bArr, "st");
+        int m13v2 = m13v(bArr, "ts");
+        return m13v >= 2 && m13v <= 4 && m13v2 > 0 && j >= (((long) m13v2) + 86400) * 1000;
     }
 
     static byte[] resetExam(byte[] bArr) {
@@ -75,16 +75,16 @@ final class LocalDailyEngine {
     }
 
     static byte[] refreshExam(byte[] bArr, long j) {
-        byte[] m8d = m8d(bArr, "herotest");
-        if (expired(m8d, j) && !active(bArr)) {
-            return BsonLite.withProfileDocument(bArr, "herotest", resetExam(m8d));
+        byte[] m12d = m12d(bArr, "herotest");
+        if (expired(m12d, j) && !active(bArr)) {
+            return BsonLite.withProfileDocument(bArr, "herotest", resetExam(m12d));
         }
         return bArr;
     }
 
     static byte[] defaults(byte[] bArr) {
-        byte[] m8d = m8d(bArr, "herotest");
-        return !BsonLite.keys(m8d).isEmpty() ? m8d : BsonLite.document("st", 1, "ts", 0, "vl", Collections.emptyList(), "vl2", Collections.emptyList(), "hr", 0, "lv", Integer.valueOf(Math.max(1, m9v(bArr, "level"))), "se", 1, "srw", Collections.emptyList(), "csb", 0, "cib", 1, "iti", Collections.emptyList(), "ex", false, "stfc", 0, "ps2", false, "is2", BsonLite.EMPTY_DOCUMENT, "szh", 0, "szs", 6, "te", false);
+        byte[] m12d = m12d(bArr, "herotest");
+        return !BsonLite.keys(m12d).isEmpty() ? m12d : BsonLite.document("st", 1, "ts", 0, "vl", Collections.emptyList(), "vl2", Collections.emptyList(), "hr", 0, "lv", Integer.valueOf(Math.max(1, m13v(bArr, "level"))), "se", 1, "srw", Collections.emptyList(), "csb", 0, "cib", 1, "iti", Collections.emptyList(), "ex", false, "stfc", 0, "ps2", false, "is2", BsonLite.EMPTY_DOCUMENT, "szh", 0, "szs", 6, "te", false);
     }
 
     static void save(LocalResourceEngine.Result result, byte[] bArr) {
@@ -96,9 +96,9 @@ final class LocalDailyEngine {
     }
 
     static void eligibility(byte[] bArr, String str) {
-        byte[] m8d = m8d(bArr, "weeknum");
+        byte[] m12d = m12d(bArr, "weeknum");
         int i = "getBossChoice".equals(str) ? 0 : "queryBlackGate".equals(str) ? 2 : 1;
-        if (m9v(m8d, "w") < 1 || (m9v(m8d, "w") == 1 && m9v(m8d, "d") <= i)) {
+        if (m13v(m12d, "w") < 1 || (m13v(m12d, "w") == 1 && m13v(m12d, "d") <= i)) {
             throw new IllegalArgumentException("该玩法尚未达到原版周目解锁条件");
         }
     }
@@ -191,14 +191,14 @@ final class LocalDailyEngine {
             e = e3;
         }
         if ("q7DailyReset".equals(str9)) {
-            byte[] m8d = m8d(bArr, "q7DailyBattle");
+            byte[] m12d = m12d(bArr, "q7DailyBattle");
             Integer intValue = BsonLite.intValue(r5, "s");
-            if (intValue != null && active(bArr) && intValue.intValue() != m9v(m8d, "s")) {
+            if (intValue != null && active(bArr) && intValue.intValue() != m13v(m12d, "s")) {
                 throw new IllegalArgumentException("取消请求与当前日常战斗不匹配，未退还或扣除精神力");
             }
-            if (active(bArr) && m9v(m8d, "t") == 10) {
-                byte[] m8d2 = m8d(bArr, "city");
-                byte[] withProfileInt = BsonLite.withProfileInt(m8d2, "jpv", Math.addExact(m9v(m8d2, "jpv"), m9v(localFeatureCatalog.get("P", 10), "consume") - m9v(localFeatureCatalog.get("P", 10), "fail_consume")));
+            if (active(bArr) && m13v(m12d, "t") == 10) {
+                byte[] m12d2 = m12d(bArr, "city");
+                byte[] withProfileInt = BsonLite.withProfileInt(m12d2, "jpv", Math.addExact(m13v(m12d2, "jpv"), m13v(localFeatureCatalog.get("P", 10), "consume") - m13v(localFeatureCatalog.get("P", 10), "fail_consume")));
                 result2.profile = BsonLite.withProfileDocument(result2.profile, "city", withProfileInt);
                 power(result2, withProfileInt);
             }
@@ -229,7 +229,7 @@ final class LocalDailyEngine {
             }
             if (!"q7DailyFinish".equals(str9)) {
                 if (shop(localFeatureCatalog, str9, r5)) {
-                    if (localFeatureCatalog.get("CS", Integer.valueOf(m9v(r5, "store_id"))) == null) {
+                    if (localFeatureCatalog.get("CS", Integer.valueOf(m13v(r5, "store_id"))) == null) {
                         eligibility(bArr);
                     }
                     try {
@@ -325,12 +325,12 @@ final class LocalDailyEngine {
                                                     str4 = "heroTestQuery";
                                                     if ("heroTestSelectHero".equals(str9)) {
                                                         try {
-                                                            int m9v = m9v(r5, "h");
-                                                            int m9v2 = m9v(r10, "st");
+                                                            int m13v = m13v(r5, "h");
+                                                            int m13v2 = m13v(r10, "st");
                                                             try {
-                                                                if (m9v2 == 1 && m9v(r5, "s") == 1 && !active(bArr)) {
-                                                                    if (localFeatureCatalog.get("H", Integer.valueOf(m9v)) != null && localFeatureCatalog.get("Q", Integer.valueOf(m9v)) != null) {
-                                                                        if (LocalResourceEngine.ownsHero(bArr, m9v) && !Boolean.TRUE.equals(BsonLite.boolValue(BsonLite.profileHeroDocument(bArr, m9v), "pt"))) {
+                                                                if (m13v2 == 1 && m13v(r5, "s") == 1 && !active(bArr)) {
+                                                                    if (localFeatureCatalog.get("H", Integer.valueOf(m13v)) != null && localFeatureCatalog.get("Q", Integer.valueOf(m13v)) != null) {
+                                                                        if (LocalResourceEngine.ownsHero(bArr, m13v) && !Boolean.TRUE.equals(BsonLite.boolValue(BsonLite.profileHeroDocument(bArr, m13v), "pt"))) {
                                                                             i4 = 2;
                                                                             try {
                                                                             } catch (ArithmeticException e8) {
@@ -369,17 +369,17 @@ final class LocalDailyEngine {
                                                                                 return result32222;
                                                                             }
                                                                             try {
-                                                                                byte[] withProfileBool = BsonLite.withProfileBool(BsonLite.withProfileArray(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileArray(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileInt(r10, "hr", m9v), "st", 2), "ts", (int) (j / 1000)), "srw", Collections.emptyList()), "stfc", 0), "lv", Math.max(1, m9v(bArr, "level"))), "cib", 1), "iti", Collections.emptyList()), "ex", false);
+                                                                                byte[] withProfileBool = BsonLite.withProfileBool(BsonLite.withProfileArray(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileArray(BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileInt(r10, "hr", m13v), "st", 2), "ts", (int) (j / 1000)), "srw", Collections.emptyList()), "stfc", 0), "lv", Math.max(1, m13v(bArr, "level"))), "cib", 1), "iti", Collections.emptyList()), "ex", false);
                                                                                 save(result2, withProfileBool);
                                                                                 i5 = 2;
                                                                                 try {
                                                                                     Object[] objArr4 = new Object[2];
                                                                                     objArr4[0] = "s";
-                                                                                    objArr4[1] = "gg.avatar.heroTestData.startTs = " + m9v(withProfileBool, "ts") + "; gg.avatar.heroTestData.expired = False";
+                                                                                    objArr4[1] = "gg.avatar.heroTestData.startTs = " + m13v(withProfileBool, "ts") + "; gg.avatar.heroTestData.expired = False";
                                                                                     result2.add("evalCode", BsonLite.document(objArr4));
                                                                                     Object[] objArr5 = new Object[4];
                                                                                     objArr5[0] = "h";
-                                                                                    objArr5[1] = Integer.valueOf(m9v);
+                                                                                    objArr5[1] = Integer.valueOf(m13v);
                                                                                     objArr5[2] = "s";
                                                                                     objArr5[3] = 1;
                                                                                     result2.add("heroTestSelectHeroReply", BsonLite.document(objArr5));
@@ -460,7 +460,7 @@ final class LocalDailyEngine {
                                                                 throw new IllegalArgumentException("当前不能报名该神器使的资质考试");
                                                             } catch (ArithmeticException | IllegalArgumentException e14) {
                                                                 runtimeException = e14;
-                                                                i = m9v2;
+                                                                i = m13v2;
                                                                 str10 = r10;
                                                                 str5 = "Reply";
                                                                 str9 = str;
@@ -523,19 +523,19 @@ final class LocalDailyEngine {
                                                                                 } else if ("triggerHeroManeuverEvent".equals(str9)) {
                                                                                     save(result, BsonLite.withProfileBool(r10, "te", true));
                                                                                 } else if ("heroTestPickSkillTestReward".equals(str9)) {
-                                                                                    if (active(bArr) || !(m9v(r10, "st") == 3 || (m9v(r10, "st") == 4 && m9v(r10, "cib") == 1))) {
+                                                                                    if (active(bArr) || !(m13v(r10, "st") == 3 || (m13v(r10, "st") == 4 && m13v(r10, "cib") == 1))) {
                                                                                         throw new IllegalArgumentException("请先完成四项技巧测试");
                                                                                     }
-                                                                                    int m9v3 = m9v(r10, "st");
+                                                                                    int m13v3 = m13v(r10, "st");
                                                                                     byte[] bArr3 = r10;
-                                                                                    if (m9v3 == 3) {
-                                                                                        byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileArray(r10, "iti", integrationPlan(localFeatureCatalog, m9v(r10, "hr"))), "cib", 1), "st", 4);
+                                                                                    if (m13v3 == 3) {
+                                                                                        byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileArray(r10, "iti", integrationPlan(localFeatureCatalog, m13v(r10, "hr"))), "cib", 1), "st", 4);
                                                                                         save(result, withProfileInt2);
                                                                                         bArr3 = withProfileInt2;
                                                                                     }
                                                                                     ArrayList arrayList = new ArrayList();
-                                                                                    for (byte[] bArr4 : LocalResourceEngine.array(m8d(bArr3, "iti"))) {
-                                                                                        arrayList.add(Arrays.asList(Integer.valueOf(m9v(bArr4, "0")), m8d(bArr4, "1")));
+                                                                                    for (byte[] bArr4 : LocalResourceEngine.array(m12d(bArr3, "iti"))) {
+                                                                                        arrayList.add(Arrays.asList(Integer.valueOf(m13v(bArr4, "0")), m12d(bArr4, "1")));
                                                                                     }
                                                                                     result.add("heroTestPickSkillTestRewardReply", BsonLite.document("i", arrayList));
                                                                                 } else {
@@ -545,12 +545,12 @@ final class LocalDailyEngine {
                                                                                         }
                                                                                         throw new IllegalArgumentException("该挑战的联网战斗尚未接入本地网关，未扣除资源");
                                                                                     }
-                                                                                    int m9v4 = m9v(r10, "hr");
-                                                                                    if (active(bArr) || m9v(r10, "st") != 5 || m9v(r10, "cib") != 11 || !LocalResourceEngine.ownsHero(bArr, m9v4) || Boolean.TRUE.equals(BsonLite.boolValue(BsonLite.profileHeroDocument(bArr, m9v4), "pt"))) {
+                                                                                    int m13v4 = m13v(r10, "hr");
+                                                                                    if (active(bArr) || m13v(r10, "st") != 5 || m13v(r10, "cib") != 11 || !LocalResourceEngine.ownsHero(bArr, m13v4) || Boolean.TRUE.equals(BsonLite.boolValue(BsonLite.profileHeroDocument(bArr, m13v4), "pt"))) {
                                                                                         throw new IllegalArgumentException("请先完成全部十关综合测试；考试奖励只能领取一次");
                                                                                     }
-                                                                                    rewards(result, localResourceCatalog, localFeatureCatalog.get("Q", Integer.valueOf(m9v4)));
-                                                                                    result.profile = BsonLite.withHeroDocument(result.profile, m9v4, BsonLite.withProfileBool(BsonLite.profileHeroDocument(result.profile, m9v4), "pt", true));
+                                                                                    rewards(result, localResourceCatalog, localFeatureCatalog.get("Q", Integer.valueOf(m13v4)));
+                                                                                    result.profile = BsonLite.withHeroDocument(result.profile, m13v4, BsonLite.withProfileBool(BsonLite.profileHeroDocument(result.profile, m13v4), "pt", true));
                                                                                     save(result, BsonLite.withProfileBool(BsonLite.withProfileInt(BsonLite.withProfileInt(r10, "st", 1), "ts", 0), "ex", false));
                                                                                     LocalResourceEngine.syncCurrencies(result);
                                                                                     result.add("heroTestPickHeroTestRewardReply", BsonLite.document("rewards", result.reward()));
@@ -662,12 +662,12 @@ final class LocalDailyEngine {
                                                 r3[1] = r10;
                                                 result.add(str9 + str8, BsonLite.document(r3));
                                             }
-                                            if (z && ("heroTestPickSkillTestReward".equals(str9) || ("q7DailyBegin".equals(str9) && (m9v(r5, "t") == 3 || m9v(r5, "t") == 4)))) {
+                                            if (z && ("heroTestPickSkillTestReward".equals(str9) || ("q7DailyBegin".equals(str9) && (m13v(r5, "t") == 3 || m13v(r5, "t") == 4)))) {
                                                 save(result2, resetExam(defaults));
                                                 try {
                                                     Object[] objArr6 = new Object[2];
                                                     objArr6[0] = "d";
-                                                    objArr6[1] = m8d(result2.profile, "herotest");
+                                                    objArr6[1] = m12d(result2.profile, "herotest");
                                                     result2.add("heroTestGiveupReply", BsonLite.document(objArr6));
                                                 } catch (ArithmeticException | IllegalArgumentException e22) {
                                                     runtimeException = e22;
@@ -796,7 +796,7 @@ final class LocalDailyEngine {
                             save(result2, resetExam(defaults));
                             Object[] objArr62 = new Object[2];
                             objArr62[0] = "d";
-                            objArr62[1] = m8d(result2.profile, "herotest");
+                            objArr62[1] = m12d(result2.profile, "herotest");
                             result2.add("heroTestGiveupReply", BsonLite.document(objArr62));
                             Object[] objArr72 = new Object[2];
                             objArr72[0] = "m";
@@ -841,13 +841,13 @@ final class LocalDailyEngine {
     }
 
     static boolean shop(LocalFeatureCatalog localFeatureCatalog, String str, byte[] bArr) {
-        return "buyCardMallItem".equals(str) && !(localFeatureCatalog.get("S", Integer.valueOf(m9v(bArr, "store_id"))) == null && localFeatureCatalog.get("CS", Integer.valueOf(m9v(bArr, "store_id"))) == null);
+        return "buyCardMallItem".equals(str) && !(localFeatureCatalog.get("S", Integer.valueOf(m13v(bArr, "store_id"))) == null && localFeatureCatalog.get("CS", Integer.valueOf(m13v(bArr, "store_id"))) == null);
     }
 
     private static List<List<Object>> integrationPlan(LocalFeatureCatalog localFeatureCatalog, int i) {
         byte[] document;
         ArrayList arrayList = new ArrayList(BsonLite.intArrayValues(localFeatureCatalog.get("I", "monsters"), "groups"));
-        List<byte[]> array = LocalResourceEngine.array(m8d(localFeatureCatalog.get("I", "heroes"), "groups"));
+        List<byte[]> array = LocalResourceEngine.array(m12d(localFeatureCatalog.get("I", "heroes"), "groups"));
         if (arrayList.isEmpty() || array.isEmpty()) {
             throw new IllegalArgumentException("缺少原版综合测试敌人目录");
         }
@@ -879,9 +879,9 @@ final class LocalDailyEngine {
     }
 
     static byte[] integrationInfo(byte[] bArr, int i) {
-        for (byte[] bArr2 : LocalResourceEngine.array(m8d(bArr, "iti"))) {
-            if (m9v(bArr2, "0") == i) {
-                return m8d(bArr2, "1");
+        for (byte[] bArr2 : LocalResourceEngine.array(m12d(bArr, "iti"))) {
+            if (m13v(bArr2, "0") == i) {
+                return m12d(bArr2, "1");
             }
         }
         return BsonLite.EMPTY_DOCUMENT;
@@ -892,104 +892,114 @@ final class LocalDailyEngine {
         int i;
         String str;
         byte[] bArr3;
+        int m13v = m13v(bArr, "t");
+        if (m13v == 11) {
+            result.profile = BsonLite.withProfileDocument(result.profile, "q7DailyBattle", BsonLite.document("t", Integer.valueOf(m13v), "s", Integer.valueOf(m13v(bArr, "s")), "h", BsonLite.intArrayValues(bArr, "h"), "b", 0));
+            return;
+        }
         byte[] bArr4 = bArr2;
-        int m9v = m9v(bArr, "t");
-        int m9v2 = m9v(bArr, "s");
-        int m9v3 = m9v(m8d(bArr, "d"), "battleId");
-        byte[] bArr5 = localFeatureCatalog.get("B", m9v + ":" + m9v3);
+        int m13v2 = m13v(bArr, "t");
+        int m13v3 = m13v(bArr, "s");
+        int m13v4 = m13v(m12d(bArr, "d"), "battleId");
+        LocalDiagnosticLog.m16i("Project7Gateway", "q7bgBegin t=" + m13v2 + " s=" + m13v3 + " b=" + m13v4);
+        StringBuilder sb = new StringBuilder();
+        sb.append(m13v2);
+        sb.append(":");
+        sb.append(m13v4);
+        byte[] bArr5 = localFeatureCatalog.get("B", sb.toString());
         String str2 = "h";
         List<Integer> intArrayValues = BsonLite.intArrayValues(bArr, "h");
-        if (bArr5 == null || m9v(bArr5, "scene") != m9v2 || Boolean.TRUE.equals(BsonLite.boolValue(bArr5, "online"))) {
+        if (bArr5 == null || m13v(bArr5, "scene") != m13v3 || Boolean.TRUE.equals(BsonLite.boolValue(bArr5, "online"))) {
             throw new IllegalArgumentException("此关卡尚未接入离线战斗，未扣除资源");
         }
         if (!intArrayValues.isEmpty()) {
-            if (intArrayValues.size() <= (m9v == 4 ? 3 : 1) && new HashSet(intArrayValues).size() == intArrayValues.size()) {
+            if (intArrayValues.size() <= (m13v2 == 4 ? 3 : 1) && new HashSet(intArrayValues).size() == intArrayValues.size()) {
                 Iterator<Integer> it = intArrayValues.iterator();
                 while (it.hasNext()) {
                     if (!LocalResourceEngine.ownsHero(result.profile, it.next().intValue())) {
                         throw new IllegalArgumentException("请使用已拥有的神器使出战");
                     }
                 }
-                byte[] m8d = m8d(result.profile, "q7DailyBattle");
+                byte[] m12d = m12d(result.profile, "q7DailyBattle");
                 if (active(result.profile)) {
-                    if (m9v(m8d, "t") != m9v || m9v(m8d, "s") != m9v2 || !BsonLite.intArrayValues(m8d, "h").equals(intArrayValues)) {
+                    if (m13v(m12d, "t") != m13v2 || m13v(m12d, "s") != m13v3 || !BsonLite.intArrayValues(m12d, "h").equals(intArrayValues)) {
                         throw new IllegalArgumentException("请先结束当前日常战斗");
                     }
                     return;
                 }
-                if (!BsonLite.keys(m8d(result.profile, "q7Battle")).isEmpty() || Boolean.TRUE.equals(BsonLite.boolValue(m8d(result.profile, "combat"), "of"))) {
+                if (!BsonLite.keys(m12d(result.profile, "q7Battle")).isEmpty() || Boolean.TRUE.equals(BsonLite.boolValue(m12d(result.profile, "combat"), "of"))) {
                     throw new IllegalArgumentException("请先结束当前主线战斗");
                 }
                 int intValue = intArrayValues.get(0).intValue();
-                if (m9v == 3) {
-                    if (m9v(bArr4, "st") == 2 && m9v(bArr4, "hr") == intValue && !passed(m8d(bArr4, "srw"), m9v3)) {
+                if (m13v2 == 3) {
+                    if (m13v(bArr4, "st") == 2 && m13v(bArr4, "hr") == intValue && !passed(m12d(bArr4, "srw"), m13v4)) {
                         list = intArrayValues;
-                        i = m9v;
+                        i = m13v2;
                         str = "h";
                     } else {
                         throw new IllegalArgumentException("当前技巧测试不满足进入条件");
                     }
-                } else if (m9v == 4) {
-                    if (m9v(bArr4, "st") == 4 && m9v3 == m9v(bArr4, "cib") && intArrayValues.contains(Integer.valueOf(m9v(bArr4, "hr"))) && !BsonLite.keys(integrationInfo(bArr4, m9v3)).isEmpty()) {
+                } else if (m13v2 == 4) {
+                    if (m13v(bArr4, "st") == 4 && m13v4 == m13v(bArr4, "cib") && intArrayValues.contains(Integer.valueOf(m13v(bArr4, "hr"))) && !BsonLite.keys(integrationInfo(bArr4, m13v4)).isEmpty()) {
                         list = intArrayValues;
-                        i = m9v;
+                        i = m13v2;
                         str = "h";
                     } else {
                         throw new IllegalArgumentException("请按顺序挑战综合测试，并携带报名的神器使");
                     }
-                } else if (m9v == 10) {
+                } else if (m13v2 == 10) {
                     byte[] profileHeroDocument = BsonLite.profileHeroDocument(result.profile, intValue);
                     list = intArrayValues;
                     if (!Boolean.TRUE.equals(BsonLite.boolValue(profileHeroDocument, "pt"))) {
                         throw new IllegalArgumentException("该神器使尚未通过资质考试");
                     }
-                    Iterator<byte[]> it2 = LocalResourceEngine.array(m8d(m8d(result.profile, "heromgr"), "hrs")).iterator();
+                    Iterator<byte[]> it2 = LocalResourceEngine.array(m12d(m12d(result.profile, "heromgr"), "hrs")).iterator();
                     int i2 = 1;
                     while (it2.hasNext()) {
                         Iterator<byte[]> it3 = it2;
-                        int i3 = m9v;
-                        byte[] m8d2 = m8d(it2.next(), "1");
+                        int i3 = m13v2;
+                        byte[] m12d2 = m12d(it2.next(), "1");
                         String str3 = str2;
-                        if (Boolean.TRUE.equals(BsonLite.boolValue(m8d2, "pt"))) {
-                            Iterator<byte[]> it4 = LocalResourceEngine.array(m8d(m8d2, "htmr")).iterator();
+                        if (Boolean.TRUE.equals(BsonLite.boolValue(m12d2, "pt"))) {
+                            Iterator<byte[]> it4 = LocalResourceEngine.array(m12d(m12d2, "htmr")).iterator();
                             while (it4.hasNext()) {
                                 byte[] next = it4.next();
                                 Iterator<byte[]> it5 = it4;
                                 if (Boolean.TRUE.equals(BsonLite.boolValue(next, "1"))) {
-                                    i2 = Math.max(i2, m9v(next, "0") + 1);
+                                    i2 = Math.max(i2, m13v(next, "0") + 1);
                                 }
                                 it4 = it5;
                             }
-                            m9v = i3;
+                            m13v2 = i3;
                             it2 = it3;
                             str2 = str3;
                         } else {
-                            m9v = i3;
+                            m13v2 = i3;
                             it2 = it3;
                             str2 = str3;
                         }
                     }
-                    i = m9v;
+                    i = m13v2;
                     str = str2;
-                    if (m9v3 > i2) {
+                    if (m13v4 > i2) {
                         throw new IllegalArgumentException("请先完成上一关实战演练");
                     }
-                    if (passed(m8d(profileHeroDocument, "htmr"), m9v3)) {
-                        bArr3 = localFeatureCatalog.get("M", Integer.valueOf(m9v3));
+                    if (passed(m12d(profileHeroDocument, "htmr"), m13v4)) {
+                        bArr3 = localFeatureCatalog.get("M", Integer.valueOf(m13v4));
                     } else {
-                        bArr3 = localFeatureCatalog.get("R", Math.max(1, m9v(result.profile, "level")) + ":" + m9v3);
+                        bArr3 = localFeatureCatalog.get("R", Math.max(1, m13v(result.profile, "level")) + ":" + m13v4);
                     }
                     if (bArr3 != null) {
                         result.profile = LocalServiceEngine.recover(result.profile, j);
-                        byte[] m8d3 = m8d(result.profile, "city");
-                        int m9v4 = m9v(localFeatureCatalog.get("P", 10), "consume");
-                        if (m9v(m8d3, "jpv") >= m9v4) {
-                            byte[] withProfileInt = BsonLite.withProfileInt(m8d3, "jpv", m9v(m8d3, "jpv") - m9v4);
+                        byte[] m12d3 = m12d(result.profile, "city");
+                        int m13v5 = m13v(localFeatureCatalog.get("P", 10), "consume");
+                        if (m13v(m12d3, "jpv") >= m13v5) {
+                            byte[] withProfileInt = BsonLite.withProfileInt(m12d3, "jpv", m13v(m12d3, "jpv") - m13v5);
                             result.profile = BsonLite.withProfileDocument(result.profile, "city", withProfileInt);
                             power(result, withProfileInt);
                             bArr4 = bArr2;
                             save(result, BsonLite.withProfileInt(bArr4, "szh", intValue));
-                            result.add("enterManeuverBattleReply", BsonLite.document(str, Integer.valueOf(intValue), "i", Integer.valueOf(m9v3)));
+                            result.add("enterManeuverBattleReply", BsonLite.document(str, Integer.valueOf(intValue), "i", Integer.valueOf(m13v4)));
                         } else {
                             throw new IllegalArgumentException("精神力不足");
                         }
@@ -1006,24 +1016,24 @@ final class LocalDailyEngine {
                 objArr[2] = "t";
                 objArr[3] = Integer.valueOf(i);
                 objArr[4] = "s";
-                objArr[5] = Integer.valueOf(m9v2);
+                objArr[5] = Integer.valueOf(m13v3);
                 objArr[6] = str;
                 objArr[7] = list;
                 objArr[8] = "b";
-                objArr[9] = Integer.valueOf(m9v3);
+                objArr[9] = Integer.valueOf(m13v4);
                 objArr[10] = "wishCost";
                 int i4 = i;
-                objArr[11] = Integer.valueOf(i4 == 10 ? m9v(localFeatureCatalog.get("P", 10), "consume") : 0);
+                objArr[11] = Integer.valueOf(i4 == 10 ? m13v(localFeatureCatalog.get("P", 10), "consume") : 0);
                 objArr[12] = "wishFailCost";
-                objArr[13] = Integer.valueOf(i4 == 10 ? m9v(localFeatureCatalog.get("P", 10), "fail_consume") : 0);
+                objArr[13] = Integer.valueOf(i4 == 10 ? m13v(localFeatureCatalog.get("P", 10), "fail_consume") : 0);
                 objArr[14] = "repeat";
-                objArr[15] = Boolean.valueOf(i4 == 10 && passed(m8d(BsonLite.profileHeroDocument(result.profile, intValue), "htmr"), m9v3));
+                objArr[15] = Boolean.valueOf(i4 == 10 && passed(m12d(BsonLite.profileHeroDocument(result.profile, intValue), "htmr"), m13v4));
                 objArr[16] = "lv";
-                objArr[17] = Integer.valueOf(i4 == 4 ? 30 : Math.max(1, m9v(result.profile, "level")));
+                objArr[17] = Integer.valueOf(i4 == 4 ? 30 : Math.max(1, m13v(result.profile, "level")));
                 objArr[18] = "ml";
-                objArr[19] = Integer.valueOf(m9v(bArr5, "monster_level"));
+                objArr[19] = Integer.valueOf(m13v(bArr5, "monster_level"));
                 objArr[20] = "info";
-                objArr[21] = i4 == 4 ? integrationInfo(bArr4, m9v3) : BsonLite.EMPTY_DOCUMENT;
+                objArr[21] = i4 == 4 ? integrationInfo(bArr4, m13v4) : BsonLite.EMPTY_DOCUMENT;
                 objArr[22] = "f";
                 objArr[23] = LocalResourceEngine.uuid();
                 result.profile = BsonLite.withProfileDocument(bArr6, "q7DailyBattle", BsonLite.document(objArr));
@@ -1034,27 +1044,27 @@ final class LocalDailyEngine {
     }
 
     static byte[] combatReply(int i, int i2, List<Integer> list, byte[] bArr, String str, byte[] bArr2, LocalCombatCatalog localCombatCatalog) {
-        byte[] m8d = m8d(bArr2, "q7DailyBattle");
-        byte[] combatOfflineReplyDocument = BsonLite.combatOfflineReplyDocument(i, i2, BsonLite.stringValue(m8d, "f"), list, bArr, str, bArr2, localCombatCatalog, i == 3 ? 30 : Math.max(1, m9v(m8d, "lv")));
-        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withoutProfileKey(m8d(combatOfflineReplyDocument, "c"), "monster"), "hero_lv", i == 3 ? 30 : Math.max(1, m9v(m8d, "lv"))), "monster_lv", i != 3 ? Math.max(1, m9v(m8d, "ml")) : 30);
+        byte[] m12d = m12d(bArr2, "q7DailyBattle");
+        byte[] combatOfflineReplyDocument = BsonLite.combatOfflineReplyDocument(i, i2, BsonLite.stringValue(m12d, "f"), list, bArr, str, bArr2, localCombatCatalog, i == 3 ? 30 : Math.max(1, m13v(m12d, "lv")));
+        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withoutProfileKey(m12d(combatOfflineReplyDocument, "c"), "monster"), "hero_lv", i == 3 ? 30 : Math.max(1, m13v(m12d, "lv"))), "monster_lv", i != 3 ? Math.max(1, m13v(m12d, "ml")) : 30);
         if (i == 7) {
-            withProfileInt = BsonLite.withProfileDocument(BsonLite.withProfileInt(withProfileInt, "mission_mode", 12), "maze", m8d(m8d, "maze"));
+            withProfileInt = BsonLite.withProfileDocument(BsonLite.withProfileInt(withProfileInt, "mission_mode", 12), "maze", m12d(m12d, "maze"));
         }
         if (i == 5) {
-            withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileBool(withProfileInt, "buff_enhance", Boolean.TRUE.equals(BsonLite.boolValue(m8d, "assist"))), "buff_count", m9v(m8d, "stacks")), "areaId", m9v(m8d, "a"));
+            withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileBool(withProfileInt, "buff_enhance", Boolean.TRUE.equals(BsonLite.boolValue(m12d, "assist"))), "buff_count", m13v(m12d, "stacks")), "areaId", m13v(m12d, "a"));
         }
         if (i == 16) {
             withProfileInt = BsonLite.withProfileBool(BsonLite.withProfileBool(withProfileInt, "lunhuizhijing", true), "buff_enhance", false);
         }
         if (i == 4) {
-            withProfileInt = BsonLite.withProfileIntArray(BsonLite.withProfileDocument(BsonLite.withProfileInt(withProfileInt, "cur_integration_test_id", m9v(m8d, "b")), "integration_test_battle_info", m8d(m8d, "info")), "select_heroes", Collections.singletonList(Integer.valueOf(m9v(defaults(bArr2), "hr"))));
+            withProfileInt = BsonLite.withProfileIntArray(BsonLite.withProfileDocument(BsonLite.withProfileInt(withProfileInt, "cur_integration_test_id", m13v(m12d, "b")), "integration_test_battle_info", m12d(m12d, "info")), "select_heroes", Collections.singletonList(Integer.valueOf(m13v(defaults(bArr2), "hr"))));
         }
         return BsonLite.withProfileDocument(combatOfflineReplyDocument, "c", withProfileInt);
     }
 
     static boolean passed(byte[] bArr, int i) {
         for (byte[] bArr2 : LocalResourceEngine.array(bArr)) {
-            if (m9v(bArr2, "0") == i && Boolean.TRUE.equals(BsonLite.boolValue(bArr2, "1"))) {
+            if (m13v(bArr2, "0") == i && Boolean.TRUE.equals(BsonLite.boolValue(bArr2, "1"))) {
                 return true;
             }
         }
@@ -1069,8 +1079,8 @@ final class LocalDailyEngine {
                 break;
             }
             byte[] next = it.next();
-            if (m9v(next, "0") != i) {
-                arrayList.add(Arrays.asList(Integer.valueOf(m9v(next, "0")), Boolean.valueOf(Boolean.TRUE.equals(BsonLite.boolValue(next, "1")))));
+            if (m13v(next, "0") != i) {
+                arrayList.add(Arrays.asList(Integer.valueOf(m13v(next, "0")), Boolean.valueOf(Boolean.TRUE.equals(BsonLite.boolValue(next, "1")))));
             }
         }
         Object[] objArr = new Object[2];
@@ -1081,10 +1091,12 @@ final class LocalDailyEngine {
     }
 
     private static void power(LocalResourceEngine.Result result, byte[] bArr) {
-        result.add("syncJingshenliPower", BsonLite.document("p", Integer.valueOf(m9v(bArr, "jpv")), "t", Integer.valueOf(m9v(bArr, "jpvt")), "cjsla", Integer.valueOf(m9v(bArr, "cjsla"))));
+        result.add("syncJingshenliPower", BsonLite.document("p", Integer.valueOf(m13v(bArr, "jpv")), "t", Integer.valueOf(m13v(bArr, "jpvt")), "cjsla", Integer.valueOf(m13v(bArr, "cjsla"))));
     }
 
     private static void finish(LocalResourceEngine.Result result, LocalFeatureCatalog localFeatureCatalog, LocalResourceCatalog localResourceCatalog, byte[] bArr) {
+        int m13v;
+        boolean equals;
         String str;
         String str2;
         String str3;
@@ -1103,17 +1115,18 @@ final class LocalDailyEngine {
         byte[] bArr6;
         boolean z4;
         List<Integer> list2;
-        byte[] m8d = m8d(result.profile, "q7DailyBattle");
-        int m9v = m9v(bArr, "t");
-        int m9v2 = m9v(bArr, "s");
-        int m9v3 = m9v(m8d, "b");
+        byte[] m12d = m12d(result.profile, "q7DailyBattle");
+        int m13v2 = m13v(bArr, "t");
+        int m13v3 = m13v(bArr, "s");
+        int m13v4 = m13v(m12d, "b");
         List<Integer> intArrayValues = BsonLite.intArrayValues(bArr, "h");
-        if (m9v(m8d, "t") != m9v || m9v(m8d, "s") != m9v2 || !BsonLite.intArrayValues(m8d, "h").equals(intArrayValues)) {
+        int m13v5 = m13v(m12d, "t");
+        if (m13v5 != m13v5 || (m13v = m13v(m12d, "s")) != m13v || (equals = BsonLite.intArrayValues(m12d, "h").equals(intArrayValues)) != equals) {
             throw new IllegalArgumentException("日常战斗结算与已保存的入场记录不匹配");
         }
         String str5 = "reply";
         if (!active(result.profile)) {
-            byte[] documentValue = BsonLite.documentValue(m8d, "reply");
+            byte[] documentValue = BsonLite.documentValue(m12d, "reply");
             if (documentValue != null) {
                 result.add("combatOfflineReward", documentValue);
                 return;
@@ -1122,8 +1135,8 @@ final class LocalDailyEngine {
         }
         boolean z5 = BsonLite.combatWinValue(bArr) != 0;
         byte[] defaults = defaults(result.profile);
-        if (m9v == 3) {
-            List<List<Object>> updated = updated(m8d(defaults, "srw"), m9v3, z5);
+        if (m13v2 == 3) {
+            List<List<Object>> updated = updated(m12d(defaults, "srw"), m13v4, z5);
             withProfileDocument = BsonLite.withProfileArray(defaults, "srw", updated);
             Iterator<List<Object>> it = updated.iterator();
             int i = 0;
@@ -1138,7 +1151,7 @@ final class LocalDailyEngine {
             }
             str = str5;
             if (!z5) {
-                withProfileDocument = BsonLite.withProfileInt(withProfileDocument, "stfc", m9v(withProfileDocument, "stfc") + 1);
+                withProfileDocument = BsonLite.withProfileInt(withProfileDocument, "stfc", m13v(withProfileDocument, "stfc") + 1);
             }
             if (i >= 4) {
                 withProfileDocument = BsonLite.withProfileInt(withProfileDocument, "st", 3);
@@ -1149,18 +1162,18 @@ final class LocalDailyEngine {
             objArr[2] = "r";
             objArr[3] = Boolean.valueOf(z5);
             objArr[4] = "b";
-            objArr[5] = Integer.valueOf(m9v3);
+            objArr[5] = Integer.valueOf(m13v4);
             result.add("heroTestSkillTestBattleFinish", BsonLite.document(objArr));
             str2 = "q7DailyBattle";
-            bArr3 = m8d;
+            bArr3 = m12d;
             list = intArrayValues;
             str3 = "combatOfflineReward";
             z2 = false;
             z = z5;
         } else {
             str = "reply";
-            if (m9v == 4) {
-                if (m9v(defaults, "st") != 4 || m9v(defaults, "cib") != m9v3) {
+            if (m13v2 == 4) {
+                if (m13v(defaults, "st") != 4 || m13v(defaults, "cib") != m13v4) {
                     throw new IllegalArgumentException("综合测试进度与入场记录不一致");
                 }
                 if (!z5) {
@@ -1169,18 +1182,18 @@ final class LocalDailyEngine {
                 } else {
                     StringBuilder sb = new StringBuilder();
                     str3 = "combatOfflineReward";
-                    sb.append(Math.max(1, m9v(defaults, "se")));
+                    sb.append(Math.max(1, m13v(defaults, "se")));
                     sb.append(":");
-                    sb.append(m9v3);
+                    sb.append(m13v4);
                     String sb2 = sb.toString();
-                    byte[] m8d2 = m8d(result.profile, "q7DailyStageRewards");
+                    byte[] m12d2 = m12d(result.profile, "q7DailyStageRewards");
                     str2 = "q7DailyBattle";
-                    if (!Boolean.TRUE.equals(BsonLite.boolValue(m8d2, sb2))) {
-                        rewards(result, localResourceCatalog, localFeatureCatalog.get("B", "4:" + m9v3));
-                        result.profile = BsonLite.withProfileDocument(result.profile, "q7DailyStageRewards", BsonLite.withProfileBool(m8d2, sb2, true));
+                    if (!Boolean.TRUE.equals(BsonLite.boolValue(m12d2, sb2))) {
+                        rewards(result, localResourceCatalog, localFeatureCatalog.get("B", "4:" + m13v4));
+                        result.profile = BsonLite.withProfileDocument(result.profile, "q7DailyStageRewards", BsonLite.withProfileBool(m12d2, sb2, true));
                     }
-                    byte[] withProfileInt = BsonLite.withProfileInt(defaults, "cib", m9v3 + 1);
-                    if (m9v3 == 10) {
+                    byte[] withProfileInt = BsonLite.withProfileInt(defaults, "cib", m13v4 + 1);
+                    if (m13v4 == 10) {
                         withProfileInt = BsonLite.withProfileInt(withProfileInt, "st", 5);
                     }
                     defaults = withProfileInt;
@@ -1188,44 +1201,44 @@ final class LocalDailyEngine {
                 }
                 Object[] objArr2 = new Object[8];
                 objArr2[0] = "p";
-                objArr2[1] = Boolean.valueOf(z5 && m9v3 == 10);
+                objArr2[1] = Boolean.valueOf(z5 && m13v4 == 10);
                 objArr2[2] = "r";
                 objArr2[3] = Boolean.valueOf(z5);
                 objArr2[4] = "b";
-                objArr2[5] = Integer.valueOf(m9v3);
+                objArr2[5] = Integer.valueOf(m13v4);
                 objArr2[6] = "rr";
                 objArr2[7] = Collections.emptyList();
                 result.add("heroTestIntegrationTestBattleFinish", BsonLite.document(objArr2));
                 withProfileDocument = defaults;
-                bArr3 = m8d;
+                bArr3 = m12d;
                 list = intArrayValues;
                 z2 = false;
                 z = z5;
             } else {
                 str2 = "q7DailyBattle";
                 str3 = "combatOfflineReward";
-                if (m9v == 10) {
+                if (m13v2 == 10) {
                     int intValue = intArrayValues.get(0).intValue();
                     byte[] profileHeroDocument = BsonLite.profileHeroDocument(result.profile, intValue);
                     if (z5) {
-                        if (Boolean.TRUE.equals(BsonLite.boolValue(m8d, "repeat"))) {
-                            obj = Integer.valueOf(m9v3);
+                        if (Boolean.TRUE.equals(BsonLite.boolValue(m12d, "repeat"))) {
+                            obj = Integer.valueOf(m13v4);
                             str4 = "M";
                         } else {
-                            obj = m9v(m8d, "lv") + ":" + m9v3;
+                            obj = m13v(m12d, "lv") + ":" + m13v4;
                             str4 = "R";
                         }
                         byte[] bArr7 = localFeatureCatalog.get(str4, obj);
                         if (bArr7 == null) {
                             throw new IllegalArgumentException("缺少原版奖励定义，未结算战斗");
                         }
-                        Iterator<byte[]> it3 = LocalResourceEngine.array(m8d(bArr7, "rewards")).iterator();
+                        Iterator<byte[]> it3 = LocalResourceEngine.array(m12d(bArr7, "rewards")).iterator();
                         while (it3.hasNext()) {
                             List<byte[]> array = LocalResourceEngine.array(it3.next());
                             long j = 0;
                             Iterator<byte[]> it4 = array.iterator();
                             while (it4.hasNext()) {
-                                j = Math.addExact(j, m9v(it4.next(), "w"));
+                                j = Math.addExact(j, m13v(it4.next(), "w"));
                                 defaults = defaults;
                                 profileHeroDocument = profileHeroDocument;
                             }
@@ -1246,7 +1259,7 @@ final class LocalDailyEngine {
                                 Iterator<byte[]> it6 = it5;
                                 z3 = z5;
                                 byte[] bArr11 = bArr10;
-                                random -= m9v(next, "w");
+                                random -= m13v(next, "w");
                                 if (random < 0.0d) {
                                     bArr10 = next;
                                     break;
@@ -1256,38 +1269,38 @@ final class LocalDailyEngine {
                                     z5 = z3;
                                 }
                             }
-                            for (byte[] bArr12 : LocalResourceEngine.array(m8d(bArr10, "g"))) {
+                            for (byte[] bArr12 : LocalResourceEngine.array(m12d(bArr10, "g"))) {
                                 String stringValue = BsonLite.stringValue(bArr12, "k");
                                 if ("cg".equals(stringValue)) {
                                     ArrayList arrayList = new ArrayList(BsonLite.intArrayValues(result.profile, "cgs"));
-                                    if (!arrayList.contains(Integer.valueOf(m9v(bArr12, "i")))) {
-                                        arrayList.add(Integer.valueOf(m9v(bArr12, "i")));
+                                    if (!arrayList.contains(Integer.valueOf(m13v(bArr12, "i")))) {
+                                        arrayList.add(Integer.valueOf(m13v(bArr12, "i")));
                                         result.profile = BsonLite.withProfileIntArray(result.profile, "cgs", arrayList);
                                     }
                                     bArr5 = bArr8;
-                                    bArr6 = m8d;
+                                    bArr6 = m12d;
                                     z4 = z3;
                                     list2 = intArrayValues;
                                 } else {
                                     bArr5 = bArr8;
-                                    bArr6 = m8d;
+                                    bArr6 = m12d;
                                     z4 = z3;
                                     list2 = intArrayValues;
-                                    LocalResourceEngine.grant(result, localResourceCatalog, stringValue, m9v(bArr12, "i"), m9v(bArr12, "n"), m9v(bArr12, "q"));
+                                    LocalResourceEngine.grant(result, localResourceCatalog, stringValue, m13v(bArr12, "i"), m13v(bArr12, "n"), m13v(bArr12, "q"));
                                 }
                                 intArrayValues = list2;
                                 z3 = z4;
-                                m8d = bArr6;
+                                m12d = bArr6;
                                 bArr8 = bArr5;
                             }
                             profileHeroDocument = bArr8;
                             z5 = z3;
                             defaults = bArr9;
-                            m8d = m8d;
+                            m12d = m12d;
                             intArrayValues = intArrayValues;
                         }
                         bArr2 = profileHeroDocument;
-                        bArr3 = m8d;
+                        bArr3 = m12d;
                         list = intArrayValues;
                         c = 3;
                         z = z5;
@@ -1295,23 +1308,23 @@ final class LocalDailyEngine {
                     } else {
                         bArr2 = profileHeroDocument;
                         c = 3;
-                        bArr3 = m8d;
+                        bArr3 = m12d;
                         list = intArrayValues;
                         z = z5;
-                        byte[] m8d3 = m8d(result.profile, "city");
-                        byte[] withProfileInt2 = BsonLite.withProfileInt(m8d3, "jpv", Math.addExact(m9v(m8d3, "jpv"), m9v(localFeatureCatalog.get("P", 10), "consume") - m9v(localFeatureCatalog.get("P", 10), "fail_consume")));
+                        byte[] m12d3 = m12d(result.profile, "city");
+                        byte[] withProfileInt2 = BsonLite.withProfileInt(m12d3, "jpv", Math.addExact(m13v(m12d3, "jpv"), m13v(localFeatureCatalog.get("P", 10), "consume") - m13v(localFeatureCatalog.get("P", 10), "fail_consume")));
                         result.profile = BsonLite.withProfileDocument(result.profile, "city", withProfileInt2);
                         power(result, withProfileInt2);
                         bArr4 = defaults;
                     }
-                    result.profile = BsonLite.withHeroDocument(result.profile, intValue, BsonLite.withProfileInt(BsonLite.withProfileArray(bArr2, "htmr", updated(m8d(bArr2, "htmr"), m9v3, z)), "htcmb", m9v3));
-                    withProfileDocument = BsonLite.withProfileDocument(bArr4, "is2", BsonLite.withProfileInt(m8d(bArr4, "is2"), "lastHero", intValue));
+                    result.profile = BsonLite.withHeroDocument(result.profile, intValue, BsonLite.withProfileInt(BsonLite.withProfileArray(bArr2, "htmr", updated(m12d(bArr2, "htmr"), m13v4, z)), "htcmb", m13v4));
+                    withProfileDocument = BsonLite.withProfileDocument(bArr4, "is2", BsonLite.withProfileInt(m12d(bArr4, "is2"), "lastHero", intValue));
                     Object[] objArr3 = new Object[4];
                     z2 = false;
                     objArr3[0] = "r";
                     objArr3[1] = Boolean.valueOf(z);
                     objArr3[2] = "b";
-                    objArr3[c] = Integer.valueOf(m9v3);
+                    objArr3[c] = Integer.valueOf(m13v4);
                     result.add("heroTestManeuverBattleFinish", BsonLite.document(objArr3));
                     LocalResourceEngine.syncCurrencies(result);
                 } else {
@@ -1320,7 +1333,7 @@ final class LocalDailyEngine {
             }
         }
         save(result, withProfileDocument);
-        byte[] combatOfflineRewardDocument = BsonLite.combatOfflineRewardDocument(m9v, m9v2, list, Collections.emptyList(), z ? 1 : 0, result.reward());
+        byte[] combatOfflineRewardDocument = BsonLite.combatOfflineRewardDocument(m13v2, m13v3, list, Collections.emptyList(), z ? 1 : 0, result.reward());
         result.profile = BsonLite.withProfileDocument(result.profile, str2, BsonLite.withProfileDocument(BsonLite.withProfileBool(bArr3, "active", z2), str, combatOfflineRewardDocument));
         result.add(str3, combatOfflineRewardDocument);
     }
@@ -1329,13 +1342,13 @@ final class LocalDailyEngine {
         if (bArr == null) {
             throw new IllegalArgumentException("缺少原版考试奖励定义，未发放资源");
         }
-        Iterator<byte[]> it = LocalResourceEngine.array(m8d(bArr, "rewards")).iterator();
+        Iterator<byte[]> it = LocalResourceEngine.array(m12d(bArr, "rewards")).iterator();
         while (it.hasNext()) {
             List<byte[]> array = LocalResourceEngine.array(it.next());
             Iterator<byte[]> it2 = array.iterator();
             long j = 0;
             while (it2.hasNext()) {
-                j = Math.addExact(j, m9v(it2.next(), "w"));
+                j = Math.addExact(j, m13v(it2.next(), "w"));
             }
             if (j <= 0) {
                 throw new IllegalArgumentException("无效的考试奖励权重");
@@ -1348,27 +1361,27 @@ final class LocalDailyEngine {
                     break;
                 }
                 byte[] next = it3.next();
-                random -= m9v(next, "w");
+                random -= m13v(next, "w");
                 if (random < 0.0d) {
                     bArr2 = next;
                     break;
                 }
             }
-            for (byte[] bArr3 : LocalResourceEngine.array(m8d(bArr2, "g"))) {
+            for (byte[] bArr3 : LocalResourceEngine.array(m12d(bArr2, "g"))) {
                 String stringValue = BsonLite.stringValue(bArr3, "k");
                 if ("heroCost".equals(stringValue)) {
-                    int m9v = m9v(bArr3, "h");
-                    int m9v2 = m9v(bArr3, "n");
-                    if (!LocalResourceEngine.ownsHero(result.profile, m9v) || m9v2 <= 0) {
+                    int m13v = m13v(bArr3, "h");
+                    int m13v2 = m13v(bArr3, "n");
+                    if (!LocalResourceEngine.ownsHero(result.profile, m13v) || m13v2 <= 0) {
                         throw new IllegalArgumentException("考试COST奖励与角色不匹配");
                     }
-                    byte[] profileHeroDocument = BsonLite.profileHeroDocument(result.profile, m9v);
-                    byte[] m8d = m8d(profileHeroDocument, "ti");
-                    result.profile = BsonLite.withHeroDocument(result.profile, m9v, BsonLite.withProfileDocument(profileHeroDocument, "ti", BsonLite.withProfileInt(m8d, "mc", Math.addExact(m9v(m8d, "mc"), m9v2))));
-                    result.itemRewards.add(Arrays.asList(Integer.valueOf(m9v(bArr3, "i")), Integer.valueOf(m9v2)));
-                    result.add("addTreasureMaxCost", BsonLite.document("hid", Integer.valueOf(m9v), "c", Integer.valueOf(m9v2)));
+                    byte[] profileHeroDocument = BsonLite.profileHeroDocument(result.profile, m13v);
+                    byte[] m12d = m12d(profileHeroDocument, "ti");
+                    result.profile = BsonLite.withHeroDocument(result.profile, m13v, BsonLite.withProfileDocument(profileHeroDocument, "ti", BsonLite.withProfileInt(m12d, "mc", Math.addExact(m13v(m12d, "mc"), m13v2))));
+                    result.itemRewards.add(Arrays.asList(Integer.valueOf(m13v(bArr3, "i")), Integer.valueOf(m13v2)));
+                    result.add("addTreasureMaxCost", BsonLite.document("hid", Integer.valueOf(m13v), "c", Integer.valueOf(m13v2)));
                 } else {
-                    LocalResourceEngine.grant(result, localResourceCatalog, stringValue, m9v(bArr3, "i"), m9v(bArr3, "n"), m9v(bArr3, "q"));
+                    LocalResourceEngine.grant(result, localResourceCatalog, stringValue, m13v(bArr3, "i"), m13v(bArr3, "n"), m13v(bArr3, "q"));
                 }
             }
         }

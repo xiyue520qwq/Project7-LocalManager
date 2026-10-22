@@ -33,17 +33,17 @@ final class LocalTreasureOperationEngine {
     }
 
     /* renamed from: v */
-    static int m79v(byte[] bArr, String str) {
+    static int m77v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
     /* renamed from: d */
-    static byte[] m77d(byte[] bArr, String str) {
+    static byte[] m75d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: id */
-    static BsonLite.UuidValue m78id(String str) {
+    static BsonLite.UuidValue m76id(String str) {
         return new BsonLite.UuidValue(str);
     }
 
@@ -115,42 +115,42 @@ final class LocalTreasureOperationEngine {
     }
 
     private static byte[] definition(LocalFeatureCatalog localFeatureCatalog, byte[] bArr) {
-        byte[] bArr2 = localFeatureCatalog.get("EQ", m79v(bArr, "i") + ":" + m79v(m77d(bArr, "tr"), "cl"));
-        if (bArr2 == null || m79v(bArr, "c") != 0 || m79v(bArr, "w") != 1) {
+        byte[] bArr2 = localFeatureCatalog.get("EQ", m77v(bArr, "i") + ":" + m77v(m75d(bArr, "tr"), "cl"));
+        if (bArr2 == null || m77v(bArr, "c") != 0 || m77v(bArr, "w") != 1) {
             throw new IllegalArgumentException("影装数据无效");
         }
         return bArr2;
     }
 
     private static void evolve(LocalResourceEngine.Result result, LocalResourceCatalog localResourceCatalog, LocalFeatureCatalog localFeatureCatalog, byte[] bArr, long j) {
-        int m79v;
+        int m77v;
         String uuidValue = BsonLite.uuidValue(bArr, "s");
         byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, 0);
-        byte[] m77d = m77d(owned, "tr");
+        byte[] m75d = m75d(owned, "tr");
         byte[] definition = definition(localFeatureCatalog, owned);
-        int m79v2 = m79v(owned, "i");
-        byte[] bArr2 = localFeatureCatalog.get("EG", Integer.valueOf(m79v2));
-        byte[] bArr3 = localFeatureCatalog.get("EQ", m79v2 + ":4");
-        if (m79v(m77d, "cl") == 3 && !BsonLite.intArrayValues(definition, "validHeroes").isEmpty() && bArr2 != null && bArr3 != null) {
-            if (localResourceCatalog.treasures.containsKey(m79v2 + ":4")) {
-                if (m79v(definition, "cost") != m79v(bArr3, "cost") || !BsonLite.intArrayValues(definition, "validHeroes").equals(BsonLite.intArrayValues(bArr3, "validHeroes")) || !BsonLite.intArrayValues(definition, "fixTrick").equals(BsonLite.intArrayValues(bArr3, "fixTrick"))) {
+        int m77v2 = m77v(owned, "i");
+        byte[] bArr2 = localFeatureCatalog.get("EG", Integer.valueOf(m77v2));
+        byte[] bArr3 = localFeatureCatalog.get("EQ", m77v2 + ":4");
+        if (m77v(m75d, "cl") == 3 && !BsonLite.intArrayValues(definition, "validHeroes").isEmpty() && bArr2 != null && bArr3 != null) {
+            if (localResourceCatalog.treasures.containsKey(m77v2 + ":4")) {
+                if (m77v(definition, "cost") != m77v(bArr3, "cost") || !BsonLite.intArrayValues(definition, "validHeroes").equals(BsonLite.intArrayValues(bArr3, "validHeroes")) || !BsonLite.intArrayValues(definition, "fixTrick").equals(BsonLite.intArrayValues(bArr3, "fixTrick"))) {
                     throw new IllegalArgumentException("该专属影装的进阶属性规则尚未核实，本次未扣费");
                 }
                 Iterator it = Arrays.asList("secondAttrs", "thridAttrs").iterator();
                 while (it.hasNext()) {
                     String str = (String) it.next();
-                    byte[] m77d2 = m77d(definition, str);
-                    byte[] m77d3 = m77d(bArr3, str);
+                    byte[] m75d2 = m75d(definition, str);
+                    byte[] m75d3 = m75d(bArr3, str);
                     Iterator it2 = it;
-                    if (!BsonLite.keys(m77d2).equals(BsonLite.keys(m77d3))) {
+                    if (!BsonLite.keys(m75d2).equals(BsonLite.keys(m75d3))) {
                         throw new IllegalArgumentException("该专属影装的进阶属性规则尚未核实，本次未扣费");
                     }
-                    Iterator<String> it3 = BsonLite.keys(m77d2).iterator();
+                    Iterator<String> it3 = BsonLite.keys(m75d2).iterator();
                     while (it3.hasNext()) {
                         String next = it3.next();
                         Iterator<String> it4 = it3;
                         byte[] bArr4 = definition;
-                        if (num(m77d(m77d2, next), "0") >= num(m77d(m77d3, next), "0") && num(m77d(m77d2, next), "1") <= num(m77d(m77d3, next), "1")) {
+                        if (num(m75d(m75d2, next), "0") >= num(m75d(m75d3, next), "0") && num(m75d(m75d2, next), "1") <= num(m75d(m75d3, next), "1")) {
                             it3 = it4;
                             definition = bArr4;
                         } else {
@@ -165,30 +165,30 @@ final class LocalTreasureOperationEngine {
                 }
                 int trade = trade(owned);
                 if (boolValue.booleanValue()) {
-                    int m79v3 = m79v(bArr2, "catUse");
-                    int m79v4 = m79v(result.profile, "giftCoin");
-                    if (m79v3 > 0 && m79v4 >= m79v3) {
-                        result.profile = BsonLite.withProfileInt(result.profile, "giftCoin", m79v4 - m79v3);
+                    int m77v3 = m77v(bArr2, "catUse");
+                    int m77v4 = m77v(result.profile, "giftCoin");
+                    if (m77v3 > 0 && m77v4 >= m77v3) {
+                        result.profile = BsonLite.withProfileInt(result.profile, "giftCoin", m77v4 - m77v3);
                     } else {
                         throw new IllegalArgumentException("礼品券不足");
                     }
                 } else {
-                    int m79v5 = m79v(bArr, "ci");
-                    if (m79v5 == 867) {
-                        m79v = m79v(bArr2, "smelt2Use");
+                    int m77v5 = m77v(bArr, "ci");
+                    if (m77v5 == 867) {
+                        m77v = m77v(bArr2, "smelt2Use");
                     } else {
-                        if (m79v5 <= 0 || m79v5 != m79v(bArr2, "activity_item") || !evolutionActivityOpen(bArr2, j)) {
+                        if (m77v5 <= 0 || m77v5 != m77v(bArr2, "activity_item") || !evolutionActivityOpen(bArr2, j)) {
                             throw new IllegalArgumentException("该进阶活动材料不匹配或不在开放时间内");
                         }
-                        m79v = m79v(bArr2, "activity_num");
+                        m77v = m77v(bArr2, "activity_num");
                     }
-                    if (m79v <= 0 || localFeatureCatalog.get("ED", Integer.valueOf(m79v5)) == null) {
+                    if (m77v <= 0 || localFeatureCatalog.get("ED", Integer.valueOf(m77v5)) == null) {
                         throw new IllegalArgumentException("缺少原版进阶材料配置");
                     }
-                    LocalGiftEngine.consume(result, m79v5, m79v);
-                    trade = Math.max(trade, m79v(localFeatureCatalog.get("ED", Integer.valueOf(m79v5)), "tradeType"));
+                    LocalGiftEngine.consume(result, m77v5, m77v);
+                    trade = Math.max(trade, m77v(localFeatureCatalog.get("ED", Integer.valueOf(m77v5)), "tradeType"));
                 }
-                byte[] withProfileInt = BsonLite.withProfileInt(m77d, "cl", 4);
+                byte[] withProfileInt = BsonLite.withProfileInt(m75d, "cl", 4);
                 Iterator it5 = Arrays.asList("ri", "ro").iterator();
                 while (it5.hasNext()) {
                     withProfileInt = BsonLite.withoutProfileKey(withProfileInt, (String) it5.next());
@@ -196,7 +196,7 @@ final class LocalTreasureOperationEngine {
                 byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileDocument(owned, "tr", withProfileInt), "tt", trade);
                 update(result, withProfileInt2);
                 LocalResourceEngine.syncCurrencies(result);
-                result.add("upgradeTreasureClassByItemReply", BsonLite.document("s", m78id(uuidValue), "r", BsonLite.document("i", withProfileInt2)));
+                result.add("upgradeTreasureClassByItemReply", BsonLite.document("s", m76id(uuidValue), "r", BsonLite.document("i", withProfileInt2)));
                 canonical(result, withProfileInt2);
                 return;
             }
@@ -229,19 +229,19 @@ final class LocalTreasureOperationEngine {
         String uuidValue = BsonLite.uuidValue(bArr, "s");
         byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, 0);
         String str2 = "tr";
-        byte[] m77d = m77d(owned, "tr");
+        byte[] m75d = m75d(owned, "tr");
         int i = -1;
         for (Map.Entry<String, byte[]> entry : localFeatureCatalog.entries.entrySet()) {
-            if (entry.getKey().startsWith("EE:") && m79v(entry.getValue(), "treasureId") == m79v(owned, "i")) {
-                i = Math.max(i, m79v(entry.getValue(), "totalExp"));
+            if (entry.getKey().startsWith("EE:") && m77v(entry.getValue(), "treasureId") == m77v(owned, "i")) {
+                i = Math.max(i, m77v(entry.getValue(), "totalExp"));
             }
         }
         String str3 = "x";
-        int m79v = m79v(m77d, "x");
-        if (i <= 0 || m79v < 0 || m79v >= i || BsonLite.intArrayValues(definition(localFeatureCatalog, owned), "validHeroes").isEmpty()) {
+        int m77v = m77v(m75d, "x");
+        if (i <= 0 || m77v < 0 || m77v >= i || BsonLite.intArrayValues(definition(localFeatureCatalog, owned), "validHeroes").isEmpty()) {
             throw new IllegalArgumentException("请选择尚未满阶的专属影装");
         }
-        List<byte[]> array = LocalResourceEngine.array(m77d(bArr, "i"));
+        List<byte[]> array = LocalResourceEngine.array(m75d(bArr, "i"));
         if (array.isEmpty() || array.size() > 100) {
             throw new IllegalArgumentException("请选择同调材料");
         }
@@ -253,29 +253,29 @@ final class LocalTreasureOperationEngine {
         while (it.hasNext()) {
             byte[] next = it.next();
             Iterator<byte[]> it2 = it;
-            int m79v2 = m79v(next, "0");
+            int m77v2 = m77v(next, "0");
             String str4 = uuidValue;
-            int m79v3 = m79v(next, "1");
+            int m77v3 = m77v(next, "1");
             String str5 = str;
             String str6 = str2;
-            byte[] bArr2 = localFeatureCatalog.get("EU", Integer.valueOf(m79v2));
-            if (BsonLite.keys(next).size() == 2 && m79v3 > 0 && bArr2 != null) {
-                byte[] bArr3 = m77d;
-                if (m79v(localFeatureCatalog.get("ED", Integer.valueOf(m79v2)), "type") == 15) {
+            byte[] bArr2 = localFeatureCatalog.get("EU", Integer.valueOf(m77v2));
+            if (BsonLite.keys(next).size() == 2 && m77v3 > 0 && bArr2 != null) {
+                byte[] bArr3 = m75d;
+                if (m77v(localFeatureCatalog.get("ED", Integer.valueOf(m77v2)), "type") == 15) {
                     String str7 = str3;
-                    linkedHashMap.put(Integer.valueOf(m79v2), Integer.valueOf(Math.addExact(((Integer) linkedHashMap.getOrDefault(Integer.valueOf(m79v2), 0)).intValue(), m79v3)));
-                    int m79v4 = m79v(bArr2, BsonLite.intArrayValues(bArr2, "treasureList").contains(Integer.valueOf(m79v(owned, "i"))) ? "tlExp" : "normalExp");
-                    if (m79v4 <= 0) {
+                    linkedHashMap.put(Integer.valueOf(m77v2), Integer.valueOf(Math.addExact(((Integer) linkedHashMap.getOrDefault(Integer.valueOf(m77v2), 0)).intValue(), m77v3)));
+                    int m77v4 = m77v(bArr2, BsonLite.intArrayValues(bArr2, "treasureList").contains(Integer.valueOf(m77v(owned, "i"))) ? "tlExp" : "normalExp");
+                    if (m77v4 <= 0) {
                         throw new IllegalArgumentException("缺少原版同调经验配置");
                     }
-                    i3 = Math.addExact(i3, Math.multiplyExact(m79v4, m79v3));
-                    i2 = Math.min(i2, m79v4);
-                    trade = Math.max(trade, m79v(localFeatureCatalog.get("ED", Integer.valueOf(m79v2)), "tradeType"));
+                    i3 = Math.addExact(i3, Math.multiplyExact(m77v4, m77v3));
+                    i2 = Math.min(i2, m77v4);
+                    trade = Math.max(trade, m77v(localFeatureCatalog.get("ED", Integer.valueOf(m77v2)), "tradeType"));
                     it = it2;
                     uuidValue = str4;
                     str = str5;
                     str2 = str6;
-                    m77d = bArr3;
+                    m75d = bArr3;
                     str3 = str7;
                 }
             }
@@ -284,10 +284,10 @@ final class LocalTreasureOperationEngine {
         String str8 = str;
         String str9 = uuidValue;
         String str10 = str2;
-        byte[] bArr4 = m77d;
+        byte[] bArr4 = m75d;
         String str11 = str3;
         int i4 = i3;
-        int i5 = i - m79v;
+        int i5 = i - m77v;
         if (i4 - i2 >= i5) {
             throw new IllegalArgumentException("同调材料超过满阶所需，请减少材料数量");
         }
@@ -295,9 +295,9 @@ final class LocalTreasureOperationEngine {
         for (Map.Entry entry2 : linkedHashMap.entrySet()) {
             LocalGiftEngine.consume(result, ((Integer) entry2.getKey()).intValue(), ((Integer) entry2.getValue()).intValue());
         }
-        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(owned, str10, BsonLite.withProfileInt(bArr4, str11, Math.addExact(m79v, min))), "tt", trade);
+        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(owned, str10, BsonLite.withProfileInt(bArr4, str11, Math.addExact(m77v, min))), "tt", trade);
         update(result, withProfileInt);
-        result.add("upgradeTreasureExpReply", BsonLite.document(str8, m78id(str9), "r", BsonLite.document("add", Integer.valueOf(min), "bExp", Integer.valueOf(m79v))));
+        result.add("upgradeTreasureExpReply", BsonLite.document(str8, m76id(str9), "r", BsonLite.document("add", Integer.valueOf(min), "bExp", Integer.valueOf(m77v))));
         canonical(result, withProfileInt);
     }
 
@@ -309,7 +309,7 @@ final class LocalTreasureOperationEngine {
         definition(localFeatureCatalog, findOwned);
         if (i != 0) {
             boolean z = false;
-            Iterator<byte[]> it = LocalResourceEngine.array(m77d(m77d(BsonLite.profileHeroDocument(bArr, i), "ti"), "items")).iterator();
+            Iterator<byte[]> it = LocalResourceEngine.array(m75d(m75d(BsonLite.profileHeroDocument(bArr, i), "ti"), "items")).iterator();
             while (it.hasNext()) {
                 if (str.equals(BsonLite.uuidValue(it.next(), "u"))) {
                     z = true;
@@ -324,37 +324,37 @@ final class LocalTreasureOperationEngine {
 
     private static void disposable(byte[] bArr, LocalFeatureCatalog localFeatureCatalog, byte[] bArr2, boolean z) {
         byte[] definition = definition(localFeatureCatalog, bArr2);
-        byte[] m77d = m77d(bArr2, "tr");
-        if (Boolean.TRUE.equals(BsonLite.boolValue(m77d, "f")) || m79v(definition, "noRemove") != 0 || (z && m79v(definition, "noCompound") != 0 && BsonLite.intArrayValues(definition, "validHeroes").isEmpty())) {
+        byte[] m75d = m75d(bArr2, "tr");
+        if (Boolean.TRUE.equals(BsonLite.boolValue(m75d, "f")) || m77v(definition, "noRemove") != 0 || (z && m77v(definition, "noCompound") != 0 && BsonLite.intArrayValues(definition, "validHeroes").isEmpty())) {
             throw new IllegalArgumentException("锁定或受保护的影装不能作为消耗材料");
         }
         String uuidValue = BsonLite.uuidValue(bArr2, "u");
-        Iterator<byte[]> it = LocalResourceEngine.array(m77d(m77d(bArr, "heromgr"), "hrs")).iterator();
+        Iterator<byte[]> it = LocalResourceEngine.array(m75d(m75d(bArr, "heromgr"), "hrs")).iterator();
         while (it.hasNext()) {
-            Iterator<byte[]> it2 = LocalResourceEngine.array(m77d(m77d(m77d(it.next(), "1"), "ti"), "items")).iterator();
+            Iterator<byte[]> it2 = LocalResourceEngine.array(m75d(m75d(m75d(it.next(), "1"), "ti"), "items")).iterator();
             while (it2.hasNext()) {
                 if (uuidValue.equals(BsonLite.uuidValue(it2.next(), "u"))) {
                     throw new IllegalArgumentException("请先从所有神器使卸下将被消耗的影装");
                 }
             }
         }
-        if (m79v(m77d, "x") > 0) {
+        if (m77v(m75d, "x") > 0) {
             throw new IllegalArgumentException("同调影装不能作为消耗材料，请保留专属影装");
         }
         upgradeMoney(localFeatureCatalog, bArr2);
     }
 
     static int upgradeMoney(LocalFeatureCatalog localFeatureCatalog, byte[] bArr) {
-        int m79v = m79v(m77d(bArr, "tr"), "lv");
-        int m79v2 = m79v(definition(localFeatureCatalog, bArr), "cost");
-        if (m79v < 1 || m79v > 1000) {
+        int m77v = m77v(m75d(bArr, "tr"), "lv");
+        int m77v2 = m77v(definition(localFeatureCatalog, bArr), "cost");
+        if (m77v < 1 || m77v > 1000) {
             throw new IllegalArgumentException("影装强化等级无效");
         }
         int i = 0;
-        for (int i2 = 1; i2 < m79v; i2++) {
+        for (int i2 = 1; i2 < m77v; i2++) {
             List<Integer> intArrayValues = BsonLite.intArrayValues(localFeatureCatalog.get("U", Integer.valueOf(i2)), "costs");
-            if (m79v2 >= 1 && m79v2 <= intArrayValues.size()) {
-                int i3 = m79v2 - 1;
+            if (m77v2 >= 1 && m77v2 <= intArrayValues.size()) {
+                int i3 = m77v2 - 1;
                 if (intArrayValues.get(i3).intValue() >= 0) {
                     i = Math.addExact(i, intArrayValues.get(i3).intValue());
                 }
@@ -370,16 +370,16 @@ final class LocalTreasureOperationEngine {
         while (it.hasNext()) {
             i = Math.addExact(i, upgradeMoney(localFeatureCatalog, owned(result.profile, localFeatureCatalog, it.next(), 0)));
         }
-        result.profile = BsonLite.withProfileInt(result.profile, "money", Math.addExact(m79v(result.profile, "money"), i));
+        result.profile = BsonLite.withProfileInt(result.profile, "money", Math.addExact(m77v(result.profile, "money"), i));
         return i;
     }
 
     private static byte[] generatedAttrs(LocalFeatureCatalog localFeatureCatalog, byte[] bArr, String str, Random random) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        for (String str2 : BsonLite.keys(m77d(bArr, str))) {
-            byte[] m77d = m77d(m77d(bArr, str), str2);
-            double num = num(m77d, "0");
-            double num2 = num(m77d, "1");
+        for (String str2 : BsonLite.keys(m75d(bArr, str))) {
+            byte[] m75d = m75d(m75d(bArr, str), str2);
+            double num = num(m75d, "0");
+            double num2 = num(m75d, "1");
             if (!Double.isFinite(num) || !Double.isFinite(num2) || num > num2) {
                 throw new IllegalArgumentException("原版生成属性范围无效");
             }
@@ -392,14 +392,14 @@ final class LocalTreasureOperationEngine {
     }
 
     private static byte[] composed(LocalFeatureCatalog localFeatureCatalog, LocalResourceCatalog localResourceCatalog, byte[] bArr, int i, byte[] bArr2, Random random) {
-        byte[] bArr3 = localFeatureCatalog.get("EQ", m79v(bArr, "i") + ":" + i);
-        LocalResourceCatalog.Treasure treasure = localResourceCatalog.treasures.get(m79v(bArr, "i") + ":" + i);
+        byte[] bArr3 = localFeatureCatalog.get("EQ", m77v(bArr, "i") + ":" + i);
+        LocalResourceCatalog.Treasure treasure = localResourceCatalog.treasures.get(m77v(bArr, "i") + ":" + i);
         if (bArr3 == null || treasure == null) {
             throw new IllegalArgumentException("缺少原版合成产物配置");
         }
         byte[] bArr4 = BsonLite.EMPTY_DOCUMENT;
         if (random.nextDouble() < num(bArr2, "hiddenProb")) {
-            List<byte[]> array = LocalResourceEngine.array(m77d(localFeatureCatalog.get("EH", Integer.valueOf(m79v(bArr3, "hiddenAttrGroup"))), "weights"));
+            List<byte[]> array = LocalResourceEngine.array(m75d(localFeatureCatalog.get("EH", Integer.valueOf(m77v(bArr3, "hiddenAttrGroup"))), "weights"));
             Iterator<byte[]> it = array.iterator();
             double d = 0.0d;
             while (it.hasNext()) {
@@ -421,7 +421,7 @@ final class LocalTreasureOperationEngine {
                 byte[] next = it2.next();
                 nextDouble -= num(next, "1");
                 if (nextDouble < 0.0d) {
-                    byte[] bArr5 = localFeatureCatalog.get("EV", Integer.valueOf(m79v(next, "0")));
+                    byte[] bArr5 = localFeatureCatalog.get("EV", Integer.valueOf(m77v(next, "0")));
                     if (bArr5 != null) {
                         bArr4 = generatedAttrs(localFeatureCatalog, bArr5, "hiddenAttrs", random);
                     } else {
@@ -431,13 +431,13 @@ final class LocalTreasureOperationEngine {
             }
         }
         byte[] document = BsonLite.document("fa", generatedAttrs(localFeatureCatalog, bArr3, "secondAttrsLow", random), "ta", generatedAttrs(localFeatureCatalog, bArr3, "thridAttrsLow", random), "ha", bArr4, "ft", BsonLite.intArrayValues(bArr3, "fixTrick"));
-        byte[] replaceAttrs = replaceAttrs(replaceAttrs(replaceAttrs(BsonLite.withProfileInt(treasure.data(), "lv", m79v(m77d(bArr, "tr"), "lv")), localFeatureCatalog, document, "fa", "f"), localFeatureCatalog, document, "ta", "t"), localFeatureCatalog, document, "ha", "h");
+        byte[] replaceAttrs = replaceAttrs(replaceAttrs(replaceAttrs(BsonLite.withProfileInt(treasure.data(), "lv", m77v(m75d(bArr, "tr"), "lv")), localFeatureCatalog, document, "fa", "f"), localFeatureCatalog, document, "ta", "t"), localFeatureCatalog, document, "ha", "h");
         if (i >= 4) {
             replaceAttrs = BsonLite.withProfileDocument(replaceAttrs, "ic", document);
         }
         if (i == 5) {
             byte[] extra = extra(localFeatureCatalog, bArr3, "extraRandomLow", random, true);
-            replaceAttrs = BsonLite.withProfileArray(BsonLite.withProfileArray(BsonLite.withProfileDocument(replaceAttrs, "oc", extra), "era", values(m77d(extra, "era"))), "su", BsonLite.intArrayValues(extra, "su"));
+            replaceAttrs = BsonLite.withProfileArray(BsonLite.withProfileArray(BsonLite.withProfileDocument(replaceAttrs, "oc", extra), "era", values(m75d(extra, "era"))), "su", BsonLite.intArrayValues(extra, "su"));
         }
         return BsonLite.withProfileDocument(bArr, "tr", replaceAttrs);
     }
@@ -449,7 +449,7 @@ final class LocalTreasureOperationEngine {
         int i2;
         String str2;
         ArrayList arrayList;
-        int m79v;
+        int m77v;
         boolean equals = "composeTreasureBatch".equals(str);
         List<String> ids = ids(bArr, "s", equals ? 120 : 4);
         if (ids.size() % 4 != 0 || (!equals && ids.size() != 4)) {
@@ -463,19 +463,19 @@ final class LocalTreasureOperationEngine {
                 byte[] owned = owned(result.profile, localFeatureCatalog, it.next(), 0);
                 byte[] definition = definition(localFeatureCatalog, owned);
                 disposable(result.profile, localFeatureCatalog, owned, true);
-                if (m79v(definition, "noCompound") != 0) {
+                if (m77v(definition, "noCompound") != 0) {
                     throw new IllegalArgumentException("该影装不能合成");
                 }
-                m79v = m79v(m77d(owned, "tr"), "cl");
+                m77v = m77v(m75d(owned, "tr"), "cl");
                 if (i3 == -1) {
-                    i3 = m79v;
+                    i3 = m77v;
                 }
             } else {
                 byte[] bArr3 = localFeatureCatalog.get("EP", Integer.valueOf(i3));
                 if (bArr3 == null || !map(bArr3).containsKey("sucProb") || i3 < 1 || i3 >= 5) {
                     throw new IllegalArgumentException("该品级影装不能合成");
                 }
-                List<Object> values = values(m77d(bArr3, "probList"));
+                List<Object> values = values(m75d(bArr3, "probList"));
                 if (values.size() != 1 || !(values.get(0) instanceof Number) || ((Number) values.get(0)).doubleValue() != 1.0d) {
                     throw new IllegalArgumentException("未核实的合成跳级配置，本次未消耗");
                 }
@@ -484,14 +484,14 @@ final class LocalTreasureOperationEngine {
                     throw new IllegalArgumentException("原版合成概率无效");
                 }
                 int size = ids.size() / 4;
-                int m79v2 = m79v(localFeatureCatalog.get("EC", "1:1"), "composeCost");
-                if (m79v2 <= 0) {
+                int m77v2 = m77v(localFeatureCatalog.get("EC", "1:1"), "composeCost");
+                if (m77v2 <= 0) {
                     throw new IllegalArgumentException("缺少原版合成费用");
                 }
                 counter(result, "tcn", 200, size, j);
-                money(result, Math.multiplyExact(m79v2, size));
-                for (String str3 : BsonLite.keys(m77d(bArr3, "composeItems"))) {
-                    LocalGiftEngine.consume(result, Integer.parseInt(str3), Math.multiplyExact(m79v(m77d(bArr3, "composeItems"), str3), size));
+                money(result, Math.multiplyExact(m77v2, size));
+                for (String str3 : BsonLite.keys(m75d(bArr3, "composeItems"))) {
+                    LocalGiftEngine.consume(result, Integer.parseInt(str3), Math.multiplyExact(m77v(m75d(bArr3, "composeItems"), str3), size));
                 }
                 ArrayList arrayList2 = new ArrayList();
                 int i5 = 0;
@@ -508,7 +508,7 @@ final class LocalTreasureOperationEngine {
                         Iterator it3 = it2;
                         byte[] owned2 = owned(result.profile, localFeatureCatalog, str4, i4);
                         int i9 = i7;
-                        if (m79v(definition(localFeatureCatalog, owned2), "rarity") == 2) {
+                        if (m77v(definition(localFeatureCatalog, owned2), "rarity") == 2) {
                             arrayList4.add(str4);
                         }
                         i8 = Math.max(i8, trade(owned2));
@@ -563,7 +563,7 @@ final class LocalTreasureOperationEngine {
                     return;
                 }
             }
-        } while (m79v == i3);
+        } while (m77v == i3);
         throw new IllegalArgumentException("影装合成品级必须相同");
     }
 
@@ -591,16 +591,16 @@ final class LocalTreasureOperationEngine {
         ArrayList arrayList = new ArrayList();
         Iterator<String> it = list.iterator();
         while (it.hasNext()) {
-            arrayList.add(m78id(it.next()));
+            arrayList.add(m76id(it.next()));
         }
         return arrayList;
     }
 
     private static void money(LocalResourceEngine.Result result, int i) {
-        if (i < 0 || m79v(result.profile, "money") < i) {
+        if (i < 0 || m77v(result.profile, "money") < i) {
             throw new IllegalArgumentException("金币不足");
         }
-        result.profile = BsonLite.withProfileInt(result.profile, "money", m79v(result.profile, "money") - i);
+        result.profile = BsonLite.withProfileInt(result.profile, "money", m77v(result.profile, "money") - i);
     }
 
     private static void delete(LocalResourceEngine.Result result, List<String> list) {
@@ -618,7 +618,7 @@ final class LocalTreasureOperationEngine {
     }
 
     private static void canonical(LocalResourceEngine.Result result, byte[] bArr) {
-        Iterator<byte[]> it = LocalResourceEngine.array(m77d(m77d(result.profile, "inv"), "items")).iterator();
+        Iterator<byte[]> it = LocalResourceEngine.array(m75d(m75d(result.profile, "inv"), "items")).iterator();
         while (it.hasNext()) {
             if (BsonLite.uuidValue(bArr, "u").equals(BsonLite.uuidValue(it.next(), "u"))) {
                 result.add("updateItems", BsonLite.document("i", Collections.singletonList(bArr)));
@@ -629,7 +629,7 @@ final class LocalTreasureOperationEngine {
 
     private static byte[] config(LocalFeatureCatalog localFeatureCatalog, byte[] bArr) {
         byte[] definition = definition(localFeatureCatalog, bArr);
-        byte[] bArr2 = localFeatureCatalog.get("EC", m79v(definition, "cost") + ":" + m79v(definition, "rarity"));
+        byte[] bArr2 = localFeatureCatalog.get("EC", m77v(definition, "cost") + ":" + m77v(definition, "rarity"));
         if (bArr2 == null) {
             throw new IllegalArgumentException("缺少原版影装消耗配置");
         }
@@ -637,21 +637,21 @@ final class LocalTreasureOperationEngine {
     }
 
     private static void counter(LocalResourceEngine.Result result, String str, int i, int i2, long j) {
-        byte[] m77d = m77d(result.profile, "heromgr");
+        byte[] m75d = m75d(result.profile, "heromgr");
         int day = LocalGiftEngine.day(Math.toIntExact(j));
         String str2 = "updateTreasureRefreshOrangeNum";
-        if (BsonLite.intValue(m77d, "q7TreasureDay") != null && m79v(m77d, "q7TreasureDay") != day) {
+        if (BsonLite.intValue(m75d, "q7TreasureDay") != null && m77v(m75d, "q7TreasureDay") != day) {
             for (Iterator it = Arrays.asList("tcn", "ttn", "trg", "tro").iterator(); it.hasNext(); it = it) {
-                m77d = BsonLite.withProfileInt(m77d, (String) it.next(), 0);
+                m75d = BsonLite.withProfileInt(m75d, (String) it.next(), 0);
             }
             result.add("updateTreasureComposeNum", BsonLite.document("d", 0));
             result.add("updateTreasureTransferNum", BsonLite.document("d", 0));
             result.add("updateTreasureRefreshGoldNum", BsonLite.document("d", 0));
             result.add("updateTreasureRefreshOrangeNum", BsonLite.document("d", 0));
-            m77d = m77d;
+            m75d = m75d;
         }
-        byte[] withProfileInt = BsonLite.withProfileInt(m77d, "q7TreasureDay", day);
-        int addExact = Math.addExact(m79v(withProfileInt, str), i2);
+        byte[] withProfileInt = BsonLite.withProfileInt(m75d, "q7TreasureDay", day);
+        int addExact = Math.addExact(m77v(withProfileInt, str), i2);
         if (addExact <= i) {
             result.profile = BsonLite.withProfileDocument(result.profile, "heromgr", BsonLite.withProfileInt(withProfileInt, str, addExact));
             if ("tcn".equals(str)) {
@@ -668,8 +668,8 @@ final class LocalTreasureOperationEngine {
     }
 
     static byte[] refreshCounters(byte[] bArr, long j) {
-        byte[] m77d = m77d(bArr, "heromgr");
-        Integer intValue = BsonLite.intValue(m77d, "q7TreasureDay");
+        byte[] m75d = m75d(bArr, "heromgr");
+        Integer intValue = BsonLite.intValue(m75d, "q7TreasureDay");
         int day = LocalGiftEngine.day(Math.toIntExact(j));
         if (intValue != null && intValue.intValue() == day) {
             return bArr;
@@ -677,10 +677,10 @@ final class LocalTreasureOperationEngine {
         if (intValue != null) {
             Iterator it = Arrays.asList("tcn", "ttn", "trg", "tro").iterator();
             while (it.hasNext()) {
-                m77d = BsonLite.withProfileInt(m77d, (String) it.next(), 0);
+                m75d = BsonLite.withProfileInt(m75d, (String) it.next(), 0);
             }
         }
-        return BsonLite.withProfileDocument(bArr, "heromgr", BsonLite.withProfileInt(m77d, "q7TreasureDay", day));
+        return BsonLite.withProfileDocument(bArr, "heromgr", BsonLite.withProfileInt(m75d, "q7TreasureDay", day));
     }
 
     private static void resolve(LocalResourceEngine.Result result, LocalResourceCatalog localResourceCatalog, LocalFeatureCatalog localFeatureCatalog, String str, byte[] bArr) {
@@ -694,15 +694,15 @@ final class LocalTreasureOperationEngine {
             byte[] definition = definition(localFeatureCatalog, owned);
             arrayList.add(definition);
             if (str.equals("decomposeTreasure")) {
-                i = Math.addExact(i, m79v(definition, "decomposeMoney"));
-            } else if (LocalResourceEngine.array(m77d(definition, "rewards")).isEmpty()) {
+                i = Math.addExact(i, m77v(definition, "decomposeMoney"));
+            } else if (LocalResourceEngine.array(m75d(definition, "rewards")).isEmpty()) {
                 throw new IllegalArgumentException("该影装不能解析");
             }
         }
         int refund = refund(result, localFeatureCatalog, ids);
         delete(result, ids);
         if (i > 0) {
-            result.profile = BsonLite.withProfileInt(result.profile, "money", Math.addExact(m79v(result.profile, "money"), i));
+            result.profile = BsonLite.withProfileInt(result.profile, "money", Math.addExact(m77v(result.profile, "money"), i));
         }
         if (str.equals("smeltTreasure")) {
             Iterator it2 = arrayList.iterator();
@@ -721,7 +721,7 @@ final class LocalTreasureOperationEngine {
     private static byte[] hidden(byte[] bArr, LocalFeatureCatalog localFeatureCatalog) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         Map<String, Object> map = map(localFeatureCatalog.get("EI", 0));
-        for (byte[] bArr2 : LocalResourceEngine.array(m77d(bArr, "attr"))) {
+        for (byte[] bArr2 : LocalResourceEngine.array(m75d(bArr, "attr"))) {
             String stringValue = BsonLite.stringValue(bArr2, "n");
             if (stringValue != null && stringValue.startsWith("h")) {
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
@@ -735,19 +735,19 @@ final class LocalTreasureOperationEngine {
     }
 
     private static byte[] replaceAttrs(byte[] bArr, LocalFeatureCatalog localFeatureCatalog, byte[] bArr2, String str, final String str2) {
-        List<byte[]> array = LocalResourceEngine.array(m77d(bArr, "attr"));
+        List<byte[]> array = LocalResourceEngine.array(m75d(bArr, "attr"));
         array.removeIf(new Predicate() { // from class: com.project7.localmanager.LocalTreasureOperationEngine$$ExternalSyntheticLambda1
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 return LocalTreasureOperationEngine.lambda$replaceAttrs$0(str2, (byte[]) obj);
             }
         });
-        for (String str3 : BsonLite.keys(m77d(bArr2, str))) {
+        for (String str3 : BsonLite.keys(m75d(bArr2, str))) {
             Integer intValue = BsonLite.intValue(localFeatureCatalog.get("EI", 0), str3);
             if (intValue == null) {
                 throw new IllegalArgumentException("未知影装属性");
             }
-            array.add(BsonLite.document("n", str2 + intValue, "v", Double.valueOf(num(m77d(bArr2, str), str3))));
+            array.add(BsonLite.document("n", str2 + intValue, "v", Double.valueOf(num(m75d(bArr2, str), str3))));
         }
         return BsonLite.withProfileArray(bArr, "attr", array);
     }
@@ -769,11 +769,11 @@ final class LocalTreasureOperationEngine {
         byte[] definition = definition(localFeatureCatalog, owned);
         byte[] definition2 = definition(localFeatureCatalog, owned2);
         byte[] config = config(localFeatureCatalog, owned2);
-        if (m79v(definition, "cost") != m79v(definition2, "cost")) {
+        if (m77v(definition, "cost") != m77v(definition2, "cost")) {
             throw new IllegalArgumentException("转移影装 cost 必须相同");
         }
-        byte[] hidden = hidden(m77d(owned, "tr"), localFeatureCatalog);
-        byte[] hidden2 = hidden(m77d(owned2, "tr"), localFeatureCatalog);
+        byte[] hidden = hidden(m75d(owned, "tr"), localFeatureCatalog);
+        byte[] hidden2 = hidden(m75d(owned2, "tr"), localFeatureCatalog);
         if (BsonLite.keys(hidden).isEmpty()) {
             throw new IllegalArgumentException("源影装没有隐藏属性");
         }
@@ -784,19 +784,19 @@ final class LocalTreasureOperationEngine {
                 }
             }
         }
-        byte[] bArr2 = localFeatureCatalog.get("EX", m79v(m77d(owned, "tr"), "cl") + ":" + m79v(m77d(owned2, "tr"), "cl"));
+        byte[] bArr2 = localFeatureCatalog.get("EX", m77v(m75d(owned, "tr"), "cl") + ":" + m77v(m75d(owned2, "tr"), "cl"));
         if (bArr2 == null) {
             throw new IllegalArgumentException("缺少原版转移配置");
         }
         byte[] bArr3 = hidden2;
         counter(result, "ttn", 200, 1, j);
-        for (String str2 : BsonLite.keys(m77d(bArr2, "items"))) {
-            LocalGiftEngine.consume(result, Integer.parseInt(str2), m79v(m77d(bArr2, "items"), str2));
+        for (String str2 : BsonLite.keys(m75d(bArr2, "items"))) {
+            LocalGiftEngine.consume(result, Integer.parseInt(str2), m77v(m75d(bArr2, "items"), str2));
         }
-        money(result, m79v(config, "transferCost"));
+        money(result, m77v(config, "transferCost"));
         boolean z = random.nextDouble() < num(bArr2, "prob");
         if (z) {
-            byte[] withProfileDocument = BsonLite.withProfileDocument(owned2, "tr", replaceAttrs(m77d(owned2, "tr"), localFeatureCatalog, BsonLite.document("ha", hidden), "ha", "h"));
+            byte[] withProfileDocument = BsonLite.withProfileDocument(owned2, "tr", replaceAttrs(m75d(owned2, "tr"), localFeatureCatalog, BsonLite.document("ha", hidden), "ha", "h"));
             owned2 = BsonLite.withProfileInt(withProfileDocument, "tt", Math.max(trade(withProfileDocument), trade(owned)));
             update(result, owned2);
         }
@@ -805,9 +805,9 @@ final class LocalTreasureOperationEngine {
         LocalResourceEngine.syncCurrencies(result);
         Object[] objArr = new Object[12];
         objArr[0] = "s";
-        objArr[1] = m78id(uuidValue);
+        objArr[1] = m76id(uuidValue);
         objArr[2] = "d";
-        objArr[3] = m78id(uuidValue2);
+        objArr[3] = m76id(uuidValue2);
         objArr[4] = "t";
         if (z) {
             bArr3 = hidden;
@@ -831,9 +831,9 @@ final class LocalTreasureOperationEngine {
         while (it.hasNext()) {
             int intValue = it.next().intValue();
             int i2 = 0;
-            for (byte[] bArr : LocalResourceEngine.array(m77d(m77d(result.profile, "inv"), "items"))) {
-                if (m79v(bArr, "i") == intValue) {
-                    i2 = Math.addExact(i2, m79v(bArr, "w"));
+            for (byte[] bArr : LocalResourceEngine.array(m75d(m75d(result.profile, "inv"), "items"))) {
+                if (m77v(bArr, "i") == intValue) {
+                    i2 = Math.addExact(i2, m77v(bArr, "w"));
                 }
             }
             int min = Math.min(i, i2);
@@ -858,45 +858,45 @@ final class LocalTreasureOperationEngine {
     private static void breakthrough(LocalResourceEngine.Result result, LocalResourceCatalog localResourceCatalog, LocalFeatureCatalog localFeatureCatalog, byte[] bArr, Random random) {
         String str;
         String str2 = "h";
-        int m79v = m79v(bArr, "h");
+        int m77v = m77v(bArr, "h");
         String uuidValue = BsonLite.uuidValue(bArr, "s");
-        byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, m79v);
-        byte[] m77d = m77d(owned, "tr");
+        byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, m77v);
+        byte[] m75d = m75d(owned, "tr");
         byte[] definition = definition(localFeatureCatalog, owned);
-        if (m79v(m77d, "cl") < 4) {
-            breakthroughLow(result, localResourceCatalog, localFeatureCatalog, bArr, m79v, uuidValue, owned, m77d, definition);
+        if (m77v(m75d, "cl") < 4) {
+            breakthroughLow(result, localResourceCatalog, localFeatureCatalog, bArr, m77v, uuidValue, owned, m75d, definition);
             return;
         }
         String str3 = "d";
         List<String> ids = ids(bArr, "d", 2);
-        if (ids.size() != 2 || ids.contains(uuidValue) || m79v(m77d, "cl") != 4 || m79v(m77d, "lv") < 40) {
+        if (ids.size() != 2 || ids.contains(uuidValue) || m77v(m75d, "cl") != 4 || m77v(m75d, "lv") < 40) {
             throw new IllegalArgumentException("突破需要40级金色影装和两件同 cost 金色材料");
         }
         int trade = trade(owned);
         Iterator<String> it = ids.iterator();
         while (true) {
-            int i = m79v;
+            int i = m77v;
             if (it.hasNext()) {
                 Iterator<String> it2 = it;
                 byte[] owned2 = owned(result.profile, localFeatureCatalog, it.next(), 0);
                 byte[] definition2 = definition(localFeatureCatalog, owned2);
                 String str4 = str2;
                 disposable(result.profile, localFeatureCatalog, owned2, true);
-                if (m79v(m77d(owned2, "tr"), "cl") != 4 || m79v(definition2, "cost") != m79v(definition, "cost") || m79v(definition2, "rarity") != 1) {
+                if (m77v(m75d(owned2, "tr"), "cl") != 4 || m77v(definition2, "cost") != m77v(definition, "cost") || m77v(definition2, "rarity") != 1) {
                     break;
                 }
                 trade = Math.max(trade, trade(owned2));
-                m79v = i;
+                m77v = i;
                 it = it2;
                 str2 = str4;
             } else {
                 String str5 = str2;
-                byte[] bArr2 = localFeatureCatalog.get("ET", m79v(definition, "cost") + ":" + m79v(definition, "rarity"));
-                LocalResourceCatalog.Treasure treasure = localResourceCatalog.treasures.get(m79v(owned, "i") + ":5");
+                byte[] bArr2 = localFeatureCatalog.get("ET", m77v(definition, "cost") + ":" + m77v(definition, "rarity"));
+                LocalResourceCatalog.Treasure treasure = localResourceCatalog.treasures.get(m77v(owned, "i") + ":5");
                 if (bArr2 == null || treasure == null) {
                     throw new IllegalArgumentException("缺少原版突破配置");
                 }
-                List<byte[]> array = LocalResourceEngine.array(m77d(bArr2, "itemid"));
+                List<byte[]> array = LocalResourceEngine.array(m75d(bArr2, "itemid"));
                 List<Integer> intArrayValues = BsonLite.intArrayValues(bArr2, "itemnum");
                 int i2 = trade;
                 if (array.size() != intArrayValues.size()) {
@@ -920,7 +920,7 @@ final class LocalTreasureOperationEngine {
                         Iterator<Integer> it4 = it3;
                         byte[] bArr4 = bArr3;
                         if (count(bArr3, intValue) > count(result.profile, intValue)) {
-                            i3 = Math.max(i3, m79v(localFeatureCatalog.get("ED", Integer.valueOf(intValue)), "tradeType"));
+                            i3 = Math.max(i3, m77v(localFeatureCatalog.get("ED", Integer.valueOf(intValue)), "tradeType"));
                         }
                         it3 = it4;
                         bArr3 = bArr4;
@@ -930,16 +930,16 @@ final class LocalTreasureOperationEngine {
                     str3 = str;
                     intArrayValues = list2;
                 }
-                money(result, m79v(bArr2, "money"));
-                byte[] bArr5 = localFeatureCatalog.get("EQ", m79v(owned, "i") + ":5");
+                money(result, m77v(bArr2, "money"));
+                byte[] bArr5 = localFeatureCatalog.get("EQ", m77v(owned, "i") + ":5");
                 for (String str6 : Arrays.asList("secondAttrs", "thridAttrs")) {
-                    if (!map(m77d(definition, str6)).equals(map(m77d(bArr5, str6)))) {
+                    if (!map(m75d(definition, str6)).equals(map(m75d(bArr5, str6)))) {
                         throw new IllegalArgumentException("该影装突破属性变换尚未核实，本次未扣费或消耗");
                     }
                 }
-                byte[] withProfileInt = BsonLite.withProfileInt(m77d, "cl", 5);
+                byte[] withProfileInt = BsonLite.withProfileInt(m75d, "cl", 5);
                 byte[] extra = extra(localFeatureCatalog, bArr5, "extraRandomLow", random, false);
-                byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileDocument(owned, "tr", BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(BsonLite.withProfileDocument(BsonLite.withProfileArray(BsonLite.withProfileArray(withProfileInt, "era", values(m77d(extra, "era"))), "su", BsonLite.intArrayValues(extra, "su")), "oc", extra), "ri"), "ro")), "tt", i3);
+                byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileDocument(owned, "tr", BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(BsonLite.withProfileDocument(BsonLite.withProfileArray(BsonLite.withProfileArray(withProfileInt, "era", values(m75d(extra, "era"))), "su", BsonLite.intArrayValues(extra, "su")), "oc", extra), "ri"), "ro")), "tt", i3);
                 int refund = refund(result, localFeatureCatalog, ids);
                 update(result, withProfileInt2);
                 delete(result, ids);
@@ -953,12 +953,12 @@ final class LocalTreasureOperationEngine {
 
     private static void breakthroughLow(LocalResourceEngine.Result result, LocalResourceCatalog localResourceCatalog, LocalFeatureCatalog localFeatureCatalog, byte[] bArr, int i, String str, byte[] bArr2, byte[] bArr3, byte[] bArr4) {
         LocalResourceEngine.Result result2 = result;
-        int m79v = m79v(bArr3, "cl");
-        int m79v2 = m79v(bArr2, "i");
-        int m79v3 = m79v(bArr4, "rarity");
+        int m77v = m77v(bArr3, "cl");
+        int m77v2 = m77v(bArr2, "i");
+        int m77v3 = m77v(bArr4, "rarity");
         String str2 = "d";
         List<String> ids = ids(bArr, "d", 3);
-        if (m79v < 1 || m79v > 3 || m79v(bArr3, "lv") < 1 || ids.size() != 3 || ids.contains(str) || ((m79v2 == 1095 && m79v != 1) || m79v3 < 1 || m79v3 > 2)) {
+        if (m77v < 1 || m77v > 3 || m77v(bArr3, "lv") < 1 || ids.size() != 3 || ids.contains(str) || ((m77v2 == 1095 && m77v != 1) || m77v3 < 1 || m77v3 > 2)) {
             throw new IllegalArgumentException("低品质突破需要三件符合条件的同品级材料");
         }
         int trade = trade(bArr2);
@@ -972,17 +972,17 @@ final class LocalTreasureOperationEngine {
             byte[] owned = owned(result2.profile, localFeatureCatalog, it.next(), 0);
             byte[] definition = definition(localFeatureCatalog, owned);
             disposable(result2.profile, localFeatureCatalog, owned, true);
-            if (m79v(m77d(owned, "tr"), "cl") == m79v) {
-                if ((m79v(owned, "i") == 1095) == (m79v2 == 1095)) {
-                    if (m79v3 == 1) {
-                        if (m79v(definition, "rarity") != 1 || m79v(definition, "cost") != m79v(bArr4, "cost")) {
+            if (m77v(m75d(owned, "tr"), "cl") == m77v) {
+                if ((m77v(owned, "i") == 1095) == (m77v2 == 1095)) {
+                    if (m77v3 == 1) {
+                        if (m77v(definition, "rarity") != 1 || m77v(definition, "cost") != m77v(bArr4, "cost")) {
                             throw new IllegalArgumentException("普通影装突破需要三件同 cost 普通材料");
                         }
-                    } else if (m79v(definition, "rarity") == 2 && m79v(owned, "i") == m79v2) {
+                    } else if (m77v(definition, "rarity") == 2 && m77v(owned, "i") == m77v2) {
                         i3++;
                     } else {
                         int i5 = i3;
-                        if (m79v(definition, "rarity") != 1) {
+                        if (m77v(definition, "rarity") != 1) {
                             throw new IllegalArgumentException("稀有影装突破需要一件同名稀有材料及两件普通材料");
                         }
                         i4++;
@@ -1001,17 +1001,17 @@ final class LocalTreasureOperationEngine {
         int i6 = i2;
         int i7 = i3;
         int i8 = i4;
-        if (m79v3 == 2 && (i7 != 1 || i8 != 2)) {
+        if (m77v3 == 2 && (i7 != 1 || i8 != 2)) {
             throw new IllegalArgumentException("稀有影装突破需要一件同名稀有材料及两件普通材料");
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(m79v2);
+        sb.append(m77v2);
         sb.append(":");
-        int i9 = m79v + 1;
+        int i9 = m77v + 1;
         sb.append(i9);
         byte[] bArr5 = localFeatureCatalog.get("EQ", sb.toString());
         if (bArr5 != null) {
-            if (localResourceCatalog.treasures.containsKey(m79v2 + ":" + i9) && m79v(bArr5, "cost") == m79v(bArr4, "cost") && m79v(bArr5, "rarity") == m79v3) {
+            if (localResourceCatalog.treasures.containsKey(m77v2 + ":" + i9) && m77v(bArr5, "cost") == m77v(bArr4, "cost") && m77v(bArr5, "rarity") == m77v3) {
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 LinkedHashMap linkedHashMap2 = new LinkedHashMap();
                 String str5 = "secondAttrs";
@@ -1020,19 +1020,19 @@ final class LocalTreasureOperationEngine {
                     String str6 = (String) it2.next();
                     LinkedHashMap linkedHashMap3 = str5.equals(str6) ? linkedHashMap : linkedHashMap2;
                     String str7 = str5;
-                    if (!BsonLite.keys(m77d(bArr4, str6)).equals(BsonLite.keys(m77d(bArr5, str6)))) {
+                    if (!BsonLite.keys(m75d(bArr4, str6)).equals(BsonLite.keys(m75d(bArr5, str6)))) {
                         throw new IllegalArgumentException("该突破属性变换尚未核实，本次未扣费");
                     }
-                    Iterator<String> it3 = BsonLite.keys(m77d(bArr5, str6)).iterator();
+                    Iterator<String> it3 = BsonLite.keys(m75d(bArr5, str6)).iterator();
                     while (it3.hasNext()) {
                         String next = it3.next();
                         Iterator<String> it4 = it3;
-                        byte[] m77d = m77d(m77d(bArr5, str6), next);
+                        byte[] m75d = m75d(m75d(bArr5, str6), next);
                         Iterator it5 = it2;
-                        double num = num(m77d, "0");
-                        double num2 = num(m77d, "1");
+                        double num = num(m75d, "0");
+                        double num2 = num(m75d, "1");
                         int i10 = i6;
-                        if ((m79v < 3 && num != num2) || (m79v == 3 && (num(m77d(m77d(bArr4, str6), next), "0") != num || num(m77d(m77d(bArr4, str6), next), "1") != num))) {
+                        if ((m77v < 3 && num != num2) || (m77v == 3 && (num(m75d(m75d(bArr4, str6), next), "0") != num || num(m75d(m75d(bArr4, str6), next), "1") != num))) {
                             throw new IllegalArgumentException("该突破属性范围尚未核实，本次未扣费");
                         }
                         linkedHashMap3.put(next, Double.valueOf(num));
@@ -1049,14 +1049,14 @@ final class LocalTreasureOperationEngine {
                 while (it6.hasNext()) {
                     withProfileArray = BsonLite.withoutProfileKey(withProfileArray, (String) it6.next());
                 }
-                if (m79v == 3) {
+                if (m77v == 3) {
                     withProfileArray = BsonLite.withProfileDocument(withProfileArray, "ic", document);
                 }
-                int m79v4 = m79v(localFeatureCatalog.get("EC", "1:1"), "composeCost");
-                if (m79v4 <= 0) {
+                int m77v4 = m77v(localFeatureCatalog.get("EC", "1:1"), "composeCost");
+                if (m77v4 <= 0) {
                     throw new IllegalArgumentException("缺少原版低品质突破费用");
                 }
-                money(result, m79v4);
+                money(result, m77v4);
                 byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(bArr2, "tr", withProfileArray), "tt", i11);
                 int refund = refund(result, localFeatureCatalog, list2);
                 update(result, withProfileInt);
@@ -1075,8 +1075,8 @@ final class LocalTreasureOperationEngine {
     }
 
     private static byte[] extra(LocalFeatureCatalog localFeatureCatalog, byte[] bArr, String str, Random random, boolean z) {
-        byte[] m77d = m77d(bArr, str);
-        int num = (int) (num(m77d, "0") + ((num(m77d, "1") - num(m77d, "0")) * random.nextDouble()));
+        byte[] m75d = m75d(bArr, str);
+        int num = (int) (num(m75d, "0") + ((num(m75d, "1") - num(m75d, "0")) * random.nextDouble()));
         int nextInt = num <= 1 ? 1 : random.nextInt(Math.min(3, num)) + 1;
         ArrayList arrayList = new ArrayList(Arrays.asList("_phy_str_delta", "_mag_str_delta", "_phy_def_delta", "_mag_def_delta", "_hp_delta", "block_rate", "penetrate_rate", "bless_rate", "injure_rate", "attack_twice_rate", "avoid_rate", "cri_rate", "cd_reset_rate", "magic_shield_val", "absorb_rate", "delay_hurt_rate"));
         Collections.shuffle(arrayList, random);
@@ -1095,9 +1095,9 @@ final class LocalTreasureOperationEngine {
             String[][] strArr = {new String[]{"suitProb", "suitGroupId"}, new String[]{"suitProb2", "suitGroupId2"}};
             for (int i2 = 0; i2 < 2; i2++) {
                 String[] strArr2 = strArr[i2];
-                int m79v = m79v(bArr, strArr2[1]);
-                if (m79v != 0 && random.nextDouble() < num(bArr2, strArr2[0])) {
-                    List<byte[]> array = LocalResourceEngine.array(m77d(localFeatureCatalog.get("ES", Integer.valueOf(m79v)), "weights"));
+                int m77v = m77v(bArr, strArr2[1]);
+                if (m77v != 0 && random.nextDouble() < num(bArr2, strArr2[0])) {
+                    List<byte[]> array = LocalResourceEngine.array(m75d(localFeatureCatalog.get("ES", Integer.valueOf(m77v)), "weights"));
                     Iterator<byte[]> it = array.iterator();
                     double d = 0.0d;
                     while (it.hasNext()) {
@@ -1113,9 +1113,9 @@ final class LocalTreasureOperationEngine {
                             byte[] next = it2.next();
                             nextDouble -= num(next, "1");
                             if (nextDouble < 0.0d) {
-                                int m79v2 = m79v(next, "0");
-                                if (!arrayList3.contains(Integer.valueOf(m79v2))) {
-                                    arrayList3.add(Integer.valueOf(m79v2));
+                                int m77v2 = m77v(next, "0");
+                                if (!arrayList3.contains(Integer.valueOf(m77v2))) {
+                                    arrayList3.add(Integer.valueOf(m77v2));
                                 }
                             }
                         }
@@ -1137,15 +1137,15 @@ final class LocalTreasureOperationEngine {
     private static byte[] roll(LocalFeatureCatalog localFeatureCatalog, byte[] bArr, int i, String str, Random random) {
         byte[] bArr2 = bArr;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        byte[] bArr3 = localFeatureCatalog.get("EN", i + ":" + m79v(bArr2, "rarity") + ":0");
-        Iterator<String> it = BsonLite.keys(m77d(bArr2, str)).iterator();
+        byte[] bArr3 = localFeatureCatalog.get("EN", i + ":" + m77v(bArr2, "rarity") + ":0");
+        Iterator<String> it = BsonLite.keys(m75d(bArr2, str)).iterator();
         while (it.hasNext()) {
             String next = it.next();
-            if (BsonLite.keys(m77d(m77d(bArr2, str), next)).size() != 2) {
+            if (BsonLite.keys(m75d(m75d(bArr2, str), next)).size() != 2) {
                 throw new IllegalArgumentException("影装属性范围配置无效");
             }
-            double num = num(m77d(m77d(bArr2, str), next), "0");
-            double num2 = num(m77d(m77d(bArr2, str), next), "1");
+            double num = num(m75d(m75d(bArr2, str), next), "0");
+            double num2 = num(m75d(m75d(bArr2, str), next), "1");
             num(bArr3, "mu");
             double num3 = num(bArr3, "sigma");
             int i2 = 0;
@@ -1176,25 +1176,25 @@ final class LocalTreasureOperationEngine {
         String str3;
         byte[] extra;
         boolean equals = str.equals("refreshTreasureOrangeAsk");
-        int m79v = m79v(bArr, "h");
+        int m77v = m77v(bArr, "h");
         String uuidValue = BsonLite.uuidValue(bArr, equals ? "d" : "u");
-        byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, m79v);
-        byte[] m77d = m77d(owned, "tr");
+        byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, m77v);
+        byte[] m75d = m75d(owned, "tr");
         byte[] definition = definition(localFeatureCatalog, owned);
         byte[] config = config(localFeatureCatalog, owned);
-        int m79v2 = m79v(m77d, "cl");
-        if (m79v2 < 4 || (equals && m79v2 != 5)) {
+        int m77v2 = m77v(m75d, "cl");
+        if (m77v2 < 4 || (equals && m77v2 != 5)) {
             throw new IllegalArgumentException("只能洗练金色/橙色影装，重构仅限橙色");
         }
-        int m79v3 = m79v(bArr, "ui");
+        int m77v3 = m77v(bArr, "ui");
         if (equals) {
             obj = "ui";
-            bArr2 = m77d;
+            bArr2 = m75d;
             obj2 = "u";
-            i = m79v3;
+            i = m77v3;
             c = 5;
             obj3 = "h";
-            i2 = m79v;
+            i2 = m77v;
             z = equals;
             i3 = 1;
             counter(result, "tro", 50, 1, j);
@@ -1214,8 +1214,8 @@ final class LocalTreasureOperationEngine {
                 byte[] definition2 = definition(localFeatureCatalog, owned2);
                 disposable(result.profile, localFeatureCatalog, owned2, true);
                 str3 = "tr";
-                if (m79v(m77d(owned2, str3), "cl") == 4 && m79v(definition2, "cost") == m79v(definition, "cost")) {
-                    LocalGiftEngine.spend(result, "crystal", m79v(config, "orangeRefreshCost"));
+                if (m77v(m75d(owned2, str3), "cl") == 4 && m77v(definition2, "cost") == m77v(definition, "cost")) {
+                    LocalGiftEngine.spend(result, "crystal", m77v(config, "orangeRefreshCost"));
                     refund(result, localFeatureCatalog, Collections.singletonList(uuidValue2));
                     owned = BsonLite.withProfileInt(owned, "tt", Math.max(trade(owned), trade(owned2)));
                     delete(result, Collections.singletonList(uuidValue2));
@@ -1224,25 +1224,25 @@ final class LocalTreasureOperationEngine {
                     throw new IllegalArgumentException("重构材料需要同 cost 的金色影装");
                 }
             }
-            LocalGiftEngine.consume(result, m79v(config, "orangeRefreshItemid"), 1);
+            LocalGiftEngine.consume(result, m77v(config, "orangeRefreshItemid"), 1);
             extra = extra(localFeatureCatalog, definition, "extraRandomHigh", random, true);
         } else if (BsonLite.intValue(bArr, "ui") != null) {
             obj2 = "u";
-            i2 = m79v;
-            int i4 = m79v3;
+            i2 = m77v;
+            int i4 = m77v3;
             obj3 = "h";
             z = equals;
             obj = "ui";
             c = 5;
-            bArr2 = m77d;
+            bArr2 = m75d;
             counter(result, "trg", 200, 1, j);
             if (i4 == 0) {
-                LocalGiftEngine.consume(result, m79v(config, "goldRefreshItemid"), m79v(definition, "cost"));
+                LocalGiftEngine.consume(result, m77v(config, "goldRefreshItemid"), m77v(definition, "cost"));
                 i = i4;
             } else if (i4 == 1) {
                 int trade = trade(owned);
-                byte[] bArr3 = localFeatureCatalog.get("ER", Integer.valueOf(m79v(definition, "rarity")));
-                Iterator<String> it = BsonLite.keys(m77d(bArr3, "refreshConsume")).iterator();
+                byte[] bArr3 = localFeatureCatalog.get("ER", Integer.valueOf(m77v(definition, "rarity")));
+                Iterator<String> it = BsonLite.keys(m75d(bArr3, "refreshConsume")).iterator();
                 while (it.hasNext()) {
                     String next = it.next();
                     ArrayList arrayList = new ArrayList();
@@ -1258,7 +1258,7 @@ final class LocalTreasureOperationEngine {
                         @Override // java.util.Comparator
                         public final int compare(Object obj4, Object obj5) {
                             int compare;
-                            compare = Integer.compare(LocalTreasureOperationEngine.m79v(r0.get("ED", (Integer) obj4), "tradeType"), LocalTreasureOperationEngine.m79v(LocalFeatureCatalog.this.get("ED", (Integer) obj5), "tradeType"));
+                            compare = Integer.compare(LocalTreasureOperationEngine.m77v(r0.get("ED", (Integer) obj4), "tradeType"), LocalTreasureOperationEngine.m77v(LocalFeatureCatalog.this.get("ED", (Integer) obj5), "tradeType"));
                             return compare;
                         }
                     });
@@ -1266,28 +1266,28 @@ final class LocalTreasureOperationEngine {
                         Collections.reverse(arrayList);
                     }
                     byte[] bArr4 = result.profile;
-                    consumeOptions(result, arrayList, Math.multiplyExact(m79v(m77d(bArr3, "refreshConsume"), next), m79v(definition, "cost")));
+                    consumeOptions(result, arrayList, Math.multiplyExact(m77v(m75d(bArr3, "refreshConsume"), next), m77v(definition, "cost")));
                     Iterator it3 = arrayList.iterator();
                     while (it3.hasNext()) {
                         int intValue = ((Integer) it3.next()).intValue();
                         if (count(bArr4, intValue) > count(result.profile, intValue)) {
-                            trade = Math.max(trade, m79v(localFeatureCatalog.get("ED", Integer.valueOf(intValue)), "tradeType"));
+                            trade = Math.max(trade, m77v(localFeatureCatalog.get("ED", Integer.valueOf(intValue)), "tradeType"));
                         }
                     }
                     it = it2;
                     i4 = i5;
                 }
                 i = i4;
-                for (String str4 : BsonLite.keys(m77d(bArr3, "refreshConsume2"))) {
-                    LocalGiftEngine.consume(result, Integer.parseInt(str4), Math.multiplyExact(m79v(m77d(bArr3, "refreshConsume2"), str4), m79v(definition, "cost")));
+                for (String str4 : BsonLite.keys(m75d(bArr3, "refreshConsume2"))) {
+                    LocalGiftEngine.consume(result, Integer.parseInt(str4), Math.multiplyExact(m77v(m75d(bArr3, "refreshConsume2"), str4), m77v(definition, "cost")));
                 }
-                money(result, m79v(config, "goldRefreshCost"));
-                LocalGiftEngine.spend(result, "crystal", m79v(config, "goldRefreshCost2"));
+                money(result, m77v(config, "goldRefreshCost"));
+                LocalGiftEngine.spend(result, "crystal", m77v(config, "goldRefreshCost2"));
                 owned = BsonLite.withProfileInt(owned, "tt", trade);
             } else {
                 throw new IllegalArgumentException("洗练材料模式无效");
             }
-            extra = BsonLite.document("fa", roll(localFeatureCatalog, definition, m79v2, "secondAttrs", random), "ta", roll(localFeatureCatalog, definition, m79v2, "thridAttrs", random));
+            extra = LocalRefreshFix.ensure(BsonLite.document("fa", roll(localFeatureCatalog, definition, m77v2, "secondAttrs", random), "ta", roll(localFeatureCatalog, definition, m77v2, "thridAttrs", random)));
             i3 = 1;
             str2 = uuidValue;
             str3 = "tr";
@@ -1315,7 +1315,7 @@ final class LocalTreasureOperationEngine {
             objArr[0] = obj3;
             objArr[i3] = Integer.valueOf(i2);
             objArr[2] = obj2;
-            objArr[3] = m78id(str2);
+            objArr[3] = m76id(str2);
             objArr[4] = "r";
             objArr[c] = extra;
             result.add("refreshTreasureOrangeReply", BsonLite.document(objArr));
@@ -1324,7 +1324,7 @@ final class LocalTreasureOperationEngine {
             objArr2[0] = obj3;
             objArr2[i3] = Integer.valueOf(i2);
             objArr2[2] = obj2;
-            objArr2[3] = m78id(str2);
+            objArr2[3] = m76id(str2);
             objArr2[4] = "r";
             objArr2[c] = extra;
             objArr2[6] = "t";
@@ -1346,9 +1346,9 @@ final class LocalTreasureOperationEngine {
 
     private static int count(byte[] bArr, int i) {
         int i2 = 0;
-        for (byte[] bArr2 : LocalResourceEngine.array(m77d(m77d(bArr, "inv"), "items"))) {
-            if (m79v(bArr2, "i") == i) {
-                i2 = Math.addExact(i2, m79v(bArr2, "w"));
+        for (byte[] bArr2 : LocalResourceEngine.array(m75d(m75d(bArr, "inv"), "items"))) {
+            if (m77v(bArr2, "i") == i) {
+                i2 = Math.addExact(i2, m77v(bArr2, "w"));
             }
         }
         return i2;
@@ -1356,24 +1356,24 @@ final class LocalTreasureOperationEngine {
 
     private static void accept(LocalResourceEngine.Result result, LocalFeatureCatalog localFeatureCatalog, String str, byte[] bArr) {
         byte[] replaceAttrs;
-        int m79v = m79v(bArr, "h");
+        int m77v = m77v(bArr, "h");
         String uuidValue = BsonLite.uuidValue(bArr, "u");
-        byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, m79v);
-        byte[] m77d = m77d(owned, "tr");
+        byte[] owned = owned(result.profile, localFeatureCatalog, uuidValue, m77v);
+        byte[] m75d = m75d(owned, "tr");
         boolean equals = str.equals("refreshTreasureApplyOrange");
         String str2 = equals ? "ro" : "ri";
-        byte[] documentValue = BsonLite.documentValue(m77d, str2);
+        byte[] documentValue = BsonLite.documentValue(m75d, str2);
         if (documentValue == null || BsonLite.keys(documentValue).isEmpty()) {
             throw new IllegalArgumentException("没有待替换的影装属性");
         }
         if (equals) {
-            replaceAttrs = BsonLite.withProfileArray(BsonLite.withProfileArray(m77d, "era", values(m77d(documentValue, "era"))), "su", BsonLite.intArrayValues(documentValue, "su"));
+            replaceAttrs = BsonLite.withProfileArray(BsonLite.withProfileArray(m75d, "era", values(m75d(documentValue, "era"))), "su", BsonLite.intArrayValues(documentValue, "su"));
         } else {
-            replaceAttrs = replaceAttrs(replaceAttrs(m77d, localFeatureCatalog, documentValue, "fa", "f"), localFeatureCatalog, documentValue, "ta", "t");
+            replaceAttrs = replaceAttrs(replaceAttrs(m75d, localFeatureCatalog, documentValue, "fa", "f"), localFeatureCatalog, documentValue, "ta", "t");
         }
         byte[] withProfileDocument = BsonLite.withProfileDocument(owned, "tr", BsonLite.withoutProfileKey(replaceAttrs, str2));
         update(result, withProfileDocument);
-        result.add(str + "Reply", BsonLite.document("h", Integer.valueOf(m79v), "u", m78id(uuidValue), "r", withProfileDocument));
+        result.add(str + "Reply", BsonLite.document("h", Integer.valueOf(m77v), "u", m76id(uuidValue), "r", withProfileDocument));
         canonical(result, withProfileDocument);
     }
 }

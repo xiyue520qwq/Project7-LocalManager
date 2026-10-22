@@ -205,11 +205,11 @@ public class ListBlockParser extends AbstractBlockParser {
             int newColumn = listData.contentColumn;
             ListItemParser listItemParser = new ListItemParser(newColumn - state.getColumn());
             if ((matched instanceof ListBlockParser) && ListBlockParser.listsMatch((ListBlock) matched.getBlock(), listData.listBlock)) {
-                return BlockStart.m104of(listItemParser).atColumn(newColumn);
+                return BlockStart.m100of(listItemParser).atColumn(newColumn);
             }
             ListBlockParser listBlockParser = new ListBlockParser(listData.listBlock);
             listData.listBlock.setTight(true);
-            return BlockStart.m104of(listBlockParser, listItemParser).atColumn(newColumn);
+            return BlockStart.m100of(listBlockParser, listItemParser).atColumn(newColumn);
         }
     }
 

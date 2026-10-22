@@ -87,7 +87,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_1f
+    if-eqz v9, :cond_20
 
     .line 22
     invoke-static {v4, v6}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
@@ -271,7 +271,7 @@
 
     move-result v13
 
-    if-eqz v13, :cond_1e
+    if-eqz v13, :cond_1f
 
     .line 42
     invoke-static {v1, v9}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
@@ -300,7 +300,7 @@
 
     move-object/from16 v20, v15
 
-    if-eqz v14, :cond_19
+    if-eqz v14, :cond_1a
 
     .line 45
     invoke-static {v4, v5}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
@@ -348,7 +348,7 @@
     move-result-object v4
 
     .line 49
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_19
 
     .line 50
     new-instance v15, Ljava/util/ArrayList;
@@ -750,16 +750,24 @@
 
     move-result v1
 
-    if-gt v7, v1, :cond_17
+    if-lez v1, :cond_12
+
+    goto :goto_6
+
+    :cond_12
+    const/16 v1, 0x2d
+
+    :goto_6
+    if-gt v7, v1, :cond_18
 
     .line 78
-    if-eqz v20, :cond_13
+    if-eqz v20, :cond_14
 
     invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_14
 
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -780,12 +788,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
-    goto :goto_6
+    goto :goto_7
 
     .line 80
-    :cond_12
+    :cond_13
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "\u9009\u62e9\u7684\u5f71\u88c5\u4e0e\u65b9\u6848\u4e0d\u4e00\u81f4"
@@ -795,13 +803,13 @@
     throw v1
 
     .line 78
-    :cond_13
+    :cond_14
     move-object/from16 v5, p0
 
     move-object/from16 v3, v20
 
     .line 81
-    :goto_6
+    :goto_7
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -811,12 +819,12 @@
 
     move-result-object v7
 
-    :goto_7
+    :goto_8
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_15
+    if-eqz v8, :cond_16
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -838,20 +846,20 @@
 
     move-result v12
 
-    if-nez v12, :cond_14
+    if-nez v12, :cond_15
 
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 85
-    :cond_14
+    :cond_15
     move-object/from16 v24, v10
 
     move-object/from16 v17, v11
 
-    goto :goto_7
+    goto :goto_8
 
     .line 86
-    :cond_15
+    :cond_16
     move-object/from16 v10, v24
 
     move-object/from16 v7, v23
@@ -908,20 +916,20 @@
     const/4 v1, 0x7
 
     .line 88
-    if-nez v3, :cond_16
+    if-nez v3, :cond_17
 
     const-string v3, ""
 
-    goto :goto_8
+    goto :goto_9
 
-    :cond_16
+    :cond_17
     sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v3, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v3
 
-    :goto_8
+    :goto_9
     aput-object v3, v8, v1
 
     .line 87
@@ -932,10 +940,10 @@
     invoke-virtual {v7, v4, v1}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
     .line 89
-    goto/16 :goto_b
+    goto/16 :goto_c
 
     .line 77
-    :cond_17
+    :cond_18
     move-object/from16 v5, p0
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -950,18 +958,18 @@
     :catch_0
     move-exception v0
 
-    goto :goto_9
+    goto :goto_a
 
     :catch_1
     move-exception v0
 
-    :goto_9
+    :goto_a
     move-object/from16 v5, p0
 
-    goto/16 :goto_d
+    goto/16 :goto_e
 
     .line 49
-    :cond_18
+    :cond_19
     move-object v5, v1
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -973,7 +981,7 @@
     throw v1
 
     .line 89
-    :cond_19
+    :cond_1a
     move-object v5, v1
 
     move-object/from16 v22, v6
@@ -997,10 +1005,10 @@
 
     const-string v6, "t"
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1d
 
     .line 90
-    if-eqz v20, :cond_1b
+    if-eqz v20, :cond_1c
 
     .line 91
     :try_start_7
@@ -1018,7 +1026,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1b
 
     .line 93
     new-instance v1, Ljava/util/ArrayList;
@@ -1084,10 +1092,10 @@
 
     invoke-virtual {v7, v1, v3}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    goto :goto_a
+    goto :goto_b
 
     .line 92
-    :cond_1a
+    :cond_1b
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "\u8be5\u795e\u5668\u4f7f\u672a\u88c5\u5907\u6b64\u5f71\u88c5"
@@ -1097,7 +1105,7 @@
     throw v1
 
     .line 90
-    :cond_1b
+    :cond_1c
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     move-object/from16 v2, v16
@@ -1107,14 +1115,14 @@
     throw v1
 
     .line 97
-    :cond_1c
+    :cond_1d
     const-string v1, "unequipAllTreasure"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1e
 
     .line 98
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -1178,15 +1186,15 @@
 
     invoke-virtual {v7, v1, v3}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
-    goto :goto_b
+    goto :goto_c
 
     .line 97
-    :cond_1d
-    :goto_a
+    :cond_1e
+    :goto_b
     nop
 
     .line 101
-    :goto_b
+    :goto_c
     const/4 v1, 0x0
 
     invoke-static {v7, v2, v1}, Lcom/project7/localmanager/LocalTreasurePlanEngine;->clearMismatchedBindings(Lcom/project7/localmanager/LocalResourceEngine$Result;Lcom/project7/localmanager/LocalFeatureCatalog;Ljava/lang/String;)V
@@ -1194,10 +1202,10 @@
     .line 105
     move-object v8, v7
 
-    goto :goto_e
+    goto :goto_f
 
     .line 41
-    :cond_1e
+    :cond_1f
     move-object v5, v1
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -1209,7 +1217,7 @@
     throw v1
 
     .line 21
-    :cond_1f
+    :cond_20
     move-object v5, v1
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -1227,25 +1235,25 @@
     :catch_2
     move-exception v0
 
-    goto :goto_d
+    goto :goto_e
 
     :catch_3
     move-exception v0
 
-    goto :goto_d
+    goto :goto_e
 
     :catch_4
     move-exception v0
 
-    goto :goto_c
+    goto :goto_d
 
     :catch_5
     move-exception v0
 
-    :goto_c
+    :goto_d
     move-object v5, v1
 
-    :goto_d
+    :goto_e
     move-object v1, v0
 
     .line 103
@@ -1281,7 +1289,7 @@
     invoke-virtual {v8, v2, v1}, Lcom/project7/localmanager/LocalResourceEngine$Result;->add(Ljava/lang/String;[B)V
 
     .line 106
-    :goto_e
+    :goto_f
     return-object v8
 .end method
 

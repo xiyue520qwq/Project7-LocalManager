@@ -15,12 +15,12 @@ final class LocalRoomGrowthEngine {
     }
 
     /* renamed from: d */
-    static byte[] m68d(byte[] bArr, String str) {
+    static byte[] m66d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    static int m69v(byte[] bArr, String str) {
+    static int m67v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
@@ -30,9 +30,9 @@ final class LocalRoomGrowthEngine {
     }
 
     static byte[] skill(byte[] bArr, int i) {
-        byte[] m68d = m68d(bArr, "rmd");
-        byte[] documentValue = BsonLite.documentValue(m68d, "rs");
-        if (documentValue == null && BsonLite.keys(m68d).contains("rs")) {
+        byte[] m66d = m66d(bArr, "rmd");
+        byte[] documentValue = BsonLite.documentValue(m66d, "rs");
+        if (documentValue == null && BsonLite.keys(m66d).contains("rs")) {
             throw new IllegalArgumentException("房间模块存档格式异常");
         }
         if (documentValue == null) {
@@ -59,7 +59,7 @@ final class LocalRoomGrowthEngine {
     }
 
     static int roomLevel(byte[] bArr) {
-        return valueOr(m68d(bArr, "rmd"), "rl", 1);
+        return valueOr(m66d(bArr, "rmd"), "rl", 1);
     }
 
     static boolean has(byte[] bArr) {
@@ -68,13 +68,13 @@ final class LocalRoomGrowthEngine {
 
     static boolean enough(byte[] bArr, byte[] bArr2, String str) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        for (byte[] bArr3 : LocalResourceEngine.array(m68d(bArr2, str))) {
-            int m69v = m69v(bArr3, "0");
-            int m69v2 = m69v(bArr3, "1");
-            if (m69v <= 0 || m69v2 < 0) {
+        for (byte[] bArr3 : LocalResourceEngine.array(m66d(bArr2, str))) {
+            int m67v = m67v(bArr3, "0");
+            int m67v2 = m67v(bArr3, "1");
+            if (m67v <= 0 || m67v2 < 0) {
                 throw new IllegalArgumentException("房间模块材料配置无效");
             }
-            linkedHashMap.put(Integer.valueOf(m69v), Integer.valueOf(Math.addExact(((Integer) linkedHashMap.getOrDefault(Integer.valueOf(m69v), 0)).intValue(), m69v2)));
+            linkedHashMap.put(Integer.valueOf(m67v), Integer.valueOf(Math.addExact(((Integer) linkedHashMap.getOrDefault(Integer.valueOf(m67v), 0)).intValue(), m67v2)));
         }
         for (Map.Entry entry : linkedHashMap.entrySet()) {
             if (LocalHomeEngine.count(bArr, ((Integer) entry.getKey()).intValue()) < ((Integer) entry.getValue()).intValue()) {
@@ -85,20 +85,20 @@ final class LocalRoomGrowthEngine {
     }
 
     static void consume(LocalResourceEngine.Result result, byte[] bArr, String str) {
-        for (byte[] bArr2 : LocalResourceEngine.array(m68d(bArr, str))) {
-            LocalGiftEngine.consume(result, m69v(bArr2, "0"), m69v(bArr2, "1"));
+        for (byte[] bArr2 : LocalResourceEngine.array(m66d(bArr, str))) {
+            LocalGiftEngine.consume(result, m67v(bArr2, "0"), m67v(bArr2, "1"));
         }
     }
 
     static Map<Integer, Integer> progress(byte[] bArr, LocalFeatureCatalog localFeatureCatalog) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (int i = 1; i <= 5; i++) {
-            byte[] m68d = m68d(rule(localFeatureCatalog, "RL", roomLevel(bArr) + ":" + i), "skill_dict");
+            byte[] m66d = m66d(rule(localFeatureCatalog, "RL", roomLevel(bArr) + ":" + i), "skill_dict");
             int i2 = 0;
-            Iterator<String> it = BsonLite.keys(m68d).iterator();
+            Iterator<String> it = BsonLite.keys(m66d).iterator();
             while (it.hasNext()) {
-                int m69v = m69v(m68d, it.next());
-                i2 = Math.addExact(i2, Math.min(valueOr(definition(localFeatureCatalog, m69v, 1, 1), "level_limit", 1), m69v(skill(bArr, m69v), "lv")));
+                int m67v = m67v(m66d, it.next());
+                i2 = Math.addExact(i2, Math.min(valueOr(definition(localFeatureCatalog, m67v, 1, 1), "level_limit", 1), m67v(skill(bArr, m67v), "lv")));
             }
             linkedHashMap.put(Integer.valueOf(i), Integer.valueOf(i2));
         }
@@ -108,12 +108,12 @@ final class LocalRoomGrowthEngine {
     static boolean moduleReady(byte[] bArr, LocalFeatureCatalog localFeatureCatalog, byte[] bArr2) {
         Map<Integer, Integer> progress = progress(bArr, localFeatureCatalog);
         int i = 0;
-        for (byte[] bArr3 : LocalResourceEngine.array(m68d(bArr2, "unlock_mod_cond_list"))) {
-            int m69v = m69v(bArr3, "0");
-            int m69v2 = m69v(bArr3, "1");
-            if (m69v == 0) {
-                i = m69v2;
-            } else if (!progress.containsKey(Integer.valueOf(m69v)) || progress.get(Integer.valueOf(m69v)).intValue() < m69v2) {
+        for (byte[] bArr3 : LocalResourceEngine.array(m66d(bArr2, "unlock_mod_cond_list"))) {
+            int m67v = m67v(bArr3, "0");
+            int m67v2 = m67v(bArr3, "1");
+            if (m67v == 0) {
+                i = m67v2;
+            } else if (!progress.containsKey(Integer.valueOf(m67v)) || progress.get(Integer.valueOf(m67v)).intValue() < m67v2) {
                 return false;
             }
         }
@@ -143,13 +143,13 @@ final class LocalRoomGrowthEngine {
         while (it.hasNext()) {
             int intValue = it.next().intValue();
             LinkedHashMap linkedHashMap = new LinkedHashMap();
-            Iterator<Integer> it2 = BsonLite.intArrayValues(m68d(rule, "group_dict"), Integer.toString(intValue)).iterator();
+            Iterator<Integer> it2 = BsonLite.intArrayValues(m66d(rule, "group_dict"), Integer.toString(intValue)).iterator();
             while (it2.hasNext()) {
                 int intValue2 = it2.next().intValue();
                 if (intValue2 == i6 || has(skill)) {
-                    byte[] m68d = m68d(definition(localFeatureCatalog, intValue2, intValue2 == i6 ? m69v(skill, "lv") + i5 : valueOr(skill, "lv", i8), intValue2 == i6 ? i7 != 0 ? i7 : valueOr(skill, "op", i8) : valueOr(skill, "op", i7)), "attrs");
-                    for (String str : BsonLite.keys(m68d)) {
-                        Number numericValue = BsonLite.numericValue(m68d, str);
+                    byte[] m66d = m66d(definition(localFeatureCatalog, intValue2, intValue2 == i6 ? m67v(skill, "lv") + i5 : valueOr(skill, "lv", i8), intValue2 == i6 ? i7 != 0 ? i7 : valueOr(skill, "op", i8) : valueOr(skill, "op", i7)), "attrs");
+                    for (String str : BsonLite.keys(m66d)) {
+                        Number numericValue = BsonLite.numericValue(m66d, str);
                         if (numericValue == null || !Double.isFinite(numericValue.doubleValue())) {
                             throw new IllegalArgumentException("模块属性配置无效");
                         }
@@ -181,54 +181,54 @@ final class LocalRoomGrowthEngine {
     }
 
     static int validate(byte[] bArr, LocalFeatureCatalog localFeatureCatalog, String str, byte[] bArr2) {
-        int m69v = m69v(bArr2, "lv");
+        int m67v = m67v(bArr2, "lv");
         if ("upRoomLevel".equals(str)) {
-            if (roomLevel(bArr) != m69v) {
+            if (roomLevel(bArr) != m67v) {
                 return 1259;
             }
-            if (!has(rule(localFeatureCatalog, "RU", Integer.valueOf(m69v + 1)))) {
+            if (!has(rule(localFeatureCatalog, "RU", Integer.valueOf(m67v + 1)))) {
                 return 1276;
             }
-            byte[] rule = rule(localFeatureCatalog, "RU", Integer.valueOf(m69v));
-            if (!has(rule) || m69v(bArr, "level") < m69v(rule, "hero_level")) {
+            byte[] rule = rule(localFeatureCatalog, "RU", Integer.valueOf(m67v));
+            if (!has(rule) || m67v(bArr, "level") < m67v(rule, "hero_level")) {
                 return 1278;
             }
             for (int i = 1; i <= 5; i++) {
-                byte[] m68d = m68d(rule(localFeatureCatalog, "RL", m69v + ":" + i), "skill_dict");
-                Iterator<String> it = BsonLite.keys(m68d).iterator();
+                byte[] m66d = m66d(rule(localFeatureCatalog, "RL", m67v + ":" + i), "skill_dict");
+                Iterator<String> it = BsonLite.keys(m66d).iterator();
                 while (it.hasNext()) {
-                    int m69v2 = m69v(m68d, it.next());
-                    if (m69v(skill(bArr, m69v2), "lv") < valueOr(definition(localFeatureCatalog, m69v2, 1, 1), "level_limit", 1)) {
+                    int m67v2 = m67v(m66d, it.next());
+                    if (m67v(skill(bArr, m67v2), "lv") < valueOr(definition(localFeatureCatalog, m67v2, 1, 1), "level_limit", 1)) {
                         return 1277;
                     }
                 }
             }
             return enough(bArr, rule, "up_level_cost_list") ? 0 : 1263;
         }
-        int m69v3 = m69v(bArr2, "m");
-        int m69v4 = m69v(bArr2, "sk");
-        int m69v5 = m69v(bArr2, "op");
-        byte[] rule2 = rule(localFeatureCatalog, "RL", m69v + ":" + m69v3);
+        int m67v3 = m67v(bArr2, "m");
+        int m67v4 = m67v(bArr2, "sk");
+        int m67v5 = m67v(bArr2, "op");
+        byte[] rule2 = rule(localFeatureCatalog, "RL", m67v + ":" + m67v3);
         if (!has(rule2)) {
             return 1257;
         }
-        if (m69v4 != m69v(m68d(rule2, "skill_dict"), Integer.toString(m69v(bArr2, "idx")))) {
+        if (m67v4 != m67v(m66d(rule2, "skill_dict"), Integer.toString(m67v(bArr2, "idx")))) {
             return 1258;
         }
-        if (m69v > roomLevel(bArr)) {
+        if (m67v > roomLevel(bArr)) {
             return 1259;
         }
-        byte[] skill = skill(bArr, m69v4);
+        byte[] skill = skill(bArr, m67v4);
         if ("activeSkill".equals(str)) {
             if (has(skill)) {
                 return 1260;
             }
-            byte[] definition = definition(localFeatureCatalog, m69v4, 1, m69v5);
+            byte[] definition = definition(localFeatureCatalog, m67v4, 1, m67v5);
             if (!has(definition)) {
                 return 1261;
             }
-            for (byte[] bArr3 : LocalResourceEngine.array(m68d(m68d(rule2, "skill_pre_link"), Integer.toString(m69v4)))) {
-                if (!has(skill(bArr, m69v(bArr3, "0"))) || m69v(skill(bArr, m69v(bArr3, "0")), "lv") < m69v(bArr3, "1")) {
+            for (byte[] bArr3 : LocalResourceEngine.array(m66d(m66d(rule2, "skill_pre_link"), Integer.toString(m67v4)))) {
+                if (!has(skill(bArr, m67v(bArr3, "0"))) || m67v(skill(bArr, m67v(bArr3, "0")), "lv") < m67v(bArr3, "1")) {
                     return 1262;
                 }
             }
@@ -236,7 +236,7 @@ final class LocalRoomGrowthEngine {
                 return 1323;
             }
             if (enough(bArr, definition, "up_cost_list")) {
-                return groupLimit(bArr, localFeatureCatalog, m69v, m69v3, m69v4, m69v5, 1) ? 1264 : 0;
+                return groupLimit(bArr, localFeatureCatalog, m67v, m67v3, m67v4, m67v5, 1) ? 1264 : 0;
             }
             return 1263;
         }
@@ -244,7 +244,7 @@ final class LocalRoomGrowthEngine {
             return 1269;
         }
         int valueOr = valueOr(skill, "lv", 99);
-        byte[] definition2 = definition(localFeatureCatalog, m69v4, valueOr, m69v5);
+        byte[] definition2 = definition(localFeatureCatalog, m67v4, valueOr, m67v5);
         if ("upgradeSkill".equals(str)) {
             if (!has(definition2)) {
                 return 1261;
@@ -252,90 +252,90 @@ final class LocalRoomGrowthEngine {
             if (valueOr(definition2, "level_limit", 1) < valueOr) {
                 return 1270;
             }
-            byte[] definition3 = definition(localFeatureCatalog, m69v4, valueOr + 1, m69v5);
+            byte[] definition3 = definition(localFeatureCatalog, m67v4, valueOr + 1, m67v5);
             if (!has(definition3)) {
                 return 1261;
             }
             if (enough(bArr, definition3, "up_cost_list")) {
-                return groupLimit(bArr, localFeatureCatalog, m69v, m69v3, m69v4, m69v5, 1) ? 1264 : 0;
+                return groupLimit(bArr, localFeatureCatalog, m67v, m67v3, m67v4, m67v5, 1) ? 1264 : 0;
             }
             return 1263;
         }
         if ("breakSkill".equals(str)) {
-            if (!has(definition2) || m69v(definition2, "can_break") == 0 || m69v(definition2, "break_limit") == 0) {
+            if (!has(definition2) || m67v(definition2, "can_break") == 0 || m67v(definition2, "break_limit") == 0) {
                 return 1271;
             }
-            if (m69v(skill, "bk") >= m69v(definition2, "break_limit")) {
+            if (m67v(skill, "bk") >= m67v(definition2, "break_limit")) {
                 return 1273;
             }
-            if (valueOr(skill, "op", 0) != m69v5) {
+            if (valueOr(skill, "op", 0) != m67v5) {
                 return 1274;
             }
             if (valueOr(definition2, "level_limit", 1) != valueOr) {
                 return 1272;
             }
             if (enough(bArr, definition2, "break_cost_list")) {
-                return groupLimit(bArr, localFeatureCatalog, m69v, m69v3, m69v4, m69v5, 1) ? 1264 : 0;
+                return groupLimit(bArr, localFeatureCatalog, m67v, m67v3, m67v4, m67v5, 1) ? 1264 : 0;
             }
             return 1263;
         }
-        int m69v6 = m69v(bArr2, "n_op");
-        if (valueOr(skill, "op", 0) == m69v6) {
+        int m67v6 = m67v(bArr2, "n_op");
+        if (valueOr(skill, "op", 0) == m67v6) {
             return 1275;
         }
-        if (valueOr(skill, "op", 0) != m69v5) {
+        if (valueOr(skill, "op", 0) != m67v5) {
             return 1274;
         }
-        byte[] definition4 = definition(localFeatureCatalog, m69v4, valueOr, m69v6);
+        byte[] definition4 = definition(localFeatureCatalog, m67v4, valueOr, m67v6);
         if (!has(definition2) || !has(definition4)) {
             return 1261;
         }
         if (enough(bArr, definition4, "up_cost_list")) {
-            return groupLimit(bArr, localFeatureCatalog, m69v, m69v3, m69v4, m69v6, 0) ? 1264 : 0;
+            return groupLimit(bArr, localFeatureCatalog, m67v, m67v3, m67v4, m67v6, 0) ? 1264 : 0;
         }
         return 1263;
     }
 
     static void apply(LocalResourceEngine.Result result, LocalFeatureCatalog localFeatureCatalog, String str, byte[] bArr, long j) {
         byte[] withProfileInt;
-        LocalHomeEngine.require(m69v(m68d(result.profile, "weeknum"), "w") >= 3, "房间模块尚未达到原版周目开放条件");
+        LocalHomeEngine.require(m67v(m66d(result.profile, "weeknum"), "w") >= 3, "房间模块尚未达到原版周目开放条件");
         LocalHomeEngine.require(localFeatureCatalog.get("RU", Integer.valueOf(roomLevel(result.profile))) != null, "房间等级尚无原版配置");
         int validate = validate(result.profile, localFeatureCatalog, str, bArr);
         LocalHomeEngine.require(validate == 0, "房间模块操作未满足原版条件（" + validate + "）");
-        byte[] m68d = m68d(result.profile, "rmd");
-        int m69v = m69v(bArr, "lv");
+        byte[] m66d = m66d(result.profile, "rmd");
+        int m67v = m67v(bArr, "lv");
         if ("upRoomLevel".equals(str)) {
             if (LocalRoomCrystalEngine.active(result.profile)) {
                 LocalRoomCrystalEngine.setClock(result, LocalRoomCrystalEngine.clock(result.profile, localFeatureCatalog, j), true);
             }
-            consume(result, rule(localFeatureCatalog, "RU", Integer.valueOf(m69v)), "up_level_cost_list");
-            int i = m69v + 1;
-            result.profile = BsonLite.withProfileDocument(result.profile, "rmd", BsonLite.withProfileInt(m68d(result.profile, "rmd"), "rl", i));
+            consume(result, rule(localFeatureCatalog, "RU", Integer.valueOf(m67v)), "up_level_cost_list");
+            int i = m67v + 1;
+            result.profile = BsonLite.withProfileDocument(result.profile, "rmd", BsonLite.withProfileInt(m66d(result.profile, "rmd"), "rl", i));
             result.add("upRoomLevelReply", BsonLite.document("lv", Integer.valueOf(i)));
         } else {
-            int m69v2 = m69v(bArr, "sk");
-            int m69v3 = m69v(bArr, "op");
-            int valueOr = "activeSkill".equals(str) ? 1 : valueOr(skill(result.profile, m69v2), "lv", 99);
+            int m67v2 = m67v(bArr, "sk");
+            int m67v3 = m67v(bArr, "op");
+            int valueOr = "activeSkill".equals(str) ? 1 : valueOr(skill(result.profile, m67v2), "lv", 99);
             if ("upgradeSkill".equals(str)) {
                 valueOr++;
             }
             if ("swapSkillOption".equals(str)) {
-                m69v3 = m69v(bArr, "n_op");
+                m67v3 = m67v(bArr, "n_op");
             }
-            byte[] definition = definition(localFeatureCatalog, m69v2, valueOr, m69v3);
-            byte[] skill = skill(result.profile, m69v2);
+            byte[] definition = definition(localFeatureCatalog, m67v2, valueOr, m67v3);
+            byte[] skill = skill(result.profile, m67v2);
             consume(result, definition, "breakSkill".equals(str) ? "break_cost_list" : "up_cost_list");
             if ("breakSkill".equals(str)) {
-                withProfileInt = BsonLite.withProfileInt(skill, "bk", Math.addExact(m69v(skill, "bk"), 1));
-                result.add("breakSkillReply", BsonLite.document("sk", Integer.valueOf(m69v2), "op", Integer.valueOf(m69v3), "bk", Integer.valueOf(m69v(withProfileInt, "bk"))));
+                withProfileInt = BsonLite.withProfileInt(skill, "bk", Math.addExact(m67v(skill, "bk"), 1));
+                result.add("breakSkillReply", BsonLite.document("sk", Integer.valueOf(m67v2), "op", Integer.valueOf(m67v3), "bk", Integer.valueOf(m67v(withProfileInt, "bk"))));
             } else {
-                withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileInt(skill, "lv", valueOr), "op", m69v3);
+                withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileInt(skill, "lv", valueOr), "op", m67v3);
                 if ("swapSkillOption".equals(str)) {
                     withProfileInt = BsonLite.withProfileInt(withProfileInt, "bk", 0);
                 }
-                result.add(str + "Reply", BsonLite.document("sk", Integer.valueOf(m69v2), "op", Integer.valueOf(m69v3), "lv", Integer.valueOf(valueOr)));
+                result.add(str + "Reply", BsonLite.document("sk", Integer.valueOf(m67v2), "op", Integer.valueOf(m67v3), "lv", Integer.valueOf(valueOr)));
             }
-            result.profile = BsonLite.withProfileDocument(result.profile, "rmd", BsonLite.withProfileDocument(m68d, "rs", BsonLite.withProfileDocument(m68d(m68d, "rs"), Integer.toString(m69v2), withProfileInt)));
+            result.profile = BsonLite.withProfileDocument(result.profile, "rmd", BsonLite.withProfileDocument(m66d, "rs", BsonLite.withProfileDocument(m66d(m66d, "rs"), Integer.toString(m67v2), withProfileInt)));
         }
         LocalHomeEngine.callback(result, true);
     }

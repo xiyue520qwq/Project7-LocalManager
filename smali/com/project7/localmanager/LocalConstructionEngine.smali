@@ -16,7 +16,7 @@
 .method static acknowledgeDestroyed([B[B)[B
     .locals 10
 
-    .line 170
+    .line 165
     const-string v0, "aid"
 
     invoke-static {p1, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
@@ -35,7 +35,7 @@
 
     move-result p1
 
-    .line 171
+    .line 166
     const/4 v2, 0x1
 
     if-lt v0, v2, :cond_2
@@ -50,7 +50,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 167
     :cond_0
     const-string v2, "city"
 
@@ -64,7 +64,7 @@
 
     move-result-object v5
 
-    .line 173
+    .line 168
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    .line 174
+    .line 169
     invoke-static {v5, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v6
@@ -94,7 +94,7 @@
 
     move-result-object v8
 
-    .line 175
+    .line 170
     invoke-static {v8, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v9
@@ -103,7 +103,7 @@
 
     return-object p0
 
-    .line 176
+    .line 171
     :cond_1
     invoke-static {v8, v1}, Lcom/project7/localmanager/BsonLite;->withoutProfileKey([BLjava/lang/String;)[B
 
@@ -113,15 +113,15 @@
 
     move-result-object p1
 
-    .line 177
+    .line 172
     nop
 
-    .line 178
+    .line 173
     invoke-static {v5, v0, p1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object p1
 
-    .line 177
+    .line 172
     invoke-static {v3, v4, p1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object p1
@@ -132,14 +132,14 @@
 
     return-object p0
 
-    .line 171
+    .line 166
     :cond_2
     :goto_0
     return-object p0
 .end method
 
 .method static apply([BLcom/project7/localmanager/LocalConstructionCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;Ljava/lang/String;[B)Lcom/project7/localmanager/LocalEconomyEngine$Result;
-    .locals 41
+    .locals 42
 
     .line 17
     move-object/from16 v1, p0
@@ -152,27 +152,29 @@
 
     move-object/from16 v5, p4
 
-    const-string v6, "lv"
+    const-string v6, "rv"
 
-    const-string v7, "areas"
+    const-string v7, "lv"
 
-    const-string v8, "ext"
+    const-string v8, "areas"
 
-    const-string v9, "rs"
+    const-string v9, "ext"
 
-    const-string v10, "area_"
+    const-string v10, "rs"
 
-    const-string v11, "city"
+    const-string v11, "area_"
 
-    const-string v12, "bd"
+    const-string v12, "city"
 
-    const-string v13, "playerDestroyBuilding"
+    const-string v13, "bd"
 
-    invoke-virtual {v13, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v14, "playerDestroyBuilding"
 
-    move-result v13
+    invoke-virtual {v14, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v13, :cond_0
+    move-result v14
+
+    if-eqz v14, :cond_0
 
     invoke-static {v1, v2, v3, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->demolish([BLcom/project7/localmanager/LocalConstructionCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;[B)Lcom/project7/localmanager/LocalEconomyEngine$Result;
 
@@ -182,98 +184,100 @@
 
     .line 18
     :cond_0
-    new-instance v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;
+    new-instance v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;
 
-    invoke-direct {v13, v1}, Lcom/project7/localmanager/LocalEconomyEngine$Result;-><init>([B)V
+    invoke-direct {v14, v1}, Lcom/project7/localmanager/LocalEconomyEngine$Result;-><init>([B)V
 
     .line 19
-    const-string v14, "areaBuildRequest"
+    const-string v15, "areaBuildRequest"
 
-    invoke-virtual {v14, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v15, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v14
+    move-result v15
 
     .line 20
-    const-string v15, "aid"
+    const-string v4, "aid"
 
-    invoke-static {v5, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    move-object/from16 v16, v9
 
-    move-result v4
+    invoke-static {v5, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v9
 
     .line 21
-    if-eqz v14, :cond_1
+    if-eqz v15, :cond_1
 
-    const-string v16, "area_build_reply"
+    const-string v17, "area_build_reply"
 
     goto :goto_0
 
     :cond_1
-    const-string v16, "area_level_up_reply"
+    const-string v17, "area_level_up_reply"
 
     :goto_0
-    move-object/from16 v17, v16
+    move-object/from16 v18, v17
 
     .line 23
-    const/16 v16, 0x5
+    const/16 v17, 0x5
 
-    move-object/from16 v18, v8
+    move-object/from16 v19, v4
 
     :try_start_0
     invoke-static/range {p3 .. p3}, Lcom/project7/localmanager/LocalConstructionEngine;->handles(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v4
     :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_13
-    .catch Ljava/lang/ArithmeticException; {:try_start_0 .. :try_end_0} :catch_12
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_f
+    .catch Ljava/lang/ArithmeticException; {:try_start_0 .. :try_end_0} :catch_e
 
-    move-object/from16 v21, v15
+    move-object/from16 v22, v10
 
     :try_start_1
-    const-string v15, "\u672a\u77e5\u57ce\u5e02\u64cd\u4f5c"
+    const-string v10, "\u672a\u77e5\u57ce\u5e02\u64cd\u4f5c"
 
-    invoke-static {v8, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+    invoke-static {v4, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
     :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_11
-    .catch Ljava/lang/ArithmeticException; {:try_start_1 .. :try_end_1} :catch_10
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_1 .. :try_end_1} :catch_c
 
     .line 24
     if-eqz v3, :cond_2
 
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
-    if-lt v4, v8, :cond_2
+    if-lt v9, v4, :cond_2
 
-    const/16 v8, 0x8
+    const/16 v4, 0x8
 
-    if-gt v4, v8, :cond_2
+    if-gt v9, v4, :cond_2
 
     :try_start_2
-    iget-boolean v8, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
+    iget-boolean v4, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->inEmergency:Z
 
-    if-nez v8, :cond_2
+    if-nez v4, :cond_2
 
     .line 25
-    invoke-static {v1, v4}, Lcom/project7/localmanager/LocalChapterCityEngine;->locked([BI)Z
+    invoke-static {v1, v9}, Lcom/project7/localmanager/LocalChapterCityEngine;->locked([BI)Z
 
-    move-result v8
+    move-result v4
 
-    if-nez v8, :cond_2
+    if-nez v4, :cond_2
 
     .line 26
-    invoke-static {v3, v4, v1}, Lcom/project7/localmanager/LocalCityProgress;->status(Lcom/project7/localmanager/LocalTutorialStore$Progress;I[B)I
+    invoke-static {v3, v9, v1}, Lcom/project7/localmanager/LocalCityProgress;->status(Lcom/project7/localmanager/LocalTutorialStore$Progress;I[B)I
 
-    move-result v8
+    move-result v4
     :try_end_2
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/ArithmeticException; {:try_start_2 .. :try_end_2} :catch_0
 
-    if-nez v8, :cond_2
+    if-nez v4, :cond_2
 
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
     goto :goto_3
 
-    .line 141
+    .line 136
     :catch_0
     move-exception v0
 
@@ -285,1047 +289,1084 @@
     :goto_1
     move-object v1, v0
 
-    move/from16 v29, v4
-
-    move-object/from16 v22, v9
+    move v7, v9
 
     :goto_2
-    move-object/from16 v4, v17
+    move-object/from16 v5, v18
 
-    goto/16 :goto_34
+    goto/16 :goto_2f
 
     .line 26
     :cond_2
-    const/4 v8, 0x0
+    const/4 v4, 0x0
 
     :goto_3
     :try_start_3
-    const-string v15, "\u8be5\u5730\u533a\u5c1a\u672a\u89e3\u653e\uff0c\u65e0\u6cd5\u5efa\u8bbe\u6216\u5f00\u53d1"
+    const-string v10, "\u8be5\u5730\u533a\u5c1a\u672a\u89e3\u653e\uff0c\u65e0\u6cd5\u5efa\u8bbe\u6216\u5f00\u53d1"
 
     .line 24
-    invoke-static {v8, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+    invoke-static {v4, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
     .line 27
-    iget-object v8, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->finishedNewbees:Ljava/util/Set;
-    :try_end_3
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_11
-    .catch Ljava/lang/ArithmeticException; {:try_start_3 .. :try_end_3} :catch_10
+    iget-object v4, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->finishedNewbees:Ljava/util/Set;
 
-    const/16 v15, 0x14
+    const/16 v10, 0x14
 
-    move-object/from16 v22, v9
-
-    :try_start_4
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-interface {v8, v9}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v8
-    :try_end_4
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_4 .. :try_end_4} :catch_e
-
-    if-nez v8, :cond_4
-
-    if-eqz v14, :cond_3
-
-    :try_start_5
-    iget-object v8, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingNewbees:Ljava/util/Set;
-
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-interface {v8, v9}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v8
-    :try_end_5
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_5} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_5 .. :try_end_5} :catch_2
-
-    if-eqz v8, :cond_3
-
-    goto :goto_5
-
-    .line 141
-    :catch_2
-    move-exception v0
-
-    goto :goto_4
-
-    :catch_3
-    move-exception v0
-
-    :goto_4
-    move-object v1, v0
-
-    move/from16 v29, v4
-
-    goto :goto_2
-
-    .line 27
-    :cond_3
-    const/4 v8, 0x0
-
-    goto :goto_6
-
-    :cond_4
-    :goto_5
-    const/4 v8, 0x1
-
-    :goto_6
-    :try_start_6
-    const-string v9, "\u8bf7\u5148\u5b8c\u6210\u5efa\u8bbe\u6307\u5f15"
-
-    invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 28
-    const-string v8, "weeknum"
-
-    invoke-static {v1, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v8
-
-    const-string v9, "d"
-
-    invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v8
-
-    const/4 v9, 0x7
-
-    if-ge v8, v9, :cond_5
-
-    const/4 v8, 0x1
-
-    goto :goto_7
-
-    :cond_5
-    const/4 v8, 0x0
-
-    :goto_7
-    const-string v9, "\u6700\u540e\u4e00\u5929\u65e0\u6cd5\u5efa\u8bbe\u6216\u5f00\u53d1"
-
-    invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 30
-    iget-boolean v8, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolRewardPending:Z
-    :try_end_6
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_6 .. :try_end_6} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_6 .. :try_end_6} :catch_e
-
-    if-nez v8, :cond_6
-
-    :try_start_7
-    const-string v8, "q7Battle"
-
-    invoke-static {v1, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
-
-    move-result-object v8
-
-    invoke-interface {v8}, Ljava/util/List;->isEmpty()Z
-
-    move-result v8
-    :try_end_7
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_7 .. :try_end_7} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_7 .. :try_end_7} :catch_2
-
-    if-eqz v8, :cond_6
-
-    const/4 v8, 0x1
-
-    goto :goto_8
-
-    :cond_6
-    const/4 v8, 0x0
-
-    :goto_8
-    :try_start_8
-    const-string v9, "\u8bf7\u5148\u5b8c\u6210\u5f53\u524d\u6218\u6597\u6216\u5de1\u67e5"
-
-    invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 32
-    iget-object v8, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
-
-    invoke-interface {v8}, Ljava/util/Set;->stream()Ljava/util/stream/Stream;
-
-    move-result-object v8
-
-    sget-object v9, Lcom/project7/localmanager/LocalConstructionEngine$$ExternalSyntheticLambda0;->INSTANCE:Lcom/project7/localmanager/LocalConstructionEngine$$ExternalSyntheticLambda0;
-
-    invoke-interface {v8, v9}, Ljava/util/stream/Stream;->allMatch(Ljava/util/function/Predicate;)Z
-
-    move-result v8
-
-    const-string v9, "\u8bf7\u5148\u5b8c\u6210\u5f53\u524d\u5267\u60c5"
-
-    invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 33
-    invoke-static {v1, v3}, Lcom/project7/localmanager/BsonLite;->withLocalCityState([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
-
-    move-result-object v8
-
-    invoke-static {v8, v3}, Lcom/project7/localmanager/BsonLite;->withPatrolProgress([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
-
-    move-result-object v8
-
-    iput-object v8, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    .line 34
-    iget-object v8, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    invoke-static {v8, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v8
-
-    invoke-static {v8, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v9
-
-    .line 35
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-static {v9, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v15
-
-    invoke-static {v15, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v1
-
-    .line 36
-    move-object/from16 v23, v11
-
-    invoke-static {v15, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v11
-
-    move-object/from16 v24, v7
-
-    const-string v7, "fi"
-
-    invoke-static {v5, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v7
-
-    move-object/from16 v25, v10
-
-    const-string v10, "bi"
-
-    invoke-static {v5, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v10
-    :try_end_8
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_8 .. :try_end_8} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_8 .. :try_end_8} :catch_e
-
-    .line 37
-    move-object/from16 v26, v6
-
-    const/4 v6, 0x1
-
-    if-lt v11, v6, :cond_7
-
-    :try_start_9
-    invoke-virtual {v2, v4, v11}, Lcom/project7/localmanager/LocalConstructionCatalog;->slots(II)I
-
-    move-result v6
-    :try_end_9
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_9 .. :try_end_9} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_9 .. :try_end_9} :catch_2
-
-    if-lez v6, :cond_7
-
-    const/4 v6, 0x1
-
-    goto :goto_9
-
-    :cond_7
-    const/4 v6, 0x0
-
-    :goto_9
-    :try_start_a
-    const-string v3, "\u5730\u533a\u5f00\u53d1\u6570\u636e\u65e0\u6548"
-
-    invoke-static {v6, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-    :try_end_a
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_a .. :try_end_a} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_a .. :try_end_a} :catch_e
-
-    .line 38
-    if-eqz v14, :cond_8
-
-    :try_start_b
-    const-string v3, "B"
+    move-object/from16 v23, v6
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    invoke-virtual {v2, v3, v6}, Lcom/project7/localmanager/LocalConstructionCatalog;->rule(Ljava/lang/String;Ljava/lang/Object;)[B
+    invoke-interface {v4, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result-object v3
-    :try_end_b
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_b .. :try_end_b} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_b .. :try_end_b} :catch_2
+    move-result v4
+    :try_end_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_3 .. :try_end_3} :catch_c
 
-    move-object/from16 v27, v13
+    if-nez v4, :cond_4
 
-    goto :goto_a
+    if-eqz v15, :cond_3
 
-    :cond_8
-    :try_start_c
-    const-string v3, "U"
+    :try_start_4
+    iget-object v4, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingNewbees:Ljava/util/Set;
 
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-object/from16 v27, v13
-
-    const-string v13, ":"
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v13, v11, 0x1
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    invoke-virtual {v2, v3, v6}, Lcom/project7/localmanager/LocalConstructionCatalog;->rule(Ljava/lang/String;Ljava/lang/Object;)[B
+    invoke-interface {v4, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v4
+    :try_end_4
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_4 .. :try_end_4} :catch_0
+
+    if-eqz v4, :cond_3
+
+    goto :goto_4
+
+    :cond_3
+    const/4 v4, 0x0
+
+    goto :goto_5
+
+    :cond_4
+    :goto_4
+    const/4 v4, 0x1
+
+    :goto_5
+    :try_start_5
+    const-string v6, "\u8bf7\u5148\u5b8c\u6210\u5efa\u8bbe\u6307\u5f15"
+
+    invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 28
+    const-string v4, "weeknum"
+
+    invoke-static {v1, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v4
+
+    const-string v6, "d"
+
+    invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v4
+
+    const/4 v6, 0x7
+
+    if-ge v4, v6, :cond_5
+
+    const/4 v4, 0x1
+
+    goto :goto_6
+
+    :cond_5
+    const/4 v4, 0x0
+
+    :goto_6
+    const-string v6, "\u6700\u540e\u4e00\u5929\u65e0\u6cd5\u5efa\u8bbe\u6216\u5f00\u53d1"
+
+    invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 30
+    iget-boolean v4, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolRewardPending:Z
+    :try_end_5
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_5} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_5 .. :try_end_5} :catch_c
+
+    if-nez v4, :cond_6
+
+    :try_start_6
+    const-string v4, "q7Battle"
+
+    invoke-static {v1, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
+
+    move-result v4
+    :try_end_6
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_6 .. :try_end_6} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_6 .. :try_end_6} :catch_0
+
+    if-eqz v4, :cond_6
+
+    const/4 v4, 0x1
+
+    goto :goto_7
+
+    :cond_6
+    const/4 v4, 0x0
+
+    :goto_7
+    :try_start_7
+    const-string v6, "\u8bf7\u5148\u5b8c\u6210\u5f53\u524d\u6218\u6597\u6216\u5de1\u67e5"
+
+    invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 32
+    iget-object v4, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
+
+    invoke-interface {v4}, Ljava/util/Set;->stream()Ljava/util/stream/Stream;
+
+    move-result-object v4
+
+    sget-object v6, Lcom/project7/localmanager/LocalConstructionEngine$$ExternalSyntheticLambda0;->INSTANCE:Lcom/project7/localmanager/LocalConstructionEngine$$ExternalSyntheticLambda0;
+
+    invoke-interface {v4, v6}, Ljava/util/stream/Stream;->allMatch(Ljava/util/function/Predicate;)Z
+
+    move-result v4
+
+    const-string v6, "\u8bf7\u5148\u5b8c\u6210\u5f53\u524d\u5267\u60c5"
+
+    invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 33
+    invoke-static {v1, v3}, Lcom/project7/localmanager/BsonLite;->withLocalCityState([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
+
+    move-result-object v4
+
+    invoke-static {v4, v3}, Lcom/project7/localmanager/BsonLite;->withPatrolProgress([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
+
+    move-result-object v4
+
+    iput-object v4, v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    .line 34
+    iget-object v4, v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    invoke-static {v4, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v4
+
+    invoke-static {v4, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v6
+
+    .line 35
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v6, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v10
+
+    invoke-static {v10, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v1
+
+    .line 36
+    move-object/from16 v24, v12
+
+    invoke-static {v10, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v12
+
+    move-object/from16 v25, v8
+
+    const-string v8, "fi"
+
+    invoke-static {v5, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v8
+
+    move-object/from16 v26, v11
+
+    const-string v11, "bi"
+
+    invoke-static {v5, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v11
+    :try_end_7
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_7 .. :try_end_7} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_7 .. :try_end_7} :catch_c
+
+    .line 37
+    move-object/from16 v27, v7
+
+    const/4 v7, 0x1
+
+    if-lt v12, v7, :cond_7
+
+    :try_start_8
+    invoke-virtual {v2, v9, v12}, Lcom/project7/localmanager/LocalConstructionCatalog;->slots(II)I
+
+    move-result v7
+    :try_end_8
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_8 .. :try_end_8} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_8 .. :try_end_8} :catch_0
+
+    if-lez v7, :cond_7
+
+    const/4 v7, 0x1
+
+    goto :goto_8
+
+    :cond_7
+    const/4 v7, 0x0
+
+    :goto_8
+    :try_start_9
+    const-string v3, "\u5730\u533a\u5f00\u53d1\u6570\u636e\u65e0\u6548"
+
+    invoke-static {v7, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+    :try_end_9
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_9 .. :try_end_9} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_9 .. :try_end_9} :catch_c
+
+    .line 38
+    if-eqz v15, :cond_8
+
+    :try_start_a
+    const-string v3, "B"
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v3, v7}, Lcom/project7/localmanager/LocalConstructionCatalog;->rule(Ljava/lang/String;Ljava/lang/Object;)[B
+
+    move-result-object v3
+    :try_end_a
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_a .. :try_end_a} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_a .. :try_end_a} :catch_0
+
+    move-object/from16 v28, v14
+
+    goto :goto_9
+
+    :cond_8
+    :try_start_b
+    const-string v3, "U"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-object/from16 v28, v14
+
+    const-string v14, ":"
+
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v14, v12, 0x1
+
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v3, v7}, Lcom/project7/localmanager/LocalConstructionCatalog;->rule(Ljava/lang/String;Ljava/lang/Object;)[B
 
     move-result-object v3
 
     .line 39
-    :goto_a
+    :goto_9
     invoke-static {v3}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
 
-    move-result v6
+    move-result v7
+    :try_end_b
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_b .. :try_end_b} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_b .. :try_end_b} :catch_c
+
+    const/4 v14, 0x1
+
+    xor-int/2addr v7, v14
+
+    if-eqz v15, :cond_9
+
+    :try_start_c
+    const-string v14, "\u65e0\u6548\u5efa\u7b51"
     :try_end_c
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_c .. :try_end_c} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_c .. :try_end_c} :catch_e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_c .. :try_end_c} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_c .. :try_end_c} :catch_0
 
-    const/4 v13, 0x1
+    goto :goto_a
 
-    xor-int/2addr v6, v13
-
-    if-eqz v14, :cond_9
-
+    :cond_9
     :try_start_d
-    const-string v13, "\u65e0\u6548\u5efa\u7b51"
+    const-string v14, "\u8be5\u5730\u533a\u5df2\u5f00\u53d1\u5230\u6700\u9ad8\u7b49\u7ea7"
+
+    :goto_a
+    invoke-static {v7, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
     :try_end_d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_d .. :try_end_d} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_d .. :try_end_d} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_d .. :try_end_d} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_d .. :try_end_d} :catch_c
+
+    .line 40
+    if-eqz v15, :cond_c
+
+    .line 41
+    :try_start_e
+    const-string v7, "ban"
+
+    invoke-static {v3, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v7
+
+    if-nez v7, :cond_a
+
+    const-string v7, "clientBan"
+
+    invoke-static {v3, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v7
+
+    if-nez v7, :cond_a
+
+    const/4 v7, 0x1
 
     goto :goto_b
 
-    :cond_9
-    :try_start_e
-    const-string v13, "\u8be5\u5730\u533a\u5df2\u5f00\u53d1\u5230\u6700\u9ad8\u7b49\u7ea7"
+    :cond_a
+    const/4 v7, 0x0
 
     :goto_b
-    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-    :try_end_e
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_e .. :try_end_e} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_e .. :try_end_e} :catch_e
+    const-string v14, "\u6b64\u5efa\u7b51\u4e0d\u80fd\u624b\u52a8\u5efa\u8bbe"
 
-    .line 40
-    if-eqz v14, :cond_c
+    invoke-static {v7, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 41
-    :try_start_f
-    const-string v6, "ban"
+    .line 42
+    const/4 v7, 0x1
 
-    invoke-static {v3, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    if-lt v8, v7, :cond_b
 
-    move-result v6
+    invoke-virtual {v2, v9, v12}, Lcom/project7/localmanager/LocalConstructionCatalog;->slots(II)I
 
-    if-nez v6, :cond_a
+    move-result v7
 
-    const-string v6, "clientBan"
+    if-gt v8, v7, :cond_b
 
-    invoke-static {v3, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v6
-
-    if-nez v6, :cond_a
-
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     goto :goto_c
 
-    :cond_a
-    const/4 v6, 0x0
+    :cond_b
+    const/4 v7, 0x0
 
     :goto_c
-    const-string v13, "\u6b64\u5efa\u7b51\u4e0d\u80fd\u624b\u52a8\u5efa\u8bbe"
+    const-string v14, "\u8be5\u5efa\u7b51\u7a7a\u4f4d\u5c1a\u672a\u89e3\u9501"
 
-    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 42
-    const/4 v6, 0x1
-
-    if-lt v7, v6, :cond_b
-
-    invoke-virtual {v2, v4, v11}, Lcom/project7/localmanager/LocalConstructionCatalog;->slots(II)I
-
-    move-result v6
-
-    if-gt v7, v6, :cond_b
-
-    const/4 v6, 0x1
-
-    goto :goto_d
-
-    :cond_b
-    const/4 v6, 0x0
-
-    :goto_d
-    const-string v13, "\u8be5\u5efa\u7b51\u7a7a\u4f4d\u5c1a\u672a\u89e3\u9501"
-
-    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+    invoke-static {v7, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
     .line 43
-    invoke-static {v7}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v1, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+    invoke-static {v1, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
+    invoke-static {v7}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
 
-    move-result v6
+    move-result v7
 
-    const-string v13, "\u8be5\u7a7a\u4f4d\u5df2\u6709\u5efa\u7b51"
+    const-string v14, "\u8be5\u7a7a\u4f4d\u5df2\u6709\u5efa\u7b51"
 
-    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+    invoke-static {v7, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
     .line 44
-    invoke-static {v2, v8, v15, v10, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->validateBuilding(Lcom/project7/localmanager/LocalConstructionCatalog;[B[BI[B)V
-    :try_end_f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_f .. :try_end_f} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_f .. :try_end_f} :catch_2
-
-    goto :goto_f
-
-    .line 45
-    :cond_c
-    :try_start_10
-    const-string v6, "luv"
-
-    invoke-static {v5, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v6
-
-    const/4 v13, 0x1
-
-    if-ne v6, v13, :cond_d
-
-    const/4 v6, 0x1
+    invoke-static {v2, v4, v10, v11, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->validateBuilding(Lcom/project7/localmanager/LocalConstructionCatalog;[B[BI[B)V
+    :try_end_e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_e .. :try_end_e} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_e .. :try_end_e} :catch_0
 
     goto :goto_e
 
+    .line 45
+    :cond_c
+    :try_start_f
+    const-string v7, "luv"
+
+    invoke-static {v5, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v7
+
+    const/4 v14, 0x1
+
+    if-ne v7, v14, :cond_d
+
+    const/4 v7, 0x1
+
+    goto :goto_d
+
     :cond_d
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    :goto_e
-    const-string v13, "\u6bcf\u6b21\u53ea\u80fd\u5f00\u53d1\u4e00\u7ea7"
+    :goto_d
+    const-string v14, "\u6bcf\u6b21\u53ea\u80fd\u5f00\u53d1\u4e00\u7ea7"
 
-    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-    :try_end_10
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_10 .. :try_end_10} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_10 .. :try_end_10} :catch_e
+    invoke-static {v7, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+    :try_end_f
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_f .. :try_end_f} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_f .. :try_end_f} :catch_c
 
     .line 46
-    :goto_f
-    if-eqz v14, :cond_e
+    :goto_e
+    if-eqz v15, :cond_e
 
+    :try_start_10
+    const-string v7, "ac"
+    :try_end_10
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_10 .. :try_end_10} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_10 .. :try_end_10} :catch_0
+
+    goto :goto_f
+
+    :cond_e
     :try_start_11
-    const-string v6, "ac"
+    const-string v7, "action_consume"
+
+    :goto_f
+    invoke-static {v3, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v7
     :try_end_11
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_11 .. :try_end_11} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_11 .. :try_end_11} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_11 .. :try_end_11} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_11 .. :try_end_11} :catch_c
+
+    .line 47
+    if-eqz v15, :cond_f
+
+    :try_start_12
+    const-string v14, "mc"
+    :try_end_12
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_12 .. :try_end_12} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_12 .. :try_end_12} :catch_0
 
     goto :goto_10
 
-    :cond_e
-    :try_start_12
-    const-string v6, "action_consume"
+    :cond_f
+    :try_start_13
+    const-string v14, "money_consume"
 
     :goto_10
-    invoke-static {v3, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    invoke-static {v3, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    move-result v6
-    :try_end_12
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_12 .. :try_end_12} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_12 .. :try_end_12} :catch_e
-
-    .line 47
-    if-eqz v14, :cond_f
-
-    :try_start_13
-    const-string v13, "mc"
+    move-result v14
     :try_end_13
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_13 .. :try_end_13} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_13 .. :try_end_13} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_13 .. :try_end_13} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_13 .. :try_end_13} :catch_c
+
+    .line 48
+    if-eqz v15, :cond_10
+
+    :try_start_14
+    const-string v29, "fc"
+    :try_end_14
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_14 .. :try_end_14} :catch_1
+    .catch Ljava/lang/ArithmeticException; {:try_start_14 .. :try_end_14} :catch_0
 
     goto :goto_11
 
-    :cond_f
-    :try_start_14
-    const-string v13, "money_consume"
+    :cond_10
+    :try_start_15
+    const-string v29, "fatigue"
+    :try_end_15
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_15 .. :try_end_15} :catch_d
+    .catch Ljava/lang/ArithmeticException; {:try_start_15 .. :try_end_15} :catch_c
 
     :goto_11
-    invoke-static {v3, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    move/from16 v30, v9
 
-    move-result v13
-    :try_end_14
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_14 .. :try_end_14} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_14 .. :try_end_14} :catch_e
+    move-object/from16 v9, v29
 
-    .line 48
-    if-eqz v14, :cond_10
-
-    :try_start_15
-    const-string v28, "fc"
-    :try_end_15
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_15 .. :try_end_15} :catch_3
-    .catch Ljava/lang/ArithmeticException; {:try_start_15 .. :try_end_15} :catch_2
-
-    goto :goto_12
-
-    :cond_10
     :try_start_16
-    const-string v28, "fatigue"
+    invoke-static {v3, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v9
     :try_end_16
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_16 .. :try_end_16} :catch_f
-    .catch Ljava/lang/ArithmeticException; {:try_start_16 .. :try_end_16} :catch_e
-
-    :goto_12
-    move/from16 v29, v4
-
-    move-object/from16 v4, v28
-
-    :try_start_17
-    invoke-static {v3, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v4
-    :try_end_17
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_17 .. :try_end_17} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_17 .. :try_end_17} :catch_c
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_16 .. :try_end_16} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_16 .. :try_end_16} :catch_a
 
     .line 49
-    if-eqz v14, :cond_11
+    if-eqz v15, :cond_11
 
-    :try_start_18
-    const-string v28, "cr"
-    :try_end_18
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_18 .. :try_end_18} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_18 .. :try_end_18} :catch_4
-
-    goto :goto_14
-
-    .line 141
-    :catch_4
-    move-exception v0
+    :try_start_17
+    const-string v29, "cr"
+    :try_end_17
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_17 .. :try_end_17} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_17 .. :try_end_17} :catch_2
 
     goto :goto_13
 
-    :catch_5
+    .line 136
+    :catch_2
     move-exception v0
 
-    :goto_13
+    goto :goto_12
+
+    :catch_3
+    move-exception v0
+
+    :goto_12
     move-object v1, v0
 
-    goto/16 :goto_2
+    move-object/from16 v5, v18
+
+    move/from16 v7, v30
+
+    goto/16 :goto_2f
 
     .line 49
     :cond_11
-    :try_start_19
-    const-string v28, "lead_require"
+    :try_start_18
+    const-string v29, "lead_require"
 
-    :goto_14
-    move/from16 v30, v11
+    :goto_13
+    move/from16 v31, v12
 
-    move-object/from16 v11, v28
+    move-object/from16 v12, v29
 
-    invoke-static {v3, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    invoke-static {v3, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    move-result v11
-    :try_end_19
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_19 .. :try_end_19} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_19 .. :try_end_19} :catch_c
+    move-result v12
+    :try_end_18
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_18 .. :try_end_18} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_18 .. :try_end_18} :catch_a
 
     .line 50
-    if-eqz v14, :cond_12
+    if-eqz v15, :cond_12
 
-    move/from16 v28, v11
+    move/from16 v29, v12
 
-    :try_start_1a
-    const-string v11, "research_require"
+    :try_start_19
+    const-string v12, "research_require"
 
-    invoke-static {v3, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    invoke-static {v3, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v3
-    :try_end_1a
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1a .. :try_end_1a} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_1a .. :try_end_1a} :catch_4
+    :try_end_19
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_19 .. :try_end_19} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_19 .. :try_end_19} :catch_2
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_12
-    move/from16 v28, v11
+    move/from16 v29, v12
 
     const/4 v3, 0x0
 
     .line 51
-    :goto_15
-    :try_start_1b
-    new-instance v11, Ljava/util/ArrayList;
+    :goto_14
+    :try_start_1a
+    new-instance v12, Ljava/util/ArrayList;
 
-    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
     .line 52
-    invoke-static {v9}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
-
-    move-result-object v31
-
-    invoke-interface/range {v31 .. v31}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v31
-
-    move/from16 v40, v28
-
-    move-object/from16 v28, v15
-
-    move/from16 v15, v40
-
-    :goto_16
-    invoke-interface/range {v31 .. v31}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v32
-    :try_end_1b
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1b .. :try_end_1b} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_1b .. :try_end_1b} :catch_c
-
-    move-object/from16 v33, v1
-
-    const-string v1, "id"
-
-    if-eqz v32, :cond_19
-
-    :try_start_1c
-    invoke-interface/range {v31 .. v31}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v32
 
-    move/from16 v34, v7
+    invoke-interface/range {v32 .. v32}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-object/from16 v7, v32
+    move-result-object v32
 
-    check-cast v7, Ljava/lang/String;
+    move/from16 v41, v29
+
+    move-object/from16 v29, v10
+
+    move/from16 v10, v41
+
+    :goto_15
+    invoke-interface/range {v32 .. v32}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v33
+    :try_end_1a
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1a .. :try_end_1a} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_1a .. :try_end_1a} :catch_a
+
+    const/16 v34, 0x1b
+
+    move-object/from16 v35, v1
+
+    const-string v1, "id"
+
+    if-eqz v33, :cond_19
+
+    :try_start_1b
+    invoke-interface/range {v32 .. v32}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v33
+
+    move/from16 v36, v11
+
+    move-object/from16 v11, v33
+
+    check-cast v11, Ljava/lang/String;
 
     .line 53
-    invoke-static {v9, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+    invoke-static {v6, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
-    move-result-object v7
+    move-result-object v11
 
-    move-object/from16 v32, v9
+    move/from16 v33, v8
 
-    invoke-static {v7, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+    invoke-static {v11, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
-    move-result-object v9
+    move-result-object v8
 
     .line 54
-    invoke-static {v9}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
+    invoke-static {v8}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
-    move-result-object v35
+    move-result-object v37
 
-    invoke-interface/range {v35 .. v35}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface/range {v37 .. v37}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v35
+    move-result-object v37
 
-    :goto_17
-    invoke-interface/range {v35 .. v35}, Ljava/util/Iterator;->hasNext()Z
+    :goto_16
+    invoke-interface/range {v37 .. v37}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v36
+    move-result v38
 
-    if-eqz v36, :cond_18
+    if-eqz v38, :cond_18
 
-    invoke-interface/range {v35 .. v35}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface/range {v37 .. v37}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v36
+    move-result-object v38
 
-    move-object/from16 v37, v12
+    move-object/from16 v39, v13
 
-    move-object/from16 v12, v36
+    move-object/from16 v13, v38
 
-    check-cast v12, Ljava/lang/String;
+    check-cast v13, Ljava/lang/String;
 
     .line 55
-    invoke-static {v9, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+    move-object/from16 v38, v6
 
-    move-result-object v2
+    invoke-static {v8, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v6
 
     .line 56
-    if-eqz v14, :cond_14
+    if-eqz v15, :cond_14
 
-    move-object/from16 v36, v9
+    move-object/from16 v40, v8
 
-    invoke-static {v2, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    invoke-static {v6, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    move-result v9
+    move-result v8
 
-    move/from16 v38, v4
+    const/16 v2, 0x14
 
-    const/16 v4, 0x14
-
-    if-ne v9, v4, :cond_15
+    if-ne v8, v2, :cond_15
 
     .line 57
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const-string v9, "u"
+    const-string v8, "u"
 
-    invoke-static {v2, v9}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {v6, v8}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v4, v9}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v8}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_13
+    if-nez v2, :cond_13
 
     add-int/lit8 v3, v3, -0x19
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v4, v3}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v3
 
     .line 58
     :cond_13
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    new-array v9, v4, [I
+    new-array v8, v2, [I
 
-    invoke-static {v7, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v4
-
-    const/16 v19, 0x0
-
-    aput v4, v9, v19
-
-    invoke-static {v12}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    const/4 v12, 0x1
-
-    aput v4, v9, v12
-
-    invoke-interface {v11, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_18
-
-    .line 56
-    :cond_14
-    move/from16 v38, v4
-
-    move-object/from16 v36, v9
-
-    .line 60
-    :cond_15
-    :goto_18
-    invoke-static {v2, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    invoke-static {v11, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v2
 
-    if-eqz v14, :cond_16
+    const/16 v20, 0x0
 
-    const/16 v4, 0x1c
+    aput v2, v8, v20
 
-    goto :goto_19
+    invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    const/4 v13, 0x1
+
+    aput v2, v8, v13
+
+    invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_17
+
+    .line 56
+    :cond_14
+    move-object/from16 v40, v8
+
+    .line 60
+    :cond_15
+    :goto_17
+    invoke-static {v6, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v2
+
+    if-eqz v15, :cond_16
+
+    const/16 v6, 0x1c
+
+    goto :goto_18
 
     :cond_16
-    const/16 v4, 0x1b
+    move/from16 v6, v34
 
-    :goto_19
-    if-ne v2, v4, :cond_17
+    :goto_18
+    if-ne v2, v6, :cond_17
 
-    add-int/lit8 v15, v15, -0x3
+    add-int/lit8 v10, v10, -0x3
 
     const/4 v2, 0x0
 
-    invoke-static {v2, v15}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, v10}, Ljava/lang/Math;->max(II)I
 
-    move-result v15
-    :try_end_1c
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1c .. :try_end_1c} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_1c .. :try_end_1c} :catch_4
+    move-result v10
+    :try_end_1b
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1b .. :try_end_1b} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_1b .. :try_end_1b} :catch_2
 
     .line 61
     :cond_17
     move-object/from16 v2, p1
 
-    move-object/from16 v9, v36
+    move-object/from16 v6, v38
 
-    move-object/from16 v12, v37
+    move-object/from16 v13, v39
 
-    move/from16 v4, v38
+    move-object/from16 v8, v40
 
-    goto :goto_17
+    goto :goto_16
 
     .line 62
     :cond_18
-    move/from16 v38, v4
+    move-object/from16 v38, v6
 
-    move-object/from16 v37, v12
+    move-object/from16 v39, v13
 
     move-object/from16 v2, p1
 
-    move-object/from16 v9, v32
+    move/from16 v8, v33
 
-    move-object/from16 v1, v33
+    move-object/from16 v1, v35
 
-    move/from16 v7, v34
+    move/from16 v11, v36
 
-    goto/16 :goto_16
+    goto/16 :goto_15
 
     .line 63
     :cond_19
-    move/from16 v38, v4
+    move-object/from16 v38, v6
 
-    move/from16 v34, v7
+    move/from16 v33, v8
 
-    move-object/from16 v32, v9
+    move/from16 v36, v11
 
-    move-object/from16 v37, v12
+    move-object/from16 v39, v13
 
-    const-string v2, "uda"
+    move-object/from16 v2, v23
 
-    const-string v4, "rv"
+    :try_start_1c
+    invoke-static {v4, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    if-eqz v14, :cond_1b
+    move-result v6
 
-    :try_start_1d
-    invoke-static {v8, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    if-lt v6, v3, :cond_1a
 
-    move-result v7
+    const/4 v3, 0x1
 
-    if-ge v7, v3, :cond_1b
+    goto :goto_19
 
-    const/16 v7, 0x22
-
-    if-lt v10, v7, :cond_1b
-
-    const/16 v7, 0x26
-
-    if-gt v10, v7, :cond_1b
-
-    move-object/from16 v7, v27
-
-    iget-object v9, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    .line 64
-    move-object/from16 v12, p2
-
-    invoke-static {v9, v12}, Lcom/project7/localmanager/LocalDalviraStoryEngine;->active([BLcom/project7/localmanager/LocalTutorialStore$Progress;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1a
-
-    sget-object v9, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 65
-    move-object/from16 v27, v11
-
-    invoke-static {v8, v2}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v11
-
-    invoke-virtual {v9, v11}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-    :try_end_1d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1d .. :try_end_1d} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_1d .. :try_end_1d} :catch_4
-
-    if-nez v9, :cond_1c
-
-    const/4 v9, 0x1
-
-    goto :goto_1b
-
-    .line 64
     :cond_1a
-    move-object/from16 v27, v11
-
-    goto :goto_1a
-
-    .line 63
-    :cond_1b
-    move-object/from16 v12, p2
-
-    move-object/from16 v7, v27
-
-    move-object/from16 v27, v11
-
-    .line 65
-    :cond_1c
-    :goto_1a
-    const/4 v9, 0x0
-
-    .line 66
-    :goto_1b
-    :try_start_1e
-    invoke-static {v8, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v11
-
-    if-ge v11, v3, :cond_1e
-
-    if-eqz v9, :cond_1d
-
-    goto :goto_1c
-
-    :cond_1d
     const/4 v3, 0x0
 
-    goto :goto_1d
-
-    :cond_1e
-    :goto_1c
-    const/4 v3, 0x1
-
-    :goto_1d
-    const-string v11, "\u57ce\u5e02\u79d1\u6280\u503c\u4e0d\u8db3"
-
-    invoke-static {v3, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 67
-    iget-object v3, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    invoke-static {v3, v12}, Lcom/project7/localmanager/LocalEconomyEngine;->actions([BLcom/project7/localmanager/LocalTutorialStore$Progress;)I
-
-    move-result v3
-    :try_end_1e
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1e .. :try_end_1e} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_1e .. :try_end_1e} :catch_c
-
-    .line 68
-    const-string v11, "bf"
-
-    if-ltz v6, :cond_1f
-
-    if-lt v3, v6, :cond_1f
-
-    if-ltz v13, :cond_1f
-
-    :try_start_1f
-    invoke-static {v8, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v3
-    :try_end_1f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1f .. :try_end_1f} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_1f .. :try_end_1f} :catch_4
-
-    if-lt v3, v13, :cond_1f
-
-    const/4 v3, 0x1
-
-    goto :goto_1e
-
-    :cond_1f
-    const/4 v3, 0x0
-
-    :goto_1e
-    move/from16 v31, v6
-
-    :try_start_20
-    const-string v6, "\u884c\u52a8\u529b\u6216\u5efa\u8bbe\u8d44\u91d1\u4e0d\u8db3"
+    :goto_19
+    const-string v6, "\u57ce\u5e02\u79d1\u6280\u503c\u4e0d\u8db3"
 
     invoke-static {v3, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 69
-    const-string v3, "hs"
+    .line 64
+    move-object/from16 v3, v28
 
-    invoke-static {v5, v3}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
+    iget-object v6, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    move-result-object v3
+    move-object/from16 v8, p2
 
-    .line 70
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v5
-    :try_end_20
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_20 .. :try_end_20} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_20 .. :try_end_20} :catch_c
-
-    if-nez v5, :cond_20
-
-    :try_start_21
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v5
-
-    const/4 v6, 0x3
-
-    if-gt v5, v6, :cond_20
-
-    new-instance v5, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v5, v3}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
-
-    invoke-virtual {v5}, Ljava/util/LinkedHashSet;->size()I
-
-    move-result v5
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-static {v6, v8}, Lcom/project7/localmanager/LocalEconomyEngine;->actions([BLcom/project7/localmanager/LocalTutorialStore$Progress;)I
 
     move-result v6
-    :try_end_21
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_21 .. :try_end_21} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_21 .. :try_end_21} :catch_4
+    :try_end_1c
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1c .. :try_end_1c} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_1c .. :try_end_1c} :catch_a
 
-    if-ne v5, v6, :cond_20
+    .line 65
+    const-string v11, "bf"
+
+    if-ltz v7, :cond_1b
+
+    if-lt v6, v7, :cond_1b
+
+    if-ltz v14, :cond_1b
+
+    :try_start_1d
+    invoke-static {v4, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v6
+    :try_end_1d
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1d .. :try_end_1d} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_1d .. :try_end_1d} :catch_2
+
+    if-lt v6, v14, :cond_1b
+
+    const/4 v6, 0x1
+
+    goto :goto_1a
+
+    :cond_1b
+    const/4 v6, 0x0
+
+    :goto_1a
+    :try_start_1e
+    const-string v13, "\u884c\u52a8\u529b\u6216\u5efa\u8bbe\u8d44\u91d1\u4e0d\u8db3"
+
+    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 66
+    const-string v6, "hs"
+
+    invoke-static {v5, v6}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
+
+    move-result-object v5
+
+    .line 67
+    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
+
+    move-result v6
+    :try_end_1e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1e .. :try_end_1e} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_1e .. :try_end_1e} :catch_a
+
+    if-nez v6, :cond_1c
+
+    :try_start_1f
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    const/4 v13, 0x3
+
+    if-gt v6, v13, :cond_1c
+
+    new-instance v6, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v6, v5}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-virtual {v6}, Ljava/util/LinkedHashSet;->size()I
+
+    move-result v6
+
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v13
+    :try_end_1f
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1f .. :try_end_1f} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_1f .. :try_end_1f} :catch_2
+
+    if-ne v6, v13, :cond_1c
+
+    const/4 v6, 0x1
+
+    goto :goto_1b
+
+    :cond_1c
+    const/4 v6, 0x0
+
+    :goto_1b
+    :try_start_20
+    const-string v13, "\u8bf7\u9009\u62e9\u4e00\u81f3\u4e09\u540d\u4e0d\u540c\u7684\u795e\u5668\u4f7f"
+
+    invoke-static {v6, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 68
+    nop
+
+    .line 69
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    const/4 v13, 0x0
+
+    :goto_1c
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v23
+    :try_end_20
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_20 .. :try_end_20} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_20 .. :try_end_20} :catch_a
+
+    move/from16 v28, v7
+
+    const-string v7, "cf"
+
+    if-eqz v23, :cond_1f
+
+    :try_start_21
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v23
+
+    check-cast v23, Ljava/lang/Integer;
+
+    move-object/from16 p4, v6
+
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    .line 70
+    move-object/from16 v23, v5
+
+    iget-object v5, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    invoke-static {v5, v6}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
+
+    move-result-object v5
+
+    .line 71
+    iget-object v8, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    invoke-static {v8, v6}, Lcom/project7/localmanager/LocalResourceEngine;->ownsHero([BI)Z
+
+    move-result v8
+
+    move/from16 v32, v14
+
+    const-string v14, "\u672a\u62e5\u6709\u9009\u4e2d\u7684\u795e\u5668\u4f7f"
+
+    invoke-static {v8, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 72
+    invoke-static {v5, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v7
+
+    if-lt v7, v9, :cond_1d
+
+    const/4 v7, 0x1
+
+    goto :goto_1d
+
+    :cond_1d
+    const/4 v7, 0x0
+
+    :goto_1d
+    const-string v8, "\u795e\u5668\u4f7f\u75b2\u52b3\u503c\u4e0d\u8db3"
+
+    invoke-static {v7, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
+
+    .line 73
+    if-eqz v15, :cond_1e
+
+    const-string v7, "construct"
+
+    goto :goto_1e
+
+    :cond_1e
+    const-string v7, "leadership"
+
+    :goto_1e
+    move-object/from16 v8, p1
+
+    invoke-virtual {v8, v5, v6, v7}, Lcom/project7/localmanager/LocalConstructionCatalog;->work([BILjava/lang/String;)I
+
+    move-result v5
+
+    invoke-static {v13, v5}, Ljava/lang/Math;->addExact(II)I
+
+    move-result v13
+
+    .line 74
+    move-object/from16 v8, p2
+
+    move-object/from16 v6, p4
+
+    move-object/from16 v5, v23
+
+    move/from16 v7, v28
+
+    move/from16 v14, v32
+
+    goto :goto_1c
+
+    .line 75
+    :cond_1f
+    move-object/from16 v8, p1
+
+    move-object/from16 v23, v5
+
+    move/from16 v32, v14
+
+    if-lt v13, v10, :cond_20
 
     const/4 v5, 0x1
 
@@ -1335,861 +1376,702 @@
     const/4 v5, 0x0
 
     :goto_1f
-    :try_start_22
-    const-string v6, "\u8bf7\u9009\u62e9\u4e00\u81f3\u4e09\u540d\u4e0d\u540c\u7684\u795e\u5668\u4f7f"
+    if-eqz v15, :cond_21
 
-    invoke-static {v5, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 71
-    nop
-
-    .line 72
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    :goto_20
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v35
-    :try_end_22
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_22 .. :try_end_22} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_22 .. :try_end_22} :catch_c
-
-    move-object/from16 p4, v3
-
-    const-string v3, "cf"
-
-    if-eqz v35, :cond_23
-
-    :try_start_23
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v35
-
-    check-cast v35, Ljava/lang/Integer;
-
-    move-object/from16 v36, v5
-
-    invoke-virtual/range {v35 .. v35}, Ljava/lang/Integer;->intValue()I
-
-    move-result v5
-
-    .line 73
-    move-object/from16 v35, v2
-
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    invoke-static {v2, v5}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
-
-    move-result-object v2
-
-    .line 74
-    move/from16 v39, v9
-
-    iget-object v9, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    invoke-static {v9, v5}, Lcom/project7/localmanager/LocalResourceEngine;->ownsHero([BI)Z
-
-    move-result v9
-
-    const-string v12, "\u672a\u62e5\u6709\u9009\u4e2d\u7684\u795e\u5668\u4f7f"
-
-    invoke-static {v9, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 75
-    invoke-static {v2, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v3
-
-    move/from16 v9, v38
-
-    if-lt v3, v9, :cond_21
-
-    const/4 v3, 0x1
-
-    goto :goto_21
-
-    :cond_21
-    const/4 v3, 0x0
-
-    :goto_21
-    const-string v12, "\u795e\u5668\u4f7f\u75b2\u52b3\u503c\u4e0d\u8db3"
-
-    invoke-static {v3, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 76
-    if-eqz v14, :cond_22
-
-    const-string v3, "construct"
-
-    goto :goto_22
-
-    :cond_22
-    const-string v3, "leadership"
-
-    :goto_22
-    move-object/from16 v12, p1
-
-    invoke-virtual {v12, v2, v5, v3}, Lcom/project7/localmanager/LocalConstructionCatalog;->work([BILjava/lang/String;)I
-
-    move-result v2
-
-    invoke-static {v6, v2}, Ljava/lang/Math;->addExact(II)I
-
-    move-result v6
-
-    .line 77
-    move-object/from16 v12, p2
-
-    move-object/from16 v3, p4
-
-    move/from16 v38, v9
-
-    move-object/from16 v2, v35
-
-    move-object/from16 v5, v36
-
-    move/from16 v9, v39
+    const-string v6, "\u795e\u5668\u4f7f\u5efa\u8bbe\u529b\u4e0d\u8db3"
+    :try_end_21
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_21 .. :try_end_21} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_21 .. :try_end_21} :catch_2
 
     goto :goto_20
 
-    .line 78
-    :cond_23
-    move-object/from16 v12, p1
+    :cond_21
+    :try_start_22
+    const-string v6, "\u795e\u5668\u4f7f\u5f00\u53d1\u529b\u4e0d\u8db3"
 
-    move-object/from16 v35, v2
+    :goto_20
+    invoke-static {v5, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    move/from16 v39, v9
-
-    move/from16 v9, v38
-
-    if-lt v6, v15, :cond_24
-
-    const/4 v2, 0x1
-
-    goto :goto_23
-
-    :cond_24
-    const/4 v2, 0x0
-
-    :goto_23
-    if-eqz v14, :cond_25
-
-    const-string v5, "\u795e\u5668\u4f7f\u5efa\u8bbe\u529b\u4e0d\u8db3"
-    :try_end_23
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_23 .. :try_end_23} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_23 .. :try_end_23} :catch_4
-
-    goto :goto_24
-
-    :cond_25
-    :try_start_24
-    const-string v5, "\u795e\u5668\u4f7f\u5f00\u53d1\u529b\u4e0d\u8db3"
-
-    :goto_24
-    invoke-static {v2, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
-
-    .line 79
+    .line 76
     nop
 
+    .line 77
+    iget-object v5, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    move-object/from16 v6, v38
+
+    invoke-static {v8, v6, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
+
+    move-result-object v5
+    :try_end_22
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_22 .. :try_end_22} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_22 .. :try_end_22} :catch_a
+
+    .line 78
+    const-string v10, "dbd"
+
+    if-eqz v15, :cond_22
+
+    .line 79
+    :try_start_23
+    invoke-static/range {v33 .. v33}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    move/from16 v37, v9
+
+    const/4 v14, 0x4
+
+    new-array v9, v14, [Ljava/lang/Object;
+
+    const/4 v14, 0x0
+
+    aput-object v1, v9, v14
+
     .line 80
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    move-object/from16 v5, v32
-
-    invoke-static {v12, v5, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
-
-    move-result-object v2
-    :try_end_24
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_24 .. :try_end_24} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_24 .. :try_end_24} :catch_c
-
-    .line 81
-    const-string v6, "dbd"
-
-    if-eqz v14, :cond_26
-
-    .line 82
-    :try_start_25
-    invoke-static/range {v34 .. v34}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v15
-
-    move-object/from16 v32, v3
-
-    move/from16 v38, v9
-
-    const/4 v9, 0x4
-
-    new-array v3, v9, [Ljava/lang/Object;
-
-    const/4 v9, 0x0
-
-    aput-object v1, v3, v9
-
-    .line 83
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v36 .. v36}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const/4 v9, 0x1
+    const/4 v14, 0x1
 
-    aput-object v1, v3, v9
+    aput-object v1, v9, v14
 
     const-string v1, "uuid"
 
-    const/4 v9, 0x2
+    const/4 v14, 0x2
 
-    aput-object v1, v3, v9
+    aput-object v1, v9, v14
 
     invoke-static {}, Lcom/project7/localmanager/LocalResourceEngine;->uuid()Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v9, 0x3
+    const/4 v14, 0x3
 
-    aput-object v1, v3, v9
+    aput-object v1, v9, v14
 
-    invoke-static {v3}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    invoke-static {v9}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+
+    move-result-object v1
+
+    .line 79
+    move-object/from16 v9, v35
+
+    invoke-static {v9, v13, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v1
+
+    .line 81
+    move-object/from16 v9, v29
+
+    move-object/from16 v13, v39
+
+    invoke-static {v9, v13, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v1
 
     .line 82
-    move-object/from16 v3, v33
+    nop
 
-    invoke-static {v3, v15, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+    .line 83
+    invoke-static {v1, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v9
+
+    invoke-static/range {v33 .. v33}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v9, v14}, Lcom/project7/localmanager/BsonLite;->withoutProfileKey([BLjava/lang/String;)[B
+
+    move-result-object v9
+
+    .line 82
+    invoke-static {v1, v10, v9}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v1
 
     .line 84
-    move-object/from16 v3, v28
+    const-string v9, "tbn"
 
-    move-object/from16 v9, v37
+    const-string v14, "tbn"
 
-    invoke-static {v3, v9, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+    invoke-static {v4, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    move-result-object v1
+    move-result v14
 
-    .line 85
-    nop
-
-    .line 86
-    invoke-static {v1, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v3
-
-    invoke-static/range {v34 .. v34}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v3, v10}, Lcom/project7/localmanager/BsonLite;->withoutProfileKey([BLjava/lang/String;)[B
-
-    move-result-object v3
-
-    .line 85
-    invoke-static {v1, v6, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v1
-
-    .line 87
-    const-string v3, "tbn"
-
-    const-string v10, "tbn"
-
-    invoke-static {v8, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v10
-
-    const/4 v15, 0x1
-
-    invoke-static {v10, v15}, Ljava/lang/Math;->addExact(II)I
-
-    move-result v10
-
-    invoke-static {v8, v3, v10}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
-
-    move-result-object v3
-
-    .line 88
-    const-string v8, "nbb"
-
-    const/4 v10, 0x0
-
-    invoke-static {v3, v8, v10}, Lcom/project7/localmanager/BsonLite;->withProfileBool([BLjava/lang/String;Z)[B
-
-    move-result-object v3
-    :try_end_25
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_25 .. :try_end_25} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_25 .. :try_end_25} :catch_4
-
-    move/from16 v15, v29
-
-    goto :goto_25
-
-    .line 90
-    :cond_26
-    move-object/from16 v32, v3
-
-    move/from16 v38, v9
-
-    move-object/from16 v3, v28
-
-    move-object/from16 v9, v37
+    move-object/from16 p4, v1
 
     const/4 v1, 0x1
 
-    add-int/lit8 v10, v30, 0x1
+    invoke-static {v14, v1}, Ljava/lang/Math;->addExact(II)I
 
-    move-object/from16 v1, v26
+    move-result v14
 
-    :try_start_26
-    invoke-static {v3, v1, v10}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+    invoke-static {v4, v9, v14}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v1
 
+    .line 85
+    const-string v4, "nbb"
+
+    const/4 v9, 0x0
+
+    invoke-static {v1, v4, v9}, Lcom/project7/localmanager/BsonLite;->withProfileBool([BLjava/lang/String;Z)[B
+
+    move-result-object v1
+    :try_end_23
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_23 .. :try_end_23} :catch_3
+    .catch Ljava/lang/ArithmeticException; {:try_start_23 .. :try_end_23} :catch_2
+
+    move-object v4, v1
+
+    move-object/from16 v1, p4
+
+    move-object/from16 p4, v7
+
+    move/from16 v7, v30
+
+    goto :goto_21
+
+    .line 87
+    :cond_22
+    move/from16 v37, v9
+
+    move-object/from16 v9, v29
+
+    move-object/from16 v13, v39
+
+    const/4 v1, 0x1
+
+    add-int/lit8 v14, v31, 0x1
+
+    move-object/from16 v1, v27
+
+    :try_start_24
+    invoke-static {v9, v1, v14}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v1
+
+    .line 88
+    const-string v9, "mbn"
+    :try_end_24
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_24 .. :try_end_24} :catch_b
+    .catch Ljava/lang/ArithmeticException; {:try_start_24 .. :try_end_24} :catch_a
+
+    move-object/from16 p4, v7
+
+    move/from16 v7, v30
+
+    :try_start_25
+    invoke-virtual {v8, v7, v14}, Lcom/project7/localmanager/LocalConstructionCatalog;->slots(II)I
+
+    move-result v14
+
+    invoke-static {v1, v9, v14}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v1
+
+    .line 89
+    const-string v9, "tvn"
+
+    const-string v14, "tvn"
+
+    invoke-static {v4, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v14
+
+    move-object/from16 v27, v1
+
+    const/4 v1, 0x1
+
+    invoke-static {v14, v1}, Ljava/lang/Math;->addExact(II)I
+
+    move-result v14
+
+    invoke-static {v4, v9, v14}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    move-object/from16 v1, v27
+
     .line 91
-    const-string v3, "mbn"
-    :try_end_26
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_26 .. :try_end_26} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_26 .. :try_end_26} :catch_c
+    :goto_21
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    move/from16 v15, v29
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    :try_start_27
-    invoke-virtual {v12, v15, v10}, Lcom/project7/localmanager/LocalConstructionCatalog;->slots(II)I
+    move-object/from16 v14, v26
 
-    move-result v10
+    invoke-virtual {v9, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v3, v10}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v6, v9, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v1
 
     .line 92
-    const-string v3, "tvn"
-
-    const-string v10, "tvn"
-
-    invoke-static {v8, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v10
-
-    move-object/from16 v26, v1
-
-    const/4 v1, 0x1
-
-    invoke-static {v10, v1}, Ljava/lang/Math;->addExact(II)I
-
-    move-result v10
-
-    invoke-static {v8, v3, v10}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
-
-    move-result-object v3
-
-    move-object/from16 v1, v26
-
-    .line 94
-    :goto_25
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v10, v25
-
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v5, v8, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v1
-
-    .line 95
-    invoke-interface/range {v27 .. v27}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :goto_26
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v25
-    :try_end_27
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_27 .. :try_end_27} :catch_b
-    .catch Ljava/lang/ArithmeticException; {:try_start_27 .. :try_end_27} :catch_a
-
-    if-eqz v25, :cond_27
-
-    :try_start_28
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v25
-
-    check-cast v25, [I
-
-    .line 96
-    move-object/from16 v26, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object/from16 v27, v8
-
-    const/16 v19, 0x0
-
-    aget v8, v25, v19
-
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v8, 0x1
-
-    aget v25, v25, v8
-
-    invoke-static/range {v25 .. v25}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 97
-    move-object/from16 v25, v10
-
-    invoke-static {v1, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v10
-    :try_end_28
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_28 .. :try_end_28} :catch_7
-    .catch Ljava/lang/ArithmeticException; {:try_start_28 .. :try_end_28} :catch_6
-
-    .line 98
-    move/from16 v29, v15
-
-    :try_start_29
-    invoke-static {v10, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v15
-
-    invoke-static {v15, v8}, Lcom/project7/localmanager/BsonLite;->withoutProfileKey([BLjava/lang/String;)[B
-
-    move-result-object v15
-
-    invoke-static {v10, v9, v15}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v10
-
-    .line 99
-    invoke-static {v10, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v15
-
-    move-object/from16 v37, v9
-
-    const/16 v9, 0x14
-
-    invoke-static {v15, v8, v9}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
-
-    move-result-object v8
-
-    invoke-static {v10, v6, v8}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v8
-
-    .line 100
-    invoke-static {v1, v3, v8}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v1
-    :try_end_29
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_29 .. :try_end_29} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_29 .. :try_end_29} :catch_4
-
-    .line 101
-    move-object/from16 v10, v25
-
-    move-object/from16 v3, v26
-
-    move-object/from16 v8, v27
-
-    move/from16 v15, v29
-
-    move-object/from16 v9, v37
-
-    goto :goto_26
-
-    .line 141
-    :catch_6
-    move-exception v0
-
-    goto :goto_27
-
-    :catch_7
-    move-exception v0
-
-    :goto_27
-    move/from16 v29, v15
-
-    goto/16 :goto_13
-
-    .line 102
-    :cond_27
-    move-object/from16 v26, v3
-
-    move/from16 v29, v15
-
-    :try_start_2a
-    iget-object v3, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    invoke-static {v12, v1, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
-
-    move-result-object v3
-
-    .line 103
-    const-string v6, "fv"
-
-    const-string v8, "dv"
-
-    filled-new-array {v6, v4, v8}, [Ljava/lang/String;
-
-    move-result-object v4
-    :try_end_2a
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2a .. :try_end_2a} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_2a .. :try_end_2a} :catch_c
-
-    .line 104
-    move-object/from16 v6, v26
-
-    const/4 v8, 0x0
-
-    :goto_28
-    const/4 v9, 0x3
-
-    if-ge v8, v9, :cond_28
-
-    :try_start_2b
-    aget-object v9, v4, v8
-
-    aget-object v10, v4, v8
-
-    .line 105
-    invoke-static {v6, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v10
-
-    aget v15, v3, v8
-
-    aget v25, v2, v8
-
-    sub-int v15, v15, v25
-
-    invoke-static {v10, v15}, Ljava/lang/Math;->addExact(II)I
-
-    move-result v10
-
-    .line 104
-    invoke-static {v6, v9, v10}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
-
-    move-result-object v6
-
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_28
-
-    .line 106
-    :cond_28
-    if-eqz v14, :cond_29
-
-    const/4 v8, 0x2
-
-    aget v9, v3, v8
-
-    aget v10, v2, v8
-
-    if-le v9, v10, :cond_29
-
-    const-string v8, "dvc"
-
-    const-string v9, "dvc"
-
-    .line 107
-    invoke-static {v6, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
-
-    move-result v9
-
-    const/4 v10, 0x2
-
-    aget v15, v3, v10
-
-    aget v2, v2, v10
-
-    sub-int/2addr v15, v2
-
-    invoke-static {v9, v15}, Ljava/lang/Math;->addExact(II)I
-
-    move-result v2
-
-    .line 106
-    invoke-static {v6, v8, v2}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
-
-    move-result-object v6
-    :try_end_2b
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2b .. :try_end_2b} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_2b .. :try_end_2b} :catch_4
-
-    .line 108
-    :cond_29
-    :try_start_2c
-    invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_29
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-    :try_end_2c
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2c .. :try_end_2c} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_2c .. :try_end_2c} :catch_c
-
-    if-eqz v8, :cond_2b
-
-    :try_start_2d
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/String;
-
-    .line 109
-    invoke-static {v1, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+    invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
 
-    .line 110
-    const/4 v10, 0x2
+    :goto_22
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
-    new-array v15, v10, [Ljava/lang/Object;
+    move-result v12
+    :try_end_25
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_25 .. :try_end_25} :catch_9
+    .catch Ljava/lang/ArithmeticException; {:try_start_25 .. :try_end_25} :catch_8
+
+    if-eqz v12, :cond_23
+
+    :try_start_26
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, [I
+
+    .line 93
+    move-object/from16 v26, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v27, v9
+
+    const/16 v20, 0x0
+
+    aget v9, v12, v20
+
+    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v9, 0x1
+
+    aget v12, v12, v9
+
+    invoke-static {v12}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 94
+    invoke-static {v1, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v12
+
+    .line 95
+    move-object/from16 v29, v14
+
+    invoke-static {v12, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v14
+
+    invoke-static {v14, v9}, Lcom/project7/localmanager/BsonLite;->withoutProfileKey([BLjava/lang/String;)[B
+
+    move-result-object v14
+
+    invoke-static {v12, v13, v14}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v12
+
+    .line 96
+    invoke-static {v12, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v14
+
+    move-object/from16 v39, v13
+
+    const/16 v13, 0x14
+
+    invoke-static {v14, v9, v13}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v9
+
+    invoke-static {v12, v10, v9}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v9
+
+    .line 97
+    invoke-static {v1, v4, v9}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v1
+    :try_end_26
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_26 .. :try_end_26} :catch_5
+    .catch Ljava/lang/ArithmeticException; {:try_start_26 .. :try_end_26} :catch_4
+
+    .line 98
+    move-object/from16 v4, v26
+
+    move-object/from16 v9, v27
+
+    move-object/from16 v14, v29
+
+    move-object/from16 v13, v39
+
+    goto :goto_22
+
+    .line 136
+    :catch_4
+    move-exception v0
+
+    goto :goto_23
+
+    :catch_5
+    move-exception v0
+
+    :goto_23
+    move-object v1, v0
+
+    goto/16 :goto_2
+
+    .line 99
+    :cond_23
+    move-object/from16 v26, v4
+
+    :try_start_27
+    iget-object v4, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    invoke-static {v8, v1, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
+
+    move-result-object v4
+
+    .line 100
+    const-string v9, "fv"
+
+    const-string v10, "dv"
+
+    filled-new-array {v9, v2, v10}, [Ljava/lang/String;
+
+    move-result-object v2
+    :try_end_27
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_27 .. :try_end_27} :catch_9
+    .catch Ljava/lang/ArithmeticException; {:try_start_27 .. :try_end_27} :catch_8
+
+    .line 101
+    move-object/from16 v9, v26
 
     const/4 v10, 0x0
 
-    aput-object v8, v15, v10
+    :goto_24
+    const/4 v12, 0x3
 
-    invoke-static {v5, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+    if-ge v10, v12, :cond_24
 
-    move-result-object v10
+    :try_start_28
+    aget-object v12, v2, v10
 
-    const/16 v20, 0x1
+    aget-object v13, v2, v10
 
-    aput-object v10, v15, v20
+    .line 102
+    invoke-static {v9, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    invoke-static {v15}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    move-result v13
 
-    move-result-object v10
+    aget v14, v4, v10
 
-    iget-object v15, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    aget v26, v5, v10
 
-    invoke-static {v12, v10, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
+    sub-int v14, v14, v26
 
-    move-result-object v10
+    invoke-static {v13, v14}, Ljava/lang/Math;->addExact(II)I
 
-    .line 111
-    move-object/from16 p3, v2
+    move-result v13
 
-    const/4 v15, 0x2
+    .line 101
+    invoke-static {v9, v12, v13}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
-    new-array v2, v15, [Ljava/lang/Object;
+    move-result-object v9
 
-    const/4 v15, 0x0
+    add-int/lit8 v10, v10, 0x1
 
-    aput-object v8, v2, v15
+    goto :goto_24
 
-    const/4 v15, 0x1
+    .line 103
+    :cond_24
+    if-eqz v15, :cond_25
 
-    aput-object v9, v2, v15
+    const/4 v10, 0x2
 
-    invoke-static {v2}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    aget v12, v4, v10
 
-    move-result-object v2
+    aget v13, v5, v10
 
-    iget-object v15, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    if-le v12, v13, :cond_25
 
-    invoke-static {v12, v2, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
+    const-string v10, "dvc"
 
-    move-result-object v2
+    const-string v12, "dvc"
 
-    .line 112
-    const/4 v15, 0x0
-
-    :goto_2a
-    move-object/from16 v25, v5
-
-    const/4 v5, 0x3
-
-    if-ge v15, v5, :cond_2a
-
-    aget-object v5, v4, v15
-
-    aget-object v12, v4, v15
-
-    .line 113
+    .line 104
     invoke-static {v9, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v12
 
-    aget v26, v2, v15
+    const/4 v13, 0x2
 
-    aget v27, v10, v15
+    aget v14, v4, v13
 
-    move-object/from16 v28, v2
+    aget v5, v5, v13
+
+    sub-int/2addr v14, v5
+
+    invoke-static {v12, v14}, Ljava/lang/Math;->addExact(II)I
+
+    move-result v5
+
+    .line 103
+    invoke-static {v9, v10, v5}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v9
+    :try_end_28
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_28 .. :try_end_28} :catch_5
+    .catch Ljava/lang/ArithmeticException; {:try_start_28 .. :try_end_28} :catch_4
+
+    .line 105
+    :cond_25
+    :try_start_29
+    invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :goto_25
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v10
+    :try_end_29
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_29 .. :try_end_29} :catch_9
+    .catch Ljava/lang/ArithmeticException; {:try_start_29 .. :try_end_29} :catch_8
+
+    if-eqz v10, :cond_27
+
+    :try_start_2a
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/lang/String;
+
+    .line 106
+    invoke-static {v1, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v12
+
+    .line 107
+    const/4 v13, 0x2
+
+    new-array v14, v13, [Ljava/lang/Object;
+
+    const/4 v13, 0x0
+
+    aput-object v10, v14, v13
+
+    invoke-static {v6, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
+
+    move-result-object v13
+
+    const/16 v21, 0x1
+
+    aput-object v13, v14, v21
+
+    invoke-static {v14}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+
+    move-result-object v13
+
+    iget-object v14, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    invoke-static {v8, v13, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
+
+    move-result-object v13
+
+    .line 108
+    move-object/from16 p3, v5
+
+    const/4 v14, 0x2
+
+    new-array v5, v14, [Ljava/lang/Object;
+
+    const/4 v14, 0x0
+
+    aput-object v10, v5, v14
+
+    const/4 v14, 0x1
+
+    aput-object v12, v5, v14
+
+    invoke-static {v5}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+
+    move-result-object v5
+
+    iget-object v14, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    invoke-static {v8, v5, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
+
+    move-result-object v5
+
+    .line 109
+    const/4 v14, 0x0
+
+    :goto_26
+    move-object/from16 v38, v6
+
+    const/4 v6, 0x3
+
+    if-ge v14, v6, :cond_26
+
+    aget-object v6, v2, v14
+
+    aget-object v8, v2, v14
+
+    .line 110
+    invoke-static {v12, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+
+    move-result v8
+
+    aget v26, v5, v14
+
+    aget v27, v13, v14
+
+    move-object/from16 v29, v2
 
     sub-int v2, v26, v27
 
-    invoke-static {v12, v2}, Ljava/lang/Math;->addExact(II)I
+    invoke-static {v8, v2}, Ljava/lang/Math;->addExact(II)I
 
     move-result v2
+
+    .line 109
+    invoke-static {v12, v6, v2}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v12
+
+    add-int/lit8 v14, v14, 0x1
+
+    move-object/from16 v8, p1
+
+    move-object/from16 v2, v29
+
+    move-object/from16 v6, v38
+
+    goto :goto_26
+
+    .line 111
+    :cond_26
+    move-object/from16 v29, v2
+
+    invoke-static {v1, v10, v12}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v1
+    :try_end_2a
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2a .. :try_end_2a} :catch_5
+    .catch Ljava/lang/ArithmeticException; {:try_start_2a .. :try_end_2a} :catch_4
 
     .line 112
-    invoke-static {v9, v5, v2}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+    move-object/from16 v8, p1
 
-    move-result-object v9
+    move-object/from16 v5, p3
 
-    add-int/lit8 v15, v15, 0x1
+    move-object/from16 v2, v29
 
-    move-object/from16 v12, p1
+    move-object/from16 v6, v38
 
-    move-object/from16 v5, v25
+    goto :goto_25
 
-    move-object/from16 v2, v28
+    .line 113
+    :cond_27
+    :try_start_2b
+    iget-object v2, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    goto :goto_2a
+    const-string v5, "q7DailyBuildIncome"
 
-    .line 114
-    :cond_2a
-    invoke-static {v1, v8, v9}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+    const/4 v6, 0x3
 
-    move-result-object v1
-    :try_end_2d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2d .. :try_end_2d} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_2d .. :try_end_2d} :catch_4
+    aget v4, v4, v6
 
-    .line 115
-    move-object/from16 v12, p1
-
-    move-object/from16 v2, p3
-
-    move-object/from16 v5, v25
-
-    goto :goto_29
-
-    .line 116
-    :cond_2b
-    :try_start_2e
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    const-string v4, "q7DailyBuildIncome"
-
-    const/4 v5, 0x3
-
-    aget v3, v3, v5
-
-    invoke-static {v2, v4, v3}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+    invoke-static {v2, v5, v4}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v2
 
-    iput-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    iput-object v2, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 117
-    invoke-static {v6, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    .line 114
+    invoke-static {v9, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v2
 
-    sub-int/2addr v2, v13
+    sub-int v2, v2, v32
 
-    invoke-static {v6, v11, v2}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+    invoke-static {v9, v11, v2}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v2
+
+    .line 115
+    const-string v4, "av"
+
+    iget-object v5, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    move-object/from16 v6, p2
+
+    invoke-static {v5, v6}, Lcom/project7/localmanager/LocalEconomyEngine;->regularActions([BLcom/project7/localmanager/LocalTutorialStore$Progress;)I
+
+    move-result v5
+
+    invoke-static {v2, v4, v5}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+
+    move-result-object v2
+
+    .line 116
+    move-object/from16 v4, v25
+
+    invoke-static {v2, v4, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v1
+
+    .line 117
+    iget-object v2, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+
+    move-object/from16 v4, v24
+
+    invoke-static {v2, v4, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+
+    move-result-object v1
+
+    iput-object v1, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     .line 118
-    const-string v3, "av"
-
-    iget-object v4, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    move-object/from16 v5, p2
-
-    invoke-static {v4, v5}, Lcom/project7/localmanager/LocalEconomyEngine;->regularActions([BLcom/project7/localmanager/LocalTutorialStore$Progress;)I
-
-    move-result v4
-
-    invoke-static {v2, v3, v4}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
-
-    move-result-object v2
-
-    .line 119
-    move-object/from16 v3, v24
-
-    invoke-static {v2, v3, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v1
-    :try_end_2e
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2e .. :try_end_2e} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_2e .. :try_end_2e} :catch_c
-
-    .line 120
-    if-eqz v39, :cond_2c
-
-    move-object/from16 v2, v35
-
-    const/4 v3, 0x1
-
-    :try_start_2f
-    invoke-static {v1, v2, v3}, Lcom/project7/localmanager/BsonLite;->withProfileBool([BLjava/lang/String;Z)[B
-
-    move-result-object v1
-    :try_end_2f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2f .. :try_end_2f} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_2f .. :try_end_2f} :catch_4
-
-    .line 121
-    :cond_2c
-    :try_start_30
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    move-object/from16 v3, v23
-
-    invoke-static {v2, v3, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
+    invoke-interface/range {v23 .. v23}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    iput-object v1, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    .line 122
-    invoke-interface/range {p4 .. p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_2b
+    :goto_27
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
-    :try_end_30
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_30 .. :try_end_30} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_30 .. :try_end_30} :catch_c
+    :try_end_2b
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2b .. :try_end_2b} :catch_9
+    .catch Ljava/lang/ArithmeticException; {:try_start_2b .. :try_end_2b} :catch_8
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_28
 
-    :try_start_31
+    :try_start_2c
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
@@ -2200,451 +2082,400 @@
 
     move-result v2
 
-    .line 123
-    iget-object v4, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    .line 119
+    iget-object v5, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    invoke-static {v4, v2}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
+    invoke-static {v5, v2}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
 
-    move-result-object v4
+    move-result-object v5
 
-    .line 124
-    move-object/from16 v6, v32
+    .line 120
+    move-object/from16 v8, p4
 
-    invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
+    invoke-static {v5, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
-    move-result v8
+    move-result v9
 
-    sub-int v8, v8, v38
+    sub-int v9, v9, v37
 
-    .line 125
-    iget-object v9, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->fatigue:Ljava/util/Map;
+    .line 121
+    iget-object v10, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->fatigue:Ljava/util/Map;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v10
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     move-result-object v11
 
-    invoke-interface {v9, v10, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 126
-    iget-object v9, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    move-result-object v12
 
-    invoke-static {v4, v6, v8}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
+    invoke-interface {v10, v11, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    .line 122
+    iget-object v10, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    invoke-static {v9, v2, v4}, Lcom/project7/localmanager/BsonLite;->withHeroDocument([BI[B)[B
+    invoke-static {v5, v8, v9}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
-    move-result-object v4
+    move-result-object v5
 
-    iput-object v4, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    invoke-static {v10, v2, v5}, Lcom/project7/localmanager/BsonLite;->withHeroDocument([BI[B)[B
 
-    .line 127
-    iget-object v4, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
+    move-result-object v5
 
-    new-instance v9, Lcom/project7/localmanager/LocalResourceEngine$Reply;
+    iput-object v5, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    const-string v10, "updateCurFatigueValue"
+    .line 123
+    iget-object v5, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
-    invoke-static {v2, v8}, Lcom/project7/localmanager/BsonLite;->heroValueDocument(II)[B
+    new-instance v10, Lcom/project7/localmanager/LocalResourceEngine$Reply;
+
+    const-string v11, "updateCurFatigueValue"
+
+    invoke-static {v2, v9}, Lcom/project7/localmanager/BsonLite;->heroValueDocument(II)[B
 
     move-result-object v2
 
-    invoke-direct {v9, v10, v2}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+    invoke-direct {v10, v11, v2}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    invoke-interface {v4, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_31
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_31 .. :try_end_31} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_31 .. :try_end_31} :catch_4
+    invoke-interface {v5, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_2c
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2c .. :try_end_2c} :catch_5
+    .catch Ljava/lang/ArithmeticException; {:try_start_2c .. :try_end_2c} :catch_4
 
-    .line 128
-    move-object/from16 v32, v6
+    .line 124
+    move-object/from16 p4, v8
 
-    goto :goto_2b
+    goto :goto_27
 
-    .line 129
-    :cond_2d
-    move/from16 v1, v31
+    .line 125
+    :cond_28
+    move/from16 v1, v28
 
-    :try_start_32
-    invoke-static {v7, v5, v1}, Lcom/project7/localmanager/LocalEconomyEngine;->spendActions(Lcom/project7/localmanager/LocalEconomyEngine$Result;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)V
+    :try_start_2d
+    invoke-static {v3, v6, v1}, Lcom/project7/localmanager/LocalEconomyEngine;->spendActions(Lcom/project7/localmanager/LocalEconomyEngine$Result;Lcom/project7/localmanager/LocalTutorialStore$Progress;I)V
 
-    .line 130
-    iget-object v1, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
+    .line 126
+    iget-object v1, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    if-eqz v14, :cond_2e
+    if-eqz v15, :cond_29
 
-    const/16 v2, 0x1b
+    goto :goto_28
 
-    goto :goto_2c
+    :cond_29
+    const/16 v34, 0x1c
 
-    :cond_2e
-    const/16 v2, 0x1c
-
-    :goto_2c
-    const/4 v4, 0x1
-
-    invoke-static {v1, v2, v4}, Lcom/project7/localmanager/LocalNewAchievementEngine;->add([BII)[B
-
-    move-result-object v1
-
-    iput-object v1, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    .line 131
-    iget-object v1, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    invoke-static {v1, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
-
-    move-result-object v1
-
-    .line 132
-    const/4 v2, 0x0
-
-    invoke-static {v7, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->commit(Lcom/project7/localmanager/LocalEconomyEngine$Result;I)V
-
-    .line 133
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
-
-    new-instance v3, Lcom/project7/localmanager/LocalResourceEngine$Reply;
-
-    const-string v4, "get_all_area_info_reply"
-
-    iget-object v6, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
-
-    .line 134
-    const/4 v8, 0x1
-
-    invoke-static {v8, v5, v6}, Lcom/project7/localmanager/BsonLite;->allAreaInfoReplyDocument(ZLcom/project7/localmanager/LocalTutorialStore$Progress;[B)[B
-
-    move-result-object v5
-
-    const-string v6, "cd"
-
-    invoke-static {v5, v6, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
-
-    move-result-object v5
-
-    invoke-direct {v3, v4, v5}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
-
-    .line 133
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 135
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
-
-    new-instance v3, Lcom/project7/localmanager/LocalResourceEngine$Reply;
-
-    const-string v4, "get_city_data_reply"
-
-    const/4 v5, 0x2
-
-    new-array v6, v5, [Ljava/lang/Object;
-
-    const-string v5, "cd"
-
-    const/4 v8, 0x0
-
-    aput-object v5, v6, v8
+    :goto_28
+    move/from16 v2, v34
 
     const/4 v5, 0x1
 
-    aput-object v1, v6, v5
-
-    invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    invoke-static {v1, v2, v5}, Lcom/project7/localmanager/LocalNewAchievementEngine;->add([BII)[B
 
     move-result-object v1
 
-    invoke-direct {v3, v4, v1}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+    iput-object v1, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_32
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_32 .. :try_end_32} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_32 .. :try_end_32} :catch_c
+    .line 127
+    iget-object v1, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 136
-    if-eqz v39, :cond_2f
+    invoke-static {v1, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
-    :try_start_33
-    iget-object v1, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
+    move-result-object v1
 
-    new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
+    .line 128
+    const/4 v2, 0x0
 
-    const-string v3, "syncDaerweilaAbility"
+    invoke-static {v3, v2}, Lcom/project7/localmanager/LocalEconomyEngine;->commit(Lcom/project7/localmanager/LocalEconomyEngine$Result;I)V
 
-    const/4 v4, 0x2
+    .line 129
+    iget-object v2, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
-    new-array v5, v4, [Ljava/lang/Object;
+    new-instance v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    const-string v4, "u"
+    const-string v5, "get_all_area_info_reply"
 
-    const/4 v6, 0x0
+    iget-object v8, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    aput-object v4, v5, v6
+    .line 130
+    const/4 v9, 0x1
 
-    const/4 v4, 0x1
-
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v9, v6, v8}, Lcom/project7/localmanager/BsonLite;->allAreaInfoReplyDocument(ZLcom/project7/localmanager/LocalTutorialStore$Progress;[B)[B
 
     move-result-object v6
 
-    aput-object v6, v5, v4
+    const-string v8, "cd"
 
-    invoke-static {v5}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    invoke-static {v6, v8, v1}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-direct {v2, v3, v4}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+    invoke-direct {v4, v5, v6}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .line 129
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 138
-    :cond_2f
-    if-eqz v14, :cond_30
+    .line 131
+    iget-object v2, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
+    new-instance v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
+
+    const-string v5, "get_city_data_reply"
+
+    const/4 v6, 0x2
+
+    new-array v8, v6, [Ljava/lang/Object;
+
+    const-string v6, "cd"
+
+    const/4 v9, 0x0
+
+    aput-object v6, v8, v9
+
+    const/4 v6, 0x1
+
+    aput-object v1, v8, v6
+
+    invoke-static {v8}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+
+    move-result-object v1
+
+    invoke-direct {v4, v5, v1}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_2d
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2d .. :try_end_2d} :catch_9
+    .catch Ljava/lang/ArithmeticException; {:try_start_2d .. :try_end_2d} :catch_8
+
+    .line 133
+    if-eqz v15, :cond_2a
+
+    :try_start_2e
     sget-object v1, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
-    :try_end_33
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_33 .. :try_end_33} :catch_5
-    .catch Ljava/lang/ArithmeticException; {:try_start_33 .. :try_end_33} :catch_4
+    :try_end_2e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2e .. :try_end_2e} :catch_5
+    .catch Ljava/lang/ArithmeticException; {:try_start_2e .. :try_end_2e} :catch_4
 
-    goto :goto_2d
+    goto :goto_29
 
-    :cond_30
+    :cond_2a
     const/4 v1, 0x2
 
-    :try_start_34
+    :try_start_2f
     new-array v2, v1, [Ljava/lang/Object;
 
-    const-string v3, "reward"
+    const-string v4, "reward"
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    aput-object v3, v2, v4
+    aput-object v4, v2, v5
 
-    new-array v3, v1, [Ljava/lang/Object;
+    new-array v4, v1, [Ljava/lang/Object;
 
     const-string v1, "money"
 
-    aput-object v1, v3, v4
+    aput-object v1, v4, v5
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/4 v4, 0x1
-
-    aput-object v1, v3, v4
-
-    invoke-static {v3}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v2, v4
+    const/4 v5, 0x1
+
+    aput-object v1, v4, v5
+
+    invoke-static {v4}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+
+    move-result-object v1
+
+    aput-object v1, v2, v5
 
     invoke-static {v2}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v1
 
-    .line 139
-    :goto_2d
-    iget-object v2, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
+    .line 134
+    :goto_29
+    iget-object v2, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
-    new-instance v3, Lcom/project7/localmanager/LocalResourceEngine$Reply;
+    new-instance v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
-    const/4 v4, 0x6
+    const/4 v5, 0x6
 
-    new-array v5, v4, [Ljava/lang/Object;
+    new-array v6, v5, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    aput-object v22, v5, v4
+    aput-object v22, v6, v5
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    aput-object v6, v5, v4
+    aput-object v8, v6, v5
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
-    aput-object v21, v5, v4
+    aput-object v19, v6, v5
 
-    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    const/4 v6, 0x3
+    const/4 v8, 0x3
 
-    aput-object v4, v5, v6
+    aput-object v5, v6, v8
 
-    const/4 v4, 0x4
+    const/4 v5, 0x4
 
-    aput-object v18, v5, v4
+    aput-object v16, v6, v5
 
-    aput-object v1, v5, v16
+    aput-object v1, v6, v17
 
-    invoke-static {v5}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v1
-    :try_end_34
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_34 .. :try_end_34} :catch_d
-    .catch Ljava/lang/ArithmeticException; {:try_start_34 .. :try_end_34} :catch_c
+    :try_end_2f
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2f .. :try_end_2f} :catch_9
+    .catch Ljava/lang/ArithmeticException; {:try_start_2f .. :try_end_2f} :catch_8
 
-    move-object/from16 v4, v17
+    move-object/from16 v5, v18
 
-    :try_start_35
-    invoke-direct {v3, v4, v1}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+    :try_start_30
+    invoke-direct {v4, v5, v1}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 140
+    .line 135
     const/4 v1, 0x1
 
-    iput-boolean v1, v7, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
-    :try_end_35
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_35 .. :try_end_35} :catch_9
-    .catch Ljava/lang/ArithmeticException; {:try_start_35 .. :try_end_35} :catch_8
-
-    .line 146
-    move-object v13, v7
-
-    goto/16 :goto_35
+    iput-boolean v1, v3, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
+    :try_end_30
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_30 .. :try_end_30} :catch_7
+    .catch Ljava/lang/ArithmeticException; {:try_start_30 .. :try_end_30} :catch_6
 
     .line 141
-    :catch_8
-    move-exception v0
+    move-object v14, v3
 
-    goto :goto_33
+    goto/16 :goto_30
 
-    :catch_9
-    move-exception v0
-
-    goto :goto_33
-
-    :catch_a
+    .line 136
+    :catch_6
     move-exception v0
 
     goto :goto_2e
 
+    :catch_7
+    move-exception v0
+
+    goto :goto_2e
+
+    :catch_8
+    move-exception v0
+
+    goto :goto_2d
+
+    :catch_9
+    move-exception v0
+
+    goto :goto_2d
+
+    :catch_a
+    move-exception v0
+
+    goto :goto_2a
+
     :catch_b
     move-exception v0
 
-    :goto_2e
-    move/from16 v29, v15
+    :goto_2a
+    move-object/from16 v5, v18
 
-    goto :goto_32
+    move/from16 v7, v30
+
+    goto :goto_2e
 
     :catch_c
     move-exception v0
 
-    goto :goto_32
+    goto :goto_2b
 
     :catch_d
     move-exception v0
 
-    goto :goto_32
+    :goto_2b
+    move v7, v9
+
+    goto :goto_2d
 
     :catch_e
     move-exception v0
 
-    goto :goto_2f
+    goto :goto_2c
 
     :catch_f
     move-exception v0
 
-    :goto_2f
-    move/from16 v29, v4
+    :goto_2c
+    move v7, v9
 
-    goto :goto_32
+    move-object/from16 v22, v10
 
-    :catch_10
-    move-exception v0
+    :goto_2d
+    move-object/from16 v5, v18
 
-    goto :goto_30
-
-    :catch_11
-    move-exception v0
-
-    :goto_30
-    move/from16 v29, v4
-
-    move-object/from16 v22, v9
-
-    goto :goto_32
-
-    :catch_12
-    move-exception v0
-
-    goto :goto_31
-
-    :catch_13
-    move-exception v0
-
-    :goto_31
-    move/from16 v29, v4
-
-    move-object/from16 v22, v9
-
-    move-object/from16 v21, v15
-
-    :goto_32
-    move-object/from16 v4, v17
-
-    :goto_33
+    :goto_2e
     move-object v1, v0
 
-    .line 142
-    :goto_34
-    new-instance v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;
+    .line 137
+    :goto_2f
+    new-instance v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;
 
     move-object/from16 v2, p0
 
-    invoke-direct {v13, v2}, Lcom/project7/localmanager/LocalEconomyEngine$Result;-><init>([B)V
+    invoke-direct {v14, v2}, Lcom/project7/localmanager/LocalEconomyEngine$Result;-><init>([B)V
 
-    .line 143
+    .line 138
     invoke-virtual {v1}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->reason:Ljava/lang/String;
+    iput-object v1, v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;->reason:Ljava/lang/String;
 
-    .line 144
-    iget-object v1, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
+    .line 139
+    iget-object v1, v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
     const/4 v3, 0x2
 
-    new-array v5, v3, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
     const-string v3, "m"
 
     const/4 v6, 0x0
 
-    aput-object v3, v5, v6
+    aput-object v3, v4, v6
 
-    iget-object v3, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->reason:Ljava/lang/String;
+    iget-object v3, v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;->reason:Ljava/lang/String;
 
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
-    aput-object v3, v5, v7
+    aput-object v3, v4, v8
 
-    invoke-static {v5}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
+    invoke-static {v4}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v3
 
-    const-string v5, "showMessageStr"
+    const-string v4, "showMessageStr"
 
-    invoke-direct {v2, v5, v3}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+    invoke-direct {v2, v4, v3}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 145
-    iget-object v1, v13, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
+    .line 140
+    iget-object v1, v14, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
@@ -2656,50 +2487,50 @@
 
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v3, v7
+    aput-object v4, v3, v8
 
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    aput-object v21, v3, v5
+    aput-object v19, v3, v4
 
-    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
     const/4 v6, 0x3
 
-    aput-object v5, v3, v6
+    aput-object v4, v3, v6
 
-    const/4 v5, 0x4
+    const/4 v4, 0x4
 
-    aput-object v18, v3, v5
+    aput-object v16, v3, v4
 
-    sget-object v5, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
+    sget-object v4, Lcom/project7/localmanager/BsonLite;->EMPTY_DOCUMENT:[B
 
-    aput-object v5, v3, v16
+    aput-object v4, v3, v17
 
     invoke-static {v3}, Lcom/project7/localmanager/BsonLite;->document([Ljava/lang/Object;)[B
 
     move-result-object v3
 
-    invoke-direct {v2, v4, v3}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
+    invoke-direct {v2, v5, v3}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 147
-    :goto_35
-    return-object v13
+    .line 142
+    :goto_30
+    return-object v14
 .end method
 
 .method private static count([BI)I
     .locals 4
 
-    .line 151
+    .line 146
     nop
 
-    .line 152
+    .line 147
     invoke-static {p0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v0
@@ -2740,7 +2571,7 @@
 
     goto :goto_0
 
-    .line 153
+    .line 148
     :cond_1
     return v1
 .end method
@@ -2748,17 +2579,17 @@
 .method private static countCity([BI)I
     .locals 4
 
-    .line 320
+    .line 315
     nop
 
-    .line 321
+    .line 316
     const-string v0, "areas"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object p0
 
-    .line 322
+    .line 317
     invoke-static {p0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v0
@@ -2800,7 +2631,7 @@
 
     goto :goto_0
 
-    .line 323
+    .line 318
     :cond_0
     return v1
 .end method
@@ -2808,7 +2639,7 @@
 .method private static demolish([BLcom/project7/localmanager/LocalConstructionCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;[B)Lcom/project7/localmanager/LocalEconomyEngine$Result;
     .locals 27
 
-    .line 250
+    .line 245
     move-object/from16 v1, p0
 
     move-object/from16 v0, p1
@@ -2833,7 +2664,7 @@
 
     invoke-direct {v10, v1}, Lcom/project7/localmanager/LocalEconomyEngine$Result;-><init>([B)V
 
-    .line 252
+    .line 247
     :try_start_0
     const-string v14, "u"
 
@@ -2843,7 +2674,7 @@
 
     move-result-object v14
 
-    .line 253
+    .line 248
     if-eqz v14, :cond_0
 
     invoke-virtual {v14}, Ljava/lang/String;->isEmpty()Z
@@ -2864,12 +2695,12 @@
 
     invoke-static {v15, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 254
+    .line 249
     invoke-static {v1, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v11
 
-    .line 255
+    .line 250
     invoke-static {v11, v14}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object v15
@@ -2883,7 +2714,7 @@
 
     if-eqz v15, :cond_1
 
-    .line 256
+    .line 251
     :try_start_1
     iget-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
@@ -2899,7 +2730,7 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 257
+    .line 252
     iget-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v3, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -2912,7 +2743,7 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 258
+    .line 253
     const/4 v2, 0x1
 
     iput-boolean v2, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
@@ -2921,7 +2752,7 @@
 
     return-object v10
 
-    .line 260
+    .line 255
     :cond_1
     if-eqz v2, :cond_2
 
@@ -2943,7 +2774,7 @@
 
     invoke-static {v15, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 261
+    .line 256
     iget-boolean v12, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolRewardPending:Z
 
     if-nez v12, :cond_3
@@ -2966,7 +2797,7 @@
 
     iget-object v12, v2, Lcom/project7/localmanager/LocalTutorialStore$Progress;->processingEvents:Ljava/util/Set;
 
-    .line 262
+    .line 257
     invoke-interface {v12}, Ljava/util/Set;->stream()Ljava/util/stream/Stream;
 
     move-result-object v12
@@ -2989,10 +2820,10 @@
     :goto_2
     const-string v15, "\u8bf7\u5148\u5b8c\u6210\u5f53\u524d\u5267\u60c5\u3001\u6218\u6597\u6216\u5de1\u67e5"
 
-    .line 261
+    .line 256
     invoke-static {v12, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 263
+    .line 258
     invoke-static {v1, v2}, Lcom/project7/localmanager/BsonLite;->withLocalCityState([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object v12
@@ -3001,7 +2832,7 @@
 
     move-result-object v12
 
-    .line 264
+    .line 259
     invoke-static {v12, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v15
@@ -3014,10 +2845,10 @@
 
     move-result-object v13
 
-    .line 265
+    .line 260
     nop
 
-    .line 266
+    .line 261
     invoke-static {v13}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v17
@@ -3094,7 +2925,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 267
+    .line 262
     move-object/from16 v24, v8
 
     invoke-static {v13, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -3109,7 +2940,7 @@
 
     move-result-object v8
 
-    .line 268
+    .line 263
     move-object/from16 v26, v6
 
     const-string v6, "uuid"
@@ -3132,7 +2963,7 @@
 
     goto :goto_4
 
-    .line 269
+    .line 264
     :cond_4
     if-nez v3, :cond_5
 
@@ -3148,7 +2979,7 @@
 
     invoke-static {v3, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 270
+    .line 265
     invoke-static {v13, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v3
@@ -3161,7 +2992,7 @@
 
     move-result v21
 
-    .line 271
+    .line 266
     move-object v3, v4
 
     move-object/from16 v8, v24
@@ -3170,7 +3001,7 @@
 
     goto :goto_4
 
-    .line 266
+    .line 261
     :cond_6
     move-object/from16 v26, v6
 
@@ -3182,7 +3013,7 @@
 
     goto :goto_3
 
-    .line 272
+    .line 267
     :cond_7
     move-object/from16 v23, v4
 
@@ -3202,7 +3033,7 @@
 
     invoke-static {v4, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 273
+    .line 268
     invoke-static {v2, v11, v1}, Lcom/project7/localmanager/LocalCityProgress;->status(Lcom/project7/localmanager/LocalTutorialStore$Progress;I[B)I
 
     move-result v4
@@ -3221,7 +3052,7 @@
 
     invoke-static {v4, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 274
+    .line 269
     const-string v4, "B"
 
     invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3254,7 +3085,7 @@
 
     invoke-static {v4, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 275
+    .line 270
     invoke-static {v15, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v4
@@ -3281,7 +3112,7 @@
 
     invoke-static {v4, v6}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 276
+    .line 271
     const/4 v4, 0x0
 
     invoke-static {v12, v0, v3, v7, v4}, Lcom/project7/localmanager/LocalConstructionEngine;->removeBuilding([BLcom/project7/localmanager/LocalConstructionCatalog;Ljava/lang/String;Ljava/lang/String;Z)[B
@@ -3290,7 +3121,7 @@
 
     iput-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 277
+    .line 272
     iget-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     move-object/from16 v3, v22
@@ -3311,7 +3142,7 @@
 
     move-result-object v0
 
-    .line 278
+    .line 273
     iget-object v4, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     invoke-static {v4, v3, v0}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -3320,7 +3151,7 @@
 
     iput-object v3, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 279
+    .line 274
     iget-object v3, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
     const/4 v4, 0x6
@@ -3331,7 +3162,7 @@
 
     aput-object v23, v4, v6
 
-    .line 280
+    .line 275
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3374,7 +3205,7 @@
 
     move-result-object v4
 
-    .line 279
+    .line 274
     move-object/from16 v6, v20
 
     invoke-static {v6, v14, v4}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
@@ -3389,14 +3220,14 @@
 
     iput-object v3, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 281
+    .line 276
     iget-object v3, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v4, Lcom/project7/localmanager/LocalResourceEngine$Reply;
 
     iget-object v6, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->profile:[B
 
-    .line 282
+    .line 277
     const/4 v8, 0x1
 
     invoke-static {v8, v2, v6}, Lcom/project7/localmanager/BsonLite;->allAreaInfoReplyDocument(ZLcom/project7/localmanager/LocalTutorialStore$Progress;[B)[B
@@ -3413,10 +3244,10 @@
 
     invoke-direct {v4, v8, v2}, Lcom/project7/localmanager/LocalResourceEngine$Reply;-><init>(Ljava/lang/String;[B)V
 
-    .line 281
+    .line 276
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 278
     iget-object v2, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v3, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -3443,7 +3274,7 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 279
     iget-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v2, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -3484,7 +3315,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 285
+    .line 280
     const/4 v2, 0x1
 
     iput-boolean v2, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->accepted:Z
@@ -3492,10 +3323,10 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/ArithmeticException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 289
+    .line 284
     goto :goto_b
 
-    .line 286
+    .line 281
     :catch_0
     move-exception v0
 
@@ -3504,7 +3335,7 @@
     :catch_1
     move-exception v0
 
-    .line 287
+    .line 282
     :goto_a
     new-instance v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;
 
@@ -3516,7 +3347,7 @@
 
     iput-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->reason:Ljava/lang/String;
 
-    .line 288
+    .line 283
     iget-object v0, v10, Lcom/project7/localmanager/LocalEconomyEngine$Result;->replies:Ljava/util/List;
 
     new-instance v1, Lcom/project7/localmanager/LocalResourceEngine$Reply;
@@ -3547,7 +3378,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 290
+    .line 285
     :goto_b
     return-object v10
 .end method
@@ -3555,7 +3386,7 @@
 .method static destroyByIntelligence([BLcom/project7/localmanager/LocalConstructionCatalog;Ljava/lang/String;Ljava/lang/String;)[B
     .locals 3
 
-    .line 242
+    .line 237
     const-string v0, "city"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -3572,7 +3403,7 @@
 
     move-result-object v0
 
-    .line 243
+    .line 238
     const-string v1, "bd"
 
     invoke-static {v0, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -3605,7 +3436,7 @@
 
     move-result v0
 
-    .line 244
+    .line 239
     const/4 v1, 0x1
 
     if-lt v0, v1, :cond_0
@@ -3626,7 +3457,7 @@
 
     invoke-static {v0, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 245
+    .line 240
     invoke-static {p0, p1, p2, p3, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->removeBuilding([BLcom/project7/localmanager/LocalConstructionCatalog;Ljava/lang/String;Ljava/lang/String;Z)[B
 
     move-result-object p0
@@ -3716,19 +3547,19 @@
 .method static refreshGuideState([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
     .locals 6
 
-    .line 157
+    .line 152
     invoke-static {p0}, Lcom/project7/localmanager/LocalConstructionEngine;->repairDestroyedSlots([B)[B
 
     move-result-object p0
 
-    .line 158
+    .line 153
     const-string v0, "city"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 161
+    .line 156
     const-string v2, "tbn"
 
     invoke-static {v1, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
@@ -3747,7 +3578,7 @@
 
     const/16 v5, 0x14
 
-    .line 162
+    .line 157
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -3783,7 +3614,7 @@
     :goto_0
     move p1, v4
 
-    .line 163
+    .line 158
     :goto_1
     const-string v2, "nbb"
 
@@ -3791,7 +3622,7 @@
 
     move-result-object v5
 
-    .line 164
+    .line 159
     if-nez p1, :cond_2
 
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
@@ -3804,7 +3635,7 @@
 
     move v3, v4
 
-    .line 165
+    .line 160
     :cond_2
     if-eqz v5, :cond_3
 
@@ -3816,7 +3647,7 @@
 
     return-object p0
 
-    .line 166
+    .line 161
     :cond_3
     invoke-static {v1, v2, v3}, Lcom/project7/localmanager/BsonLite;->withProfileBool([BLjava/lang/String;Z)[B
 
@@ -3832,7 +3663,7 @@
 .method private static removeBuilding([BLcom/project7/localmanager/LocalConstructionCatalog;Ljava/lang/String;Ljava/lang/String;Z)[B
     .locals 19
 
-    .line 295
+    .line 290
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -3857,7 +3688,7 @@
 
     move-result-object v8
 
-    .line 296
+    .line 291
     const-string v9, "bd"
 
     invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -3868,19 +3699,19 @@
 
     move-result-object v10
 
-    .line 297
+    .line 292
     const-string v11, "id"
 
     invoke-static {v10, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v10
 
-    .line 298
+    .line 293
     invoke-static {v1, v7, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
 
     move-result-object v11
 
-    .line 299
+    .line 294
     invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v12
@@ -3893,7 +3724,7 @@
 
     move-result-object v8
 
-    .line 300
+    .line 295
     const-string v9, "dbd"
 
     if-eqz p4, :cond_0
@@ -3908,7 +3739,7 @@
 
     goto :goto_0
 
-    .line 301
+    .line 296
     :cond_0
     invoke-static {v8, v9}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
@@ -3918,23 +3749,23 @@
 
     move-result-object v3
 
-    .line 300
+    .line 295
     :goto_0
     invoke-static {v8, v9, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v3
 
-    .line 302
+    .line 297
     invoke-static {v7, v2, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v2
 
-    .line 303
+    .line 298
     invoke-static {v1, v2, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
 
     move-result-object v3
 
-    .line 304
+    .line 299
     const-string v8, "fv"
 
     const-string v9, "rv"
@@ -3945,7 +3776,7 @@
 
     move-result-object v8
 
-    .line 305
+    .line 300
     const/4 v9, 0x0
 
     move v10, v9
@@ -3959,7 +3790,7 @@
 
     aget-object v13, v8, v10
 
-    .line 306
+    .line 301
     invoke-static {v5, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v13
@@ -3974,7 +3805,7 @@
 
     move-result v13
 
-    .line 305
+    .line 300
     invoke-static {v5, v12, v13}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v5
@@ -3983,7 +3814,7 @@
 
     goto :goto_1
 
-    .line 307
+    .line 302
     :cond_1
     invoke-static {v2}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
@@ -4006,12 +3837,12 @@
 
     check-cast v11, Ljava/lang/String;
 
-    .line 308
+    .line 303
     invoke-static {v2, v11}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v13
 
-    .line 309
+    .line 304
     const/4 v14, 0x2
 
     new-array v15, v14, [Ljava/lang/Object;
@@ -4034,7 +3865,7 @@
 
     move-result-object v15
 
-    .line 310
+    .line 305
     new-array v14, v14, [Ljava/lang/Object;
 
     aput-object v11, v14, v9
@@ -4049,7 +3880,7 @@
 
     move-result-object v14
 
-    .line 311
+    .line 306
     nop
 
     :goto_3
@@ -4059,7 +3890,7 @@
 
     aget-object v1, v8, v9
 
-    .line 312
+    .line 307
     invoke-static {v13, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v1
@@ -4076,7 +3907,7 @@
 
     move-result v1
 
-    .line 311
+    .line 306
     invoke-static {v13, v12, v1}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
     move-result-object v13
@@ -4091,7 +3922,7 @@
 
     goto :goto_3
 
-    .line 313
+    .line 308
     :cond_2
     move-object/from16 v18, v7
 
@@ -4099,7 +3930,7 @@
 
     move-result-object v2
 
-    .line 314
+    .line 309
     move-object/from16 v1, p1
 
     const/4 v9, 0x0
@@ -4108,7 +3939,7 @@
 
     goto :goto_2
 
-    .line 315
+    .line 310
     :cond_3
     invoke-static {v5, v6, v2}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
@@ -4118,7 +3949,7 @@
 
     move-result-object v0
 
-    .line 316
+    .line 311
     const/4 v1, 0x3
 
     aget v1, v3, v1
@@ -4135,7 +3966,7 @@
 .method static repairDestroyedSlots([B)[B
     .locals 17
 
-    .line 182
+    .line 177
     move-object/from16 v0, p0
 
     const-string v1, "city"
@@ -4150,7 +3981,7 @@
 
     move-result-object v4
 
-    .line 183
+    .line 178
     invoke-static {v4}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v5
@@ -4174,7 +4005,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 184
+    .line 179
     invoke-static {v4, v7}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v8
@@ -4191,7 +4022,7 @@
 
     move-result-object v11
 
-    .line 186
+    .line 181
     invoke-static {v11}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v12
@@ -4215,7 +4046,7 @@
 
     check-cast v14, Ljava/lang/String;
 
-    .line 187
+    .line 182
     invoke-static {v9, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v15
@@ -4239,7 +4070,7 @@
 
     goto :goto_1
 
-    .line 188
+    .line 183
     :cond_1
     move-object/from16 v16, v5
 
@@ -4249,23 +4080,23 @@
 
     if-nez v5, :cond_2
 
-    .line 189
+    .line 184
     invoke-static {v8, v10, v13}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v5
 
-    .line 188
+    .line 183
     invoke-static {v6, v7, v5}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v6
 
-    .line 190
+    .line 185
     :cond_2
     move-object/from16 v5, v16
 
     goto :goto_0
 
-    .line 191
+    .line 186
     :cond_3
     invoke-static {v4, v6}, Ljava/util/Arrays;->equals([B[B)Z
 
@@ -4275,13 +4106,13 @@
 
     goto :goto_2
 
-    .line 192
+    .line 187
     :cond_4
     invoke-static {v2, v3, v6}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v2
 
-    .line 191
+    .line 186
     invoke-static {v0, v1, v2}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v0
@@ -4293,14 +4124,14 @@
 .method static repairIncome([BLcom/project7/localmanager/LocalConstructionCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
     .locals 4
 
-    .line 196
+    .line 191
     const-string v0, "city"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 197
+    .line 192
     invoke-static {p0, p2}, Lcom/project7/localmanager/BsonLite;->withLocalCityState([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
     move-result-object p2
@@ -4323,7 +4154,7 @@
 
     aget p1, p1, p2
 
-    .line 200
+    .line 195
     const-string p2, "q7DailyBuildIncome"
 
     invoke-static {p0, p2}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
@@ -4340,7 +4171,7 @@
 
     if-lez v2, :cond_0
 
-    .line 201
+    .line 196
     const-string v2, "dvc"
 
     invoke-static {v1, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
@@ -4357,7 +4188,7 @@
 
     if-le p1, v3, :cond_0
 
-    .line 202
+    .line 197
     const/4 v3, 0x0
 
     invoke-static {v1, v2, v3}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
@@ -4368,7 +4199,7 @@
 
     move-result-object p0
 
-    .line 203
+    .line 198
     :cond_0
     invoke-static {p0, p2, p1}, Lcom/project7/localmanager/BsonLite;->withProfileInt([BLjava/lang/String;I)[B
 
@@ -4396,7 +4227,7 @@
 .method static restoreCentralBase([BLcom/project7/localmanager/LocalConstructionCatalog;Lcom/project7/localmanager/LocalTutorialStore$Progress;)[B
     .locals 19
 
-    .line 207
+    .line 202
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -4419,7 +4250,7 @@
 
     sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    .line 208
+    .line 203
     const-string v5, "q7CentralBase"
 
     invoke-static {v0, v5}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
@@ -4434,7 +4265,7 @@
 
     goto/16 :goto_4
 
-    .line 209
+    .line 204
     :cond_0
     invoke-static {v0, v2}, Lcom/project7/localmanager/BsonLite;->withLocalCityState([BLcom/project7/localmanager/LocalTutorialStore$Progress;)[B
 
@@ -4446,7 +4277,7 @@
 
     move-result-object v6
 
-    .line 210
+    .line 205
     invoke-static {v6, v3}, Lcom/project7/localmanager/LocalConstructionEngine;->countCity([BI)I
 
     move-result v7
@@ -4455,7 +4286,7 @@
 
     return-object v0
 
-    .line 211
+    .line 206
     :cond_1
     const-string v7, "areas"
 
@@ -4475,10 +4306,10 @@
 
     move-result-object v12
 
-    .line 212
+    .line 207
     nop
 
-    .line 213
+    .line 208
     move v13, v3
 
     :goto_0
@@ -4496,7 +4327,7 @@
 
     if-gt v13, v14, :cond_3
 
-    .line 214
+    .line 209
     invoke-static {v13}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v14
@@ -4517,7 +4348,7 @@
 
     goto :goto_1
 
-    .line 213
+    .line 208
     :cond_2
     add-int/lit8 v13, v13, 0x1
 
@@ -4526,13 +4357,13 @@
     :cond_3
     move v13, v15
 
-    .line 216
+    .line 211
     :goto_1
     if-nez v13, :cond_4
 
     return-object v0
 
-    .line 217
+    .line 212
     :cond_4
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4544,7 +4375,7 @@
 
     move-result-object v0
 
-    .line 218
+    .line 213
     const-string v14, "clientBan"
 
     invoke-static {v0, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
@@ -4581,12 +4412,12 @@
 
     invoke-static {v0, v14}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 220
+    .line 215
     invoke-static {v1, v8, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
 
     move-result-object v0
 
-    .line 221
+    .line 216
     invoke-static {v13}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v14
@@ -4599,7 +4430,7 @@
 
     aput-object v17, v3, v15
 
-    .line 222
+    .line 217
     const/16 v16, 0x1
 
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4626,20 +4457,20 @@
 
     move-result-object v3
 
-    .line 221
+    .line 216
     invoke-static {v12, v14, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v3
 
-    .line 223
+    .line 218
     invoke-static {v10, v11, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v3
 
-    .line 224
+    .line 219
     nop
 
-    .line 225
+    .line 220
     const-string v10, "dbd"
 
     invoke-static {v3, v10}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -4654,22 +4485,22 @@
 
     move-result-object v11
 
-    .line 224
+    .line 219
     invoke-static {v3, v10, v11}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v3
 
-    .line 226
+    .line 221
     invoke-static {v8, v9, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v8
 
-    .line 227
+    .line 222
     invoke-static {v1, v8, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
 
     move-result-object v1
 
-    .line 228
+    .line 223
     const-string v10, "fv"
 
     const-string v11, "rv"
@@ -4680,20 +4511,20 @@
 
     move-result-object v10
 
-    .line 229
+    .line 224
     const/4 v11, 0x0
 
     :goto_3
     if-ge v11, v15, :cond_6
 
-    .line 230
+    .line 225
     aget v12, v1, v11
 
     aget v13, v0, v11
 
     sub-int/2addr v12, v13
 
-    .line 231
+    .line 226
     aget-object v13, v10, v11
 
     aget-object v14, v10, v11
@@ -4710,7 +4541,7 @@
 
     move-result-object v6
 
-    .line 232
+    .line 227
     aget-object v13, v10, v11
 
     aget-object v14, v10, v11
@@ -4727,12 +4558,12 @@
 
     move-result-object v3
 
-    .line 229
+    .line 224
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_3
 
-    .line 236
+    .line 231
     :cond_6
     const-string v10, "dvc"
 
@@ -4754,7 +4585,7 @@
 
     move-result-object v0
 
-    .line 237
+    .line 232
     invoke-static {v8, v9, v3}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v1
@@ -4763,7 +4594,7 @@
 
     move-result-object v0
 
-    .line 238
+    .line 233
     invoke-static {v2, v4, v0}, Lcom/project7/localmanager/BsonLite;->withProfileDocument([BLjava/lang/String;[B)[B
 
     move-result-object v0
@@ -4776,7 +4607,7 @@
 
     return-object v0
 
-    .line 208
+    .line 203
     :cond_7
     :goto_4
     return-object v0
@@ -4785,17 +4616,17 @@
 .method private static totals(Lcom/project7/localmanager/LocalConstructionCatalog;[B[B)[I
     .locals 18
 
-    .line 342
+    .line 337
     move-object/from16 v0, p0
 
     const/4 v1, 0x4
 
     new-array v1, v1, [I
 
-    .line 343
+    .line 338
     nop
 
-    .line 344
+    .line 339
     const-string v2, "heromgr"
 
     move-object/from16 v3, p2
@@ -4833,7 +4664,7 @@
 
     check-cast v5, [B
 
-    .line 345
+    .line 340
     sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     const-string v7, "1"
@@ -4856,11 +4687,11 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 346
+    .line 341
     :cond_0
     goto :goto_0
 
-    .line 347
+    .line 342
     :cond_1
     const/16 v2, 0x1e
 
@@ -4868,7 +4699,7 @@
 
     move-result v2
 
-    .line 348
+    .line 343
     invoke-static/range {p1 .. p1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v4
@@ -4890,7 +4721,7 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 349
+    .line 344
     move-object/from16 v6, p1
 
     invoke-static {v6, v5}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -4903,7 +4734,7 @@
 
     move-result-object v7
 
-    .line 350
+    .line 345
     const-string v8, "st"
 
     invoke-static {v5, v8}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -4920,7 +4751,7 @@
 
     goto :goto_1
 
-    .line 351
+    .line 346
     :cond_2
     const/4 v8, 0x3
 
@@ -4928,7 +4759,7 @@
 
     new-array v10, v8, [I
 
-    .line 352
+    .line 347
     invoke-static {v7}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v11
@@ -4952,7 +4783,7 @@
 
     check-cast v12, Ljava/lang/String;
 
-    .line 353
+    .line 348
     invoke-static {v7, v12}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v12
@@ -4961,7 +4792,7 @@
 
     move-result v3
 
-    .line 354
+    .line 349
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
@@ -4972,7 +4803,7 @@
 
     move-result-object v12
 
-    .line 355
+    .line 350
     const-string v14, "force_val"
 
     const-string v15, "research_val"
@@ -4983,20 +4814,20 @@
 
     move-result-object v13
 
-    .line 356
+    .line 351
     const/4 v14, 0x0
 
     :goto_3
     if-ge v14, v8, :cond_7
 
-    .line 357
+    .line 352
     aget-object v15, v13, v14
 
     invoke-static {v12, v15}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
 
     move-result v15
 
-    .line 358
+    .line 353
     aget v8, v9, v14
 
     invoke-static {v8, v15}, Ljava/lang/Math;->addExact(II)I
@@ -5005,7 +4836,7 @@
 
     aput v8, v9, v14
 
-    .line 359
+    .line 354
     if-gtz v15, :cond_5
 
     if-nez v14, :cond_3
@@ -5038,7 +4869,7 @@
 
     aput v8, v10, v14
 
-    .line 356
+    .line 351
     :cond_6
     add-int/lit8 v14, v14, 0x1
 
@@ -5046,13 +4877,13 @@
 
     goto :goto_3
 
-    .line 361
+    .line 356
     :cond_7
     const/4 v8, 0x3
 
     goto :goto_2
 
-    .line 362
+    .line 357
     :cond_8
     const/4 v8, 0x0
 
@@ -5061,7 +4892,7 @@
 
     if-ge v8, v11, :cond_10
 
-    .line 363
+    .line 358
     if-nez v8, :cond_9
 
     const/4 v11, 0x3
@@ -5080,7 +4911,7 @@
     :cond_a
     const/16 v11, 0xd
 
-    .line 364
+    .line 359
     :goto_6
     const/4 v12, 0x1
 
@@ -5100,7 +4931,7 @@
     :cond_c
     const/16 v13, 0x10
 
-    .line 365
+    .line 360
     :goto_7
     if-nez v8, :cond_d
 
@@ -5118,7 +4949,7 @@
     :cond_e
     const/16 v14, 0xf
 
-    .line 366
+    .line 361
     :goto_8
     aget v15, v9, v8
 
@@ -5138,7 +4969,7 @@
 
     aput v11, v9, v8
 
-    .line 367
+    .line 362
     aget v11, v9, v8
 
     invoke-static {v7, v13}, Lcom/project7/localmanager/LocalConstructionEngine;->count([BI)I
@@ -5155,7 +4986,7 @@
 
     aput v11, v9, v8
 
-    .line 368
+    .line 363
     const/4 v11, 0x0
 
     :goto_9
@@ -5191,7 +5022,7 @@
 
     goto :goto_9
 
-    .line 369
+    .line 364
     :cond_f
     aget v11, v1, v8
 
@@ -5203,12 +5034,12 @@
 
     aput v11, v1, v8
 
-    .line 362
+    .line 357
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_5
 
-    .line 371
+    .line 366
     :cond_10
     const/4 v7, 0x3
 
@@ -5260,10 +5091,10 @@
 
     aput v3, v1, v5
 
-    .line 372
+    .line 367
     goto/16 :goto_1
 
-    .line 373
+    .line 368
     :cond_11
     return-object v1
 .end method
@@ -5282,7 +5113,7 @@
 .method private static validateBuilding(Lcom/project7/localmanager/LocalConstructionCatalog;[B[BI[B)V
     .locals 8
 
-    .line 326
+    .line 321
     const-string p0, "bd"
 
     invoke-static {p2, p0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -5297,7 +5128,7 @@
 
     move-result v1
 
-    .line 327
+    .line 322
     const-string v2, "al"
 
     invoke-static {p4, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
@@ -5318,7 +5149,7 @@
 
     move-result-object v2
 
-    .line 328
+    .line 323
     const/4 v3, 0x0
 
     const/4 v4, 0x1
@@ -5347,7 +5178,7 @@
 
     invoke-static {v0, v2}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 329
+    .line 324
     const-string v0, "ml"
 
     invoke-static {p4, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
@@ -5378,14 +5209,14 @@
 
     invoke-static {v0, v1}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 330
+    .line 325
     const-string v0, "area_building_require"
 
     invoke-static {p4, v0}, Lcom/project7/localmanager/LocalConstructionEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v0
 
-    .line 331
+    .line 326
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v1
@@ -5394,7 +5225,7 @@
 
     move-result v1
 
-    .line 332
+    .line 327
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v2
@@ -5446,13 +5277,13 @@
 
     goto :goto_4
 
-    .line 333
+    .line 328
     :cond_5
     const-string p0, "\u5c1a\u672a\u6ee1\u8db3\u5730\u533a\u524d\u7f6e\u5efa\u7b51\u6761\u4ef6"
 
     invoke-static {v1, p0}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 334
+    .line 329
     const-string p0, "init"
 
     invoke-static {p4, p0}, Lcom/project7/localmanager/LocalConstructionEngine;->v([BLjava/lang/String;)I
@@ -5461,14 +5292,14 @@
 
     if-nez p0, :cond_8
 
-    .line 335
+    .line 330
     const-string p0, "pre"
 
     invoke-static {p4, p0}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object p0
 
-    .line 336
+    .line 331
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result p2
@@ -5493,7 +5324,7 @@
 
     invoke-static {p2, p3}, Lcom/project7/localmanager/LocalConstructionEngine;->require(ZLjava/lang/String;)V
 
-    .line 337
+    .line 332
     :cond_6
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -5536,7 +5367,7 @@
 
     goto :goto_6
 
-    .line 339
+    .line 334
     :cond_8
     return-void
 .end method

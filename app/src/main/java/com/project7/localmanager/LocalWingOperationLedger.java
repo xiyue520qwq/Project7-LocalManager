@@ -17,21 +17,21 @@ final class LocalWingOperationLedger {
     }
 
     /* renamed from: d */
-    static byte[] m90d(byte[] bArr, String str) {
+    static byte[] m86d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    static int m91v(byte[] bArr, String str) {
+    static int m87v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
     static boolean present(byte[] bArr) {
-        return BsonLite.keys(bArr).contains(KEY) || BsonLite.keys(m90d(bArr, "q7Wing")).contains(MARKER);
+        return BsonLite.keys(bArr).contains(KEY) || BsonLite.keys(m86d(bArr, "q7Wing")).contains(MARKER);
     }
 
     static byte[] values(byte[] bArr) {
-        byte[] snapshot = LocalWingStoryEngine.snapshot(m90d(bArr, "std"));
+        byte[] snapshot = LocalWingStoryEngine.snapshot(m86d(bArr, "std"));
         if (snapshot == null) {
             return null;
         }
@@ -78,12 +78,12 @@ final class LocalWingOperationLedger {
         }
         String str2 = i == 1 ? "byn" : "hyn";
         if ("make".equals(str)) {
-            return BsonLite.document("ycn", Integer.valueOf(-m91v(bArr, "cost")), str2, 1);
+            return BsonLite.document("ycn", Integer.valueOf(-m87v(bArr, "cost")), str2, 1);
         }
         if ("consume".equals(str)) {
             Object[] objArr = new Object[4];
             objArr[0] = "byv";
-            objArr[1] = Integer.valueOf(m91v(bArr, i == 1 ? "white" : "black"));
+            objArr[1] = Integer.valueOf(m87v(bArr, i == 1 ? "white" : "black"));
             objArr[2] = str2;
             objArr[3] = -1;
             return BsonLite.document(objArr);
@@ -95,12 +95,12 @@ final class LocalWingOperationLedger {
         String str;
         byte[] drugDelta;
         byte[] documentValue = BsonLite.documentValue(bArr, KEY);
-        byte[] m90d = m90d(bArr, "q7Wing");
-        byte[] m90d2 = m90d(bArr, "weeknum");
-        String stringValue = BsonLite.stringValue(m90d, "cycle");
-        String stringValue2 = BsonLite.stringValue(m90d(bArr, "std"), "rt");
-        Integer intValue = BsonLite.intValue(m90d2, "d");
-        Integer intValue2 = BsonLite.intValue(m90d2, "w");
+        byte[] m86d = m86d(bArr, "q7Wing");
+        byte[] m86d2 = m86d(bArr, "weeknum");
+        String stringValue = BsonLite.stringValue(m86d, "cycle");
+        String stringValue2 = BsonLite.stringValue(m86d(bArr, "std"), "rt");
+        Integer intValue = BsonLite.intValue(m86d2, "d");
+        Integer intValue2 = BsonLite.intValue(m86d2, "w");
         Integer intValue3 = documentValue == null ? null : BsonLite.intValue(documentValue, "generation");
         byte[] documentValue2 = documentValue == null ? null : BsonLite.documentValue(documentValue, "records");
         byte[] documentValue3 = documentValue == null ? null : BsonLite.documentValue(documentValue, "policy");
@@ -108,20 +108,20 @@ final class LocalWingOperationLedger {
             String str2 = "event";
             String str3 = "before";
             String str4 = "day";
-            if (m91v(documentValue, "version") == 1 && m91v(m90d, "version") == 1 && m91v(m90d, MARKER) == 1 && BsonLite.intValue(m90d, "generation") != null && BsonLite.documentValue(m90d, "receipts") != null) {
+            if (m87v(documentValue, "version") == 1 && m87v(m86d, "version") == 1 && m87v(m86d, MARKER) == 1 && BsonLite.intValue(m86d, "generation") != null && BsonLite.documentValue(m86d, "receipts") != null) {
                 String str5 = "week";
-                if (BsonLite.intValue(m90d, "week") != null && BsonLite.intValue(documentValue, "week") != null && stringValue != null && !stringValue.isEmpty() && stringValue.equals(BsonLite.stringValue(documentValue, "cycle"))) {
+                if (BsonLite.intValue(m86d, "week") != null && BsonLite.intValue(documentValue, "week") != null && stringValue != null && !stringValue.isEmpty() && stringValue.equals(BsonLite.stringValue(documentValue, "cycle"))) {
                     String str6 = "id";
-                    if (stringValue.equals(BsonLite.stringValue(m90d(bArr, "q7WeekTransition"), "id")) && intValue2 != null && intValue2.intValue() == m91v(m90d, "week") && intValue2.intValue() == m91v(documentValue, "week") && intValue2.intValue() == m91v(m90d(bArr, "q7WeekTransition"), "week") && intValue != null && intValue.intValue() >= 0 && intValue.intValue() <= 7 && stringValue2 != null) {
-                        if ((stringValue2.equals("7") || stringValue2.startsWith("7-")) && intValue3 != null && documentValue2 != null && intValue3.intValue() == BsonLite.keys(documentValue2).size() && documentValue3 != null && m91v(documentValue3, "cost") == 10 && m91v(documentValue3, "white") == 2 && m91v(documentValue3, "black") == -2) {
+                    if (stringValue.equals(BsonLite.stringValue(m86d(bArr, "q7WeekTransition"), "id")) && intValue2 != null && intValue2.intValue() == m87v(m86d, "week") && intValue2.intValue() == m87v(documentValue, "week") && intValue2.intValue() == m87v(m86d(bArr, "q7WeekTransition"), "week") && intValue != null && intValue.intValue() >= 0 && intValue.intValue() <= 7 && stringValue2 != null) {
+                        if ((stringValue2.equals("7") || stringValue2.startsWith("7-")) && intValue3 != null && documentValue2 != null && intValue3.intValue() == BsonLite.keys(documentValue2).size() && documentValue3 != null && m87v(documentValue3, "cost") == 10 && m87v(documentValue3, "white") == 2 && m87v(documentValue3, "black") == -2) {
                             int i = 50;
                             Integer num = 50;
-                            if (!num.equals(BsonLite.intValue(m90d, "initial"))) {
+                            if (!num.equals(BsonLite.intValue(m86d, "initial"))) {
                                 return null;
                             }
                             try {
                                 byte[] documentValue4 = BsonLite.documentValue(documentValue, "initial");
-                                byte[] m90d3 = m90d(m90d, "receipts");
+                                byte[] m86d3 = m86d(m86d, "receipts");
                                 if (documentValue4 != null) {
                                     Integer num2 = 50;
                                     if (num2.equals(BsonLite.intValue(documentValue4, "byv")) && Arrays.equals(documentValue4, add(documentValue4, BsonLite.EMPTY_DOCUMENT))) {
@@ -153,7 +153,7 @@ final class LocalWingOperationLedger {
                                                 }
                                                 String str11 = str2;
                                                 Integer num3 = intValue;
-                                                byte[] bArr4 = m90d;
+                                                byte[] bArr4 = m86d;
                                                 byte[] bArr5 = documentValue4;
                                                 if (str11.equals(stringValue4)) {
                                                     Integer intValue5 = BsonLite.intValue(documentValue5, str11);
@@ -164,13 +164,13 @@ final class LocalWingOperationLedger {
                                                     if (!stringValue3.equals("event:" + intValue5)) {
                                                         return null;
                                                     }
-                                                    byte[] documentValue6 = BsonLite.documentValue(m90d3, intValue5.toString());
+                                                    byte[] documentValue6 = BsonLite.documentValue(m86d3, intValue5.toString());
                                                     Integer intValue6 = documentValue6 == null ? null : BsonLite.intValue(documentValue6, "delta");
                                                     if (documentValue6 == null || intValue6 == null || intValue6.intValue() == 0) {
                                                         return null;
                                                     }
                                                     str = str5;
-                                                    if (m91v(documentValue6, str5) == intValue2.intValue() && m91v(documentValue6, "count") == 1 && m91v(documentValue6, str9) == intValue4.intValue() && Integer.valueOf(i).equals(BsonLite.intValue(documentValue6, str10))) {
+                                                    if (m87v(documentValue6, str5) == intValue2.intValue() && m87v(documentValue6, "count") == 1 && m87v(documentValue6, str9) == intValue4.intValue() && Integer.valueOf(i).equals(BsonLite.intValue(documentValue6, str10))) {
                                                         int addExact = Math.addExact(i, intValue6.intValue());
                                                         if (!Integer.valueOf(addExact).equals(BsonLite.intValue(documentValue6, "after"))) {
                                                             return null;
@@ -202,7 +202,7 @@ final class LocalWingOperationLedger {
                                                 documentValue2 = bArr3;
                                                 str6 = str8;
                                                 hashSet = hashSet2;
-                                                m90d = bArr4;
+                                                m86d = bArr4;
                                                 str5 = str;
                                                 str3 = str10;
                                                 i2 = intValue8;
@@ -210,8 +210,8 @@ final class LocalWingOperationLedger {
                                             return null;
                                         }
                                         byte[] bArr6 = documentValue;
-                                        byte[] bArr7 = m90d;
-                                        if (arrayList.equals(BsonLite.keys(m90d3)) && m91v(bArr7, "generation") == arrayList.size() && Integer.valueOf(i).equals(BsonLite.intValue(bArr7, "current"))) {
+                                        byte[] bArr7 = m86d;
+                                        if (arrayList.equals(BsonLite.keys(m86d3)) && m87v(bArr7, "generation") == arrayList.size() && Integer.valueOf(i).equals(BsonLite.intValue(bArr7, "current"))) {
                                             if (Arrays.equals(documentValue4, values(bArr))) {
                                                 return bArr6;
                                             }
@@ -239,31 +239,31 @@ final class LocalWingOperationLedger {
 
     static byte[] migrate(byte[] bArr, LocalEventCatalog localEventCatalog) {
         if (!present(bArr)) {
-            byte[] snapshot = LocalWingStoryEngine.snapshot(m90d(bArr, "std"));
+            byte[] snapshot = LocalWingStoryEngine.snapshot(m86d(bArr, "std"));
             byte[] policy = policy(localEventCatalog);
             if (policy != null && snapshot != null) {
                 int i = 2;
                 char c = 0;
                 if (LocalWingStoryEngine.envelope(bArr, BsonLite.document("d", snapshot)) != null) {
-                    byte[] m90d = m90d(bArr, "q7Wing");
+                    byte[] m86d = m86d(bArr, "q7Wing");
                     String str = "byv";
                     byte[] withProfileInt = BsonLite.withProfileInt(values(bArr), "byv", 50);
                     byte[] bArr2 = BsonLite.EMPTY_DOCUMENT;
                     String str2 = "receipts";
-                    Iterator<String> it = BsonLite.keys(m90d(m90d, "receipts")).iterator();
+                    Iterator<String> it = BsonLite.keys(m86d(m86d, "receipts")).iterator();
                     int i2 = 0;
                     byte[] bArr3 = withProfileInt;
                     while (it.hasNext()) {
                         String next = it.next();
-                        byte[] m90d2 = m90d(m90d(m90d, str2), next);
+                        byte[] m86d2 = m86d(m86d(m86d, str2), next);
                         String str3 = str2;
                         Object[] objArr = new Object[i];
                         objArr[c] = str;
-                        objArr[1] = Integer.valueOf(m91v(m90d2, "delta"));
+                        objArr[1] = Integer.valueOf(m87v(m86d2, "delta"));
                         byte[] document = BsonLite.document(objArr);
                         byte[] add = add(bArr3, document);
                         int i3 = i2 + 1;
-                        bArr2 = BsonLite.withProfileDocument(bArr2, Integer.toString(i3), BsonLite.document("id", "event:" + next, "kind", "event", "event", Integer.valueOf(Integer.parseInt(next)), "day", Integer.valueOf(m91v(m90d2, "day")), "before", bArr3, "delta", document, "after", add));
+                        bArr2 = BsonLite.withProfileDocument(bArr2, Integer.toString(i3), BsonLite.document("id", "event:" + next, "kind", "event", "event", Integer.valueOf(Integer.parseInt(next)), "day", Integer.valueOf(m87v(m86d2, "day")), "before", bArr3, "delta", document, "after", add));
                         i2 = i3;
                         str2 = str3;
                         bArr3 = add;
@@ -272,7 +272,7 @@ final class LocalWingOperationLedger {
                         i = 2;
                         c = 0;
                     }
-                    byte[] withProfileDocument = BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, KEY, BsonLite.document("version", 1, "cycle", BsonLite.stringValue(m90d, "cycle"), "week", Integer.valueOf(m91v(m90d, "week")), "generation", Integer.valueOf(i2), "policy", policy, "initial", withProfileInt, "records", bArr2)), "q7Wing", BsonLite.withProfileInt(m90d, MARKER, 1));
+                    byte[] withProfileDocument = BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, KEY, BsonLite.document("version", 1, "cycle", BsonLite.stringValue(m86d, "cycle"), "week", Integer.valueOf(m87v(m86d, "week")), "generation", Integer.valueOf(i2), "policy", policy, "initial", withProfileInt, "records", bArr2)), "q7Wing", BsonLite.withProfileInt(m86d, MARKER, 1));
                     if (validate(withProfileDocument) == null) {
                         throw new IllegalArgumentException("Unexplained original Wing quantities");
                     }
@@ -282,7 +282,7 @@ final class LocalWingOperationLedger {
             throw new IllegalArgumentException("Missing proven original Wing ledger");
         }
         byte[] validate = validate(bArr);
-        if (validate != null && Arrays.equals(m90d(validate, "policy"), policy(localEventCatalog))) {
+        if (validate != null && Arrays.equals(m86d(validate, "policy"), policy(localEventCatalog))) {
             return bArr;
         }
         throw new IllegalArgumentException("Invalid Wing operations history");
@@ -293,11 +293,11 @@ final class LocalWingOperationLedger {
         if (validate == null) {
             throw new IllegalArgumentException("Invalid Wing operations ledger");
         }
-        byte[] m90d = m90d(validate, "records");
+        byte[] m86d = m86d(validate, "records");
         byte[] values = values(bArr);
         byte[] add = add(values, bArr2);
-        int m91v = m91v(validate, "generation");
-        if (i2 < 0 || i2 > m91v(m90d(bArr, "weeknum"), "d") || (m91v > 0 && i2 < m91v(m90d(m90d, Integer.toString(m91v)), "day"))) {
+        int m87v = m87v(validate, "generation");
+        if (i2 < 0 || i2 > m87v(m86d(bArr, "weeknum"), "d") || (m87v > 0 && i2 < m87v(m86d(m86d, Integer.toString(m87v)), "day"))) {
             throw new IllegalArgumentException("Nonchronological Wing operation");
         }
         Object[] objArr = new Object[12];
@@ -314,29 +314,29 @@ final class LocalWingOperationLedger {
         objArr[10] = "after";
         objArr[11] = add;
         byte[] document = BsonLite.document(objArr);
-        int i3 = m91v + 1;
-        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(validate, "records", BsonLite.withProfileDocument(m90d, Integer.toString(i3), num == null ? BsonLite.withProfileInt(document, "type", i) : BsonLite.withProfileInt(document, "event", num.intValue()))), "generation", i3);
-        byte[] m90d2 = m90d(bArr, "std");
+        int i3 = m87v + 1;
+        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(validate, "records", BsonLite.withProfileDocument(m86d, Integer.toString(i3), num == null ? BsonLite.withProfileInt(document, "type", i) : BsonLite.withProfileInt(document, "event", num.intValue()))), "generation", i3);
+        byte[] m86d2 = m86d(bArr, "std");
         for (String str2 : FIELDS) {
-            m90d2 = BsonLite.withProfileInt(m90d2, str2, BsonLite.intValue(add, str2).intValue());
+            m86d2 = BsonLite.withProfileInt(m86d2, str2, BsonLite.intValue(add, str2).intValue());
         }
-        return BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, KEY, withProfileInt), "std", m90d2);
+        return BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, KEY, withProfileInt), "std", m86d2);
     }
 
     static byte[] envelope(byte[] bArr, byte[] bArr2) {
         byte[] validate = validate(bArr);
-        byte[] snapshot = LocalWingStoryEngine.snapshot(m90d(bArr, "std"));
+        byte[] snapshot = LocalWingStoryEngine.snapshot(m86d(bArr, "std"));
         if (validate == null || !Arrays.equals(snapshot, BsonLite.documentValue(bArr2, "d"))) {
             return null;
         }
-        return BsonLite.document("schema", 2, "cycle", BsonLite.stringValue(validate, "cycle"), "generation", Integer.valueOf(m91v(validate, "generation")), "d", snapshot);
+        return BsonLite.document("schema", 2, "cycle", BsonLite.stringValue(validate, "cycle"), "generation", Integer.valueOf(m87v(validate, "generation")), "d", snapshot);
     }
 
     static String refresh(LocalResourceEngine.Result result, LocalEventCatalog localEventCatalog, LocalTutorialStore.Progress progress) {
         byte[] bArr;
         byte[] bArr2;
         byte[] validate = validate(result.profile);
-        if (validate == null || !Arrays.equals(m90d(validate, "policy"), policy(localEventCatalog))) {
+        if (validate == null || !Arrays.equals(m86d(validate, "policy"), policy(localEventCatalog))) {
             return "invalid-operations-ledger";
         }
         byte[] documentValue = BsonLite.documentValue(result.profile, "q7StoryPending");
@@ -346,10 +346,10 @@ final class LocalWingOperationLedger {
         if (documentValue != null && BsonLite.keys(documentValue).contains("syncBaiyuInfos") && LocalWingStoryEngine.payload(result.profile, BsonLite.documentValue(documentValue, "syncBaiyuInfos")) == null) {
             return "invalid-outbox";
         }
-        byte[] m90d = m90d(result.profile, "q7Wing");
-        byte[] withProfileDocument = BsonLite.withProfileDocument(BsonLite.withoutProfileKey(result.profile, KEY), "q7Wing", BsonLite.withoutProfileKey(m90d, MARKER));
-        byte[] withProfileDocument2 = BsonLite.withProfileDocument(withProfileDocument, "std", BsonLite.withProfileInt(m90d(withProfileDocument, "std"), "byv", m91v(m90d, "current")));
-        LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(BsonLite.withProfileDocument(withProfileDocument2, "q7StoryPending", BsonLite.withoutProfileKey(m90d(withProfileDocument2, "q7StoryPending"), "syncBaiyuInfos")));
+        byte[] m86d = m86d(result.profile, "q7Wing");
+        byte[] withProfileDocument = BsonLite.withProfileDocument(BsonLite.withoutProfileKey(result.profile, KEY), "q7Wing", BsonLite.withoutProfileKey(m86d, MARKER));
+        byte[] withProfileDocument2 = BsonLite.withProfileDocument(withProfileDocument, "std", BsonLite.withProfileInt(m86d(withProfileDocument, "std"), "byv", m87v(m86d, "current")));
+        LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(BsonLite.withProfileDocument(withProfileDocument2, "q7StoryPending", BsonLite.withoutProfileKey(m86d(withProfileDocument2, "q7StoryPending"), "syncBaiyuInfos")));
         String apply = LocalWingStoryEngine.apply(result2, localEventCatalog, progress);
         if (!apply.equals("applied") && !apply.equals("unchanged")) {
             return apply;
@@ -359,29 +359,29 @@ final class LocalWingOperationLedger {
         }
         try {
             byte[] bArr3 = result.profile;
-            byte[] m90d2 = m90d(result2.profile, "q7Wing");
+            byte[] m86d2 = m86d(result2.profile, "q7Wing");
             byte[] bArr4 = bArr3;
-            for (String str : BsonLite.keys(m90d(m90d2, "receipts"))) {
-                if (BsonLite.keys(m90d(m90d, "receipts")).contains(str)) {
-                    bArr = m90d;
-                    bArr2 = m90d2;
+            for (String str : BsonLite.keys(m86d(m86d2, "receipts"))) {
+                if (BsonLite.keys(m86d(m86d, "receipts")).contains(str)) {
+                    bArr = m86d;
+                    bArr2 = m86d2;
                 } else {
-                    byte[] m90d3 = m90d(m90d(m90d2, "receipts"), str);
-                    bArr = m90d;
-                    bArr2 = m90d2;
-                    byte[] append = append(bArr4, "event", 0, BsonLite.document("byv", Integer.valueOf(m91v(m90d3, "delta"))), m91v(m90d3, "day"), Integer.valueOf(Integer.parseInt(str)));
-                    byte[] m90d4 = m90d(append, "q7Wing");
-                    byte[] withProfileDocument3 = BsonLite.withProfileDocument(m90d(m90d4, "receipts"), str, m90d3);
-                    bArr4 = BsonLite.withProfileDocument(append, "q7Wing", BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileDocument(m90d4, "receipts", withProfileDocument3), "current", m91v(m90d3, "after")), "generation", BsonLite.keys(withProfileDocument3).size()));
+                    byte[] m86d3 = m86d(m86d(m86d2, "receipts"), str);
+                    bArr = m86d;
+                    bArr2 = m86d2;
+                    byte[] append = append(bArr4, "event", 0, BsonLite.document("byv", Integer.valueOf(m87v(m86d3, "delta"))), m87v(m86d3, "day"), Integer.valueOf(Integer.parseInt(str)));
+                    byte[] m86d4 = m86d(append, "q7Wing");
+                    byte[] withProfileDocument3 = BsonLite.withProfileDocument(m86d(m86d4, "receipts"), str, m86d3);
+                    bArr4 = BsonLite.withProfileDocument(append, "q7Wing", BsonLite.withProfileInt(BsonLite.withProfileInt(BsonLite.withProfileDocument(m86d4, "receipts", withProfileDocument3), "current", m87v(m86d3, "after")), "generation", BsonLite.keys(withProfileDocument3).size()));
                 }
-                m90d2 = bArr2;
-                m90d = bArr;
+                m86d2 = bArr2;
+                m86d = bArr;
             }
             if (validate(bArr4) == null) {
                 return "invalid-mixed-event-chain";
             }
             result.profile = bArr4;
-            result.add("syncBaiyuInfos", BsonLite.document("d", LocalWingStoryEngine.snapshot(m90d(bArr4, "std"))));
+            result.add("syncBaiyuInfos", BsonLite.document("d", LocalWingStoryEngine.snapshot(m86d(bArr4, "std"))));
             return "applied";
         } catch (ArithmeticException | IllegalArgumentException e) {
             return "invalid-mixed-event-chain";

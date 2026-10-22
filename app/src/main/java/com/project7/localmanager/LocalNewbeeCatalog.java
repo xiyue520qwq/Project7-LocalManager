@@ -132,7 +132,7 @@ final class LocalNewbeeCatalog {
         final Set<Integer> endEvents;
 
         /* renamed from: id */
-        final int f2id;
+        final int f9id;
         final boolean multiTrigger;
         final int next;
         final Set<Integer> requireEventAnd;
@@ -144,7 +144,7 @@ final class LocalNewbeeCatalog {
         final String uiPanel;
 
         Step(int i, boolean z, boolean z2, boolean z3, int i2, Set<Integer> set, Set<Integer> set2, Set<Integer> set3, Set<Integer> set4, Set<Integer> set5, Set<Integer> set6, Set<Integer> set7, String str, String str2) {
-            this.f2id = i;
+            this.f9id = i;
             this.begin = z;
             this.multiTrigger = z2;
             this.battle = z3;

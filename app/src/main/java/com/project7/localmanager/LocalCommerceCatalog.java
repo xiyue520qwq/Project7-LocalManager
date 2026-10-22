@@ -86,7 +86,7 @@ final class LocalCommerceCatalog {
     static final class Product {
 
         /* renamed from: id */
-        final int f0id;
+        final int f7id;
         final int item;
         final int level;
         final int max;
@@ -97,7 +97,7 @@ final class LocalCommerceCatalog {
         final Map<String, Integer> costs = new LinkedHashMap();
 
         Product(String[] strArr) {
-            this.f0id = Integer.parseInt(strArr[1]);
+            this.f7id = Integer.parseInt(strArr[1]);
             this.item = Integer.parseInt(strArr[2]);
             this.quantity = Integer.parseInt(strArr[3]);
             for (String str : strArr[4].split(",")) {

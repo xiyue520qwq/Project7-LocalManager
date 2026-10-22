@@ -8,7 +8,7 @@ public class SourceLine {
     private final SourceSpan sourceSpan;
 
     /* renamed from: of */
-    public static SourceLine m101of(CharSequence content, SourceSpan sourceSpan) {
+    public static SourceLine m97of(CharSequence content, SourceSpan sourceSpan) {
         return new SourceLine(content, sourceSpan);
     }
 
@@ -36,9 +36,9 @@ public class SourceLine {
             int columnIndex = sourceSpan.getColumnIndex() + beginIndex;
             int length = endIndex - beginIndex;
             if (length != 0) {
-                newSourceSpan = SourceSpan.m100of(this.sourceSpan.getLineIndex(), columnIndex, length);
+                newSourceSpan = SourceSpan.m96of(this.sourceSpan.getLineIndex(), columnIndex, length);
             }
         }
-        return m101of(newContent, newSourceSpan);
+        return m97of(newContent, newSourceSpan);
     }
 }

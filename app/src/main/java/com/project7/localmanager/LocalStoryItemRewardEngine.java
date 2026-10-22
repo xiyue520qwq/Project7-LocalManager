@@ -32,7 +32,7 @@ final class LocalStoryItemRewardEngine {
             this.parent = parseInt4;
             LocalResourceCatalog.Item item = new LocalResourceCatalog.Item(new String[]{"I", strArr[3], "", strArr[6], strArr[7], "0"});
             this.item = item;
-            if (parseInt <= 0 || parseInt2 <= 0 || parseInt4 <= 0 || item.f8id <= 0 || parseInt3 < 1 || item.wrap < 1 || item.type != 2) {
+            if (parseInt <= 0 || parseInt2 <= 0 || parseInt4 <= 0 || item.f15id <= 0 || parseInt3 < 1 || item.wrap < 1 || item.type != 2) {
                 throw new IllegalArgumentException("invalid physical story reward definition");
             }
         }
@@ -131,7 +131,7 @@ final class LocalStoryItemRewardEngine {
                             } else {
                                 int i = 0;
                                 for (byte[] bArr3 : LocalResourceEngine.array(LocalResourceEngine.doc(documentValue, str4))) {
-                                    if (LocalResourceEngine.value(bArr3, "i") == next.item.f8id) {
+                                    if (LocalResourceEngine.value(bArr3, "i") == next.item.f15id) {
                                         Integer intValue = BsonLite.intValue(bArr3, "w");
                                         if (intValue != null) {
                                             str = str4;

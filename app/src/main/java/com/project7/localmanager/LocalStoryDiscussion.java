@@ -28,17 +28,17 @@ final class LocalStoryDiscussion {
     }
 
     /* renamed from: d */
-    static byte[] m72d(byte[] bArr, String str) {
+    static byte[] m70d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    static int m74v(byte[] bArr, String str) {
+    static int m72v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
     /* renamed from: s */
-    static String m73s(byte[] bArr, String str) {
+    static String m71s(byte[] bArr, String str) {
         return BsonLite.stringValue(bArr, str);
     }
 
@@ -108,20 +108,20 @@ final class LocalStoryDiscussion {
         LocalStoryEngine.Result result8 = result;
         String str14 = str;
         byte[] bArr7 = result8.state;
-        byte[] m72d = m72d(bArr7, "messages");
-        byte[] m72d2 = m72d(bArr7, "comments");
+        byte[] m70d = m70d(bArr7, "messages");
+        byte[] m70d2 = m70d(bArr7, "comments");
         String uuidValue = BsonLite.uuidValue(bArr, "oi");
         byte[] work = work(bArr7, uuidValue);
         String str15 = "owner";
         String str16 = uuidValue;
         if ("requestStoryHttpInfo".equals(str2)) {
             str3 = str14;
-            bArr2 = m72d2;
+            bArr2 = m70d2;
             str4 = str16;
             result2 = result8;
         } else if ("requestSelfStoryHttpInfo".equals(str2)) {
             str3 = str14;
-            bArr2 = m72d2;
+            bArr2 = m70d2;
             str4 = str16;
             result2 = result8;
         } else {
@@ -142,17 +142,17 @@ final class LocalStoryDiscussion {
                                 if (!"requestUpdateStoryMsg".equals(str2)) {
                                     try {
                                         if ("requestCreateStoryComments".equals(str2)) {
-                                            String m73s = m73s(bArr, "msg_id");
-                                            byte[] entry2 = entry(m72d, m73s);
+                                            String m71s = m71s(bArr, "msg_id");
+                                            byte[] entry2 = entry(m70d, m71s);
                                             if (entry2 != null) {
                                                 try {
-                                                    if (work(bArr7, m73s(entry2, "oi")) != null) {
+                                                    if (work(bArr7, m71s(entry2, "oi")) != null) {
                                                         z = true;
                                                         require(z, "心得不存在或已删除");
                                                         String text2 = text(bArr, "cmts", 75);
-                                                        require(BsonLite.keys(m72d2).size() >= 20000, "本地回复数量已达上限");
-                                                        it = BsonLite.documentEntries(m72d2).entrySet().iterator();
-                                                        bArr4 = m72d2;
+                                                        require(BsonLite.keys(m70d2).size() >= 20000, "本地回复数量已达上限");
+                                                        it = BsonLite.documentEntries(m70d2).entrySet().iterator();
+                                                        bArr4 = m70d2;
                                                         while (true) {
                                                             if (it.hasNext()) {
                                                                 str7 = str19;
@@ -164,11 +164,11 @@ final class LocalStoryDiscussion {
                                                                 Map.Entry<String, byte[]> next2 = it.next();
                                                                 byte[] value = next2.getValue();
                                                                 Iterator<Map.Entry<String, byte[]>> it3 = it;
-                                                                if (str14.equals(m73s(value, "owner")) && m73s.equals(m73s(value, "msg_id")) && text2.equals(m73s(value, "comment"))) {
+                                                                if (str14.equals(m71s(value, "owner")) && m71s.equals(m71s(value, "msg_id")) && text2.equals(m71s(value, "comment"))) {
                                                                     str7 = str19;
                                                                     bArr5 = bArr4;
                                                                     long j = i;
-                                                                    if (j - m74v(value, "created_time") >= 0 && j - m74v(value, "created_time") < 10) {
+                                                                    if (j - m72v(value, "created_time") >= 0 && j - m72v(value, "created_time") < 10) {
                                                                         str8 = next2.getKey();
                                                                         break;
                                                                     }
@@ -217,7 +217,7 @@ final class LocalStoryDiscussion {
                                                             objArr[0] = "comment_id";
                                                             objArr[1] = uuid;
                                                             objArr[2] = "msg_id";
-                                                            objArr[3] = m73s;
+                                                            objArr[3] = m71s;
                                                             objArr[4] = "owner";
                                                             objArr[5] = str;
                                                             objArr[6] = "comment";
@@ -225,7 +225,7 @@ final class LocalStoryDiscussion {
                                                             objArr[8] = "created_time";
                                                             objArr[9] = Integer.valueOf(i);
                                                             objArr[10] = "seq";
-                                                            objArr[11] = Integer.valueOf(Math.addExact(m74v(bArr7, "sequence"), 1));
+                                                            objArr[11] = Integer.valueOf(Math.addExact(m72v(bArr7, "sequence"), 1));
                                                             objArr[12] = "user_info";
                                                             result7 = result;
                                                             try {
@@ -234,7 +234,7 @@ final class LocalStoryDiscussion {
                                                                 objArr[15] = BsonLite.EMPTY_DOCUMENT;
                                                                 byte[] document = BsonLite.document(objArr);
                                                                 result7.state = BsonLite.withProfileDocument(bArr7, "comments", BsonLite.withProfileDocument(bArr5, uuid, document));
-                                                                result7.state = BsonLite.withProfileInt(result7.state, "sequence", m74v(document, "seq"));
+                                                                result7.state = BsonLite.withProfileInt(result7.state, "sequence", m72v(document, "seq"));
                                                                 str8 = uuid;
                                                                 result7 = result7;
                                                             } catch (ArithmeticException e3) {
@@ -269,7 +269,7 @@ final class LocalStoryDiscussion {
                                                         } else {
                                                             result7 = result;
                                                         }
-                                                        result7.player.add(str18, BsonLite.document(obj, true, "i", BsonLite.document("msg_id", m73s, "cm_id", str8)));
+                                                        result7.player.add(str18, BsonLite.document(obj, true, "i", BsonLite.document("msg_id", m71s, "cm_id", str8)));
                                                         bArr3 = bArr7;
                                                         str6 = str18;
                                                         result3 = result7;
@@ -291,9 +291,9 @@ final class LocalStoryDiscussion {
                                             z = false;
                                             require(z, "心得不存在或已删除");
                                             String text22 = text(bArr, "cmts", 75);
-                                            require(BsonLite.keys(m72d2).size() >= 20000, "本地回复数量已达上限");
-                                            it = BsonLite.documentEntries(m72d2).entrySet().iterator();
-                                            bArr4 = m72d2;
+                                            require(BsonLite.keys(m70d2).size() >= 20000, "本地回复数量已达上限");
+                                            it = BsonLite.documentEntries(m70d2).entrySet().iterator();
+                                            bArr4 = m70d2;
                                             while (true) {
                                                 if (it.hasNext()) {
                                                 }
@@ -305,19 +305,19 @@ final class LocalStoryDiscussion {
                                             }
                                             if (str8 != null) {
                                             }
-                                            result7.player.add(str18, BsonLite.document(obj, true, "i", BsonLite.document("msg_id", m73s, "cm_id", str8)));
+                                            result7.player.add(str18, BsonLite.document(obj, true, "i", BsonLite.document("msg_id", m71s, "cm_id", str8)));
                                             bArr3 = bArr7;
                                             str6 = str18;
                                             result3 = result7;
                                         } else {
-                                            byte[] bArr8 = m72d2;
+                                            byte[] bArr8 = m70d2;
                                             LocalStoryEngine.Result result9 = result8;
                                             if (!"requestLikeStoryMsg".equals(str2) && !"requestLikeStoryCmt".equals(str2)) {
                                                 if ("reportStoryEditor".equals(str2)) {
-                                                    byte[] m72d3 = m72d(bArr7, "reports");
-                                                    byte[] m72d4 = m72d(bArr, "msg");
-                                                    require(BsonLite.keys(m72d3).size() < 1000 && m72d4.length <= 16384, "本地反馈过多或内容过大");
-                                                    result9.state = BsonLite.withProfileDocument(bArr7, "reports", BsonLite.withProfileDocument(m72d3, LocalResourceEngine.uuid(), BsonLite.document("owner", str14, "type", Integer.valueOf(m74v(bArr, "type")), "msg", m72d4, "created_time", Integer.valueOf(i))));
+                                                    byte[] m70d3 = m70d(bArr7, "reports");
+                                                    byte[] m70d4 = m70d(bArr, "msg");
+                                                    require(BsonLite.keys(m70d3).size() < 1000 && m70d4.length <= 16384, "本地反馈过多或内容过大");
+                                                    result9.state = BsonLite.withProfileDocument(bArr7, "reports", BsonLite.withProfileDocument(m70d3, LocalResourceEngine.uuid(), BsonLite.document("owner", str14, "type", Integer.valueOf(m72v(bArr, "type")), "msg", m70d4, "created_time", Integer.valueOf(i))));
                                                     bArr3 = bArr7;
                                                     str6 = str18;
                                                     result3 = result9;
@@ -327,22 +327,22 @@ final class LocalStoryDiscussion {
                                                 result3 = result9;
                                             }
                                             boolean equals2 = "requestLikeStoryCmt".equals(str2);
-                                            String m73s2 = m73s(bArr, equals2 ? "cmt_id" : "msg_id");
+                                            String m71s2 = m71s(bArr, equals2 ? "cmt_id" : "msg_id");
                                             if (!equals2) {
-                                                bArr8 = m72d;
+                                                bArr8 = m70d;
                                             }
-                                            byte[] entry3 = entry(bArr8, m73s2);
-                                            byte[] entry4 = (!equals2 || entry3 == null) ? entry3 : entry(m72d, m73s(entry3, "msg_id"));
-                                            require((entry4 == null || work(bArr7, m73s(entry4, "oi")) == null) ? false : true, "内容不存在或已删除");
-                                            byte[] m72d5 = m72d(entry3, "likes");
-                                            boolean z3 = !Boolean.TRUE.equals(BsonLite.boolValue(m72d5, str14));
+                                            byte[] entry3 = entry(bArr8, m71s2);
+                                            byte[] entry4 = (!equals2 || entry3 == null) ? entry3 : entry(m70d, m71s(entry3, "msg_id"));
+                                            require((entry4 == null || work(bArr7, m71s(entry4, "oi")) == null) ? false : true, "内容不存在或已删除");
+                                            byte[] m70d5 = m70d(entry3, "likes");
+                                            boolean z3 = !Boolean.TRUE.equals(BsonLite.boolValue(m70d5, str14));
                                             if (z3) {
-                                                result9.state = BsonLite.withProfileDocument(bArr7, equals2 ? "comments" : "messages", BsonLite.withProfileDocument(bArr8, m73s2, BsonLite.withProfileDocument(entry3, "likes", BsonLite.withProfileBool(m72d5, str14, true))));
+                                                result9.state = BsonLite.withProfileDocument(bArr7, equals2 ? "comments" : "messages", BsonLite.withProfileDocument(bArr8, m71s2, BsonLite.withProfileDocument(entry3, "likes", BsonLite.withProfileBool(m70d5, str14, true))));
                                             }
                                             if (z3) {
                                                 Object[] objArr2 = new Object[2];
                                                 objArr2[0] = equals2 ? "comment_id" : "msg_id";
-                                                objArr2[1] = m73s2;
+                                                objArr2[1] = m71s2;
                                                 intDocument = BsonLite.document(objArr2);
                                             } else {
                                                 intDocument = BsonLite.intDocument("rsn", 3);
@@ -358,7 +358,7 @@ final class LocalStoryDiscussion {
                                         runtimeException = e6;
                                         bArr3 = bArr7;
                                         str6 = "seq";
-                                        result4 = m72d2;
+                                        result4 = m70d2;
                                         result4.state = bArr3;
                                         result4.player.replies.clear();
                                         if (str6 != null) {
@@ -379,16 +379,16 @@ final class LocalStoryDiscussion {
                         if (equals && str13 == null) {
                             z2 = false;
                             require(z2, "请先发布自己的心得");
-                            entry = entry(m72d, str13);
-                            if (entry == null && !equals && !text.equals(m73s(entry, "content"))) {
+                            entry = entry(m70d, str13);
+                            if (entry == null && !equals && !text.equals(m71s(entry, "content"))) {
                                 result3.player.add(str6, BsonLite.document(obj, false, "i", BsonLite.document("rsn", 9, "oi", uuid(str12), "msg_id", str13)));
                                 return;
                             }
                             if (entry == null) {
-                                require(BsonLite.keys(m72d).size() < 10000, "本地心得数量已达上限");
+                                require(BsonLite.keys(m70d).size() < 10000, "本地心得数量已达上限");
                                 str13 = LocalResourceEngine.uuid();
                             }
-                            if (entry == null && text.equals(m73s(entry, "content"))) {
+                            if (entry == null && text.equals(m71s(entry, "content"))) {
                                 bArr3 = bArr6;
                             } else {
                                 Object[] objArr3 = new Object[20];
@@ -408,28 +408,28 @@ final class LocalStoryDiscussion {
                                 objArr3[13] = "";
                                 objArr3[14] = "seq";
                                 bArr3 = bArr6;
-                                objArr3[15] = Integer.valueOf(Math.addExact(m74v(bArr3, "sequence"), 1));
+                                objArr3[15] = Integer.valueOf(Math.addExact(m72v(bArr3, "sequence"), 1));
                                 objArr3[16] = "user_info";
                                 objArr3[17] = user(result3.player.profile, str9);
                                 objArr3[18] = str11;
-                                objArr3[19] = entry != null ? BsonLite.EMPTY_DOCUMENT : m72d(entry, str11);
+                                objArr3[19] = entry != null ? BsonLite.EMPTY_DOCUMENT : m70d(entry, str11);
                                 byte[] document2 = BsonLite.document(objArr3);
-                                result3.state = BsonLite.withProfileDocument(bArr3, "messages", BsonLite.withProfileDocument(m72d, str13, document2));
-                                result3.state = BsonLite.withProfileInt(result3.state, "sequence", m74v(document2, "seq"));
+                                result3.state = BsonLite.withProfileDocument(bArr3, "messages", BsonLite.withProfileDocument(m70d, str13, document2));
+                                result3.state = BsonLite.withProfileInt(result3.state, "sequence", m72v(document2, "seq"));
                             }
                             result3.player.add(str6, BsonLite.document(obj, true, "i", BsonLite.document("oi", uuid(str12), "msg_id", str13)));
                             result3 = result3;
                             require(result3.state.length <= 33554432, "本地作品存档已达保存上限");
                             return;
                         }
-                        objArr3[15] = Integer.valueOf(Math.addExact(m74v(bArr3, "sequence"), 1));
+                        objArr3[15] = Integer.valueOf(Math.addExact(m72v(bArr3, "sequence"), 1));
                         objArr3[16] = "user_info";
                         objArr3[17] = user(result3.player.profile, str9);
                         objArr3[18] = str11;
-                        objArr3[19] = entry != null ? BsonLite.EMPTY_DOCUMENT : m72d(entry, str11);
+                        objArr3[19] = entry != null ? BsonLite.EMPTY_DOCUMENT : m70d(entry, str11);
                         byte[] document22 = BsonLite.document(objArr3);
-                        result3.state = BsonLite.withProfileDocument(bArr3, "messages", BsonLite.withProfileDocument(m72d, str13, document22));
-                        result3.state = BsonLite.withProfileInt(result3.state, "sequence", m74v(document22, "seq"));
+                        result3.state = BsonLite.withProfileDocument(bArr3, "messages", BsonLite.withProfileDocument(m70d, str13, document22));
+                        result3.state = BsonLite.withProfileInt(result3.state, "sequence", m72v(document22, "seq"));
                         result3.player.add(str6, BsonLite.document(obj, true, "i", BsonLite.document("oi", uuid(str12), "msg_id", str13)));
                         result3 = result3;
                         require(result3.state.length <= 33554432, "本地作品存档已达保存上限");
@@ -456,9 +456,9 @@ final class LocalStoryDiscussion {
                         return;
                     }
                     require(work != null, "作品不存在或已删除");
-                    require(m74v(result3.player.profile, "level") >= 30, "小剧场心得需要指挥使等级30级");
+                    require(m72v(result3.player.profile, "level") >= 30, "小剧场心得需要指挥使等级30级");
                     text = text(bArr, "m", 350);
-                    Iterator<Map.Entry<String, byte[]>> it4 = BsonLite.documentEntries(m72d).entrySet().iterator();
+                    Iterator<Map.Entry<String, byte[]>> it4 = BsonLite.documentEntries(m70d).entrySet().iterator();
                     while (true) {
                         if (!it4.hasNext()) {
                             bArr6 = bArr7;
@@ -477,7 +477,7 @@ final class LocalStoryDiscussion {
                             result4 = result3;
                         }
                         try {
-                            if (str12.equals(m73s(next.getValue(), "oi")) && str9.equals(m73s(next.getValue(), "owner"))) {
+                            if (str12.equals(m71s(next.getValue(), "oi")) && str9.equals(m71s(next.getValue(), "owner"))) {
                                 str13 = next.getKey();
                                 break;
                             } else {
@@ -500,7 +500,7 @@ final class LocalStoryDiscussion {
                     equals = "requestUpdateStoryMsg".equals(str2);
                     z2 = true;
                     require(z2, "请先发布自己的心得");
-                    entry = entry(m72d, str13);
+                    entry = entry(m70d, str13);
                     if (entry == null) {
                     }
                     if (entry == null) {
@@ -537,37 +537,37 @@ final class LocalStoryDiscussion {
                 str6 = str17;
             }
         }
-        int m74v = "requestSelfStoryHttpInfo".equals(str2) ? 1 : m74v(bArr, "cmd");
-        byte[] m72d6 = m72d(bArr, "d");
+        int m72v = "requestSelfStoryHttpInfo".equals(str2) ? 1 : m72v(bArr, "cmd");
+        byte[] m70d6 = m70d(bArr, "d");
         ArrayList arrayList = new ArrayList();
-        if (work != null && m74v >= 1 && m74v <= 4) {
-            if (m74v == 2) {
-                String m73s3 = m73s(m72d6, "msg_id");
-                byte[] entry5 = entry(m72d, m73s3);
-                if (entry5 != null && str4.equals(m73s(entry5, "oi"))) {
+        if (work != null && m72v >= 1 && m72v <= 4) {
+            if (m72v == 2) {
+                String m71s3 = m71s(m70d6, "msg_id");
+                byte[] entry5 = entry(m70d, m71s3);
+                if (entry5 != null && str4.equals(m71s(entry5, "oi"))) {
                     for (byte[] bArr9 : BsonLite.documentEntries(bArr2).values()) {
-                        if (Objects.equals(m73s3, m73s(bArr9, "msg_id"))) {
+                        if (Objects.equals(m71s3, m71s(bArr9, "msg_id"))) {
                             arrayList.add(bArr9);
                         }
                     }
                 }
             } else {
-                String m73s4 = m73s(m72d6, "target_uid");
-                boolean z4 = "requestSelfStoryHttpInfo".equals(str2) || Objects.equals(m73s4, m73s(m72d6, "uid"));
-                Iterator<byte[]> it5 = BsonLite.documentEntries(m72d).values().iterator();
+                String m71s4 = m71s(m70d6, "target_uid");
+                boolean z4 = "requestSelfStoryHttpInfo".equals(str2) || Objects.equals(m71s4, m71s(m70d6, "uid"));
+                Iterator<byte[]> it5 = BsonLite.documentEntries(m70d).values().iterator();
                 while (it5.hasNext()) {
                     byte[] next3 = it5.next();
                     Iterator<byte[]> it6 = it5;
-                    if (str4.equals(m73s(next3, "oi"))) {
-                        if (m74v != 1) {
+                    if (str4.equals(m71s(next3, "oi"))) {
+                        if (m72v != 1) {
                             str5 = str15;
                         } else if (!z4) {
                             str5 = str15;
-                            if (!Objects.equals(m73s4, m73s(m72d(next3, "user_info"), "uid"))) {
+                            if (!Objects.equals(m71s4, m71s(m70d(next3, "user_info"), "uid"))) {
                                 it5 = it6;
                                 str15 = str5;
                             }
-                        } else if (str3.equals(m73s(next3, str15))) {
+                        } else if (str3.equals(m71s(next3, str15))) {
                             str5 = str15;
                         } else {
                             it5 = it6;
@@ -581,23 +581,23 @@ final class LocalStoryDiscussion {
                 }
             }
         }
-        final boolean z5 = m74v == 3;
+        final boolean z5 = m72v == 3;
         arrayList.sort(new Comparator() { // from class: com.project7.localmanager.LocalStoryDiscussion$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj2, Object obj3) {
                 return LocalStoryDiscussion.lambda$apply$0(z5, (byte[]) obj2, (byte[]) obj3);
             }
         });
-        int max = Math.max(1, Math.min(10000, m74v(m72d6, "page")));
-        int max2 = Math.max(1, Math.min(100, m74v(m72d6, "num") == 0 ? 20 : m74v(m72d6, "num")));
+        int max = Math.max(1, Math.min(10000, m72v(m70d6, "page")));
+        int max2 = Math.max(1, Math.min(100, m72v(m70d6, "num") == 0 ? 20 : m72v(m70d6, "num")));
         int min = Math.min(arrayList.size(), (max - 1) * max2);
         int min2 = Math.min(arrayList.size(), max2 + min);
         ArrayList arrayList2 = new ArrayList();
         Iterator it7 = arrayList.subList(min, min2).iterator();
         while (it7.hasNext()) {
-            arrayList2.add(publicRow((byte[]) it7.next(), str3, bArr2, m74v == 2));
+            arrayList2.add(publicRow((byte[]) it7.next(), str3, bArr2, m72v == 2));
         }
-        result2.player.add("onStoryHttpInfoReply", BsonLite.document("i", BsonLite.document("cmd", Integer.valueOf(m74v), "oi", uuid(str4), "d", m72d6, "r", BsonLite.document("data", BsonLite.document("data", arrayList2, "total", Integer.valueOf(arrayList.size()))))));
+        result2.player.add("onStoryHttpInfoReply", BsonLite.document("i", BsonLite.document("cmd", Integer.valueOf(m72v), "oi", uuid(str4), "d", m70d6, "r", BsonLite.document("data", BsonLite.document("data", arrayList2, "total", Integer.valueOf(arrayList.size()))))));
         if (!"requestSelfStoryHttpInfo".equals(str2) || str4 == null) {
             return;
         }
@@ -605,38 +605,38 @@ final class LocalStoryDiscussion {
     }
 
     static /* synthetic */ int lambda$apply$0(boolean z, byte[] bArr, byte[] bArr2) {
-        int compare = z ? Integer.compare(BsonLite.keys(m72d(bArr2, "likes")).size(), BsonLite.keys(m72d(bArr, "likes")).size()) : 0;
+        int compare = z ? Integer.compare(BsonLite.keys(m70d(bArr2, "likes")).size(), BsonLite.keys(m70d(bArr, "likes")).size()) : 0;
         if (compare == 0) {
-            compare = Integer.compare(m74v(bArr2, "created_time"), m74v(bArr, "created_time"));
+            compare = Integer.compare(m72v(bArr2, "created_time"), m72v(bArr, "created_time"));
         }
-        return compare == 0 ? Integer.compare(m74v(bArr2, "seq"), m74v(bArr, "seq")) : compare;
+        return compare == 0 ? Integer.compare(m72v(bArr2, "seq"), m72v(bArr, "seq")) : compare;
     }
 
     static void deleteWork(LocalStoryEngine.Result result, String str) {
-        byte[] m72d = m72d(result.state, "messages");
-        byte[] m72d2 = m72d(result.state, "comments");
+        byte[] m70d = m70d(result.state, "messages");
+        byte[] m70d2 = m70d(result.state, "comments");
         HashSet hashSet = new HashSet();
-        for (Map.Entry<String, byte[]> entry : BsonLite.documentEntries(m72d).entrySet()) {
-            if (Objects.equals(str, m73s(entry.getValue(), "oi"))) {
+        for (Map.Entry<String, byte[]> entry : BsonLite.documentEntries(m70d).entrySet()) {
+            if (Objects.equals(str, m71s(entry.getValue(), "oi"))) {
                 hashSet.add(entry.getKey());
-                m72d = BsonLite.withoutProfileKey(m72d, entry.getKey());
+                m70d = BsonLite.withoutProfileKey(m70d, entry.getKey());
             }
         }
-        for (Map.Entry<String, byte[]> entry2 : BsonLite.documentEntries(m72d2).entrySet()) {
-            if (hashSet.contains(m73s(entry2.getValue(), "msg_id"))) {
-                m72d2 = BsonLite.withoutProfileKey(m72d2, entry2.getKey());
+        for (Map.Entry<String, byte[]> entry2 : BsonLite.documentEntries(m70d2).entrySet()) {
+            if (hashSet.contains(m71s(entry2.getValue(), "msg_id"))) {
+                m70d2 = BsonLite.withoutProfileKey(m70d2, entry2.getKey());
             }
         }
-        result.state = BsonLite.withProfileDocument(BsonLite.withProfileDocument(result.state, "messages", m72d), "comments", m72d2);
+        result.state = BsonLite.withProfileDocument(BsonLite.withProfileDocument(result.state, "messages", m70d), "comments", m70d2);
     }
 
     private static byte[] publicRow(byte[] bArr, String str, byte[] bArr2, boolean z) {
-        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileBool(BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(bArr, "owner"), "likes"), "oi"), "seq"), "liked", Boolean.TRUE.equals(BsonLite.boolValue(m72d(bArr, "likes"), str))), "like_num", BsonLite.keys(m72d(bArr, "likes")).size());
+        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileBool(BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(BsonLite.withoutProfileKey(bArr, "owner"), "likes"), "oi"), "seq"), "liked", Boolean.TRUE.equals(BsonLite.boolValue(m70d(bArr, "likes"), str))), "like_num", BsonLite.keys(m70d(bArr, "likes")).size());
         int i = 0;
         if (!z) {
             Iterator<byte[]> it = BsonLite.documentEntries(bArr2).values().iterator();
             while (it.hasNext()) {
-                if (Objects.equals(m73s(bArr, "msg_id"), m73s(it.next(), "msg_id"))) {
+                if (Objects.equals(m71s(bArr, "msg_id"), m71s(it.next(), "msg_id"))) {
                     i++;
                 }
             }
@@ -645,24 +645,24 @@ final class LocalStoryDiscussion {
     }
 
     private static byte[] user(byte[] bArr, String str) {
-        byte[] m72d = m72d(bArr, "headImage");
-        String m73s = m73s(m72d, "2");
-        if (m73s == null || !m73s.matches("[A-Za-z0-9_-]{0,128}")) {
-            m73s = "";
+        byte[] m70d = m70d(bArr, "headImage");
+        String m71s = m71s(m70d, "2");
+        if (m71s == null || !m71s.matches("[A-Za-z0-9_-]{0,128}")) {
+            m71s = "";
         }
-        String str2 = "[" + m74v(m72d, "0") + "," + m74v(m72d, "1") + ",\"" + m73s + "\"]";
+        String str2 = "[" + m72v(m70d, "0") + "," + m72v(m70d, "1") + ",\"" + m71s + "\"]";
         Object[] objArr = new Object[10];
         objArr[0] = "avatar";
         objArr[1] = str2;
         objArr[2] = "uid";
         objArr[3] = accountId(str);
         objArr[4] = "game_uid";
-        objArr[5] = Integer.valueOf(m74v(bArr, "uid"));
+        objArr[5] = Integer.valueOf(m72v(bArr, "uid"));
         objArr[6] = "head_skin";
-        objArr[7] = Integer.valueOf(m74v(bArr, "bbs_skin"));
+        objArr[7] = Integer.valueOf(m72v(bArr, "bbs_skin"));
         objArr[8] = "name";
-        if (m73s(bArr, "name") != null) {
-            str = m73s(bArr, "name");
+        if (m71s(bArr, "name") != null) {
+            str = m71s(bArr, "name");
         }
         objArr[9] = str;
         return BsonLite.document(objArr);
@@ -683,8 +683,8 @@ final class LocalStoryDiscussion {
 
     private static byte[] work(byte[] bArr, String str) {
         if (str != null) {
-            for (byte[] bArr2 : BsonLite.documentEntries(m72d(bArr, "works")).values()) {
-                if (str.equals(m73s(bArr2, "id"))) {
+            for (byte[] bArr2 : BsonLite.documentEntries(m70d(bArr, "works")).values()) {
+                if (str.equals(m71s(bArr2, "id"))) {
                     return bArr2;
                 }
             }
@@ -701,13 +701,13 @@ final class LocalStoryDiscussion {
     }
 
     private static String text(byte[] bArr, String str, int i) {
-        String m73s = m73s(bArr, str);
+        String m71s = m71s(bArr, str);
         boolean z = false;
-        if (m73s != null && !m73s.trim().isEmpty() && m73s.indexOf(0) < 0 && m73s.codePointCount(0, m73s.length()) <= i) {
+        if (m71s != null && !m71s.trim().isEmpty() && m71s.indexOf(0) < 0 && m71s.codePointCount(0, m71s.length()) <= i) {
             z = true;
         }
         require(z, "内容为空或超过字数上限");
-        return m73s;
+        return m71s;
     }
 
     private static void require(boolean z, String str) {

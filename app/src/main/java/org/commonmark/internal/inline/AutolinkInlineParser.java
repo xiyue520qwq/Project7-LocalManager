@@ -30,7 +30,7 @@ public class AutolinkInlineParser implements InlineContentParser {
                 Text text = new Text(content);
                 text.setSourceSpans(textSource.getSourceSpans());
                 link.appendChild(text);
-                return ParsedInline.m97of(link, scanner.position());
+                return ParsedInline.m93of(link, scanner.position());
             }
         }
         return ParsedInline.none();

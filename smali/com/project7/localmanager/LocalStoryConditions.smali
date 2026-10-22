@@ -26,12 +26,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 19
+    .locals 13
 
     .line 13
     new-instance v0, Ljava/util/LinkedHashSet;
 
-    const/16 v1, 0x23
+    const/16 v1, 0x1a
 
     new-array v2, v1, [Ljava/lang/Integer;
 
@@ -140,155 +140,15 @@
 
     aput-object v11, v2, v12
 
-    const/16 v11, 0x1a
-
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const/16 v13, 0xb
-
-    aput-object v12, v2, v13
-
-    const/16 v12, 0x1b
-
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    aput-object v13, v2, v6
-
-    const/16 v6, 0x1c
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    const/16 v14, 0xd
-
-    aput-object v13, v2, v14
-
-    const/16 v13, 0x1d
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v14
-
-    const/16 v15, 0xe
-
-    aput-object v14, v2, v15
-
-    const/16 v14, 0x1e
-
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v15
-
-    const/16 v16, 0xf
-
-    aput-object v15, v2, v16
-
-    const/16 v15, 0x20
-
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v16
-
-    const/16 v17, 0x10
-
-    aput-object v16, v2, v17
-
-    const/16 v16, 0x21
-
-    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    const/16 v18, 0x11
-
-    aput-object v17, v2, v18
-
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v2, v7
-
-    const/16 v1, 0x24
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v8
-
-    const/16 v1, 0x25
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/16 v7, 0x14
-
-    aput-object v1, v2, v7
-
-    const/16 v1, 0x26
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v3
-
-    const/16 v1, 0x27
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v4
-
-    const/16 v1, 0x28
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v5
-
-    const/16 v1, 0x29
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v9
-
-    const/16 v1, 0x2a
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v10
-
-    const/16 v1, 0x2b
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
+    const/16 v11, 0xb
 
     aput-object v1, v2, v11
 
-    const/16 v1, 0x2c
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v12
-
-    const/16 v1, 0x2f
+    const/16 v1, 0x1b
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -296,21 +156,97 @@
 
     aput-object v1, v2, v6
 
+    const/16 v1, 0x1c
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v6, 0xd
+
+    aput-object v1, v2, v6
+
+    const/16 v1, 0x1d
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v6, 0xe
+
+    aput-object v1, v2, v6
+
+    const/16 v1, 0x1e
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v6, 0xf
+
+    aput-object v1, v2, v6
+
+    const/16 v1, 0x21
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v6, 0x10
+
+    aput-object v1, v2, v6
+
+    const/16 v1, 0x25
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v6, 0x11
+
+    aput-object v1, v2, v6
+
+    const/16 v1, 0x2a
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v2, v7
+
+    const/16 v1, 0x2b
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v2, v8
+
+    const/16 v1, 0x2c
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v6, 0x14
+
+    aput-object v1, v2, v6
+
+    const/16 v1, 0x2f
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v2, v3
+
     const/16 v1, 0x30
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v2, v13
-
-    const/16 v1, 0x32
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v2, v14
+    aput-object v1, v2, v4
 
     const/16 v1, 0x33
 
@@ -318,9 +254,7 @@
 
     move-result-object v1
 
-    const/16 v3, 0x1f
-
-    aput-object v1, v2, v3
+    aput-object v1, v2, v5
 
     const/16 v1, 0x34
 
@@ -328,7 +262,7 @@
 
     move-result-object v1
 
-    aput-object v1, v2, v15
+    aput-object v1, v2, v9
 
     const/16 v1, 0x35
 
@@ -336,17 +270,7 @@
 
     move-result-object v1
 
-    aput-object v1, v2, v16
-
-    const/16 v1, 0x36
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/16 v3, 0x22
-
-    aput-object v1, v2, v3
+    aput-object v1, v2, v10
 
     .line 13
     invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -376,7 +300,7 @@
 .method static evaluate(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;)Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
     .locals 1
 
-    .line 40
+    .line 33
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, p3, v0}, Lcom/project7/localmanager/LocalStoryConditions;->evaluate(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalStoryConditions$Context;)Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
@@ -387,9 +311,9 @@
 .end method
 
 .method static evaluate(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalStoryConditions$Context;)Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
-    .locals 4
+    .locals 3
 
-    .line 44
+    .line 37
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -410,7 +334,7 @@
 
     move-result-object v0
 
-    .line 45
+    .line 38
     sget-object v1, Lcom/project7/localmanager/LocalStoryConditions;->SUPPORTED:Ljava/util/Set;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -433,21 +357,19 @@
 
     return-object p0
 
-    .line 46
+    .line 39
     :cond_0
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_5
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_5
 
     if-nez p1, :cond_1
 
-    goto/16 :goto_2
+    goto :goto_2
 
-    .line 48
+    .line 41
     :cond_1
     const/16 v1, 0x1d
-
-    const-string v3, "missing-context"
 
     if-ne p0, v1, :cond_3
 
@@ -459,7 +381,7 @@
 
     if-nez v1, :cond_3
 
-    .line 49
+    .line 42
     :cond_2
     new-instance p0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
 
@@ -477,79 +399,29 @@
 
     move-result-object p1
 
-    invoke-direct {p0, v2, v3, p1}, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;-><init>(ZLjava/lang/String;Ljava/lang/String;)V
+    const-string p2, "missing-context"
+
+    invoke-direct {p0, v2, p2, p1}, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;-><init>(ZLjava/lang/String;Ljava/lang/String;)V
 
     return-object p0
 
-    .line 50
+    .line 44
     :cond_3
-    const/16 v1, 0x26
-
-    if-lt p0, v1, :cond_5
-
-    const/16 v1, 0x28
-
-    if-gt p0, v1, :cond_5
-
-    if-eqz p4, :cond_4
-
-    invoke-virtual {p4}, Lcom/project7/localmanager/LocalStoryConditions$Context;->isPatrol()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    iget-object v1, p4, Lcom/project7/localmanager/LocalStoryConditions$Context;->work:Lcom/project7/localmanager/LocalPatrolCatalog;
-
-    if-eqz v1, :cond_4
-
-    iget-object v1, p4, Lcom/project7/localmanager/LocalStoryConditions$Context;->heroes:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 51
-    :cond_4
-    new-instance p0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p2, ":selected-patrol-team-required"
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, v2, v3, p1}, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;-><init>(ZLjava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-
-    .line 53
-    :cond_5
     :try_start_0
     invoke-static {p0, p1, p2, p3, p4}, Lcom/project7/localmanager/LocalStoryConditions;->matchesValue(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalStoryConditions$Context;)Z
 
     move-result p0
 
-    .line 54
+    .line 45
     new-instance p1, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_4
 
     const-string p2, "passed"
 
     goto :goto_0
 
-    :cond_6
+    :cond_4
     const-string p2, "unmet"
 
     :goto_0
@@ -561,7 +433,7 @@
 
     return-object p1
 
-    .line 55
+    .line 46
     :catch_0
     move-exception p0
 
@@ -575,7 +447,7 @@
     :catch_2
     move-exception p0
 
-    .line 56
+    .line 47
     :goto_1
     new-instance p1, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
 
@@ -609,8 +481,8 @@
 
     return-object p1
 
-    .line 47
-    :cond_7
+    .line 40
+    :cond_5
     :goto_2
     new-instance p0, Lcom/project7/localmanager/LocalStoryConditions$Evaluation;
 
@@ -632,14 +504,14 @@
         }
     .end annotation
 
-    .line 286
+    .line 232
     const-string v0, "bd"
 
     invoke-static {p0, v0}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object p0
 
-    .line 287
+    .line 233
     invoke-static {p0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v0
@@ -661,7 +533,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 288
+    .line 234
     invoke-static {p0, v1}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
@@ -672,7 +544,7 @@
 
     move-result-object v1
 
-    .line 289
+    .line 235
     if-eqz v1, :cond_0
 
     invoke-interface {p1, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -685,11 +557,11 @@
 
     return p0
 
-    .line 290
+    .line 236
     :cond_0
     goto :goto_0
 
-    .line 291
+    .line 237
     :cond_1
     const/4 p0, 0x0
 
@@ -709,12 +581,12 @@
         }
     .end annotation
 
-    .line 313
+    .line 259
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    .line 314
+    .line 260
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
@@ -750,7 +622,7 @@
 
     goto :goto_0
 
-    .line 315
+    .line 261
     :cond_0
     return-object v0
 .end method
@@ -771,7 +643,7 @@
 .method private static matchesValue(ILjava/lang/String;[BLcom/project7/localmanager/LocalTutorialStore$Progress;Lcom/project7/localmanager/LocalStoryConditions$Context;)Z
     .locals 16
 
-    .line 61
+    .line 52
     move/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -780,557 +652,58 @@
 
     move-object/from16 v3, p3
 
-    move-object/from16 v4, p4
-
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     if-nez v2, :cond_0
 
-    return v5
+    return v4
 
-    .line 62
+    .line 53
     :cond_0
-    const/16 v6, 0x36
+    const/16 v5, 0x35
 
-    const-string v7, ","
+    const/16 v6, 0x64
 
-    const/4 v8, -0x1
+    const-string v7, "std"
 
-    const/4 v9, 0x2
+    const-string v8, ","
 
-    const/4 v10, 0x1
+    const/4 v9, -0x1
 
-    if-ne v0, v6, :cond_4
+    const/4 v10, 0x2
 
-    .line 63
-    invoke-virtual {v1, v7, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    const/4 v11, 0x1
+
+    if-ne v0, v5, :cond_6
+
+    .line 54
+    invoke-virtual {v1, v8, v9}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 64
+    .line 55
     array-length v1, v0
 
-    if-ne v1, v9, :cond_3
+    if-ne v1, v10, :cond_5
 
-    .line 65
-    aget-object v1, v0, v5
+    .line 56
+    aget-object v1, v0, v4
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
 
-    aget-object v0, v0, v10
+    aget-object v0, v0, v11
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 66
-    if-gt v1, v0, :cond_2
-
-    .line 67
-    invoke-static/range {p2 .. p2}, Lcom/project7/localmanager/LocalStoryGeneralEngine;->value([B)I
-
-    move-result v2
-
-    .line 68
-    if-lt v2, v1, :cond_1
-
-    if-gt v2, v0, :cond_1
-
-    move v5, v10
-
-    :cond_1
-    return v5
-
-    .line 66
-    :cond_2
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "reversed general value interval"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 64
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "invalid general value interval"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 70
-    :cond_4
-    const/16 v6, 0x32
-
-    if-ne v0, v6, :cond_8
-
-    .line 71
-    invoke-virtual {v1, v7, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 72
-    array-length v1, v0
-
-    if-ne v1, v9, :cond_7
-
-    .line 73
-    aget-object v1, v0, v5
-
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    aget-object v0, v0, v10
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 74
-    if-gt v1, v0, :cond_6
-
-    .line 75
-    invoke-static/range {p2 .. p2}, Lcom/project7/localmanager/LocalStoryClearConditions;->count([B)I
-
-    move-result v2
-
-    .line 76
-    if-lt v2, v1, :cond_5
-
-    if-gt v2, v0, :cond_5
-
-    move v5, v10
-
-    :cond_5
-    return v5
-
-    .line 74
-    :cond_6
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "reversed hero clear interval"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 72
-    :cond_7
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "invalid hero clear interval"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 78
-    :cond_8
-    const/16 v6, 0x23
-
-    if-eq v0, v6, :cond_7c
-
-    const/16 v6, 0x24
-
-    if-eq v0, v6, :cond_7c
-
-    const/16 v6, 0x29
-
-    if-ne v0, v6, :cond_9
-
-    goto/16 :goto_28
-
-    .line 79
-    :cond_9
-    const/16 v6, 0x20
-
-    const-string v11, "\\|"
-
-    const-string v12, ":"
-
-    if-ne v0, v6, :cond_13
-
-    .line 80
-    invoke-virtual {v1, v11, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    move v3, v5
-
-    :goto_0
-    if-ge v3, v1, :cond_12
-
-    aget-object v4, v0, v3
-
-    .line 81
-    invoke-virtual {v4, v12, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 82
-    array-length v6, v4
-
-    if-ne v6, v9, :cond_11
-
-    .line 83
-    aget-object v6, v4, v5
-
-    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v6
-
-    aget-object v4, v4, v10
-
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    .line 84
-    if-lez v6, :cond_10
-
-    if-eqz v4, :cond_a
-
-    if-ne v4, v10, :cond_10
-
-    .line 85
-    :cond_a
-    invoke-static {v2, v6}, Lcom/project7/localmanager/LocalResourceEngine;->ownsHero([BI)Z
-
-    move-result v7
-
-    if-nez v7, :cond_b
-
-    return v5
-
-    .line 86
-    :cond_b
-    invoke-static {v2, v6}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
-
-    move-result-object v6
-
-    .line 87
-    const-string v7, "oa"
-
-    invoke-static {v6, v7}, Lcom/project7/localmanager/BsonLite;->boolValue([BLjava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v11
-
-    .line 88
-    if-nez v11, :cond_d
-
-    invoke-static {v6}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
-
-    move-result-object v6
-
-    invoke-interface {v6, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_c
-
-    goto :goto_1
-
-    :cond_c
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "malformed artifact state"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 90
-    :cond_d
-    :goto_1
-    sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v6, v11}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-ne v4, v10, :cond_e
-
-    move v4, v10
-
-    goto :goto_2
-
-    :cond_e
-    move v4, v5
-
-    :goto_2
-    if-eq v6, v4, :cond_f
-
-    return v5
-
-    .line 80
-    :cond_f
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    .line 84
-    :cond_10
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "invalid artifact state"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 82
-    :cond_11
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "invalid artifact condition"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 92
-    :cond_12
-    return v10
-
-    .line 94
-    :cond_13
-    const/4 v6, 0x3
-
-    const/16 v13, 0x26
-
-    if-lt v0, v13, :cond_1b
-
-    const/16 v14, 0x28
-
-    if-gt v0, v14, :cond_1b
-
-    .line 95
-    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    .line 96
-    if-ltz v1, :cond_1a
-
-    iget-object v3, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->heroes:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-gt v3, v6, :cond_1a
-
-    new-instance v3, Ljava/util/LinkedHashSet;
-
-    iget-object v6, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->heroes:Ljava/util/List;
-
-    invoke-direct {v3, v6}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
-
-    invoke-virtual {v3}, Ljava/util/LinkedHashSet;->size()I
-
-    move-result v3
-
-    iget-object v6, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->heroes:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v6
-
-    if-ne v3, v6, :cond_1a
-
-    .line 98
-    iget-object v3, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->heroes:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    move v6, v5
-
-    :goto_3
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_18
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/Integer;
-
-    .line 99
-    if-eqz v7, :cond_17
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    if-lez v8, :cond_17
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    invoke-static {v2, v8}, Lcom/project7/localmanager/LocalResourceEngine;->ownsHero([BI)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_17
-
-    iget-object v8, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->work:Lcom/project7/localmanager/LocalPatrolCatalog;
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    add-int/lit8 v11, v0, -0x26
-
-    invoke-virtual {v8, v9, v11}, Lcom/project7/localmanager/LocalPatrolCatalog;->hasWork(II)Z
-
-    move-result v8
-
-    if-nez v8, :cond_14
-
-    goto :goto_5
-
-    .line 100
-    :cond_14
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    invoke-static {v2, v8}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
-
-    move-result-object v8
-
-    .line 101
-    const-string v9, "sl"
-
-    invoke-static {v8, v9}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    const-string v12, "so"
-
-    invoke-static {v8, v12}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    .line 102
-    if-eqz v9, :cond_16
-
-    if-eqz v12, :cond_16
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    if-lt v9, v10, :cond_16
-
-    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    if-ge v9, v10, :cond_15
-
-    goto :goto_4
-
-    .line 103
-    :cond_15
-    iget-object v9, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->work:Lcom/project7/localmanager/LocalPatrolCatalog;
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v7
-
-    invoke-virtual {v9, v8, v7, v11}, Lcom/project7/localmanager/LocalPatrolCatalog;->work([BII)I
-
-    move-result v7
-
-    invoke-static {v6, v7}, Ljava/lang/Math;->addExact(II)I
-
-    move-result v6
-
-    .line 104
-    goto :goto_3
-
-    .line 102
-    :cond_16
-    :goto_4
-    return v5
-
-    .line 99
-    :cond_17
-    :goto_5
-    return v5
-
-    .line 105
-    :cond_18
-    if-lt v6, v1, :cond_19
-
-    move v5, v10
-
-    :cond_19
-    return v5
-
-    .line 97
-    :cond_1a
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "invalid patrol ability request"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 107
-    :cond_1b
-    const/16 v13, 0x35
-
-    const/16 v14, 0x64
-
-    const-string v15, "std"
-
-    if-ne v0, v13, :cond_21
-
-    .line 108
-    invoke-virtual {v1, v7, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 109
-    array-length v1, v0
-
-    if-ne v1, v9, :cond_20
-
-    .line 110
-    aget-object v1, v0, v5
-
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    aget-object v0, v0, v10
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 111
-    if-gt v1, v0, :cond_1f
-
-    .line 112
-    invoke-static {v2, v15}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
+    .line 57
+    if-gt v1, v0, :cond_4
+
+    .line 58
+    invoke-static {v2, v7}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
 
@@ -1340,45 +713,45 @@
 
     move-result-object v2
 
-    .line 113
-    if-nez v2, :cond_1c
+    .line 59
+    if-nez v2, :cond_1
 
-    return v5
+    return v4
 
-    .line 114
-    :cond_1c
+    .line 60
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-ltz v3, :cond_1e
+    if-ltz v3, :cond_3
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-gt v3, v14, :cond_1e
+    if-gt v3, v6, :cond_3
 
-    .line 116
+    .line 62
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-lt v3, v1, :cond_1d
+    if-lt v3, v1, :cond_2
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-gt v1, v0, :cond_1d
+    if-gt v1, v0, :cond_2
 
-    move v5, v10
+    move v4, v11
 
-    :cond_1d
-    return v5
+    :cond_2
+    return v4
 
-    .line 115
-    :cond_1e
+    .line 61
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid native yisake value"
@@ -1387,8 +760,8 @@
 
     throw v0
 
-    .line 111
-    :cond_1f
+    .line 57
+    :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "reversed yisake interval"
@@ -1397,8 +770,8 @@
 
     throw v0
 
-    .line 109
-    :cond_20
+    .line 55
+    :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid yisake interval"
@@ -1407,40 +780,40 @@
 
     throw v0
 
-    .line 118
-    :cond_21
-    const/16 v13, 0x33
+    .line 64
+    :cond_6
+    const/16 v5, 0x33
 
-    if-ne v0, v13, :cond_27
+    if-ne v0, v5, :cond_c
 
-    .line 119
-    invoke-virtual {v1, v7, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    .line 65
+    invoke-virtual {v1, v8, v9}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 120
+    .line 66
     array-length v1, v0
 
-    if-ne v1, v9, :cond_26
+    if-ne v1, v10, :cond_b
 
-    .line 121
-    aget-object v1, v0, v5
+    .line 67
+    aget-object v1, v0, v4
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
 
-    aget-object v0, v0, v10
+    aget-object v0, v0, v11
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 122
-    if-gt v1, v0, :cond_25
+    .line 68
+    if-gt v1, v0, :cond_a
 
-    .line 123
-    invoke-static {v2, v15}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
+    .line 69
+    invoke-static {v2, v7}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
 
@@ -1450,45 +823,45 @@
 
     move-result-object v2
 
-    .line 124
-    if-nez v2, :cond_22
+    .line 70
+    if-nez v2, :cond_7
 
-    return v5
+    return v4
 
-    .line 125
-    :cond_22
+    .line 71
+    :cond_7
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-ltz v3, :cond_24
+    if-ltz v3, :cond_9
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-gt v3, v14, :cond_24
+    if-gt v3, v6, :cond_9
 
-    .line 127
+    .line 73
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-lt v3, v1, :cond_23
+    if-lt v3, v1, :cond_8
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-gt v1, v0, :cond_23
+    if-gt v1, v0, :cond_8
 
-    move v5, v10
+    move v4, v11
 
-    :cond_23
-    return v5
+    :cond_8
+    return v4
 
-    .line 126
-    :cond_24
+    .line 72
+    :cond_9
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid native baiyu value"
@@ -1497,8 +870,8 @@
 
     throw v0
 
-    .line 122
-    :cond_25
+    .line 68
+    :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "reversed baiyu interval"
@@ -1507,8 +880,8 @@
 
     throw v0
 
-    .line 120
-    :cond_26
+    .line 66
+    :cond_b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid baiyu interval"
@@ -1517,113 +890,119 @@
 
     throw v0
 
-    .line 129
-    :cond_27
-    const/16 v13, 0x25
+    .line 75
+    :cond_c
+    const/16 v5, 0x25
 
-    if-ne v0, v13, :cond_30
+    const-string v6, "\\|"
 
-    .line 130
+    const-string v12, ":"
+
+    if-ne v0, v5, :cond_15
+
+    .line 76
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_14
 
-    .line 131
-    invoke-virtual {v1, v11, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    .line 77
+    invoke-virtual {v1, v6, v9}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v0
 
     array-length v1, v0
 
-    move v4, v5
+    move v5, v4
 
-    :goto_6
-    if-ge v4, v1, :cond_2e
+    :goto_0
+    if-ge v5, v1, :cond_13
 
-    aget-object v7, v0, v4
+    aget-object v6, v0, v5
 
-    .line 132
-    invoke-virtual {v7, v12, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    .line 78
+    invoke-virtual {v6, v12, v9}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    .line 133
-    array-length v11, v7
+    .line 79
+    array-length v7, v6
 
-    if-ne v11, v6, :cond_2d
+    const/4 v8, 0x3
 
-    .line 134
-    aget-object v11, v7, v5
+    if-ne v7, v8, :cond_12
 
-    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v11
-
-    aget-object v13, v7, v10
-
-    invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v13
-
-    aget-object v7, v7, v9
+    .line 80
+    aget-object v7, v6, v4
 
     invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 135
-    if-lez v11, :cond_2c
+    aget-object v8, v6, v11
 
-    if-gt v13, v7, :cond_2c
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    .line 136
-    invoke-static {v2, v3, v11}, Lcom/project7/localmanager/LocalStoryConditions;->remainingFatigue([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)Ljava/lang/Integer;
+    move-result v8
 
-    move-result-object v11
+    aget-object v6, v6, v10
 
-    .line 137
-    if-nez v11, :cond_28
+    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    return v5
+    move-result v6
 
-    .line 138
-    :cond_28
-    invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
+    .line 81
+    if-lez v7, :cond_11
 
-    move-result v14
+    if-gt v8, v6, :cond_11
 
-    if-ltz v14, :cond_2b
+    .line 82
+    invoke-static {v2, v3, v7}, Lcom/project7/localmanager/LocalStoryConditions;->remainingFatigue([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)Ljava/lang/Integer;
 
-    .line 139
-    invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
+    move-result-object v7
 
-    move-result v14
+    .line 83
+    if-nez v7, :cond_d
 
-    if-lt v14, v13, :cond_2a
+    return v4
 
-    invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
+    .line 84
+    :cond_d
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    move-result v11
+    move-result v13
 
-    if-le v11, v7, :cond_29
+    if-ltz v13, :cond_10
 
-    goto :goto_7
+    .line 85
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    .line 131
-    :cond_29
-    add-int/lit8 v4, v4, 0x1
+    move-result v13
 
-    goto :goto_6
+    if-lt v13, v8, :cond_f
 
-    .line 139
-    :cond_2a
-    :goto_7
-    return v5
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
-    .line 138
-    :cond_2b
+    move-result v7
+
+    if-le v7, v6, :cond_e
+
+    goto :goto_1
+
+    .line 77
+    :cond_e
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 85
+    :cond_f
+    :goto_1
+    return v4
+
+    .line 84
+    :cond_10
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "negative remaining fatigue"
@@ -1632,8 +1011,8 @@
 
     throw v0
 
-    .line 135
-    :cond_2c
+    .line 81
+    :cond_11
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid fatigue bounds"
@@ -1642,8 +1021,8 @@
 
     throw v0
 
-    .line 133
-    :cond_2d
+    .line 79
+    :cond_12
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid fatigue interval"
@@ -1652,12 +1031,12 @@
 
     throw v0
 
-    .line 141
-    :cond_2e
-    return v10
+    .line 87
+    :cond_13
+    return v11
 
-    .line 130
-    :cond_2f
+    .line 76
+    :cond_14
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "empty fatigue condition"
@@ -1666,52 +1045,54 @@
 
     throw v0
 
-    .line 143
-    :cond_30
-    const/16 v6, 0x2b
+    .line 89
+    :cond_15
+    const/16 v5, 0x2b
 
-    if-eq v0, v6, :cond_76
+    if-eq v0, v5, :cond_5b
 
     const/16 v13, 0x2c
 
-    if-ne v0, v13, :cond_31
+    if-ne v0, v13, :cond_16
 
-    goto/16 :goto_25
+    goto/16 :goto_1f
 
-    .line 156
-    :cond_31
-    const/16 v6, 0x1d
+    .line 102
+    :cond_16
+    const/16 v5, 0x1d
 
-    const-string v8, "areas"
+    const-string v9, "areas"
 
     const-string v13, "area_"
 
     const-string v14, "city"
 
-    if-ne v0, v6, :cond_34
+    if-ne v0, v5, :cond_19
 
-    .line 157
+    .line 103
     invoke-static/range {p1 .. p1}, Lcom/project7/localmanager/LocalStoryConditions;->integers(Ljava/lang/String;)Ljava/util/Set;
 
     move-result-object v0
 
-    .line 158
+    .line 104
     invoke-static {v2, v14}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    invoke-static {v1, v8}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
+    invoke-static {v1, v9}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v1
 
-    .line 159
+    .line 105
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v3, v4, Lcom/project7/localmanager/LocalStoryConditions$Context;->patrolArea:I
+    move-object/from16 v3, p4
+
+    iget v3, v3, Lcom/project7/localmanager/LocalStoryConditions$Context;->patrolArea:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1729,7 +1110,7 @@
 
     move-result-object v1
 
-    .line 160
+    .line 106
     invoke-static {v1}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v2
@@ -1738,12 +1119,12 @@
 
     move-result-object v2
 
-    :goto_8
+    :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_18
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1751,41 +1132,41 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 161
+    .line 107
     invoke-static {v1, v3}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v3
 
-    const-string v4, "id"
+    const-string v5, "id"
 
-    invoke-static {v3, v4}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v3, v5}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 162
-    if-eqz v3, :cond_32
+    .line 108
+    if-eqz v3, :cond_17
 
     invoke-interface {v0, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_17
 
-    return v10
+    return v11
 
-    .line 163
-    :cond_32
-    goto :goto_8
+    .line 109
+    :cond_17
+    goto :goto_2
 
-    .line 164
-    :cond_33
-    return v5
+    .line 110
+    :cond_18
+    return v4
 
-    .line 166
-    :cond_34
-    const/16 v4, 0x21
+    .line 112
+    :cond_19
+    const/16 v5, 0x21
 
-    if-ne v0, v4, :cond_36
+    if-ne v0, v5, :cond_1b
 
     const-string v0, "money"
 
@@ -1797,106 +1178,106 @@
 
     move-result v1
 
-    if-lt v0, v1, :cond_35
+    if-lt v0, v1, :cond_1a
 
-    move v5, v10
+    move v4, v11
 
-    :cond_35
-    return v5
+    :cond_1a
+    return v4
 
-    .line 167
-    :cond_36
-    const/16 v4, 0x13
+    .line 113
+    :cond_1b
+    const/16 v5, 0x13
 
-    const-string v6, "w"
+    const-string v15, "w"
 
-    if-ne v0, v4, :cond_3d
+    if-ne v0, v5, :cond_22
 
-    .line 168
+    .line 114
     const-string v0, "weeknum"
 
     invoke-static {v2, v0}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v0
 
-    .line 169
-    invoke-static {v0, v6}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
+    .line 115
+    invoke-static {v0, v15}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
 
     move-result v2
 
-    const-string v4, "d"
+    const-string v5, "d"
 
-    invoke-static {v0, v4}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
+    invoke-static {v0, v5}, Lcom/project7/localmanager/LocalResourceEngine;->value([BLjava/lang/String;)I
 
     move-result v0
 
-    .line 170
-    invoke-virtual {v1, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 116
+    invoke-virtual {v1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    array-length v4, v1
+    array-length v5, v1
 
-    move v6, v5
+    move v6, v4
 
-    :goto_9
-    if-ge v6, v4, :cond_3c
+    :goto_3
+    if-ge v6, v5, :cond_21
 
     aget-object v7, v1, v6
 
-    .line 171
+    .line 117
     invoke-virtual {v7, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 172
+    .line 118
     iget-object v8, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->eventDays:Ljava/util/Map;
 
-    aget-object v11, v7, v5
+    aget-object v9, v7, v4
 
-    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v9
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-interface {v8, v11}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v8, v9}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Ljava/lang/String;
 
-    .line 173
-    if-nez v8, :cond_37
+    .line 119
+    if-nez v8, :cond_1c
 
-    return v5
+    return v4
 
-    .line 174
-    :cond_37
+    .line 120
+    :cond_1c
     invoke-virtual {v8, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v8
 
-    .line 175
-    array-length v11, v8
+    .line 121
+    array-length v9, v8
 
-    if-ne v11, v9, :cond_3b
+    if-ne v9, v10, :cond_20
 
-    aget-object v11, v8, v5
+    aget-object v9, v8, v4
 
-    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v9
 
-    if-eq v11, v2, :cond_38
+    if-eq v9, v2, :cond_1d
 
-    goto :goto_b
+    goto :goto_5
 
-    .line 176
-    :cond_38
-    aget-object v8, v8, v10
+    .line 122
+    :cond_1d
+    aget-object v8, v8, v11
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -1904,64 +1285,64 @@
 
     sub-int v8, v0, v8
 
-    .line 177
-    aget-object v11, v7, v10
+    .line 123
+    aget-object v9, v7, v11
 
-    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v9
 
-    if-lt v8, v11, :cond_3a
+    if-lt v8, v9, :cond_1f
 
-    aget-object v7, v7, v9
+    aget-object v7, v7, v10
 
     invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v7
 
-    if-le v8, v7, :cond_39
+    if-le v8, v7, :cond_1e
 
-    goto :goto_a
+    goto :goto_4
 
-    .line 170
-    :cond_39
+    .line 116
+    :cond_1e
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_9
+    goto :goto_3
 
-    .line 177
-    :cond_3a
-    :goto_a
-    return v5
+    .line 123
+    :cond_1f
+    :goto_4
+    return v4
 
-    .line 175
-    :cond_3b
-    :goto_b
-    return v5
+    .line 121
+    :cond_20
+    :goto_5
+    return v4
 
-    .line 179
-    :cond_3c
-    return v10
+    .line 125
+    :cond_21
+    return v11
 
-    .line 181
-    :cond_3d
-    const/16 v4, 0xc
+    .line 127
+    :cond_22
+    const/16 v5, 0xc
 
-    const/16 v9, 0x18
+    const/16 v10, 0x18
 
-    if-ne v0, v4, :cond_40
+    if-ne v0, v5, :cond_25
 
-    .line 182
+    .line 128
     iget v0, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolActions:I
 
-    if-ltz v0, :cond_3e
+    if-ltz v0, :cond_23
 
     iget v0, v3, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolActions:I
 
-    goto :goto_c
+    goto :goto_6
 
-    .line 183
-    :cond_3e
+    .line 129
+    :cond_23
     invoke-static {v2, v14}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v0
@@ -1972,65 +1353,65 @@
 
     move-result v0
 
-    .line 184
-    :goto_c
-    sub-int/2addr v9, v0
+    .line 130
+    :goto_6
+    sub-int/2addr v10, v0
 
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    if-lt v9, v0, :cond_3f
+    if-lt v10, v0, :cond_24
 
-    move v5, v10
+    move v4, v11
 
-    :cond_3f
-    return v5
+    :cond_24
+    return v4
 
-    .line 186
-    :cond_40
-    const/16 v4, 0x1b
+    .line 132
+    :cond_25
+    const/16 v5, 0x1e
 
-    const/16 v10, 0x1a
+    const/16 v11, 0x1b
 
-    const/16 v5, 0x15
+    const/16 v4, 0x1a
 
-    if-eq v0, v5, :cond_6f
+    const/16 v10, 0x15
 
-    if-eq v0, v10, :cond_6f
+    if-eq v0, v10, :cond_54
 
-    if-eq v0, v4, :cond_6f
+    if-eq v0, v4, :cond_54
 
-    const/16 v4, 0x1c
+    if-eq v0, v11, :cond_54
 
-    if-eq v0, v4, :cond_6f
+    const/16 v11, 0x1c
 
-    const/16 v4, 0x1e
+    if-eq v0, v11, :cond_54
 
-    if-ne v0, v4, :cond_41
+    if-ne v0, v5, :cond_26
 
-    goto/16 :goto_22
+    goto/16 :goto_1c
 
-    .line 194
-    :cond_41
+    .line 140
+    :cond_26
     const/16 v4, 0x12
 
     const/16 v5, 0x16
 
-    if-eq v0, v4, :cond_64
+    if-eq v0, v4, :cond_49
 
-    if-ne v0, v5, :cond_42
+    if-ne v0, v5, :cond_27
 
-    goto/16 :goto_1c
+    goto/16 :goto_16
 
-    .line 214
-    :cond_42
+    .line 160
+    :cond_27
     const/16 v4, 0x34
 
-    if-ne v0, v4, :cond_44
+    if-ne v0, v4, :cond_29
 
-    .line 215
-    invoke-static {v2, v15}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
+    .line 161
+    invoke-static {v2, v7}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v0
 
@@ -2040,14 +1421,14 @@
 
     move-result-object v0
 
-    .line 217
-    if-nez v0, :cond_43
+    .line 163
+    if-nez v0, :cond_28
 
     const-string v0, "1"
 
-    .line 218
-    :cond_43
-    invoke-virtual {v1, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 164
+    :cond_28
+    invoke-virtual {v1, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -2061,48 +1442,50 @@
 
     return v0
 
-    .line 220
-    :cond_44
-    if-eq v0, v9, :cond_60
+    .line 166
+    :cond_29
+    const/16 v4, 0x18
+
+    if-eq v0, v4, :cond_45
 
     const/16 v4, 0x19
 
-    if-ne v0, v4, :cond_45
+    if-ne v0, v4, :cond_2a
 
-    goto/16 :goto_19
+    goto/16 :goto_13
 
-    .line 230
-    :cond_45
+    .line 176
+    :cond_2a
     const/16 v4, 0x2a
 
-    if-eq v0, v4, :cond_5d
+    if-eq v0, v4, :cond_42
 
-    const/16 v4, 0x30
+    const/16 v5, 0x30
 
-    if-ne v0, v4, :cond_46
+    if-ne v0, v5, :cond_2b
 
-    goto/16 :goto_17
+    goto/16 :goto_11
 
-    .line 234
-    :cond_46
+    .line 180
+    :cond_2b
     const/4 v4, 0x7
 
-    if-ne v0, v4, :cond_48
+    if-ne v0, v4, :cond_2d
 
-    .line 235
+    .line 181
     const-string v0, "level"
 
     invoke-static {v2, v0}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 236
-    invoke-virtual {v1, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 182
+    invoke-virtual {v1, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 237
-    if-eqz v0, :cond_47
+    .line 183
+    if-eqz v0, :cond_2c
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2116,7 +1499,7 @@
 
     move-result v3
 
-    if-lt v2, v3, :cond_47
+    if-lt v2, v3, :cond_2c
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2130,26 +1513,26 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_47
+    if-gt v0, v1, :cond_2c
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    goto :goto_d
+    goto :goto_7
 
-    :cond_47
-    const/4 v5, 0x0
+    :cond_2c
+    const/4 v4, 0x0
 
-    :goto_d
-    return v5
+    :goto_7
+    return v4
 
-    .line 239
-    :cond_48
+    .line 185
+    :cond_2d
     const/4 v4, 0x6
 
-    if-ne v0, v4, :cond_4d
+    if-ne v0, v4, :cond_32
 
-    .line 240
-    invoke-virtual {v1, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 186
+    invoke-virtual {v1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -2157,17 +1540,17 @@
 
     const/4 v4, 0x0
 
-    :goto_e
-    if-ge v4, v1, :cond_4c
+    :goto_8
+    if-ge v4, v1, :cond_31
 
     aget-object v5, v0, v4
 
-    .line 241
+    .line 187
     invoke-virtual {v5, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 242
+    .line 188
     const/4 v6, 0x0
 
     aget-object v7, v5, v6
@@ -2176,25 +1559,25 @@
 
     move-result v7
 
-    .line 243
+    .line 189
     invoke-static {v2, v7}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
 
     move-result-object v8
 
-    .line 244
+    .line 190
     const-string v9, "ef"
 
     invoke-static {v8, v9}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v8
 
-    .line 245
-    if-nez v8, :cond_49
+    .line 191
+    if-nez v8, :cond_2e
 
     return v6
 
-    .line 246
-    :cond_49
+    .line 192
+    :cond_2e
     invoke-static {v2, v3, v7}, Lcom/project7/localmanager/LocalStoryFriendshipEngine;->current([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)I
 
     move-result v6
@@ -2203,7 +1586,7 @@
 
     move-result-object v6
 
-    .line 247
+    .line 193
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -2216,7 +1599,7 @@
 
     move-result v8
 
-    if-lt v7, v8, :cond_4b
+    if-lt v7, v8, :cond_30
 
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
@@ -2230,36 +1613,36 @@
 
     move-result v5
 
-    if-le v6, v5, :cond_4a
+    if-le v6, v5, :cond_2f
 
-    goto :goto_f
+    goto :goto_9
 
-    .line 240
-    :cond_4a
+    .line 186
+    :cond_2f
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_e
+    goto :goto_8
 
-    .line 247
-    :cond_4b
-    :goto_f
+    .line 193
+    :cond_30
+    :goto_9
     const/4 v0, 0x0
 
     return v0
 
-    .line 249
-    :cond_4c
+    .line 195
+    :cond_31
     const/4 v0, 0x1
 
     return v0
 
-    .line 251
-    :cond_4d
+    .line 197
+    :cond_32
     const/4 v4, 0x5
 
-    if-ne v0, v4, :cond_53
+    if-ne v0, v4, :cond_38
 
-    .line 252
+    .line 198
     const-string v0, "inv"
 
     invoke-static {v2, v0}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
@@ -2272,8 +1655,8 @@
 
     move-result-object v0
 
-    .line 253
-    invoke-virtual {v1, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 199
+    invoke-virtual {v1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -2281,106 +1664,106 @@
 
     const/4 v3, 0x0
 
-    :goto_10
-    if-ge v3, v2, :cond_52
+    :goto_a
+    if-ge v3, v2, :cond_37
 
     aget-object v4, v1, v3
 
-    .line 254
+    .line 200
     invoke-virtual {v4, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 255
+    .line 201
     const/4 v5, 0x0
 
-    aget-object v7, v4, v5
+    aget-object v6, v4, v5
 
-    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 256
-    const-wide/16 v7, 0x0
+    .line 202
+    const-wide/16 v6, 0x0
 
-    .line 257
+    .line 203
     invoke-static {v0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
+    move-result-object v8
+
+    invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    :goto_b
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_34
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     move-result-object v9
 
-    invoke-interface {v9}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast v9, Ljava/lang/String;
+
+    .line 204
+    invoke-static {v0, v9}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object v9
 
-    :goto_11
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_4f
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 205
+    invoke-static {v9, v15}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v10
 
-    check-cast v10, Ljava/lang/String;
-
-    .line 258
-    invoke-static {v0, v10}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
-
-    move-result-object v10
-
-    .line 259
-    invoke-static {v10, v6}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
+    .line 206
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
 
-    .line 260
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v13, "i"
 
-    move-result-object v13
+    invoke-static {v9, v13}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
-    const-string v14, "i"
+    move-result-object v9
 
-    invoke-static {v10, v14}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
+    invoke-virtual {v11, v9}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v10
+    move-result v9
 
-    invoke-virtual {v13, v10}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+    if-eqz v9, :cond_33
 
-    move-result v10
+    if-eqz v10, :cond_33
 
-    if-eqz v10, :cond_4e
+    invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
 
-    if-eqz v11, :cond_4e
+    move-result v9
 
-    invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
+    int-to-long v9, v9
 
-    move-result v10
+    add-long/2addr v6, v9
 
-    int-to-long v10, v10
+    .line 207
+    :cond_33
+    goto :goto_b
 
-    add-long/2addr v7, v10
-
-    .line 261
-    :cond_4e
-    goto :goto_11
-
-    .line 262
-    :cond_4f
+    .line 208
+    :cond_34
     const/4 v5, 0x1
 
-    aget-object v9, v4, v5
+    aget-object v8, v4, v5
 
-    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    int-to-long v9, v5
+    int-to-long v8, v5
 
-    cmp-long v5, v7, v9
+    cmp-long v5, v6, v8
 
-    if-ltz v5, :cond_51
+    if-ltz v5, :cond_36
 
     const/4 v5, 0x2
 
@@ -2392,39 +1775,39 @@
 
     int-to-long v4, v4
 
-    cmp-long v4, v7, v4
+    cmp-long v4, v6, v4
 
-    if-lez v4, :cond_50
+    if-lez v4, :cond_35
 
-    goto :goto_12
+    goto :goto_c
 
-    .line 253
-    :cond_50
+    .line 199
+    :cond_35
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_a
 
-    .line 262
-    :cond_51
-    :goto_12
+    .line 208
+    :cond_36
+    :goto_c
     const/4 v0, 0x0
 
     return v0
 
-    .line 264
-    :cond_52
+    .line 210
+    :cond_37
     const/4 v0, 0x1
 
     return v0
 
-    .line 266
-    :cond_53
+    .line 212
+    :cond_38
     const/16 v4, 0x17
 
-    if-ne v0, v4, :cond_59
+    if-ne v0, v4, :cond_3e
 
-    .line 267
-    invoke-virtual {v1, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 213
+    invoke-virtual {v1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -2432,17 +1815,17 @@
 
     const/4 v3, 0x0
 
-    :goto_13
-    if-ge v3, v1, :cond_58
+    :goto_d
+    if-ge v3, v1, :cond_3d
 
     aget-object v4, v0, v3
 
-    .line 268
+    .line 214
     invoke-virtual {v4, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 269
+    .line 215
     const/4 v5, 0x0
 
     aget-object v6, v4, v5
@@ -2451,7 +1834,7 @@
 
     move-result v5
 
-    .line 270
+    .line 216
     invoke-static/range {p2 .. p2}, Lcom/project7/localmanager/LocalServiceEngine;->cores([B)Ljava/util/Map;
 
     move-result-object v6
@@ -2466,13 +1849,13 @@
 
     const/4 v7, 0x0
 
-    :cond_54
-    :goto_14
+    :cond_39
+    :goto_e
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_55
+    if-eqz v8, :cond_3a
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2484,14 +1867,14 @@
 
     move-result v8
 
-    if-ne v8, v5, :cond_54
+    if-ne v8, v5, :cond_39
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_14
+    goto :goto_e
 
-    .line 271
-    :cond_55
+    .line 217
+    :cond_3a
     const/4 v5, 0x1
 
     aget-object v6, v4, v5
@@ -2500,7 +1883,7 @@
 
     move-result v5
 
-    if-lt v7, v5, :cond_57
+    if-lt v7, v5, :cond_3c
 
     const/4 v5, 0x2
 
@@ -2510,37 +1893,37 @@
 
     move-result v4
 
-    if-le v7, v4, :cond_56
+    if-le v7, v4, :cond_3b
 
-    goto :goto_15
+    goto :goto_f
 
-    .line 267
-    :cond_56
+    .line 213
+    :cond_3b
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_13
+    goto :goto_d
 
-    .line 271
-    :cond_57
-    :goto_15
+    .line 217
+    :cond_3c
+    :goto_f
     const/4 v0, 0x0
 
     return v0
 
-    .line 273
-    :cond_58
+    .line 219
+    :cond_3d
     const/4 v0, 0x1
 
     return v0
 
-    .line 275
-    :cond_59
+    .line 221
+    :cond_3e
     const/16 v4, 0x2f
 
-    if-ne v0, v4, :cond_5c
+    if-ne v0, v4, :cond_41
 
-    .line 276
-    invoke-virtual {v1, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 222
+    invoke-virtual {v1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -2548,17 +1931,17 @@
 
     const/4 v4, 0x0
 
-    :goto_16
-    if-ge v4, v1, :cond_5b
+    :goto_10
+    if-ge v4, v1, :cond_40
 
     aget-object v5, v0, v4
 
-    .line 277
+    .line 223
     invoke-virtual {v5, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 278
+    .line 224
     const/4 v6, 0x1
 
     aget-object v7, v5, v6
@@ -2587,45 +1970,43 @@
 
     move-result v5
 
-    if-nez v5, :cond_5a
+    if-nez v5, :cond_3f
 
     return v7
 
-    .line 276
-    :cond_5a
+    .line 222
+    :cond_3f
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_16
+    goto :goto_10
 
-    .line 280
-    :cond_5b
+    .line 226
+    :cond_40
     const/4 v0, 0x1
 
     return v0
 
-    .line 282
-    :cond_5c
+    .line 228
+    :cond_41
     const/4 v7, 0x0
 
     return v7
 
-    .line 231
-    :cond_5d
-    :goto_17
+    .line 177
+    :cond_42
+    :goto_11
     new-instance v3, Ljava/util/LinkedHashSet;
 
-    const-string v4, "cgs"
+    const-string v5, "cgs"
 
-    invoke-static {v2, v4}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
+    invoke-static {v2, v5}, Lcom/project7/localmanager/BsonLite;->intArrayValues([BLjava/lang/String;)Ljava/util/List;
 
     move-result-object v2
 
     invoke-direct {v3, v2}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 232
-    const/16 v2, 0x2a
-
-    if-ne v0, v2, :cond_5e
+    .line 178
+    if-ne v0, v4, :cond_43
 
     invoke-static/range {p1 .. p1}, Lcom/project7/localmanager/LocalStoryConditions;->integers(Ljava/lang/String;)Ljava/util/Set;
 
@@ -2633,11 +2014,11 @@
 
     invoke-interface {v3, v0}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
-    move-result v5
+    move-result v4
 
-    goto :goto_18
+    goto :goto_12
 
-    :cond_5e
+    :cond_43
     invoke-static/range {p1 .. p1}, Lcom/project7/localmanager/LocalStoryConditions;->integers(Ljava/lang/String;)Ljava/util/Set;
 
     move-result-object v0
@@ -2646,26 +2027,26 @@
 
     move-result v0
 
-    if-nez v0, :cond_5f
+    if-nez v0, :cond_44
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    goto :goto_18
+    goto :goto_12
 
-    :cond_5f
-    const/4 v5, 0x0
+    :cond_44
+    const/4 v4, 0x0
 
-    :goto_18
-    return v5
+    :goto_12
+    return v4
 
-    .line 221
-    :cond_60
-    :goto_19
+    .line 167
+    :cond_45
+    :goto_13
     new-instance v3, Ljava/util/LinkedHashSet;
 
     invoke-direct {v3}, Ljava/util/LinkedHashSet;-><init>()V
 
-    .line 222
+    .line 168
     const-string v4, "heromgr"
 
     invoke-static {v2, v4}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
@@ -2678,7 +2059,7 @@
 
     move-result-object v2
 
-    .line 223
+    .line 169
     invoke-static {v2}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v4
@@ -2687,12 +2068,12 @@
 
     move-result-object v4
 
-    :goto_1a
+    :goto_14
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_62
+    if-eqz v5, :cond_47
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2700,7 +2081,7 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 224
+    .line 170
     invoke-static {v2, v5}, Lcom/project7/localmanager/BsonLite;->documentValue([BLjava/lang/String;)[B
 
     move-result-object v5
@@ -2711,51 +2092,53 @@
 
     move-result-object v5
 
-    .line 225
-    if-eqz v5, :cond_61
+    .line 171
+    if-eqz v5, :cond_46
 
     invoke-interface {v3, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 226
-    :cond_61
-    goto :goto_1a
+    .line 172
+    :cond_46
+    goto :goto_14
 
-    .line 227
-    :cond_62
+    .line 173
+    :cond_47
     invoke-static/range {p1 .. p1}, Lcom/project7/localmanager/LocalStoryConditions;->integers(Ljava/lang/String;)Ljava/util/Set;
 
     move-result-object v1
 
-    .line 228
-    if-ne v0, v9, :cond_63
+    .line 174
+    const/16 v2, 0x18
+
+    if-ne v0, v2, :cond_48
 
     invoke-interface {v3, v1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
-    goto :goto_1b
+    goto :goto_15
 
-    :cond_63
+    :cond_48
     invoke-static {v3, v1}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result v0
 
-    :goto_1b
+    :goto_15
     return v0
 
-    .line 195
-    :cond_64
-    :goto_1c
+    .line 141
+    :cond_49
+    :goto_16
     invoke-static {v2, v14}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
 
-    invoke-static {v2, v8}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
+    invoke-static {v2, v9}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
 
-    .line 196
-    invoke-virtual {v1, v11}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 142
+    invoke-virtual {v1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -2763,17 +2146,17 @@
 
     const/4 v4, 0x0
 
-    :goto_1d
-    if-ge v4, v3, :cond_6d
+    :goto_17
+    if-ge v4, v3, :cond_52
 
     aget-object v6, v1, v4
 
-    .line 197
+    .line 143
     invoke-virtual {v6, v12}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v6
 
-    .line 198
+    .line 144
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -2794,18 +2177,18 @@
 
     move-result-object v7
 
-    .line 199
-    if-ne v0, v5, :cond_67
+    .line 145
+    if-ne v0, v5, :cond_4c
 
-    .line 200
+    .line 146
     const-string v8, "lv"
 
     invoke-static {v7, v8}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 201
-    if-eqz v7, :cond_66
+    .line 147
+    if-eqz v7, :cond_4b
 
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
@@ -2819,23 +2202,23 @@
 
     move-result v6
 
-    if-ge v7, v6, :cond_65
+    if-ge v7, v6, :cond_4a
 
-    goto :goto_1e
+    goto :goto_18
 
-    .line 202
-    :cond_65
-    goto :goto_20
+    .line 148
+    :cond_4a
+    goto :goto_1a
 
-    .line 201
-    :cond_66
-    :goto_1e
+    .line 147
+    :cond_4b
+    :goto_18
     const/4 v8, 0x0
 
     return v8
 
-    .line 203
-    :cond_67
+    .line 149
+    :cond_4c
     const/4 v8, 0x0
 
     const/4 v9, 0x1
@@ -2846,32 +2229,30 @@
 
     move-result-object v9
 
-    .line 204
+    .line 150
     aget-object v6, v6, v8
 
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v6
 
-    .line 205
-    if-ltz v6, :cond_6c
+    .line 151
+    if-ltz v6, :cond_51
 
     const/16 v8, 0x8
 
-    if-gt v6, v8, :cond_6c
+    if-gt v6, v8, :cond_51
 
-    .line 206
-    if-nez v6, :cond_6a
+    .line 152
+    if-nez v6, :cond_4f
 
-    .line 207
+    .line 153
     const/4 v6, 0x1
 
-    :goto_1f
-    const/16 v7, 0x8
+    :goto_19
+    if-gt v6, v8, :cond_4e
 
-    if-gt v6, v7, :cond_69
-
-    .line 208
+    .line 154
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -2892,46 +2273,46 @@
 
     move-result v7
 
-    if-eqz v7, :cond_68
+    if-eqz v7, :cond_4d
 
-    const/4 v8, 0x1
+    const/4 v10, 0x1
 
-    return v8
+    return v10
 
-    .line 207
-    :cond_68
-    const/4 v8, 0x1
+    .line 153
+    :cond_4d
+    const/4 v10, 0x1
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_1f
+    goto :goto_19
 
-    :cond_69
-    const/4 v8, 0x1
+    :cond_4e
+    const/4 v10, 0x1
 
-    goto :goto_20
+    goto :goto_1a
 
-    .line 209
-    :cond_6a
-    const/4 v8, 0x1
+    .line 155
+    :cond_4f
+    const/4 v10, 0x1
 
     invoke-static {v7, v9}, Lcom/project7/localmanager/LocalStoryConditions;->hasBuilding([BLjava/util/Set;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_6b
+    if-eqz v6, :cond_50
 
-    return v8
+    return v10
 
-    .line 196
-    :cond_6b
-    :goto_20
+    .line 142
+    :cond_50
+    :goto_1a
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1d
+    goto :goto_17
 
-    .line 205
-    :cond_6c
+    .line 151
+    :cond_51
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid building area"
@@ -2940,59 +2321,57 @@
 
     throw v0
 
-    .line 212
-    :cond_6d
-    if-ne v0, v5, :cond_6e
+    .line 158
+    :cond_52
+    if-ne v0, v5, :cond_53
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    goto :goto_21
+    goto :goto_1b
 
-    :cond_6e
-    const/4 v5, 0x0
+    :cond_53
+    const/4 v4, 0x0
 
-    :goto_21
-    return v5
+    :goto_1b
+    return v4
 
-    .line 187
-    :cond_6f
-    :goto_22
-    if-ne v0, v5, :cond_70
+    .line 133
+    :cond_54
+    :goto_1c
+    if-ne v0, v10, :cond_55
 
     const-string v0, "bf"
 
-    goto :goto_23
+    goto :goto_1d
 
-    :cond_70
-    if-ne v0, v10, :cond_71
+    :cond_55
+    if-ne v0, v4, :cond_56
 
     const-string v0, "fv"
 
-    goto :goto_23
+    goto :goto_1d
 
-    :cond_71
+    :cond_56
     const/16 v3, 0x1b
 
-    if-ne v0, v3, :cond_72
+    if-ne v0, v3, :cond_57
 
     const-string v0, "rv"
 
-    goto :goto_23
+    goto :goto_1d
 
-    :cond_72
-    const/16 v3, 0x1e
-
-    if-ne v0, v3, :cond_73
+    :cond_57
+    if-ne v0, v5, :cond_58
 
     const-string v0, "cc"
 
-    goto :goto_23
+    goto :goto_1d
 
-    :cond_73
+    :cond_58
     const-string v0, "dv"
 
-    .line 188
-    :goto_23
+    .line 134
+    :goto_1d
     invoke-static {v2, v14}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object v2
@@ -3001,12 +2380,12 @@
 
     move-result-object v0
 
-    .line 189
-    invoke-virtual {v1, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 135
+    invoke-virtual {v1, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 190
+    .line 136
     const/4 v2, 0x0
 
     aget-object v3, v1, v2
@@ -3023,36 +2402,36 @@
 
     move-result v1
 
-    .line 191
-    if-gt v2, v1, :cond_75
+    .line 137
+    if-gt v2, v1, :cond_5a
 
-    .line 192
-    if-eqz v0, :cond_74
+    .line 138
+    if-eqz v0, :cond_59
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    if-lt v3, v2, :cond_74
+    if-lt v3, v2, :cond_59
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-gt v0, v1, :cond_74
+    if-gt v0, v1, :cond_59
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    goto :goto_24
+    goto :goto_1e
 
-    :cond_74
-    const/4 v5, 0x0
+    :cond_59
+    const/4 v4, 0x0
 
-    :goto_24
-    return v5
+    :goto_1e
+    return v4
 
-    .line 191
-    :cond_75
+    .line 137
+    :cond_5a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "reversed interval"
@@ -3061,46 +2440,46 @@
 
     throw v0
 
-    .line 144
-    :cond_76
-    :goto_25
-    invoke-virtual {v1, v11, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    .line 90
+    :cond_5b
+    :goto_1f
+    invoke-virtual {v1, v6, v9}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 145
+    .line 91
     nop
 
-    .line 146
+    .line 92
     array-length v3, v1
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     const/4 v7, 0x0
 
-    :goto_26
-    if-ge v7, v3, :cond_7a
+    :goto_20
+    if-ge v7, v3, :cond_5f
 
-    aget-object v9, v1, v7
+    aget-object v8, v1, v7
 
-    .line 147
-    invoke-virtual {v9, v12, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    .line 93
+    invoke-virtual {v8, v12, v9}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    .line 148
-    array-length v10, v9
+    .line 94
+    array-length v10, v8
 
     const/4 v11, 0x2
 
-    if-ne v10, v11, :cond_79
+    if-ne v10, v11, :cond_5e
 
-    .line 149
+    .line 95
     const/4 v10, 0x0
 
-    aget-object v13, v9, v10
+    aget-object v13, v8, v10
 
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -3108,56 +2487,56 @@
 
     const/4 v14, 0x1
 
-    aget-object v9, v9, v14
+    aget-object v8, v8, v14
 
-    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v8
 
-    .line 150
-    if-lez v13, :cond_78
+    .line 96
+    if-lez v13, :cond_5d
 
-    if-lt v9, v14, :cond_78
+    if-lt v8, v14, :cond_5d
 
     const/16 v15, 0x1f
 
-    if-gt v9, v15, :cond_78
+    if-gt v8, v15, :cond_5d
 
-    .line 151
+    .line 97
     invoke-static {v2, v13}, Lcom/project7/localmanager/LocalStoryMemoryEngine;->mask([BI)I
 
     move-result v13
 
-    add-int/lit8 v9, v9, -0x1
+    add-int/lit8 v8, v8, -0x1
 
-    shl-int v9, v14, v9
+    shl-int v8, v14, v8
 
-    and-int/2addr v9, v13
+    and-int/2addr v8, v13
 
-    if-eqz v9, :cond_77
+    if-eqz v8, :cond_5c
 
-    move v9, v14
+    move v8, v14
 
-    goto :goto_27
+    goto :goto_21
 
-    :cond_77
-    move v9, v10
+    :cond_5c
+    move v8, v10
 
-    .line 152
-    :goto_27
-    and-int/2addr v5, v9
+    .line 98
+    :goto_21
+    and-int/2addr v6, v8
 
-    xor-int/lit8 v9, v9, 0x1
+    xor-int/lit8 v8, v8, 0x1
 
-    and-int/2addr v4, v9
+    and-int/2addr v4, v8
 
-    .line 146
+    .line 92
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_26
+    goto :goto_20
 
-    .line 150
-    :cond_78
+    .line 96
+    :cond_5d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid memory piece index"
@@ -3166,8 +2545,8 @@
 
     throw v0
 
-    .line 148
-    :cond_79
+    .line 94
+    :cond_5e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "invalid memory piece"
@@ -3176,34 +2555,25 @@
 
     throw v0
 
-    .line 154
-    :cond_7a
-    if-ne v0, v6, :cond_7b
+    .line 100
+    :cond_5f
+    if-ne v0, v5, :cond_60
 
-    move v4, v5
+    move v4, v6
 
-    :cond_7b
+    :cond_60
     return v4
-
-    .line 78
-    :cond_7c
-    :goto_28
-    invoke-static/range {p0 .. p2}, Lcom/project7/localmanager/LocalStoryTreasureConditions;->matches(ILjava/lang/String;[B)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method private static remainingFatigue([BLcom/project7/localmanager/LocalTutorialStore$Progress;I)Ljava/lang/Integer;
     .locals 4
 
-    .line 295
+    .line 241
     invoke-static {p0, p2}, Lcom/project7/localmanager/BsonLite;->profileHeroDocument([BI)[B
 
     move-result-object v0
 
-    .line 296
+    .line 242
     if-eqz v0, :cond_4
 
     invoke-static {p0, p2}, Lcom/project7/localmanager/LocalResourceEngine;->ownsHero([BI)Z
@@ -3214,7 +2584,7 @@
 
     goto :goto_0
 
-    .line 297
+    .line 243
     :cond_0
     const-string v1, "q7EconomyCommit"
 
@@ -3222,14 +2592,14 @@
 
     move-result-object p0
 
-    .line 298
+    .line 244
     const-string v1, "id"
 
     invoke-static {p0, v1}, Lcom/project7/localmanager/BsonLite;->stringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 299
+    .line 245
     const-string v2, "cf"
 
     if-eqz v1, :cond_2
@@ -3242,17 +2612,17 @@
 
     if-nez v1, :cond_2
 
-    .line 300
+    .line 246
     invoke-static {p0, v2}, Lcom/project7/localmanager/LocalResourceEngine;->doc([BLjava/lang/String;)[B
 
     move-result-object p0
 
-    .line 301
+    .line 247
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 302
+    .line 248
     invoke-static {p0}, Lcom/project7/localmanager/BsonLite;->keys([B)Ljava/util/List;
 
     move-result-object v3
@@ -3263,18 +2633,18 @@
 
     if-eqz v3, :cond_2
 
-    .line 303
+    .line 249
     invoke-static {p0, v1}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
     move-result-object p0
 
-    .line 304
+    .line 250
     if-eqz p0, :cond_1
 
-    .line 305
+    .line 251
     return-object p0
 
-    .line 304
+    .line 250
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -3284,7 +2654,7 @@
 
     throw p0
 
-    .line 308
+    .line 254
     :cond_2
     iget-object p0, p1, Lcom/project7/localmanager/LocalTutorialStore$Progress;->patrolFatigue:Ljava/util/Map;
 
@@ -3312,7 +2682,7 @@
 
     return-object p0
 
-    .line 309
+    .line 255
     :cond_3
     invoke-static {v0, v2}, Lcom/project7/localmanager/BsonLite;->intValue([BLjava/lang/String;)Ljava/lang/Integer;
 
@@ -3320,7 +2690,7 @@
 
     return-object p0
 
-    .line 296
+    .line 242
     :cond_4
     :goto_0
     const/4 p0, 0x0

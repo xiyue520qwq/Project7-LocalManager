@@ -39,9 +39,9 @@ final class LocalCgEngine {
         LinkedHashSet linkedHashSet3 = new LinkedHashSet(BsonLite.intArrayValues(result.profile, "cgs"));
         LinkedHashSet linkedHashSet4 = new LinkedHashSet(BsonLite.intArrayValues(result.profile, "ncgs"));
         LinkedHashSet linkedHashSet5 = new LinkedHashSet(BsonLite.intArrayValues(result.profile, "ccgs"));
-        byte[] m4d = m4d(result.profile, "q7CgClaims");
+        byte[] m8d = m8d(result.profile, "q7CgClaims");
         String str = "q7CgNotices";
-        byte[] m4d2 = m4d(result.profile, "q7CgNotices");
+        byte[] m8d2 = m8d(result.profile, "q7CgNotices");
         if (BsonLite.documentValue(bArr, "q7CgClaims") == null) {
             LinkedHashSet linkedHashSet6 = new LinkedHashSet(BsonLite.intArrayValues(bArr, "ncgs"));
             Iterator<Integer> it3 = BsonLite.intArrayValues(bArr, "cgs").iterator();
@@ -49,7 +49,7 @@ final class LocalCgEngine {
                 int intValue2 = it3.next().intValue();
                 Iterator<Integer> it4 = it3;
                 if (!linkedHashSet6.contains(Integer.valueOf(intValue2)) || !linkedHashSet.contains(Integer.valueOf(intValue2))) {
-                    m4d = BsonLite.withProfileBool(m4d, Integer.toString(intValue2), true);
+                    m8d = BsonLite.withProfileBool(m8d, Integer.toString(intValue2), true);
                 }
                 it3 = it4;
             }
@@ -66,13 +66,13 @@ final class LocalCgEngine {
                         linkedHashSet3.add(Integer.valueOf(intValue3));
                         linkedHashSet4.add(Integer.valueOf(intValue3));
                     }
-                    if (!Boolean.TRUE.equals(BsonLite.boolValue(m4d, num))) {
+                    if (!Boolean.TRUE.equals(BsonLite.boolValue(m8d, num))) {
                         LocalResourceEngine.Result result2 = new LocalResourceEngine.Result(result.profile);
                         LocalGiftEngine.reward(result2, localResourceCatalog, bArr3, 1);
                         result.profile = result2.profile;
                         result.replies.addAll(result2.replies);
-                        m4d2 = BsonLite.withProfileDocument(m4d2, num, result2.reward());
-                        m4d = BsonLite.withProfileBool(m4d, num, true);
+                        m8d2 = BsonLite.withProfileDocument(m8d2, num, result2.reward());
+                        m8d = BsonLite.withProfileBool(m8d, num, true);
                         linkedHashSet4.add(Integer.valueOf(intValue3));
                         linkedHashSet5.add(Integer.valueOf(intValue3));
                         it5 = it;
@@ -90,8 +90,8 @@ final class LocalCgEngine {
         result.profile = BsonLite.withProfileIntArray(result.profile, "cgs", linkedHashSet3);
         result.profile = BsonLite.withProfileIntArray(result.profile, "ncgs", linkedHashSet4);
         result.profile = BsonLite.withProfileIntArray(result.profile, "ccgs", linkedHashSet5);
-        result.profile = BsonLite.withProfileDocument(result.profile, "q7CgClaims", m4d);
-        result.profile = BsonLite.withProfileDocument(result.profile, str, m4d2);
+        result.profile = BsonLite.withProfileDocument(result.profile, "q7CgClaims", m8d);
+        result.profile = BsonLite.withProfileDocument(result.profile, str, m8d2);
     }
 
     static void showPending(LocalResourceEngine.Result result) {
@@ -99,14 +99,14 @@ final class LocalCgEngine {
     }
 
     static void showPending(LocalResourceEngine.Result result, boolean z) {
-        byte[] m4d = m4d(result.profile, "q7CgNotices");
+        byte[] m8d = m8d(result.profile, "q7CgNotices");
         Set<Integer> emptySet = z ? Collections.emptySet() : LocalPuzzleEngine.heldCgs(result.profile);
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        for (String str : BsonLite.keys(m4d)) {
+        for (String str : BsonLite.keys(m8d)) {
             if (!emptySet.contains(Integer.valueOf(Integer.parseInt(str)))) {
                 arrayList.add(Integer.valueOf(Integer.parseInt(str)));
-                Iterator<byte[]> it = LocalResourceEngine.array(m4d(m4d(m4d, str), "item")).iterator();
+                Iterator<byte[]> it = LocalResourceEngine.array(m8d(m8d(m8d, str), "item")).iterator();
                 while (it.hasNext()) {
                     arrayList2.add(new BsonLite.ArrayValue(it.next()));
                 }
@@ -124,16 +124,16 @@ final class LocalCgEngine {
     }
 
     static byte[] acknowledge(byte[] bArr, List<Integer> list) {
-        byte[] m4d = m4d(bArr, "q7CgNotices");
+        byte[] m8d = m8d(bArr, "q7CgNotices");
         Iterator<Integer> it = list.iterator();
         while (it.hasNext()) {
-            m4d = BsonLite.withoutProfileKey(m4d, Integer.toString(it.next().intValue()));
+            m8d = BsonLite.withoutProfileKey(m8d, Integer.toString(it.next().intValue()));
         }
-        return BsonLite.withProfileDocument(bArr, "q7CgNotices", m4d);
+        return BsonLite.withProfileDocument(bArr, "q7CgNotices", m8d);
     }
 
     /* renamed from: d */
-    private static byte[] m4d(byte[] bArr, String str) {
+    private static byte[] m8d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 }

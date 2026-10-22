@@ -19,12 +19,12 @@ final class LocalWingStoryEngine {
     }
 
     /* renamed from: d */
-    private static byte[] m92d(byte[] bArr, String str) {
+    private static byte[] m88d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    private static int m93v(byte[] bArr, String str) {
+    private static int m89v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 
@@ -33,16 +33,16 @@ final class LocalWingStoryEngine {
             return bArr;
         }
         byte[] documentValue = BsonLite.documentValue(bArr, KEY);
-        if (BsonLite.keys(bArr).contains(KEY) && (documentValue == null || m93v(documentValue, "version") != 1)) {
+        if (BsonLite.keys(bArr).contains(KEY) && (documentValue == null || m89v(documentValue, "version") != 1)) {
             throw new IllegalArgumentException("Unsupported Wing save; cycle reset was not committed");
         }
-        if (BsonLite.keys(m92d(bArr, KEY)).contains("operationsVersion") && m93v(m92d(bArr, KEY), "operationsVersion") != 1) {
+        if (BsonLite.keys(m88d(bArr, KEY)).contains("operationsVersion") && m89v(m88d(bArr, KEY), "operationsVersion") != 1) {
             throw new IllegalArgumentException("Unsupported Wing operations version");
         }
-        if (progress.weekCommit.isEmpty() || progress.weekIndex != m93v(m92d(bArr, "weeknum"), "w")) {
+        if (progress.weekCommit.isEmpty() || progress.weekIndex != m89v(m88d(bArr, "weeknum"), "w")) {
             throw new IllegalArgumentException("Missing new-cycle identity");
         }
-        byte[] withProfileInt = BsonLite.withProfileInt(m92d(bArr, "std"), "byv", INITIAL);
+        byte[] withProfileInt = BsonLite.withProfileInt(m88d(bArr, "std"), "byv", INITIAL);
         String[] strArr = {"ysg", "slm", "ycyo"};
         for (int i2 = 0; i2 < 3; i2++) {
             withProfileInt = BsonLite.withProfileBool(withProfileInt, strArr[i2], false);
@@ -169,7 +169,7 @@ final class LocalWingStoryEngine {
     /* JADX WARN: Code restructure failed: missing block: B:139:0x02b5, code lost:
     
         r1 = com.project7.localmanager.BsonLite.withProfileDocument(com.project7.localmanager.BsonLite.withProfileDocument(r32.profile, "std", com.project7.localmanager.BsonLite.withProfileInt(r22, r23, r4)), com.project7.localmanager.LocalWingStoryEngine.KEY, com.project7.localmanager.BsonLite.withProfileDocument(com.project7.localmanager.BsonLite.withProfileInt(com.project7.localmanager.BsonLite.withProfileInt(r26, r21, r4), r25, com.project7.localmanager.BsonLite.keys(r5).size()), r24, r5));
-        r2 = snapshot(m92d(r1, "std"));
+        r2 = snapshot(m88d(r1, "std"));
         r32.profile = r1;
         r32.add("syncBaiyuInfos", com.project7.localmanager.BsonLite.document("d", r2));
      */
@@ -207,7 +207,7 @@ final class LocalWingStoryEngine {
         if (!wing(documentValue2)) {
             return "wrong-route";
         }
-        if (progress == null || !identity(result.profile, documentValue) || progress.weekIndex != m93v(documentValue, "week") || !progress.weekCommit.equals(BsonLite.stringValue(documentValue, "cycle"))) {
+        if (progress == null || !identity(result.profile, documentValue) || progress.weekIndex != m89v(documentValue, "week") || !progress.weekCommit.equals(BsonLite.stringValue(documentValue, "cycle"))) {
             return "wrong-cycle";
         }
         String str = "receipts";
@@ -215,11 +215,11 @@ final class LocalWingStoryEngine {
         Integer intValue = BsonLite.intValue(documentValue, "initial");
         String str2 = "current";
         Integer intValue2 = BsonLite.intValue(documentValue, "current");
-        if (m93v(documentValue, "version") != 1 || intValue == null || intValue.intValue() != INITIAL || intValue2 == null || documentValue3 == null) {
+        if (m89v(documentValue, "version") != 1 || intValue == null || intValue.intValue() != INITIAL || intValue2 == null || documentValue3 == null) {
             return "invalid-ledger";
         }
         String str3 = "generation";
-        if (m93v(documentValue, "generation") != BsonLite.keys(documentValue3).size()) {
+        if (m89v(documentValue, "generation") != BsonLite.keys(documentValue3).size()) {
             return "invalid-ledger";
         }
         String str4 = "byv";
@@ -229,8 +229,8 @@ final class LocalWingStoryEngine {
         if (BsonLite.keys(result.profile).contains("q7StoryPending") && BsonLite.documentValue(result.profile, "q7StoryPending") == null) {
             return "invalid-outbox";
         }
-        byte[] m92d = m92d(result.profile, "q7StoryPending");
-        if (BsonLite.keys(m92d).contains("syncBaiyuInfos") && payload(result.profile, m92d(m92d, "syncBaiyuInfos")) == null) {
+        byte[] m88d = m88d(result.profile, "q7StoryPending");
+        if (BsonLite.keys(m88d).contains("syncBaiyuInfos") && payload(result.profile, m88d(m88d, "syncBaiyuInfos")) == null) {
             return "invalid-outbox";
         }
         try {
@@ -258,7 +258,7 @@ final class LocalWingStoryEngine {
                 byte[] bArr3 = documentValue3;
                 Integer num2 = localEventCatalog2.baiyuEffects.get(Integer.valueOf(parseInt));
                 if (documentValue4 != null && num2 != null) {
-                    if (!eligible(result.profile, localEventCatalog2, progress, hashSet, parseInt) || m93v(documentValue4, "count") != 1 || m93v(documentValue4, "delta") != num2.intValue() || m93v(documentValue4, "week") != progress.weekIndex || completedDay != m93v(documentValue4, "day") || completedDay < i2 || !Integer.valueOf(i).equals(BsonLite.intValue(documentValue4, "before")) || !Integer.valueOf(Math.addExact(i, num2.intValue())).equals(BsonLite.intValue(documentValue4, "after")) || (i = Math.addExact(i, num2.intValue())) < 0 || i > MAXIMUM) {
+                    if (!eligible(result.profile, localEventCatalog2, progress, hashSet, parseInt) || m89v(documentValue4, "count") != 1 || m89v(documentValue4, "delta") != num2.intValue() || m89v(documentValue4, "week") != progress.weekIndex || completedDay != m89v(documentValue4, "day") || completedDay < i2 || !Integer.valueOf(i).equals(BsonLite.intValue(documentValue4, "before")) || !Integer.valueOf(Math.addExact(i, num2.intValue())).equals(BsonLite.intValue(documentValue4, "after")) || (i = Math.addExact(i, num2.intValue())) < 0 || i > MAXIMUM) {
                         break;
                     }
                     i2 = completedDay;
@@ -292,7 +292,7 @@ final class LocalWingStoryEngine {
 
     private static boolean identity(byte[] bArr, byte[] bArr2) {
         String stringValue = BsonLite.stringValue(bArr2, "cycle");
-        return stringValue != null && !stringValue.isEmpty() && stringValue.equals(BsonLite.stringValue(m92d(bArr, "q7WeekTransition"), "id")) && Integer.valueOf(m93v(bArr2, "week")).equals(BsonLite.intValue(m92d(bArr, "weeknum"), "w")) && m93v(m92d(bArr, "q7WeekTransition"), "week") == m93v(bArr2, "week");
+        return stringValue != null && !stringValue.isEmpty() && stringValue.equals(BsonLite.stringValue(m88d(bArr, "q7WeekTransition"), "id")) && Integer.valueOf(m89v(bArr2, "week")).equals(BsonLite.intValue(m88d(bArr, "weeknum"), "w")) && m89v(m88d(bArr, "q7WeekTransition"), "week") == m89v(bArr2, "week");
     }
 
     static byte[] snapshot(byte[] bArr) {
@@ -327,8 +327,8 @@ final class LocalWingStoryEngine {
             return LocalWingOperationLedger.envelope(bArr, bArr2);
         }
         byte[] documentValue = BsonLite.documentValue(bArr, KEY);
-        byte[] snapshot = snapshot(m92d(bArr, "std"));
-        if (documentValue == null || m93v(documentValue, "version") != 1 || !identity(bArr, documentValue) || !wing(m92d(bArr, "std")) || snapshot == null || !Arrays.equals(snapshot, BsonLite.documentValue(bArr2, "d"))) {
+        byte[] snapshot = snapshot(m88d(bArr, "std"));
+        if (documentValue == null || m89v(documentValue, "version") != 1 || !identity(bArr, documentValue) || !wing(m88d(bArr, "std")) || snapshot == null || !Arrays.equals(snapshot, BsonLite.documentValue(bArr2, "d"))) {
             return null;
         }
         Integer intValue = BsonLite.intValue(documentValue, "generation");
@@ -344,7 +344,7 @@ final class LocalWingStoryEngine {
                     byte[] documentValue3 = BsonLite.documentValue(documentValue2, str);
                     Integer intValue2 = documentValue3 == null ? null : BsonLite.intValue(documentValue3, "delta");
                     Integer intValue3 = documentValue3 == null ? null : BsonLite.intValue(documentValue3, "day");
-                    if (Integer.parseInt(str) > 0 && intValue2 != null && intValue2.intValue() != 0 && intValue3 != null && intValue3.intValue() >= i2 && intValue3.intValue() <= m93v(m92d(bArr, "weeknum"), "d") && m93v(documentValue3, "week") == m93v(documentValue, "week") && m93v(documentValue3, "count") == 1 && Integer.valueOf(i).equals(BsonLite.intValue(documentValue3, "before"))) {
+                    if (Integer.parseInt(str) > 0 && intValue2 != null && intValue2.intValue() != 0 && intValue3 != null && intValue3.intValue() >= i2 && intValue3.intValue() <= m89v(m88d(bArr, "weeknum"), "d") && m89v(documentValue3, "week") == m89v(documentValue, "week") && m89v(documentValue3, "count") == 1 && Integer.valueOf(i).equals(BsonLite.intValue(documentValue3, "before"))) {
                         i = Math.addExact(i, intValue2.intValue());
                         i2 = intValue3.intValue();
                         if (i >= 0 && i <= MAXIMUM && Integer.valueOf(i).equals(BsonLite.intValue(documentValue3, "after"))) {
@@ -353,7 +353,7 @@ final class LocalWingStoryEngine {
                     }
                     return null;
                 }
-                if (i != m93v(documentValue, "current")) {
+                if (i != m89v(documentValue, "current")) {
                     return null;
                 }
                 return BsonLite.document("cycle", BsonLite.stringValue(documentValue, "cycle"), "generation", intValue, "d", snapshot);
@@ -367,7 +367,7 @@ final class LocalWingStoryEngine {
     static byte[] payload(byte[] bArr, byte[] bArr2) {
         byte[] document;
         byte[] envelope;
-        if (bArr2 == null || (envelope = envelope(bArr, (document = BsonLite.document("d", m92d(bArr2, "d"))))) == null || !Arrays.equals(envelope, bArr2)) {
+        if (bArr2 == null || (envelope = envelope(bArr, (document = BsonLite.document("d", m88d(bArr2, "d"))))) == null || !Arrays.equals(envelope, bArr2)) {
             return null;
         }
         return document;

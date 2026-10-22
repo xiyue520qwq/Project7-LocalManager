@@ -595,9 +595,9 @@ final class LocalDrawEngine {
             i3 = 0;
             while (it.hasNext()) {
                 int value = LocalResourceEngine.value(doc, it.next());
-                if (pool.f11s.contains(Integer.valueOf(value))) {
+                if (pool.f18s.contains(Integer.valueOf(value))) {
                     i2 = value;
-                } else if (pool.f9a.contains(Integer.valueOf(value))) {
+                } else if (pool.f16a.contains(Integer.valueOf(value))) {
                     i3 = value;
                 } else {
                     i4 = 1812;
@@ -675,7 +675,7 @@ final class LocalDrawEngine {
                 }
             }
             String str = drop.kind;
-            int i2 = drop.f6id;
+            int i2 = drop.f13id;
             int i3 = "memory".equals(str) ? drop.quality : 0;
             if (i2 >= 16639 && i2 <= 16645 && "item".equals(str)) {
                 int selected = selected(bArr, (i2 == 16639 || (i2 >= 16641 && i2 <= 16643)) ? 1 : 2);
@@ -757,7 +757,7 @@ final class LocalDrawEngine {
                 i2 = i;
             }
             LocalResourceCatalog.Hero hero = (LocalResourceCatalog.Hero) ((z && i3 == 0) ? localResourceCatalog.heroes.get(7) : arrayList.get(random.nextInt(arrayList.size())));
-            bArr = BsonLite.withProfileInt(BsonLite.withProfileArray(BsonLite.withProfileInt(BsonLite.withProfileString(document, "q7Kind", nextInt == 0 ? "hero" : "memory"), "q7Id", hero.f7id), "hero", Collections.singletonList(Integer.valueOf(hero.f7id))), "hero_file", nextInt == 0 ? i : random.nextInt(hero.files) + 1);
+            bArr = BsonLite.withProfileInt(BsonLite.withProfileArray(BsonLite.withProfileInt(BsonLite.withProfileString(document, "q7Kind", nextInt == 0 ? "hero" : "memory"), "q7Id", hero.f14id), "hero", Collections.singletonList(Integer.valueOf(hero.f14id))), "hero_file", nextInt == 0 ? i : random.nextInt(hero.files) + 1);
             bArr2 = BsonLite.withProfileDocument(bArr2, Integer.toString(i3), bArr);
             i3++;
             i2 = i;

@@ -26,26 +26,26 @@ final class LocalResourceCatalog {
     static final class Pool {
 
         /* renamed from: id */
-        final int f10id;
+        final int f17id;
         final int stamp;
         final int ticket;
 
         /* renamed from: s */
-        final List<Integer> f11s = new ArrayList();
+        final List<Integer> f18s = new ArrayList();
 
         /* renamed from: a */
-        final List<Integer> f9a = new ArrayList();
+        final List<Integer> f16a = new ArrayList();
         final List<Drop> drops = new ArrayList();
 
         Pool(String[] strArr) {
-            this.f10id = Integer.parseInt(strArr[1]);
+            this.f17id = Integer.parseInt(strArr[1]);
             this.stamp = Integer.parseInt(strArr[2]);
             this.ticket = Integer.parseInt(strArr[3]);
             for (String str : strArr[4].split(",")) {
-                this.f11s.add(Integer.valueOf(Integer.parseInt(str)));
+                this.f18s.add(Integer.valueOf(Integer.parseInt(str)));
             }
             for (String str2 : strArr[5].split(",")) {
-                this.f9a.add(Integer.valueOf(Integer.parseInt(str2)));
+                this.f16a.add(Integer.valueOf(Integer.parseInt(str2)));
             }
         }
     }
@@ -55,7 +55,7 @@ final class LocalResourceCatalog {
         final byte[] design;
 
         /* renamed from: id */
-        final int f6id;
+        final int f13id;
         final String kind;
         final int quality;
         final double weight;
@@ -63,7 +63,7 @@ final class LocalResourceCatalog {
         Drop(String[] strArr) {
             this.weight = Double.parseDouble(strArr[2]);
             this.kind = strArr[3];
-            this.f6id = Integer.parseInt(strArr[4]);
+            this.f13id = Integer.parseInt(strArr[4]);
             this.count = Integer.parseInt(strArr[5]);
             this.quality = Integer.parseInt(strArr[6]);
             this.design = strArr[7].isEmpty() ? null : Base64.getDecoder().decode(strArr[7]);
@@ -93,12 +93,12 @@ final class LocalResourceCatalog {
         final int files;
 
         /* renamed from: id */
-        final int f7id;
+        final int f14id;
         final String name;
         final int rank;
 
         Hero(String[] strArr) {
-            this.f7id = Integer.parseInt(strArr[1]);
+            this.f14id = Integer.parseInt(strArr[1]);
             this.name = strArr[2];
             this.files = Integer.parseInt(strArr[3]);
             this.rank = Integer.parseInt(strArr[4]);
@@ -110,13 +110,13 @@ final class LocalResourceCatalog {
         final int hero;
 
         /* renamed from: id */
-        final int f8id;
+        final int f15id;
         final String name;
         final int type;
         final int wrap;
 
         Item(String[] strArr) {
-            this.f8id = Integer.parseInt(strArr[1]);
+            this.f15id = Integer.parseInt(strArr[1]);
             this.name = strArr[2];
             this.type = Integer.parseInt(strArr[3]);
             this.wrap = Integer.parseInt(strArr[4]);
@@ -155,12 +155,12 @@ final class LocalResourceCatalog {
         final int hero;
 
         /* renamed from: id */
-        final int f12id;
+        final int f19id;
         final int item;
         final String name;
 
         Skin(String[] strArr) {
-            this.f12id = Integer.parseInt(strArr[1]);
+            this.f19id = Integer.parseInt(strArr[1]);
             this.hero = Integer.parseInt(strArr[2]);
             this.item = Integer.parseInt(strArr[3]);
             this.name = strArr[4];
@@ -185,13 +185,13 @@ final class LocalResourceCatalog {
                         try {
                             if (split[0].equals("H") && split.length == 6) {
                                 Hero hero = new Hero(split);
-                                this.heroes.put(Integer.valueOf(hero.f7id), hero);
+                                this.heroes.put(Integer.valueOf(hero.f14id), hero);
                             } else if (split[0].equals("S") && split.length == 5) {
                                 Skin skin = new Skin(split);
-                                this.skins.put(Integer.valueOf(skin.f12id), skin);
+                                this.skins.put(Integer.valueOf(skin.f19id), skin);
                             } else if (split[0].equals("I") && split.length == 6) {
                                 Item item = new Item(split);
-                                this.items.put(Integer.valueOf(item.f8id), item);
+                                this.items.put(Integer.valueOf(item.f15id), item);
                             } else if (!split[0].equals("T") || split.length != 5) {
                                 if (!split[0].equals("P") || split.length != 6) {
                                     if (split[0].equals("B") && split.length == 5) {
@@ -217,7 +217,7 @@ final class LocalResourceCatalog {
                                     }
                                 } else {
                                     Pool pool = new Pool(split);
-                                    this.pools.put(Integer.valueOf(pool.f10id), pool);
+                                    this.pools.put(Integer.valueOf(pool.f17id), pool);
                                 }
                             } else {
                                 Treasure treasure = new Treasure(split);

@@ -5,27 +5,27 @@ class BlockContent {
     private int lineCount;
 
     /* renamed from: sb */
-    private final StringBuilder f14sb;
+    private final StringBuilder f21sb;
 
     public BlockContent() {
         this.lineCount = 0;
-        this.f14sb = new StringBuilder();
+        this.f21sb = new StringBuilder();
     }
 
     public BlockContent(String content) {
         this.lineCount = 0;
-        this.f14sb = new StringBuilder(content);
+        this.f21sb = new StringBuilder(content);
     }
 
     public void add(CharSequence line) {
         if (this.lineCount != 0) {
-            this.f14sb.append('\n');
+            this.f21sb.append('\n');
         }
-        this.f14sb.append(line);
+        this.f21sb.append(line);
         this.lineCount++;
     }
 
     public String getString() {
-        return this.f14sb.toString();
+        return this.f21sb.toString();
     }
 }

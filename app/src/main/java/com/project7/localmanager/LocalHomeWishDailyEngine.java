@@ -301,7 +301,7 @@ final class LocalHomeWishDailyEngine {
                     while (result2.replies.size() > i) {
                         result2.replies.remove(result2.replies.size() - 1);
                     }
-                    LocalDiagnosticLog.m14i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
+                    LocalDiagnosticLog.m16i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
                     return;
                 }
                 HashSet hashSet4 = hashSet2;
@@ -383,7 +383,7 @@ final class LocalHomeWishDailyEngine {
                                 result2.profile = bArr3;
                                 while (result2.replies.size() > i) {
                                 }
-                                LocalDiagnosticLog.m14i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
+                                LocalDiagnosticLog.m16i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
                                 return;
                             } catch (IllegalArgumentException e7) {
                                 e = e7;
@@ -391,7 +391,7 @@ final class LocalHomeWishDailyEngine {
                                 result2.profile = bArr3;
                                 while (result2.replies.size() > i) {
                                 }
-                                LocalDiagnosticLog.m14i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
+                                LocalDiagnosticLog.m16i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
                                 return;
                             }
                         }
@@ -402,7 +402,7 @@ final class LocalHomeWishDailyEngine {
                         result2.profile = bArr3;
                         while (result2.replies.size() > i) {
                         }
-                        LocalDiagnosticLog.m14i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
+                        LocalDiagnosticLog.m16i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
                         return;
                     } catch (IllegalArgumentException e9) {
                         e = e9;
@@ -411,7 +411,7 @@ final class LocalHomeWishDailyEngine {
                         result2.profile = bArr3;
                         while (result2.replies.size() > i) {
                         }
-                        LocalDiagnosticLog.m14i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
+                        LocalDiagnosticLog.m16i("Project7Gateway", "Home wish daily preserved reason=" + runtimeException.getMessage());
                         return;
                     }
                 } catch (ArithmeticException | IllegalArgumentException e10) {

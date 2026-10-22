@@ -15,12 +15,12 @@ public class BackslashInlineParser implements InlineContentParser {
         char next = scanner.peek();
         if (next == '\n') {
             scanner.next();
-            return ParsedInline.m97of(new HardLineBreak(), scanner.position());
+            return ParsedInline.m93of(new HardLineBreak(), scanner.position());
         }
         if (ESCAPABLE.matcher(String.valueOf(next)).matches()) {
             scanner.next();
-            return ParsedInline.m97of(new Text(String.valueOf(next)), scanner.position());
+            return ParsedInline.m93of(new Text(String.valueOf(next)), scanner.position());
         }
-        return ParsedInline.m97of(new Text("\\"), scanner.position());
+        return ParsedInline.m93of(new Text("\\"), scanner.position());
     }
 }

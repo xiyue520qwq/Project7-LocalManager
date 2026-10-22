@@ -1,5 +1,5 @@
 version: 2.11.1
-apkFileName: Project7 本地管理_2.0.47Beta.apk
+apkFileName: Project7 本地管理_2.0.48Mod.apk
 isFrameworkApk: false
 usesFramework:
   ids:
@@ -12,8 +12,8 @@ packageInfo:
   forcedPackageId: 127
   renameManifestPackage: null
 versionInfo:
-  versionCode: 20047
-  versionName: 2.0.47Beta
+  versionCode: 20048
+  versionName: 2.0.48Mod
 sharedLibrary: false
 sparseResources: false
 compactEntries: false

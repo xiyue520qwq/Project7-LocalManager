@@ -1,10 +1,8 @@
 package com.project7.localmanager;
 
-import com.project7.localmanager.BsonLite;
 import com.project7.localmanager.LocalEventCatalog;
 import com.project7.localmanager.LocalTutorialStore;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -17,24 +15,15 @@ final class LocalDiaryEngine {
     }
 
     static byte[] reset(byte[] bArr, int i) {
-        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, "q7DiaryBeforeReset", BsonLite.document("targetWeek", Integer.valueOf(i), "np", m17d(bArr, "np"))), "np", BsonLite.document("n", BsonLite.EMPTY_DOCUMENT, "p", BsonLite.EMPTY_DOCUMENT, "pn", Collections.emptyList(), "ppn", false)), "q7DiaryWeek", i);
-        byte[] m17d = m17d(withProfileInt, "heromgr");
-        for (String str : Arrays.asList("hrs", "bhrs")) {
-            ArrayList arrayList = new ArrayList();
-            boolean z = false;
-            for (byte[] bArr2 : LocalResourceEngine.array(m17d(m17d, str))) {
-                byte[] m17d2 = m17d(bArr2, "1");
-                if (Boolean.TRUE.equals(BsonLite.boolValue(m17d2, "cfd"))) {
-                    bArr2 = BsonLite.withProfileDocument(bArr2, "1", BsonLite.withProfileBool(m17d2, "cfd", false));
-                    z = true;
-                }
-                arrayList.add(new BsonLite.ArrayValue(bArr2));
-            }
-            if (z) {
-                m17d = BsonLite.withProfileArray(m17d, str, arrayList);
+        byte[] withProfileInt = BsonLite.withProfileInt(BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, "q7DiaryBeforeReset", BsonLite.document("targetWeek", Integer.valueOf(i), "np", m19d(bArr, "np"))), "np", BsonLite.document("n", BsonLite.EMPTY_DOCUMENT, "p", BsonLite.EMPTY_DOCUMENT, "pn", Collections.emptyList(), "ppn", false)), "q7DiaryWeek", i);
+        for (byte[] bArr2 : LocalResourceEngine.array(m19d(m19d(withProfileInt, "heromgr"), "hrs"))) {
+            int m20v = m20v(bArr2, "0");
+            byte[] m19d = m19d(bArr2, "1");
+            if (Boolean.TRUE.equals(BsonLite.boolValue(m19d, "cfd"))) {
+                withProfileInt = BsonLite.withHeroDocument(withProfileInt, m20v, BsonLite.withProfileBool(m19d, "cfd", false));
             }
         }
-        return BsonLite.withProfileDocument(withProfileInt, "heromgr", m17d);
+        return withProfileInt;
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
@@ -68,23 +57,23 @@ final class LocalDiaryEngine {
     }
 
     static String diagnostic(byte[] bArr, LocalTutorialStore.Progress progress) {
-        byte[] m17d = m17d(bArr, "np");
-        List<Integer> intArrayValues = BsonLite.intArrayValues(m17d, "pn");
+        byte[] m19d = m19d(bArr, "np");
+        List<Integer> intArrayValues = BsonLite.intArrayValues(m19d, "pn");
         StringBuilder sb = new StringBuilder();
         sb.append("week=");
-        sb.append(m18v(m17d(bArr, "weeknum"), "w"));
+        sb.append(m20v(m19d(bArr, "weeknum"), "w"));
         sb.append(" day=");
-        sb.append(m18v(m17d(bArr, "weeknum"), "d"));
+        sb.append(m20v(m19d(bArr, "weeknum"), "d"));
         sb.append(" playerNotes=");
         sb.append(intArrayValues.size());
         sb.append(" last=");
         sb.append(intArrayValues.isEmpty() ? 0 : intArrayValues.get(intArrayValues.size() - 1).intValue());
         sb.append(" heroDiaries=");
-        sb.append(BsonLite.keys(m17d(m17d, "n")).size());
+        sb.append(BsonLite.keys(m19d(m19d, "n")).size());
         sb.append(" completed=");
         sb.append(progress != null ? progress.completedEvents.size() : 0);
         sb.append(" receipts=");
-        sb.append(BsonLite.keys(m17d(bArr, "q7effects")).size());
+        sb.append(BsonLite.keys(m19d(bArr, "q7effects")).size());
         return sb.toString();
     }
 
@@ -92,23 +81,23 @@ final class LocalDiaryEngine {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         LinkedHashSet linkedHashSet2 = new LinkedHashSet();
         LinkedHashSet linkedHashSet3 = new LinkedHashSet();
-        byte[] m17d = m17d(bArr, "q7effects");
-        byte[] m17d2 = m17d(bArr, "q7WeekTransition");
+        byte[] m19d = m19d(bArr, "q7effects");
+        byte[] m19d2 = m19d(bArr, "q7WeekTransition");
         for (Map.Entry<Integer, LocalEventCatalog.Effect> entry : localEventCatalog.effects.entrySet()) {
             if (entry.getValue().noteIds.stream().anyMatch(new LocalDiaryEngine$$ExternalSyntheticLambda0(localEventCatalog))) {
                 int intValue = entry.getKey().intValue();
                 if (progress.completedEvents.contains(Integer.valueOf(intValue))) {
                     linkedHashSet.add(Integer.valueOf(intValue));
                 }
-                if (Boolean.TRUE.equals(BsonLite.boolValue(m17d, "c" + intValue))) {
+                if (Boolean.TRUE.equals(BsonLite.boolValue(m19d, "c" + intValue))) {
                     linkedHashSet2.add(Integer.valueOf(intValue));
                 }
-                if (Boolean.TRUE.equals(BsonLite.boolValue(m17d, "m" + intValue))) {
+                if (Boolean.TRUE.equals(BsonLite.boolValue(m19d, "m" + intValue))) {
                     linkedHashSet3.add(Integer.valueOf(intValue));
                 }
             }
         }
-        return "route=" + BsonLite.stringValue(m17d(bArr, "std"), "rt") + " transitionWeek=" + BsonLite.intValue(m17d2, "week") + " tokenMatch=" + Objects.equals(BsonLite.stringValue(m17d2, "id"), progress.weekCommit) + " progressWeek=" + progress.weekIndex + " baseline=" + BsonLite.intArrayValues(bArr, "q7WeekEventBaseline") + " completedNoteEvents=" + linkedHashSet + " awardedNoteEvents=" + linkedHashSet2 + " offeredNoteEvents=" + linkedHashSet3 + " dialogFacts=" + progress.eventConditions.getOrDefault("dialog", Collections.emptySet()) + " available=" + progress.availableEvents + " processing=" + progress.processingEvents;
+        return "route=" + BsonLite.stringValue(m19d(bArr, "std"), "rt") + " transitionWeek=" + BsonLite.intValue(m19d2, "week") + " tokenMatch=" + Objects.equals(BsonLite.stringValue(m19d2, "id"), progress.weekCommit) + " progressWeek=" + progress.weekIndex + " baseline=" + BsonLite.intArrayValues(bArr, "q7WeekEventBaseline") + " completedNoteEvents=" + linkedHashSet + " awardedNoteEvents=" + linkedHashSet2 + " offeredNoteEvents=" + linkedHashSet3 + " dialogFacts=" + progress.eventConditions.getOrDefault("dialog", Collections.emptySet()) + " available=" + progress.availableEvents + " processing=" + progress.processingEvents;
     }
 
     static byte[] add(byte[] bArr, String str, int i) {
@@ -120,12 +109,12 @@ final class LocalDiaryEngine {
     }
 
     /* renamed from: d */
-    static byte[] m17d(byte[] bArr, String str) {
+    static byte[] m19d(byte[] bArr, String str) {
         return LocalResourceEngine.doc(bArr, str);
     }
 
     /* renamed from: v */
-    static int m18v(byte[] bArr, String str) {
+    static int m20v(byte[] bArr, String str) {
         return LocalResourceEngine.value(bArr, str);
     }
 }

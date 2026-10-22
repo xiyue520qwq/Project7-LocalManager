@@ -44,7 +44,7 @@ final class LocalPatrolEngine {
     }
 
     static boolean canResume(LocalTutorialStore.Progress progress, byte[] bArr, int i, List<Integer> list) {
-        return progress != null && progress.patrolRewardPending && i >= 1 && i <= 8 && (!list.isEmpty() || LocalFlashbackEngine.active(bArr, progress)) && progress.patrolArea == i && dayKey(bArr).equals(progress.patrolDay) && progress.patrolHeroes.equals(new LinkedHashSet(list)) && list.size() == progress.patrolHeroes.size();
+        return progress != null && progress.patrolRewardPending && i >= 1 && i <= 8 && !list.isEmpty() && progress.patrolArea == i && dayKey(bArr).equals(progress.patrolDay) && progress.patrolHeroes.equals(new LinkedHashSet(list)) && list.size() == progress.patrolHeroes.size();
     }
 
     static Result begin(LocalPatrolCatalog localPatrolCatalog, LocalTutorialStore.Progress progress, LocalEventEngine localEventEngine, byte[] bArr, int i, List<Integer> list) {
@@ -53,17 +53,13 @@ final class LocalPatrolEngine {
         if (cost == null || LocalCityProgress.status(progress, i, bArr) != 0 || LocalChapterCityEngine.locked(bArr, i) || progress.inEmergency) {
             return reject("area unavailable");
         }
-        if (LocalFlashbackEngine.active(bArr, progress)) {
-            return localEventEngine.flashbackPatrol(bArr, i, list);
-        }
         if (list.isEmpty() || list.size() > 3 || new LinkedHashSet(list).size() != list.size()) {
             return reject("invalid team");
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         int i2 = 0;
         for (Integer num : list) {
-            byte[] profileHeroDocument = BsonLite.profileHeroDocument(bArr, num.intValue());
-            Integer intValue = BsonLite.intValue(profileHeroDocument, "cf");
+            Integer intValue = BsonLite.intValue(BsonLite.profileHeroDocument(bArr, num.intValue()), "cf");
             if (intValue == null) {
                 return reject("hero not owned");
             }
@@ -72,7 +68,7 @@ final class LocalPatrolEngine {
                 return reject("insufficient fatigue");
             }
             linkedHashMap.put(num, Integer.valueOf(orDefault.intValue() - cost.fatigue));
-            i2 += localPatrolCatalog.insight(profileHeroDocument, num.intValue());
+            i2 += localPatrolCatalog.insight(num.intValue());
         }
         if (i2 < cost.requiredInsight(progress.patrolCount + 1) + LocalIntelligenceEffects.patrolExtra(bArr, i)) {
             return reject("insufficient insight");
@@ -81,7 +77,7 @@ final class LocalPatrolEngine {
             return reject("insufficient actions");
         }
         localEventEngine.refreshProfile(bArr);
-        List<Integer> patrolEvents = localEventEngine.patrolEvents(i, list, localPatrolCatalog);
+        List<Integer> patrolEvents = localEventEngine.patrolEvents(i, list);
         localEventEngine.queuePatrolReplays(patrolEvents);
         progress.availableEvents.removeAll(progress.patrolEvents);
         progress.patrolEvents.clear();

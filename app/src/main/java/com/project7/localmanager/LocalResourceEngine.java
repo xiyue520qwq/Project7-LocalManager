@@ -86,8 +86,8 @@ final class LocalResourceEngine {
                 bArr2 = doc;
             }
             byte[] doc2 = doc(bArr2, "ti");
-            if (value(doc2, "mc") == 9999) {
-                bArr2 = BsonLite.withProfileDocument(bArr2, "ti", BsonLite.withProfileInt(doc2, "mc", 25));
+            if (value(doc2, "mc") == 45) {
+                bArr2 = BsonLite.withProfileDocument(bArr2, "ti", BsonLite.withProfileInt(doc2, "mc", 45));
             }
             if (bArr2 != doc) {
                 bArr = BsonLite.withHeroDocument(bArr, value, bArr2);
@@ -242,7 +242,7 @@ final class LocalResourceEngine {
         String str;
         LocalResourceCatalog.Item item2;
         int min;
-        int i5 = item.f8id;
+        int i5 = item.f15id;
         byte[] doc = doc(result.profile, "inv");
         String str2 = "items";
         List<byte[]> array = array(doc(doc, "items"));

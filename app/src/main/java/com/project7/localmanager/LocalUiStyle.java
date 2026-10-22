@@ -42,16 +42,16 @@ final class LocalUiStyle {
     }
 
     /* renamed from: dp */
-    static int m80dp(View view, int i) {
+    static int m78dp(View view, int i) {
         return Math.round(i * view.getResources().getDisplayMetrics().density);
     }
 
     static GradientDrawable surface(int i, int i2, int i3, int i4, View view) {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(i);
-        gradientDrawable.setCornerRadius(m80dp(view, i4));
+        gradientDrawable.setCornerRadius(m78dp(view, i4));
         if (i3 != i) {
-            gradientDrawable.setStroke(m80dp(view, 1), i3);
+            gradientDrawable.setStroke(m78dp(view, 1), i3);
         }
         return gradientDrawable;
     }
@@ -67,7 +67,7 @@ final class LocalUiStyle {
             CheckBox checkBox = (CheckBox) view;
             checkBox.setButtonTintList(new ColorStateList(new int[][]{new int[]{R.attr.state_checked}, new int[0]}, new int[]{ACCENT, MUTED}));
             checkBox.setTextColor(INK);
-            checkBox.setMinHeight(m80dp(view, 52));
+            checkBox.setMinHeight(m78dp(view, 52));
             checkBox.setLetterSpacing(0.0f);
         } else if (view instanceof Button) {
             button((Button) view);
@@ -76,12 +76,12 @@ final class LocalUiStyle {
             drawable.setTint(MUTED);
             LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{ripple(view, WHITE, WHITE, BORDER, 14), drawable});
             layerDrawable.setLayerGravity(1, 8388629);
-            layerDrawable.setLayerWidth(1, m80dp(view, 16));
-            layerDrawable.setLayerHeight(1, m80dp(view, 16));
-            layerDrawable.setLayerInset(1, 0, 0, m80dp(view, 14), 0);
+            layerDrawable.setLayerWidth(1, m78dp(view, 16));
+            layerDrawable.setLayerHeight(1, m78dp(view, 16));
+            layerDrawable.setLayerInset(1, 0, 0, m78dp(view, 14), 0);
             view.setBackground(layerDrawable);
-            view.setMinimumHeight(m80dp(view, 54));
-            view.setPadding(m80dp(view, 14), m80dp(view, 2), m80dp(view, 12), m80dp(view, 2));
+            view.setMinimumHeight(m78dp(view, 54));
+            view.setPadding(m78dp(view, 14), m78dp(view, 2), m78dp(view, 12), m78dp(view, 2));
             spacing(view, 10);
         }
         if (view instanceof ViewGroup) {
@@ -101,8 +101,8 @@ final class LocalUiStyle {
         stateListDrawable.addState(new int[]{R.attr.state_focused}, surface(WHITE, WHITE, ACCENT, 14, editText));
         stateListDrawable.addState(new int[0], surface(WHITE, WHITE, BORDER, 14, editText));
         editText.setBackground(stateListDrawable);
-        editText.setPadding(m80dp(editText, 16), m80dp(editText, 14), m80dp(editText, 16), m80dp(editText, 14));
-        editText.setMinimumHeight(m80dp(editText, 54));
+        editText.setPadding(m78dp(editText, 16), m78dp(editText, 14), m78dp(editText, 16), m78dp(editText, 14));
+        editText.setMinimumHeight(m78dp(editText, 54));
         editText.setSelectAllOnFocus(false);
         spacing(editText, 10);
     }
@@ -122,11 +122,11 @@ final class LocalUiStyle {
         button.setTypeface(Typeface.create("sans-serif-medium", 0));
         button.setTextColor(new ColorStateList(new int[][]{new int[]{-16842910}, new int[0]}, new int[]{Color.rgb(137, 148, 155), i}));
         button.setGravity(17);
-        button.setMinHeight(m80dp(button, 52));
+        button.setMinHeight(m78dp(button, 52));
         button.setMinimumWidth(0);
         button.setMinWidth(0);
         button.setMaxLines(2);
-        button.setPadding(m80dp(button, 14), m80dp(button, 10), m80dp(button, 14), m80dp(button, 10));
+        button.setPadding(m78dp(button, 14), m78dp(button, 10), m78dp(button, 14), m78dp(button, 10));
         StateListDrawable stateListDrawable = new StateListDrawable();
         stateListDrawable.addState(new int[]{-16842910}, surface(Color.rgb(233, 237, 239), WHITE, Color.rgb(233, 237, 239), 16, button));
         stateListDrawable.addState(new int[0], ripple(button, equals ? ACCENT : WHITE, WHITE, equals ? ACCENT : equals2 ? Color.rgb(238, 211, 215) : BORDER, 16));
@@ -134,7 +134,7 @@ final class LocalUiStyle {
         for (Drawable drawable : button.getCompoundDrawables()) {
             if (drawable != null) {
                 drawable.mutate().setTintList(new ColorStateList(new int[][]{new int[]{-16842910}, new int[0]}, new int[]{MUTED, i}));
-                drawable.setBounds(0, 0, m80dp(button, 18), m80dp(button, 18));
+                drawable.setBounds(0, 0, m78dp(button, 18), m78dp(button, 18));
             }
         }
         Drawable[] compoundDrawables = button.getCompoundDrawables();
@@ -143,12 +143,12 @@ final class LocalUiStyle {
         } else {
             LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{stateListDrawable, compoundDrawables[1]});
             layerDrawable.setLayerGravity(1, 17);
-            layerDrawable.setLayerWidth(1, m80dp(button, 22));
-            layerDrawable.setLayerHeight(1, m80dp(button, 22));
+            layerDrawable.setLayerWidth(1, m78dp(button, 22));
+            layerDrawable.setLayerHeight(1, m78dp(button, 22));
             button.setBackground(layerDrawable);
             button.setCompoundDrawables(null, null, null, null);
         }
-        button.setCompoundDrawablePadding(m80dp(button, 8));
+        button.setCompoundDrawablePadding(m78dp(button, 8));
         if (button.getContentDescription() == null) {
             button.setTooltipText(button.getText());
         }
@@ -173,7 +173,7 @@ final class LocalUiStyle {
         button.setTooltipText(str);
         Drawable drawable = LocalIcons.drawable(button.getContext(), i);
         drawable.setTint(INK);
-        drawable.setBounds(0, 0, m80dp(button, 22), m80dp(button, 22));
+        drawable.setBounds(0, 0, m78dp(button, 22), m78dp(button, 22));
         button.setCompoundDrawables(null, drawable, null, null);
     }
 
@@ -187,22 +187,22 @@ final class LocalUiStyle {
         int i = SOFT_ACCENT;
         LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{ripple(button, i, 0, i, 8), drawable});
         layerDrawable.setLayerGravity(0, 17);
-        layerDrawable.setLayerWidth(0, m80dp(button, 40));
-        layerDrawable.setLayerHeight(0, m80dp(button, 40));
+        layerDrawable.setLayerWidth(0, m78dp(button, 40));
+        layerDrawable.setLayerHeight(0, m78dp(button, 40));
         layerDrawable.setLayerGravity(1, 17);
-        layerDrawable.setLayerWidth(1, m80dp(button, 20));
-        layerDrawable.setLayerHeight(1, m80dp(button, 20));
+        layerDrawable.setLayerWidth(1, m78dp(button, 20));
+        layerDrawable.setLayerHeight(1, m78dp(button, 20));
         button.setBackground(layerDrawable);
         button.setPadding(0, 0, 0, 0);
-        button.setMinHeight(m80dp(button, 48));
-        button.setMinimumHeight(m80dp(button, 48));
+        button.setMinHeight(m78dp(button, 48));
+        button.setMinimumHeight(m78dp(button, 48));
     }
 
     static void spacing(View view, int i) {
         if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            marginLayoutParams.topMargin = Math.max(marginLayoutParams.topMargin, m80dp(view, 4));
-            marginLayoutParams.bottomMargin = Math.max(marginLayoutParams.bottomMargin, m80dp(view, i));
+            marginLayoutParams.topMargin = Math.max(marginLayoutParams.topMargin, m78dp(view, 4));
+            marginLayoutParams.bottomMargin = Math.max(marginLayoutParams.bottomMargin, m78dp(view, i));
         }
     }
 
@@ -224,7 +224,7 @@ final class LocalUiStyle {
         view.setTranslationY(0.0f);
         if (ValueAnimator.areAnimatorsEnabled()) {
             view.setAlpha(0.0f);
-            view.setTranslationY(m80dp(view, 8));
+            view.setTranslationY(m78dp(view, 8));
             view.animate().alpha(1.0f).translationY(0.0f).setDuration(220L).setInterpolator(new PathInterpolator(0.2f, 0.0f, 0.0f, 1.0f)).start();
         }
     }
@@ -240,8 +240,8 @@ final class LocalUiStyle {
                     textView.setMaxLines(3);
                     textView.setLetterSpacing(0.0f);
                     textView.setEllipsize(TextUtils.TruncateAt.END);
-                    textView.setPadding(LocalUiStyle.m80dp(textView, z ? 16 : 0), LocalUiStyle.m80dp(textView, 10), LocalUiStyle.m80dp(textView, 32), LocalUiStyle.m80dp(textView, 10));
-                    textView.setMinHeight(LocalUiStyle.m80dp(textView, 50));
+                    textView.setPadding(LocalUiStyle.m78dp(textView, z ? 16 : 0), LocalUiStyle.m78dp(textView, 10), LocalUiStyle.m78dp(textView, 32), LocalUiStyle.m78dp(textView, 10));
+                    textView.setMinHeight(LocalUiStyle.m78dp(textView, 50));
                     if (z) {
                         textView.setBackgroundColor(LocalUiStyle.WHITE);
                     }

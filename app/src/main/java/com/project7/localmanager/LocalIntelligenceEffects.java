@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /* loaded from: classes.dex */
 final class LocalIntelligenceEffects {
@@ -84,8 +85,8 @@ final class LocalIntelligenceEffects {
         return BsonLite.withProfileDocument(BsonLite.withProfileDocument(bArr, "intelligence", BsonLite.withProfileArray(doc, "is", array)), str3, BsonLite.withProfileIntArray(doc2, "events", arrayList));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0396  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x039e  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x03a2  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x03aa  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -233,7 +234,7 @@ final class LocalIntelligenceEffects {
                                 i6 = m44v2;
                                 str7 = str16;
                                 if (!arrayList.isEmpty()) {
-                                    String[] strArr = (String[]) arrayList.get(LocalStoryEnvironment.nextInt(arrayList.size()));
+                                    String[] strArr = (String[]) arrayList.get(ThreadLocalRandom.current().nextInt(arrayList.size()));
                                     byte[] doc7 = doc(doc5, strArr[0]);
                                     byte[] withProfileInt2 = BsonLite.withProfileInt(BsonLite.withProfileInt(effect, "aid", m44v(doc7, "id")), "bid", m44v(doc(doc(doc7, "bd"), strArr[1]), "id"));
                                     bArr7 = LocalConstructionEngine.destroyByIntelligence(bArr7, localConstructionCatalog, strArr[0], strArr[1]);
@@ -248,7 +249,7 @@ final class LocalIntelligenceEffects {
                                 i7 = i8;
                                 if (intValue == 7 || intValue == 8 || intValue == 9) {
                                     if (intValue == 7) {
-                                        num = affectedHeroes.isEmpty() ? null : affectedHeroes.get(LocalStoryEnvironment.nextInt(affectedHeroes.size()));
+                                        num = affectedHeroes.isEmpty() ? null : affectedHeroes.get(ThreadLocalRandom.current().nextInt(affectedHeroes.size()));
                                         if (num != null) {
                                             effect = BsonLite.withProfileInt(effect, "hero", num.intValue());
                                         }
@@ -265,7 +266,7 @@ final class LocalIntelligenceEffects {
                                             arrayList2.add(Integer.valueOf(i11));
                                         }
                                     }
-                                    num = arrayList2.isEmpty() ? null : (Integer) arrayList2.get(LocalStoryEnvironment.nextInt(arrayList2.size()));
+                                    num = arrayList2.isEmpty() ? null : (Integer) arrayList2.get(ThreadLocalRandom.current().nextInt(arrayList2.size()));
                                     if (num != null) {
                                         effect = BsonLite.withProfileInt(effect, "aid", num.intValue());
                                     }
