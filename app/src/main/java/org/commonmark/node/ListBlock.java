@@ -1,0 +1,14 @@
+package org.commonmark.node;
+
+/* loaded from: classes.dex */
+public abstract class ListBlock extends Block {
+    private boolean tight;
+
+    public boolean isTight() {
+        return this.tight;
+    }
+
+    public void setTight(boolean tight) {
+        this.tight = tight;
+    }
+}

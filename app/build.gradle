@@ -1,0 +1,50 @@
+// 参考用重建配置：参数取自 AndroidManifest.xml 与 apktool.yml
+// 注意：本文件未经验证可编译通过，详见 README「关于构建」
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.project7.localmanager'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId 'com.project7.localmanager'
+        minSdk 26
+        targetSdk 32
+        versionCode 20047
+        versionName '2.0.47Beta'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            assets.srcDirs = ['src/main/assets']
+            res.srcDirs = ['src/main/res']
+        }
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // org.commonmark 的源码已被裁剪并打包进原 APK，本仓库将其内嵌在
+    // src/main/java/org/commonmark 下。若改用官方依赖，请先删除该目录，再启用下面两行：
+    // implementation 'org.commonmark:commonmark:0.21.0'
+    // implementation 'org.commonmark:commonmark-ext-gfm-tables:0.21.0'
+}

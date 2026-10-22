@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="dialog_surface" id="0x7f010000" />
+    <public type="drawable" name="ic_archive" id="0x7f010001" />
+    <public type="drawable" name="ic_arrow_left" id="0x7f010002" />
+    <public type="drawable" name="ic_calendar_days" id="0x7f010003" />
+    <public type="drawable" name="ic_check" id="0x7f010004" />
+    <public type="drawable" name="ic_chevron_down" id="0x7f010005" />
+    <public type="drawable" name="ic_chevron_right" id="0x7f010006" />
+    <public type="drawable" name="ic_copy" id="0x7f010007" />
+    <public type="drawable" name="ic_house" id="0x7f010008" />
+    <public type="drawable" name="ic_logs" id="0x7f010009" />
+    <public type="drawable" name="ic_mail" id="0x7f01000a" />
+    <public type="drawable" name="ic_megaphone" id="0x7f01000b" />
+    <public type="drawable" name="ic_play" id="0x7f01000c" />
+    <public type="drawable" name="ic_plus" id="0x7f01000d" />
+    <public type="drawable" name="ic_power" id="0x7f01000e" />
+    <public type="drawable" name="ic_refresh_cw" id="0x7f01000f" />
+    <public type="drawable" name="ic_search" id="0x7f010010" />
+    <public type="drawable" name="ic_send" id="0x7f010011" />
+    <public type="drawable" name="ic_shirt" id="0x7f010012" />
+    <public type="drawable" name="ic_sliders_horizontal" id="0x7f010013" />
+    <public type="drawable" name="ic_trash_2" id="0x7f010014" />
+    <public type="drawable" name="ic_trending_up" id="0x7f010015" />
+    <public type="drawable" name="ic_undo_2" id="0x7f010016" />
+    <public type="drawable" name="ic_users" id="0x7f010017" />
+    <public type="drawable" name="ic_x" id="0x7f010018" />
+    <public type="drawable" name="project7" id="0x7f010019" />
+    <public type="raw" name="commonmark_license" id="0x7f020000" />
+    <public type="raw" name="lucide_license" id="0x7f020001" />
+    <public type="style" name="AppTheme" id="0x7f030000" />
+    <public type="style" name="LocalDialog" id="0x7f030001" />
+</resources>

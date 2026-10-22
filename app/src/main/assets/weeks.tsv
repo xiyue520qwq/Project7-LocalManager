@@ -1,0 +1,2799 @@
+# Original ending/route/difficulty, scoring conditions and grade reward tables
+stay	9
+stay	32
+stay	417
+stay	423
+stay	424
+ending	1431	104	337	1
+ending	1459	107	337	1
+ending	1502	107	337	1
+ending	1515	107	337	1
+ending	1517	107	337	1
+ending	1519	107	337	1
+ending	1548	106	399	1
+ending	1553	106	399	1
+ending	1564	107	337	1
+ending	1566	108	337	1
+ending	1570	107	337	1
+ending	1609	105	398	1
+ending	1614	105	398	1
+ending	1615	107	337	1
+ending	1648	118	337	1
+ending	1670	120	337	1
+ending	1671	120	337	1
+ending	1689	129	337	1
+ending	1696	137	337	1
+ending	2289	94	12	1
+ending	2332	117	337	1
+ending	2343	122	337	1
+ending	2351	130	337	1
+ending	3394	86	337	1
+ending	3454	103	337	1
+ending	3470	107	337	1
+ending	3483	107	337	1
+ending	3484	107	337	1
+ending	3498	118	337	1
+ending	3524	128	337	1
+ending	4423	87	337	1
+ending	4477	111	337	1
+ending	5366	77	337	0
+ending	5432	88	337	1
+ending	5445	95	12	1
+ending	5498	107	337	1
+ending	5514	109	337	1
+ending	5521	111	337	1
+ending	5525	110	337	1
+ending	5534	123	337	1
+ending	5553	131	337	1
+ending	5580	138	337	1
+ending	5614	147	337	1
+ending	6514	89	337	1
+ending	6584	112	337	1
+ending	6597	124	337	1
+ending	6606	112	337	1
+ending	6607	124	337	1
+ending	6613	132	337	1
+ending	6626	139	337	1
+ending	6627	140	337	1
+ending	6636	146	337	1
+ending	7584	91	337	1
+ending	7614	90	337	1
+ending	7621	96	12	1
+ending	7628	97	12	1
+ending	7663	111	337	1
+ending	7675	113	337	1
+ending	7682	125	337	1
+ending	7700	133	337	1
+ending	7708	135	337	1
+ending	7739	148	337	1
+ending	7745	149	337	1
+ending	7753	153	337	1
+ending	7762	153	337	1
+ending	7767	153	337	1
+ending	7773	153	337	1
+ending	7779	153	337	1
+ending	7787	153	337	1
+ending	7819	153	337	1
+ending	7820	154	337	1
+ending	7826	156	337	1
+ending	7829	153	337	1
+ending	8005	3	20	0
+ending	8008	7	12	0
+ending	8010	7	12	0
+ending	8012	15	12	0
+ending	8020	10	93	0
+ending	8024	6	13	0
+ending	8025	1	21	0
+ending	8028	7	12	0
+ending	8029	1	21	0
+ending	8044	2	11	0
+ending	8055	8	46	0
+ending	8057	9	47	0
+ending	8060	7	12	0
+ending	8065	7	12	0
+ending	8068	12	95	0
+ending	8071	12	95	0
+ending	8072	13	12	0
+ending	8075	14	12	0
+ending	8077	5	94	0
+ending	8080	18	12	0
+ending	8196	17	105	0
+ending	8197	17	105	0
+ending	8198	17	105	0
+ending	8199	17	105	0
+ending	8200	16	104	0
+ending	8201	16	104	0
+ending	8202	16	104	0
+ending	8203	16	104	0
+ending	8204	16	104	0
+ending	8205	16	104	0
+ending	8206	16	104	0
+ending	8207	16	104	0
+ending	8208	16	104	0
+ending	8209	16	104	0
+ending	8210	16	104	0
+ending	8211	16	104	0
+ending	8212	16	104	0
+ending	8213	16	104	0
+ending	8214	16	104	0
+ending	8215	16	104	0
+ending	8217	16	104	0
+ending	8218	16	104	0
+ending	8219	16	104	0
+ending	8220	16	104	0
+ending	8221	16	104	0
+ending	8222	16	104	0
+ending	8223	16	104	0
+ending	8224	16	104	0
+ending	8225	16	104	0
+ending	8226	16	104	0
+ending	8227	16	104	0
+ending	8228	16	104	0
+ending	8229	16	104	0
+ending	8230	16	104	0
+ending	8231	16	104	0
+ending	8232	16	104	0
+ending	8233	16	104	0
+ending	8234	16	104	0
+ending	8235	16	104	0
+ending	8236	16	104	0
+ending	8237	16	104	0
+ending	8238	16	104	0
+ending	8239	16	104	0
+ending	8240	16	104	0
+ending	8241	16	104	0
+ending	8242	16	104	0
+ending	8243	16	104	0
+ending	8244	16	104	0
+ending	8245	16	104	0
+ending	8246	16	104	0
+ending	8258	19	126	0
+ending	8261	20	125	0
+ending	8264	21	127	0
+ending	8265	21	127	0
+ending	8267	16	104	0
+ending	8272	22	136	0
+ending	8273	23	137	0
+ending	8276	23	137	0
+ending	8278	16	104	0
+ending	8285	26	150	0
+ending	8286	24	148	0
+ending	8287	25	147	0
+ending	8288	26	150	0
+ending	8289	27	149	0
+ending	8292	26	150	0
+ending	8296	28	161	0
+ending	8297	28	161	0
+ending	8303	29	160	0
+ending	8307	28	161	0
+ending	8310	30	159	0
+ending	8316	16	104	0
+ending	8318	16	104	0
+ending	8323	16	104	0
+ending	8325	31	12	0
+ending	8326	31	12	0
+ending	8329	31	12	0
+ending	8330	32	163	0
+ending	8331	32	163	0
+ending	8335	33	162	0
+ending	8337	16	104	0
+ending	8339	16	104	0
+ending	8341	16	104	0
+ending	8342	31	12	0
+ending	8343	31	12	0
+ending	8345	16	104	0
+ending	8347	16	104	0
+ending	8349	16	104	0
+ending	8351	16	104	0
+ending	8355	16	104	0
+ending	8361	35	184	0
+ending	8364	34	186	0
+ending	8367	7	12	0
+ending	8368	7	12	0
+ending	8371	36	185	0
+ending	8372	7	12	0
+ending	8373	7	12	0
+ending	8374	7	12	0
+ending	8377	16	104	0
+ending	8384	16	104	0
+ending	8386	16	104	0
+ending	8401	37	202	0
+ending	8413	38	203	0
+ending	8415	28	161	0
+ending	8419	28	161	0
+ending	8420	28	161	0
+ending	8423	16	104	0
+ending	8425	16	104	0
+ending	8433	39	214	0
+ending	8437	41	216	0
+ending	8441	40	215	0
+ending	8443	41	216	0
+ending	8444	41	216	0
+ending	8454	16	104	0
+ending	8456	16	104	0
+ending	8464	42	227	0
+ending	8473	43	226	0
+ending	8474	44	12	0
+ending	8476	46	12	0
+ending	8477	46	12	0
+ending	8478	45	12	0
+ending	8486	16	104	0
+ending	8487	16	104	0
+ending	8491	50	12	0
+ending	8496	48	241	0
+ending	8497	50	12	0
+ending	8498	50	12	0
+ending	8505	49	242	0
+ending	8506	50	12	0
+ending	8507	50	12	0
+ending	8511	47	240	0
+ending	8514	50	12	0
+ending	8519	16	104	0
+ending	8522	16	104	0
+ending	8526	16	104	0
+ending	8529	16	104	0
+ending	8540	54	256	0
+ending	8545	52	12	0
+ending	8547	53	257	0
+ending	8549	16	104	0
+ending	8551	51	258	0
+ending	8559	16	104	0
+ending	8563	16	104	0
+ending	8571	55	272	0
+ending	8572	57	12	0
+ending	8575	58	12	0
+ending	8578	56	271	0
+ending	8581	57	12	0
+ending	8583	57	12	0
+ending	8586	16	104	0
+ending	8590	16	104	0
+ending	8594	60	282	0
+ending	8599	61	12	0
+ending	8600	61	12	0
+ending	8601	61	12	0
+ending	8602	61	12	0
+ending	8603	61	12	0
+ending	8606	59	281	0
+ending	8614	16	104	0
+ending	8616	16	104	0
+ending	8622	16	104	0
+ending	8625	16	104	0
+ending	8626	62	12	0
+ending	8632	64	298	0
+ending	8633	62	12	0
+ending	8635	16	104	0
+ending	8637	65	12	0
+ending	8639	64	298	0
+ending	8646	63	299	0
+ending	8649	62	12	0
+ending	8650	62	12	0
+ending	8653	16	104	0
+ending	8658	16	104	0
+ending	8660	16	104	0
+ending	8662	16	104	0
+ending	8667	68	12	0
+ending	8668	66	312	0
+ending	8673	69	12	0
+ending	8674	67	313	0
+ending	8676	69	12	0
+ending	8678	16	104	0
+ending	8682	16	104	0
+ending	8685	71	324	0
+ending	8686	73	12	0
+ending	8692	70	323	0
+ending	8693	72	12	0
+ending	8695	74	12	0
+ending	8703	16	104	0
+ending	8706	16	104	0
+ending	8708	16	104	0
+ending	8710	16	104	0
+ending	8716	77	337	0
+ending	8719	76	339	0
+ending	8721	77	337	0
+ending	8726	16	104	0
+ending	8727	75	338	0
+ending	8742	16	104	0
+ending	8745	16	104	0
+ending	8748	16	104	0
+ending	8751	16	104	0
+ending	8758	85	357	0
+ending	8760	84	356	0
+ending	8762	16	104	0
+ending	8764	16	104	0
+ending	8768	92	371	0
+ending	8773	93	370	0
+ending	8774	98	12	0
+ending	8776	99	382	0
+ending	8777	101	337	0
+ending	8779	100	383	0
+ending	8780	102	337	0
+ending	8786	16	104	0
+ending	8789	16	104	0
+ending	8791	16	104	0
+ending	8793	107	337	0
+ending	8801	105	398	0
+ending	8803	107	337	0
+ending	8808	114	413	0
+ending	8809	116	337	0
+ending	8812	16	104	0
+ending	8816	16	104	0
+ending	8819	115	414	0
+ending	8826	16	104	0
+ending	8828	16	104	0
+ending	8829	127	418	0
+ending	8833	16	104	0
+ending	8835	126	417	0
+ending	8839	134	432	0
+ending	8842	16	104	0
+ending	8848	144	443	0
+ending	8852	145	442	0
+ending	8853	141	337	0
+ending	8854	142	337	0
+ending	8855	143	337	0
+ending	8858	136	433	0
+ending	8860	16	104	0
+ending	8864	16	104	0
+ending	8874	16	104	0
+ending	8879	150	451	0
+ending	8883	151	450	0
+ending	8892	16	104	0
+ending	8896	155	466	0
+ending	8897	157	337	0
+ending	8898	158	337	0
+ending	8901	16	104	0
+ending	8905	16	104	0
+ending	8908	16	104	0
+ending	8909	152	465	1
+clearitem	12
+clearitem	13
+clearitem	14
+clearitem	15
+clearitem	16
+clearitem	17
+clearitem	18
+clearitem	19
+clearitem	20
+clearitem	21
+clearitem	22
+clearitem	23
+clearitem	54
+clearitem	55
+clearitem	57
+clearitem	58
+clearitem	59
+clearitem	60
+clearitem	61
+clearitem	62
+clearitem	63
+clearitem	64
+clearitem	68
+clearitem	72
+clearitem	92
+clearitem	3060
+clearitem	4470
+clearitem	11861
+route	1	1066	
+route	2	534	2,6,7
+route	3	553	8,9
+route	4	540	1,3
+route	5	529	
+route	6	522	2,6,7
+route	7	508	19,20,21
+route	8	498	22,23
+route	9	490	2,6,7
+route	10	477	28,29,30
+route	11	474	5
+route	12	460	28,29,30
+route	13	456	36
+route	14	453	2,6,7
+route	15	446	42,43
+route	16	439	47,48,49
+route	17	436	28,29,30
+route	18	433	54
+route	19	1245	59|36
+route	20	1323	63,64
+route	21	429	54
+route	22	1355	63,64|1,3
+route	23	1398	63,64|39,40
+route	24	575	2,6,7
+route	25	1407	24,25,26,27|63,64
+route	26	1454	99|100
+route	27	1640	2,6,7
+route	28	1649	114,115
+route	29	1675	114,115
+route	30	1690	99,100
+route	31	1812	99,100
+route	32	1826	75,76|105,106
+difficulty	1	1	1	30	0
+difficulty	1	2	1	35	600
+difficulty	1	3	1	40	610
+difficulty	2	1	1	45	620
+difficulty	2	2	1	50	630
+difficulty	2	3	1	55	640
+difficulty	3	1	1	60	650
+difficulty	3	2	1	65	660
+difficulty	3	3	1	70	670
+difficulty	4	1	1	80	680
+difficulty	4	2	1	90	690
+difficulty	4	3	1	100	700
+reset	1267	1245
+reset	1320	1323
+reset	1354	1355
+reset	1365	1374
+score	1	TAAAABB0eXBlAAMAAAAEY29uZGl0aW9ucwAxAAAAAzAAKQAAABBzY29yZQAAAAAABGFyZWFzAAUAAAAABGV2ZW50cwAFAAAAAAAAAA==
+score	2	uAEAABB0eXBlAAIAAAAEY29uZGl0aW9ucwCdAQAAAzAAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAABAAAAAARldmVudHMABQAAAAAAAzEAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAACAAAAAARldmVudHMABQAAAAAAAzIAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAADAAAAAARldmVudHMABQAAAAAAAzMAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAAEAAAAAARldmVudHMABQAAAAAAAzQAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAAFAAAAAARldmVudHMABQAAAAAAAzUAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAAGAAAAAARldmVudHMABQAAAAAAAzYAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAAHAAAAAARldmVudHMABQAAAAAAAzcAMAAAABBzY29yZQAPAAAABGFyZWFzAAwAAAAQMAAIAAAAAARldmVudHMABQAAAAAAAAA=
+score	3	TAAAABB0eXBlAAMAAAAEY29uZGl0aW9ucwAxAAAAAzAAKQAAABBzY29yZQAAAAAABGFyZWFzAAUAAAAABGV2ZW50cwAFAAAAAAAAAA==
+score	4	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAcBcAAAAAAAA=
+score	5	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAgxsAAAAAAAA=
+score	6	TAAAABB0eXBlAAQAAAAEY29uZGl0aW9ucwAxAAAAAzAAKQAAABBzY29yZQAAAAAABGFyZWFzAAUAAAAABGV2ZW50cwAFAAAAAAAAAA==
+score	7	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA0AsAAAAAAAA=
+score	8	TAAAABB0eXBlAAMAAAAEY29uZGl0aW9ucwAxAAAAAzAAKQAAABBzY29yZQAAAAAABGFyZWFzAAUAAAAABGV2ZW50cwAFAAAAAAAAAA==
+score	9	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAJAQAAAAAAAA=
+score	10	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAPgwAAAAAAAA=
+score	11	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAZAwAAAAAAAA=
+score	12	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAABwgAAAAAAAA=
+score	13	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAEwgAAAAAAAA=
+score	14	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAcwQAAAAAAAA=
+score	15	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAeQQAAAAAAAA=
+score	16	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAjgQAAAAAAAA=
+score	17	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAtQwAAAAAAAA=
+score	18	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAvgwAAAAAAAA=
+score	19	TAAAABB0eXBlAAMAAAAEY29uZGl0aW9ucwAxAAAAAzAAKQAAABBzY29yZQAAAAAABGFyZWFzAAUAAAAABGV2ZW50cwAFAAAAAAAAAA==
+score	20	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAhggAAAAAAAA=
+score	21	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAzwQAAAAAAAA=
+score	22	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA2gQAAAAAAAA=
+score	23	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA3QQAAAAAAAA=
+score	24	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAArggAAAAAAAA=
+score	25	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAQQUAAAAAAAA=
+score	26	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAARwUAAAAAAAA=
+score	27	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAXwUAAAAAAAA=
+score	28	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA5ggAAAAAAAA=
+score	29	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAkAUAAAAAAAA=
+score	30	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAvgUAAAAAAAA=
+score	31	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAhg0AAAAAAAA=
+score	32	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAhxUAAAAAAAA=
+score	33	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAjxUAAAAAAAA=
+score	34	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAxQ0AAAAAAAA=
+score	35	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA/x0AAAAAAAA=
+score	36	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAER4AAAAAAAA=
+score	37	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA1xkAAAAAAAA=
+score	38	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAA4RkAAAAAAAA=
+score	39	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAArBEAAAAAAAA=
+score	40	UwAAABB0eXBlAAEAAAAEY29uZGl0aW9ucwA4AAAAAzAAMAAAABBzY29yZQAyAAAABGFyZWFzAAUAAAAABGV2ZW50cwAMAAAAEDAAcR4AAAAAAAA=
+cgscore	1	10
+cgscore	2	10
+cgscore	3	20
+cgscore	4	10
+cgscore	5	10
+cgscore	6	10
+cgscore	7	20
+cgscore	8	10
+cgscore	9	10
+cgscore	10	30
+cgscore	11	300
+cgscore	12	200
+cgscore	13	400
+cgscore	15	0
+cgscore	16	10
+cgscore	17	20
+cgscore	18	20
+cgscore	19	20
+cgscore	20	400
+cgscore	21	300
+cgscore	23	10
+cgscore	24	15
+cgscore	25	15
+cgscore	26	15
+cgscore	27	15
+cgscore	28	15
+cgscore	29	15
+cgscore	30	15
+cgscore	31	15
+cgscore	32	15
+cgscore	33	15
+cgscore	34	15
+cgscore	35	15
+cgscore	36	15
+cgscore	37	15
+cgscore	38	15
+cgscore	39	15
+cgscore	40	15
+cgscore	42	15
+cgscore	43	15
+cgscore	44	15
+cgscore	45	15
+cgscore	46	400
+cgscore	47	300
+cgscore	48	10
+cgscore	49	10
+cgscore	50	10
+cgscore	51	10
+cgscore	52	10
+cgscore	53	15
+cgscore	54	15
+cgscore	55	15
+cgscore	56	15
+cgscore	57	15
+cgscore	58	15
+cgscore	59	15
+cgscore	60	15
+cgscore	61	15
+cgscore	62	15
+cgscore	63	15
+cgscore	64	15
+cgscore	65	15
+cgscore	66	20
+cgscore	67	30
+cgscore	68	15
+cgscore	69	20
+cgscore	70	20
+cgscore	71	20
+cgscore	72	30
+cgscore	73	10
+cgscore	74	15
+cgscore	75	15
+cgscore	76	15
+cgscore	77	5
+cgscore	78	5
+cgscore	79	10
+cgscore	80	0
+cgscore	81	30
+cgscore	82	30
+cgscore	83	30
+cgscore	84	30
+cgscore	85	30
+cgscore	86	30
+cgscore	87	0
+cgscore	88	0
+cgscore	89	0
+cgscore	90	0
+cgscore	91	0
+cgscore	92	15
+cgscore	93	300
+cgscore	94	500
+cgscore	95	400
+cgscore	96	15
+cgscore	97	20
+cgscore	98	15
+cgscore	99	15
+cgscore	100	15
+cgscore	101	15
+cgscore	102	0
+cgscore	103	15
+cgscore	104	500
+cgscore	105	550
+cgscore	106	15
+cgscore	112	10
+cgscore	115	10
+cgscore	116	10
+cgscore	117	15
+cgscore	121	20
+cgscore	124	20
+cgscore	125	500
+cgscore	126	500
+cgscore	127	300
+cgscore	128	15
+cgscore	129	15
+cgscore	130	15
+cgscore	131	10
+cgscore	132	10
+cgscore	133	10
+cgscore	134	10
+cgscore	135	10
+cgscore	136	500
+cgscore	137	300
+cgscore	138	15
+cgscore	139	0
+cgscore	140	10
+cgscore	141	20
+cgscore	142	20
+cgscore	143	20
+cgscore	144	10
+cgscore	145	15
+cgscore	146	20
+cgscore	147	500
+cgscore	148	400
+cgscore	149	400
+cgscore	150	300
+cgscore	151	15
+cgscore	152	15
+cgscore	153	15
+cgscore	154	10
+cgscore	155	10
+cgscore	156	10
+cgscore	157	20
+cgscore	158	30
+cgscore	159	500
+cgscore	160	500
+cgscore	161	300
+cgscore	162	500
+cgscore	163	400
+cgscore	164	20
+cgscore	165	20
+cgscore	166	30
+cgscore	167	30
+cgscore	168	15
+cgscore	169	15
+cgscore	170	0
+cgscore	171	15
+cgscore	172	15
+cgscore	173	15
+cgscore	174	15
+cgscore	175	15
+cgscore	176	0
+cgscore	177	15
+cgscore	178	15
+cgscore	179	15
+cgscore	180	15
+cgscore	181	15
+cgscore	182	15
+cgscore	183	15
+cgscore	184	400
+cgscore	185	500
+cgscore	186	400
+cgscore	187	15
+cgscore	188	15
+cgscore	189	15
+cgscore	190	15
+cgscore	191	15
+cgscore	192	0
+cgscore	193	15
+cgscore	194	10
+cgscore	195	5
+cgscore	197	10
+cgscore	198	20
+cgscore	199	20
+cgscore	200	20
+cgscore	201	20
+cgscore	202	500
+cgscore	203	500
+cgscore	204	15
+cgscore	205	15
+cgscore	206	0
+cgscore	207	0
+cgscore	208	20
+cgscore	209	10
+cgscore	210	10
+cgscore	211	15
+cgscore	212	20
+cgscore	213	30
+cgscore	214	500
+cgscore	215	500
+cgscore	216	300
+cgscore	217	0
+cgscore	218	15
+cgscore	220	15
+cgscore	221	15
+cgscore	222	15
+cgscore	223	15
+cgscore	224	15
+cgscore	225	15
+cgscore	226	500
+cgscore	227	400
+cgscore	228	15
+cgscore	229	15
+cgscore	230	0
+cgscore	231	0
+cgscore	232	10
+cgscore	233	10
+cgscore	234	10
+cgscore	235	20
+cgscore	236	20
+cgscore	238	20
+cgscore	239	30
+cgscore	240	400
+cgscore	241	400
+cgscore	242	500
+cgscore	243	0
+cgscore	244	15
+cgscore	245	15
+cgscore	246	0
+cgscore	247	15
+cgscore	248	15
+cgscore	249	10
+cgscore	250	10
+cgscore	251	10
+cgscore	252	10
+cgscore	253	10
+cgscore	254	10
+cgscore	255	10
+cgscore	256	500
+cgscore	257	400
+cgscore	258	400
+cgscore	259	15
+cgscore	260	15
+cgscore	261	0
+cgscore	262	15
+cgscore	263	30
+cgscore	266	30
+cgscore	267	30
+cgscore	268	30
+cgscore	270	30
+cgscore	271	500
+cgscore	272	500
+cgscore	273	0
+cgscore	274	15
+cgscore	275	15
+cgscore	276	30
+cgscore	277	30
+cgscore	278	30
+cgscore	279	30
+cgscore	280	30
+cgscore	281	500
+cgscore	282	500
+cgscore	283	15
+cgscore	284	15
+cgscore	285	15
+cgscore	286	15
+cgscore	287	15
+cgscore	288	10
+cgscore	289	10
+cgscore	290	10
+cgscore	291	10
+cgscore	292	10
+cgscore	293	10
+cgscore	294	30
+cgscore	295	30
+cgscore	296	30
+cgscore	297	30
+cgscore	298	500
+cgscore	299	500
+cgscore	300	0
+cgscore	302	0
+cgscore	303	15
+cgscore	304	15
+cgscore	305	0
+cgscore	306	15
+cgscore	307	30
+cgscore	308	30
+cgscore	309	30
+cgscore	310	30
+cgscore	311	30
+cgscore	312	500
+cgscore	313	500
+cgscore	315	15
+cgscore	316	15
+cgscore	317	15
+cgscore	318	30
+cgscore	319	30
+cgscore	320	30
+cgscore	321	30
+cgscore	323	500
+cgscore	324	500
+cgscore	325	15
+cgscore	326	15
+cgscore	327	15
+cgscore	328	15
+cgscore	329	0
+cgscore	330	0
+cgscore	331	0
+cgscore	332	30
+cgscore	333	30
+cgscore	334	30
+cgscore	335	30
+cgscore	336	30
+cgscore	337	300
+cgscore	338	500
+cgscore	339	400
+cgscore	340	10
+cgscore	348	15
+cgscore	349	15
+cgscore	350	0
+cgscore	351	10
+cgscore	352	10
+cgscore	353	20
+cgscore	354	30
+cgscore	355	30
+cgscore	356	500
+cgscore	357	500
+cgscore	358	15
+cgscore	359	15
+cgscore	360	15
+cgscore	361	15
+cgscore	362	15
+cgscore	363	0
+cgscore	364	0
+cgscore	365	30
+cgscore	366	10
+cgscore	367	20
+cgscore	368	20
+cgscore	369	30
+cgscore	370	500
+cgscore	371	500
+cgscore	372	0
+cgscore	373	10
+cgscore	375	10
+cgscore	376	20
+cgscore	377	20
+cgscore	379	30
+cgscore	380	30
+cgscore	382	500
+cgscore	383	500
+cgscore	385	0
+cgscore	387	15
+cgscore	388	15
+cgscore	389	15
+cgscore	391	10
+cgscore	392	10
+cgscore	393	20
+cgscore	395	30
+cgscore	396	20
+cgscore	397	30
+cgscore	398	500
+cgscore	399	500
+cgscore	400	0
+cgscore	401	20
+cgscore	402	0
+cgscore	403	15
+cgscore	404	15
+cgscore	406	0
+cgscore	407	0
+cgscore	408	30
+cgscore	409	30
+cgscore	410	30
+cgscore	411	30
+cgscore	412	30
+cgscore	413	500
+cgscore	414	500
+cgscore	415	15
+cgscore	416	15
+cgscore	417	500
+cgscore	418	500
+cgscore	419	30
+cgscore	420	30
+cgscore	421	30
+cgscore	422	30
+cgscore	423	30
+cgscore	424	15
+cgscore	425	15
+cgscore	426	10
+cgscore	427	20
+cgscore	428	20
+cgscore	430	30
+cgscore	431	20
+cgscore	432	500
+cgscore	433	500
+cgscore	434	0
+cgscore	435	15
+cgscore	436	15
+cgscore	437	10
+cgscore	438	20
+cgscore	439	20
+cgscore	440	20
+cgscore	441	30
+cgscore	442	500
+cgscore	443	500
+cgscore	444	0
+cgscore	445	10
+cgscore	446	10
+cgscore	447	30
+cgscore	448	30
+cgscore	449	10
+cgscore	450	500
+cgscore	451	500
+cgscore	452	15
+cgscore	453	15
+cgscore	457	15
+cgscore	458	10
+cgscore	459	10
+cgscore	460	20
+cgscore	463	30
+cgscore	464	20
+cgscore	465	500
+cgscore	466	400
+cgscore	467	15
+cgscore	468	15
+cityscore	0	0
+cityscore	1	0
+cityscore	2	0
+cityscore	3	0
+cityscore	4	0
+cityscore	5	1
+cityscore	6	1
+cityscore	7	1
+cityscore	8	1
+cityscore	9	1
+cityscore	10	2
+cityscore	11	2
+cityscore	12	2
+cityscore	13	2
+cityscore	14	2
+cityscore	15	3
+cityscore	16	3
+cityscore	17	3
+cityscore	18	3
+cityscore	19	3
+cityscore	20	4
+cityscore	21	4
+cityscore	22	4
+cityscore	23	4
+cityscore	24	4
+cityscore	25	5
+cityscore	26	5
+cityscore	27	5
+cityscore	28	5
+cityscore	29	5
+cityscore	30	6
+cityscore	31	6
+cityscore	32	6
+cityscore	33	6
+cityscore	34	6
+cityscore	35	7
+cityscore	36	7
+cityscore	37	7
+cityscore	38	7
+cityscore	39	7
+cityscore	40	8
+cityscore	41	8
+cityscore	42	8
+cityscore	43	8
+cityscore	44	8
+cityscore	45	9
+cityscore	46	9
+cityscore	47	9
+cityscore	48	9
+cityscore	49	9
+cityscore	50	10
+cityscore	51	10
+cityscore	52	10
+cityscore	53	10
+cityscore	54	10
+cityscore	55	11
+cityscore	56	11
+cityscore	57	11
+cityscore	58	11
+cityscore	59	11
+cityscore	60	12
+cityscore	61	12
+cityscore	62	12
+cityscore	63	12
+cityscore	64	12
+cityscore	65	13
+cityscore	66	13
+cityscore	67	13
+cityscore	68	13
+cityscore	69	13
+cityscore	70	14
+cityscore	71	14
+cityscore	72	14
+cityscore	73	14
+cityscore	74	14
+cityscore	75	15
+cityscore	76	15
+cityscore	77	15
+cityscore	78	15
+cityscore	79	15
+cityscore	80	16
+cityscore	81	16
+cityscore	82	16
+cityscore	83	16
+cityscore	84	16
+cityscore	85	17
+cityscore	86	17
+cityscore	87	17
+cityscore	88	17
+cityscore	89	17
+cityscore	90	18
+cityscore	91	18
+cityscore	92	18
+cityscore	93	18
+cityscore	94	18
+cityscore	95	19
+cityscore	96	19
+cityscore	97	19
+cityscore	98	19
+cityscore	99	19
+cityscore	100	20
+cityscore	101	20
+cityscore	102	20
+cityscore	103	20
+cityscore	104	20
+cityscore	105	21
+cityscore	106	21
+cityscore	107	21
+cityscore	108	21
+cityscore	109	21
+cityscore	110	22
+cityscore	111	22
+cityscore	112	22
+cityscore	113	22
+cityscore	114	22
+cityscore	115	23
+cityscore	116	23
+cityscore	117	23
+cityscore	118	23
+cityscore	119	23
+cityscore	120	24
+cityscore	121	24
+cityscore	122	24
+cityscore	123	24
+cityscore	124	24
+cityscore	125	25
+cityscore	126	25
+cityscore	127	25
+cityscore	128	25
+cityscore	129	25
+cityscore	130	26
+cityscore	131	26
+cityscore	132	26
+cityscore	133	26
+cityscore	134	26
+cityscore	135	27
+cityscore	136	27
+cityscore	137	27
+cityscore	138	27
+cityscore	139	27
+cityscore	140	28
+cityscore	141	28
+cityscore	142	28
+cityscore	143	28
+cityscore	144	28
+cityscore	145	29
+cityscore	146	29
+cityscore	147	29
+cityscore	148	29
+cityscore	149	29
+cityscore	150	30
+cityscore	151	30
+cityscore	152	30
+cityscore	153	30
+cityscore	154	30
+cityscore	155	31
+cityscore	156	31
+cityscore	157	31
+cityscore	158	31
+cityscore	159	31
+cityscore	160	32
+cityscore	161	32
+cityscore	162	32
+cityscore	163	32
+cityscore	164	32
+cityscore	165	33
+cityscore	166	33
+cityscore	167	33
+cityscore	168	33
+cityscore	169	33
+cityscore	170	34
+cityscore	171	34
+cityscore	172	34
+cityscore	173	34
+cityscore	174	34
+cityscore	175	35
+cityscore	176	35
+cityscore	177	35
+cityscore	178	35
+cityscore	179	35
+cityscore	180	36
+cityscore	181	36
+cityscore	182	36
+cityscore	183	36
+cityscore	184	36
+cityscore	185	37
+cityscore	186	37
+cityscore	187	37
+cityscore	188	37
+cityscore	189	37
+cityscore	190	38
+cityscore	191	38
+cityscore	192	38
+cityscore	193	38
+cityscore	194	38
+cityscore	195	39
+cityscore	196	39
+cityscore	197	39
+cityscore	198	39
+cityscore	199	39
+cityscore	200	40
+cityscore	201	40
+cityscore	202	40
+cityscore	203	40
+cityscore	204	40
+cityscore	205	41
+cityscore	206	41
+cityscore	207	41
+cityscore	208	41
+cityscore	209	41
+cityscore	210	42
+cityscore	211	42
+cityscore	212	42
+cityscore	213	42
+cityscore	214	42
+cityscore	215	43
+cityscore	216	43
+cityscore	217	43
+cityscore	218	43
+cityscore	219	43
+cityscore	220	44
+cityscore	221	44
+cityscore	222	44
+cityscore	223	44
+cityscore	224	44
+cityscore	225	45
+cityscore	226	45
+cityscore	227	45
+cityscore	228	45
+cityscore	229	45
+cityscore	230	46
+cityscore	231	46
+cityscore	232	46
+cityscore	233	46
+cityscore	234	46
+cityscore	235	47
+cityscore	236	47
+cityscore	237	47
+cityscore	238	47
+cityscore	239	47
+cityscore	240	48
+cityscore	241	48
+cityscore	242	48
+cityscore	243	48
+cityscore	244	48
+cityscore	245	49
+cityscore	246	49
+cityscore	247	49
+cityscore	248	49
+cityscore	249	49
+cityscore	250	50
+cityscore	251	50
+cityscore	252	50
+cityscore	253	50
+cityscore	254	50
+cityscore	255	51
+cityscore	256	51
+cityscore	257	51
+cityscore	258	51
+cityscore	259	51
+cityscore	260	52
+cityscore	261	52
+cityscore	262	52
+cityscore	263	52
+cityscore	264	52
+cityscore	265	53
+cityscore	266	53
+cityscore	267	53
+cityscore	268	53
+cityscore	269	53
+cityscore	270	54
+cityscore	271	54
+cityscore	272	54
+cityscore	273	54
+cityscore	274	54
+cityscore	275	55
+cityscore	276	55
+cityscore	277	55
+cityscore	278	55
+cityscore	279	55
+cityscore	280	56
+cityscore	281	56
+cityscore	282	56
+cityscore	283	56
+cityscore	284	56
+cityscore	285	57
+cityscore	286	57
+cityscore	287	57
+cityscore	288	57
+cityscore	289	57
+cityscore	290	58
+cityscore	291	58
+cityscore	292	58
+cityscore	293	58
+cityscore	294	58
+cityscore	295	59
+cityscore	296	59
+cityscore	297	59
+cityscore	298	59
+cityscore	299	59
+cityscore	300	60
+cityscore	301	60
+cityscore	302	60
+cityscore	303	60
+cityscore	304	60
+cityscore	305	61
+cityscore	306	61
+cityscore	307	61
+cityscore	308	61
+cityscore	309	61
+cityscore	310	62
+cityscore	311	62
+cityscore	312	62
+cityscore	313	62
+cityscore	314	62
+cityscore	315	63
+cityscore	316	63
+cityscore	317	63
+cityscore	318	63
+cityscore	319	63
+cityscore	320	64
+cityscore	321	64
+cityscore	322	64
+cityscore	323	64
+cityscore	324	64
+cityscore	325	65
+cityscore	326	65
+cityscore	327	65
+cityscore	328	65
+cityscore	329	65
+cityscore	330	66
+cityscore	331	66
+cityscore	332	66
+cityscore	333	66
+cityscore	334	66
+cityscore	335	67
+cityscore	336	67
+cityscore	337	67
+cityscore	338	67
+cityscore	339	67
+cityscore	340	68
+cityscore	341	68
+cityscore	342	68
+cityscore	343	68
+cityscore	344	68
+cityscore	345	69
+cityscore	346	69
+cityscore	347	69
+cityscore	348	69
+cityscore	349	69
+cityscore	350	70
+cityscore	351	70
+cityscore	352	70
+cityscore	353	70
+cityscore	354	70
+cityscore	355	71
+cityscore	356	71
+cityscore	357	71
+cityscore	358	71
+cityscore	359	71
+cityscore	360	72
+cityscore	361	72
+cityscore	362	72
+cityscore	363	72
+cityscore	364	72
+cityscore	365	73
+cityscore	366	73
+cityscore	367	73
+cityscore	368	73
+cityscore	369	73
+cityscore	370	74
+cityscore	371	74
+cityscore	372	74
+cityscore	373	74
+cityscore	374	74
+cityscore	375	75
+cityscore	376	75
+cityscore	377	75
+cityscore	378	75
+cityscore	379	75
+cityscore	380	76
+cityscore	381	76
+cityscore	382	76
+cityscore	383	76
+cityscore	384	76
+cityscore	385	77
+cityscore	386	77
+cityscore	387	77
+cityscore	388	77
+cityscore	389	77
+cityscore	390	78
+cityscore	391	78
+cityscore	392	78
+cityscore	393	78
+cityscore	394	78
+cityscore	395	79
+cityscore	396	79
+cityscore	397	79
+cityscore	398	79
+cityscore	399	79
+cityscore	400	80
+cityscore	401	80
+cityscore	402	80
+cityscore	403	80
+cityscore	404	80
+cityscore	405	81
+cityscore	406	81
+cityscore	407	81
+cityscore	408	81
+cityscore	409	81
+cityscore	410	82
+cityscore	411	82
+cityscore	412	82
+cityscore	413	82
+cityscore	414	82
+cityscore	415	83
+cityscore	416	83
+cityscore	417	83
+cityscore	418	83
+cityscore	419	83
+cityscore	420	84
+cityscore	421	84
+cityscore	422	84
+cityscore	423	84
+cityscore	424	84
+cityscore	425	85
+cityscore	426	85
+cityscore	427	85
+cityscore	428	85
+cityscore	429	85
+cityscore	430	86
+cityscore	431	86
+cityscore	432	86
+cityscore	433	86
+cityscore	434	86
+cityscore	435	87
+cityscore	436	87
+cityscore	437	87
+cityscore	438	87
+cityscore	439	87
+cityscore	440	88
+cityscore	441	88
+cityscore	442	88
+cityscore	443	88
+cityscore	444	88
+cityscore	445	89
+cityscore	446	89
+cityscore	447	89
+cityscore	448	89
+cityscore	449	89
+cityscore	450	90
+cityscore	451	90
+cityscore	452	90
+cityscore	453	90
+cityscore	454	90
+cityscore	455	91
+cityscore	456	91
+cityscore	457	91
+cityscore	458	91
+cityscore	459	91
+cityscore	460	92
+cityscore	461	92
+cityscore	462	92
+cityscore	463	92
+cityscore	464	92
+cityscore	465	93
+cityscore	466	93
+cityscore	467	93
+cityscore	468	93
+cityscore	469	93
+cityscore	470	94
+cityscore	471	94
+cityscore	472	94
+cityscore	473	94
+cityscore	474	94
+cityscore	475	95
+cityscore	476	95
+cityscore	477	95
+cityscore	478	95
+cityscore	479	95
+cityscore	480	96
+cityscore	481	96
+cityscore	482	96
+cityscore	483	96
+cityscore	484	96
+cityscore	485	97
+cityscore	486	97
+cityscore	487	97
+cityscore	488	97
+cityscore	489	97
+cityscore	490	98
+cityscore	491	98
+cityscore	492	98
+cityscore	493	98
+cityscore	494	98
+cityscore	495	99
+cityscore	496	99
+cityscore	497	99
+cityscore	498	99
+cityscore	499	99
+cityscore	500	100
+cityscore	501	100
+cityscore	502	100
+cityscore	503	100
+cityscore	504	100
+cityscore	505	101
+cityscore	506	101
+cityscore	507	101
+cityscore	508	101
+cityscore	509	101
+cityscore	510	102
+cityscore	511	102
+cityscore	512	102
+cityscore	513	102
+cityscore	514	102
+cityscore	515	103
+cityscore	516	103
+cityscore	517	103
+cityscore	518	103
+cityscore	519	103
+cityscore	520	104
+cityscore	521	104
+cityscore	522	104
+cityscore	523	104
+cityscore	524	104
+cityscore	525	105
+cityscore	526	105
+cityscore	527	105
+cityscore	528	105
+cityscore	529	105
+cityscore	530	106
+cityscore	531	106
+cityscore	532	106
+cityscore	533	106
+cityscore	534	106
+cityscore	535	107
+cityscore	536	107
+cityscore	537	107
+cityscore	538	107
+cityscore	539	107
+cityscore	540	108
+cityscore	541	108
+cityscore	542	108
+cityscore	543	108
+cityscore	544	108
+cityscore	545	109
+cityscore	546	109
+cityscore	547	109
+cityscore	548	109
+cityscore	549	109
+cityscore	550	110
+cityscore	551	110
+cityscore	552	110
+cityscore	553	110
+cityscore	554	110
+cityscore	555	111
+cityscore	556	111
+cityscore	557	111
+cityscore	558	111
+cityscore	559	111
+cityscore	560	112
+cityscore	561	112
+cityscore	562	112
+cityscore	563	112
+cityscore	564	112
+cityscore	565	113
+cityscore	566	113
+cityscore	567	113
+cityscore	568	113
+cityscore	569	113
+cityscore	570	114
+cityscore	571	114
+cityscore	572	114
+cityscore	573	114
+cityscore	574	114
+cityscore	575	115
+cityscore	576	115
+cityscore	577	115
+cityscore	578	115
+cityscore	579	115
+cityscore	580	116
+cityscore	581	116
+cityscore	582	116
+cityscore	583	116
+cityscore	584	116
+cityscore	585	117
+cityscore	586	117
+cityscore	587	117
+cityscore	588	117
+cityscore	589	117
+cityscore	590	118
+cityscore	591	118
+cityscore	592	118
+cityscore	593	118
+cityscore	594	118
+cityscore	595	119
+cityscore	596	119
+cityscore	597	119
+cityscore	598	119
+cityscore	599	119
+cityscore	600	120
+cityscore	601	120
+cityscore	602	120
+cityscore	603	120
+cityscore	604	120
+cityscore	605	121
+cityscore	606	121
+cityscore	607	121
+cityscore	608	121
+cityscore	609	121
+cityscore	610	122
+cityscore	611	122
+cityscore	612	122
+cityscore	613	122
+cityscore	614	122
+cityscore	615	123
+cityscore	616	123
+cityscore	617	123
+cityscore	618	123
+cityscore	619	123
+cityscore	620	124
+cityscore	621	124
+cityscore	622	124
+cityscore	623	124
+cityscore	624	124
+cityscore	625	125
+cityscore	626	125
+cityscore	627	125
+cityscore	628	125
+cityscore	629	125
+cityscore	630	126
+cityscore	631	126
+cityscore	632	126
+cityscore	633	126
+cityscore	634	126
+cityscore	635	127
+cityscore	636	127
+cityscore	637	127
+cityscore	638	127
+cityscore	639	127
+cityscore	640	128
+cityscore	641	128
+cityscore	642	128
+cityscore	643	128
+cityscore	644	128
+cityscore	645	129
+cityscore	646	129
+cityscore	647	129
+cityscore	648	129
+cityscore	649	129
+cityscore	650	130
+cityscore	651	130
+cityscore	652	130
+cityscore	653	130
+cityscore	654	130
+cityscore	655	131
+cityscore	656	131
+cityscore	657	131
+cityscore	658	131
+cityscore	659	131
+cityscore	660	132
+cityscore	661	132
+cityscore	662	132
+cityscore	663	132
+cityscore	664	132
+cityscore	665	133
+cityscore	666	133
+cityscore	667	133
+cityscore	668	133
+cityscore	669	133
+cityscore	670	134
+cityscore	671	134
+cityscore	672	134
+cityscore	673	134
+cityscore	674	134
+cityscore	675	135
+cityscore	676	135
+cityscore	677	135
+cityscore	678	135
+cityscore	679	135
+cityscore	680	136
+cityscore	681	136
+cityscore	682	136
+cityscore	683	136
+cityscore	684	136
+cityscore	685	137
+cityscore	686	137
+cityscore	687	137
+cityscore	688	137
+cityscore	689	137
+cityscore	690	138
+cityscore	691	138
+cityscore	692	138
+cityscore	693	138
+cityscore	694	138
+cityscore	695	139
+cityscore	696	139
+cityscore	697	139
+cityscore	698	139
+cityscore	699	139
+cityscore	700	140
+cityscore	701	140
+cityscore	702	140
+cityscore	703	140
+cityscore	704	140
+cityscore	705	141
+cityscore	706	141
+cityscore	707	141
+cityscore	708	141
+cityscore	709	141
+cityscore	710	142
+cityscore	711	142
+cityscore	712	142
+cityscore	713	142
+cityscore	714	142
+cityscore	715	143
+cityscore	716	143
+cityscore	717	143
+cityscore	718	143
+cityscore	719	143
+cityscore	720	144
+cityscore	721	144
+cityscore	722	144
+cityscore	723	144
+cityscore	724	144
+cityscore	725	145
+cityscore	726	145
+cityscore	727	145
+cityscore	728	145
+cityscore	729	145
+cityscore	730	146
+cityscore	731	146
+cityscore	732	146
+cityscore	733	146
+cityscore	734	146
+cityscore	735	147
+cityscore	736	147
+cityscore	737	147
+cityscore	738	147
+cityscore	739	147
+cityscore	740	148
+cityscore	741	148
+cityscore	742	148
+cityscore	743	148
+cityscore	744	148
+cityscore	745	149
+cityscore	746	149
+cityscore	747	149
+cityscore	748	149
+cityscore	749	149
+cityscore	750	150
+cityscore	751	150
+cityscore	752	150
+cityscore	753	150
+cityscore	754	150
+cityscore	755	151
+cityscore	756	151
+cityscore	757	151
+cityscore	758	151
+cityscore	759	151
+cityscore	760	152
+cityscore	761	152
+cityscore	762	152
+cityscore	763	152
+cityscore	764	152
+cityscore	765	153
+cityscore	766	153
+cityscore	767	153
+cityscore	768	153
+cityscore	769	153
+cityscore	770	154
+cityscore	771	154
+cityscore	772	154
+cityscore	773	154
+cityscore	774	154
+cityscore	775	155
+cityscore	776	155
+cityscore	777	155
+cityscore	778	155
+cityscore	779	155
+cityscore	780	156
+cityscore	781	156
+cityscore	782	156
+cityscore	783	156
+cityscore	784	156
+cityscore	785	157
+cityscore	786	157
+cityscore	787	157
+cityscore	788	157
+cityscore	789	157
+cityscore	790	158
+cityscore	791	158
+cityscore	792	158
+cityscore	793	158
+cityscore	794	158
+cityscore	795	159
+cityscore	796	159
+cityscore	797	159
+cityscore	798	159
+cityscore	799	159
+cityscore	800	160
+cityscore	801	160
+cityscore	802	160
+cityscore	803	160
+cityscore	804	160
+cityscore	805	161
+cityscore	806	161
+cityscore	807	161
+cityscore	808	161
+cityscore	809	161
+cityscore	810	162
+cityscore	811	162
+cityscore	812	162
+cityscore	813	162
+cityscore	814	162
+cityscore	815	163
+cityscore	816	163
+cityscore	817	163
+cityscore	818	163
+cityscore	819	163
+cityscore	820	164
+cityscore	821	164
+cityscore	822	164
+cityscore	823	164
+cityscore	824	164
+cityscore	825	165
+cityscore	826	165
+cityscore	827	165
+cityscore	828	165
+cityscore	829	165
+cityscore	830	166
+cityscore	831	166
+cityscore	832	166
+cityscore	833	166
+cityscore	834	166
+cityscore	835	167
+cityscore	836	167
+cityscore	837	167
+cityscore	838	167
+cityscore	839	167
+cityscore	840	168
+cityscore	841	168
+cityscore	842	168
+cityscore	843	168
+cityscore	844	168
+cityscore	845	169
+cityscore	846	169
+cityscore	847	169
+cityscore	848	169
+cityscore	849	169
+cityscore	850	170
+cityscore	851	170
+cityscore	852	170
+cityscore	853	170
+cityscore	854	170
+cityscore	855	171
+cityscore	856	171
+cityscore	857	171
+cityscore	858	171
+cityscore	859	171
+cityscore	860	172
+cityscore	861	172
+cityscore	862	172
+cityscore	863	172
+cityscore	864	172
+cityscore	865	173
+cityscore	866	173
+cityscore	867	173
+cityscore	868	173
+cityscore	869	173
+cityscore	870	174
+cityscore	871	174
+cityscore	872	174
+cityscore	873	174
+cityscore	874	174
+cityscore	875	175
+cityscore	876	175
+cityscore	877	175
+cityscore	878	175
+cityscore	879	175
+cityscore	880	176
+cityscore	881	176
+cityscore	882	176
+cityscore	883	176
+cityscore	884	176
+cityscore	885	177
+cityscore	886	177
+cityscore	887	177
+cityscore	888	177
+cityscore	889	177
+cityscore	890	178
+cityscore	891	178
+cityscore	892	178
+cityscore	893	178
+cityscore	894	178
+cityscore	895	179
+cityscore	896	179
+cityscore	897	179
+cityscore	898	179
+cityscore	899	179
+cityscore	900	180
+cityscore	901	180
+cityscore	902	180
+cityscore	903	180
+cityscore	904	180
+cityscore	905	181
+cityscore	906	181
+cityscore	907	181
+cityscore	908	181
+cityscore	909	181
+cityscore	910	182
+cityscore	911	182
+cityscore	912	182
+cityscore	913	182
+cityscore	914	182
+cityscore	915	183
+cityscore	916	183
+cityscore	917	183
+cityscore	918	183
+cityscore	919	183
+cityscore	920	184
+cityscore	921	184
+cityscore	922	184
+cityscore	923	184
+cityscore	924	184
+cityscore	925	185
+cityscore	926	185
+cityscore	927	185
+cityscore	928	185
+cityscore	929	185
+cityscore	930	186
+cityscore	931	186
+cityscore	932	186
+cityscore	933	186
+cityscore	934	186
+cityscore	935	187
+cityscore	936	187
+cityscore	937	187
+cityscore	938	187
+cityscore	939	187
+cityscore	940	188
+cityscore	941	188
+cityscore	942	188
+cityscore	943	188
+cityscore	944	188
+cityscore	945	189
+cityscore	946	189
+cityscore	947	189
+cityscore	948	189
+cityscore	949	189
+cityscore	950	190
+cityscore	951	190
+cityscore	952	190
+cityscore	953	190
+cityscore	954	190
+cityscore	955	191
+cityscore	956	191
+cityscore	957	191
+cityscore	958	191
+cityscore	959	191
+cityscore	960	192
+cityscore	961	192
+cityscore	962	192
+cityscore	963	192
+cityscore	964	192
+cityscore	965	193
+cityscore	966	193
+cityscore	967	193
+cityscore	968	193
+cityscore	969	193
+cityscore	970	194
+cityscore	971	194
+cityscore	972	194
+cityscore	973	194
+cityscore	974	194
+cityscore	975	195
+cityscore	976	195
+cityscore	977	195
+cityscore	978	195
+cityscore	979	195
+cityscore	980	196
+cityscore	981	196
+cityscore	982	196
+cityscore	983	196
+cityscore	984	196
+cityscore	985	197
+cityscore	986	197
+cityscore	987	197
+cityscore	988	197
+cityscore	989	197
+cityscore	990	198
+cityscore	991	198
+cityscore	992	198
+cityscore	993	198
+cityscore	994	198
+cityscore	995	199
+cityscore	996	199
+cityscore	997	199
+cityscore	998	199
+cityscore	999	199
+cityscore	1000	200
+cityscore	1001	200
+cityscore	1002	200
+cityscore	1003	200
+cityscore	1004	200
+cityscore	1005	201
+cityscore	1006	201
+cityscore	1007	201
+cityscore	1008	201
+cityscore	1009	201
+cityscore	1010	202
+cityscore	1011	202
+cityscore	1012	202
+cityscore	1013	202
+cityscore	1014	202
+cityscore	1015	203
+cityscore	1016	203
+cityscore	1017	203
+cityscore	1018	203
+cityscore	1019	203
+cityscore	1020	204
+cityscore	1021	204
+cityscore	1022	204
+cityscore	1023	204
+cityscore	1024	204
+cityscore	1025	205
+cityscore	1026	205
+cityscore	1027	205
+cityscore	1028	205
+cityscore	1029	205
+cityscore	1030	206
+cityscore	1031	206
+cityscore	1032	206
+cityscore	1033	206
+cityscore	1034	206
+cityscore	1035	207
+cityscore	1036	207
+cityscore	1037	207
+cityscore	1038	207
+cityscore	1039	207
+cityscore	1040	208
+cityscore	1041	208
+cityscore	1042	208
+cityscore	1043	208
+cityscore	1044	208
+cityscore	1045	209
+cityscore	1046	209
+cityscore	1047	209
+cityscore	1048	209
+cityscore	1049	209
+cityscore	1050	210
+cityscore	1051	210
+cityscore	1052	210
+cityscore	1053	210
+cityscore	1054	210
+cityscore	1055	211
+cityscore	1056	211
+cityscore	1057	211
+cityscore	1058	211
+cityscore	1059	211
+cityscore	1060	212
+cityscore	1061	212
+cityscore	1062	212
+cityscore	1063	212
+cityscore	1064	212
+cityscore	1065	213
+cityscore	1066	213
+cityscore	1067	213
+cityscore	1068	213
+cityscore	1069	213
+cityscore	1070	214
+cityscore	1071	214
+cityscore	1072	214
+cityscore	1073	214
+cityscore	1074	214
+cityscore	1075	215
+cityscore	1076	215
+cityscore	1077	215
+cityscore	1078	215
+cityscore	1079	215
+cityscore	1080	216
+cityscore	1081	216
+cityscore	1082	216
+cityscore	1083	216
+cityscore	1084	216
+cityscore	1085	217
+cityscore	1086	217
+cityscore	1087	217
+cityscore	1088	217
+cityscore	1089	217
+cityscore	1090	218
+cityscore	1091	218
+cityscore	1092	218
+cityscore	1093	218
+cityscore	1094	218
+cityscore	1095	219
+cityscore	1096	219
+cityscore	1097	219
+cityscore	1098	219
+cityscore	1099	219
+cityscore	1100	220
+cityscore	1101	220
+cityscore	1102	220
+cityscore	1103	220
+cityscore	1104	220
+cityscore	1105	221
+cityscore	1106	221
+cityscore	1107	221
+cityscore	1108	221
+cityscore	1109	221
+cityscore	1110	222
+cityscore	1111	222
+cityscore	1112	222
+cityscore	1113	222
+cityscore	1114	222
+cityscore	1115	223
+cityscore	1116	223
+cityscore	1117	223
+cityscore	1118	223
+cityscore	1119	223
+cityscore	1120	224
+cityscore	1121	224
+cityscore	1122	224
+cityscore	1123	224
+cityscore	1124	224
+cityscore	1125	225
+cityscore	1126	225
+cityscore	1127	225
+cityscore	1128	225
+cityscore	1129	225
+cityscore	1130	226
+cityscore	1131	226
+cityscore	1132	226
+cityscore	1133	226
+cityscore	1134	226
+cityscore	1135	227
+cityscore	1136	227
+cityscore	1137	227
+cityscore	1138	227
+cityscore	1139	227
+cityscore	1140	228
+cityscore	1141	228
+cityscore	1142	228
+cityscore	1143	228
+cityscore	1144	228
+cityscore	1145	229
+cityscore	1146	229
+cityscore	1147	229
+cityscore	1148	229
+cityscore	1149	229
+cityscore	1150	230
+cityscore	1151	230
+cityscore	1152	230
+cityscore	1153	230
+cityscore	1154	230
+cityscore	1155	231
+cityscore	1156	231
+cityscore	1157	231
+cityscore	1158	231
+cityscore	1159	231
+cityscore	1160	232
+cityscore	1161	232
+cityscore	1162	232
+cityscore	1163	232
+cityscore	1164	232
+cityscore	1165	233
+cityscore	1166	233
+cityscore	1167	233
+cityscore	1168	233
+cityscore	1169	233
+cityscore	1170	234
+cityscore	1171	234
+cityscore	1172	234
+cityscore	1173	234
+cityscore	1174	234
+cityscore	1175	235
+cityscore	1176	235
+cityscore	1177	235
+cityscore	1178	235
+cityscore	1179	235
+cityscore	1180	236
+cityscore	1181	236
+cityscore	1182	236
+cityscore	1183	236
+cityscore	1184	236
+cityscore	1185	237
+cityscore	1186	237
+cityscore	1187	237
+cityscore	1188	237
+cityscore	1189	237
+cityscore	1190	238
+cityscore	1191	238
+cityscore	1192	238
+cityscore	1193	238
+cityscore	1194	238
+cityscore	1195	239
+cityscore	1196	239
+cityscore	1197	239
+cityscore	1198	239
+cityscore	1199	239
+cityscore	1200	240
+cityscore	1201	240
+cityscore	1202	240
+cityscore	1203	240
+cityscore	1204	240
+cityscore	1205	241
+cityscore	1206	241
+cityscore	1207	241
+cityscore	1208	241
+cityscore	1209	241
+cityscore	1210	242
+cityscore	1211	242
+cityscore	1212	242
+cityscore	1213	242
+cityscore	1214	242
+cityscore	1215	243
+cityscore	1216	243
+cityscore	1217	243
+cityscore	1218	243
+cityscore	1219	243
+cityscore	1220	244
+cityscore	1221	244
+cityscore	1222	244
+cityscore	1223	244
+cityscore	1224	244
+cityscore	1225	245
+cityscore	1226	245
+cityscore	1227	245
+cityscore	1228	245
+cityscore	1229	245
+cityscore	1230	246
+cityscore	1231	246
+cityscore	1232	246
+cityscore	1233	246
+cityscore	1234	246
+cityscore	1235	247
+cityscore	1236	247
+cityscore	1237	247
+cityscore	1238	247
+cityscore	1239	247
+cityscore	1240	248
+cityscore	1241	248
+cityscore	1242	248
+cityscore	1243	248
+cityscore	1244	248
+cityscore	1245	249
+cityscore	1246	249
+cityscore	1247	249
+cityscore	1248	249
+cityscore	1249	249
+cityscore	1250	250
+cityscore	1251	250
+cityscore	1252	250
+cityscore	1253	250
+cityscore	1254	250
+cityscore	1255	251
+cityscore	1256	251
+cityscore	1257	251
+cityscore	1258	251
+cityscore	1259	251
+cityscore	1260	252
+cityscore	1261	252
+cityscore	1262	252
+cityscore	1263	252
+cityscore	1264	252
+cityscore	1265	253
+cityscore	1266	253
+cityscore	1267	253
+cityscore	1268	253
+cityscore	1269	253
+cityscore	1270	254
+cityscore	1271	254
+cityscore	1272	254
+cityscore	1273	254
+cityscore	1274	254
+cityscore	1275	255
+cityscore	1276	255
+cityscore	1277	255
+cityscore	1278	255
+cityscore	1279	255
+cityscore	1280	256
+cityscore	1281	256
+cityscore	1282	256
+cityscore	1283	256
+cityscore	1284	256
+cityscore	1285	257
+cityscore	1286	257
+cityscore	1287	257
+cityscore	1288	257
+cityscore	1289	257
+cityscore	1290	258
+cityscore	1291	258
+cityscore	1292	258
+cityscore	1293	258
+cityscore	1294	258
+cityscore	1295	259
+cityscore	1296	259
+cityscore	1297	259
+cityscore	1298	259
+cityscore	1299	259
+cityscore	1300	260
+cityscore	1301	260
+cityscore	1302	260
+cityscore	1303	260
+cityscore	1304	260
+cityscore	1305	261
+cityscore	1306	261
+cityscore	1307	261
+cityscore	1308	261
+cityscore	1309	261
+cityscore	1310	262
+cityscore	1311	262
+cityscore	1312	262
+cityscore	1313	262
+cityscore	1314	262
+cityscore	1315	263
+cityscore	1316	263
+cityscore	1317	263
+cityscore	1318	263
+cityscore	1319	263
+cityscore	1320	264
+cityscore	1321	264
+cityscore	1322	264
+cityscore	1323	264
+cityscore	1324	264
+cityscore	1325	265
+cityscore	1326	265
+cityscore	1327	265
+cityscore	1328	265
+cityscore	1329	265
+cityscore	1330	266
+cityscore	1331	266
+cityscore	1332	266
+cityscore	1333	266
+cityscore	1334	266
+cityscore	1335	267
+cityscore	1336	267
+cityscore	1337	267
+cityscore	1338	267
+cityscore	1339	267
+cityscore	1340	268
+cityscore	1341	268
+cityscore	1342	268
+cityscore	1343	268
+cityscore	1344	268
+cityscore	1345	269
+cityscore	1346	269
+cityscore	1347	269
+cityscore	1348	269
+cityscore	1349	269
+cityscore	1350	270
+cityscore	1351	270
+cityscore	1352	270
+cityscore	1353	270
+cityscore	1354	270
+cityscore	1355	271
+cityscore	1356	271
+cityscore	1357	271
+cityscore	1358	271
+cityscore	1359	271
+cityscore	1360	272
+cityscore	1361	272
+cityscore	1362	272
+cityscore	1363	272
+cityscore	1364	272
+cityscore	1365	273
+cityscore	1366	273
+cityscore	1367	273
+cityscore	1368	273
+cityscore	1369	273
+cityscore	1370	274
+cityscore	1371	274
+cityscore	1372	274
+cityscore	1373	274
+cityscore	1374	274
+cityscore	1375	275
+cityscore	1376	275
+cityscore	1377	275
+cityscore	1378	275
+cityscore	1379	275
+cityscore	1380	276
+cityscore	1381	276
+cityscore	1382	276
+cityscore	1383	276
+cityscore	1384	276
+cityscore	1385	277
+cityscore	1386	277
+cityscore	1387	277
+cityscore	1388	277
+cityscore	1389	277
+cityscore	1390	278
+cityscore	1391	278
+cityscore	1392	278
+cityscore	1393	278
+cityscore	1394	278
+cityscore	1395	279
+cityscore	1396	279
+cityscore	1397	279
+cityscore	1398	279
+cityscore	1399	279
+cityscore	1400	280
+cityscore	1401	280
+cityscore	1402	280
+cityscore	1403	280
+cityscore	1404	280
+cityscore	1405	281
+cityscore	1406	281
+cityscore	1407	281
+cityscore	1408	281
+cityscore	1409	281
+cityscore	1410	282
+cityscore	1411	282
+cityscore	1412	282
+cityscore	1413	282
+cityscore	1414	282
+cityscore	1415	283
+cityscore	1416	283
+cityscore	1417	283
+cityscore	1418	283
+cityscore	1419	283
+cityscore	1420	284
+cityscore	1421	284
+cityscore	1422	284
+cityscore	1423	284
+cityscore	1424	284
+cityscore	1425	285
+cityscore	1426	285
+cityscore	1427	285
+cityscore	1428	285
+cityscore	1429	285
+cityscore	1430	286
+cityscore	1431	286
+cityscore	1432	286
+cityscore	1433	286
+cityscore	1434	286
+cityscore	1435	287
+cityscore	1436	287
+cityscore	1437	287
+cityscore	1438	287
+cityscore	1439	287
+cityscore	1440	288
+cityscore	1441	288
+cityscore	1442	288
+cityscore	1443	288
+cityscore	1444	288
+cityscore	1445	289
+cityscore	1446	289
+cityscore	1447	289
+cityscore	1448	289
+cityscore	1449	289
+cityscore	1450	290
+cityscore	1451	290
+cityscore	1452	290
+cityscore	1453	290
+cityscore	1454	290
+cityscore	1455	291
+cityscore	1456	291
+cityscore	1457	291
+cityscore	1458	291
+cityscore	1459	291
+cityscore	1460	292
+cityscore	1461	292
+cityscore	1462	292
+cityscore	1463	292
+cityscore	1464	292
+cityscore	1465	293
+cityscore	1466	293
+cityscore	1467	293
+cityscore	1468	293
+cityscore	1469	293
+cityscore	1470	294
+cityscore	1471	294
+cityscore	1472	294
+cityscore	1473	294
+cityscore	1474	294
+cityscore	1475	295
+cityscore	1476	295
+cityscore	1477	295
+cityscore	1478	295
+cityscore	1479	295
+cityscore	1480	296
+cityscore	1481	296
+cityscore	1482	296
+cityscore	1483	296
+cityscore	1484	296
+cityscore	1485	297
+cityscore	1486	297
+cityscore	1487	297
+cityscore	1488	297
+cityscore	1489	297
+cityscore	1490	298
+cityscore	1491	298
+cityscore	1492	298
+cityscore	1493	298
+cityscore	1494	298
+cityscore	1495	299
+cityscore	1496	299
+cityscore	1497	299
+cityscore	1498	299
+cityscore	1499	299
+cityscore	1500	300
+scoreevent	1359	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB6AAAAAAA=
+scoreevent	6030	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAiAAAAAAA=
+scoreevent	6055	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAiAAAAAAA=
+scoreevent	6450	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB6AAAAAAA=
+scoreevent	7044	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAYAAAAAAA=
+scoreevent	1000107	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAGAAAAAAA=
+scoreevent	1000206	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAOAAAAAAA=
+scoreevent	1000317	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAMAAAAAAA=
+scoreevent	1000444	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAJAAAAAAA=
+scoreevent	1000512	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAKAAAAAAA=
+scoreevent	1000609	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAANAAAAAAA=
+scoreevent	1000708	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAHAAAAAAA=
+scoreevent	1000810	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAIAAAAAAA=
+scoreevent	1001010	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAnAAAAAAA=
+scoreevent	1001107	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAARAAAAAAA=
+scoreevent	1001210	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAPAAAAAAA=
+scoreevent	1001308	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAQAAAAAAA=
+scoreevent	1001412	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAWAAAAAAA=
+scoreevent	1001518	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAASAAAAAAA=
+scoreevent	1001611	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAATAAAAAAA=
+scoreevent	1001712	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAVAAAAAAA=
+scoreevent	1001822	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAkAAAAAAA=
+scoreevent	1001927	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAhAAAAAAA=
+scoreevent	1002118	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABKAAAAAAA=
+scoreevent	1002212	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAcAAAAAAA=
+scoreevent	1002309	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAoAAAAAAA=
+scoreevent	1002512	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAaAAAAAAA=
+scoreevent	1002615	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAZAAAAAAA=
+scoreevent	1002711	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAfAAAAAAA=
+scoreevent	1002811	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAdAAAAAAA=
+scoreevent	1002812	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAdAAAAAAA=
+scoreevent	1002913	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAjAAAAAAA=
+scoreevent	1003008	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAArAAAAAAA=
+scoreevent	1003208	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAgAAAAAAA=
+scoreevent	1003412	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAbAAAAAAA=
+scoreevent	1003508	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAlAAAAAAA=
+scoreevent	1003720	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA6AAAAAAA=
+scoreevent	1003818	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAzAAAAAAA=
+scoreevent	1003819	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAzAAAAAAA=
+scoreevent	1004119	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAPAAAAAAA=
+scoreevent	1004125	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAqAAAAAAA=
+scoreevent	1004220	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAmAAAAAAA=
+scoreevent	1004221	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAmAAAAAAA=
+scoreevent	1004322	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAApAAAAAAA=
+scoreevent	1004416	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAqAAAAAAA=
+scoreevent	1004507	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAsAAAAAAA=
+scoreevent	1004628	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAtAAAAAAA=
+scoreevent	1005013	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAvAAAAAAA=
+scoreevent	1005113	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAyAAAAAAA=
+scoreevent	1005413	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAwAAAAAAA=
+scoreevent	1005507	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA8AAAAAAA=
+scoreevent	1005608	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA9AAAAAAA=
+scoreevent	1005706	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA+AAAAAAA=
+scoreevent	1005830	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAxAAAAAAA=
+scoreevent	1005926	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA1AAAAAAA=
+scoreevent	1006031	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA7AAAAAAA=
+scoreevent	1006110	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAACAAAAAAA=
+scoreevent	1006208	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAUAAAAAAA=
+scoreevent	1008814	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA0AAAAAAA=
+scoreevent	1009215	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAA/AAAAAAA=
+scoreevent	1009343	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABBAAAAAAA=
+scoreevent	1009413	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABGAAAAAAA=
+scoreevent	1009513	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABHAAAAAAA=
+scoreevent	1009616	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABDAAAAAAA=
+scoreevent	1009711	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABAAAAAAAA=
+scoreevent	1009811	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABQAAAAAAA=
+scoreevent	1009917	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABJAAAAAAA=
+scoreevent	1010024	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABNAAAAAAA=
+scoreevent	1010129	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABMAAAAAAA=
+scoreevent	1010130	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABMAAAAAAA=
+scoreevent	1010211	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABLAAAAAAA=
+scoreevent	1010316	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABCAAAAAAA=
+scoreevent	1010545	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABZAAAAAAA=
+scoreevent	1010611	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABlAAAAAAA=
+scoreevent	1010829	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABWAAAAAAA=
+scoreevent	1011015	KgAAAARjZ3MABQAAAAAEaGVyb2VzABMAAAAQMABUAAAAEDEAUwAAAAAA
+scoreevent	1011114	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABiAAAAAAA=
+scoreevent	1011214	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABVAAAAAAA=
+scoreevent	1011319	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABSAAAAAAA=
+scoreevent	1011415	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABOAAAAAAA=
+scoreevent	1011514	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABcAAAAAAA=
+scoreevent	1011614	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABFAAAAAAA=
+scoreevent	1011719	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABaAAAAAAA=
+scoreevent	1011813	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABEAAAAAAA=
+scoreevent	1011913	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABIAAAAAAA=
+scoreevent	1012012	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABRAAAAAAA=
+scoreevent	1012413	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABqAAAAAAA=
+scoreevent	1012912	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABjAAAAAAA=
+scoreevent	1013008	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABoAAAAAAA=
+scoreevent	1013138	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABkAAAAAAA=
+scoreevent	1013241	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABbAAAAAAA=
+scoreevent	1013313	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABnAAAAAAA=
+scoreevent	1013415	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABPAAAAAAA=
+scoreevent	1013512	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABwAAAAAAA=
+scoreevent	1013608	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABXAAAAAAA=
+scoreevent	1013726	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABmAAAAAAA=
+scoreevent	1013815	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABYAAAAAAA=
+scoreevent	1013912	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABtAAAAAAA=
+scoreevent	1013913	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABtAAAAAAA=
+scoreevent	1014023	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABhAAAAAAA=
+scoreevent	1014109	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACAAAAAAAA=
+scoreevent	1014213	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB5AAAAAAA=
+scoreevent	1014316	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABpAAAAAAA=
+scoreevent	1014411	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABrAAAAAAA=
+scoreevent	1014510	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB4AAAAAAA=
+scoreevent	1014618	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACHAAAAAAA=
+scoreevent	1014809	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABsAAAAAAA=
+scoreevent	1014906	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABvAAAAAAA=
+scoreevent	1015001	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABxAAAAAAA=
+scoreevent	1015109	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABuAAAAAAA=
+scoreevent	1015209	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB0AAAAAAA=
+scoreevent	1015305	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAByAAAAAAA=
+scoreevent	1015410	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMABzAAAAAAA=
+scoreevent	1015808	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB1AAAAAAA=
+scoreevent	1016011	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB3AAAAAAA=
+scoreevent	1016115	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB2AAAAAAA=
+scoreevent	1016606	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACBAAAAAAA=
+scoreevent	1016707	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB/AAAAAAA=
+scoreevent	1016809	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACIAAAAAAA=
+scoreevent	1017019	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB7AAAAAAA=
+scoreevent	1017113	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACYAAAAAAA=
+scoreevent	1017507	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB8AAAAAAA=
+scoreevent	1017909	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACGAAAAAAA=
+scoreevent	1018011	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAB+AAAAAAA=
+scoreevent	1018107	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACMAAAAAAA=
+scoreevent	1018208	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACKAAAAAAA=
+scoreevent	1018306	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACCAAAAAAA=
+scoreevent	1018409	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACWAAAAAAA=
+scoreevent	1018508	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACNAAAAAAA=
+scoreevent	1018708	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACQAAAAAAA=
+scoreevent	1018810	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACJAAAAAAA=
+scoreevent	1018907	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACOAAAAAAA=
+scoreevent	1019007	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACPAAAAAAA=
+scoreevent	1019106	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACXAAAAAAA=
+scoreevent	1019210	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACSAAAAAAA=
+scoreevent	1019309	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACTAAAAAAA=
+scoreevent	1019508	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMACVAAAAAAA=
+scoreevent	10000025	IwAAAARjZ3MABQAAAAAEaGVyb2VzAAwAAAAQMAAYAAAAAAA=
+battlescore	120	10
+battlescore	131	10
+battlescore	132	10
+battlescore	154	10
+battlescore	161	10
+battlescore	162	10
+battlescore	163	10
+battlescore	164	10
+battlescore	173	10
+battlescore	174	10
+battlescore	178	10
+battlescore	179	10
+battlescore	180	10
+battlescore	181	10
+battlescore	184	10
+battlescore	188	10
+battlescore	189	10
+battlescore	190	10
+battlescore	191	10
+battlescore	192	10
+battlescore	206	10
+battlescore	207	10
+battlescore	208	10
+battlescore	209	10
+battlescore	212	10
+battlescore	216	10
+battlescore	217	10
+battlescore	218	10
+battlescore	279	10
+battlescore	280	10
+battlescore	281	10
+battlescore	287	10
+battlescore	288	10
+battlescore	289	10
+battlescore	290	10
+battlescore	292	10
+battlescore	296	10
+battlescore	297	10
+battlescore	307	10
+battlescore	308	10
+battlescore	309	10
+battlescore	310	10
+battlescore	314	10
+battlescore	315	10
+battlescore	316	10
+battlescore	317	10
+battlescore	318	10
+battlescore	319	10
+battlescore	326	10
+battlescore	333	10
+battlescore	337	10
+battlescore	351	10
+battlescore	352	10
+battlescore	358	10
+battlescore	364	10
+battlescore	374	10
+battlescore	385	10
+battlescore	386	10
+battlescore	387	10
+battlescore	388	10
+battlescore	412	10
+battlescore	413	10
+battlescore	418	10
+battlescore	419	10
+battlescore	420	10
+battlescore	421	10
+battlescore	422	10
+battlescore	423	10
+battlescore	424	10
+battlescore	425	10
+battlescore	439	10
+battlescore	444	10
+battlescore	446	10
+battlescore	447	10
+battlescore	448	10
+battlescore	449	10
+battlescore	450	10
+battlescore	451	10
+battlescore	452	10
+battlescore	453	10
+battlescore	454	10
+battlescore	455	10
+battlescore	456	10
+battlescore	457	10
+battlescore	458	10
+battlescore	459	10
+battlescore	460	10
+battlescore	461	10
+battlescore	462	10
+battlescore	463	10
+battlescore	470	10
+battlescore	471	10
+battlescore	498	10
+battlescore	504	10
+battlescore	505	10
+battlescore	506	10
+battlescore	512	10
+battlescore	513	10
+battlescore	514	10
+battlescore	515	10
+battlescore	516	10
+battlescore	517	10
+battlescore	518	10
+battlescore	520	10
+battlescore	522	10
+battlescore	523	10
+battlescore	529	10
+battlescore	530	10
+battlescore	531	10
+battlescore	601	10
+battlescore	602	10
+battlescore	603	10
+battlescore	604	10
+battlescore	605	10
+battlescore	21001	10
+battlescore	21002	10
+battlescore	21003	10
+battlescore	21004	10
+battlescore	400775	10
+battlescore	400776	10
+battlescore	400777	10
+battlescore	400778	10
+battlescore	400779	10
+battlescore	400780	10
+battlescore	400781	10
+battlescore	400785	10
+battlescore	400902	10
+battlescore	400903	10
+battlescore	400908	10
+battlescore	400916	10
+battlescore	400917	10
+battlescore	400918	10
+battlescore	400919	10
+battlescore	400967	10
+battlescore	400968	10
+battlescore	400969	10
+battlescore	400970	10
+battlescore	400971	10
+battlescore	400972	10
+battlescore	400981	10
+battlescore	400982	10
+battlescore	400983	10
+battlescore	400984	10
+battlescore	400985	10
+battlescore	401005	10
+battlescore	401006	10
+battlescore	401007	10
+battlescore	401035	10
+battlescore	401036	10
+battlescore	401037	10
+battlescore	401038	10
+battlescore	401039	10
+battlescore	401040	10
+battlescore	401041	10
+battlescore	401042	10
+battlescore	401043	10
+battlescore	401044	10
+battlescore	401045	10
+battlescore	401046	10
+battlescore	401047	10
+battlescore	401048	10
+battlescore	406006	10
+battlescore	910009	10
+battlescore	910010	10
+battlescore	910011	10
+battlescore	4020103	10
+battlescore	4020104	10
+scorebonus	1	1	0
+scorebonus	1	2	100
+scorebonus	1	3	200
+scorebonus	2	1	300
+scorebonus	2	2	450
+scorebonus	2	3	600
+scorebonus	3	1	750
+scorebonus	3	2	900
+scorebonus	3	3	1050
+scorebonus	4	1	1200
+scorebonus	4	2	1350
+scorebonus	4	3	1500
+settlement	0	fAAAABBtYXgAIgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEUEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	291	fAAAABBtYXgALAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	301	fAAAABBtYXgANgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	311	fAAAABBtYXgAQAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	321	fAAAABBtYXgASgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	331	fAAAABBtYXgAVAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	341	fAAAABBtYXgAXgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	351	fAAAABBtYXgAaAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	361	fAAAABBtYXgAcgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	371	fAAAABBtYXgAfAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	381	fAAAABBtYXgAhgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	391	fAAAABBtYXgAkAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEYEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	401	fAAAABBtYXgAmgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	411	fAAAABBtYXgApAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	421	fAAAABBtYXgArgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	431	fAAAABBtYXgAuAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	441	fAAAABBtYXgAwgEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	451	fAAAABBtYXgAzAEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	461	fAAAABBtYXgA1gEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	471	fAAAABBtYXgA4AEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	481	fAAAABBtYXgA6gEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	491	fAAAABBtYXgA9AEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	501	fAAAABBtYXgA/gEAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	511	fAAAABBtYXgACAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	521	fAAAABBtYXgAEgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	531	fAAAABBtYXgAHAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	541	fAAAABBtYXgAJgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	551	fAAAABBtYXgAMAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	561	fAAAABBtYXgAOgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	571	fAAAABBtYXgARAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	581	fAAAABBtYXgATgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	591	fAAAABBtYXgAWAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	601	fAAAABBtYXgAYgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	611	fAAAABBtYXgAbAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	621	fAAAABBtYXgAdgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	631	fAAAABBtYXgAgAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	641	fAAAABBtYXgAigIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	651	fAAAABBtYXgAlAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	661	fAAAABBtYXgAngIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	671	fAAAABBtYXgAqAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	681	fAAAABBtYXgAsgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	691	fAAAABBtYXgAvAIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	701	fAAAABBtYXgAxgIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	711	fAAAABBtYXgA0AIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	721	fAAAABBtYXgA2gIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	731	fAAAABBtYXgA5AIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	741	fAAAABBtYXgA7gIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	751	fAAAABBtYXgA+AIAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	761	fAAAABBtYXgAAgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	771	fAAAABBtYXgADAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	781	fAAAABBtYXgAFgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	791	fAAAABBtYXgAIAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	801	fAAAABBtYXgAKgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	811	fAAAABBtYXgANAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	821	fAAAABBtYXgAPgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	831	fAAAABBtYXgASAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	841	fAAAABBtYXgAUgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	851	fAAAABBtYXgAXAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	861	fAAAABBtYXgAZgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	871	fAAAABBtYXgAcAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	881	fAAAABBtYXgAegMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	891	fAAAABBtYXgAhAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	901	fAAAABBtYXgAjgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	911	fAAAABBtYXgAmAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	921	fAAAABBtYXgAogMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	931	fAAAABBtYXgArAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	941	fAAAABBtYXgAtgMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	951	fAAAABBtYXgAwAMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	961	fAAAABBtYXgAygMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	971	fAAAABBtYXgA1AMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	981	fAAAABBtYXgA3gMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	991	fAAAABBtYXgA6AMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1001	fAAAABBtYXgA8gMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1011	fAAAABBtYXgA/AMAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1021	fAAAABBtYXgABgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1031	fAAAABBtYXgAEAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1041	fAAAABBtYXgAGgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1051	fAAAABBtYXgAJAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1061	fAAAABBtYXgALgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1071	fAAAABBtYXgAOAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1081	fAAAABBtYXgAQgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1091	fAAAABBtYXgATAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1101	fAAAABBtYXgAVgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1111	fAAAABBtYXgAYAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1121	fAAAABBtYXgAagQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1131	fAAAABBtYXgAdAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1141	fAAAABBtYXgAfgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1151	fAAAABBtYXgAiAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1161	fAAAABBtYXgAkgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1171	fAAAABBtYXgAlwQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1176	fAAAABBtYXgAnAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1181	fAAAABBtYXgAoQQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1186	fAAAABBtYXgApgQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1191	fAAAABBtYXgAqwQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1196	fAAAABBtYXgAsAQAABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==
+settlement	1201	fAAAABBtYXgAP0IPABBtb25leQDA1AEAEGV4cAB4aQAABHJld2FyZHMAUQAAAAQwAEkAAAADMABBAAAAEHcAZAAAAARnADIAAAADMAAqAAAAAmsACQAAAHRyZWFzdXJlABBpAEcEAAAQbgABAAAAEHEAAQAAAAAAAAAAAA==

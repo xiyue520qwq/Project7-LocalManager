@@ -1,0 +1,250 @@
+# id	flags	next	complete	requireNewbee	requireEventAnd	requireEventOr	requireNotEventAnd	requireNotEventOr	endEvents	uiPanel	requirePanel
+1	0	2			1021		1038,1039,1040			city	
+2	0	3								bbs_home	
+3	0	0	1							activity_summon	
+4	0	5		1			1038,1039,1040			common_fullscreen	common_fullscreen
+5	0	0	4							bbs_home	
+10	3	0	10							city	
+11	3	12		10		1038,1039,1040	1043			battle_stage	battle_stage
+12	0	13								battle_herolist	
+13	0	14								battle_herolist	
+14	0	0	10,11							battle_common	
+20	1	21				30039,40036				city	
+21	0	22								city_entrance	
+22	0	23								city_build_select	
+23	0	24								city_window	
+24	0	25								city_herolist	
+25	0	26								city_herolist	
+26	0	27								city_herolist	
+27	0	0	20							city_build	
+30	1	31				1010,1029	1011			city	
+31	0	32								city_entrance	
+32	0	33								city_window	
+33	0	34								city_herolist	
+34	0	35								city_herolist	
+35	0	36								city_herolist	
+36	0	0								city_dispatch	
+37	1	0	30,37	30			1011			city_event	city_event
+40	4	0								combat_ctrl	
+41	6	0								combat_ctrl	
+42	7	0	42							combat_ctrl	
+43	5	0	43							combat_ctrl	
+44	7	0	44							combat_ctrl	
+45	7	46								combat	
+46	6	0	46							combat	
+80	7	83								combat	
+81	4	0								combat	
+82	5	45								combat	
+83	5	0	83						1264	combat	
+90	1	91			1021		1038,1039,1040			city	
+91	0	92								card_room	
+92	0	0	90							card_box	
+93	1	0	93	90	1021		1038,1039,1040			card_box	
+94	1	0	94	93	1021		1038,1039,1040			card_box	
+95	1	97		94	1021		1038,1039,1040			card_box	card_box
+96	0	0								card_progresssave	
+97	0	0	95	96						card_room	
+100	1	101			20029		20030			city	
+101	0	102								bbs_home	
+102	0	103								hero_herolist	
+103	0	0	100							hero_common	
+104	1	105			20030					hero_treasurelist	hero_treasurelist
+105	0	107								treasure_replace	
+106	0	0	104							treasure_replace	
+107	0	106								treasure_replace	
+110	0	0								spacetime_main	
+111	0	0								bigfam_main	
+112	0	0								trade_main	
+113	0	0								spacetime_main	
+114	0	0								bigfam_main	
+115	0	0								trade_main	
+116	0	0								dream_main	
+117	0	0								dream_main	
+118	0	0									
+119	0	0									
+120	1	121			2027					city	
+121	0	0	120							city_mainentry	
+130	1	132			3034					city	
+131	0	0	130							intelligence_center	
+132	0	131								intelligence_center	
+140	1	142			30038		30039			city	
+141	1	143			40035		40036			city	
+142	0	0	140							battle_stage	
+143	0	0	141							battle_stage	
+150	1	0	150		1044					city	
+151	1	152			1045					city	
+152	0	153								city_canteen	
+153	0	154								city_herolist	
+154	0	155								city_herolist	
+155	0	156								city_herolist	
+156	0	157								city_herolist	
+157	0	0	151							city_canteen	
+160	1	368			1037					city	
+161	0	0	160							bbs_home	
+162	1	163		160						dream_main	dream_main
+163	0	167								dream_main	
+164	0	165								dream_model	
+165	0	166								dream_model	
+166	0	168								dream_details	
+167	0	164								dream_model	
+168	0	0	162							dream_details	
+170	1	171			20033					hero_herolist	hero_herolist
+171	0	0	170							hero_common	
+172	1	173								hero_wardrobe	hero_wardrobe
+173	0	0	172							hero_wardrobe	
+174	1	175		172						hero_wardrobe	hero_wardrobe
+175	0	176								hero_wardrobe	
+176	0	177								hero_wardrobe	
+177	0	178								hero_wardrobe	
+178	0	0	174							hero_wardrobe	
+180	1	181			1054					city	
+181	0	0	180							bbs_home	
+190	1	0	190	191						city	
+191	0	0									
+200	0	0									
+201	0	0									
+210	1	0	210							bbs_task	bbs_task
+211	1	270				389				city	
+214	0	271								city_room_zhuangxiu	
+215	0	216								city_room_zhuangxiu	
+216	0	217								city_room_zhuangxiu	
+217	0	0	211							common_confirm	
+230	1	280				392				city	
+231	0	232								city	
+232	0	0	230							city	
+240	1	241		230		393				city	
+241	0	281								city	
+242	0	282								city	
+243	0	283								city	
+244	0	245								city	
+245	0	0	240							city	
+250	1	272		211		390				city	
+251	0	0	250							city_room_danchi_new	
+253	1	0	253	250						city_room_danchi_new	city_room_danchi_new
+260	1	0	260			388				city	
+270	0	214								city_room_zhuangxiu	
+271	0	215								city_room_zhuangxiu	
+272	0	251								city_room_danchi_new	
+280	0	231								city	
+281	0	242								city	
+282	0	243								city	
+283	0	244								city	
+284	1	285				396				city	
+285	0	286	284,292							city_room_zhuangxiu	
+286	0	287								city_room_zhuangxiu	
+287	0	288								city_room_zhuangxiu	
+288	0	289								city_room_zhuangxiu	
+289	0	290								city_room_zhuangxiu	
+290	0	0								city_room_zhuangxiu	
+292	1	284				397				city	
+293	0	0								bigfam_main	
+294	0	0								bigfam_main	
+295	0	0									
+296	0	0									
+297	0	298								bbs_home	
+298	0	299								bbs_home	
+299	0	161								bbs_home	
+300	1	301								samsara_main	samsara_main
+301	0	0	300							samsara_main	
+302	1	373				416				city	city
+303	0	304								bbs_home	
+304	0	305								bbs_home	
+305	0	0	302							bbs_home	
+306	0	0									
+308	1	309			20086					hero_treasurelist	hero_treasurelist
+309	0	310								hero_treasure_jiban_info	
+310	0	311								hero_treasure_jiban_info	
+311	0	312								hero_treasure_jiban_info	
+312	0	0	308							hero_treasure_jiban_info	
+313	7	0	313							combat_ctrl	
+314	7	0	314							combat_ctrl	
+315	7	0	315							combat_ctrl	
+316	7	0	316							combat_ctrl	
+317	7	0	317						3425	combat_ctrl	
+318	7	0	318							combat_ctrl	
+319	7	0	319							combat_ctrl	
+320	7	0	320							combat_ctrl	
+321	7	0	321							combat_ctrl	
+322	7	0	322							combat_ctrl	
+323	7	0	323							combat_ctrl	
+324	1	325								prison_boss	prison_boss
+325	0	326								prison_boss	
+326	0	327								prison_boss	
+327	0	0	324							prison_boss	
+328	1	329								prison_daily	prison_daily
+329	0	330								prison_daily	
+330	0	331								prison_daily	
+331	0	332								prison_daily	prison_daily_help
+332	0	333								prison_daily_help	
+333	0	0	328							prison_daily_help	
+334	7	0	334							combat_ctrl	
+335	7	0	335							combat_ctrl	
+336	7	337								combat_ctrl	
+337	6	338								combat_ctrl	
+338	6	0	336						3489	combat_ctrl	
+339	7	340								combat_ctrl	
+340	6	0	339						3489	combat_ctrl	
+341	7	1342								combat_ctrl	
+342	7	0	342							combat_ctrl	
+343	7	1348								combat_ctrl	
+344	6	0	343						3489	combat_ctrl	
+345	7	346								combat_ctrl	
+346	6	0	345							combat_ctrl	
+347	7	0	347						3489	combat_ctrl	
+348	1	349								activity_257	activity_257
+349	0	350								activity_257_buy	activity_257_buy
+350	0	351								activity_257_buy	activity_257_buy
+351	0	352								activity_257_buy	activity_257_buy
+352	0	353								activity_257	activity_257
+353	0	354								activity_257_setup	activity_257_setup
+354	0	355								activity_257_setup	activity_257_setup
+355	0	356								activity_257_setup	activity_257_setup
+356	0	357								activity_257_setup	activity_257_setup
+357	0	358								activity_257	activity_257
+358	0	0	348							activity_257	activity_257
+359	7	360								combat_ctrl	
+360	6	0	360							combat_ctrl	
+361	7	0	361							combat_ctrl	
+362	7	0								combat_ctrl	
+363	7	0	363							combat_ctrl	
+364	7	0	364						3571	combat_ctrl	
+365	7	0	365						3600	combat_ctrl	
+366	7	367								combat_ctrl	
+367	7	0	367						3593	combat_ctrl	
+368	0	369								city_mainentry	
+369	0	370								city_mainentry	
+370	0	371								city_mainentry	
+371	0	0	160							city_mainentry	
+373	0	374								city_mainentry	
+374	0	375								city_mainentry	
+375	0	0	302							city_mainentry	
+376	7	0								combat_ctrl	
+377	7	0	377							combat_ctrl	
+378	7	0	378							combat_ctrl	
+379	7	0	379						4252	combat_ctrl	
+380	7	0	380							combat_ctrl	
+381	7	387								combat_ctrl	
+382	7	383								combat_ctrl	
+383	6	0	382							combat_ctrl	
+384	6	385								combat_ctrl	
+385	6	0	381							combat_ctrl	
+386	7	0	386							combat_ctrl	
+387	6	388								combat_ctrl	
+388	6	384								combat_ctrl	
+389	7	390								combat_ctrl	
+390	6	0	390							combat_ctrl	
+391	7	0	391							combat_ctrl	
+392	7	0	392							combat_ctrl	
+393	7	397								combat_ctrl	
+394	7	0	394							combat_ctrl	
+395	7	398								combat_ctrl	
+396	7	0	396							combat_ctrl	
+397	6	0	393							combat_ctrl	
+398	6	0	395							combat_ctrl	
+1342	7	1343								combat_ctrl	
+1343	7	1344								combat_ctrl	
+1344	7	0	341							combat_ctrl	
+1348	6	344								combat_ctrl	
+@externalGuide	140	30039
+@externalGuide	141	40036
+@externalGuide	150	1045

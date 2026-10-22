@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#fff5f7f8</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:alertDialogTheme">@style/LocalDialog</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#ff0e756a</item>
+        <item name="android:statusBarColor">#fff5f7f8</item>
+        <item name="android:navigationBarColor">#ffffffff</item>
+        <item name="android:timePickerDialogTheme">@style/LocalDialog</item>
+        <item name="android:datePickerDialogTheme">@style/LocalDialog</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+    <style name="LocalDialog" parent="@android:style/Theme.Material.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_surface</item>
+        <item name="android:windowMinWidthMajor">90.0%</item>
+        <item name="android:windowMinWidthMinor">90.0%</item>
+        <item name="android:colorAccent">#ff0e756a</item>
+        <item name="android:windowElevation">8.0dip</item>
+    </style>
+</resources>
