@@ -88,3 +88,8 @@ LocalOratioCityEngine        LocalWenziHeroEngine
 3. 来源非官方构建，作者未确认
 
 如需保留，建议以独立仓库或 `mod/` 子目录形式归档，而非替换 main 主线。
+
+## 六、发行包
+
+已从本版本反编译产物回编译出一个可安装 APK，剥离了 MT 注入的 4 个类与清单节点后重签名，
+代码与数据未做其他修改。构建参数、校验值与密钥信息见 [`RELEASE_BUILD.md`](RELEASE_BUILD.md)。
